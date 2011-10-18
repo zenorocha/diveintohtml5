@@ -107,7 +107,7 @@ $(document).ready(function() {
     }); /* document.ready */
 
 function hideTOC() {
-    var toc = '<a href="javascript:showTOC()">show table of contents</a>';
+    var toc = '<a href="javascript:showTOC()">exibir índice analítico</a>';
     $("#toc").html(toc);
 }
 
