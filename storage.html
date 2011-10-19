@@ -10,28 +10,35 @@ body{counter-reset:h1 7}
 <link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
 <link rel=prefetch href=detect.html>
 <p>You are here: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#storage>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
-<h1><br>The Past, Present &amp; Future of Local Storage for Web Applications</h1>
+<h1><br>O Passado, Presente &amp; Futuro de Armazenamento Local para Aplicações Web</h1>
 <p id=toc>&nbsp;
 <p class=a>&#x2767;
 <h2 id=divingin>Diving In</h2>
 
-<p class=f><img src=i/aoc-p.png alt=P width=110 height=106>ersistent local storage is one of the areas where native client applications have held an advantage over web applications. For native applications, the operating system typically provides an abstraction layer for storing and retrieving application-specific data like preferences or runtime state. These values may be stored in the registry, INI files, XML files, or some other place according to platform convention. If your native client application needs local storage beyond key/value pairs, you can embed your own database, invent your own file format, or any number of other solutions.
+<p class=f><img src=i/aoc-a.png alt=A width=110 height=106>Armazenamento local persistente é uma das áreas onde aplicações nativas de cliente têm mantido uma vantagem sobre aplicações web.
+Para aplicações nativas, o sistema operacional tipicamente provê uma camada de abstração para armazenar e recuperar 
+dados específicos do aplicativo como preferências ou estado de tempo de execução.
+Estes valores podem ser armazenados no registro, arquivos INI,
+arquivos XML ou algum outro lugar de acordo com a convenção plataforma.
+Se o seu aplicativo cliente nativo necessita de armazenamento local diferente dos pares chave/valor,
+você pode inserir o seu próprio banco de dados, inventar o seu próprio formato de arquivo ou qualquer número de outras soluções.
 
-<p>Historically, web applications have had none of these luxuries. Cookies were invented early in the web&#8217;s history, and indeed they can be used for persistent local storage of small amounts of data. But they have three potentially dealbreaking downsides:
+
+<p>Historicamente, aplicações web não tiveram nenhum desses luxos. Cookies foram inventados no início da história da web e, de fato, eles podem ser usados para armazenamento local persistente de pequenas quantidades de dados. Mas eles têm três desvantagens potencialmente [potentially dealbreaking downsides]:
 
 <ul>
-<li>Cookies are included with every <abbr>HTTP</abbr> request, thereby slowing down your web application by needlessly transmitting the same data over and over
-<li>Cookies are included with every <abbr>HTTP</abbr> request, thereby sending data unencrypted over the internet (unless your entire web application is served over <abbr>SSL</abbr>)
-<li>Cookies are limited to about 4 KB of data &mdash; enough to slow down your application (see above), but not enough to be terribly useful
+<li>Cookies são incluídos em toda requisição <abbr>HTTP</abbr>, atrasando assim sua aplicação web por desnecessariamente transmitir os mesmos dados sempre e sempre 
+<li>Cookies são incluídos em toda requisição <abbr>HTTP</abbr>, enviando assim dados não criptografados através da internet (a menos que sua aplicação web inteira seja servida sobre <abbr> SSL </ abbr>)
+<li>Cookies são limitados a certa de 4KB de dados &mdash; suficiente para atrasar sua aplicação (ver acima), mas não o suficiente para ser muito útil
 </ul>
 
-<p>What we really want is
+<p>O que nós realmente queremos é
 
 <ul>
-<li>a lot of storage space
-<li>on the client
-<li>that persists beyond a page refresh
-<li>and isn&#8217;t transmitted to the server
+<li>bastante espaço de armazenamento
+<li>no cliente
+<li>que persista depois da atualização da página
+<li>e não seja transmitido para o servidor
 </ul>
 
 <p>Before <abbr>HTML5</abbr>, all attempts to achieve this were ultimately unsatisfactory in different ways.
