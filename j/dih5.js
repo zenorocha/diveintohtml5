@@ -128,6 +128,6 @@ function showTOC() {
 	toc += '</ol>';
 	level -= 1;
     }
-    toc = '<a href="javascript:hideTOC()">hide table of contents</a><ol start=0><li><a href=table-of-contents.html><span class=u>&uarr;</span> Full table of contents</a></li>' + toc.substring(4);
+    toc = '<a href="javascript:hideTOC()">esconder índice analítico</a><ol start=0><li><a href=table-of-contents.html><span class=u>&uarr;</span> Índice analítico completo</a></li>' + toc.substring(4);
     $("#toc").html(toc);
 }
