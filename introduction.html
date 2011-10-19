@@ -18,9 +18,9 @@ h2{text-align:left;text-transform:inherit}
 
 <p style="float:right;margin:0 0 1.75em 1.75em"><img src=i/video.png alt="[mock video player]" width=226 height=166>
 
-<p>Você deve estar se perguntando: &#8220;Como posso começar a usar <abbr>HTML5</abbr> se os navegadores antigos não a suportam?&#8221; But the question itself is misleading. <abbr>HTML5</abbr> não é uma grande coisa só; é uma coleção de funcionalidades individuais. Então você pode detectar suporte ao &#8220;<abbr>HTML5</abbr>,&#8221; porque isso não faz o menor sentido. Mas você <em>pode</em> detectar o suporte a funcionalidades individuais como canvas, video e geolocalização.
+<p>Você deve estar se perguntando: &#8220;Como posso começar a usar <abbr>HTML5</abbr> se os navegadores antigos não a suportam?&#8221; Mas a própria questão nos engana. <abbr>HTML5</abbr> não é uma grande coisa só; é uma coleção de funcionalidades individuais. Então você pode detectar suporte ao &#8220;<abbr>HTML5</abbr>,&#8221; porque isso não faz o menor sentido. Mas você <em>pode</em> detectar o suporte a funcionalidades individuais como canvas, vídeo e geolocalização.
 
-<p>You may think of <abbr>HTML</abbr> as tags and angle brackets. Essa é uma parte importante, mas não é a história toda. A especificação do  <abbr>HTML5</abbr> também define como essas chaves vão interagir com JavaScript, através do Document Object Model (<abbr>DOM</abbr>). A <abbr>HTML5</abbr> não define apenas uma tag <code>&lt;video></code>; também há uma <abbr>DOM</abbr> <abbr>API</abbr> correspondente para objetos de vídeo no <abbr>DOM</abbr>. Você pode usar essa <abbr>API</abbr> para detectar o suporte a diferentes formatos de vídeo, executar um vídeo, pausar, dar mute no áudio, identificar quanto o vídeo foi baixado, e todo o resto necessário para criar uma experiência rica ao usuário com relação a própria tag <code>&lt;video></code>.
+<p>Você pode achar que o <abbr>HTML</abbr> é um conjunto de tags e colchetes angulados. Essa é uma parte importante, mas não é a história toda. A especificação do  <abbr>HTML5</abbr> também define como esses colchetes angulados vão interagir com JavaScript, através do Document Object Model (<abbr>DOM</abbr>). A <abbr>HTML5</abbr> não define apenas uma tag <code>&lt;video></code>; também há uma <abbr>DOM</abbr> <abbr>API</abbr> correspondente para objetos de vídeo no <abbr>DOM</abbr>. Você pode usar essa <abbr>API</abbr> para detectar o suporte a diferentes formatos de vídeo, executar um vídeo, pausar, dar mute no áudio, identificar quanto o vídeo foi baixado, e todo o resto necessário para criar uma experiência rica ao usuário com relação a própria tag <code>&lt;video></code>.
 
 <p><a href=detect.html>O Capítulo 2</a> e o <a href=everything.html>Apéndice A</a> irão te ensinar como detectar de forma adequada o suporte para cada nova funciondalide da <abbr>HTML5</abbr>.
 
@@ -28,41 +28,51 @@ h2{text-align:left;text-transform:inherit}
 
 <p style="float:left;margin:0 1.75em 1.75em 0"><img src=i/forms.png alt="[sample form controls]" width=134 height=196>
 
-<p>Ame ou odeie, uma coisa você não pode negar é que a <abbr>HTML</abbr> 4 é a formato de marcação mais bem sucedido que já existiu. <abbr>HTML5</abbr> é criado sobre esse sucesso. Você não precisa jogar fora sua marcacão existente. Você não precisa reaprender coisas que vcê já sabe. Se a  sua aplicação web funcionou ontem em <abbr>HTML</abbr> 4, continuará funcionando hoje em <abbr>HTML5</abbr>. Ponto final.
+<p>Ame ou odeie, uma coisa você não pode negar é que a <abbr>HTML</abbr> 4 é a formato de marcação mais bem sucedido que já existiu. <abbr>HTML5</abbr> é criado sobre esse sucesso. Você não precisa jogar fora sua marcacão existente. Você não precisa reaprender coisas que já sabe. Se a  sua aplicação web funcionou ontem em <abbr>HTML</abbr> 4, continuará funcionando hoje em <abbr>HTML5</abbr>. Ponto final.
+	
+	Isso significa que você pode começar a melhorar seus
+	formulários Web hoje, mesmo que alguns dos seus
+	visitantes estejam presos ao Internet Explorer 6.
 
-<p>Agora, se você quiser <em>aprimorar</em> suas aplicações web, você veio ao lugar certo. Veja esse exemplo concreto: <abbr>HTML5</abbr> suporta todos os controles de formulário da <abbr>HTML</abbr> 4, mas também inclui novos controles de input. Algumas são adições necessitadas por um longo tempo como sliders e date pickers; outras são mais sútis. Por exemplo, o tipo de input <code>email</code> parece exatamente como uma caixa de texto, porém os navegadores de dispositivos móveis irão customizar sua tela no teclado para facilitar a inserção de endereços de email. Browsers mais antigos não suportam o tipo de input <code>email</code> irão tratarinput type will treat it as a regular text field, and the form still works with no markup changes or scripting hacks. This means you can start improving your web forms <em>today</em>, even if some of your visitors are stuck on IE 6.
+	Leia todos os mínimos detalhes sobre formulários
+	em HTML5 no Capítulo 9.
 
-<p>Read all the gory details about <abbr>HTML5</abbr> forms in <a href=forms.html>Chapter 9</a>.
+<p>Agora, se você quiser <em>aprimorar</em> suas aplicações web, você veio ao lugar certo. Veja esse exemplo concreto: <abbr>HTML5</abbr> suporta todos os controles de formulário da <abbr>HTML</abbr> 4, mas também inclui novos controles de input. Algumas são adições necessitadas por um longo tempo como sliders e date pickers; outras são mais sútis. Por exemplo, o tipo de input <code>email</code> parece exatamente como uma caixa de texto, porém os navegadores de dispositivos móveis irão customizar sua tela no teclado para facilitar a inserção de endereços de email. Navegadores mais antigos que não suportam o tipo de input <code>email</code> irão tratar o tipo de input como um input de texto comum, e o formulário ainda funciona sem mudanças na marcação ou scripts corretores. Isso significa que você pode começar a melhorar seus formulários web <em>hoje</em>, mesmo que alguns dos seus visitantes estejam presos ao Internet Explorer 6.
+
+<p>Leia todos os mínimos detalhes sobre formulários em <abbr>HTML5</abbr> no <a href=forms.html>Capítulo 9</a>.
 
 <h2 id=three>3. É fácil de começar</h2>
 
 <p style="float:right;margin:0 0 1.75em 1.75em"><img src=i/markup-with-arrow.png alt="[sample HTML markup]" width=234 height=202>
 
-<p>&#8220;Upgrading&#8221; to <abbr>HTML5</abbr> can be as simple as changing your <i>doctype</i>. The doctype should already be on the first line of every <abbr>HTML</abbr> page. Previous versions of <abbr>HTML</abbr> defined a lot of doctypes, and choosing the right one could be tricky. In <abbr>HTML5</abbr>, there is only one doctype:
+<p>“Atualizar” para <abbr>HTML5</abbr> pode ser tão simples quanto atualizar o seu <i>doctype</i>. O doctype já deveria estar na primeira linha de toda página <abbr>HTML</abbr>. Versões anteriores do <abbr>HTML</abbr> definiram muitos doctypes, e escolher o doctype correto pode ser complicado. Em <abbr>HTML5</abbr>, há apenas um doctype:
 
 <blockquote>
 <p><code>&lt;!DOCTYPE html></code>
 </blockquote>
 
-<p>Upgrading to the <abbr>HTML5</abbr> doctype won&#8217;t break your existing markup, because all the tags defined in HTML 4 are still supported in <abbr>HTML5</abbr>. But it will allow you to use &mdash; and validate &mdash; new semantic elements like <code>&lt;article></code>, <code>&lt;section></code>, <code>&lt;header></code>, and <code>&lt;footer></code>. You&#8217;ll learn all about these new elements in <a href=semantics.html>Chapter 3</a>.
+<p>Atualizar para o doctype da <abbr>HTML5</abbr> não irá causar problemas a sua marcação atual, porque todas as tags definidas em HTML4 são suportadas
+em <abbr>HTML5</abbr>. Mas possibilitará você usar &mdash; e validar &mdash; novos elementos semânticos como <code>&lt;article></code>, <code>&lt;section></code>, <code>&lt;header></code>, e <code>&lt;footer></code>. Você irá aprender sobre todos esses novos elementos no <a href=semantics.html>Capítulo 3</a>.
 
 <h2 id=four>4. Já funciona</h2>
 
 <p style="float:left;margin:0 1.75em 1.75em 0"><img src=i/rel-email.png alt="[form field with onscreen keyboard]" width=227 height=192>
 
-<p>Whether you want to draw on a canvas, play video, design better forms, or build web applications that work offline, you&#8217;ll find that <abbr>HTML5</abbr> is already well-supported. Firefox, Safari, Chrome, Opera, and mobile browsers already support canvas (<a href=canvas.html>Chapter 4</a>), video (<a href=video.html>Chapter 5</a>), geolocation (<a href=geolocation.html>Chapter 6</a>), local storage (<a href=storage.html>Chapter 7</a>), and more. Google already supports microdata annotations (<a href=extensibility.html>Chapter 10</a>). Even Microsoft &mdash; rarely known for blazing the trail of standards support &mdash; supports most <abbr>HTML5</abbr> features in Internet Explorer 9.
+<p>Quer você queira desenhar em canvas, tocar um video, implementar melhores formulários ou construir aplicações web que funcionem offline, você descobrirá que a <abbr>HTML5</abbr> já é bastante suportada pelos navegadores. Firefox, Safari, Chrome, Opera, e navegadores móveis já suportam canvas (<a href=canvas.html>Capítulo 4</a>), vídeo (<a href=video.html>Capítulo 5</a>), geolocalização (<a href=geolocation.html>Capítulo 6</a>), local storage (<a href=storage.html>Capítulo 7</a>), e mais. Google já suporta microdata annotations (<a href=extensibility.html>Capítulo 10</a>). Até mesmo a Microsoft &mdash; raramente conhecida por suportar padrões &mdash; suporta a maioria das funcionalidades da <abbr>HTML5</abbr> no Internet Explorer 9.
 
 <p style="float:right;margin:0 0 1.75em 1.75em"><img src=i/gears.png alt="[Gears saying &quot;I can help&quot;]" width=125 height=75>
 
-<p>Cada capítulo desse livro inclui quadros de compatibilidade com os navegadores mais familiares. Porém o mais important é que cada capítulo inclui uma discussão franca das suas opções se você precisar suportar navegadores antigos. As funcionalidades da <abbr>HTML5</abbr> como geolocalização (<a href=geolocation.html>Capítulo 6</a>) e vídeo (<a href=video.html>Capítulo 5</a>) foram primeiramente providas por plugins como Gears ou Flash nos navegadores. Outras funcionalidades, como canvas (<a href=canvas.html>Capítulo 4</a>), podem ser emuladas inteiramente em JavaScript. Esse livro vai ensinar você como atingir funcionalidades nativas em navegadores modernos, sem deixar os navegadores mais antigos para trás.
+<p>Cada capítulo desse livro inclui quadros de compatibilidade com os navegadores mais familiares. Porém o mais importante é que cada capítulo inclui uma discussão franca das suas opções se você precisar suportar navegadores antigos. As funcionalidades da <abbr>HTML5</abbr> como geolocalização (<a href=geolocation.html>Capítulo 6</a>) e vídeo (<a href=video.html>Capítulo 5</a>) foram primeiramente providas por plugins como Gears ou Flash nos navegadores. Outras funcionalidades, como canvas (<a href=canvas.html>Capítulo 4</a>), podem ser emuladas inteiramente em JavaScript. Esse livro vai ensinar você como atingir funcionalidades nativas em navegadores modernos, sem deixar os navegadores mais antigos para trás.
 
 
 <h2 id=five>5. Está aqui para ficar</h2>
 
-<p>Tim Berners-Lee inventou a world wide web no início dos anos 1990. Mais tarde ele fundou a <abbr>W3C</abbr> to act as a steward of web standards, which the organization has done for more than 15 years. Here is what the <abbr>W3C</abbr> had to say about the future of web standards, in July 2009:
+<p>Tim Berners-Lee inventou a world wide web no início dos anos 1990. Mais tarde ele fundou a <abbr>W3C</abbr> para agir como um administrador dos padrões da web,
+o que a organização vem fazendo por mais de 15 anos. Isso é o que a <abbr>W3C</abbr> tem a dizer sobre o futuro dos padrões da web, em Julho de 2009:
 
 <blockquote cite=http://www.w3.org/News/2009#item119>
-<p>Today the Director announces that when the <abbr>XHTML</abbr> 2 Working Group charter expires as scheduled at the end of 2009, the charter will not be renewed. By doing so, and by increasing resources in the <abbr>HTML</abbr> Working Group, <abbr>W3C</abbr> hopes to accelerate the progress of <abbr>HTML5</abbr> and clarify <abbr>W3C</abbr>&#8217;s position regarding the future of <abbr>HTML</abbr>.
+<p>Hoje o Diretor anunciou que quando a licença do grupo de trabalho sobre <abbr>XHTML</abbr> 2 expirar, como programado para o final de 2009, a licença não será renovada. Fazendo isso e aumentando os recursos no grupo de trabalho de <abbr>HTML</abbr>, a <abbr>W3C</abbr> espera acelerar o progresso da <abbr>HTML5</abbr> e clarificar a posição
+da <abbr>W3C</abbr> acerca do futuro da <abbr>HTML</abbr>.
 </blockquote>
 
 <p><abbr>HTML5</abbr> está aqui para ficar. <a href=past.html>Vamos imergir.</a>.
