@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset=utf-8>
-<title>How Did We Get Here? - Dive Into HTML5</title>
+<title>Como chegar aqui - Dive Into HTML5</title>
 <!--[if lt IE 9]><script src=j/html5.js></script><![endif]-->
 <link rel=alternate type=application/atom+xml href=https://github.com/diveintomark/diveintohtml5/commits/master.atom>
 <link rel=stylesheet href=screen.css>
@@ -9,19 +9,19 @@ body{counter-reset:h1 1}
 </style>
 <link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
 <link rel=prefetch href=index.html>
-<p>You are here: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#history>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
-<h1><br>How Did We Get Here?</h1>
+<p>Você está aqui: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#history>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
+<h1><br>Como chegar aqui?</h1>
 <p id=toc>&nbsp;
 <p class=a>&#x2767;
-<h2 id=divingin>Diving In</h2>
+<h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-r.png alt=R width=107 height=103>ecently, I stumbled across a quote from a Mozilla developer <a href=http://lists.w3.org/Archives/Public/public-html/2010Jan/0107.html>about the tension inherent in creating standards</a>:
+<p class=f><img src=i/aoc-r.png alt=R width=107 height=103>ecentemente, me deparei com uma citação de um desenvolvedor da Mozilla <a href=http://lists.w3.org/Archives/Public/public-html/2010Jan/0107.html>sobre a tensão que existe ao criar padrões</a>:
 
 <blockquote cite=http://lists.w3.org/Archives/Public/public-html/2010Jan/0107.html>
-<p>Implementations and specifications have to do a delicate dance together. You don&#8217;t want implementations to happen before the specification is finished, because people start depending on the details of implementations and that constrains the specification. However, you also don&#8217;t want the specification to be finished before there are implementations and author experience with those implementations, because you need the feedback. There is unavoidable tension here, but we just have to muddle on through.
+<p>Implementações e especificações tem uma dançam delicadamente. Você não quer que uma implementação ocorra antes que a especificação esteja completa, pois as pessões dependem de detalhes da implementação e isso faz parte da especificação. Entretando, você ambém não quer que a especificação esteja completa antes da implementação e dos testes feitos pelo autor com esta implementação, pois você precisa de um feedback. É inevitável que aja uma tensão aqui, mas isso é só uma pequena confusão.
 </blockquote>
 
-<p>Keep this quote in the back of your mind, and let me explain how <abbr>HTML5</abbr> came to be.
+<p>Mantenha esta citação na sua mente, e me deixe explicar como a <abbr>HTML5<abbr> surgiu.
 
 <p class=c><img src=i/openclipart.org_johnny_automatic_animals_on_see_saw.png width=526 height=116 alt="animals on a seesaw">
 
@@ -29,17 +29,17 @@ body{counter-reset:h1 1}
 
 <h2 id=mime-types>MIME types</h2>
 
-<p>This book is about <abbr>HTML5</abbr>, not previous versions of <abbr>HTML</abbr>, and not any version of <abbr>XHTML</abbr>. But to understand the history of <abbr>HTML5</abbr> and the motivations behind it, you need to understand a few technical details first. Specifically, <abbr>MIME</abbr> types.
+<p>Este livro é sobre <abbr>HTML5</abbr>, não sobre as versões anteriores da <abbr>HTML</abbr>, não sobre qualquer versão de <abbr>XHTML</abbr>. Mas para entender a história da <abbr>HTML5</abbr> e as motivações por trás disso, você precisa entender primeiro de alguns detalhes técnicos. Especificamente, <abbr>MIME</abbr> types.
 
-<p>Every time your web browser requests a page, the web server sends &#8220;headers&#8221; before it sends the actual page markup. These headers are normally invisible, although there are web development tools that will make them visible if you&#8217;re interested. But the headers are important, because they tell your browser how to interpret the page markup that follows. The most important header is called <code>Content-Type</code>, and it looks like this:
+<p>Toda vez que o seu browser chama uma página, o web server envia &#8220;cabeçalhos&#8221;(headers) antes de enviar a marcação de página em si. Esses cabeçalhos normalmente são invisiveis, mas existem ferramentas de desenvolvimento que o torna visivel caso você precise. Esses cabeçalhos são importantes, pois eles dizem ao browser como interpretar a marcação da página. A parte mais importante do cabeçalho é chamada de <code>Content-Type</code>, e se parece com isso:
 
 <blockquote><pre>Content-Type: text/html</pre></blockquote>
 
-<p>&#8220;<code>text/html</code>&#8221; is called the &#8220;content type&#8221; or &#8220;<abbr>MIME</abbr> type&#8221; of the page. This header is the <strong>only</strong> thing that determines what a particular resource truly is, and therefore how it should be rendered. Images have their own <abbr>MIME</abbr> types (<code>image/jpeg</code> for <abbr>JPEG</abbr> images, <code>image/png</code> for <abbr>PNG</abbr> images, and so on). JavaScript files have their own <abbr>MIME</abbr> type. <abbr>CSS</abbr> stylesheets have their own <abbr>MIME</abbr> type. Everything has its own <abbr>MIME</abbr> type. The web runs on <abbr>MIME</abbr> types.
+<p>&#8220;<code>text/html</code>&#8221; é chamado de &#8220;content type&#8221; ou &#8220;<abbr>MIME</abbr> type&#8221; da página. Este cabeçalho é a <strong>única</strong> coisa que determina o que um recurso realmente é, e portanto como ele é renderizao. Imagens tem seu próprio <abbr>MIME</abbr> types (<code>image/jpeg</code> para imagens <abbr>JPEG</abbr>, <code>image/png</code> para imagens <abbr>PNG</abbr>, e por ai vai). Arquivos JavaScript tem seu prórpio <abbr>MIME</abbr> type. Folhas de estilo <abbr>CSS</abbr> tem seu próprio <abbr>MIME</abbr> type. Tudo tem seu próprio <abbr>MIME</abbr> type. A web funciona por causa dos <abbr>MIME</abbr> types.
 
-<p>Of course, reality is more complicated than that. The first generation of web servers (and I&#8217;m talking web servers from 1993) didn&#8217;t send the <code>Content-Type</code> header because it didn&#8217;t exist yet. (It wasn&#8217;t invented until 1994.) For compatibility reasons that date all the way back to 1993, some popular web browsers will ignore the <code>Content-Type</code> header under certain circumstances. (This is called &#8220;content sniffing.&#8221;) But as a general rule of thumb, everything you&#8217;ve ever looked at on the web &mdash; <abbr>HTML</abbr> pages, images, scripts, videos, PDFs, anything with a <abbr>URL</abbr> &mdash; has been served to you with a specific <abbr>MIME</abbr> type in the <code>Content-Type</code> header.
+<p>Claro que a realidade é um pouco mais complicada que apenas isso. A primeira geração de servidores web (e eu estou falando de servidores web de 1993) não enviavam o cabeçalho <code>Content-Type</code>, pois ele ainda não existia. (Eles não existiam antes de 1994.) Por causa da compatibilidade até 1993, os browsers populares ignoravam o cabeçalho <code>Content-Type</code> em algumas circunstancias. (Isto é chamado de &#8220;content sniffing.&#8221;) Mas como regra geral, tudo que é procurado na web<abbr>HTML</abbr> pages, images, scripts, videos, PDFs, tudo que tem uma <abbr>URL</abbr> &mdash; é exibido com seu <abbr>MIME</abbr> type especifico no cabeçalho <code>Content-Type</code>.
 
-<p>Tuck that under your hat. We&#8217;ll come back to it.
+<p>Guarde isto dentro da sua cartola. Nós voltaremos a esse assunto.
 
 <p class=a>&#x2767;
 
