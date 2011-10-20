@@ -22,7 +22,7 @@ body{counter-reset:h1 8}
 <p>A partir disso, a maioria do trabalho está com você, desenvolvedor web. Existe uma indicação no <abbr>DOM</abbr> que irá dizer se você está online ou offline. Existem eventos que são disparados quando seu status offline muda (em um minuto você está offline e no próximo minuto está online, ou vice-versa). Mas é basicamento isso. Se a sua aplicação cria dados ou salvo estados, está com você a missão de <a href=storage.html>armazenar dados localmente</a> enquanto está offline e sincronizar isso com o servidor remoto uma vez estando online novamente. Em outras palavras, <abbr>HTML5</abbr> pode levar suas aplicações web offline. O que você faz quando chegar lá é com você.
 
 <table class=bc>
-<caption>Offline support</caption>
+<caption>Suporte offline</caption>
 <thead>
 <tr><th title="Internet Explorer">IE<th title="Mozilla Firefox">Firefox<th title="Apple Safari">Safari<th title="Google Chrome">Chrome<th>Opera<th>iPhone<th>Android
 <tbody>
@@ -31,9 +31,9 @@ body{counter-reset:h1 8}
 
 <p class=a>&#x2767;
 
-<h2 id=manifest>The Cache Manifest</h2>
+<h2 id=manifest>O Manifesto Cache</h2>
 
-<p>An offline web application revolves around a cache manifest file. What&#8217;s a manifest file? It&#8217;s a list of all of the resources that your web application might need to access while it&#8217;s disconnected from the network. In order to bootstrap the process of downloading and caching these resources, you need to point to the manifest file, using a <code>manifest</code> attribute on your <code>&lt;html></code> element.
+<p>Uma aplicação web offline utiliza um arquivo de manifesto cache. O que é um arquivo manifesto? É uma lista de todos os recursos que a sua aplicação web irá precisar acessar quando estiver desconectada de uma rede. In order to bootstrap o processo de download e cache desses recursos, você irá precisar apontar para o arquivo manifesto, utilizando o atributo <code>manifest</code> no seu elemento <code>&lt;html></code>.
 
 <pre><code>&lt;!DOCTYPE HTML>
 &lt;html <mark>manifest="/cache.manifest"</mark>>
