@@ -196,20 +196,21 @@ PRESENT	 Presente onde quer que o documento fonte foi apresentado</pre>
 <p><a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0221.html"><cite>Tim Berners-Lee</cite>, 2 de Março de 1993</a>: 
  
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0221.html"> 
-<p>HTTP2 permite que um documento contenha qualquer tipo que usuário diga que pode lidar, não apenas os MIME types registrados. Então pode ser feito um experimetno. Sim eu acho que tem algum caso que funciona postscript com hypertexto, Eu não entendo de display postscript o suficiente. Eu sei que a Adobe está tentando estabelecer seu próprio tipo de postscript "PDF" que terá links e poderá ser lido pelos leitores proprietários deles.
-<p>Eu penso que uma linguagem genérica para links entre camadas (baseados em Hytime?) pode permitir padrões hypertexto e imagens/video que envolva-os separadamente, que pode ajudar ambos.
+<p>HTTP2 permite que um documento contenha qualquer tipo que usuário diga que pode lidar, não apenas os MIME types registrados. Então pode ser feito um experimetno. Sim eu acho que tem algum caso que funciona postscript com hipertexto, Eu não entendo de display postscript o suficiente. Eu sei que a Adobe está tentando estabelecer seu próprio tipo de postscript "PDF" que terá links e poderá ser lido pelos leitores proprietários deles.
+<p>Eu penso que uma linguagem genérica para links entre camadas (baseados em Hytime?) pode permitir padrões hipertexto e imagens/video que envolva-os separadamente, que pode ajudar ambos.
 <p>Deixem que a tag <code>IMG</code> possa ser <code>INCLUDE</code> (incluida) e deixe ela se referir a um tipo arbitrario de documento. Ou <code>EMBED</code> se <code>INCLUDE</code> parece com um include do cpp e que as pessoas possam esperar por um código fonte SGML para ser interpretado  &#8212; o que não é a intençao.
 </blockquote> 
  
-<p><a href="http://www.hytime.org/">HyTime</a> was an early, SGML-based hypertext document system. It loomed large in early discussions of HTML, and later XML. 
+<p><a href="http://www.hytime.org/">HyTime</a> foi um dos primeiros sistemas de documentos hipertexto baseado em SGML. Ele teve uma grande importância nas primeiras discussões sobre HTML e posteriormente sobre XML.
+
  
-<p>Tim&#8217;s proposal for an <code>&lt;INCLUDE></code> tag was never implemented, although you can see echoes of it in <code>&lt;object></code>, <code>&lt;embed></code>, and the <code>&lt;iframe></code> element. 
+<p>A proposta de Tim para uma tag <code>&lt;INCLUDE</code> nunca foi implementada, no entanto pode-se ver ecos dela nos elementos <code>&lt;object></code>, <code>&lt;embed></code>, e <code>&lt;iframe></code>. 
  
-<p>Finally, on March 12, 1993, <a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0257.html">Marc Andreessen revisited the thread</a>: 
+<p>Finalmente em 12 de Março de 1993,<a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0257.html">Marc Andreessen revisitou a thread</a>: 
  
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0257.html"> 
-<p>Back to the inlined image thread again &#8212; I&#8217;m getting close to releasing Mosaic v0.10, which will support inlined GIF and XBM images/bitmaps, as mentioned previously. &#8230; 
-<p>We&#8217;re not prepared to support <code>INCLUDE</code>/<code>EMBED</code> at this point. &#8230; So we&#8217;re probably going to go with <code>&lt;IMG SRC="url"></code> (not <code>ICON</code>, since not all inlined images can be meaningfully called icons). For the time being, inlined images won&#8217;t be explicitly content-type&#8217;d; down the road, we plan to support that (along with the general adaptation of MIME). Actually, the image reading routines we&#8217;re currently using figure out the image format on the fly, so the filename extension won&#8217;t even be significant. 
+<p>Voltando a thread sobre inclusão de imagens &#8212; eu estou chegando perto de lançar o Mosaic v0.10, que irá suportar a inculsão de GIF e imagens/bitmaps XBM, como eu disse anteriormente. ... 
+<p>Nós não estamos preparados para suportar as tags <code>INCLUDE</code>/<code>EMBED</code> nesse momento. ... Então nós provavelmente iremos usar as tags <code>&lt;IMG SRC="url"></code> (não a tag <code>ICON</code>, dado que nem todas as imagens podem ser propriamente chamadas de icones). Por enquanto as imagens incluidas não deverão possuir um contet-type especifico; futuramente, nós planejamos dar suporte a isto (junto com a adaptação do MIME). Na verdade, a rotina de leitura de imagens que nós estamos utilizando lida com o formato da imagem no momento de renderizar, então a extensão do arquivo não é tão relevante.
 </blockquote> 
  
 <p class=a>&#x2767;
