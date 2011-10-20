@@ -1,0 +1,37 @@
+/* HTML5-specific CSS setup */
+article,aside,figure,footer,header,hgroup,nav,section{display:block}
+
+html{background:white;color:black}
+body{font:normal medium 'Gill Sans','Gill Sans MT','Goudy Bookletter 1911','Linux Libertine O','Liberation Serif',Candara,serif;padding:0;margin:0 auto;width:40em;line-height:1.75;word-spacing:0.1em}
+.a{font: 100%/1 "Arial Unicode MS",FreeSerif,OpenSymbol,"DejaVu Sans",sans-serif}
+a{background:transparent;text-decoration:none;border-bottom:1px dotted}
+a:hover{border-bottom:1px solid}
+a:link{color:#1b67c9}
+a:visited{color:darkorchid}
+a.simple{border:0 !important;float:left;display:block;margin-right:20px}
+h1 a{color:inherit !important}
+h2,p{margin:1.75em 0;font-weight:normal}
+h1,h2{font-size:medium}
+header{background:black;color:white;margin:0;padding:1.75em 0}
+nav a:link{color:white}
+nav a:visited{color:white}
+h1{letter-spacing:1em;text-align:center;margin:0}
+h2{text-align:center;font-size:medium;line-height:2.154}
+article header,section header{background:white;color:black;margin:0;padding:0}
+article h1,section h1{letter-spacing:0;text-align:left;margin:1.75em 0}
+#arc th,#arc td{list-style:none;margin:0;padding:0}
+#arc th,.r{text-align:right}
+#arc th{padding:0 1.75em 0 0;vertical-align:baseline}
+#arc{border-collapse:collapse}
+footer,.c{text-align:center;clear:both}
+time{float:right;font-size:small;margin:2px 0 0 0}
+.review time{float:none;font-size:inherit;margin:inherit}
+nav ul{margin:0;padding:0 1em 0 0;text-align:center}
+nav li{display:inline;padding-left:1em}
+dt{clear:left;float:left;width:8em}
+dd{margin-left:8em}
+address{font-style:normal}
+address+p{margin-top:0}
+img.me{display:block;float:right;border:1px solid black;margin-left:1.75em}
+.phonebook article p,.phonebook article address{margin:0 0 0 120px}
+.review article p{margin:1.75em 0}
