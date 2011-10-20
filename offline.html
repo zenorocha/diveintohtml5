@@ -42,7 +42,7 @@ body{counter-reset:h1 8}
 &lt;/body>
 &lt;/html></code></pre>
 
-<p>Your cache manifest file can be located anywhere on your web server, but it must be served with the content type <code>text/cache-manifest</code>. If you are running an Apache-based web server, you can probably just put <a href=http://httpd.apache.org/docs/2.2/mod/mod_mime.html#addtype>an <code>AddType</code> directive</a> in the <code>.htaccess</code> file at the root of your web directory:
+<p>Seu arquivo de manifesto cache pode estar localizado em qualquer lugar do seu servidor web, mas precisa estar servido sob o tipo de conteúdo <code>text/cache-manifest</code>. Se você está rodando um servidor web baseado no Apache, você provavelmente precisa adicionar uma <a href=http://httpd.apache.org/docs/2.2/mod/mod_mime.html#addtype>diretiva <code>AddType</code></a> no seu arquivo <code>.htaccess</code> na raíz do seu diretório web:
 
 <pre><code>AddType text/cache-manifest .manifest</code></pre>
 
