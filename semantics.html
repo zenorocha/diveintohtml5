@@ -69,45 +69,45 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <p class=a>&#x2767;
 
-<h2 id=html-element>The Root Element</h2>
+<h2 id=html-element>O elemento raiz</h2>
 
 <p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:280px"><img src=i/openclipart.org_johnny_automatic_tree_on_top_of_hill.png alt="tree on top of hill" width=280 height=394>
 
-<p>An <abbr>HTML</abbr> page is a series of nested elements. The entire structure of the page is like a tree. Some elements are &#8220;siblings,&#8221; like two branches that extend from the same tree trunk. Some elements can be &#8220;children&#8221; of other elements, like a smaller branch that extends from a larger branch. (It works the other way too; an element that contains other elements is called the &#8220;parent&#8221; node of its immediate child elements, and the &#8220;ancestor&#8221; of its grandchildren.) Elements that have no children are called &#8220;leaf&#8221; nodes. The outer-most element, which is the ancestor of all other elements on the page, is called the &#8220;root element.&#8221; The root element of an <abbr>HTML</abbr> page is always <code>&lt;html></code>.
+<p>Uma página <abbr>HTML</abbr> consiste em uma série de elementos. Toda sua estrutura é como uma árvore. Alguns elementos são &#8220;irmãos,&#8221; como dois galhos que extendem-se de um mesmo tronco. Alguns podem ser &#8220;filhos&#8221; de outros elementos, como um galho menor que extende-se de um maior. (Também funciona de outro jeito; um elemento que contém outro elemento é chamado de nó &#8220;pai&#8221; de seus elementos filhos, e o &#8220;antecessor&#8221; de seus elementos netos). Elementos que não possuem filhos são chamados de nós &#8220;folha&#8221;. O elemento mais externo, o qual é o antecessor de todos os outros elementos da página, é chamado de &#8220;elemento raiz.&#8221; O elemento raiz de uma página <abbr>HTML</abbr> é sempre o <code>&lt;html></code>.
 
-<p>In <a href=examples/blog-original.html>this example page</a>, the root element looks like this:
+<p>Nessa <a href=examples/blog-original.html>página de exemplo</a>, o elemento raiz se parece com isso:
 
 <table role=presentation><tr><td><pre><code>&lt;html xmlns="http://www.w3.org/1999/xhtml"
       lang="en"
       xml:lang="en"></code></pre></td></table>
 
-<p>There is nothing wrong with this markup. Again, if you like it, you can keep it. It is valid <abbr>HTML5</abbr>. But parts of it are no longer necessary in <abbr>HTML5</abbr>, so you can save a few bytes by removing them.
+<p>Não há nada de errado com esta marcação. De novo, se você gosta dela, pode ficar. É válido no <abbr>HTML5</abbr>. Mas algumas partes não são mais necessárias no <abbr>HTML5</abbr>, então você pode economizar alguns bytes ao removê-las.
 
-<p>The first thing to discuss is the <code>xmlns</code> attribute. This is a vestige of <a href=http://www.w3.org/TR/xhtml1/><abbr>XHTML</abbr> 1.0</a>. It says that elements in this page are in the <abbr>XHTML</abbr> namespace, <code>http://www.w3.org/1999/xhtml</code>. But elements in <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/infrastructure.html#xml>are always in this namespace</a>, so you no longer need to declare it explicitly. Your <abbr>HTML5</abbr> page will work exactly the same in all browsers, whether this attribute is present or not.
+<p>A primeira coisa a se discutir é o atributo <code>xmlns</code>. É um vestígio do <a href=http://www.w3.org/TR/xhtml1/><abbr>XHTML</abbr> 1.0</a>. Ele serve para saber que os elementos da página estão dentro do namespace <abbr>XHTML</abbr>, <code>http://www.w3.org/1999/xhtml</code>. Mas os elementos no <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/infrastructure.html#xml>estão sempre neste namespace</a>, sendo que você não precisa mais declará-lo explicitamente. Sua página <abbr>HTML5</abbr> funcionará exatamente igual em todos os browsers, este atributo estando ou não presente.
 
-<p>Dropping the <code>xmlns</code> attribute leaves us with this root element:
+<p>Descartando o atributo <code>xmlns</code>, ficamos com este elemento raiz:
 
 <pre><code>&lt;html lang="en" xml:lang="en"></code></pre>
 
-<p>The two attributes here, <code>lang</code> and <code>xml:lang</code>, both define the language of this <abbr>HTML</abbr> page. (<code>en</code> stands for &#8220;English.&#8221; Not writing in English? <a href=http://www.w3.org/International/questions/qa-choosing-language-tags>Find your language code</a>.) Why two attributes for the same thing? Again, this is a vestige of <abbr>XHTML</abbr>. Only the <code>lang</code> attribute has any effect in <abbr>HTML5</abbr>. You can keep the <code>xml:lang</code> attribute if you like, but if you do, you need to ensure that it <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/elements.html#the-lang-and-xml:lang-attributes">contains the same value as the <code>lang</code> attribute</a>.
+<p>Estes dois atributos, <code>lang</code> e <code>xml:lang</code>, definem a língua da página <abbr>HTML</abbr>. (<code>en</code> significa &#8220;Inglês.&#8221; Não escreve em inglês? <a href=http://www.w3.org/International/questions/qa-choosing-language-tags>Encontre sua língua</a>.) Mas porque dois atributos para a mesma coisa? De novo, isso é um vestígio do <abbr>XHTML</abbr>. Apenas o atributo <code>lang</code> tem algum efeito no <abbr>HTML5</abbr>. Você pode deixar o atributo <code>xml:lang</code> se preferir, mas se deixá-lo, deve garantir que ele <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/elements.html#the-lang-and-xml:lang-attributes">contenha o mesmo valor do atributo <code>lang</code></a>.
 
 <blockquote cite="http://www.whatwg.org/specs/web-apps/current-work/multipage/elements.html#the-lang-and-xml:lang-attributes">
-<p>To ease migration to and from XHTML, authors may specify an attribute in no namespace with no prefix and with the literal localname "xml:lang" on <abbr>HTML</abbr> elements in <abbr>HTML</abbr> documents, but such attributes must only be specified if a <code>lang</code> attribute in no namespace is also specified, and both attributes must have the same value when compared in an ASCII case-insensitive manner. The attribute in no namespace with no prefix and with the literal localname "xml:lang" has no effect on language processing.
+<p>Para facilitar a migração do XHTML, devemos especificar um atributo sem namespace, sem prefixo e com o localname "xml:lang" nos elementos <abbr>HTML</abbr> de documentos <abbr>HTML</abbr>, mas estes atributos devem apenas serem especificados se o atributo <code>lang</code> também for especificado sem namespace. Os dois atributos são case-insensitive e devem conter o mesmo valor. O atributo sem namespace, sem prefixo e com o localname "xml:lang" não tem efeito no precessamento da língua.
 </blockquote>
 
-<p>Are you ready to drop it? It&#8217;s OK, just let it go. Going, going&hellip; gone! That leaves us with this root element:
+<p>Está pronto para descartá-lo? Tudo bem, deixe-o ir. Indo, indo&hellip; já era! Isso nos deixa com este elemento raiz:
 
 <pre><code>&lt;html lang="en"></code></pre>
 
-<p>And that&#8217;s all I have to say about that.
+<p>E isso é tudo que tenho para falar sobre isso.
 
 <p class=a>&#x2767;
 
-<h2 id=head-element>The &lt;head> Element</h2>
+<h2 id=head-element>O elemento &lt;head> </h2>
 
 <p class=c><img src=i/openclipart.org_johnny_automatic_8_from_behind.png alt="8 men from behind" width=554 height=164>
 
-<p>The first child of the root element is usually the <code>&lt;head></code> element. The <code>&lt;head></code> element contains metadata&nbsp;&mdash; information <em>about</em> the page, rather than the body of the page itself. (The body of the page is, unsurprisingly, contained in the <code>&lt;body></code> element.) The <code>&lt;head></code> element itself is rather boring, and it hasn&#8217;t changed in any interesting way in <abbr>HTML5</abbr>. The good stuff is what&#8217;s <em>inside</em> the <code>&lt;head></code> element. And for that, we turn once again to <a href=examples/blog-original.html>our example page</a>:
+<p>O primeiro filho do elemento raiz geralmente é o elemento <code>&lt;head></code>. O <code>&lt;head></code> contém informações &nbsp;&mdash;metadata <em>sobre</em> a página, em vez do próprio corpo da página. (O corpo da página fica no elemento <code>&lt;body></code>). O elemento <code>&lt;head></code> é um pouco chato, e não mudou nada de interessante no <abbr>HTML5</abbr>. A parte boa é o que está <em>dentro</em> do <code>&lt;head></code>. E para isso, usaremos novamente nossa <a href=examples/blog-original.html>página de exemplo</a>:
 
 <pre><code>&lt;head>
   &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -122,7 +122,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
   &lt;link rel="shortcut icon" href="/favicon.ico" />
 &lt;/head></code></pre>
 
-<p>First up: the <code>&lt;meta></code> element.
+<p>Primeiramente: O elemento <code>&lt;meta></code>.
 
 <p class=a>&#x2767;
 
