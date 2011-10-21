@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset=utf-8>
-<title>Semantics - Dive Into HTML5</title>
+<title>Semântica - Dive Into HTML5</title>
 <!--[if lt IE 9]><script src=j/html5.js></script><![endif]-->
 <link rel=alternate type=application/atom+xml href=https://github.com/diveintomark/diveintohtml5/commits/master.atom>
 <link rel=stylesheet href=screen.css>
@@ -12,60 +12,60 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 </style>
 <link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
 <link rel=prefetch href=index.html>
-<p>You are here: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#semantics>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
-<h1><br>What Does It All Mean?</h1>
+<p>Você está aqui: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#semantics>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
+<h1><br>O que significa tudo isso?</h1>
 <p id=toc>&nbsp;
 <p class=a>&#x2767;
 <h2 id=divingin>Diving In</h2>
 
-<p class=f><img src=i/aoc-t.png alt=T width=107 height=105>his chapter will take an <abbr>HTML</abbr> page that has absolutely nothing wrong with it, and improve it. Parts of it will become shorter. Parts will become longer. All of it will become more semantic. It&#8217;ll be awesome.
+<p class=f><img src=i/aoc-e.png alt=E width=107 height=105>sse capítulo pegará uma página <abbr>HTML</abbr> a qual não há nada de errado e irá melhorá-la. Algumas partes ficarão menores, outras partes maiores. Tudo isso ficará com uma melhor semântica. E ficará demais.
 
-<p style="clear:both"><a href=examples/blog-original.html>Here is the page in question</a>. Learn it. Live it. Love it. Open it in a new tab and don&#8217;t come back until you&#8217;ve hit &#8220;View Source&#8221; at least once.
+<p style="clear:both"><a href=examples/blog-original.html>Esta é a página em questão</a>. Abra a página em uma nova aba e não volte até dar uma olhada no código fonte ao menos uma vez.
 
 <p class=a>&#x2767;
 
-<h2 id=the-doctype>The Doctype</h2>
+<h2 id=the-doctype>O Doctype</h2>
 
-<p>From the top:
+<p>A partir do topo:
 
 <pre><code>&lt;!DOCTYPE html
           PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"></code></pre>
 
-<p>This is called the &#8220;doctype.&#8221; There&#8217;s a long history &mdash; and a black art &mdash; behind the doctype. While working on Internet Explorer 5 for Mac, the developers at Microsoft found themselves with a surprising problem. The upcoming version of their browser had improved its standards support so much, older pages no longer rendered properly. Or rather, they rendered properly (according to specifications), but people expected them to render <em>improperly</em>. The pages themselves had been authored based on the quirks of the dominant browsers of the day, primarily Netscape 4 and Internet Explorer 4. IE5/Mac was so advanced, it actually broke the web.
+<p>Esse é o chamado &#8220;doctype.&#8221; Há uma longa história por trás do doctype. Enquanto trabalhavam no Internet Explorer 5 para Mac, os desenvolvedores da Microsoft depararam-se com um problema. A próxima versão do browser tinha melhorado tanto seus padrões, que páginas antigas não eram mais apresentadas corretamente. Ou até eram apresentadas (de acordo com as especificações), mas eles esperavam que fossem apresentadas <em>incorretamente</em>. Essas páginas foram criadas baseadas nas peculiaridades dos browsers que dominavam na época, como Netscape 4 e o Internet Explorer 4. O IE5/Mac estava tão avançado que acabou quebrando a web.
 
-<p>Microsoft came up with a novel solution. Before rendering a page, IE5/Mac looked at the &#8220;doctype,&#8221; which is typically the first line of the <abbr>HTML</abbr> source (even before the <code>&lt;html></code> element). Older pages (that relied on the rendering quirks of older browsers) generally didn&#8217;t have a doctype at all. IE5/Mac rendered these pages like older browsers did. In order to &#8220;activate&#8221; the new standards support, web page authors had to opt in, by supplying the right doctype before the <code>&lt;html></code> element.
+<p>A Microsoft apareceu com uma nova solução. Antes de renderizar uma página, o IE5 verificava o &#8220;doctype,&#8221; que geralmente era a primeira linha do código <abbr>HTML</abbr> (até mesmo antes do próprio elemento <code>&lt;html></code>). Páginas antigas (que seguiam os padrões dos browsers antigos) geralmente não tinham o doctype. O IE5 renderizava essas páginas como os browsers antigos faziam. Para ativar os novos padrões, os autores das páginas web tinham que optar por inserir o doctype antes do elemento <code>&lt;html></code>.
 
-<p>This idea spread like wildfire, and soon all major browsers had two modes: &#8220;quirks mode&#8221; and &#8220;standards mode.&#8221; Of course, this being the web, things quickly got out of hand. When Mozilla tried to ship version 1.1 of their browser, they discovered that there were pages being rendered in &#8220;standards mode&#8221; that were actually relying on one specific quirk. Mozilla had just fixed its rendering engine to eliminate this quirk, and thousands of pages broke all at once. Thus was created &mdash; and I am not making this up &mdash; &#8220;<a href="https://developer.mozilla.org/en/Gecko's_%22Almost_Standards%22_Mode">almost standards mode</a>.&#8221;
+<p>Essa idéia se espalhou como fogo, e logo, todos os principais browsers passaram a ter duas opções de interpretação: &#8220;modo peculiar (quirks mode)&#8221; e &#8220;modo padronizado (standards mode)&#8221;. É claro que, tratando-se da web, as coisas rapidamente perderam o controle. Quando a Mozilla tentou enviar a versão 1.1 de seu browser, eles descobriram que haviam páginas sendo apresentadas no &#8220;modo padronizado&#8221; que na verdade dependiam de uma peculiaridade específica. A Mozilla tinha acabado de corrigir sua <em>rendering engine</em> para eliminar essa peculiaridade, mas milhares de páginas quebraram de uma vez. Então foi criado &mdash; e não estou inventando isso &mdash; &#8220;<a href="https://developer.mozilla.org/en/Gecko's_%22Almost_Standards%22_Mode">o modo quase padronizado</a>.&#8221;
 
-<p>In his seminal work, <a href=http://hsivonen.iki.fi/doctype/>Activating Browser Modes with Doctype</a>, Henri Sivonen summarizes the different modes:
+<p>Neste trabalho seminal, <a href=http://hsivonen.iki.fi/doctype/>Activating Browser Modes with Doctype</a>, Henri Sivonen resume os diferentes modos de renderização:
 
 <blockquote>
 <dl>
-<dt>Quirks Mode
-<dd>In the Quirks mode, browsers violate contemporary Web format specifications in order to avoid &#8220;breaking&#8221; pages authored according to practices that were prevalent in the late 1990s.
-<dt>Standards Mode
-<dd>In the Standards mode, browsers try to give conforming documents the specification-wise correct treatment to the extent implemented in a particular browser. <abbr>HTML5</abbr> calls this mode the &#8220;no quirks mode.&#8221;
-<dt>Almost Standards Mode
-<dd>Firefox, Safari, Chrome, Opera (since 7.5) and IE8 also have a mode known as &#8220;Almost Standards mode,&#8221; that implements the vertical sizing of table cells traditionally and not rigorously according to the CSS2 specification. <abbr>HTML5</abbr> calls this mode the &#8220;limited quirks mode.&#8221;
+<dt>Quirks Mode (Modo peculiar)
+<dd>No Quirks mode, os browsers violam as especificações da web contemporânea para evitar &#8220;quebrar&#8221; páginas criadas de acordo com as práticas que prevaleciam no anos 90.
+<dt>Standards Mode (Modo padrão)
+<dd>No Standards mode, os browsers tentam, conforme os documentos da especificação, tratar corretamente a extensão implementada para um browser específico. Para o <abbr>HTML5</abbr> este é o &#8220;quirks mode.&#8221;
+<dt>Almost Standards Mode (Modo quase padrão)
+<dd>Firefox, Safari, Chrome, Opera (a partir da versão 7.5) e o IE8 também possuem o modo conhecido como &#8220;modo quase padrão&#8221;, que implementa o dimensionamento vertical das células de tabelas tradicionalmente e não rigorosamente de acordo com a especificação CSS2. Para o <abbr>HTML5</abbr> este é o &#8220;limited quirks mode.&#8221;
 </dl>
 </blockquote>
 
-<p>(You should read the rest of Henri&#8217;s article, because I&#8217;m simplifying immensely here. Even in IE5/Mac, there were a few older doctypes that didn&#8217;t count as far as opting into standards support. Over time, the list of quirks grew, and so did the list of doctypes that triggered &#8220;quirks mode.&#8221; The last time I tried to count, there were 5 doctypes that triggered &#8220;almost standards mode,&#8221; and 73 that triggered &#8220;quirks mode.&#8221; But I probably missed some, and I&#8217;m not even going to talk about the crazy shit that Internet Explorer 8 does to switch between its four &mdash; four! &mdash; different rendering modes. <a href=http://hsivonen.iki.fi/doctype/ie8-mode.png>Here&#8217;s a flowchart</a>. Kill it. Kill it with fire.)
+<p>(Você deveria ler o resto do artigo de Henri, pois estou apenas simplificando aqui. Até no IE5/Mac, haviam alguns doctypes antigos que não contavam como opção padronizada. Ao longo do tempo, a lista de peculiaridades cresceu, assim como a lista de doctypes que as desencadeava. A última vez que tentei contar, haviam 5 doctypes que disparavam o &#8220;almost standards mode,&#8221; e 73 que disparavam o &#8220;quirks mode.&#8221; Mas provavelmente esqueci de alguns e não vou nem falar sobre a besteira que o Internet Explorer 8 faz para trocar entre seus quatro, &mdash; quatro! &mdash; diferentes modos de renderização. <a href=http://hsivonen.iki.fi/doctype/ie8-mode.png>Este é o diagrama de fluxo</a>. Mate-o e queime-o.)
 
-<p>Now then. Where were we? Ah yes, the doctype:
+<p>Agora onde estavamos? Ah sim, o doctype:
 
 <pre><code>&lt;!DOCTYPE html
           PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"></code></pre>
 
-<p>That happens to be one of the 15 doctypes that trigger &#8220;standards mode&#8221; in all modern browsers. There is nothing wrong with it. If you like it, you can keep it. Or you can change it to the <abbr>HTML5</abbr> doctype, which is shorter and sweeter and also triggers &#8220;standards mode&#8221; in all modern browsers.
+<p>Este passa a ser um dos 15 doctypes que disparam o &#8220;standards mode&#8221; em todos os browsers atuais. Não há nada de errado com ele. Se você gosta dele, pode ficar. Ou você pode muda-lo para o doctype do <abbr>HTML5</abbr>, que é menor e melhor, e também dispara o &#8220;standards mode&#8221; em todos os browsers atuais.
 
-<p>This is the <abbr>HTML5</abbr> doctype:
+<p>Este é o doctype do <abbr>HTML5</abbr>:
 
 <pre><code>&lt;!DOCTYPE html></code></pre>
 
-<p>That&#8217;s it. Just 15 characters. It&#8217;s so easy, you can type it by hand and not screw it up.
+<p>É só isso. Apenas 15 caracteres. É tão fácil que você pode digitá-lo na mão sem medo de errar.
 
 <p class=a>&#x2767;
 
