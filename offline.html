@@ -64,7 +64,7 @@ body{counter-reset:h1 8}
 
 <pre><code>CACHE MANIFEST</code></pre>
 
-<p>Depois disso, todos os arquivos manifesto são divididos em três partes: a seção &#8220;explícita&#8221;, a seção &#8220;fallback&#8221;, e a seção &#8220;lista branca online&#8221;. Cada seção tem um header, na sua própria linha. Se o arquivo manifesto não tiver nenhum desses cabeçalhos de seção, todos os recursos listados estão implicitamente na seção &#8220;explícita&#8221;. Try not to dwell on the terminology, lest your head explode.
+<p>Depois disso, todos os arquivos manifesto são divididos em três partes: a seção &#8220;explícita&#8221;, a seção &#8220;fallback&#8221;, e a seção &#8220;lista branca online&#8221;. Cada seção tem um header, na sua própria linha. Se o arquivo manifesto não tiver nenhum desses cabeçalhos de seção, todos os recursos listados estão implicitamente na seção &#8220;explícita&#8221;. Tente não se debruçar sobre a terminologia, se não sua cabeça irá explodir.
 
 <p>Aqui está um arquivo manifesto válido. Ele lista três recursos: um arquivo <abbr>CSS</abbr>, um arquivo JavaScript, e uma imagem <abbr>JPEG</abbr>.
 
@@ -85,9 +85,9 @@ R: Sim e não. Se a sua aplicação web inteira está contida em uma única pág
 </div>
 </div>
 
-<h3 id=network>Network sections</h3>
+<h3 id=network>Seções de Rede</h3>
 
-<p>Here is a slightly more complicated example. Suppose you want your clock application to track visitors, using a <abbr>tracking.cgi</abbr> script that is loaded dynamically from an <code>&lt;img src></code> attribute. Caching this resource would defeat the purpose of tracking, so this resource should never be cached and never be available offline. Here is how you do that:
+<p>Aqui está um exemplo um pouquinho mais complicado. Suponha que você queira que sua aplicação relógio rastreie os visitantes, usando um script <abbr>tracking.cgi</abbr> que é carregado dinâmicamente por um atributo <code>&lt;img src></code>. Realizando o cache desse recurso irá acabar com o propósito desse rastreamento, então esse recurso nunca deve realizar cache e nunca deve estar disponível offline. Aqui está o que você deve fazer:
 
 <pre><code>CACHE MANIFEST
 <mark>NETWORK:
