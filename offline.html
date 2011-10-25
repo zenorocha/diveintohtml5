@@ -76,11 +76,11 @@ body{counter-reset:h1 8}
 <p>Esse arquivo de manifesto cache não possui cabeçalhos de seção, então todos os recursos listados estão na seção &#8220;explícita&#8221; por padrão. Recursos na seção &#8220;explícita&#8221; serão feitos download e cache localmente, e serão usados no lugar de seus respectivos semelhantes sempre que você estiver descontectado de uma rede. Assim que for carregamento esse arquivo de manifesto cache, seu navegador irá realizar o download de <code>clock.css</code>, <code>clock.js</code>, e <code>clock-face.jpg</code> do diretório raíz do seu servidor web. Então você pode desplugar seu cabo de rede e atualizar a página, e todos aqueles recursos estarão disponíveis offline.
 
 <div class="pf clear">
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor Marcação</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Do I need to list my <abbr>HTML</abbr> pages in my cache manifest?<br>
-A: Yes and no. If your entire web application is contained in a single page, just make sure that page points to the cache manifest using the <code>manifest</code> attribute. When you navigate to an <abbr>HTML</abbr> page with a <code>manifest</code> attribute, the page itself is assumed to be part of the web application, so you don&#8217;t need to list it in the manifest file itself. However, if your web application spans multiple pages, you should list all of the <abbr>HTML</abbr> pages in the manifest file, otherwise the browser would not know that there are other <abbr>HTML</abbr> pages that need to be downloaded and cached.
+<p><span>&#x261E;</span>P: Preciso listar minhas páginas <abbr>HTML</abbr> no meu manifesto cache?<br>
+R: Sim e não. Se a sua aplicação web inteira está contida em uma única página, apenas certifique-se que a página aponta para o manifesto cache usando o atributo <code>manifest</code>. Quando você navega em uma página <abbr>HTML</abbr> com o atributo <code>manifest</code>, a página em si assume ser parte da aplicação web, então você não precisa listá-la no arquivo manifesto. Entretanto, se a sua aplicação web agrega múltiplas páginas, você deve listar todas as páginas <abbr>HTML</abbr> no arquivo manifesto, caso contrário o navegador não saberá que existem outras páginas <abbr>HTML</abbr> que precisam fazer download e cache.
 </blockquote>
 </div>
 </div>
