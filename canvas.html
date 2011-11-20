@@ -33,7 +33,7 @@ body{counter-reset:h1 4}
 <canvas width=300 height=225 class=clear style="float:left"></canvas>
 <p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x219c;</span> Canvas Invisível
 
-<p class=clear>Seu uso se assemelha a isso:
+<p class=clear>Seu sintaxe se assemelha a isso:
 
 <pre><code>&lt;canvas width="300" height="225">&lt;/canvas></code></pre>
 
@@ -42,19 +42,19 @@ body{counter-reset:h1 4}
 <canvas width=300 height=225 class=clear style="border:1px dotted;float:left"></canvas>
 <p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x219c;</span> Canvas com borda
 
-<p class=clear>You can have more than one <code>&lt;canvas></code> element on the same page. Each canvas will show up in the <abbr>DOM</abbr>, and each canvas maintains its own state. If you give each canvas an <code>id</code> attribute, you can access them just like any other element.
+<p class=clear>Você pode ter mais de um elemento <code>&lt;canvas></code> na mesma página. Cada canvas será mostrado no <abbr>DOM</abbr>, e cada um mantém seu próprio estado. Se você der para cada canvas um atributo <code>id</code>, você pode acessá-lo como qualquer outro elemento.
 
-<p>Let&#8217;s expand that markup to include an <code>id</code> attribute:
+<p>Vamos expandir nosso exemplo de canvas para incluir o atributo <code>id</code>:
 
 <pre><code>&lt;canvas id="a" width="300" height="225">&lt;/canvas></code></pre>
 
-<p>Now you can easily find that <code>&lt;canvas></code> element in the <abbr>DOM</abbr>.
+<p>Agora você pode encontrar facilmente este <code>&lt;canvas></code> dentro do <abbr>DOM</abbr>.
 
 <pre><code>var a_canvas = document.getElementById("a");</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=shapes>Simple Shapes</h2>
+<h2 id=shapes>Formas simples</h2>
 
 <table class=bc>
 <thead>
