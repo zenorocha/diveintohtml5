@@ -56,9 +56,9 @@ body{counter-reset:h1 5}
 <p>Quando você &#8220;assiste um vídeo,&#8221; seu video player está fazendo pelo menos três coisas ao mesmo tempo: 
  
 <ol> 
-<li>Interpreting the container format to find out which video and audio tracks are available, and how they are stored within the file so that it can find the data it needs to decode next</li> 
-<li>Decoding the video stream and displaying a series of images on the screen</li> 
-<li>Decoding the audio stream and sending the sound to your speakers</li> 
+<li>Interpretando o formato de embalagem para descobrir quais faixas de vídeo e áudio estão disponíveis, e como elas são armazenadas dentro do arquivo para que possa encontrar os dados que necessitam ser decodificados depois</li> 
+<li>Decodificando o fluxo de vídeo e exibindo uma série de imagens na tela</li> 
+<li>Decodificando o fluxo de áudio e enviando o som para as caixas de som</li> 
 </ol> 
  
 <p>A <i>video codec</i> is an algorithm by which a video stream is encoded, i.e. it specifies how to do #2 above. (The word &#8220;codec&#8221; is a <a href=http://en.wikipedia.org/wiki/Portmanteau>portmanteau</a>, a combination of the words &#8220;coder&#8221; and &#8220;decoder.&#8221;) Your video player <i>decodes</i> the video stream according to the <i>video codec</i>, then displays a series of images, or &#8220;frames,&#8221; on the screen. Most modern video codecs use all sorts of tricks to minimize the amount of information required to display one frame after the next. For example, instead of storing each individual frame (like a screenshot), they will only store the differences between frames. Most videos don&#8217;t actually change all that much from one frame to the next, so this allows for high compression rates, which results in smaller file sizes.
