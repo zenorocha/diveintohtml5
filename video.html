@@ -93,14 +93,14 @@ Most non-PC devices that play H.264 video (including iPhones and standalone Blu-
 
 <p>A não ser que você ainda esteja parado nos filmes feitos antes de <a href=http://www.filmsite.org/jazz.html>1927</a>, você irá querer uma trilha de som no seu vídeo. Como <a href=#video-codecs>codecs de vídeo</a>, <i>codecs de áudio</i> são algoritmos nos quais fluxos de áudio são codificados. Como codecs de vídeo, os codecs de áudio são <i>com perda</i> e <i>sem perda</i>. E como os codecs de vídeo sem perda, áudios sem perda são realmente muito grandes para colocar na web. Então irei me concentrar em codecs de áudio com perda.
 
-<p>Actually, it&#8217;s even narrower than that, because there are different categories of lossy audio codecs. Audio is used in places where video is not (telephony, for example), and there is an entire category of <a href=http://www.voip-info.org/wiki-Codecs>audio codecs optimized for encoding speech</a>. You wouldn&#8217;t rip a music CD with these codecs, because the result would sound like a 4-year-old singing into a speakerphone. But you <em>would</em> use them in an <a href=http://www.asterisk.org/>Asterisk</a> PBX, because bandwidth is precious, and these codecs can compress human speech into a fraction of the size of general-purpose codecs. However, due to lack of support in both native browsers and third-party plugins, speech-optimized audio codecs never really took off on the web. So I&#8217;ll concentrate on <i>general purpose lossy audio codecs</i>.
+<p>Na verdade, é ainda mais estreito que isso, porque eles estão em diferentes categorias de codecs de áudio com perda. Áudio é usado em lugares onde o vídeo não é (telefonia, por exemplo) e existe toda uma categoria de <a href=http://www.voip-info.org/wiki-Codecs>codecs de áudio otimizados para codificar voz</a>. Você não iria utilizar um desses codecs para um CD de música, porque o resultado seria como uma criança de 4 anos de idade cantando em um viva-voz. Mas você <em>iria</em> usar eles em um <a href=http://www.asterisk.org/>Asterisk</a> PBX, porque a banda é preciosa, e esses codecs podem comprimir a voz humana em uma fração do tamanho que codecs gerais. Entretanto, graças a falta de suporte em ambos navegadores nativos ou plugins terceiros, codecs de áudio otimizados para voz nunca chegaram realmente na web. Então irei concentrar em <i>codecs de áudio com propósito geral</i>.
  
-<p><a href=#video-codecs>As I mentioned earlier</a>, when you &#8220;watch a video,&#8221; your computer is doing at least three things at once: 
+<p><a href=#video-codecs>Eu mencionei mais cedo</a>, quando você &#8220;assiste um vídeo,&#8221; seu computador está fazendo ao menos três coisas ao mesmo tempo: 
  
 <ol> 
-<li>Interpreting the container format</li> 
-<li>Decoding the video stream</li> 
-<li>Decoding the audio stream and sending the sound to your speakers</li> 
+<li>Interpretando o contêiner do formato</li> 
+<li>Decodificando o fluxo de vídeo</li> 
+<li>Decodificando o fluxo de áudio e enviando o som para os alto-faltantes</li> 
 </ol> 
  
 <p>The <i>audio codec</i> specifies how to do #3 &#8212; decoding the audio stream and turning it into digital waveforms that your speakers then turn into sound. As with video codecs, there are all sorts of tricks to minimize the amount of information stored in the audio stream. And since we&#8217;re talking about <i>lossy</i> audio codecs, information is being lost during the recording <span class=u>&rarr;</span> encoding <span class=u>&rarr;</span> decoding <span class=u>&rarr;</span> listening lifecycle. Different audio codecs throw away different things, but they all have the same purpose: to trick your ears into not noticing the parts that are missing. 
