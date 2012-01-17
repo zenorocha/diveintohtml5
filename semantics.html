@@ -298,38 +298,38 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <p class=a>&#x2767;
 
-<h2 id=unknown-elements>A long digression into how browsers handle unknown elements</h2>
+<h2 id=unknown-elements>Uma longa digressão em como os browsers lidam com elementos desconhecidos</h2>
 
-<p>Every browser has a master list of <abbr>HTML</abbr> elements that it supports. For example, Mozilla Firefox&#8217;s list is stored in <a href="http://mxr.mozilla.org/seamonkey/source/parser/htmlparser/src/nsElementTable.cpp">nsElementTable.cpp</a>. Elements not in this list are treated as &#8220;unknown elements.&#8221;  There are two fundamental problems with unknown elements:
+<p>Todo browser tem uma lista de elementos <abbr>HTML</abbr> que suporta. Por exemplo, a lista do Mozilla Firefox está armazenada em <a href="http://mxr.mozilla.org/seamonkey/source/parser/htmlparser/src/nsElementTable.cpp">nsElementTable.cpp</a>. Elementos que não estão nesta lista são tratados como &#8220;elementos desconhecidos.&#8221;  Há dois problemas fundamentais com elementos desconhecidos:
 
 <ol>
-<li><b>How should the element be styled?</b>  By default, <code>&lt;p></code> has spacing on the top and bottom, <code>&lt;blockquote></code> is indented with a left margin, and <code>&lt;h1></code> is displayed in a larger font. But what default styles should be applied to unknown elements?</li>
-<li><b>What should the element&#8217;s DOM look like?</b>  Mozilla&#8217;s <code>nsElementTable.cpp</code> includes information about what kinds of other elements each element can contain. If you include markup like <code>&lt;p>&lt;p></code>, the second paragraph element implicitly closes the first one, so the elements end up as siblings, not parent-and-child. But if you write <code>&lt;p>&lt;span></code>, the <code>span</code> does not close the paragraph, because Firefox knows that <code>&lt;p></code> is a block element that can contain the inline element <code>&lt;span></code>. So, the <code>&lt;span></code> ends up as a child of the <code>&lt;p></code> in the DOM.</li>
+<li><b>Como deve ser o estilo do elemento?</b>  Por padrão, <code>&lt;p></code> tem espaçamento na parte superior e inferior, <code>&lt;blockquote></code> é recuado com uma margem esquerda, e <code>&lt;h1></code> é exibido em uma fonte maior. Mas quais estilos padrão devem ser aplicados aos elementos desconhecidos?</li>
+<li><b>Como o elemento do DOM deve parecer?</b>  O elemento <code>nsElementTable.cpp</code> do Mozilla inclui informações sobre quais tipos de outros elementos cada um pode conter. Se você incluir markup como <code>&lt;p>&lt;p></code>, o elemento do segundo parágrafo implicitamente fecha o primeiro, assim os elementos terminam como irmãos, e não pai e filho. Mas se você escrever <code>&lt;p>&lt;span></code>, o <code>span</code> não fecha o parágrafo, porque o Firefox sabe que <code>&lt;p></code> é um elemento de bloco que pode conter o elemento de linha <code>&lt;span></code>. Então, o <code>&lt;span></code> termina como um filho do <code>&lt;p></code> no DOM.</li>
 </ol>
 
-<p>Different browsers answer these questions in different ways. (Shocking, I know.) Of the major browsers, Microsoft Internet Explorer&#8217;s answer to both questions is the most problematic, but every browser needs a little bit of help here.
+<p>Browsers diferentes respondem a essas perguntas de diferentes maneiras. (Revoltante, Eu sei). Dos principais browsers, a resposta do Microsoft Internet Explorer para as duas perguntas é a mais problematica, mas todo browser precisa de uma pequena ajuda aqui.
 
-<p>The first question should be relatively simple to answer: don&#8217;t give any special styling to unknown elements. Just let them inherit whatever CSS properties are in effect wherever they appear on the page, and let the page author specify all styling with CSS. And that works, mostly, but there&#8217;s one little gotcha you need to be aware of.
+<p>A primeira pergunta deveria ser relativamente simples de responder: Não aplique nenhum estilo especial para elementos desconhecidos. Apenas deixe-os herdar qualquer que seja as propriedades CSS que estão em vigor e onde quer que apareça, e deixe que o autor da página especifique todos os estilos com CSS. E isso funciona, com a maioria, mas há uma pequena pegadinha que você precisa estar ciente.
 
 <div class=pf>
-<h4>Professor Markup Says</h4>
+<h4>Professor Markup diz</h4>
 <div class=inner>
 <blockquote>
-<p>All browsers render unknown elements inline, <i>i.e.</i> as if they had a <code>display:inline</code> <abbr>CSS</abbr> rule.
+<p>Todos os browsers apresentam elementos desconhecidos como elementos de linha, <i>i.e.</i> como se eles tivessem a regra <code>display:inline</code> de <abbr>CSS</abbr>.
 </blockquote>
 </div>
 </div>
 
-<p>There are several new elements defined in <abbr>HTML5</abbr> which are block-level elements. That is, they can contain other block-level elements, and <abbr>HTML5</abbr>-compliant browsers will style them as <code>display:block</code> by default. If you want to use these elements in older browsers, you will need to define the display style manually:
+<p>Há diversos elementos novos definidos no <abbr>HTML5</abbr> que são de nível de bloco. Isto é, eles podem conter outros elementos com nível de bloco, e os browsers compatíveis com o <abbr>HTML5</abbr> irão aplicar a propriedade <code>display:block</code> por padrão. Se você quiser utilizar esses elementos em browsers antigos, precisará definir a propriedade display manualmente:
 
 <pre><code>article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 
     display:block;
 }</code></pre>
 
-<p>(This code is lifted from Rich Clark&#8217;s <a href=http://html5doctor.com/html-5-reset-stylesheet/><abbr>HTML5</abbr> Reset Stylesheet</a>, which does many other things that are beyond the scope of this chapter.)
+<p>(Esse código é tirado de <a href=http://html5doctor.com/html-5-reset-stylesheet/><abbr>HTML5</abbr> Reset Stylesheet</a> de Rich Clark, o qual faz muitas outras coisas além do escopo deste capítulo).
 
-<p>But wait, it gets worse! Prior to version 9, Internet Explorer did not apply <em>any</em> styling on unknown elements. For example, if you had this markup:
+<p>Mas espere, fica pior! Antes da versão 9, o Internet Explorer não aplicou <em>qualquer</em> estilo nos elementos desconhecidos. Por exemplo, se você tivesse esse markup:
 
 <pre><code>&lt;style type="text/css">
   article { display: block; border: 1px solid red }
@@ -340,19 +340,19 @@ footer,header,hgroup,menu,nav,section {
 &lt;p>This is your &lt;span>first day&lt;/span>.&lt;/p>
 &lt;/article></code></pre>
 
-<p>Internet Explorer (up to and including IE 8) will not treat the <code>&lt;article></code> element as a block-level element, nor will it put a red border around the article. All the style rules are simply ignored. <a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML_Parsing>Internet Explorer 9 fixes this problem</a>.
+<p>O Internet Explorer (até a versão 8) não trata o elemento <code>&lt;article></code> como um elemento de nível de bloco, nem coloca uma borda vermelha em volta do article. Todos as regras de estilo são simplesmente ignoradas. <a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML_Parsing>O Internet Explorer 9 corrige este problema</a>.
 
-<p>The second problem is the DOM that browsers create when they encounter unknown elements. Again, the most problematic browser is older versions of Internet Explorer (before version 9, <a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML_Parsing>which fixes this problem too</a>). If IE 8 doesn&#8217;t explicitly recognize the element name, it will insert the element into the DOM <em>as an empty node with no children</em>. All the elements that you would expect to be direct children of the unknown element will actually be inserted as siblings instead.
+<p>O segundo problema é o DOM que os browsers criam quando encontram elementos desconhecidos. Novamente, o browser mais problemático são as versões antigas do Internet Explorer (antes da versão 9, <a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML_Parsing>a qual corrige esse problema também</a>). Se o IE 8 não reconhecer explicitamente o nome do elemento, ele irá inserir o elemento no DOM <em>como um nó vazio sem filhos</em>. Todos os elementos que você esperaria serem filhos diretos de um elemento desconhecido, na verdade estarão inseridos como irmãos do mesmo.
 
-<p>Here is some righteous <abbr>ASCII</abbr> art to illustrate the difference. This is the DOM that <abbr>HTML5</abbr> dictates:
+<p>Aqui está uma arte <abbr>ASCII</abbr> para ilustrar a diferença. Este é o DOM que o <abbr>HTML5</abbr> determina:
 
 <pre>article
 |
-+--h1 (child of article)
++--h1 (filho de article)
 |  |
 |  +--text node "Welcome to Initech"
 |
-+--p (child of article, sibling of h1)
++--p (filho de article, irmão de h1)
    |
    +--text node "This is your "
    |
@@ -362,13 +362,13 @@ footer,header,hgroup,menu,nav,section {
    |
    +--text node "."</pre>
 
-<p>But this is the DOM that Internet Explorer actually creates:
+<p>Mas esse é o DOM que o Internet Explorer atualmente cria:
 
-<pre>article (no children)
-h1 (sibling of article)
+<pre>article (sem filhos)
+h1 (irmão de article)
 |
 +--text node "Welcome to Initech"
-p (sibling of h1)
+p (irmão de h1)
 |
 +--text node "This is your "
 |
@@ -378,7 +378,7 @@ p (sibling of h1)
 |
 +--text node "."</pre>
 
-<p>There is a wonderous workaround for this problem. If you <a href=http://xopus.com/devblog/2008/style-unknown-elements.html>create a dummy <code>&lt;article></code> element</a> with JavaScript before you use it in your page, Internet Explorer will magically recognize the <code>&lt;article></code> element and let you style it with CSS. There is no need to ever insert the dummy element into the <abbr>DOM</abbr>. Simply creating the element once (per page) is enough to teach IE to style the element it doesn&#8217;t recognize.
+<p>Existe uma maravilhosa solução alternativa para este problema. Se você <a href=http://xopus.com/devblog/2008/style-unknown-elements.html>criar um elemento <code>&lt;article></code> falso</a> com JavaScript antes de usá-lo na página, o Internet Explorer irá magicamente reconhecer o elemento <code>&lt;article></code> e deixar você aplicar um estilo CSS nele. Não há necessidade de inserir o elemento falso dentro do <abbr>DOM</abbr>. Simplesmente criar o elemento uma vez (por página) é o suficiente para ensinar o IE como aplicar estilo ao elemento que ele não reconhece.
 
 <pre><code>&lt;html>
 &lt;head>
@@ -395,9 +395,9 @@ p (sibling of h1)
 &lt;/body>
 &lt;/html></code></pre>
 
-<p>This works in all versions of Internet Explorer, all the way back to IE 6! We can extend this technique to create dummy copies of all the new <abbr>HTML5</abbr> elements at once &mdash; again, they&#8217;re never inserted into the <abbr>DOM</abbr>, so you&#8217;ll never see these dummy elements &mdash; and then just start using them without having to worry too much about non-HTML5-capable browsers.
+<p>Isso funciona em todas as versões do Internet Explorer, até o IE 6! Nós podemos extender essa técnica para criar cópias falsas de todos os novos elementos do <abbr>HTML5</abbr> agora mesmo &mdash; novamente, eles nunca são inseridos no <abbr>DOM</abbr>, sendo que você nunca verá esses elementos falsos &mdash; e apenas começar usá-los sem se preocupar muito com os browsers não compatíveis com o HTML5.
 
-<p>Remy Sharp has done just that, with his aptly named <a href=http://remysharp.com/2009/01/07/html5-enabling-script/><abbr>HTML5</abbr> enabling script</a>. The script has gone through more than a dozen revisions since I started writing this book, but this is the basic idea:
+<p>Remy Sharp fez justamente isso, com seu acertadamente chamado <a href=http://remysharp.com/2009/01/07/html5-enabling-script/><abbr>HTML5</abbr> enabling script</a>. Esse script passou por mais de uma dúzia de revisões desde quando começei a escrever este livro, mas a idéia é basicamente esta:
 
 <pre><code>&lt;!--[if lt IE 9]>
 &lt;script>
@@ -410,13 +410,13 @@ p (sibling of h1)
 &lt;/script>
 &lt;![endif]--></code></pre>
 
-<p>The <code>&lt;!--[if lt IE 9]></code> and <code>&lt;![endif]--></code> bits are <a href="http://msdn.microsoft.com/en-us/library/ms537512(VS.85).aspx">conditional comments</a>. Internet Explorer interprets them like an <code>if</code> statement: &#8220;if the current browser is a version of Internet Explorer less than version 9, then execute this block.&#8221; Every other browser will treat the entire block as an <abbr>HTML</abbr> comment. The net result is that Internet Explorer (up to and including version 8) will execute this script, but other browsers will ignore the script altogether. This makes your page load faster in browsers that don&#8217;t need this hack.
+<p>Os trechos <code>&lt;!--[if lt IE 9]></code> e <code>&lt;![endif]--></code> são <a href="http://msdn.microsoft.com/en-us/library/ms537512(VS.85).aspx">comentários condicionais</a>. O Internet Explorer os interpreta como um <code>if</code>: &#8220;se o browser atual é uma versão do Internet Explorer anterior a versão 9, então executa este bloco.&#8221; Qualquer outro browser irá tratar todo o bloco como um comentário <abbr>HTML</abbr>. O resultado é que o Internet Explorer (até e incluindo a versão 8) executará este script, mas os outros browsers irão ignorar este script completamente. Isso faz sua página carregar mais rápido em browsers que não precisam deste hack.
 
-<p>The JavaScript code itself is relatively straightforward. The variable <var>e</var> ends up as an array of strings like <code>"abbr"</code>, <code>"article"</code>, <code>"aside"</code>, and so on. Then we loop through this array and create each of the named elements by calling <code>document.createElement()</code>. But since we ignore the return value, the elements are never inserted into the <abbr>DOM</abbr>. But this is enough to get Internet Explorer to treat these elements the way we want them to be treated, once we actually use them later in the page.
+<p>O código JavaScript é relativamente simples. A variável <var>e</var> termina como um array de strings como <code>"abbr"</code>, <code>"article"</code>, <code>"aside"</code>, e assim por diante. Depois percorremos o array e criamos cada elemento nomeado chamando <code>document.createElement()</code>. Mas uma vez que ignoramos o valor de retorno, os elementos nunca são inseridos dentro do <abbr>DOM</abbr>. Mas é o suficiente para o Internet Explorer tratar esses elementos do jeito que queremos que sejam tratados, uma vez que os usamos mais tarde na página.
 
-<p>That &#8220;later&#8221; bit is important. This script needs to be at the top of your page, preferably in your <code>&lt;head></code> element, not at the bottom. That way, Internet Explorer will execute the script <em>before</em> it parses your tags and attributes. If you put this script at the bottom of your page, it will be too late. Internet Explorer will have already misinterpreted your markup and constructed the wrong <abbr>DOM</abbr>, and it won&#8217;t go back and adjust it just because of this script.
+<p>Este trecho &#8220;mais tarde&#8221; é importante. Este script precisa estar no topo de sua página, preferencialmente em seu elemento <code>&lt;head></code>, e não no final. Dessa forma, o Internet Explorer irá executar este script <em>antes</em> de analisar suas tags e atributos. Se você colocar este script no final de sua página, ele o executará tarde. O Internet Explorer já terá mal interpretado sua marcação e construído o <abbr>DOM</abbr> errado, e não voltará para ajustá-lo por causa desse script.
 
-<p>Remy Sharp has &#8220;minified&#8221; this script and <a href=http://code.google.com/p/html5shiv/>hosted it on Google Project Hosting</a>. (In case you were wondering, the script itself is open source and MIT-licensed, so you can use it in any project.) If you like, you can even &#8220;hotlink&#8221; the script by pointing directly to the hosted version, like this:
+<p>Remy Sharp &#8220;minificou&#8221; este script e <a href=http://code.google.com/p/html5shiv/>o hospedou no Google Project Hosting</a>. (Para o caso de estar se perguntando, o script é open source e possui licença MIT, então pode ser usado em qualquer projeto.) Se preferir, você pode até &#8220;linkar&#8221; o script apontando diretamente para a versão hospedada, assim:
 
 <pre><code>&lt;head>
   &lt;meta charset="utf-8" />
@@ -426,7 +426,7 @@ p (sibling of h1)
   &lt;![endif]-->
 &lt;/head></code></pre>
 
-<p>Now we&#8217;re ready to start using the new semantic elements in <abbr>HTML5</abbr>.
+<p>Agora estamos prontos para começar a usar os novos elementos no <abbr>HTML5</abbr>.
 
 <p class=a>&#x2767;
 
@@ -826,37 +826,37 @@ p (sibling of h1)
 
 <p class=a>&#x2767;
 
-<h2 id=further-reading>Further Reading</h2>
+<h2 id=further-reading>Leitura complementar</h2>
 
-<p>Example pages used throughout this chapter:
+<p>Páginas de exemplo usadas em todo este capítulo:
 
 <ul>
 <li><a href=examples/blog-original.html>Original (<abbr>HTML</abbr> 4)</a>
-<li><a href=examples/blog-html5.html>Modified (<abbr>HTML5</abbr>)</a>
+<li><a href=examples/blog-html5.html>Modificado (<abbr>HTML5</abbr>)</a>
 </ul>
 
-<p>On character encoding:
+<p>Sobre codificação de caracteres:
 
 <ul>
-<li><a href="http://www.joelonsoftware.com/articles/Unicode.html">The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)</a> by <cite>Joel Spolsky</cite>
-<li><a href="http://www.tbray.org/ongoing/When/200x/2003/04/06/Unicode">On the Goodness of Unicode</a>, <a href="http://www.tbray.org/ongoing/When/200x/2003/04/13/Strings">On Character Strings</a>, and <a href="http://www.tbray.org/ongoing/When/200x/2003/04/26/UTF">Characters vs. Bytes</a> by <cite>Tim Bray</cite>
+<li><a href="http://www.joelonsoftware.com/articles/Unicode.html">The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)</a> por <cite>Joel Spolsky</cite>
+<li><a href="http://www.tbray.org/ongoing/When/200x/2003/04/06/Unicode">On the Goodness of Unicode</a>, <a href="http://www.tbray.org/ongoing/When/200x/2003/04/13/Strings">On Character Strings</a>, e <a href="http://www.tbray.org/ongoing/When/200x/2003/04/26/UTF">Characters vs. Bytes</a> por <cite>Tim Bray</cite>
 </ul>
 
-<p>On enabling new <abbr>HTML5</abbr> in Internet Explorer:
+<p>Sobre permitir novo <abbr>HTML5</abbr> no Internet Explorer:
 
 <ul>
-<li><a href=http://xopus.com/devblog/2008/style-unknown-elements.html>How to style unknown elements in IE</a> by <cite>Sjoerd Visscher</cite>
-<li><a href=http://ejohn.org/blog/html5-shiv/><abbr>HTML5</abbr> shiv</a> by <cite>John Resig</cite>
-<li><a href=http://remysharp.com/2009/01/07/html5-enabling-script/><abbr>HTML5</abbr> enabling script</a> by <cite>Remy Sharp</cite>
+<li><a href=http://xopus.com/devblog/2008/style-unknown-elements.html>How to style unknown elements in IE</a> por <cite>Sjoerd Visscher</cite>
+<li><a href=http://ejohn.org/blog/html5-shiv/><abbr>HTML5</abbr> shiv</a> por <cite>John Resig</cite>
+<li><a href=http://remysharp.com/2009/01/07/html5-enabling-script/><abbr>HTML5</abbr> enabling script</a> por <cite>Remy Sharp</cite>
 </ul>
 
-<p>On standards modes and doctype sniffing:
+<p>Sobre modos padrões e doctype:
 
 <ul>
-<li><a href=http://hsivonen.iki.fi/doctype/>Activating Browser Modes with Doctype</a> by <cite>Henri Sivonen</cite>. This is the only article you should read on the subject. Any article on doctypes that doesn&#8217;t reference Henri&#8217;s work is guaranteed to be out of date, incomplete, or wrong.
+<li><a href=http://hsivonen.iki.fi/doctype/>Activating Browser Modes with Doctype</a> por <cite>Henri Sivonen</cite>. Este é o único artigo que você deve ler sobre o assunto. Qualquer artigo sobre doctypes que não referencie o trabalho de Henri é garantia de estar desatualizado, incompleto, ou  incorreto.
 </ul>
 
-<p><abbr>HTML5</abbr>-aware validator:
+<p>Validador <abbr>HTML5</abbr>:
 
 <ul>
 <li><a href=http://html5.validator.nu/>html5.validator.nu</a>
@@ -864,13 +864,13 @@ p (sibling of h1)
 
 <p class=a>&#x2767;
 
-<p>This has been &#8220;What Does It All Mean?&#8221; The <a href=table-of-contents.html>full table of contents</a> has more if you&#8217;d like to keep reading.
+<p>Esse foi &#8220;O que significa tudo isso?&#8221; A <a href=table-of-contents.html>tabela completa de conteúdo</a> tem mais se você quiser continuar lendo.
 
 <div class=pf>
-<h4>Did You Know?</h4>
+<h4>Você sabia?</h4>
 <div class=moneybags>
-<blockquote><p>In association with Google Press, O&#8217;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &#8220;HTML5: Up &amp; Running,&#8221; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &#8220;HTML5: Up &amp; Running&#8221; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&#8217;Reilly</a>. You&#8217;ll get a book, and I&#8217;ll get a buck. I do not currently accept direct donations.
+<blockquote><p>Em associação com o Google Press, O&#8217;Reilly está distribuindo este livro em uma variedade de formatos, incluindo papel, ePub, Mobi, e <abbr>DRM</abbr>-de graça <abbr>PDF</abbr>. A edição paga é chamada de &#8220;HTML5: Up &amp; Running,&#8221; e está disponível agora. Este capítulo está incluído na edição paga.
+<p>Se você gostou deste capítulo e quer demonstrar sua apreciação, você pode <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">comprar &#8220;HTML5: Up &amp; Running&#8221; com este link afiliado </a> ou <a href=http://oreilly.com/catalog/9780596806033>comprar a edição eletrônica diretamente da O&#8217;Reilly</a>. Você terá um livro, e eu um dinheirinho. Eu não estou aceitando doações diretas.
 </blockquote>
 </div>
 </div>
