@@ -20,7 +20,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <p class=f><img src=i/aoc-e.png alt=E width=107 height=105>sse capítulo pegará uma página <abbr>HTML</abbr> a qual não há nada de errado e irá melhorá-la. Algumas partes ficarão menores, outras partes maiores. Tudo isso ficará com uma melhor semântica. E ficará demais.
 
-<p style="clear:both"><a href=examples/blog-original.html>Esta é a página em questão</a>. Abra a página em uma nova aba e não volte até dar uma olhada no código fonte ao menos uma vez.
+<p style="clear:both"><a href=examples/blog-original.html>Esta é a página em questão</a>. Abra a página em uma nova aba e não volte até dar uma olhada no código fonte pelo menos uma vez.
 
 <p class=a>&#x2767;
 
@@ -36,7 +36,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <p>A Microsoft apareceu com uma nova solução. Antes de renderizar uma página, o IE5 verificava o &#8220;doctype,&#8221; que geralmente era a primeira linha do código <abbr>HTML</abbr> (até mesmo antes do próprio elemento <code>&lt;html></code>). Páginas antigas (que seguiam os padrões dos browsers antigos) geralmente não tinham o doctype. O IE5 renderizava essas páginas como os browsers antigos faziam. Para ativar os novos padrões, os autores das páginas web tinham que optar por inserir o doctype antes do elemento <code>&lt;html></code>.
 
-<p>Essa idéia se espalhou como fogo, e logo, todos os principais browsers passaram a ter duas opções de interpretação: &#8220;modo peculiar (quirks mode)&#8221; e &#8220;modo padronizado (standards mode)&#8221;. É claro que, tratando-se da web, as coisas rapidamente perderam o controle. Quando a Mozilla tentou enviar a versão 1.1 de seu browser, eles descobriram que haviam páginas sendo apresentadas no &#8220;modo padronizado&#8221; que na verdade dependiam de uma peculiaridade específica. A Mozilla tinha acabado de corrigir sua <em>rendering engine</em> para eliminar essa peculiaridade, mas milhares de páginas quebraram de uma vez. Então foi criado &mdash; e não estou inventando isso &mdash; &#8220;<a href="https://developer.mozilla.org/en/Gecko's_%22Almost_Standards%22_Mode">o modo quase padronizado</a>.&#8221;
+<p>Essa idéia se espalhou como fogo, e logo, todos os principais browsers passaram a ter duas opções de interpretação: &#8220;modo peculiar (quirks mode)&#8221; e &#8220;modo padronizado (standards mode)&#8221;. É claro que, tratando-se da web, as coisas rapidamente perderam o controle. Quando a Mozilla tentou enviar a versão 1.1 de seu browser, eles descobriram que haviam páginas sendo apresentadas no &#8220;modo padronizado&#8221; que na verdade dependiam de uma peculiaridade específica. A Mozilla tinha acabado de corrigir sua <em>rendering engine</em> para eliminar essa peculiaridade, mas milhares de páginas quebraram de uma vez. Então foi criado &mdash; e não estou inventando isso &mdash; &#8220;<a href="https://developer.mozilla.org/en/Gecko's_%22Almost_Standards%22_Mode">o modo quase padronizado (almost standards mode)</a>.&#8221;
 
 <p>Neste trabalho seminal, <a href=http://hsivonen.iki.fi/doctype/>Activating Browser Modes with Doctype</a>, Henri Sivonen resume os diferentes modos de renderização:
 
@@ -59,7 +59,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
           PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"></code></pre>
 
-<p>Este passa a ser um dos 15 doctypes que disparam o &#8220;standards mode&#8221; em todos os browsers atuais. Não há nada de errado com ele. Se você gosta dele, pode ficar. Ou você pode muda-lo para o doctype do <abbr>HTML5</abbr>, que é menor e melhor, e também dispara o &#8220;standards mode&#8221; em todos os browsers atuais.
+<p>Este passa a ser um dos 15 doctypes que disparam o &#8220;standards mode&#8221; em todos os browsers atuais. Não há nada de errado com ele. Se você gosta dele, pode ficar. Ou você pode mudá-lo para o doctype do <abbr>HTML5</abbr>, que é menor e melhor, e também dispara o &#8220;standards mode&#8221; em todos os browsers atuais.
 
 <p>Este é o doctype do <abbr>HTML5</abbr>:
 
@@ -81,7 +81,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
       lang="en"
       xml:lang="en"></code></pre></td></table>
 
-<p>Não há nada de errado com esta marcação. De novo, se você gosta dela, pode ficar. É válido no <abbr>HTML5</abbr>. Mas algumas partes não são mais necessárias no <abbr>HTML5</abbr>, então você pode economizar alguns bytes ao removê-las.
+<p>Não há nada de errado com esta implementação. De novo, se você gosta dela, pode ficar. É válido no <abbr>HTML5</abbr>. Mas algumas partes não são mais necessárias no <abbr>HTML5</abbr>, então você pode economizar alguns bytes ao removê-las.
 
 <p>A primeira coisa a se discutir é o atributo <code>xmlns</code>. É um vestígio do <a href=http://www.w3.org/TR/xhtml1/><abbr>XHTML</abbr> 1.0</a>. Ele serve para saber que os elementos da página estão dentro do namespace <abbr>XHTML</abbr>, <code>http://www.w3.org/1999/xhtml</code>. Mas os elementos no <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/infrastructure.html#xml>estão sempre neste namespace</a>, sendo que você não precisa mais declará-lo explicitamente. Sua página <abbr>HTML5</abbr> funcionará exatamente igual em todos os browsers, este atributo estando ou não presente.
 
@@ -187,7 +187,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 <p>O comportamento exato para links de recursos externos depende da exata relação, como definido para o tipo de link relevante.
 </blockquote>
 
-<p>Dos exemplos que acabei de dar, somente o primeiro (<code>rel="stylesheet"</code>) é um link para um recurso externo. O resto são hyperlinks para outros documentos. Você pode querer seguir esse links, ou não, mas eles não são exigidos para ver a página atual.
+<p>Dos exemplos que acabei de dar, somente o primeiro (<code>rel="stylesheet"</code>) é um link para um recurso externo. O resto são hyperlinks para outros documentos. Você pode querer seguir esses links, ou não, mas eles não são exigidos para ver a página atual.
 
 <p>Geralmente, link relations são vistos nos elementos <code>&lt;link></code> dentro do elemento <code>&lt;head></code> de uma página. Alguns podem também ser usados em elementos <code>&lt;a></code>, mas isso é incomum mesmo quando permitido. <abbr>HTML5</abbr> também permite alguns relations em elementos <code>&lt;area></code>, mais isso é até <em>menos</em> comum (HTML 4 não permitia um atributo <code>rel</code> nos elementos <code>&lt;area></code>). Veja <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#linkTypes>a tabela completa de link relations</a> para verificar onde você pode usar valores específicos de <code>rel</code>.
 
@@ -228,7 +228,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <h3 id=new-relations>Outros Link Relations no HTML5</h3>
 
-<p><code>rel="author"</code> é usado para apontar para informações sobre o autor da página. Pode se um endereço <code>mailto:</code>, though it doesn&#8217;t have to be. Ele pode simplesmente levar a um formulário de contato ou a uma página &#8220;sobre o autor&#8221;.
+<p><code>rel="author"</code> é usado para apontar para informações sobre o autor da página. Pode se um endereço <code>mailto:</code>, embora não precise ser. Ele pode simplesmente levar a um formulário de contato ou a uma página &#8220;sobre o autor&#8221;.
 
 <p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-external>rel="external"</a> &#8220;indica que o link trata-se de um documento que não faz parte do site em que o documento atual está.&#8221; Acredito que isso foi popularizado pela <a href=http://www.wordpress.org/>WordPress</a>, a qual o utiliza nos links dos comentários deixados pelas pessoas.
 
@@ -236,7 +236,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <p>HTML 4 usava <a href=http://www.w3.org/TR/html401/types.html#type-links><code>rel="start"</code>, <code>rel="prev"</code>, and <code>rel="next"</code></a> para definir relações entre páginas que fazem parte de uma série (como capítulos de um livro ou até posts de um blog). O único que era utilizado corretamente era o <code>rel="next"</code>. As pessoas usavam <code>rel="previous"</code> ao invés de <code>rel="prev"</code>; usavam <code>rel="begin"</code> e <code>rel="first"</code> ao invés de <code>rel="start"</code>; utilizavam <code>rel="end"</code> invés de <code>rel="last"</code>. Oh, e &mdash; por conta própria &mdash; eles criaram <code>rel="up"</code> para apontar para uma &#8220;página pai&#8221;.
 
-<p><abbr>HTML5</abbr> inclui <code>rel="first"</code>, que é a variação mais comum das diferentes maneiras para dizer &#8220;primeira página da série.&#8221; (<code>rel="start"</code> is a non-conforming synonym, provided for backward compatibility.) Também inclui <code>rel="prev"</code> e <code>rel="next"</code>, igual ao <abbr>HTML</abbr> 4, e suporta <code>rel="previous"</code> para compatibilidade, assim como <code>rel="last"</code> (a última da série, começada por <code>rel="first"</code>) e <code>rel="up"</code>.
+<p><abbr>HTML5</abbr> inclui <code>rel="first"</code>, que é a variação mais comum das diferentes maneiras para dizer &#8220;primeira página da série.&#8221; (<code>rel="start"</code> é um sinônimo sem conformidade, fornecido para compatibilidade.) Também inclui <code>rel="prev"</code> e <code>rel="next"</code>, igual ao <abbr>HTML</abbr> 4, e suporta <code>rel="previous"</code> para compatibilidade, assim como <code>rel="last"</code> (a última da série, começada por <code>rel="first"</code>) e <code>rel="up"</code>.
 
 <p>A melhor maneira de pensar em <code>rel="up"</code> é olhar para sua trilha de navegação (ou pelo menos imaginá-la). Sua página principal é provavelmente a primeira página em sua trilha e a página atual está no final. <code>rel="up"</code> aponta para a página seguinte a última página da trilha.
 
@@ -260,7 +260,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-prefetch>rel="prefetch"</a> &#8220;indica que buscar e armazenar um recurso especificado preventivamente é provável que seja benéfico, como o usuário provavelmente irá exigir este recurso.&#8221; Mecanismos de busca, às vezes, adicionam <code>&lt;link rel="prefetch" href="<i>URL do primeiro resultado da busca</i>"></code> para a página de resultados da busca se eles sentem que o primeiro resultado é freneticamente mais popular que qualquer um. Por exemplo: usando Firefox, <a href="http://www.google.com/search?q=cnn">procure CNN no Google</a>, olhe o código fonte, e procure pela palavra-chave <code>prefetch</code>. Mozilla Firefox é o único browser atual que suporta <code>rel="prefetch"</code>.
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-search>rel="search"</a> &#8220;indica que o documento referenciado fornece uma interface especifica para procurar o documento e seus recursos relacionados.&#8221; Especificamente, se você quer que o <code>rel="search"</code> faça algo útil, ele deve apontar para um documento <a href=http://www.opensearch.org/>OpenSearch</a> que descreve como um browser poderia construir uma URL para procurar o site atual para uma dada palavra-chave. OpenSearch (e <code>rel="search"</code> ligam aquele ponto para documentos OpenSearch) tem sido suportado no Microsoft Internet Explorer desde a versão 7 e no Mozilla Firefox desde a versão 2.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-search>rel="search"</a> &#8220;indica que o documento referenciado fornece uma interface específica para procurar o documento e seus recursos relacionados.&#8221; Especificamente, se você quer que o <code>rel="search"</code> faça algo útil, ele deve apontar para um documento <a href=http://www.opensearch.org/>OpenSearch</a> que descreve como um browser poderia construir uma URL para procurar o site atual para uma dada palavra-chave. OpenSearch (e <code>rel="search"</code> ligam aquele ponto para documentos OpenSearch) tem sido suportado no Microsoft Internet Explorer desde a versão 7 e no Mozilla Firefox desde a versão 2.
 
 <p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-sidebar>rel="sidebar"</a> &#8220;indica que o documento referenciado, se recuperado, destina-se a ser exibido em um contexto de navegação secundário (se possível), ao invés de no mesmo contexto de navegação atual.&#8221; O que isso significa? No Opera e no Mozilla Firefox, isso significa que &#8220;quando eu clicar neste link, é solicitado ao usuário para criar um bookmark que, quando selecionado pelo menu de Bookmarks, abre o documento vinculado em uma sidebar do browser.&#8221; (Opera atualmente chama isso de &#8220;painel&#8221; ao invés de &#8220;sidebar.&#8221;) Internet Explorer, Safari, e Chrome ignoram <code>rel="sidebar"</code> e apenas o tratam como um link normal. [<a href=http://wearehugh.com/public/2009/04/rel-sidebar.html>rel="sidebar" test case</a>]
 
@@ -281,13 +281,13 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 <dt><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-article-element><code>&lt;article></code></a>
 <dd>O elemento <code>article</code> representa um componente de uma página que consiste em uma composição de conteúdo próprio em um documento, página, aplicação, ou site e que destina-se a ser independentemente distribuível ou reutilizável, e.g. in syndication. Pode ser uma postagem em um fórum, um artigo de uma revista ou jornal, o comentário de um usuário, um widget ou gadget interativo, ou qualquer outro item independente de conteúdo.
 <dt><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-aside-element><code>&lt;aside></code></a>
-<dd>O elemento <code>aside</code> representa a seção de uma página que consiste em conteúdo que é tangencialmente relacionado ao conteúdo em torno do elemento <code>aside</code>, e o qual pode ser considerar-se separado daquele conteúdo. Tais seções são frequentemente representadas como barras laterias em tipografia impressa. O elemento pode ser usado para efeitos tipográficos como citações e barras laterias, para publicidade, para grupos de elementos <code>nav</code>, e para outro conteúdo que é considerado separado do conteúdo principal da página.
+<dd>O elemento <code>aside</code> representa a seção de uma página que consiste em conteúdo que é tangencialmente relacionado ao conteúdo em torno do elemento <code>aside</code>, e o qual pode ser considerado separado daquele conteúdo. Tais seções são frequentemente representadas como barras laterias em tipografia impressa. O elemento pode ser usado para efeitos tipográficos como citações e barras laterias, para publicidade, para grupos de elementos <code>nav</code>, e para outro conteúdo que é considerado separado do conteúdo principal da página.
 <dt><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-hgroup-element><code>&lt;hgroup></code></a>
 <dd>O elemento <code>hgroup</code> representa o título de uma seção. O elemento é usado para agrupar um conjunto de elementos <code>h1</code>&ndash;<code>h6</code> quando o título possui vários níveis, tais como subtítulos, títulos alternativos, ou slogans.
 <dt><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-header-element><code>&lt;header></code></a>
 <dd>O elemento <code>header</code> representa um grupo de ajuda introdutória ou navegação. Um elemento <code>header</code> geralmente pretende possuir o título da seção (um elemento <code>h1</code>&ndash;<code>h6</code> ou um elemento <code>hgroup</code>), mas isso não é obrigatório. O elemento <code>header</code> também pode ser usado para cobrir uma seção de tabelas de conteúdo, um formulário de busca, ou qualquer logo relevante.
 <dt><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-footer-element><code>&lt;footer></code></a>
-<dd>O elemento <code>footer</code> representa um rodapé para a seção de conteúdo mais próxima ou seção do elemento raiz. Um rodapé tipicamente contém informação sobre sua seção tal como quem a escreveu, links para documentos relacionados, dados de direitos autorais, e assim por diante. Os rodapés  não precisam necessariamente aparecer no fim da seção, embora eles geralmente apareçam. Quando o elemento <code>footer</code> contém seções inteiras, eles representam apêndices, índices, longos termos de uso, e outros conteúdos.
+<dd>O elemento <code>footer</code> representa um rodapé para a seção de conteúdo mais próxima ou seção do elemento raiz. Um rodapé tipicamente contém informação sobre sua seção tal como quem a escreveu, links para documentos relacionados, declaração de direitos autorais, e assim por diante. Os rodapés  não precisam necessariamente aparecer no fim da seção, embora eles geralmente apareçam. Quando o elemento <code>footer</code> contém seções inteiras, eles representam apêndices, índices, longos termos de uso, e outros conteúdos.
 <dt><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-time-element><code>&lt;time></code></a>
 <dd>O elemento <code>time</code> representa tanto uma hora em um relógio de 24 horas, como uma data precisa no calendário gregoriano, opcionalmente com uma hora e um fuso horário.
 <dt><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-mark-element><code>&lt;mark></code></a>
@@ -307,7 +307,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 <li><b>Como o elemento do DOM deve parecer?</b>  O elemento <code>nsElementTable.cpp</code> do Mozilla inclui informações sobre quais tipos de outros elementos cada um pode conter. Se você incluir markup como <code>&lt;p>&lt;p></code>, o elemento do segundo parágrafo implicitamente fecha o primeiro, assim os elementos terminam como irmãos, e não pai e filho. Mas se você escrever <code>&lt;p>&lt;span></code>, o <code>span</code> não fecha o parágrafo, porque o Firefox sabe que <code>&lt;p></code> é um elemento de bloco que pode conter o elemento de linha <code>&lt;span></code>. Então, o <code>&lt;span></code> termina como um filho do <code>&lt;p></code> no DOM.</li>
 </ol>
 
-<p>Browsers diferentes respondem a essas perguntas de diferentes maneiras. (Revoltante, Eu sei). Dos principais browsers, a resposta do Microsoft Internet Explorer para as duas perguntas é a mais problematica, mas todo browser precisa de uma pequena ajuda aqui.
+<p>Browsers diferentes respondem a essas perguntas de diferentes maneiras. (Revoltante, Eu sei). Dos principais browsers, a resposta do Microsoft Internet Explorer para as duas perguntas é a mais problemática, mas todo browser precisa de uma pequena ajuda aqui.
 
 <p>A primeira pergunta deveria ser relativamente simples de responder: Não aplique nenhum estilo especial para elementos desconhecidos. Apenas deixe-os herdar qualquer que seja as propriedades CSS que estão em vigor e onde quer que apareça, e deixe que o autor da página especifique todos os estilos com CSS. E isso funciona, com a maioria, mas há uma pequena pegadinha que você precisa estar ciente.
 
@@ -315,7 +315,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 <h4>Professor Markup diz</h4>
 <div class=inner>
 <blockquote>
-<p>Todos os browsers apresentam elementos desconhecidos como elementos de linha, <i>i.e.</i> como se eles tivessem a regra <code>display:inline</code> de <abbr>CSS</abbr>.
+<p>Todos os browsers apresentam elementos desconhecidos como elementos em linha, <i>i.e.</i> como se eles tivessem a regra <code>display:inline</code> de <abbr>CSS</abbr>.
 </blockquote>
 </div>
 </div>
@@ -329,7 +329,7 @@ footer,header,hgroup,menu,nav,section {
 
 <p>(Esse código é tirado de <a href=http://html5doctor.com/html-5-reset-stylesheet/><abbr>HTML5</abbr> Reset Stylesheet</a> de Rich Clark, o qual faz muitas outras coisas além do escopo deste capítulo).
 
-<p>Mas espere, fica pior! Antes da versão 9, o Internet Explorer não aplicou <em>qualquer</em> estilo nos elementos desconhecidos. Por exemplo, se você tivesse esse markup:
+<p>Mas espere, fica pior! Antes da versão 9, o Internet Explorer não aplicou <em>qualquer</em> estilo nos elementos desconhecidos. Por exemplo, se você tivesse essa implementação:
 
 <pre><code>&lt;style type="text/css">
   article { display: block; border: 1px solid red }
@@ -414,7 +414,7 @@ p (irmão de h1)
 
 <p>O código JavaScript é relativamente simples. A variável <var>e</var> termina como um array de strings como <code>"abbr"</code>, <code>"article"</code>, <code>"aside"</code>, e assim por diante. Depois percorremos o array e criamos cada elemento nomeado chamando <code>document.createElement()</code>. Mas uma vez que ignoramos o valor de retorno, os elementos nunca são inseridos dentro do <abbr>DOM</abbr>. Mas é o suficiente para o Internet Explorer tratar esses elementos do jeito que queremos que sejam tratados, uma vez que os usamos mais tarde na página.
 
-<p>Este trecho &#8220;mais tarde&#8221; é importante. Este script precisa estar no topo de sua página, preferencialmente em seu elemento <code>&lt;head></code>, e não no final. Dessa forma, o Internet Explorer irá executar este script <em>antes</em> de analisar suas tags e atributos. Se você colocar este script no final de sua página, ele o executará tarde. O Internet Explorer já terá mal interpretado sua marcação e construído o <abbr>DOM</abbr> errado, e não voltará para ajustá-lo por causa desse script.
+<p>Este trecho &#8220;mais tarde&#8221; é importante. Este script precisa estar no topo de sua página, preferencialmente em seu elemento <code>&lt;head></code>, e não no final. Dessa forma, o Internet Explorer irá executar este script <em>antes</em> de analisar suas tags e atributos. Se você colocar este script no final de sua página, ele o executará tarde. O Internet Explorer já terá mal interpretado sua implementação e construído o <abbr>DOM</abbr> errado, e não voltará para ajustá-lo por causa desse script.
 
 <p>Remy Sharp &#8220;minificou&#8221; este script e <a href=http://code.google.com/p/html5shiv/>o hospedou no Google Project Hosting</a>. (Para o caso de estar se perguntando, o script é open source e possui licença MIT, então pode ser usado em qualquer projeto.) Se preferir, você pode até &#8220;linkar&#8221; o script apontando diretamente para a versão hospedada, assim:
 
@@ -453,7 +453,7 @@ p (irmão de h1)
   &lt;h2>I'm going to Prague!&lt;/h2>
 &lt;/div></code></pre>
 
-<p>Não há nada de errado com esse markup. Se preferir, você pode mantê-lo. Ele é <abbr>HTML5</abbr> válido. Mas o <abbr>HTML5</abbr> provê alguns elementos adicionais para headers e sections.
+<p>Não há nada de errado com essa implementação. Se preferir, você pode mantê-la. É válido no <abbr>HTML5</abbr>. Mas o <abbr>HTML5</abbr> provê alguns elementos adicionais para headers e sections.
 
 <p>Primeiramente, vamos nos livrar daquele <code>&lt;div id="header"></code>. Esse é um padrão comum, mas isso não significa nada. O elemento <code>div</code> não possui uma semêntica definida, e o atributo <code>id</code> também não. (User agents não têm permissão para inferir qualquer significado do valor do atributo <code>id</code>). Você pode mudar isso para <code>&lt;div id="shazbot"></code> e ele terá o mesmo valor semântico, <i>i.e.</i>, nenhum.
 
@@ -465,7 +465,7 @@ p (irmão de h1)
   &hellip;
 &lt;/header></code></pre>
 
-<p>Isso é legal. Ele diz para quem quiser saber que este é o header. Mas e aquela tagline? Outro padrão comum, que até agora não tinha marcação padrão. É uma coisa difícil de marcar. Uma tagline é como um subtítulo, mas está &#8220;ligado&#8221; ao título principal. Isso é, é um subtítulo que não cria sua própria section.
+<p>Isso é legal. Ele diz para quem quiser saber que este é o header. Mas e aquela tagline? Outro padrão comum, que até agora não tinha implementação padrão. É uma coisa difícil de implementar. Uma tagline é como um subtítulo, mas está &#8220;ligado&#8221; ao título principal. Isso é, é um subtítulo que não cria sua própria section.
 
 <p>Elementos Header como <code>&lt;h1></code> e <code>&lt;h2></code> dão estrutura para sua página. Juntos, eles criam um esboço que você pode usar para visualizar (ou navegar) em sua página. Leitores de tela usam esboços de documentos para ajudar usuários cegos a navegar por sua página. Existem <a href="http://gsnedders.html5.org/outliner/">ferramentas online</a> e <a href=http://chrispederick.com/work/web-developer/>extensões de browsers</a> que ajudam a visualizar o esboço de seu documento.
 
@@ -477,7 +477,7 @@ p (irmão de h1)
    |
    +--I'm going to Prague! (h2)</pre>
 
-<p>Tudo bem, mas quer dizer que não tem como marcar a tagline &#8220;Um grande esforço foi feito para reduzir o esforço.&#8221; Se tentássemos marcá-lo como um <code>&lt;h2></code>, ele iria adicionar um nó fantasma ao esboço do documento:
+<p>Tudo bem, mas quer dizer que não tem como implementar a tagline &#8220;Um grande esforço foi feito para reduzir o esforço.&#8221; Se tentássemos implementá-lo como um <code>&lt;h2></code>, ele iria adicionar um nó fantasma ao esboço do documento:
 
 <pre>My Weblog (h1)
    |
@@ -489,7 +489,7 @@ p (irmão de h1)
 
 <p>Mas essa não é a estrutura do documento. A tagline não representa uma section, é apenas um subtítulo.
 
-<p>Talvez nós poderiamos marcar a tagline como um <code>&lt;h2></code> e marcar cada título de artigo como um <code>&lt;h3></code>? Não, é até pior:
+<p>Talvez nós poderiamos implementar a tagline como um <code>&lt;h2></code> e marcar cada título de artigo como um <code>&lt;h3></code>? Não, é até pior:
 
 <pre>My Weblog (h1)
    |
@@ -499,11 +499,11 @@ p (irmão de h1)
          |
          +--I'm going to Prague! (h3)</pre>
 
-<p>Agora nós ainda temos um nó fantasma em no esboço de nosso documento, mas ele &#8220;roubou&#8221; os filhos que legitimamente pertencem ao nó raiz. E aqui reside o problema: <abbr>HTML</abbr> 4 não fornece uma maneira de marcar um subtítulo sem adicioná-lo ao esboço do documento. Não importa o quanto tentarmos mudar as coisas, &#8220;um grande esforço feito para reduzir o esforço&#8221; terminará naquele gráfico. Esse é o porque terminamos marcações semânticas sem significado como <code>&lt;p class="tagline"></code>.
+<p>Agora nós ainda temos um nó fantasma no esboço de nosso documento, mas ele &#8220;roubou&#8221; os filhos que legitimamente pertencem ao nó raiz. E aqui reside o problema: <abbr>HTML</abbr> 4 não fornece uma maneira de implementar um subtítulo sem adicioná-lo ao esboço do documento. Não importa o quanto tentarmos mudar as coisas, &#8220;um grande esforço feito para reduzir o esforço&#8221; terminará naquele gráfico. Esse é o porque acabamos com marcações semânticas sem significado como <code>&lt;p class="tagline"></code>.
 
 <p><abbr>HTML5</abbr> fornece uma solução para isso: o elemento <code>&lt;hgroup></code>. O elemento <code>&lt;hgroup></code> atua como um empacotador para dois ou mais elementos de título <em>relacionados</em>. O que quer dizer &#8220;relacionados&#8221;? Significa que juntos, eles criam um único nó no esboço do documento.
 
-<p>Dada esta marcação:
+<p>Dada esta implementação:
 
 <pre><code>&lt;header>
   <mark>&lt;hgroup></mark>
@@ -533,13 +533,13 @@ p (irmão de h1)
    |
    +--I'm going to Prague! (h2)</pre>
 
-<p>Você pode suas próprias páginas no <a href="http://gsnedders.html5.org/outliner/"><abbr>HTML5</abbr> Outliner</a> para garantir que você está usando os elementos de título corretamente.
+<p>Você pode testar suas próprias páginas no <a href="http://gsnedders.html5.org/outliner/"><abbr>HTML5</abbr> Outliner</a> para garantir que você está usando os elementos de título corretamente.
 
 <p class=a>&#x2767;
 
 <h2 id=article-element>Articles</h2>
 
-<p>Continuando com <a href=examples/blog-original.html>nossa página de exemplo</a>, vamos ver o que podemos fazer sobre este markup:
+<p>Continuando com <a href=examples/blog-original.html>nossa página de exemplo</a>, vamos ver o que podemos fazer sobre esta implementação:
 
 <pre><code>&lt;div class="entry">
   &lt;p class="post-date">October 22, 2009&lt;/p>
@@ -553,7 +553,7 @@ p (irmão de h1)
   &hellip;
 &lt;/div></code></pre>
 
-<p>Novamente, isto é <abbr>HTML5</abbr> válido. Mas o <abbr>HTML5</abbr> fornece elementos mais específicos para o caso comum de marcação de um artigo em uma página &mdash; chamado apropriadamente de <code>&lt;article></code>.
+<p>Novamente, isto é <abbr>HTML5</abbr> válido. Mas o <abbr>HTML5</abbr> fornece elementos mais específicos para o caso comum de implementação de um artigo em uma página &mdash; chamado apropriadamente de <code>&lt;article></code>.
 
 <pre><code><mark>&lt;article></mark>
   &lt;p class="post-date">October 22, 2009&lt;/p>
@@ -585,11 +585,11 @@ p (irmão de h1)
 
 <p>Você entendeu isso? Eu mudei o elemento <code>&lt;h2></code> para um elemento <code>&lt;h1></code>, e o coloquei dentro de um elemento <code>&lt;header></code>. Você já viu o elemento <code>&lt;header></code> em ação. Seu propósito é envolver todos os elementos que formam o  cabeçalho do artigo (neste caso, a data de publicação e título do artigo). Mas&hellip;mas&hellip;mas&hellip; não deveríamos ter apenas um <code>&lt;h1></code> por documento? Isso não vai estragar o esboço do documento? Não, mas para entender porque não, nós precisamos dar um passo para trás.
 
-<p>No <abbr>HTML</abbr> 4, a <em>única</em> maneira de criar um esboço do documento era com os elementos <code>&lt;h1></code>&ndash;<code>&lt;h6></code>. Se você apenas quisesse um nó raiz em seu esboço, você tinha que limitar-se a um <code>&lt;h1></code> em seu markup. Mas a especificação do <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#headings-and-sections>define um algoritmo para gerar um esboço de documento</a> que incorpora os novos elementos semânticos no <abbr>HTML5</abbr>. O algoritmo do <abbr>HTML5</abbr> diz que um elemento <code>&lt;article></code> cria uma nova seção, que é, um novo nó no esboço do documento. E no <abbr>HTML5</abbr>, cada seção pode possuir seu próprio elemento <code>&lt;h1></code>.
+<p>No <abbr>HTML</abbr> 4, a <em>única</em> maneira de criar um esboço do documento era com os elementos <code>&lt;h1></code>&ndash;<code>&lt;h6></code>. Se você apenas quisesse um nó raiz em seu esboço, você tinha que limitar-se a um <code>&lt;h1></code> em sua implementação. Mas a especificação do <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#headings-and-sections>define um algoritmo para gerar um esboço de documento</a> que incorpora os novos elementos semânticos no <abbr>HTML5</abbr>. O algoritmo do <abbr>HTML5</abbr> diz que um elemento <code>&lt;article></code> cria uma nova seção, que é, um novo nó no esboço do documento. E no <abbr>HTML5</abbr>, cada seção pode possuir seu próprio elemento <code>&lt;h1></code>.
 
-<p>Esta é uma mudança drástica do <abbr>HTML</abbr> 4, e aqui está o porque isso é uma coisa boa. Muitas páginas da web são realmente geradas por templates. Um pouco de conteúdo é tirado de uma fonte e inserido na página aqui; um pouco de conteúdo é tirado de outra fonte e inserido na página ali. Muitos tutoriais são estruturados da mesma maneira. &#8220;Aqui está um markup <abbr>HTML</abbr>. Apenas copie e cole em sua página.&#8221; Tudo bem para pequenos trechos de conteúdo, mas e se o markup que você está colando é uma seção inteira? Neste caso, o tutorial vai estar como algo do tipo: &#8220;Aqui está um markup <abbr>HTML</abbr>. Apenas copie e cole em seu editor de texto, e corrija as tags de cabeçalho para que possam coincidir com o nível de aninhamento das tags correspondentes da página em que você o está colando.
+<p>Esta é uma mudança drástica do <abbr>HTML</abbr> 4, e aqui está o porque isso é uma coisa boa. Muitas páginas da web são realmente geradas por templates. Um pouco de conteúdo é tirado de uma fonte e inserido na página aqui; um pouco de conteúdo é tirado de outra fonte e inserido na página ali. Muitos tutoriais são estruturados da mesma maneira. &#8220;Aqui está uma implementação <abbr>HTML</abbr>. Apenas copie e cole em sua página.&#8221; Tudo bem para pequenos trechos de conteúdo, mas e se a implementação que você está colando é uma seção inteira? Neste caso, o tutorial vai estar como algo do tipo: &#8220;Aqui está uma implementação <abbr>HTML</abbr>. Apenas copie e cole em seu editor de texto, e corrija as tags de cabeçalho para que possam coincidir com o nível de aninhamento das tags correspondentes da página em que você o está colando.
 
-<p>Deixe-me colocar isso de outra forma. <abbr>HTML</abbr> 4 não possui um elemento de cabeçalho <em>genérico</em>. Ele possui seis elementos estritamente numerados, <code>&lt;h1></code>&ndash;<code>&lt;h6></code>, os quais têm que estar exatamente nesta ordem. Este tipo de coisa fede, especialmente se sua página é &#8220;montada&#8221; ao invés de &#8220;criada.&#8221; E este é o problema que o <abbr>HTML5</abbr> resolve com os novos elementos de seção e as novas regras para os elementos de cabeçalho existentes. Se você está usando os novos elementos de seção, possso lhe dar este markup:
+<p>Deixe-me colocar isso de outra forma. <abbr>HTML</abbr> 4 não possui um elemento de cabeçalho <em>genérico</em>. Ele possui seis elementos estritamente numerados, <code>&lt;h1></code>&ndash;<code>&lt;h6></code>, os quais têm que estar exatamente nesta ordem. Este tipo de coisa fede, especialmente se sua página é &#8220;montada&#8221; ao invés de &#8220;criada.&#8221; E este é o problema que o <abbr>HTML5</abbr> resolve com os novos elementos de seção e as novas regras para os elementos de cabeçalho existentes. Se você está usando os novos elementos de seção, possso lhe dar esta implementação:
 
 <pre><code>&lt;article>
   &lt;header>
@@ -598,7 +598,7 @@ p (irmão de h1)
   &lt;p>Lorem ipsum blah blah&hellip;&lt;/p>
 &lt;/article></code></pre>
 
-<p>e você pode copiar e colar <em>em qualquer lugar de sua página</em> sem modificação. O fato de ele conter um elemento <code>&lt;h1></code> não é um problema, porque a coisa toda está contida dentro de um <code>&lt;article></code>. O elemento <code>&lt;article></code> define um nó contido em si pŕoprio no esboço do documento, o elemento <code>&lt;h1></code> fornece o título para quele nó, e todos os outros elementos de seção da página vão permanecer em qualquer nível de aninhamento que se encontravam antes.
+<p>e você pode copiar e colar <em>em qualquer lugar de sua página</em> sem modificação. O fato de ele conter um elemento <code>&lt;h1></code> não é um problema, porque a coisa toda está contida dentro de um <code>&lt;article></code>. O elemento <code>&lt;article></code> define um nó contido em si pŕoprio no esboço do documento, o elemento <code>&lt;h1></code> fornece o título para aquele nó, e todos os outros elementos de seção da página vão permanecer em qualquer nível de aninhamento que se encontravam antes.
 
 <div class=pf>
 <h4>Professor Markup diz</h4>
@@ -621,7 +621,7 @@ p (irmão de h1)
   &lt;h2>Travel day&lt;/h2>
 &lt;/div></code></pre>
 
-<p>A mesma velha estória, certo? Um padrão comum &mdash; designando a data de publicação de um artigo &mdash; que não contém marcação semântica para apoiá-lo, então autores recorrem às marcações genéricas com alterações em atributos de <code>class</code>. Novamente, isso é <abbr>HTML5</abbr> válido. Você não é <em>obrigado</em> a mudar isso. Mas o <abbr>HTML5</abbr> fornece uma solução específica para este caso: o elemento <code>&lt;time></code>.
+<p>A mesma velha estória, certo? Um padrão comum &mdash; designando a data de publicação de um artigo &mdash; que não contém marcação semântica para apoiá-lo, então autores recorrem às implementações genéricas com alterações em atributos de <code>class</code>. Novamente, isso é <abbr>HTML5</abbr> válido. Você não é <em>obrigado</em> a mudar isso. Mas o <abbr>HTML5</abbr> fornece uma solução específica para este caso: o elemento <code>&lt;time></code>.
 
 <pre><code>&lt;time datetime="2009-10-22" pubdate>October 22, 2009&lt;/time></code></pre>
 
