@@ -434,7 +434,7 @@ p (irmão de h1)
 
 <p class=ss style="width:205"><img src=i/openclipart.org_johnny_automatic_newsboy.png alt="newsboy hawking newspaper" width=205 height=335>
 
-<p>Let&#8217;s go back to <a href=examples/blog-original.html>our example page</a>. Specifically, let&#8217;s look at just the headers:
+<p>Vamos voltar para <a href=examples/blog-original.html>nossa página de exemplo</a>. Especificamente, vamos olhar apenas para os headers:
 
 <pre><code>&lt;div id="header">
   &lt;h1>My Weblog&lt;/h1>
@@ -453,11 +453,11 @@ p (irmão de h1)
   &lt;h2>I'm going to Prague!&lt;/h2>
 &lt;/div></code></pre>
 
-<p>There is nothing wrong with this markup. If you like it, you can keep it. It is valid <abbr>HTML5</abbr>. But <abbr>HTML5</abbr> provides some additional semantic elements for headers and sections.
+<p>Não há nada de errado com esse markup. Se preferir, você pode mantê-lo. Ele é <abbr>HTML5</abbr> válido. Mas o <abbr>HTML5</abbr> provê alguns elementos adicionais para headers e sections.
 
-<p>First off, let&#8217;s get rid of that <code>&lt;div id="header"></code>. This is a common pattern, but it doesn&#8217;t mean anything. The <code>div</code> element has no defined semantics, and the <code>id</code> attribute has no defined semantics. (User agents are not allowed to infer any meaning from the value of the <code>id</code> attribute.) You could change this to <code>&lt;div id="shazbot"></code> and it would have the same semantic value, <i>i.e.</i>, nothing.
+<p>Primeiramente, vamos nos livrar daquele <code>&lt;div id="header"></code>. Esse é um padrão comum, mas isso não significa nada. O elemento <code>div</code> não possui uma semêntica definida, e o atributo <code>id</code> também não. (User agents não têm permissão para inferir qualquer significado do valor do atributo <code>id</code>). Você pode mudar isso para <code>&lt;div id="shazbot"></code> e ele terá o mesmo valor semântico, <i>i.e.</i>, nenhum.
 
-<p><abbr>HTML5</abbr> defines a <code>&lt;header></code> element for this purpose. The <abbr>HTML5</abbr> specification has <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-header-element>real-world examples of using the <code>&lt;header></code> element</a>. Here is what it would look like on <a href=examples/blog-original.html>our example page</a>:
+<p><abbr>HTML5</abbr> define um elemento <code>&lt;header></code> para este propósito. A especificação do <abbr>HTML5</abbr> possui <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-header-element>exemplos reais do uso do elemento <code>&lt;header></code></a>. Aqui está como ficaria parecido em <a href=examples/blog-original.html>nossa página de exemplo</a>:
 
 <pre><code>&lt;header>
   &lt;h1>My Weblog&lt;/h1>
@@ -465,11 +465,11 @@ p (irmão de h1)
   &hellip;
 &lt;/header></code></pre>
 
-<p>That&#8217;s good. It tells anyone who wants to know that this is a header. But what about that tagline? Another common pattern, which up until now had no standard markup. It&#8217;s a difficult thing to mark up. A tagline is like a subheading, but it&#8217;s &#8220;attached&#8221; to the primary heading. That is, it&#8217;s a subheading that doesn&#8217;t create its own section.
+<p>Isso é legal. Ele diz para quem quiser saber que este é o header. Mas e aquela tagline? Outro padrão comum, que até agora não tinha marcação padrão. É uma coisa difícil de marcar. Uma tagline é como um subtítulo, mas está &#8220;ligado&#8221; ao título principal. Isso é, é um subtítulo que não cria sua própria section.
 
-<p>Header elements like <code>&lt;h1></code> and <code>&lt;h2></code> give your page structure. Taken together, they create an outline that you can use to visualize (or navigate) your page. Screenreaders use document outlines to help blind users navigate through your page. There are <a href="http://gsnedders.html5.org/outliner/">online tools</a> and <a href=http://chrispederick.com/work/web-developer/>browser extensions</a> that can help you visualize your document&#8217;s outline.
+<p>Elementos Header como <code>&lt;h1></code> e <code>&lt;h2></code> dão estrutura para sua página. Juntos, eles criam um esboço que você pode usar para visualizar (ou navegar) em sua página. Leitores de tela usam esboços de documentos para ajudar usuários cegos a navegar por sua página. Existem <a href="http://gsnedders.html5.org/outliner/">ferramentas online</a> e <a href=http://chrispederick.com/work/web-developer/>extensões de browsers</a> que ajudam a visualizar o esboço de seu documento.
 
-<p>In <abbr>HTML</abbr> 4, <code>&lt;h1></code>&ndash;<code>&lt;h6></code> elements were the <em>only</em> way to create a document outline. The outline on the example page looks like this:
+<p>No <abbr>HTML</abbr> 4, os elementos <code>&lt;h1></code>&ndash;<code>&lt;h6></code> são <em>a única</em> maneira de criar um esboço do documento. O esboço da página de exemplo se parece com isso:
 
 <pre>My Weblog (h1)
    |
@@ -477,7 +477,7 @@ p (irmão de h1)
    |
    +--I'm going to Prague! (h2)</pre>
 
-<p>That&#8217;s fine, but it means that there&#8217;s no way to mark up the tagline &#8220;A lot of effort went into making this effortless.&#8221; If we tried to mark it up as an <code>&lt;h2></code>, it would add a phantom node to the document outline:
+<p>Tudo bem, mas quer dizer que não tem como marcar a tagline &#8220;Um grande esforço foi feito para reduzir o esforço.&#8221; Se tentássemos marcá-lo como um <code>&lt;h2></code>, ele iria adicionar um nó fantasma ao esboço do documento:
 
 <pre>My Weblog (h1)
    |
@@ -487,9 +487,9 @@ p (irmão de h1)
    |
    +--I'm going to Prague! (h2)</pre>
 
-<p>But that&#8217;s not the structure of the document. The tagline does not represent a section; it&#8217;s just a subheading.
+<p>Mas essa não é a estrutura do documento. A tagline não representa uma section, é apenas um subtítulo.
 
-<p>Perhaps we could mark up the tagline as an <code>&lt;h2></code> and mark up each article title as an <code>&lt;h3></code>? No, that&#8217;s even worse:
+<p>Talvez nós poderiamos marcar a tagline como um <code>&lt;h2></code> e marcar cada título de artigo como um <code>&lt;h3></code>? Não, é até pior:
 
 <pre>My Weblog (h1)
    |
@@ -499,11 +499,11 @@ p (irmão de h1)
          |
          +--I'm going to Prague! (h3)</pre>
 
-<p>Now we still have a phantom node in our document outline, but it has &#8220;stolen&#8221; the children that rightfully belong to the root node. And herein lies the problem: <abbr>HTML</abbr> 4 does not provide a way to mark up a subheading without adding it to the document outline. No matter how we try to shift things around, &#8220;A lot of effort went into making this effortless&#8221; is going to end up in that graph. And that&#8217;s why we ended up with semantically meaningless markup like <code>&lt;p class="tagline"></code>.
+<p>Agora nós ainda temos um nó fantasma em no esboço de nosso documento, mas ele &#8220;roubou&#8221; os filhos que legitimamente pertencem ao nó raiz. E aqui reside o problema: <abbr>HTML</abbr> 4 não fornece uma maneira de marcar um subtítulo sem adicioná-lo ao esboço do documento. Não importa o quanto tentarmos mudar as coisas, &#8220;um grande esforço feito para reduzir o esforço&#8221; terminará naquele gráfico. Esse é o porque terminamos marcações semânticas sem significado como <code>&lt;p class="tagline"></code>.
 
-<p><abbr>HTML5</abbr> provides a solution for this: the <code>&lt;hgroup></code> element. The <code>&lt;hgroup></code> element acts as a wrapper for two or more <em>related</em> heading elements. What does &#8220;related&#8221; mean? It means that, taken together, they only create a single node in the document outline.
+<p><abbr>HTML5</abbr> fornece uma solução para isso: o elemento <code>&lt;hgroup></code>. O elemento <code>&lt;hgroup></code> atua como um empacotador para dois ou mais elementos de título <em>relacionados</em>. O que quer dizer &#8220;relacionados&#8221;? Significa que juntos, eles criam um único nó no esboço do documento.
 
-<p>Given this markup:
+<p>Dada esta marcação:
 
 <pre><code>&lt;header>
   <mark>&lt;hgroup></mark>
@@ -525,7 +525,7 @@ p (irmão de h1)
   &lt;h2>I'm going to Prague!&lt;/h2>
 &lt;/div></code></pre>
 
-<p>This is the document outline that is created:
+<p>Esse é o esboço do documento que é criado:
 
 <pre>My Weblog (h1 of its hgroup)
    |
@@ -533,13 +533,13 @@ p (irmão de h1)
    |
    +--I'm going to Prague! (h2)</pre>
 
-<p>You can test your own pages in the <a href="http://gsnedders.html5.org/outliner/"><abbr>HTML5</abbr> Outliner</a> to ensure that you&#8217;re using the heading elements properly.
+<p>Você pode suas próprias páginas no <a href="http://gsnedders.html5.org/outliner/"><abbr>HTML5</abbr> Outliner</a> para garantir que você está usando os elementos de título corretamente.
 
 <p class=a>&#x2767;
 
 <h2 id=article-element>Articles</h2>
 
-<p>Continuing with <a href=examples/blog-original.html>our example page</a>, let&#8217;s see what we can do about this markup:
+<p>Continuando com <a href=examples/blog-original.html>nossa página de exemplo</a>, vamos ver o que podemos fazer sobre este markup:
 
 <pre><code>&lt;div class="entry">
   &lt;p class="post-date">October 22, 2009&lt;/p>
@@ -553,7 +553,7 @@ p (irmão de h1)
   &hellip;
 &lt;/div></code></pre>
 
-<p>Again, this is valid <abbr>HTML5</abbr>. But <abbr>HTML5</abbr> provides a more specific element for the common case of marking up an article on a page &mdash; the aptly named <code>&lt;article></code> element.
+<p>Novamente, isto é <abbr>HTML5</abbr> válido. Mas o <abbr>HTML5</abbr> fornece elementos mais específicos para o caso comum de marcação de um artigo em uma página &mdash; chamado apropriadamente de <code>&lt;article></code>.
 
 <pre><code><mark>&lt;article></mark>
   &lt;p class="post-date">October 22, 2009&lt;/p>
@@ -567,7 +567,7 @@ p (irmão de h1)
   &hellip;
 <mark>&lt;/article></mark></code></pre>
 
-<p>Ah, but it&#8217;s not quite that simple. There is one more change you should make. I&#8217;ll show it to you first, then explain it:
+<p>Ah, mas não é tão simples assim. Há mais uma mudança que você deve fazer. Vou lhe mostrar primeiro, depois eu explico:
 
 <pre><code>&lt;article>
   &lt;header>
@@ -583,13 +583,13 @@ p (irmão de h1)
   &hellip;
 &lt;/article></code></pre>
 
-<p>Did you catch that? I changed the <code>&lt;h2></code> element to an <code>&lt;h1></code>, and wrapped it inside a <code>&lt;header></code> element. You&#8217;ve already seen the <code>&lt;header></code> element in action. Its purpose is to wrap all the elements that form the article&#8217;s header (in this case, the article&#8217;s publication date and title). But&hellip;but&hellip;but&hellip; shouldn&#8217;t you only have one <code>&lt;h1></code> per document? Won&#8217;t this screw up the document outline? No, but to understand why not, we need to back up a step.
+<p>Você entendeu isso? Eu mudei o elemento <code>&lt;h2></code> para um elemento <code>&lt;h1></code>, e o coloquei dentro de um elemento <code>&lt;header></code>. Você já viu o elemento <code>&lt;header></code> em ação. Seu propósito é envolver todos os elementos que formam o  cabeçalho do artigo (neste caso, a data de publicação e título do artigo). Mas&hellip;mas&hellip;mas&hellip; não deveríamos ter apenas um <code>&lt;h1></code> por documento? Isso não vai estragar o esboço do documento? Não, mas para entender porque não, nós precisamos dar um passo para trás.
 
-<p>In <abbr>HTML</abbr> 4, the <em>only</em> way to create a document outline was with the <code>&lt;h1></code>&ndash;<code>&lt;h6></code> elements. If you only wanted one root node in your outline, you had to limit yourself to one <code>&lt;h1></code> in your markup. But the <abbr>HTML5</abbr> specification <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#headings-and-sections>defines an algorithm for generating a document outline</a> that incorporates the new semantic elements in <abbr>HTML5</abbr>. The <abbr>HTML5</abbr> algorithm says that an <code>&lt;article></code> element creates a new section, that is, a new node in the document outline. And in <abbr>HTML5</abbr>, each section can have its own <code>&lt;h1></code> element.
+<p>No <abbr>HTML</abbr> 4, a <em>única</em> maneira de criar um esboço do documento era com os elementos <code>&lt;h1></code>&ndash;<code>&lt;h6></code>. Se você apenas quisesse um nó raiz em seu esboço, você tinha que limitar-se a um <code>&lt;h1></code> em seu markup. Mas a especificação do <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#headings-and-sections>define um algoritmo para gerar um esboço de documento</a> que incorpora os novos elementos semânticos no <abbr>HTML5</abbr>. O algoritmo do <abbr>HTML5</abbr> diz que um elemento <code>&lt;article></code> cria uma nova seção, que é, um novo nó no esboço do documento. E no <abbr>HTML5</abbr>, cada seção pode possuir seu próprio elemento <code>&lt;h1></code>.
 
-<p>This is a drastic change from <abbr>HTML</abbr> 4, and here&#8217;s why it&#8217;s a good thing. Many web pages are really generated by templates. A bit of content is taken from one source and inserted into the page up here; a bit of content is taken from another source and inserted into the page down there. Many tutorials are structured the same way. &#8220;Here&#8217;s some <abbr>HTML</abbr> markup. Just copy it and paste it into your page.&#8221; That&#8217;s fine for small bits of content, but what if the markup you&#8217;re pasting is an entire section? In that case, the tutorial will read something like this: &#8220;Here&#8217;s some <abbr>HTML</abbr> markup. Just copy it, paste it into a text editor, and fix the heading tags so they match the nesting level of the corresponding heading tags in the page you&#8217;re pasting it into.&#8221;
+<p>Esta é uma mudança drástica do <abbr>HTML</abbr> 4, e aqui está o porque isso é uma coisa boa. Muitas páginas da web são realmente geradas por templates. Um pouco de conteúdo é tirado de uma fonte e inserido na página aqui; um pouco de conteúdo é tirado de outra fonte e inserido na página ali. Muitos tutoriais são estruturados da mesma maneira. &#8220;Aqui está um markup <abbr>HTML</abbr>. Apenas copie e cole em sua página.&#8221; Tudo bem para pequenos trechos de conteúdo, mas e se o markup que você está colando é uma seção inteira? Neste caso, o tutorial vai estar como algo do tipo: &#8220;Aqui está um markup <abbr>HTML</abbr>. Apenas copie e cole em seu editor de texto, e corrija as tags de cabeçalho para que possam coincidir com o nível de aninhamento das tags correspondentes da página em que você o está colando.
 
-<p>Let me put it another way. <abbr>HTML</abbr> 4 has no <em>generic</em> heading element. It has six strictly numbered heading elements, <code>&lt;h1></code>&ndash;<code>&lt;h6></code>, which must be nested in exactly that order. That kind of sucks, especially if your page is &#8220;assembled&#8221; instead of &#8220;authored.&#8221; And this is the problem that <abbr>HTML5</abbr> solves with the new sectioning elements and the new rules for the existing heading elements. If you&#8217;re using the new sectioning elements, I can give you this markup:
+<p>Deixe-me colocar isso de outra forma. <abbr>HTML</abbr> 4 não possui um elemento de cabeçalho <em>genérico</em>. Ele possui seis elementos estritamente numerados, <code>&lt;h1></code>&ndash;<code>&lt;h6></code>, os quais têm que estar exatamente nesta ordem. Este tipo de coisa fede, especialmente se sua página é &#8220;montada&#8221; ao invés de &#8220;criada.&#8221; E este é o problema que o <abbr>HTML5</abbr> resolve com os novos elementos de seção e as novas regras para os elementos de cabeçalho existentes. Se você está usando os novos elementos de seção, possso lhe dar este markup:
 
 <pre><code>&lt;article>
   &lt;header>
@@ -598,72 +598,72 @@ p (irmão de h1)
   &lt;p>Lorem ipsum blah blah&hellip;&lt;/p>
 &lt;/article></code></pre>
 
-<p>and you can copy it and paste it <em>anywhere in your page</em> without modification. The fact that it contains an <code>&lt;h1></code> element is not a problem, because the entire thing is contained within an <code>&lt;article></code>. The <code>&lt;article></code> element defines a self-contained node in the document outline, the <code>&lt;h1></code> element provides the title for that outline node, and all the other sectioning elements on the page will remain at whatever nesting level they were at before.
+<p>e você pode copiar e colar <em>em qualquer lugar de sua página</em> sem modificação. O fato de ele conter um elemento <code>&lt;h1></code> não é um problema, porque a coisa toda está contida dentro de um <code>&lt;article></code>. O elemento <code>&lt;article></code> define um nó contido em si pŕoprio no esboço do documento, o elemento <code>&lt;h1></code> fornece o título para quele nó, e todos os outros elementos de seção da página vão permanecer em qualquer nível de aninhamento que se encontravam antes.
 
 <div class=pf>
-<h4>Professor Markup Says</h4>
+<h4>Professor Markup diz</h4>
 <div class=inner>
-<blockquote><p>As with all things on the web, reality is a little more complicated than I&#8217;m letting on. The new &#8220;explicit&#8221; sectioning elements (like <code>&lt;h1></code> wrapped in <code>&lt;article></code>) may interact in unexpected ways with the old &#8220;implicit&#8221; sectioning elements (<code>&lt;h1></code>&ndash;<code>&lt;h6></code> by themselves). Your life will be simpler if you use one or the other, but not both. If you must use both on the same page, be sure to check the result in <a href=http://gsnedders.html5.org/outliner/>the <abbr>HTML5</abbr> Outliner</a> and verify that your document outline makes sense.
+<blockquote><p>Como todas as coisas na web, a realidade é um pouco mais complicada do que estou mostrando. Os novos elementos de seção &#8220;explícitos&#8221; (como <code>&lt;h1></code> contido no <code>&lt;article></code>) podem interagir de inesperadas maneiras com os velhos elementos &#8220;implícitos&#8221; (<code>&lt;h1></code>&ndash;<code>&lt;h6></code>). Sua vida ficará mais simples se você usar um ou outro, mas não os dois. Se você precisar usar os dois na mesma página, tenha certeza de checar o resultado em <a href=http://gsnedders.html5.org/outliner/> <abbr>HTML5</abbr> Outliner</a> e verifique se o esboço de seu documento faz sentido.
 </blockquote>
 </div>
 </div>
 
 <p class=a>&#x2767;
 
-<h2 id=time-element>Dates and Times</h2>
+<h2 id=time-element>Datas e Horas</h2>
 
 <p class=ss style="float:left;margin:0 30px 0 0"><img src=i/openclipart.org_johnny_automatic_clock_tower.png width=205 height=378 alt="clock tower">
 
-<p>This is exciting, right? I mean, it&#8217;s not &#8220;skiing down Mount Everest naked while reciting the Star Spangled Banner backwards&#8221; exciting, but it&#8217;s pretty exciting as far as semantic markup goes. Let&#8217;s continue with <a href=examples/blog-original.html>our example page</a>. The next line I want to highlight is this one:
+<p>Isso é emocionante, não é? Digo, não é como &#8220;esquiar pelado no Mount Everest enquanto recita o Star Spangled Banner de trás pra frente&#8221;, mas é bem emocionante o quão longe a marcação semântica vai. Vamos continuar com <a href=examples/blog-original.html>nossa página de exemplo</a>. A próxima linha que quero destacar é esta:
 
 <pre><code>&lt;div class="entry">
   <mark>&lt;p class="post-date">October 22, 2009&lt;/p></mark>
   &lt;h2>Travel day&lt;/h2>
 &lt;/div></code></pre>
 
-<p>Same old story, right? A common pattern &mdash; designating the publication date of an article &mdash; that has no semantic markup to back it up, so authors resort to generic markup with custom <code>class</code> attributes. Again, this is valid <abbr>HTML5</abbr>. You&#8217;re not <em>required</em> to change it. But <abbr>HTML5</abbr> does provide a specific solution for this case: the <code>&lt;time></code> element.
+<p>A mesma velha estória, certo? Um padrão comum &mdash; designando a data de publicação de um artigo &mdash; que não contém marcação semântica para apoiá-lo, então autores recorrem às marcações genéricas com alterações em atributos de <code>class</code>. Novamente, isso é <abbr>HTML5</abbr> válido. Você não é <em>obrigado</em> a mudar isso. Mas o <abbr>HTML5</abbr> fornece uma solução específica para este caso: o elemento <code>&lt;time></code>.
 
 <pre><code>&lt;time datetime="2009-10-22" pubdate>October 22, 2009&lt;/time></code></pre>
 
-<p>There are three parts to a <code>&lt;time></code> element:
+<p>Há três partes no elemento <code>&lt;time></code>:
 
 <ol>
 <li>A machine-readable timestamp
 <li>Human-readable text content
-<li>An optional <code>pubdate</code> flag
+<li>Uma flag opcional <code>pubdate</code>
 </ol>
 
-<p>In this example, the <code>datetime</code> attribute only specifies a date, not a time. The format is a four-digit year, two-digit month, and two-digit day, separated by dashes:
+<p>Neste exemplo, o atributo <code>datetime</code> apenas especifica a data, não o tempo. O formato é de quatro digitos para o ano, dois digitos para o mês, e dois digitos para o dia, separado por traços:
 
 <pre><code>&lt;time <mark>datetime="2009-10-22"</mark> pubdate>October 22, 2009&lt;/time></code></pre>
 
-<p>If you want to include a time too, add the letter <code>T</code> after the date, then the time in 24-hour format, then a timezone offset.
+<p>Se você quiser incluir o tempo também, adicione a letra <code>T</code> após a data, o tempo no formato de 24 horas, depois a diferença da timezone.
 
 <pre><code>&lt;time datetime="<mark>2009-10-22T13:59:47-04:00</mark>" pubdate>
   October 22, 2009 1:59pm EDT
 &lt;/time></code></pre>
 
-<p>(The date/time format is pretty flexible. The <abbr>HTML5</abbr> specification <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#valid-global-date-and-time-string>contains examples of valid date/time strings</a>.)
+<p>(O formato data/tempo é bastante flexível. A especificação do <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#valid-global-date-and-time-string>contém exemplos de data/tempo válidas</a>.)
 
-<p>Notice I changed the text content &mdash; the stuff between <code>&lt;time></code> and <code>&lt;/time></code> &mdash; to match the machine-readable timestamp. This is not actually required. The text content can be anything you like, as long as you provide a machine-readable date/timestamp in the <code>datetime</code> attribute. So this is valid <abbr>HTML5</abbr>:
+<p>Note que mudei o texto &mdash; entre <code>&lt;time></code> e <code>&lt;/time></code> &mdash; para combinar com a machine-readable timestamp. Isso não é obrigatório. O conteúdo pode ser o que você quiser, contanto que você forneça uma machine-readable date/timestamp no atributo <code>datetime</code>. Então isso é <abbr>HTML5</abbr> válido:
 
 <pre><code>&lt;time datetime="2009-10-22"><mark>last Thursday</mark>&lt;/time></code></pre>
 
-<p>And this is also valid <abbr>HTML5</abbr>:
+<p>E isso também é <abbr>HTML5</abbr> válido:
 
 <pre><code>&lt;time datetime="2009-10-22">&lt;/time></code></pre>
 
-<p>The final piece of the puzzle here is the <code>pubdate</code> attribute. It&#8217;s a Boolean attribute, so just add it if you need it, like this:
+<p>A peça final do quebra-cabeça é o atributo <code>pubdate</code>. É um atributo Boolean, então apenas adicione-o se precisar, assim:
 
 <pre><code>&lt;time datetime="2009-10-22" <mark>pubdate</mark>>October 22, 2009&lt;/time></code></pre>
 
-<p>If you dislike &#8220;naked&#8221; attributes, this is also equivalent:
+<p>Se você não gostar de atributos &#8220;pelados&#8221;, isso é equivalente:
 
 <pre><code>&lt;time datetime="2009-10-22" <mark>pubdate="pubdate"</mark>>October 22, 2009&lt;/time></code></pre>
 
-<p>What does the <code>pubdate</code> attribute mean? It means one of two things. If the <code>&lt;time></code> element is in an <code>&lt;article></code> element, it means that this timestamp is the publication date of the article. If the <code>&lt;time></code> element is not in an <code>&lt;article></code> element, it means that this timestamp is the publication date of the entire document.
+<p>O que significa o atributo <code>pubdate</code>? Significa uma de duas coisas. Se o elemento <code>&lt;time></code> está em um elemento <code>&lt;article></code>, significa que este timestamp é a data de publicação do artigo. Se o elemento <code>&lt;time></code> não está em um elemento <code>&lt;article></code>, significa que esse timestamp é a data de publicação do documento inteiro.
 
-<p>Here&#8217;s the entire article, reformulated to take full advantage of <abbr>HTML5</abbr>:
+<p>Este é o atigo inteiro, reformulado para tirar total vantagem do <abbr>HTML5</abbr>:
 
 <pre><code>&lt;article>
   &lt;header>
@@ -683,13 +683,13 @@ p (irmão de h1)
 
 <p class=a>&#x2767;
 
-<h2 id=nav-element>Navigation</h2>
+<h2 id=nav-element>Navegação</h2>
 
 <p class=ss><img src=i/openclipart.org_johnny_automatic_a_pink.png alt="a man navigating a sailboat on the water" width=345 height=377>
 
-<p>One of the most important parts of any web site is the navigation bar. CNN.com has &#8220;tabs&#8221; along the top of each page that link to the different news sections &mdash; &#8220;Tech,&#8221; &#8220;Health,&#8221; &#8220;Sports,&#8221; <i class=baa>&amp;</i>c. Google search results pages have a similar strip at the top of the page to try your search in different Google services &mdash; &#8220;Images,&#8221; &#8220;Video,&#8221; &#8220;Maps,&#8221; <i class=baa>&amp;</i>c. And <a href=examples/blog-original.html>our example page</a> has a navigation bar in the header that includes links to different sections of our hypothetical site &mdash; &#8220;home,&#8221; &#8220;blog,&#8221; &#8220;gallery,&#8221; and &#8220;about.&#8221;
+<p>Uma das partes mais importantes de qualquer site é a barra de navegação. A CNN.com tem &#8220;abas&#8221; ao longo do topo de cada página que apontam para diferentes seções de notícias &mdash; &#8220;Tech,&#8221; &#8220;Health,&#8221; &#8220;Sports,&#8221; <i class=baa>&amp;</i>c. As páginas de resultado da busca do Google têm uma faixa semelhante no topo da página para tentar realizar sua busca em diferentes serviços do Google &mdash; &#8220;Imagens,&#8221; &#8220;Videos,&#8221; &#8220;Mapas,&#8221; <i class=baa>&amp;</i>c. E <a href=examples/blog-original.html>nossa página de exemplo</a> possui uma barra de navegação no cabeçalho que inclui links para diferentes seções de nosso hipotético site &mdash; &#8220;home,&#8221; &#8220;blog,&#8221; &#8220;gallery,&#8221; e &#8220;about.&#8221;
 
-<p>This is how the navigation bar was originally marked up:
+<p>Assim é como a barra de navegação era originalmente implementada:
 
 <pre><code>&lt;div id="nav">
   &lt;ul>
@@ -700,11 +700,11 @@ p (irmão de h1)
   &lt;/ul>
 &lt;/div></code></pre>
 
-<p>Again, this is valid <abbr>HTML5</abbr>. But while it&#8217;s marked up as a list of four items, there is nothing about the list that tells you that it&#8217;s part of the site navigation. Visually, you could guess that by the fact that it&#8217;s part of the page header, and by reading the text of the links. But semantically, there is nothing to distinguish this list of links from any other.
+<p>Novamente, isso é <abbr>HTML5</abbr> válido. Mas enquanto é feito como uma lista de quatro itens, não há nada sobre a lista que lhe diga que ela faz parte da navegação do site. Visualmente, você pode adivinhar pelo fato dela fazer parte do cabeçalho da página, e pelo texto dos links. Mas semanticamente, não há nada para distinguir a lista de links de qualquer outra.
 
-<p>Who cares about the semantics of site navigation? For one, <a href=http://diveintoaccessibility.org/>people with disabilities</a>. Why is that? Consider this scenario: your motion is limited, and using a mouse is difficult or impossible. To compensate, you might use a browser add-on that allows you to jump to (or jump past) major navigation links. Or consider this: if your sight is limited, you might use a dedicated program called a &#8220;screenreader&#8221; that uses text-to-speech to speak and summarize web pages. Once you get past the page title, the next important pieces of information about a page are the major navigation links. If you want to navigate quickly, you&#8217;ll tell your screenreader to jump to the navigation bar and start reading. If you want to browse quickly, you might tell your screenreader to jump <em>over</em> the navigation bar and start reading the main content. Either way, being able to determine navigation links programmatically is important.
+<p>Quem liga para a semântica de navegação do site? Por exemplo, <a href=http://diveintoaccessibility.org/>pessoas com deficiências</a>. Porque isso? Considere este cenário: seu movimento é limitado, e usar o mouse é difícil ou impossível. Para compensar, você pode usar um browser add-on que lhe permite avançar para a maioria dos links de navegação. Ou considere isso: se sua visão é limitada, você pode usar um programa dedicado chamado &#8220;leitor de tela&#8221; que usa text-to-speech para falar e resumir as páginas da web. Uma vez que passar do título da página, os próximos trechos importantes de informação sobre uma página são os principais links de navegação. Se você quer navegar rápido, você dirá ao seu leitor de tela para pular para a barra de navegação e começar a ler. Se você quiser consultar rápido, você pode dizer ao seu leitor de tela para <em>pular</em> a barra de navegação e começar a ler o conteúdo principal. De qualquer forma, ser capaz de determinar os links de navegação programaticamente é importante.
 
-<p>So, while there&#8217;s nothing wrong with using <code>&lt;div id="nav"></code> to mark up your site navigation, there&#8217;s nothing particularly right about it either. It&#8217;s suboptimal in ways that affect real people. <abbr>HTML5</abbr> provides a semantic way to mark up navigation sections: the <code>&lt;nav></code> element.
+<p>Então, enquanto não há nada de errado em usar <code>&lt;div id="nav"></code> para criar a navegação de seu site, Também não há particularmente nada certo sobre isso. O <abbr>HTML5</abbr> fornece uma maneira semântica para implementar seções de navegação: o elemento <code>&lt;nav></code>.
 
 <pre><code><mark>&lt;nav></mark>
   &lt;ul>
@@ -716,12 +716,12 @@ p (irmão de h1)
 <mark>&lt;/nav></mark></code></pre>
 
 <div class=pf>
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor Markup</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Are <a href=http://www.webaim.org/techniques/skipnav/>skip links</a> compatible with the <code>&lt;nav></code> element? Do I still need skip links in <abbr>HTML5</abbr>?<br>
-<p>A: Skip links allow readers to skip over navigation sections. They are helpful for disabled users who use third-party software to read a web page aloud and navigate it without a mouse. (<a href=http://www.webaim.org/techniques/skipnav/>Learn how and why to provide skip links</a>.)
-<p>Once screenreaders are updated to recognize the <code>&lt;nav></code> element, skip links will become obsolete, since the screenreader software will be able to automatically offer to skip over a navigation section marked up with the <code>&lt;nav></code> element. However, it will be a while before all the disabled users on the web upgrade to <abbr>HTML5</abbr>-savvy screenreader software, so you should continue to provide your own skip links to jump over <code>&lt;nav></code> sections.
+<p><span>&#x261E;</span>Q: Há <a href=http://www.webaim.org/techniques/skipnav/>skip links</a> compatíveis com o elemento <code>&lt;nav></code>? Eu ainda preciso de skip links no <abbr>HTML5</abbr>?<br>
+<p>A: Skip links permitem os leitores pularem entre as seções de navegação. Eles são úteis para usuários com deficiência que usam software de terceiros para ler uma página da web e navegar nela sem mouse. (<a href=http://www.webaim.org/techniques/skipnav/>Aprenda como e porque fornecer os skip links</a>.)
+<p>Uma vez que os leitores de tela forem atualizados para reconhecer o elemento <code>&lt;nav></code>, os skip links ficarão obsoletos, desde que o software de leitor de tela esteja apto a automaticamente saltar sobre uma seção de navegação implementada com o elemento <code>&lt;nav></code>. Contudo, isso será um pouco antes de todos os usuários com deficiência da web atualizarem para o software de leitor de tela com <abbr>HTML5</abbr>, então você deve continuar fornecendo seus próprios skip links para saltarem sobre as seções <code>&lt;nav></code>.
 </blockquote>
 </div>
 </div>
@@ -730,29 +730,29 @@ p (irmão de h1)
 
 <h2 id=footer-element>Footers</h2>
 
-<p>At long last, we have arrived at the end of <a href=examples/blog-original.html>our example page</a>. The last thing I want to talk about is the last thing on the page: the footer. The footer was originally marked up like this:
+<p>Finalmente, nós chegamos ao fim de <a href=examples/blog-original.html>nossa página de exemplo</a>. A última coisa sobre qual quero falar é a última coisa da página: o footer. O footer era originalmente implementado assim:
 
 <pre><code>&lt;div id="footer">
   &lt;p>&amp;#167;&lt;/p>
   &lt;p>&amp;#169; 2001&amp;#8211;9 &lt;a href="#">Mark Pilgrim&lt;/a>&lt;/p>
 &lt;/div></code></pre>
 
-<p>This is valid <abbr>HTML5</abbr>. If you like it, you can keep it. But <abbr>HTML5</abbr> provides a more specific element for this: the <code>&lt;footer></code> element.
+<p>Isso é <abbr>HTML5</abbr> válido. Se você gostar, pode continuar com ele. Mas o <abbr>HTML5</abbr> fornece um elemento mais específico para isso: o elemento <code>&lt;footer></code>.
 
 <pre><code><mark>&lt;footer></mark>
   &lt;p>&amp;#167;&lt;/p>
   &lt;p>&amp;#169; 2001&amp;#8211;9 &lt;a href="#">Mark Pilgrim&lt;/a>&lt;/p>
 <mark>&lt;/footer></mark></code></pre>
 
-<p>What&#8217;s appropriate to put in a <code>&lt;footer></code> element? Probably whatever you&#8217;re putting in a <code>&lt;div id="footer"></code> now. OK, that&#8217;s a circular answer. But really, that&#8217;s it. The <abbr>HTML5</abbr> specification says, &#8220;A footer typically contains information about its section such as who wrote it, links to related documents, copyright data, and the like.&#8221; That&#8217;s what&#8217;s in this example page: a short copyright statement and a link to an about-the-author page. Looking around at some popular sites, I see lots of footer potential.
+<p>O que é apropriado colocar em um elemento <code>&lt;footer></code>? Provavelmente qualquer coisa que você estiver colocando agora em um <code>&lt;div id="footer"></code>. OK, é uma resposta redundante. Mas sério, é isso. A especificação do <abbr>HTML5</abbr> diz, &#8220;Um footer geralmente contém informação sobre sua seção como que a escreveu, links para documentos relacionados, copyright, e assim por diante.&#8221; É o que há em nossa página de exemplo: declaração de copyright e um link para uma página de "Sobre o autor". Olhando ao redor em alguns sites populares, vejo muito potencial nos footers.
 
 <ul>
-<li><a href=http://www.cnn.com/>CNN</a> has a footer that contains a copyright statement, links to translations, and links to terms of service, privacy, &#8220;about us,&#8221; &#8220;contact us,&#8221; and &#8220;help&#8221; pages. All totally appropriate <code>&lt;footer></code> material.
-<li><a href=http://www.google.com/>Google</a> has a famously sparse home page, but at the bottom of it are links to &#8220;Advertising Programs,&#8221; &#8220;Business Solutions,&#8221; and &#8220;About Google&#8221;; a copyright statement; and a link to Google&#8217;s privacy policy. All of that could be wrapped in a <code>&lt;footer></code>.
-<li><a href=http://diveintomark.org/>My weblog</a> has a footer with links to my other sites, plus a copyright statement. Definitely appropriate for a <code>&lt;footer></code> element. (Note that the links themselves should <em>not</em> be wrapped in a <code>&lt;nav></code> element, because they are not site navigation links; they are just a collection of links to my other projects on other sites.)
+<li><a href=http://www.cnn.com/>CNN</a> possui um footer que contém uma declaração de copyright, links para traduções, links para termos de uso e páginas de privacidade, &#8220;sobre,&#8221; &#8220;contato,&#8221; e &#8220;ajuda&#8221;. Todas totalmente apropriadas para o <code>&lt;footer></code>.
+<li><a href=http://www.google.com/>Google</a> possui uma home page esparsa, mas no final dela há links para &#8220;Programas de publicidade,&#8221; &#8220;Solução para negócios,&#8221; e &#8220;Sobre o Google&#8221;; uma declaração de copyright; e um link para a política de publicidade do Google. Tudo isso pode ser incluído em um <code>&lt;footer></code>.
+<li><a href=http://diveintomark.org/>My weblog</a> possui um footer com links para meus outros sites, mais uma declaração de copyright. Definitivamente apropriado pra um elemento <code>&lt;footer></code>. (Note que os links <em>não</em> devem ser incluídos em um elemento <code>&lt;nav></code>, porque eles não são links de naveagação do site; eles são apenas uma coleção de links para meus outros projetos em outros sites).
 </ul>
 
-<p>&#8220;<a href=http://ui-patterns.com/pattern/FatFooter>Fat footers</a>&#8221; are all the rage these days. Take a look at the footer on <a href=http://www.w3.org/>the <abbr>W3C</abbr> site</a>. It contains three columns, labeled &#8220;Navigation,&#8221; &#8220;Contact W3C,&#8221; and &#8220;W3C Updates.&#8221; The markup looks like this, more or less:
+<p>&#8220;<a href=http://ui-patterns.com/pattern/FatFooter>Footers gordos</a>&#8221; são raivosos hoje em dia. Dê uma olhada no footer do <a href=http://www.w3.org/>site da <abbr>W3C</abbr></a>. Ele contém três colunas, rotuladas &#8220;Navigation,&#8221; &#8220;Contact W3C,&#8221; e &#8220;W3C Updates.&#8221; A implementação se parece mais ou menos com isso:
 
 <pre><code>&lt;div id="w3c_footer">
   &lt;div class="w3c_footer-nav">
@@ -784,15 +784,15 @@ p (irmão de h1)
   &lt;p class="copyright">Copyright &copy; 2009 W3C&lt;/p>
 &lt;/div></code></pre>
 
-<p>To convert this to semantic <abbr>HTML5</abbr>, I would make the following changes:
+<p>Para converter isso para <abbr>HTML5</abbr> semântico, Eu faria as seguintes alterações:
 
 <ul>
-<li>Convert the outer <code>&lt;div id="w3c_footer"></code> to a <code>&lt;footer></code> element.
-<li>Convert the first two instances of <code>&lt;div class="w3c_footer-nav"></code> to <code>&lt;nav></code> elements, and the third instance to a <code>&lt;section></code> element.
-<li>Convert the <code>&lt;h3></code> headers to <code>&lt;h1></code>, since they&#8217;ll now each be inside a sectioning element. The <code>&lt;nav></code> element creates a section in the document outline, just like the <a href=#article-element><code>&lt;article></code> element</a>.
+<li>Converter o <code>&lt;div id="w3c_footer"></code> externo para um elemento <code>&lt;footer></code>.
+<li>Converter as primeiras duas instâncias de <code>&lt;div class="w3c_footer-nav"></code> para elementos <code>&lt;nav></code>, e a terceira instância para um elemento <code>&lt;section></code>.
+<li>Converter o <code>&lt;h3></code> para <code>&lt;h1></code>, desde que cada um ficará dentro de um elemento de seção. O elemento <code>&lt;nav></code> cria uma seção no esboço do documento, assim como o elemento <a href=#article-element><code>&lt;article></code></a>.
 </ul>
 
-<p>The final markup might look something like this:
+<p>A implementação final pode parecer como algo do tipo:
 
 <pre><code><mark>&lt;footer></mark>
   <mark>&lt;nav></mark>
