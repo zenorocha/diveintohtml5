@@ -228,7 +228,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <h3 id=new-relations>Outros Link Relations no HTML5</h3>
 
-<p><code>rel="author"</code> é usado para apontar para informações sobre o autor da página. Pode se um endereço <code>mailto:</code>, embora não precise ser. Ele pode simplesmente levar a um formulário de contato ou a uma página &#8220;sobre o autor&#8221;.
+<p><code>rel="author"</code> é usado para apontar para informações sobre o autor da página. Pode ser um endereço <code>mailto:</code>, embora não precise ser. Ele pode simplesmente levar a um formulário de contato ou a uma página &#8220;sobre o autor&#8221;.
 
 <p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#link-type-external>rel="external"</a> &#8220;indica que o link trata-se de um documento que não faz parte do site em que o documento atual está.&#8221; Acredito que isso foi popularizado pela <a href=http://www.wordpress.org/>WordPress</a>, a qual o utiliza nos links dos comentários deixados pelas pessoas.
 
@@ -340,7 +340,7 @@ footer,header,hgroup,menu,nav,section {
 &lt;p>This is your &lt;span>first day&lt;/span>.&lt;/p>
 &lt;/article></code></pre>
 
-<p>O Internet Explorer (até a versão 8) não trata o elemento <code>&lt;article></code> como um elemento de nível de bloco, nem coloca uma borda vermelha em volta do article. Todos as regras de estilo são simplesmente ignoradas. <a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML_Parsing>O Internet Explorer 9 corrige este problema</a>.
+<p>O Internet Explorer (até a versão 8) não trata o elemento <code>&lt;article></code> como um elemento de nível de bloco, nem coloca uma borda vermelha em volta do article. Todas as regras de estilo são simplesmente ignoradas. <a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML_Parsing>O Internet Explorer 9 corrige este problema</a>.
 
 <p>O segundo problema é o DOM que os browsers criam quando encontram elementos desconhecidos. Novamente, o browser mais problemático são as versões antigas do Internet Explorer (antes da versão 9, <a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML_Parsing>a qual corrige esse problema também</a>). Se o IE 8 não reconhecer explicitamente o nome do elemento, ele irá inserir o elemento no DOM <em>como um nó vazio sem filhos</em>. Todos os elementos que você esperaria serem filhos diretos de um elemento desconhecido, na verdade estarão inseridos como irmãos do mesmo.
 
@@ -455,7 +455,7 @@ p (irmão de h1)
 
 <p>Não há nada de errado com essa implementação. Se preferir, você pode mantê-la. É válido no <abbr>HTML5</abbr>. Mas o <abbr>HTML5</abbr> provê alguns elementos adicionais para headers e sections.
 
-<p>Primeiramente, vamos nos livrar daquele <code>&lt;div id="header"></code>. Esse é um padrão comum, mas isso não significa nada. O elemento <code>div</code> não possui uma semêntica definida, e o atributo <code>id</code> também não. (User agents não têm permissão para inferir qualquer significado do valor do atributo <code>id</code>). Você pode mudar isso para <code>&lt;div id="shazbot"></code> e ele terá o mesmo valor semântico, <i>i.e.</i>, nenhum.
+<p>Primeiramente, vamos nos livrar daquele <code>&lt;div id="header"></code>. Esse é um padrão comum, mas isso não significa nada. O elemento <code>div</code> não possui uma semântica definida, e o atributo <code>id</code> também não. (User agents não têm permissão para inferir qualquer significado do valor do atributo <code>id</code>). Você pode mudar isso para <code>&lt;div id="shazbot"></code> e ele terá o mesmo valor semântico, <i>i.e.</i>, nenhum.
 
 <p><abbr>HTML5</abbr> define um elemento <code>&lt;header></code> para este propósito. A especificação do <abbr>HTML5</abbr> possui <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-header-element>exemplos reais do uso do elemento <code>&lt;header></code></a>. Aqui está como ficaria parecido em <a href=examples/blog-original.html>nossa página de exemplo</a>:
 
@@ -628,12 +628,12 @@ p (irmão de h1)
 <p>Há três partes no elemento <code>&lt;time></code>:
 
 <ol>
-<li>A machine-readable timestamp
-<li>Human-readable text content
+<li>Uma máquina de leitura para timestamp
+<li>Conteúdo de texto de leitura para humanos
 <li>Uma flag opcional <code>pubdate</code>
 </ol>
 
-<p>Neste exemplo, o atributo <code>datetime</code> apenas especifica a data, não o tempo. O formato é de quatro digitos para o ano, dois digitos para o mês, e dois digitos para o dia, separado por traços:
+<p>Neste exemplo, o atributo <code>datetime</code> apenas especifica a data, não o tempo. O formato é de quatro dígitos para o ano, dois dígitos para o mês, e dois dígitos para o dia, separado por traços:
 
 <pre><code>&lt;time <mark>datetime="2009-10-22"</mark> pubdate>October 22, 2009&lt;/time></code></pre>
 
@@ -645,7 +645,7 @@ p (irmão de h1)
 
 <p>(O formato data/tempo é bastante flexível. A especificação do <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#valid-global-date-and-time-string>contém exemplos de data/tempo válidas</a>.)
 
-<p>Note que mudei o texto &mdash; entre <code>&lt;time></code> e <code>&lt;/time></code> &mdash; para combinar com a machine-readable timestamp. Isso não é obrigatório. O conteúdo pode ser o que você quiser, contanto que você forneça uma machine-readable date/timestamp no atributo <code>datetime</code>. Então isso é <abbr>HTML5</abbr> válido:
+<p>Note que mudei o texto &mdash; entre <code>&lt;time></code> e <code>&lt;/time></code> &mdash; para combinar com a máquina de leitura para timestamp. Isso não é obrigatório. O conteúdo pode ser o que você quiser, contanto que você forneça uma máquina de leitura para data/timestamp no atributo <code>datetime</code>. Então isso é <abbr>HTML5</abbr> válido:
 
 <pre><code>&lt;time datetime="2009-10-22"><mark>last Thursday</mark>&lt;/time></code></pre>
 
@@ -663,7 +663,7 @@ p (irmão de h1)
 
 <p>O que significa o atributo <code>pubdate</code>? Significa uma de duas coisas. Se o elemento <code>&lt;time></code> está em um elemento <code>&lt;article></code>, significa que este timestamp é a data de publicação do artigo. Se o elemento <code>&lt;time></code> não está em um elemento <code>&lt;article></code>, significa que esse timestamp é a data de publicação do documento inteiro.
 
-<p>Este é o atigo inteiro, reformulado para tirar total vantagem do <abbr>HTML5</abbr>:
+<p>Este é o artigo inteiro, reformulado para tirar total vantagem do <abbr>HTML5</abbr>:
 
 <pre><code>&lt;article>
   &lt;header>
@@ -702,7 +702,7 @@ p (irmão de h1)
 
 <p>Novamente, isso é <abbr>HTML5</abbr> válido. Mas enquanto é feito como uma lista de quatro itens, não há nada sobre a lista que lhe diga que ela faz parte da navegação do site. Visualmente, você pode adivinhar pelo fato dela fazer parte do cabeçalho da página, e pelo texto dos links. Mas semanticamente, não há nada para distinguir a lista de links de qualquer outra.
 
-<p>Quem liga para a semântica de navegação do site? Por exemplo, <a href=http://diveintoaccessibility.org/>pessoas com deficiências</a>. Porque isso? Considere este cenário: seu movimento é limitado, e usar o mouse é difícil ou impossível. Para compensar, você pode usar um browser add-on que lhe permite avançar para a maioria dos links de navegação. Ou considere isso: se sua visão é limitada, você pode usar um programa dedicado chamado &#8220;leitor de tela&#8221; que usa text-to-speech para falar e resumir as páginas da web. Uma vez que passar do título da página, os próximos trechos importantes de informação sobre uma página são os principais links de navegação. Se você quer navegar rápido, você dirá ao seu leitor de tela para pular para a barra de navegação e começar a ler. Se você quiser consultar rápido, você pode dizer ao seu leitor de tela para <em>pular</em> a barra de navegação e começar a ler o conteúdo principal. De qualquer forma, ser capaz de determinar os links de navegação programaticamente é importante.
+<p>Quem liga para a semântica de navegação do site? Por exemplo, <a href=http://diveintoaccessibility.org/>pessoas com deficiências</a>. Por que isso? Considere este cenário: seu movimento é limitado, e usar o mouse é difícil ou impossível. Para compensar, você pode usar um componente do browser que lhe permite avançar para a maioria dos links de navegação. Ou considere isso: se sua visão é limitada, você pode usar um programa dedicado chamado &#8220;leitor de tela&#8221; que usa text-to-speech para falar e resumir as páginas da web. Uma vez que passar do título da página, os próximos trechos importantes de informação sobre uma página são os principais links de navegação. Se você quer navegar rápido, você dirá ao seu leitor de tela para pular para a barra de navegação e começar a ler. Se você quiser consultar rápido, você pode dizer ao seu leitor de tela para <em>pular</em> a barra de navegação e começar a ler o conteúdo principal. De qualquer forma, ser capaz de determinar os links de navegação programaticamente é importante.
 
 <p>Então, enquanto não há nada de errado em usar <code>&lt;div id="nav"></code> para criar a navegação de seu site, Também não há particularmente nada certo sobre isso. O <abbr>HTML5</abbr> fornece uma maneira semântica para implementar seções de navegação: o elemento <code>&lt;nav></code>.
 
@@ -877,6 +877,6 @@ p (irmão de h1)
 
 <p class=c>Copyright MMIX&ndash;MMXI <a href=about.html>Mark Pilgrim</a>
 
-<form action=http://www.google.com/cse><div><input type=hidden name=cx value=017884302975346027366:bgclqh8nvse><input type=hidden name=ie value=UTF-8><input type=search name=q size=25 placeholder="powered by Google&trade;">&nbsp;<input type=submit name=sa value=Search></div></form>
+<form action=http://www.google.com/cse><div><input type=hidden name=cx value=017884302975346027366:bgclqh8nvse><input type=hidden name=ie value=UTF-8><input type=search name=q size=25 placeholder="powered by Google&trade;">&nbsp;<input type=submit name=sa value=Pesquisar></div></form>
 <script src=j/jquery.js></script>
 <script src=j/dih5.js></script>
