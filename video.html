@@ -180,60 +180,60 @@ Most non-PC devices that play H.264 video (including iPhones and standalone Blu-
 <tr><th>H.264+AAC+MP4<td>9.0+<td>&middot;<td>3.0+<td>&middot;<td>&middot;<td>3.0+<td>2.0+
 <tr><th>WebM<td>&nbsp;9.0+<sup>*</sup><td>4.0+<td>&dagger;<td>6.0+<td>10.6+<td>&middot;<td>2.3&Dagger;<sup>
 <tfoot>
-<tr><td colspan=8 style="text-align:left">* Internet Explorer 9 will only support WebM &#8220;<a href="http://windowsteamblog.com/windows/b/bloggingwindows/archive/2010/05/19/another-follow-up-on-html5-video-in-ie9.aspx">when the user has installed a VP8 codec</a>,&#8221; which implies that Microsoft will not be shipping the codec themselves.
-<tr><td colspan=8 style="text-align:left">&dagger; Safari will play anything that QuickTime can play, but QuickTime only comes with H.264/AAC/MP4 support pre-installed.
-<tr><td colspan=8 style="text-align:left">&Dagger; Although Android 2.3 supports WebM, there are no hardware decoders yet, so battery life is a concern.
+<tr><td colspan=8 style="text-align:left">* Internet Explorer 9 vai suportar apenas WebM &#8220;<a href="http://windowsteamblog.com/windows/b/bloggingwindows/archive/2010/05/19/another-follow-up-on-html5-video-in-ie9.aspx">quando o usuario tiver instalado um codec VP8</a>, "o que implica que a Microsoft não enviará o codec deles mesmos.
+<tr><td colspan=8 style="text-align:left">* Safari irá reproduzir tudo que o QuickTime pode reproduzir, mas QuickTime  vem apenas com suporte H.264/AAC/MP4 pré-instalado.
+<tr><td colspan=8 style="text-align:left">* Embora o Android 2.3 suporte WebM, ainda não existem decodificadores de hardwares, dessa forma a vida da bateria é uma preocupação.
 </table>
 
-<p>And now for the knockout punch:
+<p>E agora para o soco de nocaute:
 
 <div class=pf>
-<h4>Professor Markup Says</h4>
+<h4>Professor Markup Diz</h4>
 <div class=inner>
-<blockquote><p>There is no single combination of containers and codecs that works in all <abbr>HTML5</abbr> browsers.
-<p>This is not likely to change in the near future.
-<p>To make your video watchable across all of these devices and platforms, you&#8217;re going to need to encode your video more than once.
+<blockquote><p>Não existem únicas combinações de contêiners e codecs que funcionem em todos os navegadores <abbr>HTML5</abbr>.
+<p>E isso não vai mudar em um futuro tão próximo.
+<p>Para fazer seu video assistível em todos esses dispositivos e plataformas, você precisará codificar seu video mais de uma vez.
 </blockquote>
 </div>
 </div>
 
-<p>For maximum compatibility, here&#8217;s what your video workflow will look like:
+<p>Para máxima compatibilidade, aqui está o fluxo de trabalho com o que seu video deve parecer.
 
 <ol>
-<li>Make one version that uses WebM (VP8 + Vorbis).
-<li>Make another version that uses H.264 baseline video and AAC &#8220;low complexity&#8221; audio in an MP4 container.
-<li>Make another version that uses Theora video and Vorbis audio in an Ogg container.
-<li>Link to all three video files from a single <code>&lt;video></code> element, and fall back to a Flash-based video player.
+<li>Fazer uma versão que usa WebM (VP8 + Vorbis).
+<li>Fazer outra versão que use linhas de bases de video H.264 e audio AAC "baixa complexidade" em um contêiner MP4.
+<li>Fazer outra versão que use video Theora e audio Vorbis em um contêiner Ogg.
+<li>Linkar todos os três arquivos de video apartir de um único elemento <code>&lt;video></code>, e um "fallback" para um reprodutor de video flash.
 </ol>
 
 <p class=a>&#x2767;
 
-<h2 id=licensing>Licensing Issues with H.264 Video</h2>
+<h2 id=licensing>Problemas de Licensiamento com video H.264</h2>
 
-<p>Before we continue, I need to point out that there is a cost to encoding your videos twice. Well, there&#8217;s the obvious cost, that you have to encode your videos twice, and that takes more computers and more time than just doing it once. But there&#8217;s another real cost associated with H.264 video: licensing costs.
+<p>Antes de nós continuarmos, eu preciso salientar que ha um custo em codificar seu video duas vezes. Bem, existe um custo óbvio, que você tem que codificar seu video duas vezes, o que consome mais computador e mais tempo do que se fosse feito apenas uma vez. Mas há outro custo real associado com video H.264: custos de licensiamento.
 
-<p>Remember when I first explained <a href=#h264>H.264 video</a>, and I mentioned offhand that the video codec was patent-encumbered and licensing was brokered by the MPEG LA consortium. That turns out to be kind of important. To understand why it&#8217;s important, I direct you to <a href="http://www.streamingmedia.com/Articles/Editorial/Featured-Articles/The-H.264-Licensing-Labyrinth-65403.aspx">The H.264 Licensing Labyrinth</a>:
+<p>Se lembram quando eu expliquei <a href=#h264>video H.264</a>, e eu mencionei que o codec de video tem patentes-embutidas e o licensiamento foi quebrado pelo consórcio MPEG LA . Isso acaba sendo importante. Para entender por que isso é importante, eu te direciono para <a href="http://www.streamingmedia.com/Articles/Editorial/Featured-Articles/The-H.264-Licensing-Labyrinth-65403.aspx">O labirinto do licensiamento H.264</a>:
 
 <blockquote>
-<p>MPEG LA splits the H.264 license portfolio into two sublicenses: one for manufacturers of encoders or decoders and the other for distributors of content. &hellip;
+<p>MPEG LA Divide a licensa de portifólio H.264 em duas sub-licensas: uma para manufaturas de codificadores e decodificadores e a outra para distribuidores de conteúdo. &hellip;
 
-<p>The sublicense on the distribution side gets further split out to four key subcategories, two of which (subscription and title-by-title purchase or paid use) are tied to whether the end user pays directly for video services, and two of which (“free” television and internet broadcast) are tied to remuneration from sources other than the end viewer. &hellip;
+<p>A sub-licensa do lado dos distribuidores fica ainda mais dividida em quatro sub-categorias chaves, duas delas (assinaturas e título-por-título aquisição ou uso remunerado) são ligados ao fato de que o usuário final paga diretamente pelo serviço de videos, e dois deles ("gratuitos" televisão e broadcast de internet) são ligados a remuneração por outras fontes que não seja o espectador final. &hellip;
 
-<p>The licensing fee for &#8220;free&#8221; television is based on one of two royalty options. The first is a one-time payment of $2,500 per AVC transmission encoder, which covers one AVC encoder &#8220;used by or on behalf of a Licensee in transmitting AVC video to the End User,&#8221; who will decode and view it. If you&#8217;re wondering whether this is a double charge, the answer is yes: A license fee has already been charged to the encoder manufacturer, and the broadcaster will in turn pay one of the two royalty options.
+<p>A taxa de licensiamento para televisão "gratuita" é baseada em um das duas opções de royalties. O primeiro é um pagamento único de $2,50 por transmissão codificada AVC, que cobre um codificador AVC "usado por ou a favor da licensa de transmissão de video AVC para o úsuario final" que é quem irá decodificar e visualiza-lo. Se você esta se perguntando se isso é um encargo duplo, a resposta é sim: A taxa da licensa já foi cobrada do codificador manufaturado, e o broadcast vai em turnos pagar uma das duas opções de royalties.
 
-<p>The second licensing fee is an annual broadcast fee. &hellip; [T]he annual broadcast fee is broken down by viewership sizes:
+<p>A segunda taxa de licensiamento é anual. [A] taxa anual de broadcast é dividida pelo tamanho da audiência:
 <ul>
-<li>$2,500 per calendar year per broadcast markets of 100,000–499,999 television households
-<li>$5,000 per calendar year per broadcast market of 500,000–999,999 television households
-<li>$10,000 per calendar year per broadcast market of 1,000,000 or more television households
+<li>$2,50 por ano por mercado de broadcasts de 100,000–499,999 famílias de televisão
+<li>$5,00 por ano por mercado de broadcasts de 500,000–999,999 famílias de televisão
+<li>$10,00 por ano por mercado de broadcasts de 1,000,000 ou mais famílias de televisão
 </ul>
 
-<p>&hellip; With all the issues around &#8220;free&#8221; television, why should someone involved in nonbroadcast delivery care? As I mentioned before, the participation fees apply to any delivery of content. After defining that &#8220;free&#8221; television meant more than just [over-the-air], MPEG LA went on to define participation fees for internet broadcasting as &#8220;AVC video that is delivered via the Worldwide Internet to an end user for which the end user does not pay remuneration for the right to receive or view.&#8221; In other words, any public broadcast, whether it is [over-the-air], cable, satellite, or the internet, is subject to participation fees. &hellip;
+<p> Com toda a questão da televisão "livre" porque alguém envolvido em entregas não-broadcast se importaria? Como eu mencionei antes, as taxas de participação são aplicáveis para cada entrega de conteúdo. Depois de definir que televisão "livre" significa mais do que apenas "over-the-air", MPEG LA passou a definir as taxas de licensiamento para transferencia na internet via "video AVC que é entregue em todo mundo para um usuario final para que o usuario final nao pague pelo direito de receber ou ver". Em outras palavras, qualquer transmissão pública, seja "over-the-air", cabo, satelite, ou internet estão sujeitas a taxas de participação. &hellip;
 
-<p>The fees are potentially somewhat steeper for internet broadcasts, perhaps assuming that internet delivery will grow much faster than OTA or &#8220;free&#8221; television via cable or satellite. Adding the &#8220;free television&#8221; broadcast-market fee together with an additional fee, MPEG LA grants a reprieve of sorts during the first license term, which ends on Dec. 31, 2010, and notes that &#8220;after the first term the royalty shall be no more than the economic equivalent of royalties payable during the same time for free television.&#8221;
+<p>As taxas são potencialmente mais íngrimes para transmissões pela internet, talvez sabendo que a entrega na internet irá crescer muito mais rapido do que OTA ou televisão "livre" via cabo ou satelite. Adicionando a televisão "livre" as taxas do mercado da transmissão juntas com a taxa adicional. MPEG LA garantirá um indulto durante o tempo da primeira licensa, que acaba em 31 de Dez de 2010, e note que "após a primeira licensa o royalties não será mais do que equeivalente econômico dos royalties pagos durante o mesmo tempo de televisão livre.&#8221;
 </blockquote>
 
-<p>That last part &mdash; about the fee structure for internet broadcasts &mdash; has already been amended. The <abbr>MPEG-LA</abbr> recently <a href="http://www.mpegla.com/Lists/MPEG%20LA%20News%20List/Attachments/226/n-10-02-02.pdf" title="warning: PDF">announced</a> that internet streaming would not be charged. That does <em>not</em> mean that H.264 is royalty-free for all users. In particular, encoders (like the one that processes video uploaded to YouTube) and decoders (like the one included in Microsoft Internet Explorer 9) are still subject to licensing fees. See <a href=http://shaver.off.net/diary/2010/08/27/free-as-in-smokescreen/>Free as in smokescreen</a> for more information.
+<p>A ultima parte - Sobre a estrutura das taxas para transmissão pela internet - já foi alterada. A <abbr>MPEG-LA</abbr>  recentemente <a href="http://www.mpegla.com/Lists/MPEG%20LA%20News%20List/Attachments/226/n-10-02-02.pdf" title="warning: PDF">anunciou</a> que o streaming de internet não seria cobrado. Que <em>não</em> significa que H.264 é livre de royalties para todos os usuarios. Em particular, codificadores ( Como o que processa o upload de video do YouTube ) e codificadores (como o que esta incluso no Microsoft Internet Explorer 9) ainda são assuntos de taxas de licensiamento. Veja <a href=http://shaver.off.net/diary/2010/08/27/free-as-in-smokescreen/>Livre como em uma tema de fumaça</a> para maiores informações.
 
 <p class=a>&#x2767;
 
