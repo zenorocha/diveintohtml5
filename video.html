@@ -165,7 +165,7 @@ Most non-PC devices that play H.264 video (including iPhones and standalone Blu-
 <tr><th>H.264+AAC+MP4<td>&middot;<td>&middot;<td>3.0+<td>5.0&ndash;?&Dagger;<td>&middot;<td>3.0+<td>2.0+
 <tr><th>WebM<td>&middot;<td>&middot;<td>&dagger;<td>6.0+<td>10.6+<td>&middot;<td>&middot;
 <tfoot>
-<tr><td colspan=8 style="text-align:left">&dagger; Safari irá reproduzir tudo que o QuickTime reproduz. QuickTime vem pre-instalado com suporte H.264/AAC/MP4. Existem plugins de terceiros instalaveis que provém suporte para Theora e WebM, mas cada usuario precisa instalar esses plugins antes do Safari reconhecer os formatos dos videos.
+<tr><td colspan=8 style="text-align:left">&dagger; Safari irá reproduzir tudo que o QuickTime reproduz. QuickTime vem pre-instalado com suporte H.264/AAC/MP4. Existem plugins de terceiros instalaveis que provém suporte para Theora e WebM, mas cada usuário precisa instalar esses plugins antes do Safari reconhecer os formatos dos vídeos.
 <tr><td colspan=8 style="text-align:left">&Dagger; Google Chrome irá <a href=http://blog.chromium.org/2011/01/html-video-codec-support-in-chrome.html>perder o suporte a H.264</a> em breve. <a href=http://blog.chromium.org/2011/01/more-about-chrome-html-video-codec.html>Ler sobre o por que</a>.
 </table>
 
@@ -192,48 +192,48 @@ Most non-PC devices that play H.264 video (including iPhones and standalone Blu-
 <div class=inner>
 <blockquote><p>Não existem únicas combinações de contêiners e codecs que funcionem em todos os navegadores <abbr>HTML5</abbr>.
 <p>E isso não vai mudar em um futuro tão próximo.
-<p>Para fazer seu video assistível em todos esses dispositivos e plataformas, você precisará codificar seu video mais de uma vez.
+<p>Para fazer seu vídeo assistível em todos esses dispositivos e plataformas, você precisará codificar seu vídeo mais de uma vez.
 </blockquote>
 </div>
 </div>
 
-<p>Para máxima compatibilidade, aqui está o fluxo de trabalho com o que seu video deve parecer.
+<p>Para máxima compatibilidade, aqui está o fluxo de trabalho com o que seu vídeo deve parecer.
 
 <ol>
 <li>Fazer uma versão que usa WebM (VP8 + Vorbis).
-<li>Fazer outra versão que use linhas de bases de video H.264 e audio AAC "baixa complexidade" em um contêiner MP4.
-<li>Fazer outra versão que use video Theora e audio Vorbis em um contêiner Ogg.
-<li>Linkar todos os três arquivos de video apartir de um único elemento <code>&lt;video></code>, e um "fallback" para um reprodutor de video flash.
+<li>Fazer outra versão que use linhas de bases de vídeo H.264 e audio AAC "baixa complexidade" em um contêiner MP4.
+<li>Fazer outra versão que use vídeo Theora e audio Vorbis em um contêiner Ogg.
+<li>Linkar todos os três arquivos de vídeo apartir de um único elemento <code>&lt;video></code>, e um "fallback" para um reprodutor de vídeo flash.
 </ol>
 
 <p class=a>&#x2767;
 
-<h2 id=licensing>Problemas de Licensiamento com video H.264</h2>
+<h2 id=licensing>Problemas de Licenciamento com vídeo H.264</h2>
 
-<p>Antes de nós continuarmos, eu preciso salientar que ha um custo em codificar seu video duas vezes. Bem, existe um custo óbvio, que você tem que codificar seu video duas vezes, o que consome mais computador e mais tempo do que se fosse feito apenas uma vez. Mas há outro custo real associado com video H.264: custos de licensiamento.
+<p>Antes de nós continuarmos, eu preciso salientar que há um custo em codificar seu vídeo duas vezes. Bem, existe um custo óbvio, que você tem que codificar seu vídeo duas vezes, o que consome mais computador e mais tempo do que se fosse feito apenas uma vez. Mas há outro custo real associado com vídeo H.264: custos de licenciamento.
 
-<p>Se lembram quando eu expliquei <a href=#h264>video H.264</a>, e eu mencionei que o codec de video tem patentes-embutidas e o licensiamento foi quebrado pelo consórcio MPEG LA . Isso acaba sendo importante. Para entender por que isso é importante, eu te direciono para <a href="http://www.streamingmedia.com/Articles/Editorial/Featured-Articles/The-H.264-Licensing-Labyrinth-65403.aspx">O labirinto do licensiamento H.264</a>:
+<p>Se lembram quando eu expliquei <a href=#h264>vídeo H.264</a>, e eu mencionei que o codec de vídeo tem patentes-embutidas e o licenciamento foi quebrado pelo consórcio MPEG LA. Isso acaba sendo importante. Para entender porque isso é importante, eu te direciono para <a href="http://www.streamingmedia.com/Articles/Editorial/Featured-Articles/The-H.264-Licensing-Labyrinth-65403.aspx">O labirinto do licenciamento H.264</a>:
 
 <blockquote>
-<p>MPEG LA Divide a licensa de portifólio H.264 em duas sub-licensas: uma para manufaturas de codificadores e decodificadores e a outra para distribuidores de conteúdo. &hellip;
+<p>MPEG LA Divide a licença de portifólio H.264 em duas sub-licenças: uma para manufaturas de codificadores e decodificadores e a outra para distribuidores de conteúdo. &hellip;
 
-<p>A sub-licensa do lado dos distribuidores fica ainda mais dividida em quatro sub-categorias chaves, duas delas (assinaturas e título-por-título aquisição ou uso remunerado) são ligados ao fato de que o usuário final paga diretamente pelo serviço de videos, e dois deles ("gratuitos" televisão e broadcast de internet) são ligados a remuneração por outras fontes que não seja o espectador final. &hellip;
+<p>A sub-licença do lado dos distribuidores fica ainda mais dividida em quatro sub-categorias chaves, duas delas (assinaturas e aquisição título-por-título ou uso remunerado) são ligados ao fato de que o usuário final paga diretamente pelo serviço de vídeos, e dois deles (televisão "gratuita" e broadcast de internet) são ligados a remuneração por outras fontes que não seja o espectador final. &hellip;
 
-<p>A taxa de licensiamento para televisão "gratuita" é baseada em um das duas opções de royalties. O primeiro é um pagamento único de $2,50 por transmissão codificada AVC, que cobre um codificador AVC "usado por ou a favor da licensa de transmissão de video AVC para o úsuario final" que é quem irá decodificar e visualiza-lo. Se você esta se perguntando se isso é um encargo duplo, a resposta é sim: A taxa da licensa já foi cobrada do codificador manufaturado, e o broadcast vai em turnos pagar uma das duas opções de royalties.
+<p>A taxa de licenciamento para televisão "gratuita" é baseada em uma das duas opções de royalties. A primeiro é um pagamento único de $2,500 por transmissão codificada AVC, que cobre um codificador AVC "usado por ou a favor da licença de transmissão de vídeo AVC para o úsuario final" que é quem irá decodificar e visualizá-lo. Se você está se perguntando se isso é um encargo duplo, a resposta é sim: A taxa da licença já foi cobrada do codificador manufaturado, e o broadcast vai em turnos pagar uma das duas opções de royalties.
 
-<p>A segunda taxa de licensiamento é anual. [A] taxa anual de broadcast é dividida pelo tamanho da audiência:
+<p>A segunda taxa de licenciamento é anual. [A] taxa anual de broadcast é dividida pelo tamanho da audiência:
 <ul>
-<li>$2,50 por ano por mercado de broadcasts de 100,000–499,999 famílias de televisão
-<li>$5,00 por ano por mercado de broadcasts de 500,000–999,999 famílias de televisão
-<li>$10,00 por ano por mercado de broadcasts de 1,000,000 ou mais famílias de televisão
+<li>$2,500 por ano por mercado de broadcasts de 100,000–499,999 famílias de televisão
+<li>$5,000 por ano por mercado de broadcasts de 500,000–999,999 famílias de televisão
+<li>$10,000 por ano por mercado de broadcasts de 1,000,000 ou mais famílias de televisão
 </ul>
 
-<p> Com toda a questão da televisão "livre" porque alguém envolvido em entregas não-broadcast se importaria? Como eu mencionei antes, as taxas de participação são aplicáveis para cada entrega de conteúdo. Depois de definir que televisão "livre" significa mais do que apenas "over-the-air", MPEG LA passou a definir as taxas de licensiamento para transferencia na internet via "video AVC que é entregue em todo mundo para um usuario final para que o usuario final nao pague pelo direito de receber ou ver". Em outras palavras, qualquer transmissão pública, seja "over-the-air", cabo, satelite, ou internet estão sujeitas a taxas de participação. &hellip;
+<p> Com toda a questão da televisão "livre" por que alguém envolvido em entregas não-broadcast se importaria? Como eu mencionei antes, as taxas de participação são aplicáveis para cada entrega de conteúdo. Depois de definir que televisão "livre" significa mais do que apenas "over-the-air", MPEG LA passou a definir as taxas de licenciamento para transferencia na internet via "vídeo AVC que é entregue em todo mundo para um usuário final para que o usuário final não pague pelo direito de receber ou ver". Em outras palavras, qualquer transmissão pública, seja "over-the-air", cabo, satélite, ou internet estão sujeitas a taxas de participação. &hellip;
 
-<p>As taxas são potencialmente mais íngrimes para transmissões pela internet, talvez sabendo que a entrega na internet irá crescer muito mais rapido do que OTA ou televisão "livre" via cabo ou satelite. Adicionando a televisão "livre" as taxas do mercado da transmissão juntas com a taxa adicional. MPEG LA garantirá um indulto durante o tempo da primeira licensa, que acaba em 31 de Dez de 2010, e note que "após a primeira licensa o royalties não será mais do que equeivalente econômico dos royalties pagos durante o mesmo tempo de televisão livre.&#8221;
+<p>As taxas são potencialmente mais íngrimes para transmissões pela internet, talvez sabendo que a entrega na internet irá crescer muito mais rápido do que OTA ou televisão "livre" via cabo ou satélite. Adicionando a televisão "livre" as taxas do mercado da transmissão juntas com a taxa adicional. MPEG LA garantirá um indulto durante o tempo da primeira licença, que acaba em 31 de Dez de 2010, e note que "após a primeira licença o royalties não será mais do que equivalente econômico dos royalties pagos durante o mesmo tempo de televisão livre.&#8221;
 </blockquote>
 
-<p>A ultima parte - Sobre a estrutura das taxas para transmissão pela internet - já foi alterada. A <abbr>MPEG-LA</abbr>  recentemente <a href="http://www.mpegla.com/Lists/MPEG%20LA%20News%20List/Attachments/226/n-10-02-02.pdf" title="warning: PDF">anunciou</a> que o streaming de internet não seria cobrado. Que <em>não</em> significa que H.264 é livre de royalties para todos os usuarios. Em particular, codificadores ( Como o que processa o upload de video do YouTube ) e codificadores (como o que esta incluso no Microsoft Internet Explorer 9) ainda são assuntos de taxas de licensiamento. Veja <a href=http://shaver.off.net/diary/2010/08/27/free-as-in-smokescreen/>Livre como em uma tema de fumaça</a> para maiores informações.
+<p>A última parte - Sobre a estrutura das taxas para transmissão pela internet - já foi alterada. A <abbr>MPEG-LA</abbr>  recentemente <a href="http://www.mpegla.com/Lists/MPEG%20LA%20News%20List/Attachments/226/n-10-02-02.pdf" title="warning: PDF">anunciou</a> que o streaming de internet não seria cobrado. Que <em>não</em> significa que H.264 é livre de royalties para todos os usuários. Em particular, codificadores ( Como o que processa o upload de vídeo do YouTube ) e codificadores (como o que esta incluso no Microsoft Internet Explorer 9) ainda são assuntos de taxas de licenciamento. Veja <a href=http://shaver.off.net/diary/2010/08/27/free-as-in-smokescreen/>Livre como em uma tema de fumaça</a> para maiores informações.
 
 <p class=a>&#x2767;
 
