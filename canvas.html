@@ -62,15 +62,15 @@ body{counter-reset:h1 4}
 <tbody>
 <tr><td>7.0+<sup>*</sup><td>3.0+<td>3.0+<td>3.0+<td>10.0+<td>1.0+<td>1.0+
 <tfoot>
-<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> shapes natively.
+<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 e 8 necessita da biblioteca <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a>. Internet Explorer 9 suporta <code>&lt;canvas></code> nativamente.
 </table>
 
-<p>Every canvas starts out blank. That&#8217;s boring! Let&#8217;s draw something.</p>
+<p>Todo canvas começa em branco. Que chato! Vamos desenhar alguma coisa.</p>
 
 <canvas id=b width=300 height=225 style="border:1px dotted;float:left" onclick="draw_b();return false"></canvas>
-<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> <a href="#" onclick="draw_b();return false">Click to draw on this canvas</a></p>
+<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> <a href="#" onclick="draw_b();return false">Clique para desenhar nesse canvas</a></p>
 
-<p class=clear>The <code>onclick</code> handler called this function:
+<p class=clear>O evento <code>onclick</code> dispara essa função:
 
 <pre><code>function draw_b() {
   var b_canvas = document.getElementById("b");
@@ -78,9 +78,9 @@ body{counter-reset:h1 4}
   b_context.fillRect(50, 25, 150, 100);
 }</code></pre>
 
-<p>The 1<sup>st</sup> line of the function is nothing special; it just finds the <code>&lt;canvas></code> element in the <abbr>DOM</abbr>.
+<p>A 1<sup>ª</sup> linha dessa função não é nada de especial; apenas encontra o elemento <code>&lt;canvas></code> no <abbr>DOM</abbr>.
 
-<p class="legend left" style="margin-top:2em">And then there&#8217;s this <span class=arrow>&#x21dd;</span>&nbsp;</p>
+<p class="legend left" style="margin-top:2em">E então temos isso <span class=arrow>&#x21dd;</span>&nbsp;</p>
 <pre><code>function draw_b() {
   var b_canvas = document.getElementById("b");
 <mark>  var b_context = b_canvas.getContext("2d");</mark>
@@ -89,7 +89,7 @@ body{counter-reset:h1 4}
 
 <p class=ss><img src=i/openclipart.org_media_files_johnny_automatic_4145.png width=312 height=300 alt="man drawing in front of a mirror">
 
-<p>Every canvas has a drawing <dfn>context</dfn>, which is where all the fun stuff happens. Once you&#8217;ve found a <code>&lt;canvas></code> element in the <abbr>DOM</abbr> (by using <code>document.getElementById()</code> or any other method you like), you call its <code>getContext()</code> method. You <strong>must</strong> pass the string <code>"2d"</code> to the <code>getContext()</code> method.
+<p>Todo canvas possui um <dfn>contexto</dfn> de desenho, que é onde toda diversão acontece. Uma vez tendo encontradoo elemento <code>&lt;canvas></code> no <abbr>DOM</abbr> (ao usar <code>document.getElementById()</code> ou qualquer método que você queira), você chama seu método <code>getContext()</code>. Você <strong>deve</strong> passar a string <code>"2d"</code> para o método <code>getContext()</code>.
 
 <blockquote class=note>
 <p><span>&#x261E;</span>Q: Is there a 3-D canvas?<br>
