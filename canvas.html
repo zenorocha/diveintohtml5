@@ -164,7 +164,7 @@ var context = c_canvas.getContext("2d");</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=paths>Paths</h2>
+<h2 id=paths>Caminhos</h2>
 
 <table class=bc>
 <thead>
@@ -172,20 +172,20 @@ var context = c_canvas.getContext("2d");</code></pre>
 <tbody>
 <tr><td>7.0+<sup>*</sup><td>3.0+<td>3.0+<td>3.0+<td>10.0+<td>1.0+<td>1.0+
 <tfoot>
-<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> paths natively.
+<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 e 8 necessita da biblioteca <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a>. Internet Explorer 9 suporta caminhos do <code>&lt;canvas></code> nativamente.
 </table>
 
 <p style="float:left;margin:1.75em 1.75em 1.75em 0"><img src=i/openclipart.org_media_files_johnny_automatic_7563.png alt="gerbil sitting on a chair with a quill and ink jar" width=167 height=347>
 
-<p>Imagine you&#8217;re drawing a picture in ink. You don&#8217;t want to just dive in and start drawing with ink, because you might make a mistake. Instead, you sketch the lines and curves with a pencil, and once you&#8217;re happy with it, you trace over your sketch in ink.
+<p>Imagine que você está desenhando um quadro com tinta. Você não quer começar mergulhando e desenhando o quadro com a tinta, isso porque você pode cometer um erro. Ao invés disso, você rascunha as linhas e curvas com um lápis, e quando você estiver feliz com aquilo, irá traçar com tinta por cima do rascunho.
 
-<p>Each canvas has a <dfn>path</dfn>. Defining the path is like drawing with a pencil. You can draw whatever you like, but it won&#8217;t be part of the finished product until you pick up the quill and trace over your path in ink.
+<p>Cada canvas tem um <dfn>caminho</dfn>. Definir um caminho é como desenhar com um lápis. Você pode desenhar o que quiser, mas não irá fazer do produto final até que você pegue a pena e trace seu caminho com tinta.
 
-<p>To draw straight lines in pencil, you use the following two methods:
+<p>Para desenhar linhas retas com lápis, use os dois métodos seguintes:
 
 <ol style="list-style-position:inside">
-<li><code>moveTo(x, y)</code> moves the pencil to the specified starting point.
-<li><code>lineTo(x, y)</code> draws a line to the specified ending point.
+<li><code>moveTo(x, y)</code> move o lápis para o ponto inicial especificado.
+<li><code>lineTo(x, y)</code> desenha a linha para o ponto final especificado.
 </ol>
 
 <p>The more you call <code>moveTo()</code> and <code>lineTo()</code>, the bigger the path gets. These are &#8220;pencil&#8221; methods &mdash; you can call them as often as you like, but you won&#8217;t see anything on the canvas until you call one of the &#8220;ink&#8221; methods.
