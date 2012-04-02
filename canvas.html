@@ -118,19 +118,19 @@ R: Sim. Definindo a altura e a largura de um elemento <code>&lt;canvas></code> i
 </div>
 </div>
 
-<p>Getting back to that code sample in the previous example&hellip;
-<p class="legend left" style="margin-top:2em">Draw a rectangle <span class=arrow>&#x21dd;&nbsp;</span></p>
+<p>Voltando para amostra de código vista no exemplo anterior&hellip;
+<p class="legend left" style="margin-top:2em">Desenhe um retângulo <span class=arrow>&#x21dd;&nbsp;</span></p>
 <pre><code>var b_canvas = document.getElementById("b");
 var b_context = b_canvas.getContext("2d");
 <mark>b_context.fillRect(50, 25, 150, 100);</mark></code></pre>
 
-<p class=clear>Calling the <code>fillRect()</code> method draws the rectangle and fills it with the current fill style, which is black until you change it. The rectangle is bounded by its upper-left corner (50,&nbsp;25), its width (150), and its height (100). To get a better picture of how that works, let&#8217;s look at the canvas coordinate system.
+<p class=clear>Chamando o método <code>fillRect()</code> desenhamos um retângulo e o preenche com o estilo de preenchimento atual, no qual é preto até você alterar isso. Um retângulo é limitado por seu canto superior esquerdo (50,&nbsp;25), sua largura (150), e sua altura (100). Para ter uma imagem melhor de como isso funciona, vamos ver o sistema de coordenadas desse canvas.
 
 <p class=a>&#x2767;
 
-<h2 id=coordinates>Canvas Coordinates</h2>
+<h2 id=coordinates>Coordenadas do Canvas</h2>
 
-<p>The canvas is a two-dimensional grid. The coordinate (0, 0) is at the upper-left corner of the canvas. Along the X-axis, values increase towards the right edge of the canvas. Along the Y-axis, values increase towards the bottom edge of the canvas.
+<p>O canvas é uma grade bidimensional. A coordenada (0, 0) fica no canto superior esquerdo do canvas. Ao longo do eixo X, os valores aumentam em direção à borda direita da tela. Ao longo do eixo Y, os valores aumentam em direção à borda de baixo do canvas.
 
 <p class="legend top" style="width:500px;text-align:center">Canvas coordinates diagram <span class=arrow>&#x21b7;</span><br></p>
 <canvas id=c width=500 height=375></canvas>
