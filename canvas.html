@@ -99,7 +99,7 @@ R: Ainda não. Fornecedores têm experimentado suas próprias <abbr>API</abbr>s 
 <p>Então você tem elemento <code>&lt;canvas></code>, e tem seu contexto desenho. O contexto de desenho é onde todos métodos e propriedades do desenho são definidos. Há um bando de propriedades e métodos dedicados ao desenho de retângulos:
 
 <ul>
-<li>The <code>fillStyle</code> property can be a <abbr>CSS</abbr> color, a pattern, or a gradient. (More on gradients shortly.) The default <code>fillStyle</code> is solid black, but you can set it to whatever you like. Each drawing context remembers its own properties as long as the page is open, unless you do something to reset it.
+<li>A propriedade <code>fillStyle</code> pode ser uma cor, padrão ou degradê do <abbr>CSS</abbr>. (Mais sobre degradês mais em breve.) O padrão para o <code>fillStyle</code> é preto sólido, mas você pode definir o que quiser. Cada contexto de desenho guarda suas próprias propriedades enquanto a página estiver aberta, a não ser que você faça alguma coisa para resetar isso.
 <li><code>fillRect(x, y, width, height)</code> draws a rectangle filled with the current fill style.
 <li>The <code>strokeStyle</code> property is like <code>fillStyle</code> &mdash; it can be a CSS color, a pattern, or a gradient.
 <li><code>strokeRect(x, y, width, height)</code> draws an rectangle with the current stroke style. <code>strokeRect</code> doesn&#8217;t fill in the middle; it just draws the edges.
