@@ -188,28 +188,28 @@ var context = c_canvas.getContext("2d");</code></pre>
 <li><code>lineTo(x, y)</code> desenha a linha para o ponto final especificado.
 </ol>
 
-<p>The more you call <code>moveTo()</code> and <code>lineTo()</code>, the bigger the path gets. These are &#8220;pencil&#8221; methods &mdash; you can call them as often as you like, but you won&#8217;t see anything on the canvas until you call one of the &#8220;ink&#8221; methods.
+<p>Quanto mais você chamar <code>moveTo()</code> e <code>lineTo()</code>, maior será o tamanho do caminho. Esses são métodos &#8220;lápis&#8221; &mdash; você pode chamá-los o quanto quiser, mas você não irá ver nada no canvas até que você invoque os métodos &#8220;tinta&#8221;.
 
-<p>Let&#8217;s begin by drawing the off-white grid.
+<p>Vamos começar desenhando nossa grade esbranquiçada.
 
 <pre style="float:left"><code>for (var x = 0.5; x &lt; 500; x += 10) {
   context.moveTo(x, 0);
   <mark>context.lineTo(x, 375);</mark>
 }</code></pre>
-<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> Draw vertical lines</p>
+<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> Desenha as linhas verticais</p>
 
 <pre style="clear:left;float:left"><code>for (var y = 0.5; y &lt; 375; y += 10) {
   context.moveTo(0, y);
   <mark>context.lineTo(500, y);</mark>
 }</code></pre>
-<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> Draw horizontal lines</p>
+<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> Desenha as linhas horizontais</p>
 
-<p class=clear>Those were all &#8220;pencil&#8221; methods. Nothing has actually been drawn on the canvas yet. We need an &#8220;ink&#8221; method to make it permanent.
+<p class=clear>Esses foram todos métodos &#8220;lápis&#8221;. Nada foi desenhado no canvas ainda. Nós precisamos de um método &#8220;tinta&#8221; para tornar isso permanente.
 
 <pre><code>context.strokeStyle = "#eee";
 <mark>context.stroke();</mark></code></pre>
 
-<p><code>stroke()</code> is one of the &#8220;ink&#8221; methods. It takes the complex path you defined with all those <code>moveTo()</code> and <code>lineTo()</code> calls, and actually draws it on the canvas. The <code>strokeStyle</code> controls the color of the lines. This is the result:</p>
+<p><code>stroke()</code> é um dos métodos &#8220;tinta&#8221;. Ele pega o caminho complexo que você definiu com todos aqueles <code>moveTo()</code> e <code>lineTo()</code>, e realmente desenha eles no canvas. O <code>strokeStyle</code> controla a cor das linhas. Esse é o resultado:</p>
 
 <canvas id=c2 width=500 height=375></canvas>
 
