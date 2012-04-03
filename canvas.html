@@ -214,16 +214,17 @@ var context = c_canvas.getContext("2d");</code></pre>
 <canvas id=c2 width=500 height=375></canvas>
 
 <div class="pf clear" id=pixel-madness>
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor Marcação</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Why did you start <var>x</var> and <var>y</var> at <code>0.5</code>? Why not <code>0</code>?<br>
-A: Imagine each pixel as a large square. The whole-number coordinates (0, 1, 2&hellip;) are the edges of the squares. If you draw a one-unit-wide line between whole-number coordinates, it will overlap opposite sides of the pixel square, and the resulting line will be drawn two pixels wide. To draw a line that is only one pixel wide, you need to shift the coordinates by 0.5 perpendicular to the line's direction.
-<p>For example, if you try to draw a line from <code>(1,&nbsp;0)</code> to <code>(1,&nbsp;3)</code>, the browser will draw a line covering 0.5 screen pixels on either side of <code>x=1</code>. The screen can&#8217;t display half a pixel, so it expands the line to cover a total of two pixels:
+<p><span>&#x261E;</span>P: Por quê você começou com <var>x</var> e <var>y</var> com <code>0.5</code>? Por quê não <code>0</code>?<br>
+R: Imagine cada pixel como um grande quadrado. As coordenadas inteiras (0, 1, 2&hellip;) são arestas desse quadrado. Se você desenhar uma linha com uma unidade de largura entre coordenadas inteiras, ele irá sobrepor lados opostos do quadrado de pixel, e a linha resultante será desenhada com dois pixels de largura. Para desenhar uma linha que tenha apenas um pixel de largura, você precisa mudar as coordenadas para 0.5 perpendicular à direção da linha.
+
+<p>Por exemplo, se você tentar desenhar a linha de <code>(1,&nbsp;0)</code> para <code>(1,&nbsp;3)</code>, o navegador irá desenhar a linha cobrindo 0.5 pixels da tela em ambos os lados <code>x=1</code>. A tela não consegue exibir meio pixel, então irá expandir a linha para cobrir um total de dois pixels:
 <p><img src=i/canvas-half-pixels-1.jpg alt="A line from (1,0) to (1,3) is drawn 2 pixels wide" width=406 height=314>
-<p>But, if you try to draw a line from <code>(1.5,&nbsp;0)</code> to <code>(1.5,&nbsp;3)</code>, the browser will draw a line covering 0.5 screen pixels on either side of <code>x=1.5</code>, which results in a true 1-pixel-wide line:
+<p>Mas se você tentar desenhar uma linha de <code>(1.5,&nbsp;0)</code> para <code>(1.5,&nbsp;3)</code>, o navegador irá desenhar a linha cobrindo 0.5 pixels da tela em ambos os lados <code>x=1.5</code>, o que resulta na verdade em uma linha de 1 pixel de largura:
 <p><img src=i/canvas-half-pixels-2.jpg alt="A line from (1.5,0) to (1.5,3) is draw 1 pixel wide" width=404 height=323>
-<p><em>Thanks to Jason Johnson for providing these diagrams.</em>
+<p><em>Agradecimentos ao Jason Johnson por prover esses diagramas.</em>
 </blockquote>
 </div>
 </div>
