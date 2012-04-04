@@ -19,7 +19,7 @@ body{counter-reset:h1 4}
 <p class=f><img src=i/aoc-h.png alt=H width=107 height=105>TML 5 define <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>o elemento &lt;canvas&gt; </a> como &#8220;uma tela bitmap de resolução depentente que pode ser usada para renderizar gráficos, jogos, ou outras imagens em tempo real.&#8221; A tag <dfn>canvas</dfn> é um retângulo na sua página, onde você pode usar JavaScript para desenhar o que você quiser.</p>
 
 <table class=bc>
-<caption>Basic &lt;canvas> Suporte</caption>
+<caption>Suporte Básico ao &lt;canvas></caption>
 <thead>
 <tr><th title="Internet Explorer">IE<th title="Mozilla Firefox">Firefox<th title="Apple Safari">Safari<th title="Google Chrome">Chrome<th>Opera<th>iPhone<th>Android
 <tbody>
@@ -229,9 +229,9 @@ R: Imagine cada pixel como um grande quadrado. As coordenadas inteiras (0, 1, 2&
 </div>
 </div>
 
-<p>Now let&#8217;s draw the horizontal arrow. All the lines and curves on a path are drawn in the same color (or gradient &mdash; yes, we&#8217;ll get to those soon). We want to draw the arrow in a different color ink &mdash; black instead of off-white &mdash; so we need to start a new path.
+<p>Agora vamos desenhar a flecha horizontal. Todas as linhas e curvas no caminho são desenhadas com a mesma cor (ou degradê &mdash; sim, nós vamos chegar nisso em breve). Nós queremos desenhar a flecha com uma tinta de cor diferente &mdash; preta ao invés de esbranquiçada &mdash; então vamos precisar de um novo caminho.
 
-<p class="legend top" style="margin-left:2em">A new path <span class=arrow>&#x21b7;</span><br></p>
+<p class="legend top" style="margin-left:2em">Um novo caminho <span class=arrow>&#x21b7;</span><br></p>
 <pre><code><mark>context.beginPath();</mark>
 context.moveTo(0, 40);
 context.lineTo(240, 40);
@@ -241,7 +241,7 @@ context.moveTo(495, 35);
 context.lineTo(500, 40);
 context.lineTo(495, 45);</code></pre>
 
-<p>The vertical arrow looks much the same. Since the vertical arrow is the same color as the horizontal arrow, we do <strong>not</strong> need to start another new path. The two arrows will be part of the same path.
+<p>A flecha vertical é praticamente igual. Já que a flecha vertical utiliza a mesma cor que a flecha horizontal, nós <strong>não</strong> vamos precisar criar um novo caminho. As duas flechas farão parte um mesmo caminho.
 
 <pre style="float:left"><code>context.moveTo(60, 0);
 context.lineTo(60, 153);
@@ -250,14 +250,14 @@ context.lineTo(60, 375);
 context.moveTo(65, 370);
 context.lineTo(60, 375);
 context.lineTo(55, 370);</code></pre>
-<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x219c;</span> Not a new path</p>
+<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x219c;</span> Não é um novo caminho</p>
 
-<p class=clear>I said these arrows were going to be black, but the <code>strokeStyle</code> is still off-white. (The <code>fillStyle</code> and <code>strokeStyle</code> don&#8217;t get reset when you start a new path.) That&#8217;s OK, because we&#8217;ve just run a series of &#8220;pencil&#8221; methods. But before we draw it for real, in &#8220;ink,&#8221; we need to set the <code>strokeStyle</code> to black. Otherwise, these two arrows will be off-white, and we&#8217;ll hardly be able to see them! The following lines change the color to black and draw the lines on the canvas:
+<p class=clear>Eu disse que essas flechas serão pretas, mas o <code>strokeStyle</code> continua esbranquiçado. (O <code>fillStyle</code> e o <code>strokeStyle</code> não são resetados quando você começa um novo caminho.) Tudo bem, porque nós vamos apenas rodar uma série de métodos &#8220;lápis&#8221;. Mas antes de desenhar de verdade, na &#8220;tinta,&#8221; nós vamos precisar definir o <code>strokeStyle</code> para preto. Caso contrário, essas duas flechas ficarão esbranquiçadas, e nós vamos dificilmente ser capazes de vê-las! As linhas seguintes mudam a cor para preto e desenham as linhas no canvas:
 
 <pre><code>context.strokeStyle = "#000";
 context.stroke();</code></pre>
 
-<p>This is the result:</p>
+<p>E o resultado:</p>
 
 <canvas id=c3 width=500 height=375></canvas>
 
