@@ -276,13 +276,13 @@ context.stroke();</code></pre>
 </table>
 
 <p>Em adição ao desenho de <a href=#paths>linhas com canvas</a>, você também pode desenhar texto com um canvas. Diferentemente do texto em torno de uma página web, não há box model. Isso significa que nenhuma das técnicas familiares de layout em CSS são válidas: sem floats, sem margins, sem padding, sem word wrapping. (Talvez você pensa que isso é uma boa coisa!) Você pode definir alguns poucos atributos de fonte, depois pode pegar um ponto no canvas e começar a desenhar seu texto ali.
-	
-<p>The following font attributes are available on the <a href=#shapes>drawing context</a>:
+
+<p>Os atributos de fonte a seguir estão disponíveis no <a href=#shapes>contexto do desenho</a>:
 
 <ul>
-<li><code>font</code> can be anything you would put in a <abbr>CSS</abbr> <code>font</code> rule. That includes font style, font variant, font weight, font size, line height, and font family.
-<li><code>textAlign</code> controls text alignment. It is similar (but not identical) to a <abbr>CSS</abbr> <code>text-align</code> rule. Possible values are <code>start</code>, <code>end</code>, <code>left</code>, <code>right</code>, and <code>center</code>.
-<li><code>textBaseline</code> controls where the text is drawn relative to the starting point. Possible values are <code>top</code>, <code>hanging</code>, <code>middle</code>, <code>alphabetic</code>, <code>ideographic</code>, or <code>bottom</code>.
+<li><code>font</code> pode ser qualquer coisa que você colocaria na regra <code>font</code> do <abbr>CSS</abbr>. Incluindo font style, font variant, font weight, font size, line height, e font family.
+<li><code>textAlign</code> controla o alinhamento do texto. É parecido (mas não idêntico) a regra <code>text-align</code> do <abbr>CSS</abbr>. Os possíveis valores são <code>start</code>, <code>end</code>, <code>left</code>, <code>right</code>, e <code>center</code>.
+<li><code>textBaseline</code> controla onde o texto é desenhado relativo ao ponto de início. Os possíveis valores são <code>top</code>, <code>hanging</code>, <code>middle</code>, <code>alphabetic</code>, <code>ideographic</code>, ou <code>bottom</code>.
 </ul>
 
 <p><code>textBaseline</code> is tricky, because text is tricky (English text isn&#8217;t, but you can draw any Unicode character you like on a canvas, and Unicode is tricky). The <abbr>HTML5</abbr> specification <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-textbaseline>explains the different text baselines</a>:
