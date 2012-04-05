@@ -292,21 +292,21 @@ context.stroke();</code></pre>
 <p><img src=i/baselines.png alt="diagram of different values of the textBaseline property" width=680 height=227>
 </blockquote>
 
-<p>For simple alphabets like English, you can safely stick with <code>top</code>, <code>middle</code>, or <code>bottom</code> for the <code>textBaseline</code> property.
+<p>Para alfabetos simples como o Inglês, você pode ficar com segurança com<code>top</code>, <code>middle</code>, ou <code>bottom</code> para a propriedade <code>textBaseline</code>.
 
-<p>Let&#8217;s draw some text! Text drawn inside the canvas inherits the font size and style of the <code>&lt;canvas></code> element itself, but you can override this by setting the <code>font</code> property on the drawing context.
+<p>Vamos desenhar algum texto! O texto desenhado dentro do canvas herda o tamanho da fonte e o estilo do próprio elemento <code>&lt;canvas></code>, você pode sobrescrever isso definindo a propriedade fonte <code>font</code> para o contexto de desenho.
 
 <pre style="float:left"><code><mark>context.font = "bold 12px sans-serif";</mark>
 context.fillText("x", 248, 43);
 context.fillText("y", 58, 165);</code></pre>
-<p class="legend right"><span class=arrow>&nbsp;&#x219c;</span> Change the font style</p>
+<p class="legend right"><span class=arrow>&nbsp;&#x219c;</span> Altera o estilo da fonte</p>
 
-<p class=clear>The <code>fillText()</code> method draws the actual text.</p>
+<p class=clear>O método <code>fillText()</code> desenha o texto de fato.</p>
 
 <pre style="float:left"><code>context.font = "bold 12px sans-serif";
 <mark>context.fillText("x", 248, 43);</mark>
 context.fillText("y", 58, 165);</code></pre>
-<p class="legend right" style="margin-top:2.6em"><span class=arrow>&nbsp;&#x21dc;</span> Draw the text</p>
+<p class="legend right" style="margin-top:2.6em"><span class=arrow>&nbsp;&#x21dc;</span> Desenhar o texto</p>
 
 <div class="pf clear" id=relative-font-size>
 <h4>Ask Professor Markup</h4>
