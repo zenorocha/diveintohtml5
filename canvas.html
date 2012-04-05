@@ -318,12 +318,12 @@ R: Sim. Como qualquer outro elemento <abbr>HTML</abbr> na sua página, o própri
 </div>
 </div>
 
-<p>For the text in the upper-left corner, let&#8217;s say I want the top of the text to be at <code>y=5</code>. But I&#8217;m lazy &mdash; I don&#8217;t want to measure the height of the text and calculate the baseline. Instead, I can set <code>textBaseline</code> to <code>top</code> and pass in the upper-left coordinate of the text&#8217;s bounding box.
+<p>Para o texto no canto superior esquerdo, vamos dizer que eu queira colocar o topo do texto no <code>y=5</code>. Mas eu sou um cara preguiçoso &mdash; Eu não quero medir a altura do texto e calcular a linha de base. Ao invés disso, eu posso definir o <code>textBaseline</code> para <code>top</code> e passar para o canto superior esquerdo a coordenada da caixa delimitadora do texto.
 
 <pre><code>context.textBaseline = "top";
 context.fillText("( 0 , 0 )", <mark>8, 5</mark>);</code></pre>
 
-<p>Now for the text in the lower-right corner. Let&#8217;s say I want the bottom-right corner of the text to be at coordinates <code>(492,370)</code> &mdash; just a few pixels away from the bottom-right corner of the canvas &mdash; but I don&#8217;t want to measure the width or height of the text. I can set <code>textAlign</code> to <code>right</code> and <code>textBaseline</code> to <code>bottom</code>, then call <code>fillText()</code> with the bottom-right coordinates of the text&#8217;s bounding box.
+<p>Agora para o texto no canto inferior direito. Vamos dizer que eu queira para que fique na coordenada <code>(492,370)</code> &mdash; somente há alguns pixels de distância do canto inferior direito do canvas &mdash; mas eu não quero medir a altura e largura do texto. Posso definir a propriedade <code>textAlign</code> para <code>right</code> e a <code>textBaseline</code> para <code>bottom</code>, então chamar <code>fillText()</code> com as coordenadas do canto inferior direito da caixa delimitadora do texto.
 
 <pre><code>context.textAlign = "right";
 context.textBaseline = "bottom";
