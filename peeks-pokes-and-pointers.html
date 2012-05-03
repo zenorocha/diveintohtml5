@@ -576,7 +576,7 @@ code i{
   <td colspan=3><i>Veja <a href=offline.html>Capítulo 8: Vamos tornar isso offline</a>.</i>
   <td>
 
-  <td colspan=4><i>Location sharing is always opt-in. See <a href=geolocation.html>Capítulo 6: Você está aqui</a>.</i>
+  <td colspan=4><i>Compartilhamento de localização sempre é opt-in (opcional). Veja <a href=geolocation.html>Capítulo 6: Você está aqui</a>.</i>
 
 <tr>
   <td colspan=2 class=dots><span><b><a href=detect.html#offline>Teste de suporte</a></b></span>
@@ -588,13 +588,13 @@ code i{
 
 <tr>
   <td colspan=2 class=dots><span><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#attr-html-manifest>&lt;html manifest></a></b></span>
-  <td><i>Links to cache manifest.</i>
+  <td><i>Links para cache manifest.</i>
   <td>
 
-  <td colspan=4><b><a href=http://www.w3.org/TR/geolocation-API/#geolocation_interface>Functions</a></b>
+  <td colspan=4><b><a href=http://www.w3.org/TR/geolocation-API/#geolocation_interface>Funções</a></b>
 
 <tr>
-  <td colspan=3><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#manifests>Cache manifest sections</a></b>
+  <td colspan=3><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#manifests>Sessões cache manifest</a></b>
   <td>
 
   <td>
@@ -603,7 +603,7 @@ code i{
 <tr>
   <td>
   <td class=dots><b>CACHE:</b>
-  <td>Always cached. No wildcards.
+  <td>Sempre em cache. Sem wildcards.
   <td>
 
   <td>
@@ -612,7 +612,7 @@ code i{
 <tr>
   <td>
   <td class=dots><b>NETWORK:</b>
-  <td>Never cached. "*" wildcards.
+  <td>Nunca em cache. "*" wildcards.
   <td>
 
   <td>
@@ -621,24 +621,24 @@ code i{
 <tr>
   <td>
   <td class=dots><b>FALLBACK:</b>
-  <td>Pairs; second is used offline.
+  <td>Pares; o segundo é utilizado offline.
   <td>
 
   <td>
-  <td colspan=3><code>void callback(position);</code> <i>Called on success</i>
+  <td colspan=3><code>void callback(position);</code> <i>Chamado em caso de sucesso</i>
 
 <tr>
-  <td colspan=2 class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#appcacheevents>Events</a></b>
-  <td><i>First four are most common.</i>
+  <td colspan=2 class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#appcacheevents>Eventos</a></b>
+  <td><i>Os quatro primeiros são os mais comuns.</i>
   <td>
 
   <td>
-  <td colspan=3><code>void err(positionError);</code> <i>Called on error</i>
+  <td colspan=3><code>void err(positionError);</code> <i>Chamado em caso de erro</i>
   
 <tr>
   <td>
   <td class=dots><code>checking</code>
-  <td>always first
+  <td>sempre em primeiro lugar
   <td>
 
   <td colspan=4><b><a href=http://www.w3.org/TR/geolocation-API/#position-options>PositionOptions object</a></b>
@@ -646,99 +646,99 @@ code i{
 <tr>
   <td>
   <td class=dots><code>downloading</code>
-  <td>found manifest, fetching stuff
+  <td>Encontrado manifest, buscando
   <td>
 
   <td>
   <td class=dots><code>timeout</code>
-  <td colspan=2>in milliseconds
+  <td colspan=2>Em milissegundos
 
 <tr>
   <td>
   <td class=dots><code>progress</code>
-  <td>still fetching stuff
+  <td>Ainda buscando
   <td>
 
   <td>
   <td class=dots><code>maximumAge</code>
-  <td colspan=2>also milliseconds
+  <td colspan=2>também milissegundos
 
 <tr>
   <td>
   <td class=dots><code>cached</code>
-  <td>all resources cached
+  <td>todos os recursos armazenados em cache
   <td>
 
   <td>
   <td class=dots><code>enableHighAccuracy</code>
-  <td colspan=2>true or false
+  <td colspan=2>true or false (verdadeiro ou falso)
 
 <tr>
   <td>
   <td class=dots><code>noupdate</code>
-  <td>manifest hasn't changed
+  <td>manifest não mudou
   <td>
 
-  <td colspan=4><i><a href=http://www.w3.org/TR/geolocation-API/#position>Position object</a> (in callback) has <code>timestamp</code> and <code>coords</code>.</i>
+  <td colspan=4><i><a href=http://www.w3.org/TR/geolocation-API/#position>Position object</a> (no callback) Tem <code>timestamp</code> e <code>coords</code>.</i>
 
 <tr>
   <td>
   <td class=dots><code>updateready</code>
-  <td>call <code>swapCache()</code> to activate
+  <td>chamar <code>swapCache()</code> para ativar
   <td>
 
-  <td colspan=4><b><a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Coordinates object</a></b> <i>Unsupported properties will be <code>null</code>.</i>
+  <td colspan=4><b><a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Coordinates object</a></b> <i>Propriedades não suportados serão <code>null</code>.</i>
 
 <tr>
   <td>
   <td class=dots><code>obsolete</code>
-  <td>manifest is 404 (or 410)
+  <td>manifest é 404 (ou 410)
   <td>
 
   <td>
   <td class=dots><code>latitude</code>
-  <td colspan=2>in decimal degrees
+  <td colspan=2>em graus decimais
 
 <tr>
   <td>
   <td class=dots><code>error</code>
-  <td>it all went wrong somewhere
+  <td>tudo deu errado em algum lugar
   <td>
 
   <td>
   <td class=dots><code>longitude</code>
-  <td colspan=2>also decimal degrees
+  <td colspan=2>também em graus decimais 
 
 <tr>
-  <td rowspan=8 colspan=3><p class=note>HTTP semantics still apply to resources listed in the cache manifest, so check your <code>Expires</code> and <code>Cache-Control</code> headers. Manifest must be served as <code>text/cache-manifest</code>, so check your <code>Content-Type</code> headers too. If <i>any</i> required resource fails to load, application will not work offline. 
+  <td rowspan=8 colspan=3><p class=note>Semânticas HTTP  ainda se aplicam aos recursos listados no cache manifest, então verifique seus cabeçalhos <code>Expires</code> e <code>Cache-Control</code>. Manifest devem ser apresentados como <code>text/cache-manifest</code>, então verifique o seu cabeçalho <code>Content-Type</code> também. Se <i>qualquer</i> recurso necessário não carregar, a aplicação não irá funcionar offline. 
   <td rowspan=8 colspan=1>
 
   <td>
   <td class=dots><code>altitude</code>
-  <td colspan=2>meters above the <a href=http://en.wikipedia.org/wiki/Reference_ellipsoid>reference ellipsoid</a>
+  <td colspan=2>metros acima do <a href=http://en.wikipedia.org/wiki/Reference_ellipsoid>elipsóide de referência</a>
 
 <tr>
   <td>
   <td class=dots><code>accuracy</code>
-  <td colspan=2>in meters
+  <td colspan=2>em metros
 
 <tr>
   <td>
   <td class=dots><code>altitudeAccuracy</code>
-  <td colspan=2>also in meters
+  <td colspan=2>também em metros
 
 <tr>
   <td>
   <td class=dots><code>heading</code>
-  <td colspan=2>degrees CCW from true north
+  <td colspan=2>graus CCW do norte verdadeiro
 
 <tr>
   <td>
   <td class=dots><code>speed</code>
-  <td colspan=2>in meters/second
+  <td colspan=2>em metros/segundos
 
 <tr>
-  <td colspan=4><i><a href=http://www.w3.org/TR/geolocation-API/#position-error>PositionError object</a> (in err callback) has <code>message</code> and <code>code</code>:</i>
+  <td colspan=4><i><a href=http://www.w3.org/TR/geolocation-API/#position-error>PositionError object</a> (no err callback) tem <code>message</code> e <code>code</code>:</i>
 
 <tr>
   <td>
@@ -746,25 +746,25 @@ code i{
 
 <tr>
   <td>
-  <td colspan=3>PERMISSION_DENIED, or UNKNOWN_ERROR
+  <td colspan=3>PERMISSION_DENIED, ou UNKNOWN_ERROR
 
 <tr>
-  <td colspan=8><h2><span>Math is hard. Let&#8217;s go shopping!</span> Canvas</h2>
+  <td colspan=8><h2><span>Matemática é difícil, vamos às compras!</span> Canvas</h2>
 
 <tr>
-  <td colspan=8><i>Paths are like tracing in pencil; nothing is drawn until <code>fill()</code> or <code>stroke()</code>! See <a href=canvas.html>Chapter 4: Let&#8217;s Call It A Draw(ing) Surface</a>.</i>
+  <td colspan=8><i>Os caminhos são como traçar a lápis; nada é desenhado até <code>fill()</code> ou <code>stroke()</code>! Veja <a href=canvas.html>Capítulo 4:Vamos Chamar De Superfície de Desenho</a>.</i>
 
 <tr>
-  <td colspan=2 class=dots><b><a href=detect.html#canvas>Basic support</a></b>
+  <td colspan=2 class=dots><b><a href=detect.html#canvas>Suporte básico</a></b>
   <td colspan=6><code>"getContext" in $new("canvas")</code>
 
 <tr>
-  <td colspan=2 class=dots><b><a href=detect.html#canvas-text>Text support</a></b>
+  <td colspan=2 class=dots><b><a href=detect.html#canvas-text>Suporte de texto</a></b>
   <td colspan=6><code>typeof $new("canvas").fillText=="function"</code>
 
 <tr>
-  <td colspan=2 class=dots><b>Functions</b>
-  <td colspan=6><i>Root path is implicit; subpaths must be explicit. <code>drawImage()</code> can also draw video or canvas.</i>
+  <td colspan=2 class=dots><b>Funções</b>
+  <td colspan=6><i>Caminho da raiz está implícito; subcaminhos devem ser explícitos. <code>drawImage()</code> também pode desenhar vídeo ou canvas.</i>
 
 <tr>
   <td>
@@ -855,81 +855,81 @@ code i{
   <td colspan=4><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-createpattern>createPattern(image,repetition);</a></code>
 
 <tr>
-  <td colspan=2 class=dots><b>Properties</b>
-  <td colspan=6><i>All properties are read/write. <code>fillStyle</code> and <code>strokeStyle</code> can also be a gradient or pattern.</i>
+  <td colspan=2 class=dots><b>Propriedades</b>
+  <td colspan=6><i>Todas as propriedades são de leitura/escrita. <code>fillStyle</code> e <code>strokeStyle</code> também pode ser um gradiente ou padrão.</i>
 
 <tr>
   <td>
   <td class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-fillstyle>fillStyle</a></code>
-  <td>CSS color, default = "black"
+  <td>cor CSS, padrão = "black"
   <td>
 
   <td colspan=2 class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-shadowcolor>shadowColor</a></code>
-  <td colspan=2>CSS color, default = "black"
+  <td colspan=2>cor CSS, padrão = "black"
 
 <tr>
   <td>
   <td class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-strokestyle>strokeStyle</a></code>
-  <td>CSS color, default = "black"
+  <td>cor CSS, padrão = "black"
   <td>
 
   <td colspan=2 class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-shadowoffsetx>shadowOffsetX</a></code>
-  <td colspan=2>in pixels, default = 0
+  <td colspan=2>Em pixels, padrão = 0
 
 <tr>
   <td>
   <td class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-font>font</a></code>
-  <td>CSS font, default = "10px sans-serif"
+  <td>fonte CSS, padrão = "10px sans-serif"
   <td>
 
   <td colspan=2 class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-shadowoffsety>shadowOffsetY</a></code>
-  <td colspan=2>in pixels, default = 0
+  <td colspan=2>Em pixels, padrão = 0
 
 <tr>
   <td>
   <td class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-textalign>textAlign</a></code>
-  <td>enumerated, default = "start"
+  <td>enumerated, padrão = "start"
   <td>
 
   <td colspan=2 class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-shadowblur>shadowBlur</a></code>
-  <td colspan=2>in pixels, default = 0
+  <td colspan=2>Em pixels, padrão = 0
 
 <tr>
   <td>
   <td class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-textbaseline>textBaseline</a></code>
-  <td>enumerated, default = "alphabetic"
+  <td>enumerated, padrão = "alphabetic"
   <td>
 
-  <td rowspan=6 colspan=4><p class=note>Learn about states! A <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#the-canvas-state>canvas state</a> includes the clipping path, all properties, and all transformations. <code>save()</code> pushes a state onto the stack and <code>restore()</code> pops it off.
+  <td rowspan=6 colspan=4><p class=note>Aprenda mais sobre os estados! Um <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#the-canvas-state>canvas state</a> inclui o caminho de recorte, todas as propriedades, e todas as transformações. <code>save()</code> envia um estado para a pilha e <code>restore()</code> tira fora.
 
 <tr>
   <td>
   <td class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-globalalpha>globalAlpha</a></code>
-  <td>0.0 (transparent) to 1.0 (opaque)
+  <td>0.0 (transparente) até 1.0 (opaco)
   <td>
 
 <tr>
   <td>
   <td class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-linewidth>lineWidth</a></code>
-  <td>in pixels, default = 1
+  <td>Em pixels, padrão = 1
   <td>
 
 <tr>
   <td>
   <td class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-linecap>lineCap</a></code>
-  <td>enumerated, default = "butt"
+  <td>enumerated, padrão = "butt"
   <td>
 
 <tr>
   <td>
   <td class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-linejoin>lineJoin</a></code>
-  <td>enumerated, default = "miter"
+  <td>enumerated, padrão = "miter"
   <td>
 
 <tr>
   <td>
   <td class=dots><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-miterlimit>miterLimit</a></code>
-  <td>float, default = 10
+  <td>float, enumerado = 10
   <td>
 
 <tr>
@@ -937,31 +937,31 @@ code i{
 
 <tr>
   <td colspan=2 class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/syntax.html#the-doctype>Doctype</a></b>
-  <td colspan=6><code>&lt;!DOCTYPE html></code> <i>Triggers <a href=semantics.html#the-doctype>standards-based rendering</a> in all browsers. It&#8217;s 2011; stop relying on &#8220;quirks mode&#8221;!</i>
+  <td colspan=6><code>&lt;!DOCTYPE html></code> <i>Triggers <a href=semantics.html#the-doctype>baseada em padrões de renderização</a> em todos os navegadores. É de 2011; parar de confiar em "quirks mode"!</i>
 
 <tr>
-  <td colspan=2 class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#attr-meta-charset>Text encoding</a></b>
-  <td colspan=6><code>&lt;meta charset="utf-8"></code> <i><a href=http://openmya.hacker.jp/hasegawa/security/utf7cs.html>Always declare a charset</a>, even if you&#8217;re a rockstar. UTF-8 is always a safe choice.</i>
+  <td colspan=2 class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#attr-meta-charset>Codificação de texto</a></b>
+  <td colspan=6><code>&lt;meta charset="utf-8"></code> <i><a href=http://openmya.hacker.jp/hasegawa/security/utf7cs.html>Sempre declarar um charset</a>, mesmo que você seja um rockstar. UTF-8 sempre é uma escolha segura.</i>
 
 <tr>
-  <td colspan=2 class=dots><b><a href=http://wiki.whatwg.org/wiki/HTML_vs._XHTML>Optional end tags</a></b>
+  <td colspan=2 class=dots><b><a href=http://wiki.whatwg.org/wiki/HTML_vs._XHTML>Tags de fim opcional</a></b>
   <td colspan=6><code>&lt;html></code>, <code>&lt;head></code>, <code>&lt;body></code>, <code>&lt;li></code>, <code>&lt;p></code>, <code>&lt;dt></code>, <code>&lt;dd></code>, <code>&lt;colgroup></code>, <code>&lt;option></code>, <code>&lt;optgroup></code>, <code>&lt;rt></code>, <code>&lt;rp></code>,
 
 <tr>
   <td colspan=2>
-  <td colspan=6><code>&lt;thead></code>, <code>&lt;tbody></code>, <code>&lt;tfoot></code>, <code>&lt;tr></code>, <code>&lt;td></code>. <i>Exception: always close <code>&lt;p></code> before <code>&lt;table></code> to avoid IE weirdness.</i>
+  <td colspan=6><code>&lt;thead></code>, <code>&lt;tbody></code>, <code>&lt;tfoot></code>, <code>&lt;tr></code>, <code>&lt;td></code>. <i>Exceção: sempre feche <code>&lt;p></code> antes de <code>&lt;table></code> para evitar a loucura do IE.</i>
 
 <tr>
-  <td colspan=2 class=dots><b><a href=http://wiki.whatwg.org/wiki/HTML_vs._XHTML>Optional start tags</a></b>
-  <td colspan=6><code>&lt;html></code>, <code>&lt;head></code>, <code>&lt;body></code>, <code>&lt;tbody></code>, <code>&lt;colgroup></code>. <i>Amaze your friends! Skip the <code>&lt;html></code> tags and still validate!</i>
+  <td colspan=2 class=dots><b><a href=http://wiki.whatwg.org/wiki/HTML_vs._XHTML>Tags de inicio opcionais</a></b>
+  <td colspan=6><code>&lt;html></code>, <code>&lt;head></code>, <code>&lt;body></code>, <code>&lt;tbody></code>, <code>&lt;colgroup></code>. <i>Surpreenda os seus amigos! Ignore a tag <code>&lt;html></code> e continue validando!</i>
 
 <tr>
-  <td colspan=2 class=dots><b><a href=http://dev.w3.org/html5/html4-differences/#new-attributes>New attributes</a></b>
+  <td colspan=2 class=dots><b><a href=http://dev.w3.org/html5/html4-differences/#new-attributes>Novos atributos</a></b>
   <td colspan=6><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#attr-hyperlink-media>&lt;a media></a></code>, <code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#ping>&lt;a ping></a></code>, <code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#attr-base-target>&lt;base target></a></code>, <code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#attr-style-scoped>&lt;style scoped></a></code>, <code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/scripting-1.html#attr-script-async>&lt;script async></a></code>, <code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/grouping-content.html#attr-ol-reversed>&lt;ol reversed></a></code>
 
 <tr>
-  <td colspan=2><b>Miscellaneous tests</b>
-  <td colspan=6><i>See <a href=everything.html>The All-In-One Almost-Alphabetical No-Bullshit Guide to Detecting Everything</a>.</i>
+  <td colspan=2><b>Testes diversos</b>
+  <td colspan=6><i>Veja <a href=everything.html>O Único Quase-Alfabético Sem-Besteiras Guia Para Detectar Tudo</a>.</i>
 
 <tr>
   <td>
@@ -1011,12 +1011,12 @@ code i{
 <tr>
   <td>
   <td class=dots><b><a href=http://dev.w3.org/html5/webstorage/>Web Storage</a></b>
-  <td colspan=6><code>"localStorage" in window && window["localStorage"] !== null</code> <i>See <a href=storage.html>Chapter 7: Local Storage</a>.</i>
+  <td colspan=6><code>"localStorage" in window && window["localStorage"] !== null</code> <i>Veja <a href=storage.html>Capítulo 7: Um Lugar Para Colocar Suas Soisas</a>.</i>
 
 <tr>
   <td>
   <td class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html#the-history-interface>History API</a></b>
-  <td colspan=6><code>window.history && window.history.pushState</code> <i>See <a href=history.html>Chapter 11: History <abbr>API</abbr></a>.</i>
+  <td colspan=6><code>window.history && window.history.pushState</code> <i>See <a href=history.html>Capítulo 11: Manipulando Histórico Para Diversão & Lucro</a>.</i>
 
 <tr>
   <td>
@@ -1028,7 +1028,7 @@ code i{
   <td colspan=6><code>&nbsp;&nbsp;return window.SVGSVGElement &amp;&amp; e.firstChild instanceof window.SVGSVGElement}</code>
 
 <tr>
-  <td colspan=8><h2><span>Serial Number 110518</span> Credits</h2>
+  <td colspan=8><h2><span>Serial Number 110518</span> Creditos</h2>
 
 <tr>
   <td colspan=2 class=dots><b>Writing</b>
