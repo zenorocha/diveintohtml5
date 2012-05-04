@@ -15,3 +15,7 @@ Depois é só escolher uma página que ainda não está sendo traduzido e voilá
 Primeiro você precisa saber quem está revisando o quê. Para isso [confira essa página](https://github.com/zenorocha/diveintohtml5/wiki/Revis%C3%A3o).
 
 Depois é só escolher algo que ainda não está sendo revisado e voilá!
+
+### Reporte um erro
+
+Caso encontre algum erro de tradução, por favor nos avise através das [Issues](https://github.com/zenorocha/diveintohtml5/issues).

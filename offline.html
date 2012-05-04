@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset=utf-8>
-<title>Offline Web Applications - Dive Into HTML5</title>
+<title>Aplicações Web Offline - Dive Into HTML5</title>
 <!--[if lt IE 9]><script src=j/html5.js></script><![endif]-->
 <link rel=alternate type=application/atom+xml href=https://github.com/diveintomark/diveintohtml5/commits/master.atom>
 <link rel=stylesheet href=screen.css>
@@ -9,20 +9,20 @@ body{counter-reset:h1 8}
 </style>
 <link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
 <link rel=prefetch href=index.html>
-<p>You are here: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#offline>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
-<h1><br>Let&#8217;s Take This Offline</h1>
+<p>Você está aqui: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#offline>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
+<h1><br>Vamos Tornar Isso Offline</h1>
 <p id=toc>&nbsp;
 <p class=a>&#x2767;
-<h2 id=divingin>Diving In</h2>
+<h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-w.png alt=W width=110 height=108>hat is an offline web application? At first glance, it sounds like a contradiction in terms. Web pages are things you download and render. Downloading implies a network connection. How can you download when you&#8217;re offline? Of course, you can&#8217;t. But you <em>can</em> download when you&#8217;re online. And that&#8217;s how <abbr>HTML5</abbr> offline applications work. 
+<p class=f><img src=i/aoc-w.png alt=O width=110 height=108>que são aplicações web offline? Em um primeiro momento, parece uma contradição de termos. Páginas da web são coisas que você faz download e renderiza. Download implica conexão com a rede. Como você pode fazer download quando você está offline? É claro, você não pode. Mas você <em>pode</em> fazer download quando você está online. E é assim que as aplicacões offline da <abbr>HTML5</abbr> funcionam.
 
-<p>At its simplest, an offline web application is a list of <abbr>URL</abbr>s &mdash; <abbr>HTML</abbr>, <abbr>CSS</abbr>, JavaScript, images, or any other kind of resource. The home page of the offline web application points to this list, called a manifest file, which is just a text file located elsewhere on the web server. A web browser that implements <abbr>HTML5</abbr> offline applications will read the list of <abbr>URL</abbr>s from the manifest file, download the resources, cache them locally, and automatically keep the local copies up to date as they change. When the time comes that you try to access the web application without a network connection, your web browser will automatically switch over to the local copies instead.
+<p>De forma simples, uma aplicacão web offline é uma lista de <abbr>URL</abbr>s &mdash; <abbr>HTML</abbr>, <abbr>CSS</abbr>, JavaScript, imagens, ou qualquer tipo de recurso. A página inicial de uma aplicação web offline aponta para essa lista, chamado de arquivo manifesto, que é apenas um arquivo texto localizado em qualquer lugar no servidor web. Um navegador web que implementa aplicações offline em <abbr>HTML5</abbr> irá ler a lista de <abbr>URL</abbr>s do arquivo manifesto, fazer download dos recursos, realizar o cache deles localmente, e automaticamente manter os arquivos locais atualizados à medida que são alterados. Quando chegar a hora em que você tentar acessar as aplicações web sem uma conexão de rede, seu navegador web irá automaticamente apontar para as cópias locais.
 
-<p>From there, most of the work is up to you, the web developer. There&#8217;s a flag in the <abbr>DOM</abbr> that will tell you whether you&#8217;re online or offline. There are events that fire when your offline status changes (one minute you&#8217;re offline and the next minute you&#8217;re online, or vice-versa). But that&#8217;s pretty much it. If your application creates data or saves state, it&#8217;s up to you to <a href=storage.html>store that data locally</a> while you&#8217;re offline and synchronize it with the remote server once you&#8217;re back online. In other words, <abbr>HTML5</abbr> can take your web application offline. What you do once you&#8217;re there is up to you.
+<p>A partir disso, a maioria do trabalho está com você, desenvolvedor web. Existe uma indicação no <abbr>DOM</abbr> que irá dizer se você está online ou offline. Existem eventos que são disparados quando seu status offline muda (em um minuto você está offline e no próximo minuto está online, ou vice-versa). Mas é basicamento isso. Se a sua aplicação cria dados ou salvo estados, está com você a missão de <a href=storage.html>armazenar dados localmente</a> enquanto está offline e sincronizar isso com o servidor remoto uma vez estando online novamente. Em outras palavras, <abbr>HTML5</abbr> pode levar suas aplicações web offline. O que você faz quando chegar lá é com você.
 
 <table class=bc>
-<caption>Offline support</caption>
+<caption>Suporte offline</caption>
 <thead>
 <tr><th title="Internet Explorer">IE<th title="Mozilla Firefox">Firefox<th title="Apple Safari">Safari<th title="Google Chrome">Chrome<th>Opera<th>iPhone<th>Android
 <tbody>
@@ -31,9 +31,9 @@ body{counter-reset:h1 8}
 
 <p class=a>&#x2767;
 
-<h2 id=manifest>The Cache Manifest</h2>
+<h2 id=manifest>O Manifesto Cache</h2>
 
-<p>An offline web application revolves around a cache manifest file. What&#8217;s a manifest file? It&#8217;s a list of all of the resources that your web application might need to access while it&#8217;s disconnected from the network. In order to bootstrap the process of downloading and caching these resources, you need to point to the manifest file, using a <code>manifest</code> attribute on your <code>&lt;html></code> element.
+<p>Uma aplicação web offline utiliza um arquivo de manifesto cache. O que é um arquivo manifesto? É uma lista de todos os recursos que a sua aplicação web irá precisar acessar quando estiver desconectada de uma rede. Afim de iniciar o processo de download e cache desses recursos, você irá precisar apontar para o arquivo manifesto, utilizando o atributo <code>manifest</code> no seu elemento <code>&lt;html></code>.
 
 <pre><code>&lt;!DOCTYPE HTML>
 &lt;html <mark>manifest="/cache.manifest"</mark>>
@@ -42,52 +42,52 @@ body{counter-reset:h1 8}
 &lt;/body>
 &lt;/html></code></pre>
 
-<p>Your cache manifest file can be located anywhere on your web server, but it must be served with the content type <code>text/cache-manifest</code>. If you are running an Apache-based web server, you can probably just put <a href=http://httpd.apache.org/docs/2.2/mod/mod_mime.html#addtype>an <code>AddType</code> directive</a> in the <code>.htaccess</code> file at the root of your web directory:
+<p>Seu arquivo de manifesto cache pode estar localizado em qualquer lugar do seu servidor web, mas precisa estar servido sob o tipo de conteúdo <code>text/cache-manifest</code>. Se você está rodando um servidor web baseado no Apache, você provavelmente precisa adicionar uma <a href=http://httpd.apache.org/docs/2.2/mod/mod_mime.html#addtype>diretiva <code>AddType</code></a> no seu arquivo <code>.htaccess</code> na raíz do seu diretório web:
 
 <pre><code>AddType text/cache-manifest .manifest</code></pre>
 
-<p>Then make sure that the name of your cache manifest file ends with <code>.manifest</code>. If you use a different web server or a different configuration of Apache, consult your server&#8217;s documentation on controlling the <code>Content-Type</code> header.
+<p>Depois certifique-se que o nome do seu arquivo de manifesto cache termina com <code>.manifest</code>. Se você usa um servidor web diferente ou uma configuração diferente do Apache, consulte a documentação do seu servidor em controle de cabeçalho <code>Content-Type</code>.
 
 <div class="pf clear">
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor Marcação</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: My web application spans more than one page. Do I need a <code>manifest</code> attribute in each page, or can I just put it in the home page?
-<p>A: Every page of your web application needs a <code>manifest</code> attribute that points to the cache manifest for the entire application.
+<p><span>&#x261E;</span>P: Minha aplicação web abrange mais de uma página. Preciso de um atributo <code>manifest</code> em cada página, ou posso colocar apenas na home page?
+<p>R: Cada página da sua aplicação web precisa de um atributo <code>manifest</code> que ponta para o manifesto cache para toda aplicação.
 </blockquote>
 </div>
 </div>
 
-<p>OK, so every one of your <abbr>HTML</abbr> pages points to your cache manifest file, and your cache manifest file is being served with the proper <code>Content-Type</code> header. But what goes <em>in</em> the manifest file? This is where things get interesting.
+<p>OK, então cada uma das suas páginas <abbr>HTML</abbr> apontam para seu arquivo de manifesto cache, e seu arquivo de manifesto cache sendo servidor com o devido cabeçalho <code>Content-Type</code>. Mas o que acontece <em>dentro</em> do arquivo manifesto? É aqui onde as coisas começam a ficar interessante.
 
-<p>The first line of every cache manifest file is this:
+<p>A primeira linha de todo arquivo de manifesto cache é assim:
 
 <pre><code>CACHE MANIFEST</code></pre>
 
-<p>After that, all manifest files are divided into three parts: the &#8220;explicit&#8221; section, the &#8220;fallback&#8221; section, and the &#8220;online whitelist&#8221; section. Each section has a header, on its own line. If the manifest file doesn&#8217;t have any section headers, all the listed resources are implicitly in the &#8220;explicit&#8221; section. Try not to dwell on the terminology, lest your head explode.
+<p>Depois disso, todos os arquivos manifesto são divididos em três partes: a seção &#8220;explícita&#8221;, a seção &#8220;fallback&#8221;, e a seção &#8220;lista branca online&#8221;. Cada seção tem um header, na sua própria linha. Se o arquivo manifesto não tiver nenhum desses cabeçalhos de seção, todos os recursos listados estão implicitamente na seção &#8220;explícita&#8221;. Tente não se debruçar sobre a terminologia, se não sua cabeça irá explodir.
 
-<p>Here is a valid manifest file. It lists three resources: a <abbr>CSS</abbr> file, a JavaScript file, and a <abbr>JPEG</abbr> image.
+<p>Aqui está um arquivo manifesto válido. Ele lista três recursos: um arquivo <abbr>CSS</abbr>, um arquivo JavaScript, e uma imagem <abbr>JPEG</abbr>.
 
 <pre><code>CACHE MANIFEST
 /clock.css
 /clock.js
 /clock-face.jpg</code></pre>
 
-<p>This cache manifest file has no section headers, so all the listed resources are in the &#8220;explicit&#8221; section by default. Resources in the &#8220;explicit&#8221; section will get downloaded and cached locally, and will be used in place of their online counterparts whenever you are disconnected from the network. Thus, upon loading this cache manifest file, your browser would download <code>clock.css</code>, <code>clock.js</code>, and <code>clock-face.jpg</code> from the root directory of your web server. Then you could unplug your network cable and refresh the page, and all of those resources would be available offline.
+<p>Esse arquivo de manifesto cache não possui cabeçalhos de seção, então todos os recursos listados estão na seção &#8220;explícita&#8221; por padrão. Recursos na seção &#8220;explícita&#8221; serão feitos download e cache localmente, e serão usados no lugar de seus respectivos semelhantes sempre que você estiver descontectado de uma rede. Assim que for carregamento esse arquivo de manifesto cache, seu navegador irá realizar o download de <code>clock.css</code>, <code>clock.js</code>, e <code>clock-face.jpg</code> do diretório raíz do seu servidor web. Então você pode desplugar seu cabo de rede e atualizar a página, e todos aqueles recursos estarão disponíveis offline.
 
 <div class="pf clear">
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor Marcação</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Do I need to list my <abbr>HTML</abbr> pages in my cache manifest?<br>
-A: Yes and no. If your entire web application is contained in a single page, just make sure that page points to the cache manifest using the <code>manifest</code> attribute. When you navigate to an <abbr>HTML</abbr> page with a <code>manifest</code> attribute, the page itself is assumed to be part of the web application, so you don&#8217;t need to list it in the manifest file itself. However, if your web application spans multiple pages, you should list all of the <abbr>HTML</abbr> pages in the manifest file, otherwise the browser would not know that there are other <abbr>HTML</abbr> pages that need to be downloaded and cached.
+<p><span>&#x261E;</span>P: Preciso listar minhas páginas <abbr>HTML</abbr> no meu manifesto cache?<br>
+R: Sim e não. Se a sua aplicação web inteira está contida em uma única página, apenas certifique-se que a página aponta para o manifesto cache usando o atributo <code>manifest</code>. Quando você navega em uma página <abbr>HTML</abbr> com o atributo <code>manifest</code>, a página em si assume ser parte da aplicação web, então você não precisa listá-la no arquivo manifesto. Entretanto, se a sua aplicação web agrega múltiplas páginas, você deve listar todas as páginas <abbr>HTML</abbr> no arquivo manifesto, caso contrário o navegador não saberá que existem outras páginas <abbr>HTML</abbr> que precisam fazer download e cache.
 </blockquote>
 </div>
 </div>
 
-<h3 id=network>Network sections</h3>
+<h3 id=network>Seções de Rede</h3>
 
-<p>Here is a slightly more complicated example. Suppose you want your clock application to track visitors, using a <abbr>tracking.cgi</abbr> script that is loaded dynamically from an <code>&lt;img src></code> attribute. Caching this resource would defeat the purpose of tracking, so this resource should never be cached and never be available offline. Here is how you do that:
+<p>Aqui está um exemplo um pouquinho mais complicado. Suponha que você queira que sua aplicação relógio rastreie os visitantes, usando um script <abbr>tracking.cgi</abbr> que é carregado dinâmicamente por um atributo <code>&lt;img src></code>. Realizando o cache desse recurso irá acabar com o propósito desse rastreamento, então esse recurso nunca deve realizar cache e nunca deve estar disponível offline. Aqui está o que você deve fazer:
 
 <pre><code>CACHE MANIFEST
 <mark>NETWORK:
@@ -97,11 +97,11 @@ CACHE:
 /clock.js
 /clock-face.jpg</code></pre>
 
-<p>This cache manifest file includes section headers. The line marked <code>NETWORK:</code> is the beginning of the &#8220;online whitelist&#8221; section. Resources in this section are never cached and are not available offline. (Attempting to load them while offline will result in an error.) The line marked <code>CACHE:</code> is the beginning of the &#8220;explicit&#8221; section. The rest of the cache manifest file is the same as the previous example. Each of the three resources listed will be cached and available offline.
+<p>Esse arquivo de manifesto cache inclui cabeçalhos de seção. A linha marcada com <code>NETWORK:</code> é o começo dessa seção &#8220;lista branca online&#8221;. Recursos nessa seção nunca sofrerão cache e não estarão disponíveis offline. (Tentar carregá-los enquanto estiver offline irá resultar em um erro.) A linha marcada com <code>CACHE:</code> é o começo da seção &#8220;explícita&#8221;. O resto do arquivo de manifesto cache é o mesmo do exemplo anterior. Cada um dos três recursos listados estará em cache e disponível offline.
 
-<h3 id=fallback>Fallback Sections</h3>
+<h3 id=fallback>Seções de Fallback</h3>
 
-<p>There is one more type of section in a cache manifest file: a fallback section. In a fallback section, you can define substitutions for online resources that, for whatever reason, can&#8217;t be cached or weren&#8217;t cached successfully. The <abbr>HTML5</abbr> specification offers this clever example of using a fallback section:
+<p>Esse é mais um tipo de seção em um arquivo de manifesto cache: a seção fallback. Na seção fallback, você pode definir substituições para recursos online que, por uma razão qualquer, não devem realizar cache ou não realizaram cache com sucesso. A especificação da <abbr>HTML5</abbr> oferece esse exemplo usando a seção fallback:
 
 <pre><code>CACHE MANIFEST
 FALLBACK:
@@ -109,15 +109,15 @@ FALLBACK:
 NETWORK:
 *</code></pre>
 
-<p>What does this do? First, consider a site that contains millions of pages, like <a href=http://en.wikipedia.org/wiki/Main_Page>Wikipedia</a>. You couldn&#8217;t possibly download the entire site, nor would you want to. But suppose you could make <em>part</em> of it available offline. But how would you decide which pages to cache? How about this: every page you ever look at on a hypothetical offline-enabled Wikipedia would be downloaded and cached. That would include every encyclopedia entry that you ever visited, every talk page (where you can have makeshift discussions about a particular encyclopedia entry), and every edit page (which you can actually make changes to the particular entry).
+<p>O que isso faz? Primeiro, considere um site que contém milhões de páginas, como no <a href=http://pt.wikipedia.org/wiki/Main_Page>Wikipedia</a>. Você não poderia fazer download do site inteiro, nem você iria querer. Mas suponha que você consiga deixar <em>parte</em> disso disponível offline. Como você iria decidir quais página fazer cache? Que tal isso: cada página que você já tenha visto em uma hipotética Wikipedia offline seriam feitos download e cache. Isso incluiria cada entrada da enciclopédia que você já visitou, cada página de discussão (onde você encontra discussões improvisadas sobre uma entrada particular da enciclopédia), e cada página de edição (onde você consegue, de fato, realizar alterações sobre uma entrada particular).
 
-<p>That&#8217;s what this cache manifest does. Suppose every <abbr>HTML</abbr> page (entry, talk page, edit page, history page) on Wikipedia pointed to this cache manifest file. When you visit any page that points to a cache manifest, your browser says &#8220;hey, this page is part of an offline web application, is it one I know about?&#8221; If your browser hasn&#8217;t ever downloaded this particular cache manifest file, it will set up a new offline &#8220;appcache&#8221; (short for &#8220;application cache&#8221;), download all the resources listed in the cache manifest, and then add the current page to the appcache. If your browser does know about this cache manifest, it will simply add the current page to the existing appcache. Either way, the page you just visited ends up in the appcache. This is important. It means that you can have an offline web application that &#8220;lazily&#8221; adds pages as you visit them. You don&#8217;t need to list every single one of your <abbr>HTML</abbr> pages in your cache manifest.
+<p>É isso que o manifesto cache faz. Suponha que cada página <abbr>HTML</abbr> (entrada, discussão, edição, histórico) no Wikipedia apontasse para esse arquivo de manifesto cache. Quando você visita qualquer página que aponta para o manifesto cache, seu navegador diz your browser says &#8220;ei, essa página é parte de uma aplicação web offline, essa é alguma que eu conheço?&#8221; Se o seu navegador nunca fez download desse arquivo de manifesto cache, ele irá definir um novo &#8220;appcache&#8221 offline; (curto para &#8220;aplicação cache&#8221;), fazer download de todos os recursos listados no manifesto cache, e depois adicionar a página corrente para o appcache. Se o seu navegador conhece o manifesto cache, irá simplesmente adicionar a págona corrente para o appcache existente. Dessa forma, a página que você acabou de visitar acaba no appcache. Isso é importante. Significa que você pode ter uma aplicação web offline que, de forma &#8220;preguiçosa&#8221;, adiciona páginas à medida que as visita. Você não precisa listar cada uma das suas páginas <abbr>HTML</abbr> no seu manifesto cache.
 
-<p>Now look at the fallback section. The fallback section in this cache manifest only has a single line. The first part of the line (before the space) is not a <abbr>URL</abbr>. It&#8217;s really a <abbr>URL</abbr> pattern. The single character (<code>/</code>) will match any page on your site, not just the home page. When you try to visit a page while you&#8217;re offline, your browser will look for it in the appcache. If your browser finds the page in the appcache (because you visited it while online, and the page was implicitly added to the appcache at that time), then your browser will display the cached copy of the page. If your browser doesn&#8217;t find the page in the appcache, instead of displaying an error message, it will display the page <code>/offline.html</code>, as specified in the second half of that line in the fallback section.
+<p>Agora veja a seção fallback. A seção fallback nesse manifesto cache tem apenas uma única linha. A primeira parte da linha (antes do espaço) não é uma <abbr>URL</abbr>. É na verdade um padrão de <abbr>URL</abbr>. O único caractere (<code>/</code>) irá definir qualquer página do seu site, não apenas a página de entrada. Quando você tentar visitar a página enquanto estiver offline, seu navegador irá procurar por ele no appcache. Se o seu navegador encontra a página no appcache (porque você a visitou enquanto esteve online, e a página foi adicionada de forma implícita no appcache naquela hora), então seu navegador irá exibir uma cópia da página em cache. Se o seu navegador não encontrar a página no appcache, ao invés de exibir uma mensagem de erro, irá exibir a página <code>/offline.html</code>, como especificado na segunda parte daquela linha na seção fallback.
 
-<p>Finally, let&#8217;s examine the network section. The network section in this cache manifest also has just a single line, a line that contains just a single character (<code>*</code>). This character has special meaning in a network section. It&#8217;s called the &#8220;online whitelist wildcard flag.&#8221; That&#8217;s a fancy way of saying that anything that isn&#8217;t in the appcache can still be downloaded from the original web address, as long as you have an internet connection. This is important for an &#8220;open-ended&#8221; offline web application. It means that, while you&#8217;re browsing this hypothetical offline-enabled Wikipedia <em>online</em>, your browser will fetch images and videos and other embedded resources normally, even if they are on a different domain. (This is common in large websites, even if they aren&#8217;t part of an offline web application. <abbr>HTML</abbr> pages are generated and served locally, while images and videos are served from a <a href=http://en.wikipedia.org/wiki/Content_delivery_network><abbr title="content delivery network">CDN</abbr></a> on another domain.) Without this wildcard flag, our hypothetical offline-enabled Wikipedia would behave strangely when you were online &mdash; specifically, it wouldn&#8217;t load any externally-hosted images or videos!
+<p>Finalmente, vamos examinar a seção de rede. A seção de rede nesse arquivo de manifesto cache também tem apenas uma única linha, a linha que contém apenas um único caractere (<code>*</code>). Esse caractere tem um significado especial na seção de rede. É chamado de &#8220;curinga da lista branca online.&#8221; É um modo elegante de dizer que qualquer coisa que não esteja no appcache pode ainda realizar download do endereço web original, desde que você tenha uma conexão de internet. Isso é importante para uma aplicação web offline sem data de volta marcada. Significa que, enquanto você estiver navegando <em>online</em> nessa hipotética Wikipedia offline, seu navegador irá buscar imagens, vídeos e outros recursos embutidos normalmente, mesmo se estiverem em um domínio diferente. (Isso é comum em websites grandes, mesmo se eles não fizerem parte de aplicações web offline. Páginas <abbr>HTML</abbr> são geradas e servidas localmente, enquanto que imagens e vídeos são servidos a partir de um <a href=http://en.wikipedia.org/wiki/Content_delivery_network><abbr title="content delivery network">CDN</abbr></a> em outro domínio.) Sem esse curinga, nossa hipotética Wikipedia offline iria se comportar estranhamente enquanto você estivesse online &mdash; específicamente, não iria carregar nenhuma imagem ou vídeo hospedados externamente!
 
-<p>Is this example complete? No. Wikipedia is more than <abbr>HTML</abbr> files. It uses common <abbr>CSS</abbr>, JavaScript, and images on each page. Each of these resources would need to be listed explicitly in the <code>CACHE:</code> section of the manifest file, in order for pages to display and behave properly offline. But the point of the fallback section is that you can have an &#8220;open-ended&#8221; offline web application that extends beyond the resources you&#8217;ve listed explicitly in the manifest file.
+<p>Esse exemplo está completo? Não. A Wikipedia é mais do que arquivos <abbr>HTML</abbr>. Ela comumente usa <abbr>CSS</abbr>, JavaScript, e imagens em cada página. Cada um desses recursos precisariam ser listados explicitamente na seção <code>CACHE:</code> do arquivo manifesto, para que cada página exibisse e se comportasse propriamente offline. Mas o ponto da seção fallback é que você pode ter uma aplicação web offline sem data de volta marcada que extende além dos recursos que você listou explicitamente no arquivo manifesto.
 
 <p class=a>&#x2767;
 

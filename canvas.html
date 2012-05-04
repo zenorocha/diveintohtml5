@@ -9,52 +9,52 @@ body{counter-reset:h1 4}
 </style>
 <link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
 <link rel=prefetch href=index.html>
-<p>You are here: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#canvas>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
-<h1><br>Let&#8217;s Call It A<br>Draw(ing Surface)</h1>
+<p>Você está aqui: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#canvas>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
+<h1><br>Vamos Chamá-lo (Superfície) De Desenho</h1>
 <p id=toc>&nbsp;
 <p class=a>&#x2767;
 
-<h2 id=divingin>Diving In</h2>
+<h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-h.png alt=H width=107 height=105>TML 5 defines <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>the &lt;canvas> element</a> as &#8220;a resolution-dependent bitmap canvas which can be used for rendering graphs, game graphics, or other visual images on the fly.&#8221; A <dfn>canvas</dfn> is a rectangle in your page where you can use JavaScript to draw anything you want.</p>
+<p class=f><img src=i/aoc-h.png alt=H width=107 height=105>TML 5 define <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>o elemento &lt;canvas&gt; </a> como &#8220;uma tela bitmap de resolução depentente que pode ser usada para renderizar gráficos, jogos, ou outras imagens em tempo real.&#8221; A tag <dfn>canvas</dfn> é um retângulo na sua página, onde você pode usar JavaScript para desenhar o que você quiser.</p>
 
 <table class=bc>
-<caption>Basic &lt;canvas> support</caption>
+<caption>Suporte Básico ao &lt;canvas></caption>
 <thead>
 <tr><th title="Internet Explorer">IE<th title="Mozilla Firefox">Firefox<th title="Apple Safari">Safari<th title="Google Chrome">Chrome<th>Opera<th>iPhone<th>Android
 <tbody>
 <tr><td>7.0+<sup>*</sup><td>3.0+<td>3.0+<td>3.0+<td>10.0+<td>1.0+<td>1.0+
 <tfoot>
-<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> natively.
+<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 e 8 necessita da biblioteca <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a>. Internet Explorer 9 suporta <code>&lt;canvas></code> nativamente.
 </table>
 
-<p class=clear>So what does a canvas look like? Nothing, really. A <code>&lt;canvas></code> element has no content and no border of its own.</p>
+<p class=clear>Então como o canvas se parece? Com nada, sério. O elemento <code>&lt;canvas></code> não tem conteúdo nem borda.</p>
 
 <canvas width=300 height=225 class=clear style="float:left"></canvas>
-<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x219c;</span> Invisible canvas
+<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x219c;</span> Canvas Invisível
 
-<p class=clear>The markup looks like this:
+<p class=clear>Sua sintaxe se assemelha a isso:
 
 <pre><code>&lt;canvas width="300" height="225">&lt;/canvas></code></pre>
 
-<p>Let&#8217;s add a dotted border so we can see what we&#8217;re dealing with.</p>
+<p>Vamos adicionar uma borda pontilhada, então você pode ver com o que estamos lidando.</p>
 
 <canvas width=300 height=225 class=clear style="border:1px dotted;float:left"></canvas>
-<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x219c;</span> Canvas with border
+<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x219c;</span> Canvas com borda
 
-<p class=clear>You can have more than one <code>&lt;canvas></code> element on the same page. Each canvas will show up in the <abbr>DOM</abbr>, and each canvas maintains its own state. If you give each canvas an <code>id</code> attribute, you can access them just like any other element.
+<p class=clear>Você pode ter mais de um elemento <code>&lt;canvas></code> na mesma página. Cada canvas será mostrado no <abbr>DOM</abbr>, e cada um mantém seu próprio estado. Se você der para cada canvas um atributo <code>id</code>, você pode acessá-lo como qualquer outro elemento.
 
-<p>Let&#8217;s expand that markup to include an <code>id</code> attribute:
+<p>Vamos expandir nosso exemplo de canvas para incluir o atributo <code>id</code>:
 
 <pre><code>&lt;canvas id="a" width="300" height="225">&lt;/canvas></code></pre>
 
-<p>Now you can easily find that <code>&lt;canvas></code> element in the <abbr>DOM</abbr>.
+<p>Agora você pode encontrar facilmente este <code>&lt;canvas></code> dentro do <abbr>DOM</abbr>.
 
 <pre><code>var a_canvas = document.getElementById("a");</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=shapes>Simple Shapes</h2>
+<h2 id=shapes>Formas simples</h2>
 
 <table class=bc>
 <thead>
@@ -62,15 +62,15 @@ body{counter-reset:h1 4}
 <tbody>
 <tr><td>7.0+<sup>*</sup><td>3.0+<td>3.0+<td>3.0+<td>10.0+<td>1.0+<td>1.0+
 <tfoot>
-<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> shapes natively.
+<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 e 8 necessita da biblioteca <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a>. Internet Explorer 9 suporta <code>&lt;canvas></code> nativamente.
 </table>
 
-<p>Every canvas starts out blank. That&#8217;s boring! Let&#8217;s draw something.</p>
+<p>Todo canvas começa em branco. Que chato! Vamos desenhar alguma coisa.</p>
 
 <canvas id=b width=300 height=225 style="border:1px dotted;float:left" onclick="draw_b();return false"></canvas>
-<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> <a href="#" onclick="draw_b();return false">Click to draw on this canvas</a></p>
+<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> <a href="#" onclick="draw_b();return false">Clique para desenhar nesse canvas</a></p>
 
-<p class=clear>The <code>onclick</code> handler called this function:
+<p class=clear>O evento <code>onclick</code> dispara essa função:
 
 <pre><code>function draw_b() {
   var b_canvas = document.getElementById("b");
@@ -78,9 +78,9 @@ body{counter-reset:h1 4}
   b_context.fillRect(50, 25, 150, 100);
 }</code></pre>
 
-<p>The 1<sup>st</sup> line of the function is nothing special; it just finds the <code>&lt;canvas></code> element in the <abbr>DOM</abbr>.
+<p>A 1<sup>ª</sup> linha dessa função não é nada de especial; apenas encontra o elemento <code>&lt;canvas></code> no <abbr>DOM</abbr>.
 
-<p class="legend left" style="margin-top:2em">And then there&#8217;s this <span class=arrow>&#x21dd;</span>&nbsp;</p>
+<p class="legend left" style="margin-top:2em">E então temos isso <span class=arrow>&#x21dd;</span>&nbsp;</p>
 <pre><code>function draw_b() {
   var b_canvas = document.getElementById("b");
 <mark>  var b_context = b_canvas.getContext("2d");</mark>
@@ -89,82 +89,82 @@ body{counter-reset:h1 4}
 
 <p class=ss><img src=i/openclipart.org_media_files_johnny_automatic_4145.png width=312 height=300 alt="man drawing in front of a mirror">
 
-<p>Every canvas has a drawing <dfn>context</dfn>, which is where all the fun stuff happens. Once you&#8217;ve found a <code>&lt;canvas></code> element in the <abbr>DOM</abbr> (by using <code>document.getElementById()</code> or any other method you like), you call its <code>getContext()</code> method. You <strong>must</strong> pass the string <code>"2d"</code> to the <code>getContext()</code> method.
+<p>Todo canvas possui um <dfn>contexto</dfn> de desenho, que é onde toda diversão acontece. Uma vez tendo encontradoo elemento <code>&lt;canvas></code> no <abbr>DOM</abbr> (ao usar <code>document.getElementById()</code> ou qualquer método que você queira), você chama seu método <code>getContext()</code>. Você <strong>deve</strong> passar a string <code>"2d"</code> para o método <code>getContext()</code>.
 
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Is there a 3-D canvas?<br>
-A: Not yet. Individual vendors have experimented with their own three-dimensional canvas <abbr>API</abbr>s, but none of them have been standardized. The <abbr>HTML5</abbr> specification notes, &#8220;A future version of this specification will probably define a 3d context.&#8221;
+<p><span>&#x261E;</span>P: Existe um canvas 3-D?<br>
+R: Ainda não. Fornecedores têm experimentado suas próprias <abbr>API</abbr>s para canvas tridimensionais, mas nenhuma se tornou padrão ainda. A especificação da <abbr>HTML5</abbr> nota, &#8220;Uma futura versão dessa especificação irá provavelmente definir um contexto 3d.&#8221;
 </blockquote>
 
-<p>So, you have a <code>&lt;canvas></code> element, and you have its drawing context. The drawing context is where all the drawing methods and properties are defined. There&#8217;s a whole group of properties and methods devoted to drawing rectangles:
+<p>Então você tem elemento <code>&lt;canvas></code>, e tem seu contexto desenho. O contexto de desenho é onde todos métodos e propriedades do desenho são definidos. Há um bando de propriedades e métodos dedicados ao desenho de retângulos:
 
 <ul>
-<li>The <code>fillStyle</code> property can be a <abbr>CSS</abbr> color, a pattern, or a gradient. (More on gradients shortly.) The default <code>fillStyle</code> is solid black, but you can set it to whatever you like. Each drawing context remembers its own properties as long as the page is open, unless you do something to reset it.
-<li><code>fillRect(x, y, width, height)</code> draws a rectangle filled with the current fill style.
-<li>The <code>strokeStyle</code> property is like <code>fillStyle</code> &mdash; it can be a CSS color, a pattern, or a gradient.
-<li><code>strokeRect(x, y, width, height)</code> draws an rectangle with the current stroke style. <code>strokeRect</code> doesn&#8217;t fill in the middle; it just draws the edges.
-<li><code>clearRect(x, y, width, height)</code> clears the pixels in the specified rectangle.
+<li>A propriedade <code>fillStyle</code> pode ser uma cor, padrão ou degradê do <abbr>CSS</abbr>. (Mais sobre degradês mais em breve.) O padrão para o <code>fillStyle</code> é preto sólido, mas você pode definir o que quiser. Cada contexto de desenho guarda suas próprias propriedades enquanto a página estiver aberta, a não ser que você faça alguma coisa para resetar isso.
+<li><code>fillRect(x, y, largura, altura)</code> desenha um retângulo preenchido com o fillStyle atual.
+<li>A propriedade <code>strokeStyle</code> é como <code>fillStyle</code> &mdash; pode ser uma cor, um padrão ou um degradê.
+<li><code>strokeRect(x, y, largura, altura)</code> desenha um retângulo com o strokeStyle atual. <code>strokeRect</code> não preenche o meio, apenas desenha as bordas.
+<li><code>clearRect(x, y, largura, altura)</code> limpa os pixels no retângulo especificado.
 </ul>
 
 <div class="pf clear" id=reset>
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor Marcação</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Can I &#8220;reset&#8221; a canvas?<br>
-A: Yes. Setting the width or height of a <code>&lt;canvas></code> element will erase its contents and reset all the properties of its drawing context to their default values. You don&#8217;t even need to <em>change</em> the width; you can simply set it to its current value, like this:
+<p><span>&#x261E;</span>P: Eu posso &#8220;resetar&#8221; um canvas?<br>
+R: Sim. Definindo a altura e a largura de um elemento <code>&lt;canvas></code> irá apagar seu conteúdo e resetar todas as propriedades do seu contexto de desenho para os valores padrão. Você sequer precisa <em>alterar</em> a largura; você pode simplesmente definir ele para seu valor atual, como em:
 <pre><code>var b_canvas = document.getElementById("b");
 <mark>b_canvas.width = b_canvas.width;</mark></code></pre>
 </blockquote>
 </div>
 </div>
 
-<p>Getting back to that code sample in the previous example&hellip;
-<p class="legend left" style="margin-top:2em">Draw a rectangle <span class=arrow>&#x21dd;&nbsp;</span></p>
+<p>Voltando para amostra de código vista no exemplo anterior&hellip;
+<p class="legend left" style="margin-top:2em">Desenhe um retângulo <span class=arrow>&#x21dd;&nbsp;</span></p>
 <pre><code>var b_canvas = document.getElementById("b");
 var b_context = b_canvas.getContext("2d");
 <mark>b_context.fillRect(50, 25, 150, 100);</mark></code></pre>
 
-<p class=clear>Calling the <code>fillRect()</code> method draws the rectangle and fills it with the current fill style, which is black until you change it. The rectangle is bounded by its upper-left corner (50,&nbsp;25), its width (150), and its height (100). To get a better picture of how that works, let&#8217;s look at the canvas coordinate system.
+<p class=clear>Chamando o método <code>fillRect()</code> desenhamos um retângulo e o preenche com o estilo de preenchimento atual, no qual é preto até você alterar isso. Um retângulo é limitado por seu canto superior esquerdo (50,&nbsp;25), sua largura (150), e sua altura (100). Para ter uma imagem melhor de como isso funciona, vamos ver o sistema de coordenadas desse canvas.
 
 <p class=a>&#x2767;
 
-<h2 id=coordinates>Canvas Coordinates</h2>
+<h2 id=coordinates>Coordenadas do Canvas</h2>
 
-<p>The canvas is a two-dimensional grid. The coordinate (0, 0) is at the upper-left corner of the canvas. Along the X-axis, values increase towards the right edge of the canvas. Along the Y-axis, values increase towards the bottom edge of the canvas.
+<p>O canvas é uma grade bidimensional. A coordenada (0, 0) fica no canto superior esquerdo do canvas. Ao longo do eixo X, os valores aumentam em direção à borda direita da tela. Ao longo do eixo Y, os valores aumentam em direção à borda de baixo do canvas.
 
-<p class="legend top" style="width:500px;text-align:center">Canvas coordinates diagram <span class=arrow>&#x21b7;</span><br></p>
+<p class="legend top" style="width:500px;text-align:center">Diagrama de coordenadas do Canvas<span class=arrow>&#x21b7;</span><br></p>
 <canvas id=c width=500 height=375></canvas>
 
-<p>That coordinate diagram was drawn with a <code>&lt;canvas></code> element. It comprises
+<p>O diagrama de coordenadas foi desenhado com o elemento <code>&lt;canvas></code>. Ele compreende:
 
 <ul>
-<li>a set of off-white vertical lines
-<li>a set of off-white horizontal lines
-<li>two black horizontal lines
-<li>two small black diagonal lines that form an arrow
-<li>two black vertical lines
-<li>two small black diagonal lines that form another arrow
-<li>the letter &#8220;x&#8221;
-<li>the letter &#8220;y&#8221;
-<li>the text &#8220;(0, 0)&#8221; near the upper-left corner
-<li>the text &#8220;(500, 375)&#8221; near the lower-right corner
-<li>a dot in the upper-left corner, and another in the lower-right corner
+<li>um conjunto de linhas verticais esbranquiçadas
+<li>um conjunto de linhas horizontais esbranquiçadas
+<li>duas linhas horizontais pretas
+<li>duas pequenas linhas diagonais pretas que formam uma flecha
+<li>duas linhas verticais pretas
+<li>duas pequenas linhas diagonais pretas que formam uma flecha
+<li>a letra &#8220;x&#8221;
+<li>a letra &#8220;y&#8221;
+<li>o texto &#8220;(0, 0)&#8221; próximo ao canto superior esquerdo
+<li>o texto &#8220;(500, 375)&#8221; próximo ao canto inferior direito
+<li>um ponto no canto superior esquerdo, e outro no canto inferior direito
 </ul>
 
-<p>First, we need to define the <code>&lt;canvas></code> element itself. The <code>&lt;canvas></code> element defines the <code>width</code> and <code>height</code>, and the <code>id</code> so we can find it later.
+<p>Primeiro temos que definir o elemento <code>&lt;canvas></code>. O elemento <code>&lt;canvas></code> define a largura (<code>width</code>) e a altura (<code>height</code>), e o identificador (<code>id</code>) para que possamos encontrá-lo mais tarde.
 
 <pre><code>&lt;canvas id="c" width="500" height="375">&lt;/canvas></code></pre>
 
-<p>Then we need a script to find the <code>&lt;canvas></code> element in the DOM and get its drawing context.
+<p>Depois nós precisamos encontrar o elemento <code>&lt;canvas></code> no DOM e buscar seu contexto de desenho.
 
 <pre><code>var c_canvas = document.getElementById("c");
 var context = c_canvas.getContext("2d");</code></pre>
 
-<p>Now we can start drawing lines.
+<p>Agora podemos começar a desenhar as linhas.
 
 <p class=a>&#x2767;
 
-<h2 id=paths>Paths</h2>
+<h2 id=paths>Caminhos</h2>
 
 <table class=bc>
 <thead>
@@ -172,65 +172,66 @@ var context = c_canvas.getContext("2d");</code></pre>
 <tbody>
 <tr><td>7.0+<sup>*</sup><td>3.0+<td>3.0+<td>3.0+<td>10.0+<td>1.0+<td>1.0+
 <tfoot>
-<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports <code>&lt;canvas></code> paths natively.
+<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 e 8 necessita da biblioteca <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a>. Internet Explorer 9 suporta caminhos do <code>&lt;canvas></code> nativamente.
 </table>
 
 <p style="float:left;margin:1.75em 1.75em 1.75em 0"><img src=i/openclipart.org_media_files_johnny_automatic_7563.png alt="gerbil sitting on a chair with a quill and ink jar" width=167 height=347>
 
-<p>Imagine you&#8217;re drawing a picture in ink. You don&#8217;t want to just dive in and start drawing with ink, because you might make a mistake. Instead, you sketch the lines and curves with a pencil, and once you&#8217;re happy with it, you trace over your sketch in ink.
+<p>Imagine que você está desenhando um quadro com tinta. Você não quer começar mergulhando e desenhando o quadro com a tinta, isso porque você pode cometer um erro. Ao invés disso, você rascunha as linhas e curvas com um lápis, e quando você estiver feliz com aquilo, irá traçar com tinta por cima do rascunho.
 
-<p>Each canvas has a <dfn>path</dfn>. Defining the path is like drawing with a pencil. You can draw whatever you like, but it won&#8217;t be part of the finished product until you pick up the quill and trace over your path in ink.
+<p>Cada canvas tem um <dfn>caminho</dfn>. Definir um caminho é como desenhar com um lápis. Você pode desenhar o que quiser, mas não irá fazer do produto final até que você pegue a pena e trace seu caminho com tinta.
 
-<p>To draw straight lines in pencil, you use the following two methods:
+<p>Para desenhar linhas retas com lápis, use os dois métodos seguintes:
 
 <ol style="list-style-position:inside">
-<li><code>moveTo(x, y)</code> moves the pencil to the specified starting point.
-<li><code>lineTo(x, y)</code> draws a line to the specified ending point.
+<li><code>moveTo(x, y)</code> move o lápis para o ponto inicial especificado.
+<li><code>lineTo(x, y)</code> desenha a linha para o ponto final especificado.
 </ol>
 
-<p>The more you call <code>moveTo()</code> and <code>lineTo()</code>, the bigger the path gets. These are &#8220;pencil&#8221; methods &mdash; you can call them as often as you like, but you won&#8217;t see anything on the canvas until you call one of the &#8220;ink&#8221; methods.
+<p>Quanto mais você chamar <code>moveTo()</code> e <code>lineTo()</code>, maior será o tamanho do caminho. Esses são métodos &#8220;lápis&#8221; &mdash; você pode chamá-los o quanto quiser, mas você não irá ver nada no canvas até que você invoque os métodos &#8220;tinta&#8221;.
 
-<p>Let&#8217;s begin by drawing the off-white grid.
+<p>Vamos começar desenhando nossa grade esbranquiçada.
 
 <pre style="float:left"><code>for (var x = 0.5; x &lt; 500; x += 10) {
   context.moveTo(x, 0);
   <mark>context.lineTo(x, 375);</mark>
 }</code></pre>
-<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> Draw vertical lines</p>
+<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> Desenha as linhas verticais</p>
 
 <pre style="clear:left;float:left"><code>for (var y = 0.5; y &lt; 375; y += 10) {
   context.moveTo(0, y);
   <mark>context.lineTo(500, y);</mark>
 }</code></pre>
-<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> Draw horizontal lines</p>
+<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> Desenha as linhas horizontais</p>
 
-<p class=clear>Those were all &#8220;pencil&#8221; methods. Nothing has actually been drawn on the canvas yet. We need an &#8220;ink&#8221; method to make it permanent.
+<p class=clear>Esses foram todos métodos &#8220;lápis&#8221;. Nada foi desenhado no canvas ainda. Nós precisamos de um método &#8220;tinta&#8221; para tornar isso permanente.
 
 <pre><code>context.strokeStyle = "#eee";
 <mark>context.stroke();</mark></code></pre>
 
-<p><code>stroke()</code> is one of the &#8220;ink&#8221; methods. It takes the complex path you defined with all those <code>moveTo()</code> and <code>lineTo()</code> calls, and actually draws it on the canvas. The <code>strokeStyle</code> controls the color of the lines. This is the result:</p>
+<p><code>stroke()</code> é um dos métodos &#8220;tinta&#8221;. Ele pega o caminho complexo que você definiu com todos aqueles <code>moveTo()</code> e <code>lineTo()</code>, e realmente desenha eles no canvas. O <code>strokeStyle</code> controla a cor das linhas. Esse é o resultado:</p>
 
 <canvas id=c2 width=500 height=375></canvas>
 
 <div class="pf clear" id=pixel-madness>
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor Marcação</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Why did you start <var>x</var> and <var>y</var> at <code>0.5</code>? Why not <code>0</code>?<br>
-A: Imagine each pixel as a large square. The whole-number coordinates (0, 1, 2&hellip;) are the edges of the squares. If you draw a one-unit-wide line between whole-number coordinates, it will overlap opposite sides of the pixel square, and the resulting line will be drawn two pixels wide. To draw a line that is only one pixel wide, you need to shift the coordinates by 0.5 perpendicular to the line's direction.
-<p>For example, if you try to draw a line from <code>(1,&nbsp;0)</code> to <code>(1,&nbsp;3)</code>, the browser will draw a line covering 0.5 screen pixels on either side of <code>x=1</code>. The screen can&#8217;t display half a pixel, so it expands the line to cover a total of two pixels:
+<p><span>&#x261E;</span>P: Por quê você começou com <var>x</var> e <var>y</var> com <code>0.5</code>? Por quê não <code>0</code>?<br>
+R: Imagine cada pixel como um grande quadrado. As coordenadas inteiras (0, 1, 2&hellip;) são arestas desse quadrado. Se você desenhar uma linha com uma unidade de largura entre coordenadas inteiras, ele irá sobrepor lados opostos do quadrado de pixel, e a linha resultante será desenhada com dois pixels de largura. Para desenhar uma linha que tenha apenas um pixel de largura, você precisa mudar as coordenadas para 0.5 perpendicular à direção da linha.
+
+<p>Por exemplo, se você tentar desenhar a linha de <code>(1,&nbsp;0)</code> para <code>(1,&nbsp;3)</code>, o navegador irá desenhar a linha cobrindo 0.5 pixels da tela em ambos os lados <code>x=1</code>. A tela não consegue exibir meio pixel, então irá expandir a linha para cobrir um total de dois pixels:
 <p><img src=i/canvas-half-pixels-1.jpg alt="A line from (1,0) to (1,3) is drawn 2 pixels wide" width=406 height=314>
-<p>But, if you try to draw a line from <code>(1.5,&nbsp;0)</code> to <code>(1.5,&nbsp;3)</code>, the browser will draw a line covering 0.5 screen pixels on either side of <code>x=1.5</code>, which results in a true 1-pixel-wide line:
+<p>Mas se você tentar desenhar uma linha de <code>(1.5,&nbsp;0)</code> para <code>(1.5,&nbsp;3)</code>, o navegador irá desenhar a linha cobrindo 0.5 pixels da tela em ambos os lados <code>x=1.5</code>, o que resulta na verdade em uma linha de 1 pixel de largura:
 <p><img src=i/canvas-half-pixels-2.jpg alt="A line from (1.5,0) to (1.5,3) is draw 1 pixel wide" width=404 height=323>
-<p><em>Thanks to Jason Johnson for providing these diagrams.</em>
+<p><em>Agradecimentos ao Jason Johnson por prover esses diagramas.</em>
 </blockquote>
 </div>
 </div>
 
-<p>Now let&#8217;s draw the horizontal arrow. All the lines and curves on a path are drawn in the same color (or gradient &mdash; yes, we&#8217;ll get to those soon). We want to draw the arrow in a different color ink &mdash; black instead of off-white &mdash; so we need to start a new path.
+<p>Agora vamos desenhar a flecha horizontal. Todas as linhas e curvas no caminho são desenhadas com a mesma cor (ou degradê &mdash; sim, nós vamos chegar nisso em breve). Nós queremos desenhar a flecha com uma tinta de cor diferente &mdash; preta ao invés de esbranquiçada &mdash; então vamos precisar de um novo caminho.
 
-<p class="legend top" style="margin-left:2em">A new path <span class=arrow>&#x21b7;</span><br></p>
+<p class="legend top" style="margin-left:2em">Um novo caminho <span class=arrow>&#x21b7;</span><br></p>
 <pre><code><mark>context.beginPath();</mark>
 context.moveTo(0, 40);
 context.lineTo(240, 40);
@@ -240,7 +241,7 @@ context.moveTo(495, 35);
 context.lineTo(500, 40);
 context.lineTo(495, 45);</code></pre>
 
-<p>The vertical arrow looks much the same. Since the vertical arrow is the same color as the horizontal arrow, we do <strong>not</strong> need to start another new path. The two arrows will be part of the same path.
+<p>A flecha vertical é praticamente igual. Já que a flecha vertical utiliza a mesma cor que a flecha horizontal, nós <strong>não</strong> vamos precisar criar um novo caminho. As duas flechas farão parte um mesmo caminho.
 
 <pre style="float:left"><code>context.moveTo(60, 0);
 context.lineTo(60, 153);
@@ -249,20 +250,20 @@ context.lineTo(60, 375);
 context.moveTo(65, 370);
 context.lineTo(60, 375);
 context.lineTo(55, 370);</code></pre>
-<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x219c;</span> Not a new path</p>
+<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x219c;</span> Não é um novo caminho</p>
 
-<p class=clear>I said these arrows were going to be black, but the <code>strokeStyle</code> is still off-white. (The <code>fillStyle</code> and <code>strokeStyle</code> don&#8217;t get reset when you start a new path.) That&#8217;s OK, because we&#8217;ve just run a series of &#8220;pencil&#8221; methods. But before we draw it for real, in &#8220;ink,&#8221; we need to set the <code>strokeStyle</code> to black. Otherwise, these two arrows will be off-white, and we&#8217;ll hardly be able to see them! The following lines change the color to black and draw the lines on the canvas:
+<p class=clear>Eu disse que essas flechas serão pretas, mas o <code>strokeStyle</code> continua esbranquiçado. (O <code>fillStyle</code> e o <code>strokeStyle</code> não são resetados quando você começa um novo caminho.) Tudo bem, porque nós vamos apenas rodar uma série de métodos &#8220;lápis&#8221;. Mas antes de desenhar de verdade, na &#8220;tinta,&#8221; nós vamos precisar definir o <code>strokeStyle</code> para preto. Caso contrário, essas duas flechas ficarão esbranquiçadas, e nós vamos dificilmente ser capazes de vê-las! As linhas seguintes mudam a cor para preto e desenham as linhas no canvas:
 
 <pre><code>context.strokeStyle = "#000";
 context.stroke();</code></pre>
 
-<p>This is the result:</p>
+<p>E o resultado:</p>
 
 <canvas id=c3 width=500 height=375></canvas>
 
 <p class=a>&#x2767;
 
-<h2 id=text>Text</h2>
+<h2 id=text>Texto</h2>
 
 <table class=bc>
 <thead>
@@ -270,75 +271,75 @@ context.stroke();</code></pre>
 <tbody>
 <tr><td>7.0+<sup>*</sup><td>3.0+<sup>&dagger;</sup><td>3.0+<td>3.0+<td>10.0+<td>1.0+<td>1.0+
 <tfoot>
-<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 and 8 require the third-party <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a> library. Internet Explorer 9 supports canvas text natively.
-<tr><td colspan=7 style="text-align:left">&dagger; Mozilla Firefox 3.0 requires a compatibility shim.
+<tr><td colspan=7 style="text-align:left">* Internet Explorer 7 e 8 necessita da biblioteca <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a>. Internet Explorer 9 suporta <code>&lt;canvas></code> nativamente.
+<tr><td colspan=7 style="text-align:left">&dagger; Mozilla Firefox 3.0 necessita uma biblioteca compatível.
 </table>
 
-<p>In addition to drawing <a href=#paths>lines on a canvas</a>, you can also draw text on a canvas. Unlike text on the surrounding web page, there is no box model. That means none of the familiar CSS layout techniques are available: no floats, no margins, no padding, no word wrapping. (Maybe you think that&#8217;s a good thing!) You can set a few font attributes, then you pick a point on the canvas and draw your text there.
+<p>Em adição ao desenho de <a href=#paths>linhas com canvas</a>, você também pode desenhar texto com um canvas. Diferentemente do texto em torno de uma página web, não há box model. Isso significa que nenhuma das técnicas familiares de layout em CSS são válidas: sem floats, sem margins, sem padding, sem word wrapping. (Talvez você pensa que isso é uma boa coisa!) Você pode definir alguns poucos atributos de fonte, depois pode pegar um ponto no canvas e começar a desenhar seu texto ali.
 
-<p>The following font attributes are available on the <a href=#shapes>drawing context</a>:
+<p>Os atributos de fonte a seguir estão disponíveis no <a href=#shapes>contexto do desenho</a>:
 
 <ul>
-<li><code>font</code> can be anything you would put in a <abbr>CSS</abbr> <code>font</code> rule. That includes font style, font variant, font weight, font size, line height, and font family.
-<li><code>textAlign</code> controls text alignment. It is similar (but not identical) to a <abbr>CSS</abbr> <code>text-align</code> rule. Possible values are <code>start</code>, <code>end</code>, <code>left</code>, <code>right</code>, and <code>center</code>.
-<li><code>textBaseline</code> controls where the text is drawn relative to the starting point. Possible values are <code>top</code>, <code>hanging</code>, <code>middle</code>, <code>alphabetic</code>, <code>ideographic</code>, or <code>bottom</code>.
+<li><code>font</code> pode ser qualquer coisa que você colocaria na regra <code>font</code> do <abbr>CSS</abbr>. Incluindo font style, font variant, font weight, font size, line height, e font family.
+<li><code>textAlign</code> controla o alinhamento do texto. É parecido (mas não idêntico) a regra <code>text-align</code> do <abbr>CSS</abbr>. Os possíveis valores são <code>start</code>, <code>end</code>, <code>left</code>, <code>right</code>, e <code>center</code>.
+<li><code>textBaseline</code> controla onde o texto é desenhado relativo ao ponto de início. Os possíveis valores são <code>top</code>, <code>hanging</code>, <code>middle</code>, <code>alphabetic</code>, <code>ideographic</code>, ou <code>bottom</code>.
 </ul>
 
-<p><code>textBaseline</code> is tricky, because text is tricky (English text isn&#8217;t, but you can draw any Unicode character you like on a canvas, and Unicode is tricky). The <abbr>HTML5</abbr> specification <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-textbaseline>explains the different text baselines</a>:
+<p><code>textBaseline</code> é complicado, porque texto é complicado (Inglês não é, mas você pode desenhar qualquer caracter Unicode que queira no  canvas, e Unicode é complicado). A especificação da <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-textbaseline>explica os diferentes textBaselines</a>:
 
 <blockquote cite=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-textbaseline>
-<p>The top of the em square is roughly at the top of the glyphs in a font, the hanging baseline is where some glyphs like <span class=u>आ</span> are anchored, the middle is half-way between the top of the em square and the bottom of the em square, the alphabetic baseline is where characters like <span class=u>Á</span>, <span class=u>ÿ</span>, <span class=u>f</span>, and <span class=u>Ω</span> are anchored, the ideographic baseline is where glyphs like <span class=u>私</span> and <span class=u>達</span> are anchored, and the bottom of the em square is roughly at the bottom of the glyphs in a font. The top and bottom of the bounding box can be far from these baselines, due to glyphs extending far outside the em square.</p>
+<p>A parte superior do quadrado 'em' é fica aproximadamente na parte superior dos glifos em uma fonte, a linha de base é pendurada no lugar onde alguns glifos como <span class=u>आ</span> são âncoradas, o meio é metade do caminho entre a parte superior do quadrado 'em' e a base do quadrado 'em', a linha de base alfabética é onde os caracteres como <span class=u>Á</span>, <span class=u>ÿ</span>, <span class=u>f</span>, e <span class=u>Ω</span> são âncorados, a linha de base ideográfica é onde glifos como <span class=u>私</span> e <span class=u>達</span> são âncorados, e a base do quadrado 'em' fica aproximadamente na base do glifo em uma fonte. O topo e a base da caixa delimitadora pode ser longe das linhas de base, devido a glifos que se estendem muito além do quadrado.</p>
 <p><img src=i/baselines.png alt="diagram of different values of the textBaseline property" width=680 height=227>
 </blockquote>
 
-<p>For simple alphabets like English, you can safely stick with <code>top</code>, <code>middle</code>, or <code>bottom</code> for the <code>textBaseline</code> property.
+<p>Para alfabetos simples como o Inglês, você pode ficar com segurança com<code>top</code>, <code>middle</code>, ou <code>bottom</code> para a propriedade <code>textBaseline</code>.
 
-<p>Let&#8217;s draw some text! Text drawn inside the canvas inherits the font size and style of the <code>&lt;canvas></code> element itself, but you can override this by setting the <code>font</code> property on the drawing context.
+<p>Vamos desenhar algum texto! O texto desenhado dentro do canvas herda o tamanho da fonte e o estilo do próprio elemento <code>&lt;canvas></code>, você pode sobrescrever isso definindo a propriedade fonte <code>font</code> para o contexto de desenho.
 
 <pre style="float:left"><code><mark>context.font = "bold 12px sans-serif";</mark>
 context.fillText("x", 248, 43);
 context.fillText("y", 58, 165);</code></pre>
-<p class="legend right"><span class=arrow>&nbsp;&#x219c;</span> Change the font style</p>
+<p class="legend right"><span class=arrow>&nbsp;&#x219c;</span> Altera o estilo da fonte</p>
 
-<p class=clear>The <code>fillText()</code> method draws the actual text.</p>
+<p class=clear>O método <code>fillText()</code> desenha o texto de fato.</p>
 
 <pre style="float:left"><code>context.font = "bold 12px sans-serif";
 <mark>context.fillText("x", 248, 43);</mark>
 context.fillText("y", 58, 165);</code></pre>
-<p class="legend right" style="margin-top:2.6em"><span class=arrow>&nbsp;&#x21dc;</span> Draw the text</p>
+<p class="legend right" style="margin-top:2.6em"><span class=arrow>&nbsp;&#x21dc;</span> Desenhar o texto</p>
 
 <div class="pf clear" id=relative-font-size>
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor Marcação</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Can I use relative font sizes to draw text on a canvas?<br>
-A: Yes. Like every other <abbr>HTML</abbr> element on your page, the <code>&lt;canvas></code> element itself has a computed font size based on your page&#8217;s CSS rules. If you set the <code>context.font</code> property to a relative font size like <code>1.5em</code> or <code>150%</code>, your browser multiplies this by the computed font size of the <code>&lt;canvas></code> element itself.
+<p><span>&#x261E;</span>P: Posso usar tamanhos de fontes relativos para desenhar texto em um canvas?<br>
+R: Sim. Como qualquer outro elemento <abbr>HTML</abbr> na sua página, o próprio elemento <code>&lt;canvas></code> computa o tamanho da fonte baseado nas regras CSS da sua página. Se você definir a propriedade <code>context.font</code> para um tamanho relativo de fonte como <code>1.5em</code> ou <code>150%</code>, seu navegador irá manipular isso para o tamanho computado no próprio elemento <code>&lt;canvas></code>.
 </blockquote>
 </div>
 </div>
 
-<p>For the text in the upper-left corner, let&#8217;s say I want the top of the text to be at <code>y=5</code>. But I&#8217;m lazy &mdash; I don&#8217;t want to measure the height of the text and calculate the baseline. Instead, I can set <code>textBaseline</code> to <code>top</code> and pass in the upper-left coordinate of the text&#8217;s bounding box.
+<p>Para o texto no canto superior esquerdo, vamos dizer que eu queira colocar o topo do texto no <code>y=5</code>. Mas eu sou um cara preguiçoso &mdash; Eu não quero medir a altura do texto e calcular a linha de base. Ao invés disso, eu posso definir o <code>textBaseline</code> para <code>top</code> e passar para o canto superior esquerdo a coordenada da caixa delimitadora do texto.
 
 <pre><code>context.textBaseline = "top";
 context.fillText("( 0 , 0 )", <mark>8, 5</mark>);</code></pre>
 
-<p>Now for the text in the lower-right corner. Let&#8217;s say I want the bottom-right corner of the text to be at coordinates <code>(492,370)</code> &mdash; just a few pixels away from the bottom-right corner of the canvas &mdash; but I don&#8217;t want to measure the width or height of the text. I can set <code>textAlign</code> to <code>right</code> and <code>textBaseline</code> to <code>bottom</code>, then call <code>fillText()</code> with the bottom-right coordinates of the text&#8217;s bounding box.
+<p>Agora para o texto no canto inferior direito. Vamos dizer que eu queira para que fique na coordenada <code>(492,370)</code> &mdash; somente há alguns pixels de distância do canto inferior direito do canvas &mdash; mas eu não quero medir a altura e largura do texto. Posso definir a propriedade <code>textAlign</code> para <code>right</code> e a <code>textBaseline</code> para <code>bottom</code>, então chamar <code>fillText()</code> com as coordenadas do canto inferior direito da caixa delimitadora do texto.
 
 <pre><code>context.textAlign = "right";
 context.textBaseline = "bottom";
 context.fillText("( 500 , 375 )", <mark>492, 370</mark>);</code></pre>
 
-<p>And this is the result:</p>
+<p>E o resultado:</p>
 
 <canvas id=c4 width=500 height=375></canvas>
 
-<p>Oops! We forgot the dots in the corners. We&#8217;ll see how to draw circles a little later. For now, I&#8217;ll cheat a little and <a href=#shapes>draw them as rectangles</a>. 
+<p>Oops! Nós nos esquecemos dos pontos nos cantos. Nós iremos ver como desenhar círculos um pouco mais tarde. Por agora, irei roubar um pouquinho e <a href=#shapes>desenhar eles como retângulos</a>. 
 
 <pre style="float:left"><code>context.fillRect(0, 0, 3, 3);
 context.fillRect(497, 372, 3, 3);</code></pre>
-<p class="legend right"><span class=arrow>&nbsp;&#x21dc;</span> Draw two &#8220;dots&#8221;</p>
+<p class="legend right"><span class=arrow>&nbsp;&#x21dc;</span> Desenha dois &#8220;pontos&#8221;</p>
 
-<p>And that&#8217;s all she wrote! Here is the final product:</p>
+<p>E isso é tudo! Aqui está o produto final:</p>
 
 <canvas id=c5 width=500 height=375 class=clear></canvas>
 
