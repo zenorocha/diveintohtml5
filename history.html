@@ -9,22 +9,22 @@ body{counter-reset:h1 11}
 </style>
 <link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
 <p>You are here: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#history>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
-<h1><br>Manipulating History<br>for Fun &amp; Profit</h1>
+<h1><br>Manipulando Histórico <br>Para Diversão & Lucro</h1>
 <p id=toc>&nbsp;
 <p class=a>&#x2767;
-<h2 id=divingin>Diving In</h2>
+<h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-t.png alt=T width=107 height=105>he browser location bar is perhaps the geekiest mainstream piece of user interface in the world. There are <abbr>URL</abbr>s on billboards, on the sides of trains, and even in street graffiti. Combined with the back button &mdash; easily the most important button in the browser &mdash; you have a powerful way to go forward and backward through the vast set of intertwingled resources called the Web.
+<p class=f><img src=i/aoc-a.png alt=T width=107 height=105> barra de localização do navegador é talvez a peça mais antiga da interface de usuário no mundo. Há <abbr>URLs<abbr> em outdoors, nas laterais de trens, e até mesmo em grafites de rua. Combinado com o botão de voltar &mdash; provavelmente o botão mais importante do navegador &mdash; você tem uma maneira poderosa para avançar e voltar no vasto conjunto de recursos interligados chamado de Web.
 
-<p>The <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html><abbr>HTML5</abbr> history <abbr>API</abbr></a> is a standardized way to manipulate the browser history via script. Part of this <abbr>API</abbr> &mdash; navigating the history &mdash; has been available in previous versions of <abbr>HTML</abbr>. The new parts in <abbr>HTML5</abbr> include a way to add entries to the browser history, to visibly change the <abbr>URL</abbr> in the browser location bar (without triggering a page refresh), and an event that fires when those entries are removed from the stack by the user pressing the browser&#8217;s back button. This means that the <abbr>URL</abbr> in the browser location bar can continue to do its job as a unique identifier for the current resource, even in script-heavy applications that don&#8217;t ever perform a full page refresh.
+<p>A <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html><abbr>API</abbr> de histórico da <abbr>HTML5</abbr></a> é uma maneira padronizada para manipular o histórico do navegador via script. Parte desta <abbr>API</abbr> &mdash; navegando pelo histórico &mdash; está disponível em versões anteriores do <abbr>HTML</abbr>. As novas funcionalidades em <abbr>HTML5</abbr> incluem uma maneira de adicionar entradas ao histórico do navegador, para visivelmente alterar a <abbr>URL</abbr> na barra de localização do navegador (sem precisar atualizar a página), e um evento é acionado quando estas entradas são removidas da pilha do navegador quando o usuário pressiona o botão voltar. Isto quer dizer que a <abbr>URL</abbr> na barra de localização do navegador pode continuar seu trabalho de ser um identificador único para o recurso atual, mesmo em aplicações com scripts pesados que nem sempre necessitam de uma atualização na página toda.
 
 <p class=a>&#x2767;
 
-<h2 id=why>The Why</h2>
+<h2 id=why>O por que</h2>
 
 <p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:218px"><img src=i/openclipart.org_johnny_automatic_demon_reading_Stewart_Orr.png alt="demon reading book" width=218 height=231>
 
-<p>Why would you manually manipulate the browser location? After all, a simple link can navigate to a new <abbr>URL</abbr>; that&#8217;s the way the web has worked for 20 years. And it will continue to work that way. This <abbr>API</abbr> doesn&#8217;t try to subvert the web. Just the opposite. In recent years, web developers have found new and exciting ways of subverting the web without any help from emerging standards. The <abbr>HTML5</abbr> history <abbr>API</abbr> is actually designed to ensure that <abbr>URL</abbr>s continue to be useful in script-heavy web applications.
+<p>Por que você iria manipular manualmente a barra de navegação do navegador? Afinal, um simples link pode navegar até uma nova <abbr>URL</abbr>; essa é a forma que a web tem funcionado nos ultimos 20 anos. E isso vai continuar funcionando desta forma. Esta <abbr>API</abbr> não tenta modificar a web. Muito pelo contrario. Nos últimos anos, os desenvolvedores web têm encontrado novas e excitantes formas de modificar a web sem a ajuda de padrões emergentes. A <abbr>API</abbr> de histórico da <abbr>HTML5</abbr> foi na verdade criada para garantir que as <abbr>URL</abbr>s continuem sendo uteis em aplicações web com scrpts pesados.
 
 <p>Going back to first principles, what does a <abbr>URL</abbr> do? It identifies a unique resource. You can link to it directly; you can bookmark it; search engines can index it; you can copy and paste it and email it to someone else, who can click it and end up seeing the same resource you saw originally. These are all excellent qualities. <abbr>URL</abbr>s matter.
 
