@@ -14,9 +14,9 @@ body{counter-reset:h1 11}
 <p class=a>&#x2767;
 <h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-a.png alt=T width=107 height=105> barra de localização do navegador é talvez a peça mais antiga da interface de usuário no mundo. Há <abbr>URLs<abbr> em outdoors, nas laterais de trens, e até mesmo em grafites de rua. Combinado com o botão de voltar &mdash; provavelmente o botão mais importante do navegador &mdash; você tem uma maneira poderosa para avançar e voltar no vasto conjunto de recursos interligados chamado de Web.
+<p class=f><img src=i/aoc-a.png alt=T width=107 height=105> barra de endereços do navegador é talvez a peça mais antiga da interface de usuário no mundo. Há <abbr>URLs<abbr> em outdoors, nas laterais de trens, e até mesmo em grafites de rua. Combinado com o botão de voltar &mdash; provavelmente o botão mais importante do navegador &mdash; você tem uma maneira poderosa para avançar e voltar no vasto conjunto de recursos interligados chamado de Web.
 
-<p>A <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html><abbr>API</abbr> de histórico da <abbr>HTML5</abbr></a> é uma maneira padronizada para manipular o histórico do navegador via script. Parte desta <abbr>API</abbr> &mdash; navegando pelo histórico &mdash; está disponível em versões anteriores do <abbr>HTML</abbr>. As novas funcionalidades em <abbr>HTML5</abbr> incluem uma maneira de adicionar entradas ao histórico do navegador, para visivelmente alterar a <abbr>URL</abbr> na barra de localização do navegador (sem precisar atualizar a página), e um evento é acionado quando estas entradas são removidas da pilha do navegador quando o usuário pressiona o botão voltar. Isto quer dizer que a <abbr>URL</abbr> na barra de localização do navegador pode continuar seu trabalho de ser um identificador único para o recurso atual, mesmo em aplicações com scripts pesados que nem sempre necessitam de uma atualização na página toda.
+<p>A <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html><abbr>API</abbr> de histórico da <abbr>HTML5</abbr></a> é uma maneira padronizada para manipular o histórico do navegador via script. Parte desta <abbr>API</abbr> &mdash; navegando pelo histórico &mdash; está disponível em versões anteriores do <abbr>HTML</abbr>. As novas funcionalidades em <abbr>HTML5</abbr> incluem uma maneira de adicionar entradas ao histórico do navegador, para visivelmente alterar a <abbr>URL</abbr> na barra de endereços do navegador (sem precisar atualizar a página), e um evento é acionado quando estas entradas são removidas da pilha do navegador quando o usuário pressiona o botão voltar. Isto quer dizer que a <abbr>URL</abbr> na barra de endereços do navegador pode continuar seu trabalho de ser um identificador único para o recurso atual, mesmo em aplicações com scripts pesados que nem sempre necessitam de uma atualização na página toda.
 
 <p class=a>&#x2767;
 
@@ -24,55 +24,55 @@ body{counter-reset:h1 11}
 
 <p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:218px"><img src=i/openclipart.org_johnny_automatic_demon_reading_Stewart_Orr.png alt="demon reading book" width=218 height=231>
 
-<p>Por que você iria manipular manualmente a barra de navegação do navegador? Afinal, um simples link pode navegar até uma nova <abbr>URL</abbr>; essa é a forma que a web tem funcionado nos ultimos 20 anos. E isso vai continuar funcionando desta forma. Esta <abbr>API</abbr> não tenta modificar a web. Muito pelo contrario. Nos últimos anos, os desenvolvedores web têm encontrado novas e excitantes formas de modificar a web sem a ajuda de padrões emergentes. A <abbr>API</abbr> de histórico da <abbr>HTML5</abbr> foi na verdade criada para garantir que as <abbr>URL</abbr>s continuem sendo uteis em aplicações web com scrpts pesados.
+<p>Por que você iria manipular manualmente a barra de endereços do navegador? Afinal, um simples link pode navegar até uma nova <abbr>URL</abbr>; essa é a forma que a web tem funcionado nos ultimos 20 anos. E isso vai continuar funcionando desta forma. Esta <abbr>API</abbr> não tenta revolucionar a web. Muito pelo contrario. Nos últimos anos, os desenvolvedores web têm encontrado novas e excitantes formas de revolucionar a web sem a ajuda de padrões emergentes. A <abbr>API</abbr> de histórico da <abbr>HTML5</abbr> foi na verdade criada para garantir que as <abbr>URL</abbr>s continuem sendo uteis em aplicações web com scrpts pesados.
 
-<p>Going back to first principles, what does a <abbr>URL</abbr> do? It identifies a unique resource. You can link to it directly; you can bookmark it; search engines can index it; you can copy and paste it and email it to someone else, who can click it and end up seeing the same resource you saw originally. These are all excellent qualities. <abbr>URL</abbr>s matter.
+<p>Voltando aos princípios, o que uma <abbr>URL</abbr> faz? Ela identifica um recurso único. Você pode fazer um link direto para ela; você pode marca-la; motores de busca podem indexa-la; você pode copia-la e cola-la e envia-la por e-mail para outra pessoa, esta pessoa pode clicar e acabara vendo o mesmo recurso que você viu originalmente. Estas são todas qualidades excelentes.  <abbr>URL</abbr>s são importantes.
 
-<p>So we want unique resources to have unique <abbr>URL</abbr>s. But at the same time, browsers have always had a fundamental limitation: if you change the <abbr>URL</abbr>, even through script, it triggers a roundtrip to the remote web server and a full page refresh. This takes time and resources, and it seems especially wasteful when you are navigating to a page that is substantially similar to the current page. Everything on the new page gets downloaded, even the parts that are exactly the same as the current page. There is no way tell a browser to change the <abbr>URL</abbr> but only download half a page.
+<p>Então nos queremos que recursos únicos tenham <abbr>URL</abbr>s únicas. Mas ao mesmo tempo, navegadores sempre tiveram uma limitação fundamental: Se você mudar a <abbr>URL</abbr>, mesmo através de script, ele dispara uma requisição ao servidor web remoto e recarrega toda a página. Isso consome tempo e recursos, e parece um desperdício quando você esta navegando para uma página que é substancialmente semelhante à sua página atual. Tudo que possui na nova pagina é baixado, até mesmo as partes que são exatamente as mesmas da página atual. Não tem como alterar a <abbr>URL</abbr> em um navegador, mas este fazer download de apenas metade da página.
 
-<p>The <abbr>HTML5</abbr> history <abbr>API</abbr> lets you do this. Instead of triggering a full page refresh, you can use script to, in essence, download half a page. This illusion is tricky to pull off, and it requires some work on your part. Are you watching closely?
+<p>A <abbr>API</abbr> de histórico do <abbr>HTML5</abbr> permite que você faça isso. Ao invés de desencadear uma atualização na página inteira, você pode utilizar o script para, em essência, baixar metade de uma página. Esta ilusão é um truque difícil, e requer algum trabalho da sua parte. Você esta prestando atenção?
 
-<p class=ss><img src=i/openclipart.org_johnny_automatic_card_trick.png width=287 height=238 alt="magician performing a card trick">
+<p class=ss><img src=i/openclipart.org_johnny_automatic_card_trick.png width=287 height=238 alt="Magico fazendo um truque de cartas" />
 
-<p id=illusion>Let&#8217;s say you have two pages, page A and page B. The two pages are 90% identical; only 10% of the page content is different. The user navigates to page A, then tries to navigate to page B. But instead of triggering a full page refresh, you interrupt this navigation and do the following steps manually:
+<p id=illusion>Digamos que você possui duas páginas, página A e página B. As duas páginas são 90% identicas; somente 10% do conteudo destas páginas é diferente. O usuario navega para a págna A, então tenta navegar para a página B. Mas ao invés de desencadear uma atualização na página toda, você interrompe o navegador e segue estes passos manualmente:
 
 <ol>
-<li><em>Load the 10% of the page</em> from page B that is different from page A (probably using <code>XMLHttpRequest</code>). This will require some server-side changes to your web application. You will need to write code to return just the 10% of page B that is different from page A. This can be a hidden <abbr>URL</abbr> or query parameter that the end user would not normally see.
-<li><em>Swap in the changed content</em> (using <code>innerHTML</code> or other <abbr>DOM</abbr> methods). You may also need to reset any event handlers on elements within the swapped-in content.
-<li><em>Update the browser location bar</em> with the <abbr>URL</abbr> of page B, using a particular method from the <abbr>HTML5</abbr> history <abbr>API</abbr> that I&#8217;ll show you in a moment.
+<li><em>Carrega os 10% da página</em> através da página B que é diferente da página A (provavelmente utilizando <code>XMLHttpRequest</code>). Isso vai exigir algumas modificações no lado servidor de sua aplicação web. Você vai precisar escrever um código que retorne apenas os 10% da página B que é diferente da página A. Isso pode ser uma <abbr>URL</abbr> oculta ou um parâmetro de consulta que o usuário final normalmente não vê.
+<li><em>Troque o conteúdo alterado</em> (utilizando <code>innerHTML</code> ou outro método <abbr>DOM</abbr>). Talvez você precise redefinir os manipuladores de eventos que foram alterados junto com o conteúdo.
+<li><em>Atualize a barra de endereços do navegador</em> com a <abbr>URL</abbr> da página B, utilizando um método particular da <abbr>API</abbr> de histórico do <abbr>HTML5</abbr> que eu já vou mostrar para você.
 </ol>
 
-<p>At the end of this illusion (if you executed it correctly), the browser ends up with a <abbr>DOM</abbr> that is identical to page B, just as if you had navigated to page B directly. The browser location bar ends up with a <abbr>URL</abbr> that is identical to page B, just as if you had navigated to page B directly. But you never really did navigate to page B, and you never did a full page refresh. That&#8217;s the illusion. But because the &#8220;compiled&#8221; page looks the same as page B and has the same <abbr>URL</abbr> as page B, the user should never notice the difference (nor appreciate all your hard work micromanaging their experience).
+<p>Ao final desta ilusão (se você a executar corretamente), o navegador acaba com um <abbr>DOM</abbr> que é idêntico a página B, como se você tivesse navegado diretamente para a página B. A barra de endereços do navegador acaba ficando com uma <abbr>URL</abbr> que é idêntica a da página B, como se você tivesse navegado diretamente para a página B. Mas na verdade você nunca navegou até a página B, e você nunca precisou atualizar toda a página. Esta é a ilusão. Mas porque a página "compilada" se parece exatamente como a página B e possui a mesma <abbr>URL</abbr>, o usuário provavelmente nunca notara a diferença (nem te agradecera por todo trabalho pesado micro gerenciando suas experiências).
 
 <p class=a>&#x2767;
 
-<h2 id=how>The How</h2>
+<h2 id=how>O Como</h2>
 
-<p>The <abbr>HTML5</abbr> history <abbr>API</abbr> is just a handful of methods on the <code>window.history</code> object, plus one event on the <code>window</code> object. You can use these to <a href=detect.html#history>detect support for the history <abbr>API</abbr></a>. Support is currently limited to the very latest versions of a few browsers, putting these techniques squarely in the &#8220;progressive enhancement&#8221; camp.
+<p>A <abbr>API</abbr> de histórico do <abbr>HTML5</abbr> é apenas vários métodos no objeto <code>window.history</code>, mais um evento no objeto <code>window</code>. Você pode utilizar isto para <a href=detect.html#history>detectar o suporte da<abbr>API</abbr> de histórico</a>. O suporte atualmente é limitado para as ultimas versões de alguns navegadores, colocando essa técnica diretamente no campo "Melhoria em progresso".
 
 <table class=bc>
-<caption>history.pushState support</caption>
+<caption>Suporte para history.pushState</caption>
 <thead>
 <tr><th title="Internet Explorer">IE<th title="Mozilla Firefox">Firefox<th title="Apple Safari">Safari<th title="Google Chrome">Chrome<th>Opera<th>iPhone<th>Android
 <tbody>
 <tr><td>&middot;<td>4.0+<td>5.0+<td>8.0+<td>11.50+<td>4.2.1+<td>&middot;
 </table>
 
-<p><a href=examples/history/fer.html>dive into dogs</a> is a straightforward but non-trivial example of using the <abbr>HTML5</abbr> history <abbr>API</abbr>. It demonstrates a common pattern: a long article with an associated inline photo gallery. In a supported browser, navigating the Next and Previous links in the photo gallery will update the photo in place <em>and update the <abbr>URL</abbr> in the browser location bar</em>, without triggering a full page refresh. In unsupported browsers &mdash; or, indeed, supported browsers where the user has disabled scripting &mdash; the links simply function as regular links, taking you to a new page with a full page refresh.
+<p><a href=examples/history/fer.html>dive into dogs</a> é um exemplo simples, mas não trivial de usar a <abbr>API</abbr> de histórico do <abbr>HTML5</abbr>. Ele demonstra um padrão comum: um longo artigo com uma galeria de fotos. Em um navegador compatível, navegando pelos links "Próximo" e "Anterior" na galeria de fotos irá atualizar apenas foto no lugar <em>e atualizará o <abbr>URL</abbr> na barra de endereços do navegador</em>, sem desencadear uma atualização na página inteira. Em navegadores sem suporte - ou, de fato, navegadores compatíveis onde o usuário tenha desabilitado scripts - os links simplesmente funcionam como links normais, levando você a uma nova página com uma atualização na página toda.
 
-<p>This brings up an important point:
+<p>Isso nos leva a um ponto importante:
 
 <div class=pf>
-<h4>Professor Markup Says</h4>
+<h4>Professor Markup diz</h4>
 <div class=inner>
-<blockquote><p>If your web application fails in browsers with scripting disabled, Jakob Nielsen&#8217;s dog will come to your house and shit on your carpet.
+<blockquote><p>Se sua aplicação web falhar em navegadores com script desabilitado, O cachorro de Jakob Nielsen vai até a sua casa e defecara no seu carpete.
 </blockquote>
 </div>
 </div>
 
-<p id=gallery-markup>Let&#8217;s dig into the <a href=examples/history/fer.html>dive into dogs</a> demo and see how it works. This is the relevant markup for a single photo:
+<p id=gallery-markup>Vamos dar uma olhada no exemplo <a href=examples/history/fer.html>dive into dogs</a> e ver como ele funciona. Esta é a marcação relevante para uma única foto:
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> The pledge
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> O penhor
 <pre><code>&lt;aside id="gallery">
   &lt;p class="photonav">
     &lt;a id="photonext" href="casey.html">Next &amp;gt;&lt;/a>
@@ -85,7 +85,7 @@ body{counter-reset:h1 11}
   &lt;/figure>
 &lt;/aside></code></pre>
 
-<p>Nothing unusual there. The photo itself is an <code>&lt;img></code> inside a <code>&lt;figure></code>, the links are just regular <code>&lt;a></code> elements, and the entire thing is wrapped in an <code>&lt;aside></code>. It&#8217;s important that these are just regular links that actually work. All the code that follows is behind a <a href=detect.html#history>detection script</a>. If the user is using an unsupported browser, none of our fancy history <abbr>API</abbr> code will ever be executed. And of course, there&#8217;s always some users with scripting disabled altogether.
+<p>Nada diferente aqui. A foto em si é uma <code>&lt;img></code> dentro de uma <code>&lt;figure></code>, o link é um elemento <code>&lt;a></code> normal, e a coisa toda esta colocada dentro de um <code>&lt;aside></code>. É importante que estes links regulares realmente funcionem. Todo o código se passa atrás de um <a href=detect.html#history>script de detecção</a>. Se um usuário estiver utilizando um navegador sem suporte, nada do nosso código chique da <abbr>API</abbr> de histórico será executado. E, claro, sempre há alguns usuários com o script desativado por completo.
 
 <p>The main driver function gets each of these links and passes it to a function, <code>addClicker()</code>, which does the actual work of setting up the custom <code>click</code> handler.
 
@@ -199,15 +199,14 @@ body{counter-reset:h1 11}
 </ul>
 
 <p class=a>&#x2767;
-
-<p>This has been &#8220;Manipulating History for Fun <i>&amp;</i> Profit.&#8221; The <a href=table-of-contents.html>full table of contents</a> has more if you&#8217;d like to keep reading.
+<p>Este foi &#8220;Manipulando Histórico Para Diversão & Lucro&#8221; O <a href=table-of-contents.html>Índice Analítico</a> tem muito mais, se você quiser continuar a leitura.
 
 <div class=pf>
-<h4>Did You Know?</h4>
+<h4>Você sabia?</h4>
 <div class=moneybags>
-<blockquote><p>In association with Google Press, O&#8217;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &#8220;HTML5: Up &amp; Running,&#8221; and it is available now. This chapter is not yet included in the paid edition, so consider it a bonus.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &#8220;HTML5: Up &amp; Running&#8221; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&#8217;Reilly</a>. You&#8217;ll get a book, and I&#8217;ll get a buck. I do not currently accept direct donations.
-</blockquote>
+	<blockquote><p>Em associação a Google Press, O&#8217;Reilly está distruindo este livro em variados formatos, incluindo papel, ePub, Mobi, <abbr>DRM</abbr>-free e <abbr>PDF</abbr>. A edição paga é chamada &#8220;HTML5: Up &amp; Running,&#8221; e está disponível agora.
+	<p>Se você gostou dessa introdução e quer mostrar como apreciou, basta <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">comprar o livro &#8220;HTML5: Up &amp; Running&#8221; com esse link afiliado</a> ou <a href=http://oreilly.com/catalog/9780596806033>comprar a edição eletrônica diretamente da O&#8217;Reilly</a>. Você vai ganhar um livro, e eu vou ganhar um trocado. Atualmente não aceito doações diretas.
+	</blockquote>
 </div>
 </div>
 
