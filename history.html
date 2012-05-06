@@ -87,14 +87,14 @@ body{counter-reset:h1 11}
 
 <p>Nada diferente aqui. A foto em si é uma <code>&lt;img></code> dentro de uma <code>&lt;figure></code>, o link é um elemento <code>&lt;a></code> normal, e a coisa toda esta colocada dentro de um <code>&lt;aside></code>. É importante que estes links regulares realmente funcionem. Todo o código se passa atrás de um <a href=detect.html#history>script de detecção</a>. Se um usuário estiver utilizando um navegador sem suporte, nada do nosso código chique da <abbr>API</abbr> de histórico será executado. E, claro, sempre há alguns usuários com o script desativado por completo.
 
-<p>The main driver function gets each of these links and passes it to a function, <code>addClicker()</code>, which does the actual work of setting up the custom <code>click</code> handler.
+<p>A função principal pega cada um destes links e repassa para uma função, <code>addClicker()</code>, que faz todo o trabalho de criação e customização do <code>click</code>.
 
 <pre><code>function setupHistoryClicks() {
   addClicker(document.getElementById("photonext"));
   addClicker(document.getElementById("photoprev"));
 }</code></pre>
 
-<p>This is the <code>addClicker()</code> function. It takes an <code>&lt;a></code> element and adds a <code>click</code> handler. And within this <code>click</code> handler is where it gets interesting.
+<p>Esta é a função <code>addClicker()</code>. Ela pega um elemento <code>&lt;a></code> e adiciona um <code>click</code> manipulado. E é neste <code>click</code> manipulado onde as coisas ficam interessantes.
 
 <pre style="float:left"><code>function addClicker(link) {
   link.addEventListener("click", function(e) {
@@ -103,9 +103,9 @@ body{counter-reset:h1 11}
     e.preventDefault();
   }, false);
 }</code></pre>
-<p class="legend right" style="margin-top:5em"><span class=arrow>&nbsp;&#x219c;</span> Interesting
+<p class="legend right" style="margin-top:5em"><span class=arrow>&nbsp;&#x219c;</span> Interessante
 
-<p style="clear:left">The <code>swapPhoto()</code> function performs the first two steps of our <a href=#illusion>three-step illusion</a>. The first half of the <code>swapPhoto()</code> function takes part of the <abbr>URL</abbr> of the navigation link itself &mdash; <code>casey.html</code>, <code>adagio.html</code>, <i>&amp;</i>c. &mdash; and constructs a <abbr>URL</abbr> to a hidden page that contains nothing but the markup required by the next photo.
+<p style="clear:left">A função <code>swapPhoto()</code> realiza as duas primeiras etapas de nossa <a href=#illusion>ilusão de três etapas</a>. A primeira metade da função <code>swapPhoto()</code> faz parte da <abbr>URL</abbr> do link de navegação em si &mdash; <code>casey.html</code>, <code>adagio.html</code>, <i>&amp;</i>c. &mdash; e constrói uma <abbr>URL</abbr> para uma pagina oculta que contem nada mais que a marcação exigida pela próxima foto.
 
 <pre><code>function swapPhoto(href) {
   var req = new XMLHttpRequest();
@@ -115,7 +115,7 @@ body{counter-reset:h1 11}
            false);
   req.send(null);</code></pre>
 
-<p>Here is a sample of the markup returned by <code><a href=http://diveintohtml5.org/examples/history/gallery/casey.html>http://diveintohtml5.org/examples/history/gallery/casey.html</a></code>. (You can verify this in your browser by visiting that <abbr>URL</abbr> directly.)
+<p>Aqui temos um exemplo de marcação retornado por <code><a href=http://diveintohtml5.org/examples/history/gallery/casey.html>http://diveintohtml5.org/examples/history/gallery/casey.html</a></code>. (Você pode verificar isso no seu navegador visitando a <abbr>URL</abbr> diretamente.)
 
 <pre><code>&lt;p class="photonav">
   &lt;a id="photonext" href="brandy.html">Next &amp;gt;&lt;/a>
@@ -127,9 +127,9 @@ body{counter-reset:h1 11}
   &lt;figcaption>Casey, 1984&lt;/figcaption>
 &lt;/figure></code></pre>
 
-<p>Does that look familiar? It should. It&#8217;s the <a href=#gallery-markup>same basic markup that the original page used</a> to display the first photo.
+<p>Isso lhe parece familiar? Deveria. Este é a <a href=#gallery-markup>mesma marcação básica utilizada na pagina original</a> para mostrar a primeira foto.
 
-<p>The second half of the <code>swapPhoto()</code> function performs the second step of our <a href=#illusion>three-step illusion</a>: inserting this newly downloaded markup into the current page. Remember that there is an <code>&lt;aside></code> wrapping the entire figure, photo, and caption. So inserting the new photo markup is a one-liner, setting the <code>innerHTML</code> property of the <code>&lt;aside></code> to the <code>responseText</code> property returned from <code>XMLHttpRequest</code>.
+<p>A segunda metade da função <code>swapPhoto()</code> realiza a segunda etapa de nossa <a href=#illusion>ilusão de três etapas</a>: inserindo a nova marcação baixada dentro da página atual. Lembra que tínhamos um <code>&lt;aside></code> envolvendo todo o figure, foto, e legenda. Então inserindo a nova marcação da foto é uma linha, atribuindo a propriedade <code>innerHTML</code> do <code>&lt;aside></code> para a propriedade <code>responseText</code> retornada do <code>XMLHttpRequest</code>.
 
 <pre><code>  if (req.status == 200) {
     document.getElementById("gallery").innerHTML = req.responseText;
@@ -139,14 +139,14 @@ body{counter-reset:h1 11}
   return false;
 }</code></pre>
 
-<p>(Also notice the call to <code>setupHistoryClicks()</code>. This is necessary to reset the custom <code>click</code> event handlers on the newly inserted navigation links. Setting <code>innerHTML</code> wipes out any trace of the old links and their event handlers.)
+<p>(Observe também a chamada para o <code>setupHistoryClicks()</code>. Isto é necessário para reiniciar os eventos do <code>click</code> manipulados nos novos links de navegação. Atribuindo <code>innerHTML</code> remove qualquer traço dos links antigos e seus eventos.)
 
-<p>Now, let&#8217;s go back to the <code>addClicker()</code> function. After successfully swapping out the photo, there&#8217;s one more step in our <a href=#illusion>three-step illusion</a>: setting the <abbr>URL</abbr> in the browser location bar without refreshing the page.
+<p>Agora, vamos voltar para a função <code>addClicker()</code>. Depois de alterar a foto com sucesso, temos mais uma etapa para a nossa <a href=#illusion>ilusão de três etapas</a>: atribuir a <abbr>URL</abbr> na barra de navegação do navegador sem atualizar a página.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> The turn
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> A troca
 <pre><code>history.pushState(null, null, link.href);</code></pre>
 
-<p>The <code>history.pushState()</code> function takes three parameters:
+<p>A função <code>history.pushState()</code> recebe três parâmetros:
 
 <ol>
 <li><code>state</code> can be any <abbr>JSON</abbr> data structure. It is passed back to the <code>popstate</code> event hander, which you&#8217;ll learn about in just a moment. We don&#8217;t need to track any state in this demo, so I&#8217;ve left it as <code>null</code>.
@@ -158,7 +158,7 @@ body{counter-reset:h1 11}
 
 <p>Normally when the user navigates to a new page (with a full page refresh), the browser pushes the new <abbr>URL</abbr> onto its history stack and downloads and draws the new page. When the user presses the back button, the browser pops one page off its history stack and redraws the previous page. But what happens now that you&#8217;ve short-circuited this navigation to avoid a full page refresh? Well, you&#8217;ve faked &#8220;moving forward&#8221; to a new <abbr>URL</abbr>, so now you also need to fake &#8220;moving backward&#8221; to the previous <abbr>URL</abbr>. And the key to faking &#8220;moving backwards&#8221; is the <code>popstate</code> event.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> The prestige
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> O prestígio
 <pre><code>window.addEventListener("popstate", function(e) {
     swapPhoto(location.pathname);
 }</code></pre>
