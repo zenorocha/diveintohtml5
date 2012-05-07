@@ -156,47 +156,46 @@ body{counter-reset:h1 11}
 
 <p>Ao chamar <code>history.pushState</code> muadara imediatamente a <abbr>URL</abbr> na barra de endereços do navegador. Então, este é o final da ilusão? Bom, não exatamente. Nós ainda precisamos falar sobre o que acontece quando o usuário pressiona o importantíssimo botão de voltar.
 
-<p>Normally when the user navigates to a new page (with a full page refresh), the browser pushes the new <abbr>URL</abbr> onto its history stack and downloads and draws the new page. When the user presses the back button, the browser pops one page off its history stack and redraws the previous page. But what happens now that you&#8217;ve short-circuited this navigation to avoid a full page refresh? Well, you&#8217;ve faked &#8220;moving forward&#8221; to a new <abbr>URL</abbr>, so now you also need to fake &#8220;moving backward&#8221; to the previous <abbr>URL</abbr>. And the key to faking &#8220;moving backwards&#8221; is the <code>popstate</code> event.
+<p>Geralmente quando um usuário navega a uma nova página (com uma atualização de página inteira), o navegador joga a nova <abbr>URL</abbr> para a lista de histórico e downloads e desenha a nova página. Quando o usuário pressiona o botão voltar, o navegador joga uma página para fora da pilha de histórico e redesenha a página anterior. Mas o que acontece agora que você gerou um curto-circuito de navegação para evitar a atualização da página toda? Bom, você fingiu o "avançar" para uma nova <abbr>URL</abbr>, então agora você pode também fingir um "voltar" para a <abbr>URL</abbr> anterior. E a chave para  forjar este "retorno" é o evento <code>popstate</code>.
 
 <p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> O prestígio
 <pre><code>window.addEventListener("popstate", function(e) {
     swapPhoto(location.pathname);
 }</code></pre>
 
-<p>After you&#8217;ve used the <code>history.pushState()</code> function to push a fake <abbr>URL</abbr> onto the browser&#8217;s history stack, when the user presses the back button, the browser will fire a <code>popstate</code> event on the <code>window</code> object. This is your chance to complete the illusion once and for all. Because making something disappear isn't enough; you have to bring it back.
+<p>Após você ter utilizado a função <code>history.pushState()</code> para jogar a <abbr>URL</abbr> para o histórico do navegador, quando o usuário pressionar o botão voltar, o navegador irá disparar um evento <code>popstate</code> no objeto <code>window</code>. Esta é a sua chance de completar a ilusão de uma vez por todas. Porque fazer alguma coisa desaparecer não é o suficiente; você tem que trazer ela de volta.
 
-<p>In this demonstration, &#8220;bringing it back&#8221; is as simple as swapping in the original photo, which we do by calling the <code>swapPhoto()</code> with the current location. By the time your <code>popstate</code> callback is called, the <abbr>URL</abbr> visible in the browser&#8217;s location bar has been changed to the previous <abbr>URL</abbr>. Also, the global <code>location</code> property has already been updated with the previous <abbr>URL</abbr>.
+<p>Nesta demonstração, &#8220;trazer de volta&#8221; é tão simples quanto trocando a foto original, que nós fazemos ao chamar o <code>swapPhoto()</code> com a localização atual. Quando o retorno do <code>popstate</code> é chamado, a <abbr>URL</abbr> visível na barra de endereço do navegador foi trocada pela <abbr>URL</abbr> antiga. E também, a propriedade <code>location</code> global já foi atualizada com a antiga <abbr>URL</abbr>.
 
-<p>To help you visualize this, let&#8217;s step through the entire illusion from the beginning to the end:
+<p>Para ajudar a visualizar isso, vamos percorrer a ilusão inteira desde do começo ao fim:
 
 <ul>
-<li>User loads <code><a href=http://diveintohtml5.org/examples/history/fer.html>http://diveintohtml5.org/examples/history/fer.html</a></code>, sees story and a photo of Fer.
-<li>User clicks the link labeled &#8220;Next,&#8221; an <code>&lt;a></code> element whose <code>href</code> property is <code><a href=http://diveintohtml5.org/examples/history/casey.html>http://diveintohtml5.org/examples/history/casey.html</a></code>.
-<li>Instead of navigating <code><a href=http://diveintohtml5.org/examples/history/casey.html>http://diveintohtml5.org/examples/history/casey.html</a></code> with a full page refresh, the custom <code>click</code> handler on the <code>&lt;a></code> element traps the click and executes its own code.
-<li>Our custom <code>click</code> handler calls the <code>swapPhoto()</code> function, which creates an <code>XMLHttpRequest</code> object to synchronously download the <abbr>HTML</abbr> snippet located at <code><a href=http://diveintohtml5.org/examples/history/gallery/casey.html>http://diveintohtml5.org/examples/history/<strong>gallery</strong>/casey.html</a></code>.
-<li>The <code>swapPhoto()</code> function sets the <code>innerHTML</code> property of the photo gallery wrapper (an <code>&lt;aside></code> element), thereby replacing the captioned photo of Fer with a captioned photo of Casey.
-<li>Finally, our custom <code>click</code> handler calls the <code>history.pushState()</code> function to manually change the <abbr>URL</abbr> in the browser&#8217;s location bar to <code><a href=http://diveintohtml5.org/examples/history/casey.html>http://diveintohtml5.org/examples/history/casey.html</a></code>.
-<li>User clicks the browser&#8217;s back button.
-<li>The browser notices that a <abbr>URL</abbr> has been manually pushed onto the history stack (by the <code>history.pushState()</code> function). Instead of navigating to the previous <abbr>URL</abbr> and redrawing the entire page, the browser simply updates the location bar to the previous <abbr>URL</abbr> (<code><a href=http://diveintohtml5.org/examples/history/fer.html>http://diveintohtml5.org/examples/history/fer.html</a></code>) and fires a <code>popstate</code> event.
-<li>Our custom <code>popstate</code> handler calls the <code>swapPhoto()</code> function again, this time with the previous <abbr>URL</abbr> that by now is already visible in the browser&#8217;s location bar.
-<li>Again using <code>XMLHttpRequest</code>, the <code>swapPhoto()</code> function downloads a snippet of <abbr>HTML</abbr> located at <code><a href=http://diveintohtml5.org/examples/history/gallery/fer.html>http://diveintohtml5.org/examples/history/<strong>gallery</strong>/fer.html</a></code> and sets the <code>innerHTML</code> property of the <code>&lt;aside></code> wrapper element, thereby replacing the captioned photo of Casey with a captioned photo of Fer.
+<li>Usuário carrega <code><a href=http://diveintohtml5.com.br/examples/history/fer.html>http://diveintohtml5.org/examples/history/fer.html</a></code>, vê a história e a foto de Fer.
+<li>Usuário clica no link &#8220;Próximo,&#8221; um elemento <code>&lt;a></code> que tem uma propriedade <code>href</code> para <code><a href=http://diveintohtml5.org/examples/history/casey.html>http://diveintohtml5.org/examples/history/casey.html</a></code>.
+<li>Ao invés de navegar para <code><a href=http://diveintohtml5.org/examples/history/casey.html>http://diveintohtml5.org/examples/history/casey.html</a></code> com uma atualização completa na página, o evento <code>click</code> manipulado dentro do elemento <code>&lt;a></code> executa seu próprio código.
+<li>Nosso evento <code>click</code> manipulado chama a função <code>swapPhoto()</code>, que cria um objeto <code>XMLHttpRequest</code> para baixar o fragmento de código <abbr>HTML</abbr> localizado em <code><a href=http://diveintohtml5.org/examples/history/gallery/casey.html>http://diveintohtml5.org/examples/history/<strong>gallery</strong>/casey.html</a></code>.
+<li>A função <code>swapPhoto()</code> atribui a propriedade <code>innerHTML</code> para o que envolve a galeria de foto (um elemento <code>&lt;aside></code>), substituindo assim a foto e a legenda de Fer pela foto e legenda de Casey.
+<li>Finalmente, nosso <code>click</code> manipulado chama a função <code>history.pushState()</code> para manualmente alterar a <abbr>URL</abbr> na barra de endereços do navegador para <code><a href=http://diveintohtml5.org/examples/history/casey.html>http://diveintohtml5.org/examples/history/casey.html</a></code>.
+<li>Usuário clica no botão voltar do navegador.
+<li>O navegador percebe que uma <abbr>URL</abbr> foi manualmente adicionada na pilha de histórico (pela função <code>history.pushState()</code>). Ao invés de navegar para a <abbr>URL</abbr> anterior e redesenhar a página toda, o navegador simplesmente atualiza a barra de endereço para a <abbr>URL</abbr> antiga (<code><a href=http://diveintohtml5.org/examples/history/fer.html>http://diveintohtml5.org/examples/history/fer.html</a></code>) e executa um evento <code>popstate</code>.
+<li>Nosso <code>popstate</code> customizado manipula chamadas para a função <code>swapPhoto()</code> novamente, desta vez com a <abbr>URL</abbr> antiga que agora já esta visível na barra de endereços do navegador.
+<li>Novamente utilizando <code>XMLHttpRequest</code>, a função <code>swapPhoto()</code> baixa o fragmento de <abbr>HTML</abbr> localizado em <code><a href=http://diveintohtml5.org/examples/history/gallery/fer.html>http://diveintohtml5.org/examples/history/<strong>gallery</strong>/fer.html</a></code> e atribui a propriedade <code>innerHTML</code> do elemento <code>&lt;aside></code>, substituindo assim a foto e a legenda de Casey com uma foto e legenda de Fer.
 </ul>
 
-<p>The illusion is complete. All visible evidence (the content of the page, and the <abbr>URL</abbr> in the location bar) suggests to the user that they have navigated forward one page and backward one page. But no full page refresh ever occurred &mdash; it was all a meticulously executed illusion.
+<p>A ilusão esta completa. Todas as evidências visíveis (o conteudo da página, e a <abbr>URL</abbr> na barra de endereços) sugerem ao usuário que ele navegou uma página a frente e uma para trás. Mas nenhuma página foi completamente atualizada - isto foi tudo uma ilusão meticulosamente executada.
 
 <p class=a>&#x2767;
 
-<h2 id=further-reading>Further Reading</h2>
+<h2 id=further-reading>Leitura complementar</h2>
 
 <ul>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html>Session history and navigation</a> in the <abbr>HTML5</abbr> draft standard
-<li><a href=https://developer.mozilla.org/en/DOM/Manipulating_the_browser_history>Manipulating the browser history</a> on Mozilla Developer Center
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html>Session history and navigation</a> nas normas de projeto da <abbr>HTML5</abbr>
+<li><a href=https://developer.mozilla.org/en/DOM/Manipulating_the_browser_history>Manipulating the browser history</a> no centro de desenvolvimento Mozilla
 <li><a href=http://html5demos.com/history>Simple history <abbr>API</abbr> demo</a>
-<li><a href=http://www.20thingsilearned.com/>20 Things I Learned About Browsers and the Web</a>, an advanced demo that uses the history <abbr>API</abbr> and other <abbr>HTML5</abbr> techniques
-<li><a href="http://www.facebook.com/note.php?note_id=438532093919">Using <abbr>HTML5</abbr> today</a> describes <a href=http://www.facebook.com/>Facebook&#8217;s</a> use of the history <abbr>API</abbr>
-<li><a href=https://github.com/blog/760-the-tree-slider>The Tree Slider</a> describes <a href=https://github.com/>Github&#8217;s</a> use of the history <abbr>API</abbr>
-<li><a href=https://github.com/balupton/History.js/>History.js</a>, a meta-<abbr>API</abbr> for manipulating history in both newer and older browsers
-</ul>
+<li><a href=http://www.20thingsilearned.com/>20 Things I Learned About Browsers and the Web</a>, uma demonstração avançada que usa a <abbr>API</abbr> de histórico e outras técnicas <abbr>HTML5</abbr>
+<li><a href="http://www.facebook.com/note.php?note_id=438532093919">Using <abbr>HTML5</abbr> today</a> descreve a utilização da <abbr>API</abbr> de histórico no <a href=http://www.facebook.com/>Facebook</a>
+<li><a href=https://github.com/blog/760-the-tree-slider>The Tree Slider</a> descreve a uitlização da <abbr>API</abbr> de histórico no <a href=https://github.com/>Github</a>
+<li><a href=https://github.com/balupton/History.js/>History.js</a>, uma meta-<abbr>API</abbr> para manipulação de histórico em ambos os navegadores mais novos e mais velhos</ul>
 
 <p class=a>&#x2767;
 <p>Este foi &#8220;Manipulando Histórico Para Diversão & Lucro&#8221; O <a href=table-of-contents.html>Índice Analítico</a> tem muito mais, se você quiser continuar a leitura.
