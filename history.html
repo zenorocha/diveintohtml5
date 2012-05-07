@@ -149,12 +149,12 @@ body{counter-reset:h1 11}
 <p>A função <code>history.pushState()</code> recebe três parâmetros:
 
 <ol>
-<li><code>state</code> can be any <abbr>JSON</abbr> data structure. It is passed back to the <code>popstate</code> event hander, which you&#8217;ll learn about in just a moment. We don&#8217;t need to track any state in this demo, so I&#8217;ve left it as <code>null</code>.
-<li><code>title</code> can be any string. This parameter is currently unused by major browsers. If you want to set the page title, you should store it in the <code>state</code> argument and set it manually in your <code>popstate</code> callback.
-<li><code>url</code> can be, well, any <abbr>URL</abbr>. This is the <abbr>URL</abbr> you want to appear in the browser&#8217;s location bar.
+<li><code>state</code> pode ser qualquer dados com estrutura <abbr>JSON</abbr>. Isso é passado de volta para o manipulador do evento<code>popstate</code>, o qual você ira aprender em algum momento. Nós não precisamos acompanhar nenhum estado nesta demonstração, isto será mantido como <code>null</code>.
+<li><code>title</code> pode ser qualquer string. Este parâmetro é não é utilizado atualmente pelos principais navegadores. Se você quiser alterar o titulo da página, você deve armazenar isto em um argumento <code>state</code> e atribuir isto manualmente no callback do seu <code>popstate</code>.
+<li><code>url</code> pode ser, bem, qualquer <abbr>URL</abbr>. Isto é a <abbr>URL</abbr> que você gostaria que aparecesse na barra de endereços do navegador.
 </ol>
 
-<p>Calling <code>history.pushState</code> will immediately change the <abbr>URL</abbr> in the browser&#8217;s location bar. So is that the end of the illusion? Well, not quite. We still need to talk about what happens when the user presses the all-important back button.
+<p>Ao chamar <code>history.pushState</code> muadara imediatamente a <abbr>URL</abbr> na barra de endereços do navegador. Então, este é o final da ilusão? Bom, não exatamente. Nós ainda precisamos falar sobre o que acontece quando o usuário pressiona o importantíssimo botão de voltar.
 
 <p>Normally when the user navigates to a new page (with a full page refresh), the browser pushes the new <abbr>URL</abbr> onto its history stack and downloads and draws the new page. When the user presses the back button, the browser pops one page off its history stack and redraws the previous page. But what happens now that you&#8217;ve short-circuited this navigation to avoid a full page refresh? Well, you&#8217;ve faked &#8220;moving forward&#8221; to a new <abbr>URL</abbr>, so now you also need to fake &#8220;moving backward&#8221; to the previous <abbr>URL</abbr>. And the key to faking &#8220;moving backwards&#8221; is the <code>popstate</code> event.
 
