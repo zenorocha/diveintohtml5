@@ -29,44 +29,44 @@ R: Privacidade é uma preocupação óbvia quando se está falando sobre compart
 
 <p class=a>&#x2767;
 
-<h2 id=w3c>The Geolocation API</h2>
+<h2 id=w3c>A API de Geolocalização</h2>
 
-<p>The <a href=http://www.w3.org/TR/geolocation-API/>geolocation <abbr>API</abbr></a> lets you share your location with trusted web sites. The latitude and longitude are available to JavaScript on the page, which in turn can send it back to the remote web server and do fancy location-aware things like finding local businesses or showing your location on a map.
+<p>The <a href=http://www.w3.org/TR/geolocation-API/><abbr>API</abbr> de geolocalização</a> permite você compartilhar sua localização com sites confiáveis. A latitude e a longitude estão disponiveis no JavaScript da página, que por sua vez pode enviar para o servidor remoto e fazer maravilhas conscientes com a localização, coisas como encontrar empresas locais ou mostrar sua localização em um mapa.
 
-<p>As you can see from the following table, the geolocation <abbr>API</abbr> is supported by most browsers on the desktop and mobile devices. Additionally, some older browsers and devices can be supported by wrapper libraries, as we&#8217;ll see later in this chapter.
+<p>Como você pode ver na tabela abaixo, a <abbr>API</abbr> de geolocalização é suportada pela maioria dos navegadores, tanto desktop quanto dispositivos móveis. Além disso, alguns navegadores antigos e dispositivos podem ter suporte com a utilização de bibliotecas wrapper, como veremos mais adiante neste capítulo.
 
 <table class=bc>
-<caption>Geolocation <abbr>API</abbr> support</caption>
+<caption>Suporte da <abbr>API</abbr> de geolocalização</caption>
 <thead>
 <tr><th title="Internet Explorer">IE<th title="Mozilla Firefox">Firefox<th title="Apple Safari">Safari<th title="Google Chrome">Chrome<th>Opera<th>iPhone<th>Android
 <tbody>
 <tr><td>9.0+<td>3.5+<td>5.0+<td>5.0+<td>10.6+<td>3.0+<td>2.0+
 </table>
 
-<p>Along with support for the standard geolocation <abbr>API</abbr>, there are a plethora of device-specific <abbr>API</abbr>s on other mobile platforms. I&#8217;ll cover all that later in this chapter.
+<p>Juntamente com o suporte para a <abbr>API</abbr> de geolocalização padrão, existe uma infinidade de <abbr>API</abbr>s especificas para certos dispositivos em outras plataformas moveis. Falarei sobre tudo isso mais adiante neste capítulo.
 
 <p class=a>&#x2767;
 
-<h2 id=the-code>Show Me The Code</h2>
+<h2 id=the-code>Mostre-me o código</h2>
 
-<p>The geolocation <abbr>API</abbr> centers around a new property on the global <code>navigator</code> object: <code>navigator.geolocation</code>. <p>The simplest use of the geolocation <abbr>API</abbr> looks like this:
+<p>A <abbr>API</abbr> de geolocalização esta centralizada em torno de uma nova propriedade no objeto global <code>navigator</code>: <code>navigator.geolocation</code>. <p>O modo mais simples de utilizar a <abbr>API</abbr> de geolocalização se parece com isso:
 
 <pre><code>function get_location() {
   <mark>navigator.geolocation.getCurrentPosition</mark>(show_map);
 }</code></pre>
 
-<p>That has no detection, no error handling, and no options. Your web application should probably include at least the first two of those. To <a href=detect.html#geolocation>detect support for the geolocation <abbr>API</abbr></a>, you can use <a href=http://www.modernizr.com/>Modernizr</a>:
+<p>Isso sem detecção, sem erros e sem opções. Sua aplicação web provavelmente deve incluir pelo menos os dois primeiros. Para <a href=detect.html#geolocation>detectar o suporte da <abbr>API</abbr> de geolocalização</a>, você pode utilizar o <a href=http://www.modernizr.com/>Modernizr</a>:
 
 <pre style="float:left;padding-left:0"><code>function get_location() {
   if (<mark>Modernizr.geolocation</mark>) {
     navigator.geolocation.getCurrentPosition(show_map);
   } else {
-    // no native support; maybe try Gears?
+    // Nenhum suporte nativo, tentar com Gears?
   }
 }</code></pre>
-<p class="legend right" style="margin-top:2.5em"><span class=arrow>&nbsp;&#x21dc;</span> I CAN HAS GEO?
+<p class="legend right" style="margin-top:2.5em"><span class=arrow>&nbsp;&#x21dc;</span> EU POSSO TER GEO?
 
-<p class=clear>What you do without geolocation support is up to you. I&#8217;ll explain the Gears fallback option in a minute, but first I want to talk about what happens <em>during</em> that call to <code>getCurrentPosition()</code>. As <a href=#divingin>I mentioned at the beginning of this chapter</a>, geolocation support is <em>opt-in</em>. That means your browser will never force you to reveal your current physical location to a remote server. The user experience differs from browser to browser. In Mozilla Firefox, calling the <code>getCurrentPosition()</code> function of the geolocation <abbr>API</abbr> will cause the browser to pop up an &#8220;infobar&#8221; at the top of the browser window. The infobar looks like this:
+<p class=clear>O que você fará sem suporte é com você. I&#8217;ll explain the Gears fallback option in a minute, but first I want to talk about what happens <em>during</em> that call to <code>getCurrentPosition()</code>. As <a href=#divingin>I mentioned at the beginning of this chapter</a>, geolocation support is <em>opt-in</em>. That means your browser will never force you to reveal your current physical location to a remote server. The user experience differs from browser to browser. In Mozilla Firefox, calling the <code>getCurrentPosition()</code> function of the geolocation <abbr>API</abbr> will cause the browser to pop up an &#8220;infobar&#8221; at the top of the browser window. The infobar looks like this:
 
 <p class=c><img src=i/geolocation-opt-in.png alt="Geolocation opt-in infobar" width=737 height=32>
 
