@@ -89,29 +89,29 @@ você pode inserir o seu próprio banco de dados, inventar o seu próprio format
   }
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=detect.html#modernizr>Modernizr</a> to detect support for <abbr>HTML5</abbr> Storage.
+<p>Ao invés de escrever essa função, você pode usar <a href=detect.html#modernizr>Modernizr</a> para detectar o suporte do <abbr>HTML5</abbr> Storage.
 
 <pre><code>if (<mark>Modernizr.localstorage</mark>) {
-  // window.localStorage is available!
+  // window.localStorage é suportado pelo seu navegador!
 } else {
-  // no native support for HTML5 storage :(
-  // maybe try dojox.storage or a third-party solution
+  // não há suporte nativo ao HTML5 storage no seu navegador! :(
+  // tente talvez dojox.storage ou alguma solução de terceiros
 }</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=methods>Using HTML5 Storage</h2>
+<h2 id=methods>Usando HTML5 Storage</h2>
 
-<p><abbr>HTML5</abbr> Storage is based on named key/value pairs. You store data based on a named key, then you can retrieve that data with the same key. The named key is a string. The data can be any type supported by JavaScript, including strings, Booleans, integers, or floats. However, the data is actually stored as a string. If you are storing and retrieving anything other than strings, you will need to use functions like <code>parseInt()</code> or <code>parseFloat()</code> to coerce your retrieved data into the expected JavaScript datatype.
+<p><abbr>HTML5</abbr> Storage é baseado em pares de chave/valor noemadas. Você pode armazenar dados em uma chave nomeada, e com essa mesma chave, recuperar os dados armazenados. A chave nomeada é uma string. E seu valor, é qualquer um suportado pelo JavaScript, incluindo Strings, Booleanos, Inteiros, ou Flutuantes. Conteúdo, os dados são armazenados como uma sequëncia de string. Se você estiver armazenando e recuperando qualquer outro tipo de dado diferente de Strings, você precisa usar funções como <code>parseInt()</code> ou <code>parseFloat()</code> para recuperar os dados em um tipo esperado pelo JavaScript.
 
 <pre><code>interface Storage {
   getter any getItem(in DOMString key);
   setter creator void setItem(in DOMString key, in any data);
 };</code></pre>
 
-<p>Calling <code>setItem()</code> with a named key that already exists will silently overwrite the previous value. Calling <code>getItem()</code> with a non-existent key will return <code>null</code> rather than throw an exception.
+<p>Chamando <code>setItem()</code> com o nome de uma chave que já existe, ela sobrescreve o valor anterior. Chamando <code>getItem()</code> com o nome de uma chave que não existe, retornará <code>null</code> ao invés de de uma exceção.
 
-<p>Like other JavaScript objects, you can treat the <code>localStorage</code> object as an associative array. Instead of using the <code>getItem()</code> and <code>setItem()</code> methods, you can simply use square brackets. For example, this snippet of code:
+<p>Como outros objetos JavaScript, você pode tratar o objeto <code>localStorage</code> como um array associativo. Ao invés de usar os métodos <code>getItem()</code> e <code>setItem()</code>, você pode usar simplesmentes colchetes. Por exemplo, no trecho seguinte:
 
 <pre><code>var foo = localStorage.<mark>getItem</mark>("bar");
 // ...
@@ -123,29 +123,29 @@ localStorage.<mark>setItem</mark>("bar", foo);</code></pre>
 // ...
 localStorage<mark>["bar"]</mark> = foo;</code></pre>
 
-<p>There are also methods for removing the value for a given named key, and clearing the entire storage area (that is, deleting all the keys and values at once).
+<p>Existem métodos para remover um valor já dado a uma chave, e limpar o armazenamento local inteiro (isto é, apagar todas as chaves/valor existentes de uma só vez).
 
 <pre><code>interface Storage {
   deleter void removeItem(in DOMString key);
   void clear();
 };</code></pre>
 
-<p>Calling <code>removeItem()</code> with a non-existent key will do nothing.
+<p>Chamando <code>removeItem()</code> com uma chave inexistente, não retornará nada.
 
-<p>Finally, there is a property to get the total number of values in the storage area, and to iterate through all of the keys by index (to get the name of each key).
+<p>Finalmente, há uma propriedade para obter o número total de chaves/valor na área de armazenamento local, e também, para percorrer todas as chaves pelo seu índice (e retornar o nome de cada uma).
 
 <pre><code>interface Storage {
   readonly attribute unsigned long length;
   getter DOMString key(in unsigned long index);
 };</code></pre>
 
-<p>If you call <code>key()</code> with an index that is not between 0&ndash;(<code>length</code>-1), the function will return <code>null</code>.
+<p>Se você chamar <code>key()</code> com um índice que não está entre 0&ndash;(<code>length</code>-1), a função retornará <code>null</code>.
 
-<h3 id=storage-event>Tracking Changes to the HTML5 Storage Area</h3>
+<h3 id=storage-event>Controlando Alterações na Área do HTML5 Storage</h3>
 
-<p>If you want to keep track programmatically of when the storage area changes, you can trap the <code>storage</code> event. The <code>storage</code> event is fired on the <code>window</code> object whenever <code>setItem()</code>, <code>removeItem()</code>, or <code>clear()</code> is called <em>and actually changes something</em>. For example, if you set an item to its existing value or call <code>clear()</code> when there are no named keys, the <code>storage</code> event will not fire, because nothing actually changed in the storage area.
+<p>Se quiser manter o controle das constantes mudanças no armazenamento local, você pode capturar o evento <code>storage</code>. O evento <code>storage</code> é ativado no objeto <code>window</code> sempre que <code>setItem()</code>, <code>removeItem()</code>, ou <code>clear()</code> é chamado <em>e, geralmente, muda alguma coisa</em>. Por exemplo, se você definir um valor a uma chave existente ou chamar <code>clear()</code> em chaves não nomeadas, o evento <code>storage</code> não será chamado, porque realmente, nada mudou na área de armazenamento local.
 
-<p>The <code>storage</code> event is supported everywhere the <code>localStorage</code> object is supported, which includes Internet Explorer 8. IE 8 does not support the W3C standard <code>addEventListener</code> (although that will finally be added in IE 9). Therefore, to hook the <code>storage</code> event, you&#8217;ll need to check which event mechanism the browser supports. (If you&#8217;ve done this before with other events, you can skip to the end of this section. Trapping the <code>storage</code> event works the same as every other event you&#8217;ve ever trapped. If you prefer to use jQuery or some other JavaScript library to register your event handlers, you can do that with the <code>storage</code> event, too.)
+<p>O evento <code>storage</code> é suportado em todos os lugares em que o objeto <code>localStorage</code> funciona, incluindo Internet Explorer 8. IE 8 não suporta o padrão W3C <code>addEventListener</code> (será adicionado, finalmento, no IE 9). Portando, para pegar o evento <code>storage</code> , você vai precisar checar qual mecanismo de evento o navegador suporta. (Se você já fez isso antes, para outros eventos, pode pular essa seção. Pegando o evento <code>storage</code> , funciona da mesma forma como todos os outros eventos,  você estará sempre preso. Se você preferir usar jQuery ou qualquer outra biblioteca JavaScript para registrar os eventos de manipulação, você pode fazer isso com o evento <code>storage</code> , também.)
 
 <pre><code>if (window.addEventListener) {
   window.addEventListener("storage", handle_storage, false);
@@ -153,30 +153,30 @@ localStorage<mark>["bar"]</mark> = foo;</code></pre>
   window.attachEvent("onstorage", handle_storage);
 };</code></pre>
 
-<p>The <code>handle_storage</code> callback function will be called with a <code>StorageEvent</code> object, except in Internet Explorer where the event object is stored in <code>window.event</code>.
+<p>A função de callback <code>handle_storage</code> é chamada junto ao objeto <code>StorageEvent</code> , exceto no Internet Explorer que os objetos de evento são armazenados no <code>window.event</code>.
 
 <pre><code>function handle_storage(e) {
   if (!e) { e = window.event; }
 }</code></pre>
 
-<p>At this point, the variable <code>e</code> will be a <code>StorageEvent</code> object, which has the following useful properties.
+<p>Nesse ponto, a variável <code>e</code> será o objeto <code>StorageEvent</code> , que tem as seguintes proriedades:
 
 <table class=st>
-<caption>StorageEvent Object</caption>
+<caption>Objeto StorageEvent</caption>
 <thead>
-<tr class=ho><th>Property<th>Type<th>Description
+<tr class=ho><th>Propriedade<th>Tipo<th>Descrição
 <tbody>
-<tr class=zebra><th><code>key</code><td>string<td>the named key that was added, removed, or modified
-<tr><th><code>oldValue</code><td>any<td>the previous value (now overwritten), or <code>null</code> if a new item was added
-<tr class=zebra><th><code>newValue</code><td>any<td>the new value, or <code>null</code> if an item was removed
-<tr><th><code>url</code><sup>*</sup><td>string<td>the page which called a method that triggered this change
+<tr class=zebra><th><code>key</code><td>string<td>o nome da chave que foi adicionada, removida ou alterada
+<tr><th><code>oldValue</code><td>qualquer<td>o valor antigo (agora atualizado), ou <code>null</code> se for um novo item adicionado
+<tr class=zebra><th><code>newValue</code><td>qualquer<td>o novo valor, ou <code>null</code> se um item foi removido
+<tr><th><code>url</code><sup>*</sup><td>string<td>a página que chamou o método que realizou a mudança
 <tfoot>
-<tr><td colspan=3>* Note: the <code>url</code> property was originally called <code>uri</code>. Some browsers shipped with that property before the specification changed. For maximum compatibility, you should check whether the <code>url</code> property exists, and if not, check for the <code>uri</code> property instead.
+<tr><td colspan=3>* Nota: a propriedade <code>url</code> é originalmente chamada de <code>uri</code>. Alguns navegadores lançaram essa propriedade antes das mudanças na espicificação. Para uma compatibilidade máxima, você deve checar se a propriedade <code>url</code> existe, se não, checar se a propriedade <code>uri</code> existe.
 </table>
 
-<p>The <code>storage</code> event is not cancelable. From within the <code>handle_storage</code> callback function, there is no way to stop the change from occurring. It&#8217;s simply a way for the browser to tell you, &#8220;hey, this just happened. There&#8217;s nothing you can do about it now; I just wanted to let you know.&#8221;
+<p>O evento <code>storage</code> não é cancelável. Dentro da função callback <code>handle_storage</code>, não há maneira de parar essa mundaça. É uma simples forma do navegadores te dizer, &#8220;ei, isso já aconteceu. Não há nada que você possa fazer, eu só queria te avisar sobre isso.&#8221;
 
-<h3 id=limitations>Limitations in Current Browsers</h3>
+<h3 id=limitations>Limitações nos browsers atuais</h3>
 
 <p>In talking about <a href=#history>the history of local storage hacks</a> using third-party plugins, I made a point of mentioning the limitations of each technique, such as storage limits. I just realized that I haven&#8217;t mentioned anything about the limitations of the now-standardized <abbr>HTML5</abbr> Storage. I&#8217;ll give you the answers first, then explain them. The answers, in order of importance, are &#8220;5 megabytes,&#8221; &#8220;<code>QUOTA_EXCEEDED_ERR</code>,&#8221; and &#8220;no.&#8221;
 
