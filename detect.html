@@ -27,28 +27,28 @@ body{counter-reset:h1 2}
 
 <p>Todos os objetos no <abbr>DOM</abbr> compartilham um conjunto comum de propriedades, mas alguns objetos têm mais do que outros. Em navegadores que suportam funcionalidades do <abbr>HTML5</abbr>, alguns objetos terão propriedades únicas. Uma espiada rápida no <abbr>DOM</abbr> irá te dizer quais funcionalidades são suportadas.
 
-<p>There are four basic techniques for detecting whether a browser supports a particular feature. From simplest to most complex:
+<p>Existem quatros técnicas básicas para detectar se o browser suporta uma funcionalidade específica. Do mais simples até o mais complexo:
 
 <ol>
 <li>
-<p>Check if a certain property exists on a global object (such as <code>window</code> or <code>navigator</code>).
-<p>Example: <a href=#geolocation>testing for geolocation support</a>
+<p>Verifica se uma determinada propriedade existe em um objeto global (como <code>window</code> ou <code>navigator</code>).
+<p>Exemplo: <a href=#geolocation>testando o suporte a geolocalização</a>
 <li>
-<p>Create an element, then check if a certain property exists on that element.
-<p>Example: <a href=#canvas>testing for canvas support</a>
+<p>Crie um elemento, então verifique se uma determinada propriedade existe naquele elemento.
+<p>Exemplo: <a href=#canvas>testanto suporte ao canvas</a>
 <li>
-<p>Create an element, check if a certain method exists on that element, then call the method and check the value it returns.
-<p>Example: <a href=#video-formats>testing which video formats are supported</a>
+<p>Crie um elemento, verifique se um determinado método existe naquele elemento, então chame o método e verifique o valor que ele retorna.
+<p>Exemplo: <a href=#video-formats>testando quais formatos de vídeos são suportados</a>
 <li>
-<p>Create an element, set a property to a certain value, then check if the property has retained its value.
-<p>Example: <a href=#input-types>testing which <code>&lt;input></code> types are supported</a>
+<p>Crie um elemento, defina uma propriedade para um determinado valor, então verifique se a propriedade manteve seu valor.
+<p>Exemplo: <a href=#input-types>testando quais tipos de <code>&lt;input></code> são suportados</a>
 </ol>
 
 <p class=a>&#x2767;
 
-<h2 id=modernizr>Modernizr, an HTML5 Detection Library</h2>
+<h2 id=modernizr>Modernizr, uma biblioteca de detecção HTML5</h2>
 
-<p><a href=http://www.modernizr.com/>Modernizr</a> is an open source, <abbr>MIT</abbr>-licensed JavaScript library that detects support for many <abbr>HTML5</abbr> <i class=baa>&amp;</i> <abbr>CSS3</abbr> features. You should always use the latest version. To use it, include the following <code>&lt;script></code> element at the top of your page.
+<p><a href=http://www.modernizr.com/>Modernizr</a> é um biblioteca Javascript de código aberto, sob licença <abbr>MIT</abbr>, que detecta suporte a várias funcionalidades de <abbr>HTML5</abbr> <i class=baa>&amp;</i> <abbr>CSS3</abbr>. Você deve usar sempre a última versão. Para usá-la, inclua o seguinte elemento <code>&lt;script></code> no topo da sua página.
 
 <pre style="float:left"><code>&lt;!DOCTYPE html>
 &lt;html>
