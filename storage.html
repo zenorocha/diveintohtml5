@@ -13,7 +13,7 @@ body{counter-reset:h1 7}
 <h1><br>O Passado, Presente &amp; Futuro de Armazenamento Local para Aplicações Web</h1>
 <p id=toc>&nbsp;
 <p class=a>&#x2767;
-<h2 id=divingin>Diving In</h2>
+<h2 id=divingin>Mergulhando</h2>
 
 <p class=f><img src=i/aoc-a.png alt=A width=110 height=106>Armazenamento local persistente é uma das áreas onde aplicações nativas de cliente têm mantido uma vantagem sobre aplicações web.
 Para aplicações nativas, o sistema operacional tipicamente provê uma camada de abstração para armazenar e recuperar 
@@ -41,7 +41,7 @@ você pode inserir o seu próprio banco de dados, inventar o seu próprio format
 <li>e não seja transmitido para o servidor
 </ul>
 
-<p>Antes do <abbr>HTML5</abbr>, todas as tentativas de obtenção foram fundamentalmente insatisfatórias de diferentes maneiras.
+<p>Antes da <abbr>HTML5</abbr>, todas as tentativas de obtenção foram fundamentalmente insatisfatórias de diferentes maneiras.
 
 <p class=a>&#x2767;
 
@@ -53,22 +53,22 @@ você pode inserir o seu próprio banco de dados, inventar o seu próprio format
 
 <p> Em 2002, a Adobe introduziu uma funcionalidade no Flash 6 que ganhou o infeliz e enganoso nome de &#8220;Flash cookies.&#8221; Dentro do ambiente do Flash, a funcionalidade é propriamente conhecida como <a href="http://kb2.adobe.com/cps/161/tn_16194.html">Local Shared Objects - Objetos de local compartilhado</a>. Resumidamente, isso permitia que objetos Flash armazenassem até 100KB de dados por domínio. Brad Neuberg desenvolveu um pré protótipo de uma ponte Flash-to-JavaScript chamada <a href="http://codinginparadise.org/weblog/2005/10/amass-ajax-massive-storage-system.html">AMASS</a> (AJAX Massive Storage System), porém ficou limitado por algumas peculiaridades de design do Flash. Em 2006, com o advento da <a href="http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/flash/external/ExternalInterface.html">ExternalInterface</a> presente no Flash 8, acessar <abbr>LSO</abbr>s a partir do JavaScript tornou-se uma coisa de magnitude mais fácil e rápida. Brad reescreveu o <abbr>AMASS</abbr> e o integrou dentro do popular <a href=http://www.dojotoolkit.org/>Dojo Toolkit</a> com o nome de <a href="http://api.dojotoolkit.org/jsdoc/HEAD/dojox.storage.manager"><code>dojox.storage</code></a>. Flash garante a cada domínio 100 KB de armazenamento &#8220livre.&#8221; Além disso, ele solicita ao usuário para cada ordem de magnitude um aumento no armazenamento de dados (1 Mb, 10 Mb, e assim por diante).
 
-<p>Em 2007, o Google lançou o <a href="http://gears.google.com/">Gears</a>, um browser plugin open source com o objetivo de providenciar capacidades adicionais nos browsers. (Nós já tínhamos discutido sobre Gears no contexto de <a href=geolocation.html#ie> providenciar uma geolocation <abbr>API</abbr> para o Internet Explorer</a>.) Gears possibilita <a href="http://code.google.com/apis/gears/api_database.html">uma <abbr>API</abbr> para uma base de dados <abbr>SQL</abbr> icorporada</a> baseada em <a href="http://www.sqlite.org/">SQLite</a>. Após obter a permissão de um usuário uma vez, Gears pode armazenar ilimitada quantidade de dados por um domínio em uma tabela de banco de dados <abbr>SQL</abbr>.
+<p>Em 2007, o Google lançou o <a href="http://gears.google.com/">Gears</a>, um plugin de código aberto com o objetivo de providenciar capacidades adicionais nos navegadores. (Nós já tínhamos discutido sobre Gears no contexto de <a href=geolocation.html#ie> providenciar uma <abbr>API</abbr> de geolocalização para o Internet Explorer</a>.) Gears possibilita <a href="http://code.google.com/apis/gears/api_database.html">uma <abbr>API</abbr> para uma base de dados <abbr>SQL</abbr> icorporada</a> baseada em <a href="http://www.sqlite.org/">SQLite</a>. Após obter a permissão de um usuário uma vez, Gears pode armazenar ilimitada quantidade de dados por um domínio em uma tabela de banco de dados <abbr>SQL</abbr>.
 
 
-<p>Entretanto, Brad Neuberg e outros continuaram  a trabalhar em cima do <code>dojox.storage</code> para providenciar uma interface unificada para todos esses diferentes plugins e <abbr>API</abbr>s. Em 2009, <code>dojox.storage</code> podia auto-detectar (e providenciar uma interface unificada em cima de) Adobe Flash, Gears, Adobe AIR, e um pré protótipo do <abbr>HTML5</abbr> storage que era apenas implementado em antigas versões do Firefox.
+<p>Entretanto, Brad Neuberg e outros continuaram  a trabalhar em cima do <code>dojox.storage</code> para providenciar uma interface unificada para todos esses diferentes plugins e <abbr>API</abbr>s. Em 2009, <code>dojox.storage</code> podia auto-detectar (e providenciar uma interface unificada em cima de) Adobe Flash, Gears, Adobe AIR, e um pré protótipo da <abbr>HTML5</abbr> storage que era apenas implementado em antigas versões do Firefox.
 
-<p>Quando você analisa essas soluções, um padrão surge: todos eles são específicos de um único browser, ou dependentes de plugins de terceiros. Apesar do esforço heróico para deixar clara as diferenças (no <code>dojox.storage</code>), eles todos apresentam interfaces totalmente diferentes, têm diferentes limitações de armazenamento, e apresentam diferentes experiências de usabilidade. Portanto, esse é o problema que o  <abbr>HTML5</abbr> se propõe a resolver: providenciar uma padronizada <abbr>API</abbr>, implementada de forma nativa e consistente em vários navegadores, sem a necessidade e dependência de plugins de terceiros.
+<p>Quando você analisa essas soluções, um padrão surge: todos eles são específicos de um único navegador, ou dependentes de plugins de terceiros. Apesar do esforço heróico para deixar clara as diferenças (no <code>dojox.storage</code>), eles todos apresentam interfaces totalmente diferentes, têm diferentes limitações de armazenamento, e apresentam diferentes experiências de usabilidade. Portanto, esse é o problema que a <abbr>HTML5</abbr> se propõe a resolver: providenciar uma padronizada <abbr>API</abbr>, implementada de forma nativa e consistente em vários navegadores, sem a necessidade e dependência de plugins de terceiros.
 
 <p class=a>&#x2767;
 
 <h2 id=localstorage>Introdução ao HTML5 Storage</h2>
 
-<p>O que me refiro como &#8220;<abbr>HTML5</abbr> Storage&#8221; é a especificação nomeada de <a href="http://dev.w3.org/html5/webstorage/">Web Storage</a>, que estava na especificação do <abbr>HTML5</abbr> por um tempo, mas era tratado separadamente por desinteresse e razões políticas. Certos browsers se referenciavam como &#8220;Local Storage&#8221; ou &#8220;<abbr>DOM</abbr> Storage.&#8221; A nomeação ficava ainda mais complicada em browsers relacionados com padrões emergentes, que vou discutir mais adiante neste capítulo.
+<p>O que me refiro como &#8220;<abbr>HTML5</abbr> Storage&#8221; é a especificação nomeada de <a href="http://dev.w3.org/html5/webstorage/">Web Storage</a>, que estava na especificação da <abbr>HTML5</abbr> por um tempo, mas era tratado separadamente por desinteresse e razões políticas. Certos navegadores se referenciavam como &#8220;Local Storage&#8221; ou &#8220;<abbr>DOM</abbr> Storage.&#8221; A nomeação ficava ainda mais complicada em navegadores relacionados com padrões emergentes, que vou discutir mais adiante neste capítulo.
 
 <p>Então o que é <abbr>HTML5</abbr> Storage? Simplesmente armazenar, é a forma de páginas da web amazenarem pares de chave/valor localmente, dentro do navegador do cliente. Semelhante aos cookies, esses dados persistem mesmo depois de você sair do site, fechar a guia ou o navegador. Diferente dos cookies, esses dados nunca são transmitidos ao servidor (a menos que você queria envia-los manualmente). Diferente <a href=#history>de todas as tentativas anteriores</a> de fornecimento de armazenamento local persistente, este é implementado de forma nativa nos navegadores, para que esteja disponível mesmo quando os plugins de terceiros não estiverem.
 
-<p>Which browsers? Well, the latest version of pretty much every browser supports <abbr>HTML5</abbr> Storage&hellip; even Internet Explorer!
+<p>Quais navegadores? Bom, as últimas versões de quase todos os navegadores suportam <abbr>HTML5</abbr> Storage&hellip; até o Internet Explorer!
 
 <table class=bc>
 <caption>Suporte ao <abbr>HTML5</abbr> Storage</caption>
@@ -78,7 +78,7 @@ você pode inserir o seu próprio banco de dados, inventar o seu próprio format
 <tr><td>8.0+<td>3.5+<td>4.0+<td>4.0+<td>10.5+<td>2.0+<td>2.0+
 </table>
 
-<p>Direto do seu código JavaScript, você acessa o <abbr>HTML5</abbr> Storage através do objeto <code>localStorage</code> no objeto global <code>window</code>. Antes de usa-lo, você deve <a href=detect.html#storage>detectar se o navegador tem suporte</a>.
+<p>Direto do seu código JavaScript, você acessa o <abbr>HTML5</abbr> Storage através do objeto <code>localStorage</code> no objeto global <code>window</code>. Antes de usá-lo, você deve <a href=detect.html#storage>detectar se o navegador tem suporte</a>.
 
 <p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> Verificando suporte <abbr>HTML5</abbr> Storage
 <pre><code>function supports_html5_storage() {
@@ -89,7 +89,7 @@ você pode inserir o seu próprio banco de dados, inventar o seu próprio format
   }
 }</code></pre>
 
-<p>Ao invés de escrever essa função, você pode usar <a href=detect.html#modernizr>Modernizr</a> para detectar o suporte do <abbr>HTML5</abbr> Storage.
+<p>Ao invés de escrever essa função, você pode usar <a href=detect.html#modernizr>Modernizr</a> para detectar o suporte da <abbr>HTML5</abbr> Storage.
 
 <pre><code>if (<mark>Modernizr.localstorage</mark>) {
   // window.localStorage é suportado pelo seu navegador!
@@ -102,7 +102,7 @@ você pode inserir o seu próprio banco de dados, inventar o seu próprio format
 
 <h2 id=methods>Usando HTML5 Storage</h2>
 
-<p><abbr>HTML5</abbr> Storage é baseado em pares de chave/valor noemadas. Você pode armazenar dados em uma chave nomeada, e com essa mesma chave, recuperar os dados armazenados. A chave nomeada é uma string. E seu valor, é qualquer um suportado pelo JavaScript, incluindo Strings, Booleanos, Inteiros, ou Flutuantes. Conteúdo, os dados são armazenados como uma sequëncia de string. Se você estiver armazenando e recuperando qualquer outro tipo de dado diferente de Strings, você precisa usar funções como <code>parseInt()</code> ou <code>parseFloat()</code> para recuperar os dados em um tipo esperado pelo JavaScript.
+<p><abbr>HTML5</abbr> Storage é baseado em pares de chave/valor nomeadas. Você pode armazenar dados em uma chave nomeada, e com essa mesma chave, recuperar os dados armazenados. A chave nomeada é uma string. E seu valor, é qualquer um suportado pelo JavaScript, incluindo Strings, Booleanos, Inteiros, ou Flutuantes. Conteúdo, os dados são armazenados como uma sequência de strings. Se você estiver armazenando e recuperando qualquer outro tipo de dado diferente de Strings, você precisa usar funções como <code>parseInt()</code> ou <code>parseFloat()</code> para recuperar os dados em um tipo esperado pelo JavaScript.
 
 <pre><code>interface Storage {
   getter any getItem(in DOMString key);
@@ -117,7 +117,7 @@ você pode inserir o seu próprio banco de dados, inventar o seu próprio format
 // ...
 localStorage.<mark>setItem</mark>("bar", foo);</code></pre>
 
-<p>&hellip;could be rewritten to use square bracket syntax instead:
+<p>&hellip;pode ser reescrito para usar a sintaxe de colchetes ao invés:
 
 <pre><code>var foo = localStorage<mark>["bar"]</mark>;
 // ...
@@ -145,7 +145,7 @@ localStorage<mark>["bar"]</mark> = foo;</code></pre>
 
 <p>Se quiser manter o controle das constantes mudanças no armazenamento local, você pode capturar o evento <code>storage</code>. O evento <code>storage</code> é ativado no objeto <code>window</code> sempre que <code>setItem()</code>, <code>removeItem()</code>, ou <code>clear()</code> é chamado <em>e, geralmente, muda alguma coisa</em>. Por exemplo, se você definir um valor a uma chave existente ou chamar <code>clear()</code> em chaves não nomeadas, o evento <code>storage</code> não será chamado, porque realmente, nada mudou na área de armazenamento local.
 
-<p>O evento <code>storage</code> é suportado em todos os lugares em que o objeto <code>localStorage</code> funciona, incluindo Internet Explorer 8. IE 8 não suporta o padrão W3C <code>addEventListener</code> (será adicionado, finalmento, no IE 9). Portando, para pegar o evento <code>storage</code> , você vai precisar checar qual mecanismo de evento o navegador suporta. (Se você já fez isso antes, para outros eventos, pode pular essa seção. Pegando o evento <code>storage</code> , funciona da mesma forma como todos os outros eventos,  você estará sempre preso. Se você preferir usar jQuery ou qualquer outra biblioteca JavaScript para registrar os eventos de manipulação, você pode fazer isso com o evento <code>storage</code> , também.)
+<p>O evento <code>storage</code> é suportado em todos os lugares em que o objeto <code>localStorage</code> funciona, incluindo Internet Explorer 8. IE 8 não suporta o padrão W3C <code>addEventListener</code> (será adicionado, finalmente, no IE 9). Portanto, para pegar o evento <code>storage</code> , você vai precisar checar qual mecanismo de evento o navegador suporta. (Se você já fez isso antes, para outros eventos, pode pular essa seção. Pegando o evento <code>storage</code> , funciona da mesma forma como todos os outros eventos,  você estará sempre preso. Se você preferir usar jQuery ou qualquer outra biblioteca JavaScript para registrar os eventos de manipulação, você pode fazer isso com o evento <code>storage</code> , também.)
 
 <pre><code>if (window.addEventListener) {
   window.addEventListener("storage", handle_storage, false);
@@ -153,13 +153,13 @@ localStorage<mark>["bar"]</mark> = foo;</code></pre>
   window.attachEvent("onstorage", handle_storage);
 };</code></pre>
 
-<p>A função de callback <code>handle_storage</code> é chamada junto ao objeto <code>StorageEvent</code> , exceto no Internet Explorer que os objetos de evento são armazenados no <code>window.event</code>.
+<p>A função de callback <code>handle_storage</code> é chamada junto ao objeto <code>StorageEvent</code>, exceto no Internet Explorer que os objetos de evento são armazenados no <code>window.event</code>.
 
 <pre><code>function handle_storage(e) {
   if (!e) { e = window.event; }
 }</code></pre>
 
-<p>Nesse ponto, a variável <code>e</code> será o objeto <code>StorageEvent</code> , que tem as seguintes proriedades:
+<p>Nesse ponto, a variável <code>e</code> será o objeto <code>StorageEvent</code>, que tem as seguintes propriedades:
 
 <table class=st>
 <caption>Objeto StorageEvent</caption>
@@ -174,9 +174,9 @@ localStorage<mark>["bar"]</mark> = foo;</code></pre>
 <tr><td colspan=3>* Nota: a propriedade <code>url</code> é originalmente chamada de <code>uri</code>. Alguns navegadores lançaram essa propriedade antes das mudanças na espicificação. Para uma compatibilidade máxima, você deve checar se a propriedade <code>url</code> existe, se não, checar se a propriedade <code>uri</code> existe.
 </table>
 
-<p>O evento <code>storage</code> não é cancelável. Dentro da função callback <code>handle_storage</code>, não há maneira de parar essa mundaça. É uma simples forma do navegadores te dizer, &#8220;ei, isso já aconteceu. Não há nada que você possa fazer, eu só queria te avisar sobre isso.&#8221;
+<p>O evento <code>storage</code> não é cancelável. Dentro da função callback <code>handle_storage</code>, não há maneira de parar essa mundaça. É uma simples forma do navegador dizer, &#8220;ei, isso já aconteceu. Não há nada que você possa fazer, eu só queria te avisar sobre isso.&#8221;
 
-<h3 id=limitations>Limitações nos browsers atuais</h3>
+<h3 id=limitations>Limitações nos navegadores atuais</h3>
 
 <p>In talking about <a href=#history>the history of local storage hacks</a> using third-party plugins, I made a point of mentioning the limitations of each technique, such as storage limits. I just realized that I haven&#8217;t mentioned anything about the limitations of the now-standardized <abbr>HTML5</abbr> Storage. I&#8217;ll give you the answers first, then explain them. The answers, in order of importance, are &#8220;5 megabytes,&#8221; &#8220;<code>QUOTA_EXCEEDED_ERR</code>,&#8221; and &#8220;no.&#8221;
 
