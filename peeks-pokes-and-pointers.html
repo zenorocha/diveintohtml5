@@ -92,7 +92,7 @@ h1,h2{
   text-shadow:1px 1px 1px #fcc;
 }
 h1{
-  font-size:48px;
+  font-size:37px;
   line-height:1.4;
   text-align:center;
   border-bottom:12px solid;
@@ -199,7 +199,7 @@ code i{
   <td colspan=8><hr>
 
 <tr>
-  <td colspan=8><i>Abreviações comuns (você vai ve-las ao longo deste artigo):</i>
+  <td colspan=8><i>Abreviações comuns (você vai vê-las ao longo deste artigo):</i>
 
 <tr>
   <td colspan=4><b>$new</b>=<code>document.createElement</code>
@@ -208,8 +208,8 @@ code i{
 
 <tr>
   <td colspan=8><i>A maioria das novas funcionalidades podem ser detectadas em JavaScript. 
-  Para testar o suporte HTML5 a videos, crie uma tag <code>&lt;video></code> e verifique se existe a seguinte propriedade no DOM:
-  <code>if("canPlayType" in $new("video")){...}</code> 
+  Para testar o suporte HTML5 a vídeos, crie uma tag <code>&lt;video></code> e verifique se existe a seguinte propriedade no DOM:
+  <code>if("canPlayType" in $new("video")){...}</code><br>
   Veja <a href=detect.html>Capítulo 2: Detectando Funcionalidades Da HTML5</a></i>.
 
 <tr>
@@ -380,7 +380,7 @@ code i{
   <td colspan=3><code>&nbsp;&nbsp;var i = $new("input");</code>
 
 <tr>
-  <td rowspan=5 colspan=3><p class=note>Sempre citar os valores dos seus atributos, a não ser que você seja um Rockstar. Mantenhas suas barras finais se você quiser. A validação ainda é interessante: <b><a href=http://html5.validator.nu/>html5.validator.nu</a></b>
+  <td rowspan=5 colspan=3><p class=note>Sempre colocar "aspas" nos seus atributos, a não ser que você seja um <i>rockstar</i>. Mantenhas suas barras finais se você quiser. A validação ainda é interessante: <b><a href=http://html5.validator.nu/>html5.validator.nu</a></b>
   <td rowspan=5 colspan=1>
 
   <td>
@@ -395,10 +395,10 @@ code i{
   <td colspan=3><code>}</code>
 
 <tr>
-  <td colspan=4><i>Alguns navegadores dizem &#8220;supportar&#8221; algum input type mas não oferecem um padrão</i>
+  <td colspan=4><i>Alguns navegadores dizem &#8220;suportar&#8221; algum input type mas não oferecem um padrão para interface do usuário.</i>
 
 <tr>
-  <td colspan=4><i>para interface do usuario. <a href=http://www.modernizr.com/>Modernizr</a> consegue detectar isto.</i>
+  <td colspan=4><i><a href=http://www.modernizr.com/>Modernizr</a> consegue detectar isto.</i>
 
 <tr>
   <td colspan=8><h2><span>Veja mamãe, sem plugins</span> Multimedia</h2>
@@ -466,7 +466,7 @@ code i{
 
   <td>
   <td class=dots><span><code><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#dom-media-tracks>tracks</a></code></span>
-  <td colspan=2>um array de objetos<a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#timedtrack>TimedTrack</a>
+  <td colspan=2>um array de objetos <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#timedtrack>TimedTrack</a>
 
 <tr>
   <td>
@@ -534,7 +534,7 @@ code i{
   <td>boolean
   <td>
 
-  <td rowspan=6 colspan=4><p class=note>Liste vários elementos <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#the-source-element><code>&lt;source></code></a> em um <code>&lt;audio></code> ou <code>&lt;video></code>. O suporte a HTML5 dos browsers não renderizam os filhos de <code>&lt;video></code>, então coloque os <a href=video.html#ie>Flash fallback</a> lá. Audio e video devem ser colocados com o MIME type apropriado, então verifique seu <code>Content-Type</code> no cabeçalho!
+  <td rowspan=6 colspan=4><p class=note>Liste vários elementos <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#the-source-element><code>&lt;source></code></a> em um <code>&lt;audio></code> ou <code>&lt;video></code>. O suporte a HTML5 dos browsers não renderizam os filhos de <code>&lt;video></code>, então coloque o <a href=video.html#ie>fallback em Flash</a> lá. Áudio e vídeo devem ser colocados com o MIME type apropriado, então verifique seu <code>Content-Type</code> no cabeçalho!
 
 <tr>
   <td>
@@ -937,7 +937,7 @@ code i{
 
 <tr>
   <td colspan=2 class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/syntax.html#the-doctype>Doctype</a></b>
-  <td colspan=6><code>&lt;!DOCTYPE html></code> <i>Triggers <a href=semantics.html#the-doctype>baseada em padrões de renderização</a> em todos os navegadores. É de 2011; parar de confiar em "quirks mode"!</i>
+  <td colspan=6><code>&lt;!DOCTYPE html></code> <i>Dispara a <a href=semantics.html#the-doctype>renderização baseada em padrões</a> em todos os navegadores. É 2011; pare de confiar em "quirks mode"!</i>
 
 <tr>
   <td colspan=2 class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#attr-meta-charset>Codificação de texto</a></b>
@@ -1016,7 +1016,7 @@ code i{
 <tr>
   <td>
   <td class=dots><b><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html#the-history-interface>History API</a></b>
-  <td colspan=6><code>window.history && window.history.pushState</code> <i>See <a href=history.html>Capítulo 11: Manipulando Histórico Para Diversão & Lucro</a>.</i>
+  <td colspan=6><code>window.history && window.history.pushState</code> <i>Veja <a href=history.html>Capítulo 11: Manipulando Histórico Para Diversão & Lucro</a>.</i>
 
 <tr>
   <td>

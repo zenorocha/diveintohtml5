@@ -292,54 +292,54 @@ context.stroke();</code></pre>
 <p><img src=i/baselines.png alt="diagram of different values of the textBaseline property" width=680 height=227>
 </blockquote>
 
-<p>For simple alphabets like English, you can safely stick with <code>top</code>, <code>middle</code>, or <code>bottom</code> for the <code>textBaseline</code> property.
+<p>Para alfabetos simples como o Inglês, você pode ficar com segurança com<code>top</code>, <code>middle</code>, ou <code>bottom</code> para a propriedade <code>textBaseline</code>.
 
-<p>Let&#8217;s draw some text! Text drawn inside the canvas inherits the font size and style of the <code>&lt;canvas></code> element itself, but you can override this by setting the <code>font</code> property on the drawing context.
+<p>Vamos desenhar algum texto! O texto desenhado dentro do canvas herda o tamanho da fonte e o estilo do próprio elemento <code>&lt;canvas></code>, você pode sobrescrever isso definindo a propriedade fonte <code>font</code> para o contexto de desenho.
 
 <pre style="float:left"><code><mark>context.font = "bold 12px sans-serif";</mark>
 context.fillText("x", 248, 43);
 context.fillText("y", 58, 165);</code></pre>
-<p class="legend right"><span class=arrow>&nbsp;&#x219c;</span> Change the font style</p>
+<p class="legend right"><span class=arrow>&nbsp;&#x219c;</span> Altera o estilo da fonte</p>
 
-<p class=clear>The <code>fillText()</code> method draws the actual text.</p>
+<p class=clear>O método <code>fillText()</code> desenha o texto de fato.</p>
 
 <pre style="float:left"><code>context.font = "bold 12px sans-serif";
 <mark>context.fillText("x", 248, 43);</mark>
 context.fillText("y", 58, 165);</code></pre>
-<p class="legend right" style="margin-top:2.6em"><span class=arrow>&nbsp;&#x21dc;</span> Draw the text</p>
+<p class="legend right" style="margin-top:2.6em"><span class=arrow>&nbsp;&#x21dc;</span> Desenhar o texto</p>
 
 <div class="pf clear" id=relative-font-size>
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor Marcação</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Can I use relative font sizes to draw text on a canvas?<br>
-A: Yes. Like every other <abbr>HTML</abbr> element on your page, the <code>&lt;canvas></code> element itself has a computed font size based on your page&#8217;s CSS rules. If you set the <code>context.font</code> property to a relative font size like <code>1.5em</code> or <code>150%</code>, your browser multiplies this by the computed font size of the <code>&lt;canvas></code> element itself.
+<p><span>&#x261E;</span>P: Posso usar tamanhos de fontes relativos para desenhar texto em um canvas?<br>
+R: Sim. Como qualquer outro elemento <abbr>HTML</abbr> na sua página, o próprio elemento <code>&lt;canvas></code> computa o tamanho da fonte baseado nas regras CSS da sua página. Se você definir a propriedade <code>context.font</code> para um tamanho relativo de fonte como <code>1.5em</code> ou <code>150%</code>, seu navegador irá manipular isso para o tamanho computado no próprio elemento <code>&lt;canvas></code>.
 </blockquote>
 </div>
 </div>
 
-<p>For the text in the upper-left corner, let&#8217;s say I want the top of the text to be at <code>y=5</code>. But I&#8217;m lazy &mdash; I don&#8217;t want to measure the height of the text and calculate the baseline. Instead, I can set <code>textBaseline</code> to <code>top</code> and pass in the upper-left coordinate of the text&#8217;s bounding box.
+<p>Para o texto no canto superior esquerdo, vamos dizer que eu queira colocar o topo do texto no <code>y=5</code>. Mas eu sou um cara preguiçoso &mdash; Eu não quero medir a altura do texto e calcular a linha de base. Ao invés disso, eu posso definir o <code>textBaseline</code> para <code>top</code> e passar para o canto superior esquerdo a coordenada da caixa delimitadora do texto.
 
 <pre><code>context.textBaseline = "top";
 context.fillText("( 0 , 0 )", <mark>8, 5</mark>);</code></pre>
 
-<p>Now for the text in the lower-right corner. Let&#8217;s say I want the bottom-right corner of the text to be at coordinates <code>(492,370)</code> &mdash; just a few pixels away from the bottom-right corner of the canvas &mdash; but I don&#8217;t want to measure the width or height of the text. I can set <code>textAlign</code> to <code>right</code> and <code>textBaseline</code> to <code>bottom</code>, then call <code>fillText()</code> with the bottom-right coordinates of the text&#8217;s bounding box.
+<p>Agora para o texto no canto inferior direito. Vamos dizer que eu queira para que fique na coordenada <code>(492,370)</code> &mdash; somente há alguns pixels de distância do canto inferior direito do canvas &mdash; mas eu não quero medir a altura e largura do texto. Posso definir a propriedade <code>textAlign</code> para <code>right</code> e a <code>textBaseline</code> para <code>bottom</code>, então chamar <code>fillText()</code> com as coordenadas do canto inferior direito da caixa delimitadora do texto.
 
 <pre><code>context.textAlign = "right";
 context.textBaseline = "bottom";
 context.fillText("( 500 , 375 )", <mark>492, 370</mark>);</code></pre>
 
-<p>And this is the result:</p>
+<p>E o resultado:</p>
 
 <canvas id=c4 width=500 height=375></canvas>
 
-<p>Oops! We forgot the dots in the corners. We&#8217;ll see how to draw circles a little later. For now, I&#8217;ll cheat a little and <a href=#shapes>draw them as rectangles</a>. 
+<p>Oops! Nós nos esquecemos dos pontos nos cantos. Nós iremos ver como desenhar círculos um pouco mais tarde. Por agora, irei roubar um pouquinho e <a href=#shapes>desenhar eles como retângulos</a>. 
 
 <pre style="float:left"><code>context.fillRect(0, 0, 3, 3);
 context.fillRect(497, 372, 3, 3);</code></pre>
-<p class="legend right"><span class=arrow>&nbsp;&#x21dc;</span> Draw two &#8220;dots&#8221;</p>
+<p class="legend right"><span class=arrow>&nbsp;&#x21dc;</span> Desenha dois &#8220;pontos&#8221;</p>
 
-<p>And that&#8217;s all she wrote! Here is the final product:</p>
+<p>E isso é tudo! Aqui está o produto final:</p>
 
 <canvas id=c5 width=500 height=375 class=clear></canvas>
 
