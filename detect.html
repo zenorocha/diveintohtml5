@@ -62,14 +62,14 @@ body{counter-reset:h1 2}
 &lt;/body>
 &lt;/html>
 </code></pre>
-<p class="legend right" style="margin-top:7em"><span class=arrow>&nbsp;&#x219c;</span> It goes to your &lt;head>
+<p class="legend right" style="margin-top:7em"><span class=arrow>&nbsp;&#x219c;</span> Isso vai no seu &lt;head>
 
-<p class=clear>Modernizr runs automatically. There is no <code>modernizr_init()</code> function to call. When it runs, it creates a global object called <code>Modernizr</code>, that contains a set of Boolean properties for each feature it can detect. For example, if your browser supports the <a href=canvas.html>canvas <abbr>API</abbr></a>, the <code>Modernizr.canvas</code> property will be <code>true</code>. If your browser does not support the canvas <abbr>API</abbr>, the <code>Modernizr.canvas</code> property will be <code>false</code>.
+<p class=clear>Modernizr executa automaticamente. Não existe uma função <code>modernizr_init()</code> para ser chamada. Quando ela roda, cria um objeto global chamado <code>Modernizr</code>, que contém um conjunto de Propriedades Booleanas para cada funcionalidade que ela puder detectar. Por exemplo, se seu navegador suporta a <a href=canvas.html><abbr>API</abbr> do canvas</a>, a propriedade <code>Modernizr.canvas</code> será <code>true</code>. Se seu navagador não suportar a <abbr>API</abbr> do canvas , a propriedade <code>Modernizr.canvas</code> será <code>false</code>.
 
 <pre><code>if (Modernizr.canvas) {
-  // let's draw some shapes!
+  // vamos desenhar algumas formas!
 } else {
-  // no native canvas support available :(
+  // o suporte nativo ao canvas não está disponível :(
 }</code></pre>
 
 <p class=a>&#x2767;
@@ -78,7 +78,7 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:300px"><img src=i/openclipart.org_johnny_automatic_fishing_boat.png width=300 height=203 alt="man fishing in a canoe"><br><span id=live-canvas></span>
 
-<p><abbr>HTML5</abbr> defines <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>the &lt;canvas> element</a> as &#8220;a resolution-dependent bitmap canvas that can be used for rendering graphs, game graphics, or other visual images on the fly.&#8221; A <dfn>canvas</dfn> is a rectangle in your page where you can use JavaScript to draw anything you want. <abbr>HTML5</abbr> defines a set of functions (&#8220;the canvas <abbr>API</abbr>&#8221;) for drawing shapes, defining paths, creating gradients, and applying transformations.
+<p>O <abbr>HTML5</abbr> define <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>o elemento &lt;canvas> </a> como &#8220;uma tela bitmap de resolução dependente que pode ser usada para renderizar grafos, gráficos de jogos, ou outros imagem visual em tempo real.&#8221; Um <dfn>canvas</dfn> é um retgulo na sua página onde você pode usar Javascript para desenhar qualquer coisa que você quiser. O <abbr>HTML5</abbr> define um conjunto de funções (&#8220;a <abbr>API</abbr> canvas&#8221;) para desenhar formas, definindo caminhos, criando gradientes e aplicando transformações.
 
 <p>Checking for the canvas <abbr>API</abbr> uses <a href=#techniques>detection technique #2</a>. If your browser supports the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;canvas></code> element will have a <a href=canvas.html#shapes><code>getContext()</code> method</a>. If your browser doesn&#8217;t support the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates for a <code>&lt;canvas></code> element will only have the set of common properties, but not anything canvas-specific.
 
@@ -105,9 +105,9 @@ body{counter-reset:h1 2}
 
 <p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for canvas support
 <pre><code>if (<mark>Modernizr.canvas</mark>) {
-  // let's draw some shapes!
+  // vamos desenhar algumas formas!
 } else {
-  // no native canvas support available :(
+  // o suporte nativo ao canvas não está disponível :(
 }</code></pre>
 
 <p>There is a separate test for the canvas text <abbr>API</abbr>, which I will demonstrate next.
@@ -385,7 +385,7 @@ A: Geolocation support is being added to browsers right now, along with support 
 
 <p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for geolocation support
 <pre><code>if (<mark>Modernizr.geolocation</mark>) {
-  // let's find out where you are!
+  // Vamos ver onde você está!
 } else {
   // no native geolocation support available :(
   // maybe try Gears or another third-party solution
@@ -623,7 +623,7 @@ function lookup_location() {
 function show_map(loc) {
   $("#geo-wrapper").css({'width':'320px','height':'350px'});
   var map = new google.maps.Map(document.getElementById("geo-wrapper"), {zoom: 14, mapTypeControl:true, zoomControl: true, mapTypeId: google.maps.MapTypeId.ROADMAP});
-  var center = new google.maps.LatLng(loc.coords.latitude,loc.coords.longitude);  
+  var center = new google.maps.LatLng(loc.coords.latitude,loc.coords.longitude);
   map.setCenter(center);
   var marker = new google.maps.Marker({map: map, position: center, draggable: false, title: "You are here (more or less)"});
 }
