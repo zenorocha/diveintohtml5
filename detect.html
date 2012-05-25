@@ -64,7 +64,7 @@ body{counter-reset:h1 2}
 </code></pre>
 <p class="legend right" style="margin-top:7em"><span class=arrow>&nbsp;&#x219c;</span> Isso vai no seu &lt;head>
 
-<p class=clear>Modernizr executa automaticamente. Não existe uma função <code>modernizr_init()</code> para ser chamada. Quando ela roda, cria um objeto global chamado <code>Modernizr</code>, que contém um conjunto de Propriedades Booleanas para cada funcionalidade que ela puder detectar. Por exemplo, se seu navegador suporta a <a href=canvas.html><abbr>API</abbr> do canvas</a>, a propriedade <code>Modernizr.canvas</code> será <code>true</code>. Se seu navagador não suportar a <abbr>API</abbr> do canvas , a propriedade <code>Modernizr.canvas</code> será <code>false</code>.
+<p class=clear>Modernizr executa automaticamente. Não existe uma função <code>modernizr_init()</code> para ser chamada. Quando ela roda, cria um objeto global chamado <code>Modernizr</code>, que contém um conjunto de propriedades Booleanas para cada funcionalidade que ela puder detectar. Por exemplo, se seu navegador suporta a <a href=canvas.html><abbr>API</abbr> do canvas</a>, a propriedade <code>Modernizr.canvas</code> será <code>true</code>. Se seu navagador não suportar a <abbr>API</abbr> do canvas, a propriedade <code>Modernizr.canvas</code> será <code>false</code>.
 
 <pre><code>if (Modernizr.canvas) {
   // vamos desenhar algumas formas!
@@ -78,7 +78,7 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:300px"><img src=i/openclipart.org_johnny_automatic_fishing_boat.png width=300 height=203 alt="man fishing in a canoe"><br><span id=live-canvas></span>
 
-<p>O <abbr>HTML5</abbr> define <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>o elemento &lt;canvas> </a> como &#8220;uma tela bitmap de resolução dependente que pode ser usada para renderizar grafos, gráficos de jogos, ou outros imagem visual em tempo real.&#8221; Um <dfn>canvas</dfn> é um retgulo na sua página onde você pode usar Javascript para desenhar qualquer coisa que você quiser. O <abbr>HTML5</abbr> define um conjunto de funções (&#8220;a <abbr>API</abbr> canvas&#8221;) para desenhar formas, definindo caminhos, criando gradientes e aplicando transformações.
+<p>A <abbr>HTML5</abbr> define <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>o elemento &lt;canvas> </a> como &#8220;uma tela bitmap de resolução dependente que pode ser usada para renderizar grafos, gráficos de jogos, ou outras imagens visuais em tempo real.&#8221; Um <dfn>canvas</dfn> é um retângulo na sua página onde você pode usar Javascript para desenhar qualquer coisa que você quiser. A <abbr>HTML5</abbr> define um conjunto de funções (&#8220;a <abbr>API</abbr> canvas&#8221;) para desenhar formas, definindo caminhos, criando gradientes e aplicando transformações.
 
 <p>Checking for the canvas <abbr>API</abbr> uses <a href=#techniques>detection technique #2</a>. If your browser supports the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;canvas></code> element will have a <a href=canvas.html#shapes><code>getContext()</code> method</a>. If your browser doesn&#8217;t support the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates for a <code>&lt;canvas></code> element will only have the set of common properties, but not anything canvas-specific.
 
