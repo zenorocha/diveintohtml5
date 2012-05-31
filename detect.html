@@ -95,22 +95,22 @@ body{counter-reset:h1 2}
 
 <pre><code>return !!document.createElement('canvas').<mark>getContext</mark>;</code></pre>
 
-<p>Finally, you use the double-negative trick to force the result to a Boolean value (<code>true</code> or <code>false</code>).
+<p>Finalmente, você usa o truque da negação dupla para forçar a conversão do resultado em um valor booleano(<code>true</code> ou <code>false</code>).
 
 <pre><code>return <mark>!!</mark>document.createElement('canvas').getContext;</code></pre>
 
-<p>This function will detect support for most of the canvas <abbr>API</abbr>, including <a href=canvas.html#shapes>shapes</a>, <a href=canvas.html#paths>paths</a>, <a href=canvas.html#gradients>gradients <i class=baa>&amp;</i> patterns</a>. It will not detect the third-party <a href=canvas.html#ie><code>explorercanvas</code> library</a> that implements the canvas <abbr>API</abbr> in Microsoft Internet Explorer.
+<p>Essa função irá detectar para grande parte da <abbr>API</abbr> do canvas, incluindo <a href=canvas.html#shapes>shapes</a>, <a href=canvas.html#paths>paths</a>, <a href=canvas.html#gradients>gradients <i class=baa>&amp;</i> patterns</a>. Ela não detectará a biblioteca de terceiro <a href=canvas.html#ie><code>explorercanvas</code> library</a> que implementa a <abbr>API</abbr> do canvas no Microsoft Internet Explorer.
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> to detect support for the canvas <abbr>API</abbr>.
+<p>Ao invés de escrever essa função você mesmo, você pode usar a <a href=#modernizr>Modernizr</a> para detectar o suporte a <abbr>API</abbr> do canvas.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for canvas support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verifica o suporte ao canvas
 <pre><code>if (<mark>Modernizr.canvas</mark>) {
   // vamos desenhar algumas formas!
 } else {
   // o suporte nativo ao canvas não está disponível :(
 }</code></pre>
 
-<p>There is a separate test for the canvas text <abbr>API</abbr>, which I will demonstrate next.
+<p>Existe um teste separado para a <abbr>API</abbr> do canvas text, que será demonstrado a seguir.
 
 <p class=a>&#x2767;
 
