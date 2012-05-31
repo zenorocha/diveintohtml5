@@ -80,37 +80,37 @@ body{counter-reset:h1 2}
 
 <p>A <abbr>HTML5</abbr> define <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>o elemento &lt;canvas> </a> como &#8220;uma tela bitmap de resolução dependente que pode ser usada para renderizar grafos, gráficos de jogos, ou outras imagens visuais em tempo real.&#8221; Um <dfn>canvas</dfn> é um retângulo na sua página onde você pode usar Javascript para desenhar qualquer coisa que você quiser. A <abbr>HTML5</abbr> define um conjunto de funções (&#8220;a <abbr>API</abbr> canvas&#8221;) para desenhar formas, definindo caminhos, criando gradientes e aplicando transformações.
 
-<p>Checking for the canvas <abbr>API</abbr> uses <a href=#techniques>detection technique #2</a>. If your browser supports the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;canvas></code> element will have a <a href=canvas.html#shapes><code>getContext()</code> method</a>. If your browser doesn&#8217;t support the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates for a <code>&lt;canvas></code> element will only have the set of common properties, but not anything canvas-specific.
+<p>A verificação da <abbr>API</abbr> do canvas usa a <a href=#techniques>técnica de detecção #2</a>. Se seu navegador suporta a <abbr>API</abbr> do canvas, o objeto <abbr>DOM</abbr> o cria para representar um elemento <code>&lt;canvas></code> que terá um <a href=canvas.html#shapes>método <code>getContext()</code></a>. Se seu navegador não suporta a <abbr>API</abbr> do canvas, o objeto <abbr>DOM</abbr> o cria  para um elemento <code>&lt;canvas></code> que terá apenas um conjunto comum de propriedades, mas nada específico do canvas.
 
 <pre><code>function supports_canvas() {
   return !!document.createElement('canvas').getContext;
 }
 </code></pre>
 
-<p>This function starts by creating a dummy <code>&lt;canvas></code> element. But the element is never attached to your page, so no one will ever see it. It&#8217;s just floating in memory, going nowhere and doing nothing, like a canoe on a lazy river.
+<p>Essa função começa com a criação de elemento <code>&lt;canvas></code> de teste. Mas o elemento nunca é adicionado a sua página, então ninguém nunca o verá. Está apenas flutuando na memória, indo a lugar nenhum e fazendo nada, como uma canoa em um rio calmo.
 
 <pre><code>return !!document.<mark>createElement('canvas')</mark>.getContext;</code></pre>
 
-<p>As soon as you create the dummy <code>&lt;canvas></code> element, you test for the presence of a <code>getContext()</code> method. This method will only exist if your browser supports the canvas <abbr>API</abbr>.
+<p>Asssim que você cria o elemento <code>&lt;canvas></code> de teste, você testa a existência de um método <code>getContext()</code>. Esse método só existirá se o seu navegador suportar a <abbr>API</abbr> do canvas.
 
 <pre><code>return !!document.createElement('canvas').<mark>getContext</mark>;</code></pre>
 
-<p>Finally, you use the double-negative trick to force the result to a Boolean value (<code>true</code> or <code>false</code>).
+<p>Finalmente, você usa o truque da negação dupla para forçar a conversão do resultado em um valor booleano(<code>true</code> ou <code>false</code>).
 
 <pre><code>return <mark>!!</mark>document.createElement('canvas').getContext;</code></pre>
 
-<p>This function will detect support for most of the canvas <abbr>API</abbr>, including <a href=canvas.html#shapes>shapes</a>, <a href=canvas.html#paths>paths</a>, <a href=canvas.html#gradients>gradients <i class=baa>&amp;</i> patterns</a>. It will not detect the third-party <a href=canvas.html#ie><code>explorercanvas</code> library</a> that implements the canvas <abbr>API</abbr> in Microsoft Internet Explorer.
+<p>Essa função irá detectar para grande parte da <abbr>API</abbr> do canvas, incluindo <a href=canvas.html#shapes>shapes</a>, <a href=canvas.html#paths>paths</a>, <a href=canvas.html#gradients>gradients <i class=baa>&amp;</i> patterns</a>. Ela não detectará a biblioteca de terceiro <a href=canvas.html#ie><code>explorercanvas</code> library</a> que implementa a <abbr>API</abbr> do canvas no Microsoft Internet Explorer.
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> to detect support for the canvas <abbr>API</abbr>.
+<p>Ao invés de escrever essa função você mesmo, você pode usar a <a href=#modernizr>Modernizr</a> para detectar o suporte a <abbr>API</abbr> do canvas.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for canvas support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verifica o suporte ao canvas
 <pre><code>if (<mark>Modernizr.canvas</mark>) {
   // vamos desenhar algumas formas!
 } else {
   // o suporte nativo ao canvas não está disponível :(
 }</code></pre>
 
-<p>There is a separate test for the canvas text <abbr>API</abbr>, which I will demonstrate next.
+<p>Existe um teste separado para a <abbr>API</abbr> do canvas text, que será demonstrado a seguir.
 
 <p class=a>&#x2767;
 
