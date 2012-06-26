@@ -10,53 +10,54 @@ body{counter-reset:h1 9}
 </style>
 <link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
 <link rel=prefetch href=index.html>
-<p>You are here: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#forms>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
-<h1><br>A Form of Madness</h1>
+<p>Você está aqui: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#forms>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
+<h1><br>Uma Forma De Loucura</h1>
 <p id=toc>&nbsp;
 <p class=a>&#x2767;
-<h2 id=divingin>Diving In</h2>
+<h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-e.png alt=E width=107 height=105>verybody knows about web forms, right? Make a <code>&lt;form></code>, a few <code>&lt;input type="text"></code> elements, maybe an <code>&lt;input type="password"></code>, finish it off with an <code>&lt;input type="submit"></code> button, and you&#8217;re done.
-<p class=f><img src=i/aoc-e.png alt=E width=107 height=105>Todo mundo sabe sobre formulários web, certo? faça um <code>&lt;form></code>, alguns <code>&lt;input type="text"></code> elementos, talvez um <code>&lt;input type="password"></code>, termine tudo isso com um <code>&lt;input type="submit"></code> botão, então está feito!
-<p>You don&#8217;t know the half of it. <abbr>HTML5</abbr> defines over a dozen new input types that you can use in your forms. And when I say &#8220;use,&#8221; I mean you can use them right now &mdash; without any shims, hacks, or workarounds. Now don&#8217;t get too excited; I don&#8217;t mean to say that all of these exciting new features are actually supported in every browser. Oh goodness no, I don&#8217;t mean that at all. In modern browsers, yes, your forms will kick all kinds of ass. But in legacy browsers, your forms will still work, albeit with less ass kicking. Which is to say, all of these features degrade gracefully in every browser. Even IE 6.
+<p class=f><img src=i/aoc-t.png alt=t width=107 height=105>odo mundo conhece sobre formulários web, certo? Crie uma marcação <code>&lt;form></code>, alguns campos <code>&lt;input type="text"></code>, ou talvez  <code>&lt;input type="password"></code>, no final um botão <code>&lt;input type="submit"></code> , e pronto está feito.
+<p>Você não conhece nem a metade deles. <abbr>O HTML5</abbr> definiu mais de meia dúzia de novos tipos de campos que você pode usar em seus formulários. E quando digo "usar", é usar agora - sem nenhuma gambiarra, hack ou soluções alternativas. Só não se entusiasme tanto; Eu não disse que todos estes recursos são suportados por todos os navegadores da atualidade. Oh, meu Deus, eu também não disse em nenhum. Em navegadores modernos, seus formulários irão arrebentar. Nos mais antiquados eles irão apenas cumprir sua função. Ou seja, os recursos irão se adaptar e degradar para funcionar em todos os navegadores. Até no IE6. 
 
 <p class=a>&#x2767;
 
-<h2 id=placeholder>Placeholder Text</h2>
+<h2 id=placeholder>Placeholder</h2>
 
 <table class=bc>
-<caption>Placeholder support</caption>
+<caption>
+Suporte ao Placeholder
+</caption>
 <thead>
 <tr><th title="Internet Explorer">IE<th title="Mozilla Firefox">Firefox<th title="Apple Safari">Safari<th title="Google Chrome">Chrome<th>Opera<th>iPhone<th>Android
 <tbody>
 <tr><td>&middot;<td>3.7+<td>4.0+<td>4.0+<td>11.0+<td>4.0+<td>&middot;
 </table>
 
-<p>The first improvement <abbr>HTML5</abbr> brings to web forms is the ability to set <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>placeholder text in an input field</a>. Placeholder text is displayed inside the input field as long as the field is empty and not focused. As soon as you click on (or tab to) the input field, the placeholder text disappears.
+<p>O primeiro aperfeiçoamento que o <abbr>HTML5</abbr> trouxe aos formulários web é o recurso para setar um <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>texto como placeholder</a>, em campos input. Este texto é exibido dentro do input enquanto o campo estiver vazio ou sem foco. Logo que é clicado (ou acessado por tab) o texto placeholder desaparece.
 
-<p>You&#8217;ve probably seen placeholder text before. For example, Mozilla Firefox includes placeholder text in the location bar that reads &#8220;Search Bookmarks and History&#8221;:
+<p>Você provavelmente já viu o placeholder antes. Por exemplo, o Mozilla Firefox possui um texto placeholder na barra de endereço onde se lê “Search Bookmarks and History”:
 
 <p class=c><img src=i/location-bar-empty-unfocused.png alt="location bar with placeholder text" width=268 height=30>
 
-<p>When you click on (or tab to) the location bar, the placeholder text disappears:
-
+<p>Quando voce clica (ou acessa por tab) a barra de endereço, o texto desaparece:
 <p class=c><img src=i/location-bar-empty-focused.png alt="location bar with cursor and no placeholder text" width=268 height=30>
 
-<p>Here&#8217;s how you can include placeholder text in your own web forms:
-
+<p>Aqui como você pode incluir um texto placeholder em seu formulário web:
 <pre><code>&lt;form>
   &lt;input name="q" <mark>placeholder="Search Bookmarks and History"</mark>>
   &lt;input type="submit" value="Search">
 &lt;/form></code></pre>
 
-<p>Browsers that don&#8217;t support the <code>placeholder</code> attribute will simply ignore it. No harm, no foul. <a href=examples/input-placeholder.html>See whether your browser supports placeholder text</a>.
+<p>Navegadores que não suportam o atributo <code>placeholder</code> irão simplesmente ignora-lo. <a href=examples/input-placeholder.html> Veja se o seu navegador suporta o texto placeholder.</a>.
+
+
 
 <div class="pf clear">
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor Marcação</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Can I use <abbr>HTML</abbr> markup in the <code>placeholder</code> attribute? I want to insert an image, or maybe change the colors.<br>
-A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML</abbr> markup. However, there are <a href=http://trac.webkit.org/export/37527/trunk/LayoutTests/fast/forms/placeholder-pseudo-style.html>some vendor-specific CSS extensions</a> that allow you to style the placeholder text in some browsers.
+<p><span>&#x261E;</span>P: Eu posso usar marcações <abbr>HTML</abbr> no atributo <code>placeholder</code>? Eu gostaria de inserir uma imagem, ou talvez mudar as cores.<br>
+R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação <abbr>HTML</abbr> markup. Porém há alguns <a href=http://trac.webkit.org/export/37527/trunk/LayoutTests/fast/forms/placeholder-pseudo-style.html>vendor específicos das extensões do CSS</a> que permitem estilizar o texto placeholder em alguns navegadores.
 </blockquote>
 </div>
 </div>
