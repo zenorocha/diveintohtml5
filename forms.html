@@ -10,63 +10,64 @@ body{counter-reset:h1 9}
 </style>
 <link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
 <link rel=prefetch href=index.html>
-<p>You are here: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#forms>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
-<h1><br>A Form of Madness</h1>
+<p>Você está aqui: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#forms>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
+<h1><br>Uma Forma De Loucura</h1>
 <p id=toc>&nbsp;
 <p class=a>&#x2767;
-<h2 id=divingin>Diving In</h2>
+<h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-e.png alt=E width=107 height=105>verybody knows about web forms, right? Make a <code>&lt;form></code>, a few <code>&lt;input type="text"></code> elements, maybe an <code>&lt;input type="password"></code>, finish it off with an <code>&lt;input type="submit"></code> button, and you&#8217;re done.
-<p class=f><img src=i/aoc-e.png alt=E width=107 height=105>Todo mundo sabe sobre formulários web, certo? faça um <code>&lt;form></code>, alguns <code>&lt;input type="text"></code> elementos, talvez um <code>&lt;input type="password"></code>, termine tudo isso com um <code>&lt;input type="submit"></code> botão, então está feito!
-<p>You don&#8217;t know the half of it. <abbr>HTML5</abbr> defines over a dozen new input types that you can use in your forms. And when I say &#8220;use,&#8221; I mean you can use them right now &mdash; without any shims, hacks, or workarounds. Now don&#8217;t get too excited; I don&#8217;t mean to say that all of these exciting new features are actually supported in every browser. Oh goodness no, I don&#8217;t mean that at all. In modern browsers, yes, your forms will kick all kinds of ass. But in legacy browsers, your forms will still work, albeit with less ass kicking. Which is to say, all of these features degrade gracefully in every browser. Even IE 6.
+<p class=f><img src=i/aoc-t.png alt=t width=107 height=105>odo mundo conhece sobre formulários web, certo? Crie uma marcação <code>&lt;form></code>, alguns campos <code>&lt;input type="text"></code>, ou talvez  <code>&lt;input type="password"></code>, no final um botão <code>&lt;input type="submit"></code> , e pronto está feito.
+<p>Você não conhece nem a metade deles. <abbr>O HTML5</abbr> definiu mais de meia dúzia de novos tipos de campos que você pode usar em seus formulários. E quando digo "usar", é usar agora - sem nenhuma gambiarra, hack ou soluções alternativas. Só não se entusiasme tanto; Eu não disse que todos estes recursos são suportados por todos os navegadores da atualidade. Oh, meu Deus, eu também não disse em nenhum. Em navegadores modernos, seus formulários irão arrebentar. Nos mais antiquados eles irão apenas cumprir sua função. Ou seja, os recursos irão se adaptar e degradar para funcionar em todos os navegadores. Até no IE6. 
 
 <p class=a>&#x2767;
 
-<h2 id=placeholder>Placeholder Text</h2>
+<h2 id=placeholder>Placeholder</h2>
 
 <table class=bc>
-<caption>Placeholder support</caption>
+<caption>
+Suporte ao Placeholder
+</caption>
 <thead>
 <tr><th title="Internet Explorer">IE<th title="Mozilla Firefox">Firefox<th title="Apple Safari">Safari<th title="Google Chrome">Chrome<th>Opera<th>iPhone<th>Android
 <tbody>
 <tr><td>&middot;<td>3.7+<td>4.0+<td>4.0+<td>11.0+<td>4.0+<td>&middot;
 </table>
 
-<p>The first improvement <abbr>HTML5</abbr> brings to web forms is the ability to set <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>placeholder text in an input field</a>. Placeholder text is displayed inside the input field as long as the field is empty and not focused. As soon as you click on (or tab to) the input field, the placeholder text disappears.
+<p>O primeiro aperfeiçoamento que o <abbr>HTML5</abbr> trouxe aos formulários web é o recurso para definir um <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>texto como placeholder</a>, em campos input. Este texto é exibido dentro do input enquanto o campo estiver vazio ou sem foco. Logo que é clicado (ou acessado por tab) o texto placeholder desaparece.
 
-<p>You&#8217;ve probably seen placeholder text before. For example, Mozilla Firefox includes placeholder text in the location bar that reads &#8220;Search Bookmarks and History&#8221;:
+<p>Você provavelmente já viu o placeholder antes. Por exemplo, o Mozilla Firefox possui um texto placeholder na barra de endereço onde se lê “Search Bookmarks and History”:
 
 <p class=c><img src=i/location-bar-empty-unfocused.png alt="location bar with placeholder text" width=268 height=30>
 
-<p>When you click on (or tab to) the location bar, the placeholder text disappears:
-
+<p>Quando voce clica (ou acessa por tab) a barra de endereço, o texto desaparece:
 <p class=c><img src=i/location-bar-empty-focused.png alt="location bar with cursor and no placeholder text" width=268 height=30>
 
-<p>Here&#8217;s how you can include placeholder text in your own web forms:
-
+<p>Aqui como você pode incluir um texto placeholder em seu formulário web:
 <pre><code>&lt;form>
   &lt;input name="q" <mark>placeholder="Search Bookmarks and History"</mark>>
   &lt;input type="submit" value="Search">
 &lt;/form></code></pre>
 
-<p>Browsers that don&#8217;t support the <code>placeholder</code> attribute will simply ignore it. No harm, no foul. <a href=examples/input-placeholder.html>See whether your browser supports placeholder text</a>.
+<p>Navegadores que não suportam o atributo <code>placeholder</code> irão simplesmente ignora-lo. <a href=examples/input-placeholder.html> Veja se o seu navegador suporta o texto placeholder.</a>.
+
+
 
 <div class="pf clear">
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor Marcação</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Can I use <abbr>HTML</abbr> markup in the <code>placeholder</code> attribute? I want to insert an image, or maybe change the colors.<br>
-A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML</abbr> markup. However, there are <a href=http://trac.webkit.org/export/37527/trunk/LayoutTests/fast/forms/placeholder-pseudo-style.html>some vendor-specific CSS extensions</a> that allow you to style the placeholder text in some browsers.
+<p><span>&#x261E;</span>P: Eu posso usar marcações <abbr>HTML</abbr> no atributo <code>placeholder</code>? Eu gostaria de inserir uma imagem, ou talvez mudar as cores.<br>
+R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação <abbr>HTML</abbr> markup. Porém há alguns <a href=http://trac.webkit.org/export/37527/trunk/LayoutTests/fast/forms/placeholder-pseudo-style.html>vendor específicos das extensões do CSS</a> que permitem estilizar o texto placeholder em alguns navegadores.
 </blockquote>
 </div>
 </div>
 
 <p class=a>&#x2767;
 
-<h2 id=autofocus>Autofocus Fields</h2>
+<h2 id=autofocus>Campos com foco automático</h2>
 
 <table class=bc>
-<caption>Autofocus support</caption>
+<caption>Suporte ao Autofocus</caption>
 <thead>
 <tr><th title="Internet Explorer">IE<th title="Mozilla Firefox">Firefox<th title="Apple Safari">Safari<th title="Google Chrome">Chrome<th>Opera<th>iPhone<th>Android
 <tbody>
@@ -75,29 +76,28 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 
 <p class=ss><img src=i/openclipart.org_johnny_automatic_angry_guy.png alt="angry guy with arms up" width=188 height=262>
 
-<p>Web sites can use JavaScript to focus the first input field of a web form automatically. For example, the home page of <a href=http://www.google.com/>Google.com</a> will autofocus the input box so you can type your search keywords. While this is convenient for most people, it can be annoying for power users or people with special needs. If you press the space bar expecting to scroll the page, the page will not scroll because the focus is already in a form input field. (It types a space in the field instead of scrolling.) If you focus a different input field while the page is still loading, the site&#8217;s autofocus script may &#8220;helpfully&#8221; move the focus back to the original input field, disrupting your flow and causing you to type in the wrong place.
+<p>Web sites podem usar JavaScript para criar um foco automático no primeiro campo de um formulário. Por exemplo, a página inicial do <a href=http://www.google.com.br/>Google</a> foca automaticamente no campo de busca para você poder digitar suas palavras-chaves. Enquanto isto é conveniente para a maioria das pessoas, pode ser irritante para usuários experientes ou pessoas com necessidades especiais. Caso você pressionar a barra de espaço esperando que a página role, ela não irá, pois o foco está em um campo de formulário. (Você terá um espaço no campo ao invés da rolagem). Se seu foco estiver em um outro campo enquanto a página ainda estiver carregando, o código de foco automático, que deveria ajudar, irá mover o foco para o campo original, interrompendo seu fluxo e fazendo com que digite no lugar errado.
 
-<p>Because the autofocusing is done with JavaScript, it can be tricky to handle all of these edge cases, and there is little recourse for people who don&#8217;t want a web page to &#8220;steal&#8221; the focus.
+<p>Por causa do foco automático ser processado pelo JavaScript, torna complicado lidar com estes casos específicos, e isto é um pequeno ajuste para as pessoas que não querem que o website &#8220;roube&#8221; o foco.
 
-<p>To solve this problem, <abbr>HTML5</abbr> introduces <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>an <code>autofocus</code> attribute on all web form controls</a>. The <code>autofocus</code> attribute does exactly what it says on the tin: as soon as the page loads, it moves the input focus to a particular input field. But because it&#8217;s just markup instead of script, the behavior will be consistent across all web sites. Also, browser vendors (or extension authors) can offer users a way to disable the autofocusing behavior.
+<p>Para resolver este problema, o <abbr>HTML5</abbr> introduziu <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>um atributo de <code>autofocus</code> para todos elementos de formulário web</a>. O atributo <code>autofocus</code> executa exatamente o que ele diz, foco automático. O truque: logo que a página carrega, ele move o foco para um campo em particular. Mas como ele é apenas uma marcação ao invés de um script, o comportamento se torna consistente durante todo o website. Além disso, vendors do navegador (ou extensões) podem oferecer que o usuário desabilite o foco automático.
 
-<p>Here&#8217;s how you can set a form field to autofocus:
+<p>Abaixo como você pode definir um campo de formulário com foco automático:
 
 <pre><code>&lt;form>
   &lt;input name="q" <mark>autofocus</mark>>
   &lt;input type="submit" value="Search">
 &lt;/form></code></pre>
 
-<p>Browsers that don&#8217;t support the <code>autofocus</code> attribute will simply ignore it. <a href=examples/input-autofocus.html>See whether your browser supports autofocus fields</a>.
+<p>Navegadores que não suportam o atributo <code>autofocus</code> simplesmente irão ignora-lo. <a href=examples/input-autofocus.html>Veja se o seu navegador suporta o campo de foco automático.</a>.
 
-<p>What&#8217;s that? You say you want your autofocus fields to work in all browsers, not just these fancy-pants <abbr>HTML5</abbr> browsers? You can keep your current autofocus script. Just make two small changes:
+<p>Como assim? Você quer dizer que deseja que o autofocus funcione em todos os navegadores, não apenas nestes navegadores <abbr>HTML5</abbr> cheios de nove horas? Bom, Você pode manter seu script atual de foco automático. Faça apenas estas duas pequenas alterações:
 
 <ol>
-<li>Add the <code>autofocus</code> attribute to your <abbr>HTML</abbr> markup
-<li><a href=detect.html#input-autofocus>Detect whether the browser supports the <code>autofocus</code> attribute</a>, and only run your own autofocus script if the browser doesn&#8217;t support autofocus natively.
-</ol>
+<li>Adicione o atributo <code>autofocus</code> na sua marcação <abbr>HTML</abbr>
+<li><a href=detect.html#input-autofocus>Detecte se o navegador suporta o atributo <code>autofocus</code></a>, e execute o seu proprio script de foco automático, apenas se o navegador não suportar autofocus nativamente.</ol>
 
-<p class="legend top" style="margin-left:10em"><span class=arrow>&#x21b6;</span> Autofocus with fallback
+<p class="legend top" style="margin-left:10em"><span class=arrow>&#x21b6;</span> Autofocus com fallback
 <pre><code>&lt;form name="f">
   &lt;input id="q" <mark>autofocus</mark>>
   &lt;script>
@@ -109,15 +109,15 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 &lt;/form>
 &hellip;</code></pre>
 
-<p><a href=examples/input-autofocus-with-fallback.html>See an example of <code>autofocus</code> with fallback</a>.
+<p><a href=examples/input-autofocus-with-fallback.html>Veja um exemplo de <code>autofocus</code> com fallback</a>.
 
-<h3 id=more-on-focus>Setting focus as early as possible</h3>
+<h3 id=more-on-focus>Defina um foco o mais cedo possível</h3>
 
-<p>Lots of web pages wait until <code>window.onload</code> fires to set focus. But the <code>window.onload</code> event doesn&#8217;t fire until <em>after</em> all your images have loaded. If your page has a lot of images, such a naive script could potentially re-focus the field after the user has started interacting with another part of your page. This is why power users hate autofocus scripts.
+<p>Muitas páginas de web esperam o carregamento do <code>window.onload</code> para definir um foco. Mas o evento  <code>window.onload</code> não executa nenhuma ação <em>até que</em> todas as imagens tenham sido carregadas. Se sua página possui diversas imagens, seu script pode atrapalhar e refazer o foco em um campo, enquanto o usuário já estiver interagindo em outra parte da página. Por isso que usuários experientes odeiam scripts de foco automático.
 
-<p>The example in the previous section placed the auto-focus script immediately after the form field that it references. This is the optimal solution, but it may offend your sensibilities to put a block of JavaScript code in the middle of your page. (Or, more mundanely, your back-end systems may just not be that flexible.) If you can&#8217;t insert a script in the middle of your page, you should set focus during a custom event like jQuery&#8217;s <a href="http://docs.jquery.com/Tutorials:Introducing_$(document).ready()"><code>$(document).ready()</code></a> instead of <code>window.onload</code>.
+<p>O exemplo a seguir executa o script de foco automático imediatamente depois que os campos de formulário são declarados. Está é a solução ideal, mas pode ofender seu ego, por colocar um bloco de código JavaScript no meio da página. (Ou, mais prático, seu sistema de back-end, pode não ter esta flexibilidade.) Se você não pode colocar um script no meio da página, você deverá3 definir o foco durante um evento personalizado. Por exemplo, jQuery&#8217;s <a href="http://docs.jquery.com/Tutorials:Introducing_$(document).ready()"><code>$(document).ready()</code></a> ao invés de <code>window.onload</code>.
 
-<p class="legend top" style="margin-left:10em"><span class=arrow>&#x21b6;</span> Autofocus with jQuery fallback
+<p class="legend top" style="margin-left:10em"><span class=arrow>&#x21b6;</span> Autofocus com jQuery fallback
 <pre><code>&lt;head>
 &lt;script src=jquery.min.js>&lt;/script>
 &lt;script>
@@ -135,13 +135,13 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 &lt;/form>
 </code></pre>
 
-<p><a href=examples/input-autofocus-with-fallback-document-ready.html>See an example of <code>autofocus</code> with jQuery fallback</a>.
+<p><a href=examples/input-autofocus-with-fallback-document-ready.html>Veja um exemplo do <code>autofocus</code> com jQuery fallback</a>.
 
-<p>jQuery fires its custom <code>ready</code> event as soon as the page <abbr>DOM</abbr> is available &mdash; that is, it waits until the page text is loaded, but it doesn&#8217;t wait until all the images are loaded. This is not an optimal approach &mdash; if the page is unusually large or the network connection is unusually slow, a user could still start interacting with the page before your focus script executes. But it is still far better than waiting until the <code>window.onload</code> event fires.
+<p>jQuery executa o evento personalizado <code>ready</code> logo que o <abbr>DOM</abbr> estiver disponível &mdash; isto é, ele espera até que todo o texto da página carregue, mas não espera até todas as imagens. Esta não está perto da ideal - se a página for consideravelmente grande ou a conexão de internet for extremamente baixa, o usuário pode começar a interagir com a página antes do seu script de foco automático execute. Mas é muito melhor que esperar o <code>window.onload</code>.
 
-<p>If you are willing and able to insert a single script statement in your page markup, there is a middle ground that is less offensive than the first option and more optimal than the second. You can use jQuery&#8217;s custom events to define your own event, say <code>autofocus_ready</code>. Then you can trigger this event manually, immediately after the autofocus form field is available. <i>Thanks to E. M. Sternberg for teaching me about this technique.</i>
+<p>Se você estiver hesitante ou não puder inserir um bloco isolado de código em seu <abbr>HTML</abbr>, há um meio termo menos ofensivo que a primeira opção e mais otimizado que a segunda. É possível utilizar eventos personalizados do jQuery&#8217;s para definir seu próprio, digamos  <code>autofocus_ready</code>. Assim você pode aciona-lo manualmente, imediatamente depois que o campo com autofocus fique disponível. <i>Obrigado a E. M. Sternberg por me ensinar sobre está técnica.</i>
 
-<p class="legend top" style="margin-left:10em"><span class=arrow>&#x21b6;</span> Autofocus with a custom event fallback
+<p class="legend top" style="margin-left:10em"><span class=arrow>&#x21b6;</span> Autofocus com fallback utilizando evento personalizado
 <pre><code>&lt;head>
 &lt;script src=jquery.min.js>&lt;/script>
 &lt;script>
@@ -160,18 +160,18 @@ A: The <code>placeholder</code> attribute can only contain text, not <abbr>HTML<
 &lt;/form>
 </code></pre>
 
-<p><a href=examples/input-autofocus-with-fallback-custom-event.html>See an example of <code>autofocus</code> with a custom event fallback</a>.
+<p><a href=examples/input-autofocus-with-fallback-custom-event.html>Veja um exemplo de <code>autofocus</code> com fallback utilizando evento personalizado</a>.
 
-<p>This is as optimal as the first approach; it will set focus to the form field as soon as technically possible, while the text of the page is still loading. But it transfers the bulk of your application logic (focusing the form field) out of the body of the page and into the head. This example relies on jQuery, but the concept of custom events is not unique to jQuery. Other JavaScript libraries like YUI and Dojo offer similar capabilities.
+<p>Esta abordagem é melhor que a primeira; o foco será definido o mais cedo que a técnica permitir, enquanto o texto da página ainda estiver carregando. Mas ele transfere a maior parte da lógica da sua aplicação (foco do campo de formulário) para fora do corpo da página. Este exemplo é baseado em jQuery, mas o conceito de eventos personalizados não é único do jQuery. Outras bibliotecas JavaScript como YUI e Dojo oferecem capacidades similares.
 
-<p>To sum up:
+<p>Para resumir:
 
 <ul>
-<li>Setting focus properly is important.
-<li>If at all possible, let the browser do it by setting the <code>autofocus</code> attribute on the form field you want to have focus.
-<li>If you code a fallback for older browsers, detect support for the <code>autofocus</code> attribute to make sure your fallback is <em>only</em> executed in older browsers.
-<li>Set focus as early as possible. Insert the focus script into your markup immediately after the form field. If that offends you, use a JavaScript library that supports custom events, and trigger a custom event immediately after the form field markup. If that&#8217;s not possible, use something like jQuery&#8217;s <code>$(document).ready()</code> event.
-<li>Under no circumstances should you wait until <code>window.onload</code> to set focus.
+<li>Definir o foco corretamente é importante
+<li>De todas as possibilidades, deixe o navegador trabalhar definindo o atributo <code>autofocus</code> no campo de formulário no qual deseja o foco.
+<li>Se codificar um fallback para navegadores antigos, detecte o suporte do atributo <code>autofocus</code> e garanta que o fallback será executado <em>apenas</em> em navegadores antigos.
+<li>Defina o foco o mais cedo possível. Insira o script de foco dentro da marcação imediatamente pós o campo de formulário. Se isto ofender você, use bibliotecas JavaScript que suportem eventos personalizados para acionar um evento personalizado imediatamente depois que o campo de formulário estiver disponível. Se não for possível, use apenas algo como o evento <code>$(document).ready()</code>.
+<li>Sobre outras circunstancias espere até carregar <code>window.onload</code> para ter o foco definido.
 </ul>
 
 <p class=a>&#x2767;
