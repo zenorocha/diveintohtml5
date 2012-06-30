@@ -29,33 +29,33 @@ R: Privacidade é uma preocupação óbvia quando se está falando sobre compart
 
 <p class=a>&#x2767;
 
-<h2 id=w3c>The Geolocation API</h2>
+<h2 id=w3c>API de geolocalização</h2>
 
-<p>The <a href=http://www.w3.org/TR/geolocation-API/>geolocation <abbr>API</abbr></a> lets you share your location with trusted web sites. The latitude and longitude are available to JavaScript on the page, which in turn can send it back to the remote web server and do fancy location-aware things like finding local businesses or showing your location on a map.
+<p>A <a href=http://www.w3.org/TR/geolocation-API/><abbr>API</abbr> de geolocalização</a> permite que você compartilhe sua localização em sites confiáveis. A latitude e longitude são disponibilizadas na página via JavaScript, que por sua vez pode ser enviado a um servidor web e fazer coisas como encontrar locais ao seu redor ou mostrar sua posição em um mapa.
 
-<p>As you can see from the following table, the geolocation <abbr>API</abbr> is supported by most browsers on the desktop and mobile devices. Additionally, some older browsers and devices can be supported by wrapper libraries, as we&#8217;ll see later in this chapter.
+<p>Como você pode ver na tabela a seguir, a <abbr>API</abbr> de geolocalização é suportada pela maioria dos navegadores desktop e disposítivos móveis. Além disso, vários navegadores e dispositivos antigos podem oferecer suporte via bibliotecas de terceiros, como veremos depois neste capítulo.
 
 <table class=bc>
-<caption>Geolocation <abbr>API</abbr> support</caption>
+<caption>Suporte da <abbr>API</abbr> de geolocalização</caption>
 <thead>
 <tr><th title="Internet Explorer">IE<th title="Mozilla Firefox">Firefox<th title="Apple Safari">Safari<th title="Google Chrome">Chrome<th>Opera<th>iPhone<th>Android
 <tbody>
 <tr><td>9.0+<td>3.5+<td>5.0+<td>5.0+<td>10.6+<td>3.0+<td>2.0+
 </table>
 
-<p>Along with support for the standard geolocation <abbr>API</abbr>, there are a plethora of device-specific <abbr>API</abbr>s on other mobile platforms. I&#8217;ll cover all that later in this chapter.
+<p>Junto com o suporte padrão da <abbr>API</abbr> de geolocalização, há tambem várias <abbr>API</abbr>s de dispositivos específicos em outras plataformas móveis. Falarei sobre tudo isso ainda neste capítulo.
 
 <p class=a>&#x2767;
 
-<h2 id=the-code>Show Me The Code</h2>
+<h2 id=the-code>Mostre-me o código</h2>
 
-<p>The geolocation <abbr>API</abbr> centers around a new property on the global <code>navigator</code> object: <code>navigator.geolocation</code>. <p>The simplest use of the geolocation <abbr>API</abbr> looks like this:
+<p>A <abbr>API</abbr> de geolocalização centraliza tudo em volta da sua nova propriedade global chamada <code>navigator</code> com o objeto: <code>navigator.geolocation</code>. <p>O simples uso da <abbr>API</abbr> de geolocalização se parece com isso:
 
 <pre><code>function get_location() {
   <mark>navigator.geolocation.getCurrentPosition</mark>(show_map);
 }</code></pre>
 
-<p>That has no detection, no error handling, and no options. Your web application should probably include at least the first two of those. To <a href=detect.html#geolocation>detect support for the geolocation <abbr>API</abbr></a>, you can use <a href=http://www.modernizr.com/>Modernizr</a>:
+<p>Porém isso não detecta o posicionamento (latitude e longitude), não há tratamento de erros e não retorna opções. Você pode incluir uma verificação para detectar se há suporte para a <abbr>API</abbr> de geolocalização. Para <a href=detect.html#geolocation>detectar se há suporte</a>, você pode usar o <a href=http://www.modernizr.com/>Modernizr</a>:
 
 <pre style="float:left;padding-left:0"><code>function get_location() {
   if (<mark>Modernizr.geolocation</mark>) {
@@ -64,33 +64,33 @@ R: Privacidade é uma preocupação óbvia quando se está falando sobre compart
     // no native support; maybe try Gears?
   }
 }</code></pre>
-<p class="legend right" style="margin-top:2.5em"><span class=arrow>&nbsp;&#x21dc;</span> I CAN HAS GEO?
+<p class="legend right" style="margin-top:2.5em"><span class=arrow>&nbsp;&#x21dc;</span> EU POSSO TER GEOLOCALIZAÇÃO?
 
-<p class=clear>What you do without geolocation support is up to you. I&#8217;ll explain the Gears fallback option in a minute, but first I want to talk about what happens <em>during</em> that call to <code>getCurrentPosition()</code>. As <a href=#divingin>I mentioned at the beginning of this chapter</a>, geolocation support is <em>opt-in</em>. That means your browser will never force you to reveal your current physical location to a remote server. The user experience differs from browser to browser. In Mozilla Firefox, calling the <code>getCurrentPosition()</code> function of the geolocation <abbr>API</abbr> will cause the browser to pop up an &#8220;infobar&#8221; at the top of the browser window. The infobar looks like this:
+<p class=clear>O que você faz sem o suporte da geolocalização é contigo. Eu explicarei como fazer um fallback em um minuto, mas antes eu quero falar sobre o que acontecerá <em>durante</em> a chamada do método <code>getCurrentPosition()</code>. Como <a href=#divingin>eu mencionei no começo deste capítulo</a>, o suporte da geolocalização é <em>opcional</em>. Isso significa que seu browser nunca irá forçar você revelar sua localização física atual para um servidor remoto. A experiência do usuário é diferente de browser pra browser. No Mozilla Firefox, a chamada do método <code>getCurrentPosition()</code> da <abbr>API</abbr> de geolocalização fará com que o browser mostre uma &#8220;barra de notificação&#8221; no topo da janela do navegador. Essa barra se parece com isso:
 
 <p class=c><img src=i/geolocation-opt-in.png alt="Geolocation opt-in infobar" width=737 height=32>
 
-<p>There&#8217;s a lot going on here. You, as the end user,
+<p>Há muita coisa acontecendo aqui. Você, como um usuário final,
 
 <ul>
-<li>are told that a website wants to know your location
-<li>are told <em>which</em> website wants to know your location
-<li>can click through to <a href=http://www.mozilla.com/en-US/firefox/geolocation/>Mozilla&#8217;s &#8220;Location-Aware Browsing&#8221; help page</a> which explains what the heck is going on (short story: Google provides the location and stores your data in accordance with its <a href=http://www.google.com/intl/en/privacy/lsf.html>Location Service Privacy Policy</a>)
-<li>can choose to share your location
-<li>can choose <em>not</em> to share your location
-<li>can tell your browser to remember your choice (either way, share or don&#8217;t share) so you never see this infobar again on this website
+<li>um site pergunta sua localização
+<li><em>qual</em> o site que pergunta sua localização
+<li>em <a href=http://www.mozilla.com/en-US/firefox/geolocation/>Mozilla&#8217;s &#8220;Location-Aware Browsing&#8221;</a> explicará que diabos está acontecendo (lembre-se: o Google fornece sua localização e salva seus dados de acordo com sua <a href=http://www.google.com/intl/en/privacy/lsf.html>Política de Privacidade sobre Serviços de Localização</a>)
+<li>pode escolher para compartilhar sua localização
+<li>pode escolher para <em>não</em> compartilhar sua localização
+<li>pode falar pro seu browser para lembrar sua escolha (espera aí, compartilhar ou não compartilhar sua localização) então você nunca mais verá está barra de notificação novamente neste site
 </ul>
 
-<p>Furthermore, this infobar is
+<p>Além disso, essa barra é
 
 <ul>
-<li>non-modal, so it won&#8217;t prevent you from switching to another browser window or tab
-<li>tab-specific, so it will disappear if you switch to another browser window or tab and reappear when you switch back to the original tab
-<li>unconditional, so there is no way for a website to bypass it
-<li>blocking, so there is no chance that the website can determine your location while it&#8217;s waiting for your answer
+<li>não modal, então não irá impedí-lo de mudar para uma outra janela ou tab
+<li>tab específica, irá desaparecer se você mudar para uma outra janela ou tab e reaparecerá quando você voltar para a janela ou tab em que estava
+<li>incondicional, então não há como um site roubar sua localização sem sua permissão
+<li>segura, não há chance de um site poder determinar sua localização enquanto ele estiver esperando sua resposta
 </ul>
 
-<p>You just saw the JavaScript code that causes this infobar to appear. It&#8217;s a single function call which takes a callback function (which I called <code>show_map</code>). The call to <code>getCurrentPosition()</code> will return immediately, but that doesn&#8217;t mean that you have access to the user&#8217;s location. The first time you are guaranteed to have location information is in the callback function. The callback function looks like this:
+<p>Você acabou de ver o código em JavaScript com que fez essa barra de notificação aparecer. É uma chamada de função única que tem uma função de callback (no qual chamei de <code>show_map</code>). A chamada do método <code>getCurrentPosition()</code> retornará a localização imediatamente, mas isso não quer dizer que você terá a localização do usuário. O primeiro lugar que é garantido para você o acesso a localização do usuário é na função de callback. A função de callback se parece com isso:
 
 <pre><code>function show_map(position) {
   var latitude = position.coords.latitude;
@@ -98,24 +98,24 @@ R: Privacidade é uma preocupação óbvia quando se está falando sobre compart
   // let's show a map or do something interesting!
 }</code></pre>
 
-<p>The callback function will be called with a single parameter, an object with two properties: <code>coords</code> and <code>timestamp</code>. The timestamp is just that, the date and time when the location was calculated. (Since this is all happening asynchronously, you can&#8217;t really know when that will happen in advance. It might take some time for the user to read the infobar and agree to share their location. Devices with dedicated <abbr>GPS</abbr> hardware may take some more time to connect to a <abbr>GPS</abbr> satellite. And so on.) The <code>coords</code> object has properties like <code>latitude</code> and <code>longitude</code> which are exactly what they sound like: the user&#8217;s physical location in the world.
+<p>A função de callback será chamada com um único parâmetro, e retornará um objeto com duas propriedades: <code>coords</code> e <code>timestamp</code>. O timestamp é somente a data e o horário de quando a localização foi calculada. (Uma vez que tudo isso está acontecendo de forma assíncrona, você poderá realmente não saber quando irá acontecer com antecedência. Pode demorar algum tempo para que o usuário visualize a barra de notificação a aceitar para compartilhar sua localização. Dispositivos com <abbr>GPS</abbr> dedicado podem demorar mais tempo para se conectar com o satélite do <abbr>GPS</abbr>. E assim por diante.) O objeto <code>coords</code> possui propriedades como <code>latitude</code> e <code>longitude</code> que são exatamente o que parece ser: a localização física do usuário no mundo.
 
 <table class=st>
-<caption>Position Object</caption>
-<tr class=ho><th>Property<th>Type<th>Notes
-<tr class=zebra><th><code>coords.latitude</code><td>double<td>decimal degrees
-<tr><th><code>coords.longitude</code><td>double<td>decimal degrees
-<tr class=zebra><th><code>coords.altitude</code><td>double or <code>null</code><td>meters above the <a href=http://en.wikipedia.org/wiki/Reference_ellipsoid>reference ellipsoid</a>
-<tr><th><code>coords.accuracy</code><td>double<td>meters
-<tr class=zebra><th><code>coords.altitudeAccuracy</code><td>double or <code>null</code><td>meters
-<tr><th><code>coords.heading</code><td>double or <code>null</code><td>degrees clockwise from <a href=http://en.wikipedia.org/wiki/True_north>true north</a>
-<tr class=zebra><th><code>coords.speed</code><td>double or <code>null</code><td>meters/second
-<tr><th><code>timestamp</code><td>DOMTimeStamp<td>like a <code>Date()</code> object
+<caption>Posição do Objeto</caption>
+<tr class=ho><th>Propriedade<th>Tipo<th>Observação
+<tr class=zebra><th><code>coords.latitude</code><td>double<td>graus decimais
+<tr><th><code>coords.longitude</code><td>double<td>graus decimais
+<tr class=zebra><th><code>coords.altitude</code><td>double ou <code>null</code><td>metros em <a href=http://en.wikipedia.org/wiki/Reference_ellipsoid>elipsoide de referência</a>
+<tr><th><code>coords.accuracy</code><td>double<td>metros
+<tr class=zebra><th><code>coords.altitudeAccuracy</code><td>double ou <code>null</code><td>metros
+<tr><th><code>coords.heading</code><td>double ou <code>null</code><td>graus em sentido do <a href=http://en.wikipedia.org/wiki/True_north>norte verdadeiro</a>
+<tr class=zebra><th><code>coords.speed</code><td>double ou <code>null</code><td>metros/segundos
+<tr><th><code>timestamp</code><td>DOMTimeStamp<td>como um objeto de <code>Date()</code> 
 </table>
 
 <p class=ss style="margin-top:1.75em"><img src=i/openclipart.org_johnny_automatic_riding_a_bike.png width=196 height=239 alt="boy riding a bicycle">
 
-<p>Only three of the properties are guaranteed to be there (<code>coords.latitude</code>, <code>coords.longitude</code>, and <code>coords.accuracy</code>). The rest might come back <code>null</code>, depending on the capabilities of your device and the backend positioning server that it talks to. The <code>heading</code> and <code>speed</code> properties are calculated based on the user&#8217;s previous position, if possible.
+<p>Somente três de uma das propriedades são garantidas (<code>coords.latitude</code>, <code>coords.longitude</code>, e <code>coords.accuracy</code>). O restante pode voltar <code>null</code>, dependendo da capacidade do seu dispositivo e a distância que o servidor está de você. As propriedades <code>heading</code> e <code>speed</code> serão calculadas baseadas na posição anterior do usuário, se possível. 
 
 <p class=a>&#x2767;
 
