@@ -17,7 +17,7 @@ body{counter-reset:h1 9}
 <h2 id=divingin>Mergulhando</h2>
 
 <p class=f><img src=i/aoc-t.png alt=t width=107 height=105>odo mundo conhece sobre formulários web, certo? Crie uma marcação <code>&lt;form></code>, alguns campos <code>&lt;input type="text"></code>, ou talvez  <code>&lt;input type="password"></code>, no final um botão <code>&lt;input type="submit"></code> , e pronto está feito.
-<p>Você não conhece nem a metade deles. <abbr>O HTML5</abbr> definiu mais de meia dúzia de novos tipos de campos que você pode usar em seus formulários. E quando digo "usar", é usar agora - sem nenhuma gambiarra, hack ou soluções alternativas. Só não se entusiasme tanto; Eu não disse que todos estes recursos são suportados por todos os navegadores da atualidade. Oh, meu Deus, eu também não disse em nenhum. Em navegadores modernos, seus formulários irão arrebentar. Nos mais antiquados eles irão apenas cumprir sua função. Ou seja, os recursos irão se adaptar e degradar para funcionar em todos os navegadores. Até no IE6. 
+<p>Você não conhece nem a metade deles. A <abbr>HTML5</abbr> definiu mais de meia dúzia de novos tipos de campos que você pode usar em seus formulários. E quando digo "usar", é usar agora - sem nenhuma gambiarra, hack ou soluções alternativas. Só não se entusiasme tanto; Eu não disse que todos estes recursos são suportados por todos os navegadores da atualidade. Oh, meu Deus, eu também não disse em nenhum. Em navegadores modernos, seus formulários irão arrebentar. Nos mais antiquados eles irão apenas cumprir sua função. Ou seja, os recursos irão se adaptar e degradar para funcionar em todos os navegadores. Até no IE6. 
 
 <p class=a>&#x2767;
 
@@ -33,14 +33,14 @@ Suporte ao Placeholder
 <tr><td>&middot;<td>3.7+<td>4.0+<td>4.0+<td>11.0+<td>4.0+<td>&middot;
 </table>
 
-<p>O primeiro aperfeiçoamento que o <abbr>HTML5</abbr> trouxe aos formulários web é o recurso para definir um <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>texto como placeholder</a>, em campos input. Este texto é exibido dentro do input enquanto o campo estiver vazio ou sem foco. Logo que é clicado (ou acessado por tab) o texto placeholder desaparece.
+<p>O primeiro aperfeiçoamento que a <abbr>HTML5</abbr> trouxe aos formulários web é o recurso para definir um <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>texto como placeholder</a>, em campos input. Este texto é exibido dentro do input enquanto o campo estiver vazio ou sem foco. Logo que é clicado (ou acessado por tab) o texto placeholder desaparece.
 
 <p>Você provavelmente já viu o placeholder antes. Por exemplo, o Mozilla Firefox possui um texto placeholder na barra de endereço onde se lê “Search Bookmarks and History”:
 
-<p class=c><img src=i/location-bar-empty-unfocused.png alt="location bar with placeholder text" width=268 height=30>
+<p class=c><img src=i/location-bar-empty-unfocused.png alt="barra de endereço com texto placeholder" width=268 height=30>
 
 <p>Quando voce clica (ou acessa por tab) a barra de endereço, o texto desaparece:
-<p class=c><img src=i/location-bar-empty-focused.png alt="location bar with cursor and no placeholder text" width=268 height=30>
+<p class=c><img src=i/location-bar-empty-focused.png alt="barra de endereço com foco e sem o texto placeholder" width=268 height=30>
 
 <p>Aqui como você pode incluir um texto placeholder em seu formulário web:
 <pre><code>&lt;form>
@@ -48,7 +48,7 @@ Suporte ao Placeholder
   &lt;input type="submit" value="Search">
 &lt;/form></code></pre>
 
-<p>Navegadores que não suportam o atributo <code>placeholder</code> irão simplesmente ignora-lo. <a href=examples/input-placeholder.html> Veja se o seu navegador suporta o texto placeholder.</a>.
+<p>Navegadores que não suportam o atributo <code>placeholder</code> irão simplesmente ignorá-lo. <a href=examples/input-placeholder.html> Veja se o seu navegador suporta o texto placeholder.</a>.
 
 
 
@@ -57,7 +57,7 @@ Suporte ao Placeholder
 <div class=inner>
 <blockquote class=note>
 <p><span>&#x261E;</span>P: Eu posso usar marcações <abbr>HTML</abbr> no atributo <code>placeholder</code>? Eu gostaria de inserir uma imagem, ou talvez mudar as cores.<br>
-R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação <abbr>HTML</abbr> markup. Porém há alguns <a href=http://trac.webkit.org/export/37527/trunk/LayoutTests/fast/forms/placeholder-pseudo-style.html>vendor específicos das extensões do CSS</a> que permitem estilizar o texto placeholder em alguns navegadores.
+R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação <abbr>HTML</abbr>. Porém há algumas <a href=http://trac.webkit.org/export/37527/trunk/LayoutTests/fast/forms/placeholder-pseudo-style.html>extensões do CSS especificamente proprietárias</a> que permitem estilizar o texto placeholder em alguns navegadores.
 </blockquote>
 </div>
 </div>
@@ -74,13 +74,13 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 <tr><td>&middot;<td>4.0+<td>4.0+<td>3.0+<td>10.0+<td>&middot;<td>&middot;
 </table>
 
-<p class=ss><img src=i/openclipart.org_johnny_automatic_angry_guy.png alt="angry guy with arms up" width=188 height=262>
+<p class=ss><img src=i/openclipart.org_johnny_automatic_angry_guy.png alt="rapaz nervoso com os braços levantados" width=188 height=262>
 
-<p>Web sites podem usar JavaScript para criar um foco automático no primeiro campo de um formulário. Por exemplo, a página inicial do <a href=http://www.google.com.br/>Google</a> foca automaticamente no campo de busca para você poder digitar suas palavras-chaves. Enquanto isto é conveniente para a maioria das pessoas, pode ser irritante para usuários experientes ou pessoas com necessidades especiais. Caso você pressionar a barra de espaço esperando que a página role, ela não irá, pois o foco está em um campo de formulário. (Você terá um espaço no campo ao invés da rolagem). Se seu foco estiver em um outro campo enquanto a página ainda estiver carregando, o código de foco automático, que deveria ajudar, irá mover o foco para o campo original, interrompendo seu fluxo e fazendo com que digite no lugar errado.
+<p>Web sites podem usar JavaScript para criar um foco automático no primeiro campo de um formulário. Por exemplo, a página inicial do <a href=http://www.google.com.br/>Google</a> foca automaticamente no campo de busca para você poder digitar suas palavras-chaves. Enquanto isto é conveniente para a maioria das pessoas, pode ser irritante para usuários experientes ou pessoas com necessidades especiais. Caso você pressione a barra de espaço esperando que a página role, ela não irá, pois o foco está em um campo de formulário. (Você terá um espaço no campo ao invés da rolagem). Se seu foco estiver em um outro campo enquanto a página ainda estiver carregando, o código de foco automático, que deveria ajudar, irá mover o foco para o campo original, interrompendo seu fluxo e fazendo com que digite no lugar errado.
 
 <p>Por causa do foco automático ser processado pelo JavaScript, torna complicado lidar com estes casos específicos, e isto é um pequeno ajuste para as pessoas que não querem que o website &#8220;roube&#8221; o foco.
 
-<p>Para resolver este problema, o <abbr>HTML5</abbr> introduziu <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>um atributo de <code>autofocus</code> para todos elementos de formulário web</a>. O atributo <code>autofocus</code> executa exatamente o que ele diz, foco automático. O truque: logo que a página carrega, ele move o foco para um campo em particular. Mas como ele é apenas uma marcação ao invés de um script, o comportamento se torna consistente durante todo o website. Além disso, vendors do navegador (ou extensões) podem oferecer que o usuário desabilite o foco automático.
+<p>Para resolver este problema, a <abbr>HTML5</abbr> introduziu <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>um atributo de <code>autofocus</code> para todos elementos de formulário web</a>. O atributo <code>autofocus</code> executa exatamente o que ele diz, foco automático. O truque: logo que a página carrega, ele move o foco para um campo em particular. Mas como ele é apenas uma marcação ao invés de um script, o comportamento se torna consistente durante todo o website. Além disso, navegadores (ou extensões) podem oferecer que o usuário desabilite o foco automático.
 
 <p>Abaixo como você pode definir um campo de formulário com foco automático:
 
@@ -89,13 +89,13 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
   &lt;input type="submit" value="Search">
 &lt;/form></code></pre>
 
-<p>Navegadores que não suportam o atributo <code>autofocus</code> simplesmente irão ignora-lo. <a href=examples/input-autofocus.html>Veja se o seu navegador suporta o campo de foco automático.</a>.
+<p>Navegadores que não suportam o atributo <code>autofocus</code> simplesmente irão ignorá-lo. <a href=examples/input-autofocus.html>Veja se o seu navegador suporta o campo de foco automático.</a>.
 
-<p>Como assim? Você quer dizer que deseja que o autofocus funcione em todos os navegadores, não apenas nestes navegadores <abbr>HTML5</abbr> cheios de nove horas? Bom, Você pode manter seu script atual de foco automático. Faça apenas estas duas pequenas alterações:
+<p>Como assim? Você quer dizer que deseja que o autofocus funcione em todos os navegadores, não apenas nestes navegadores cheios de <abbr>HTML5</abbr>? Bom, Você pode manter seu script atual de foco automático. Faça apenas estas duas pequenas alterações:
 
 <ol>
 <li>Adicione o atributo <code>autofocus</code> na sua marcação <abbr>HTML</abbr>
-<li><a href=detect.html#input-autofocus>Detecte se o navegador suporta o atributo <code>autofocus</code></a>, e execute o seu proprio script de foco automático, apenas se o navegador não suportar autofocus nativamente.</ol>
+<li><a href=detect.html#input-autofocus>Detecte se o navegador suporta o atributo <code>autofocus</code></a>, e execute o seu próprio script de foco automático, apenas se o navegador não suportar autofocus nativamente.</ol>
 
 <p class="legend top" style="margin-left:10em"><span class=arrow>&#x21b6;</span> Autofocus com fallback
 <pre><code>&lt;form name="f">
@@ -113,9 +113,9 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <h3 id=more-on-focus>Defina um foco o mais cedo possível</h3>
 
-<p>Muitas páginas de web esperam o carregamento do <code>window.onload</code> para definir um foco. Mas o evento  <code>window.onload</code> não executa nenhuma ação <em>até que</em> todas as imagens tenham sido carregadas. Se sua página possui diversas imagens, seu script pode atrapalhar e refazer o foco em um campo, enquanto o usuário já estiver interagindo em outra parte da página. Por isso que usuários experientes odeiam scripts de foco automático.
+<p>Muitas páginas da web esperam o carregamento do <code>window.onload</code> para definir um foco. Mas o evento  <code>window.onload</code> não executa nenhuma ação <em>até que</em> todas as imagens tenham sido carregadas. Se sua página possui diversas imagens, seu script pode atrapalhar e refazer o foco em um campo, enquanto o usuário já estiver interagindo em outra parte da página. Por isso que usuários experientes odeiam scripts de foco automático.
 
-<p>O exemplo a seguir executa o script de foco automático imediatamente depois que os campos de formulário são declarados. Está é a solução ideal, mas pode ofender seu ego, por colocar um bloco de código JavaScript no meio da página. (Ou, mais prático, seu sistema de back-end, pode não ter esta flexibilidade.) Se você não pode colocar um script no meio da página, você deverá3 definir o foco durante um evento personalizado. Por exemplo, jQuery&#8217;s <a href="http://docs.jquery.com/Tutorials:Introducing_$(document).ready()"><code>$(document).ready()</code></a> ao invés de <code>window.onload</code>.
+<p>O exemplo a seguir executa o script de foco automático imediatamente depois que os campos de formulário são declarados. Está é a solução ideal, mas pode ofender seu ego, por colocar um bloco de código JavaScript no meio da página. (Ou, mais prático, seu sistema de back-end, pode não ter esta flexibilidade.) Se você não pode colocar um script no meio da página, você deverá definir o foco durante um evento personalizado. Por exemplo, o <a href="http://docs.jquery.com/Tutorials:Introducing_$(document).ready()"><code>$(document).ready()</code></a> do jQuery ao invés de <code>window.onload</code>.
 
 <p class="legend top" style="margin-left:10em"><span class=arrow>&#x21b6;</span> Autofocus com jQuery fallback
 <pre><code>&lt;head>
@@ -137,9 +137,9 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p><a href=examples/input-autofocus-with-fallback-document-ready.html>Veja um exemplo do <code>autofocus</code> com jQuery fallback</a>.
 
-<p>jQuery executa o evento personalizado <code>ready</code> logo que o <abbr>DOM</abbr> estiver disponível &mdash; isto é, ele espera até que todo o texto da página carregue, mas não espera até todas as imagens. Esta não está perto da ideal - se a página for consideravelmente grande ou a conexão de internet for extremamente baixa, o usuário pode começar a interagir com a página antes do seu script de foco automático execute. Mas é muito melhor que esperar o <code>window.onload</code>.
+<p>jQuery executa o evento personalizado <code>ready</code> logo que o <abbr>DOM</abbr> estiver disponível &mdash; isto é, ele espera até que todo o texto da página carregue, mas não espera até todas as imagens. Não está perto do ideal - se a página for consideravelmente grande ou a conexão de internet for extremamente baixa, o usuário pode começar a interagir com a página antes do seu script de foco automático execute. Mas é muito melhor que esperar o <code>window.onload</code>.
 
-<p>Se você estiver hesitante ou não puder inserir um bloco isolado de código em seu <abbr>HTML</abbr>, há um meio termo menos ofensivo que a primeira opção e mais otimizado que a segunda. É possível utilizar eventos personalizados do jQuery&#8217;s para definir seu próprio, digamos  <code>autofocus_ready</code>. Assim você pode aciona-lo manualmente, imediatamente depois que o campo com autofocus fique disponível. <i>Obrigado a E. M. Sternberg por me ensinar sobre está técnica.</i>
+<p>Se você estiver hesitante ou não puder inserir um bloco isolado de código em seu <abbr>HTML</abbr>, há um meio termo menos ofensivo que a primeira opção e mais otimizado que a segunda. É possível utilizar eventos personalizados do jQuery para definir seu próprio, digamos  <code>autofocus_ready</code>. Assim você pode acioná-lo manualmente, imediatamente depois que o campo com autofocus fique disponível. <i>Obrigado a E. M. Sternberg por me ensinar sobre está técnica.</i>
 
 <p class="legend top" style="margin-left:10em"><span class=arrow>&#x21b6;</span> Autofocus com fallback utilizando evento personalizado
 <pre><code>&lt;head>
@@ -167,56 +167,56 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 <p>Para resumir:
 
 <ul>
-<li>Definir o foco corretamente é importante
+<li>Definir o foco corretamente é importante.
 <li>De todas as possibilidades, deixe o navegador trabalhar definindo o atributo <code>autofocus</code> no campo de formulário no qual deseja o foco.
 <li>Se codificar um fallback para navegadores antigos, detecte o suporte do atributo <code>autofocus</code> e garanta que o fallback será executado <em>apenas</em> em navegadores antigos.
 <li>Defina o foco o mais cedo possível. Insira o script de foco dentro da marcação imediatamente pós o campo de formulário. Se isto ofender você, use bibliotecas JavaScript que suportem eventos personalizados para acionar um evento personalizado imediatamente depois que o campo de formulário estiver disponível. Se não for possível, use apenas algo como o evento <code>$(document).ready()</code>.
-<li>Sobre outras circunstancias espere até carregar <code>window.onload</code> para ter o foco definido.
+<li>Sobre outras circunstâncias espere até carregar <code>window.onload</code> para ter o foco definido.
 </ul>
 
 <p class=a>&#x2767;
 
-<h2 id=type-email>Email Addresses</h2>
+<h2 id=type-email>Endereços de Email</h2>
 
-<p>For over a decade, web forms comprised just a few kinds of fields. The most common kinds were
+<p>Por mais de uma década, existiam apenas alguns tipos de campos nos formulários web. Os mais comuns eram:
 
 <table class=st>
 <tr class=ho><th>Field Type<th><abbr>HTML</abbr> Code<th>Notes
-<tr class=zebra><th>checkbox<td><code>&lt;input type="checkbox"></code><td>can be toggled on or off
-<tr><th>radio button<td><code>&lt;input type="radio"></code><td>can be grouped with other inputs
-<tr class=zebra><th>password field<td><code>&lt;input type="password"></code><td>echos dots instead of characters as you type
+<tr class=zebra><th>checkbox<td><code>&lt;input type="checkbox"></code><td>pode ser marcado ou não
+<tr><th>radio button<td><code>&lt;input type="radio"></code><td>pode ser agrupado com outros
+<tr class=zebra><th>password field<td><code>&lt;input type="password"></code><td>exibe pontos ao invés dos caracteres digitados
 <tr><th>drop-down lists<td><code>&lt;select>&lt;option>&hellip;</code><td>
-<tr class=zebra><th>file picker<td><code>&lt;input type="file"></code><td>pops up an &#8220;open file&#8221; dialog
+<tr class=zebra><th>file picker<td><code>&lt;input type="file"></code><td>abre uma janela para &#8220;abrir arquivos&#8221;
 <tr><th>submit button<td><code>&lt;input type="submit"></code><td>
-<tr class=zebra><th>plain text<td><code>&lt;input type="text"></code><td>the <code>type</code> attribute can be omitted
+<tr class=zebra><th>plain text<td><code>&lt;input type="text"></code><td>o atributo <code>type</code> pode ser omitido
 </table>
 
-<p>All of these input types still work in <abbr>HTML5</abbr>. If you&#8217;re &#8220;upgrading to <abbr>HTML5</abbr>&#8221; (perhaps by <a href=semantics.html#the-doctype>changing your DOCTYPE</a>), you don&#8217;t need to make a single change to your web forms. Hooray for backward compatibility!
+<p>Todos esses campos continuam funcionando em <abbr>HTML5</abbr>. Se você &#8220;atualizar para <abbr>HTML5</abbr>&#8221; (quem sabe, <a href=semantics.html#the-doctype>mudando o DOCTYPE</a>), não vai ser preciso fazer nenhuma mudança nos formulários. Viva a compatibilidade!
 
-<p>However, <abbr>HTML5</abbr> defines 13 new field types, and for reasons that will become clear in a moment, there is no reason <em>not</em> to start using them.
+<p>No entanto, há 13 novos tipos de campos no <abbr>HTML5</abbr> , e por razões que ficarão claras em breve <em>não</em> há porque não começar a utiliza-los.
 
-<p>The first of these new input types is for <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state>email addresses</a>. It looks like this:
+<p>O primeiro destes novos campos é o <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state>endereço de email</a>. Se declara assim:
 
 <pre><code>&lt;form>
   <mark>&lt;input type="email"></mark>
   &lt;input type="submit" value="Go">
 &lt;/form></code></pre>
 
-<p>I was about to write a sentence that started with &#8220;in browsers that don&#8217;t support <code>type="email"</code>&hellip;&#8221; but I stopped myself. Why? Because I&#8217;m not sure what it would mean to say that a browser doesn&#8217;t support <code>type="email"</code>. All browsers &#8220;support&#8221; <code>type="email"</code>. They may not do anything special with it (you&#8217;ll see a few examples of special treatment in a moment), but browsers that don&#8217;t recognize <code>type="email"</code> will treat it as <code>type="text"</code> and render it as a plain text field.
+<p>Eu estava prestes a escrever uma frase que começava com &#8220;nos navegadores que não suportam <code>type="email"</code>&hellip;&#8221; mas me impedi. Por que? Porquê eu não tenho certeza do que quer dizer um navegador não suportar <code>type="email"</code>. Todos os navegadores &#8220;suportam&#8221; <code>type="email"</code>. Eles só não fazem nada de especial com ele (você verá alguns exemplos especiais de tratamento em breve), mas navegadores que não reconhecem <code>type="email"</code> irão trata-lo como <code>type="text"</code> e renderizar um tipo de campo simples.
 
-<p>I can not emphasize how important this is. The web has millions of forms that ask you to enter an email address, and all of them use <code>&lt;input type="text"></code>. You see a text box, you type your email address in the text box, and that&#8217;s that. Along comes <abbr>HTML5</abbr>, which defines <code>type="email"</code>. Do browsers freak out? No. Every single browser on Earth treats an unknown <code>type</code> attribute as <code>type="text"</code> &mdash; even IE 6. So you can &#8220;upgrade&#8221; your web forms to use <code>type="email"</code> right now.
+<p>Eu não consigo enfatizar quão importante ele é. A internet possui milhões de formulários que pedem para digitar um endereço de email, e todos eles usam <code>&lt;input type="text"></code>. Você vê um campo de texto, você digita um endereço de email na caixa, e é isto. Com o <abbr>HTML5</abbr> utilize a definição <code>type="email"</code>. Os navegadores vão surtar? Não. Todo o tipo de navegador da Terra trata um atributo <code>type</code> nulo como <code>type="text"</code> &mdash; inclusive o IE6. Então você pode &#8220;atualizar&#8221; seu formulário para <code>type="email"</code> agora.
 
-<p>What would it mean to say that a browser <em>DID</em> support <code>type="email"</code>? Well, it can mean any number of things. The <abbr>HTML5</abbr> specification doesn&#8217;t mandate any particular user interface for the new input types. Most desktop browsers like Safari, Chrome, Opera, and Firefox simply render it as a text box &mdash; exactly like <code>type="text"</code> &mdash; so your users will never know the difference (<a href=#validation>until they try to submit the form</a>).
+<p>O que você quer dizer com os navegadores <em>AINDA</em> suportam <code>type="email"</code>? Bom, significa várias coisas. A especificação do <abbr>HTML5</abbr> não exige nenhuma interface particular para este novo tipo de campo. A maioria dos navegadores desktop como Safari, Chrome, Opera e Firefox simplesmente renderiam uma caixa de texto &mdash; exatamente como <code>type="text"</code> &mdash; logo, seu usuário nunca irá notar a diferença (<a href=#validation>até tentar enviar o formulário</a>).
 
-<p>And then there&#8217;s the iPhone.
+<p>Então surge o iPhone.
 
-<p>The iPhone does not have a physical keyboard. All &#8220;typing&#8221; is done by tapping on an on-screen keyboard that pops up at appropriate times, like when you focus a form field in a web page. Apple did something clever in the iPhone&#8217;s web browser. It recognizes several of the new <abbr>HTML5</abbr> input types, and <em>dynamically changes the on-screen keyboard</em> to optimize for that kind of input.
+<p>O iPhone não possui um teclado físico. A digitação é feita por toque no teclado virtual, que surge nos momentos apropriados. Por exemplo, quando você seleciona um campo de um formulário web. A Apple fez algo inteligente no navegador do iPhone. Ele reconhece vários dos novos tipos de campos do <abbr>HTML5</abbr> e <em>dinamicamente altera o teclado virtual</em> adaptado para o campo específico.
 
-<p>For example, email addresses are text, right? Sure, but they&#8217;re a special kind of text. For example, virtually all email addresses contain the <code>@</code> sign and at least one period (<code>.</code>), but they&#8217;re unlikely to contain any spaces. So when you use an iPhone and focus an <code>&lt;input type="email"></code> element, you get an on-screen keyboard that contains a smaller-than-usual space bar, plus dedicated keys for the <code>@</code> and <code>.</code> characters.
+<p>Por exemplo, o campo de endereço de email é um texto, certo? Certo, mas ele precisa de um tipo especial de texto, praticamente todos os endereços de email contém o <code>@</code> sign and e pelo menos um ponto (<code>.</code>), e não costumam ter nenhum espaço. Então quando você usa o iPhone e foca em um campo <code>&lt;input type="email"></code> , você tem um teclado virtual que possui uma barra de espaço menor que a usual, mais teclas especificas para os caracteres <code>@</code> e (<code>.</code>).
 
-<p class=c><img src=i/input-type-email.png alt="iPhone rendering input type=email field" title="note the dedicated @ and . keys next to the space bar" width=222 height=333 class=fr><br><a href=examples/input-type-email.html>Test <code>type="email"</code> for yourself</a>.
+<p class=c><img src=i/input-type-email.png alt="Renderização do iPhone do campo type=email" title="observe as teclas específicas para os caracteres @ e . ao lado da barra de espaço" width=222 height=333 class=fr><br><a href=examples/input-type-email.html>Faça você o teste do campo <code>type="email"</code></a>.
 
-<p>To sum up: there&#8217;s no downside to converting all your email address form fields to <code>type="email"</code> immediately. Virtually no one will even notice, except iPhone users, who probably won&#8217;t notice either. But the ones who do notice will smile quietly and thank you for making their web experience just a little easier.
+<p>Para resumir: Não há nenhuma desvantagem em converter todos os seus campos de email para <code>type="email"</code>. Praticamente ninguém vai notar, exceto os usuários do iPhone, que provavelmente não vão notar também. Mas aqueles que notarem irão sorrir timidamente e agradecer a você por tornar a experiência na web um pouco mais fácil.
 
 <p class=a>&#x2767;
 
