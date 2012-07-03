@@ -114,13 +114,13 @@ body{counter-reset:h1 2}
 
 <p class=a>&#x2767;
 
-<h2 id=canvas-text>Canvas Text</h2>
+<h2 id=canvas-text>Texto Canvas</h2>
 
 <p class=ss style="width:414px"><img src=i/openclipart.org_johnny_automatic_baseball_at_bat.png width=414 height=254 alt="baseball player at bat"><br><span id=live-canvas-text></span>
 
-<p>Even if your browser supports the <a href=#canvas>canvas <abbr>API</abbr></a>, it might not support the <dfn>canvas text</dfn> <abbr>API</abbr>. The canvas <abbr>API</abbr> grew over time, and the text functions were added late in the game. Some browsers shipped with canvas support before the text <abbr>API</abbr> was complete.
+<p>Mesmo que o seu navegador suporte a <a href=#canvas><abbr>API</abbr> canvas</a>, ele pode não suportar a <abbr>API</abbr> do <dfn>texto canvas</dfn>. A <abbr>API</abbr> do canvas cresceu através do tempo, e as funções de texto foram adicionadas por último. Alguns nabegadores passaram a suportar o canvas antes da <abbr>API</abbr> de texto estar completa.
 
-<p>Checking for the canvas text <abbr>API</abbr> uses <a href=#techniques>detection technique #2</a>. If your browser supports the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;canvas></code> element will have the <a href=canvas.html#shapes><code>getContext()</code> method</a>. If your browser doesn&#8217;t support the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates for a <code>&lt;canvas></code> element will only have the set of common properties, but not anything canvas-specific.
+<p>A verificação da <abbr>API</abbr> do texto canvas usa a <a href=#techniques>técnica de detecção #2</a>. Se seu navegador suporta a <abbr>API</abbr> do canvas, o objeto <abbr>DOM</abbr> o cria para representar um elemento <code>&lt;canvas></code> que terá um <a href=canvas.html#shapes>método <code>getContext()</code></a>. Se seu navegador não suporta a <abbr>API</abbr> do canvas, o objeto <abbr>DOM</abbr> o cria  para um elemento <code>&lt;canvas></code> que terá apenas um conjunto comum de propriedades, mas nada específico do canvas.
 
 <pre><code>function supports_canvas_text() {
   if (!supports_canvas()) { return false; }
@@ -129,26 +129,26 @@ body{counter-reset:h1 2}
   return typeof context.fillText == 'function';
 }</code></pre>
 
-<p>The function starts by <a href=#canvas>checking for canvas support</a>, using the <code>supports_canvas()</code> function you just saw in the previous section. If your browser doesn&#8217;t support the canvas <abbr>API</abbr>, it certainly won&#8217;t support the canvas text <abbr>API</abbr>!
+<p>A função começa <a href=#canvas>verificando o suporte ao canvas</a>, usando a função <code>supports_canvas()</code> que você acabou de ver na seção anterior. Se seu navegador não suporta a <abbr>API</abbr> do canvas, ele certamente não suportará a <abbr>API</abbr> de texto canvas!
 
 <pre><code>if (<mark>!supports_canvas()</mark>) { return false; }</code></pre>
 
-<p>Next, you create a dummy <code>&lt;canvas></code> element and get its drawing context. This is guaranteed to work, because the <code>supports_canvas()</code> function already checked that the <code>getContext()</code> method exists on all canvas objects.
+<p>Depois, você cria um elemento <code>&lt;canvas></code>de teste e pega seu context de desenho. Isso funcionará de forma garantida, por que a função <code>supports_canvas()</code> já verificou que o método <code>getContext()</code> existe em todo objeto canvas.
 
 <pre><code>  var dummy_canvas = document.createElement('canvas');
   var context = <mark>dummy_canvas.getContext('2d')</mark>;</code></pre>
 
-<p>Finally, you check whether the drawing context has a <code>fillText()</code> function. If it does, the canvas text <abbr>API</abbr> is available. Hooray!
+<p>Finalmente, você verifica se o contexto de desenho tem uma função <code>fillText()</code>. Se tiver, a <abbr>API</abbr> de texto canvas está disponível. Hooray!
 
 <pre><code>  return <mark>typeof context.fillText == 'function'</mark>;</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> to detect support for the canvas text <abbr>API</abbr>.
+<p>Ao invés de escrever essa função você mesmo, você pode usar <a href=#modernizr>Modernizr</a> para detectar o suporte à <abbr>API</abbr> do texto canvas.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for canvas text support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verifica o suporte ao texto canvas
 <pre><code>if (<mark>Modernizr.canvastext</mark>) {
-  // let's draw some text!
+  // vamos desenhar algum texto!
 } else {
-  // no native canvas text support available :(
+  // sem suporte nativo ao texto canvas disponível :(
 }</code></pre>
 
 <p class=a>&#x2767;
