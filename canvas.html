@@ -430,7 +430,7 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=images>Images</h2>
+<h2 id=images>Imagens</h2>
 
 <table class=bc>
 <thead>
@@ -441,38 +441,38 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 <tr><td colspan=7 style="text-align:left">* Internet Explorer 7 e 8 necessitam da biblioteca <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a>. Internet Explorer 9 suporta <code>&lt;canvas></code> imagens nativamente.
 </table>
 
-<p>Here is a cat:
+<p>Aqui está um gato:
 
 <p style="float:left"><img src=i/openclipart.org_media_files_johnny_automatic_1360.png alt="sleeping cat" width=177 height=113 id=cat>
-<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> An &lt;img> element</p>
+<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> Um elemento &lt;img></p>
 
-<p class=clear>Here is the same cat, drawn on a canvas:
+<p class=clear>Aqui está o mesmo gato, só que desenhado em um canvas:
 
 <div style="float:right">
-<p class="legend left" style="margin-top:2em">A &lt;canvas> element <span class=arrow>&#x21dd;&nbsp;</span></p>
+<p class="legend left" style="margin-top:2em">Um elemento &lt;canvas> <span class=arrow>&#x21dd;&nbsp;</span></p>
 <canvas id=e width=177 height=113></canvas>
 </div>
 
-<p class=clear>The canvas drawing context defines a <code>drawImage()</code> method for drawing an image on a canvas. The method can take three, five, or nine arguments.
+<p class=clear>O contexto de desenho do canvas define o método <code>drawImage()</code> para desenhar uma imagem no canvas. O método pode ter três, cinco ou nove argumentos.
 
 <ul>
-<li><code>drawImage(image, dx, dy)</code> takes an image and draws it on the canvas. The given coordinates <code>(dx, dy)</code> will be the upper-left corner of the image. Coordinates <code>(0, 0)</code> would draw the image at the upper-left corner of the canvas.
-<li><code>drawImage(image, dx, dy, dw, dh)</code> takes an image, scales it to a width of <code>dw</code> and a height of <code>dh</code>, and draws it on the canvas at coordinates <code>(dx, dy)</code>.
-<li><code>drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh)</code> takes an image, clips it to the rectangle <code>(sx, sy, sw, sh)</code>, scales it to dimensions <code>(dw, dh)</code>, and draws it on the canvas at coordinates <code>(dx, dy)</code>.
+<li><code>drawImage(image, dx, dy)</code> pega uma imagem e a desenha no canvas. A coordenada <code>(dx, dy)</code> será o canto superior esquerdo da imagem. Coordenadas <code>(0, 0)</code> devem desenhar a imagem no canto superior esquerdo do canvas.
+<li><code>drawImage(image, dx, dy, dw, dh)</code> pega uma imagem, escala para a largura de <code>dw</code> e altura de <code>dh</code>, e a desenha no canvas nas coordenadas <code>(dx, dy)</code>.
+<li><code>drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh)</code> pega uma imagem, ajusta ela para o retângulo <code>(sx, sy, sw, sh)</code>, escala para as dimensões <code>(dw, dh)</code>, e a desenha no canvas nas coordenadas <code>(dx, dy)</code>.
 </ul>
 
-<p>The <abbr>HTML5</abbr> specification <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#images>explains the <code>drawImage()</code> parameters</a>:
+<p>A especificação da <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#images>explica os parâmetros de <code>drawImage()</code></a>:
 
 <blockquote cite=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#images>
-<p>The source rectangle is the rectangle [within the source image] whose corners are the four points <code>(sx, sy)</code>, <code>(sx+sw, sy)</code>, <code>(sx+sw, sy+sh)</code>, <code>(sx, sy+sh)</code>.
-<p>The destination rectangle is the rectangle [within the canvas] whose corners are the four points <code>(dx, dy)</code>, <code>(dx+dw, dy)</code>, <code>(dx+dw, dy+dh)</code>, <code>(dx, dy+dh)</code>.
+<p>O retângulo de origem é o retângulo [no interior da imagem fonte] cujos cantos são os quatro pontos <code>(sx, sy)</code>, <code>(sx+sw, sy)</code>, <code>(sx+sw, sy+sh)</code>, <code>(sx, sy+sh)</code>.
+<p>O retângulo de destino é o retângulo [no interior do canvas] cujos cantos são os quatro pontos <code>(dx, dy)</code>, <code>(dx+dw, dy)</code>, <code>(dx+dw, dy+dh)</code>, <code>(dx, dy+dh)</code>.
 <p><img src=i/drawImage.png alt="diagram of drawImage parameters" width=327 height=330>
 </blockquote>
 
-<p>To draw an image on a canvas, you need an image. The image can be an existing <code>&lt;img></code> element, or you can create an <code>Image()</code> object with JavaScript. Either way, you need to ensure that the image is fully loaded before you can draw it on the canvas.
+<p>Para desenhar uma imagem no canvas, você precisa de uma imagem. A imagem pode ser um elemento <code>&lt;img></code> existente, ou pode ser criada com o objeto <code>Image()</code> do JavaScript. De qualquer maneira, você precisa garantir que a imagem está completamente carregada antes de desenhá-la no canvas.
 
-<p>If you&#8217;re using an existing <code>&lt;img></code> element, you can safely draw it on the canvas during the <code>window.onload</code> event.
-<p class="legend top" style="margin-left:6.5em"><span class=arrow>&#x21b6;</span> using an &lt;img> element<br></p>
+<p>Se você está usando um elemento <code>&lt;img></code> existente, você pode seguramente desenhá-la no canvas durante o evento <code>window.onload</code>.
+<p class="legend top" style="margin-left:6.5em"><span class=arrow>&#x21b6;</span> usando um elemento &lt;img><br></p>
 <pre><code>&lt;img <mark>id="cat"</mark> src="images/cat.png" alt="sleeping cat" width="177" height="113">
 &lt;canvas id="e" width="177" height="113">&lt;/canvas>
 &lt;script>
@@ -484,9 +484,9 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 };
 &lt;/script></code></pre>
 
-<p>If you&#8217;re creating the image object entirely in JavaScript, you can safely draw the image on the canvas during the <code>Image.onload</code> event.
+<p>Se você está criando o objeto de imagem inteiramente no JavaScript, você pode seguramente desenhar a imagem no canvas durante o evento <code>Image.onload</code>.
 
-<p class="legend top" style="margin-left:3.5em">using an Image() object <span class=arrow>&#x21b7;</span><br></p>
+<p class="legend top" style="margin-left:3.5em">usando um objeto Image() <span class=arrow>&#x21b7;</span><br></p>
 <pre><code>&lt;canvas id="e" width="177" height="113">&lt;/canvas>
 &lt;script>
   var canvas = document.getElementById("e");
@@ -498,11 +498,11 @@ context.fillRect(0, 0, 300, 225);</code></pre>
   };
 &lt;/script></code></pre>
 
-<p>The optional 3<sup>rd</sup> and 4<sup>th</sup> parameters to the <code>drawImage()</code> method control image scaling. This is the same image, scaled to half its width and height and drawn repeatedly at different coordinates within a single canvas.</p>
+<p>O 3<sup>º</sup> e 4<sup>º</sup> parâmetros opcionais do método <code>drawImage()</code> controlam a escala da imagem. Essa é a mesma imagem, escalada pela metade de sua largura e altura e desenhada repetidamente em diferentes coordenadas no mesmo canvas.</p>
 
 <canvas id=multicat width=500 height=375></canvas>
 
-<p>Here is the script that produces the &#8220;multicat&#8221; effect:
+<p>Aqui está o script que produz o efeito &#8220;multicat&#8221;:
 
 <pre style="float:left"><code>cat.onload = function() {
   for (var x = 0, y = 0;
@@ -512,11 +512,11 @@ context.fillRect(0, 0, 300, 225);</code></pre>
   }
 };
 </code></pre>
-<p class="legend right" style="margin-top:6em"><span class=arrow>&nbsp;&#x21dc;</span> Scale the image</p>
+<p class="legend right" style="margin-top:6em"><span class=arrow>&nbsp;&#x21dc;</span> Escala a imagem</p>
 
-<p class=clear>All this effort raises a legitimate question: why would you want to draw an image on a canvas in the first place? What does the extra complexity of image-on-a-canvas buy you over an <code>&lt;img></code> element and some <abbr>CSS</abbr> rules? Even the &#8220;multicat&#8221; effect could be replicated with 10 overlapping <code>&lt;img></code> elements.
+<p class=clear>Todo esse esforço levanta a seguinte questão: por que você deveria desenhar uma imagem dentro de um canvas em primeiro lugar? O que faz com que a complexidade extra de uma imagem em um canvas ofereça em cima de um elemento <code>&lt;img></code> e algumas regras <abbr>CSS</abbr>? Até mesmo o efeito &#8220;multicat&#8221; pode ser replicado com 10 elementos <code>&lt;img></code> sobrepostos.
 
-<p>The simple answer is, for the same reason you might want to <a href=#text>draw text on a canvas</a>. The <a href=#coordinates>canvas coordinates diagram</a> included text, lines, and shapes; the text-on-a-canvas was just one part of a larger work. A more complex diagram could easily use <code>drawImage()</code> to include icons, sprites, or other graphics.
+<p>A resposta simples é, pelo mesmo motivo que você iria querer <a href=#text>desenhar um texto no canvas</a>. O <a href=#coordinates>diagrama de coordenadas do canvas</a> inclui texto, linhas, e formas; o texto no canvas é só uma parte de um grande trabalho. Um diagrama mais complexo poderia facilmente utilizar o <code>drawImage()</code> para incluir ícones, sprites, e outros gráficos.
 
 <p class=a>&#x2767;
 
