@@ -118,7 +118,7 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:414px"><img src=i/openclipart.org_johnny_automatic_baseball_at_bat.png width=414 height=254 alt="baseball player at bat"><br><span id=live-canvas-text></span>
 
-<p>Mesmo que o seu navegador suporte a <a href=#canvas><abbr>API</abbr> canvas</a>, ele pode não suportar a <abbr>API</abbr> do <dfn>texto canvas</dfn>. A <abbr>API</abbr> do canvas cresceu através do tempo, e as funções de texto foram adicionadas por último. Alguns nabegadores passaram a suportar o canvas antes da <abbr>API</abbr> de texto estar completa.
+<p>Mesmo que o seu navegador suporte a <a href=#canvas><abbr>API</abbr> canvas</a>, ele pode não suportar a <abbr>API</abbr> do <dfn>texto canvas</dfn>. A <abbr>API</abbr> do canvas cresceu através do tempo, e as funções de texto foram adicionadas por último. Alguns navegadores passaram a suportar o canvas antes da <abbr>API</abbr> de texto estar completa.
 
 <p>A verificação da <abbr>API</abbr> do texto canvas usa a <a href=#techniques>técnica de detecção #2</a>. Se seu navegador suporta a <abbr>API</abbr> do canvas, o objeto <abbr>DOM</abbr> o cria para representar um elemento <code>&lt;canvas></code> que terá um <a href=canvas.html#shapes>método <code>getContext()</code></a>. Se seu navegador não suporta a <abbr>API</abbr> do canvas, o objeto <abbr>DOM</abbr> o cria  para um elemento <code>&lt;canvas></code> que terá apenas um conjunto comum de propriedades, mas nada específico do canvas.
 
@@ -133,7 +133,7 @@ body{counter-reset:h1 2}
 
 <pre><code>if (<mark>!supports_canvas()</mark>) { return false; }</code></pre>
 
-<p>Depois, você cria um elemento <code>&lt;canvas></code>de teste e pega seu context de desenho. Isso funcionará de forma garantida, por que a função <code>supports_canvas()</code> já verificou que o método <code>getContext()</code> existe em todo objeto canvas.
+<p>Depois, você cria um elemento <code>&lt;canvas></code> de teste e pega seu contexto de desenho. Isso funcionará de forma garantida, porque a função <code>supports_canvas()</code> já verificou que o método <code>getContext()</code> existe em todo objeto canvas.
 
 <pre><code>  var dummy_canvas = document.createElement('canvas');
   var context = <mark>dummy_canvas.getContext('2d')</mark>;</code></pre>
