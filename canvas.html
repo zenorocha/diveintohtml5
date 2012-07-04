@@ -520,11 +520,11 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=ie>What About IE?</h2>
+<h2 id=ie>E quanto ao IE?</h2>
 
-<p>Versions of Internet Explorer before 9.0 do not support the canvas <abbr>API</abbr>. (IE9 does <a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML5_canvas>fully support the canvas <abbr>API</abbr></a>.) However, those older versions of Internet Explorer <em>do</em> support a Microsoft-proprietary technology called <abbr>VML</abbr>, which can do many of the same things as the <code>&lt;canvas></code> element. And thus, <code>excanvas.js</code> was born.
+<p>Versões do Internet Explorer antes de 9.0 não suportam a <abbr>API</abbr> de canvas. (IE9 <a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML5_canvas>suporta completamente a <abbr>API</abbr></a> de canvas.) Entretanto, essas versões antigas do Internet Explorer suportam <em>sim</em> uma tecnologia proprietária da Microsoft chamada <abbr>VML</abbr>, na qual pode fazer muitas das coisas que o elemento <code>&lt;canvas></code> faz. E assim, nasceu o <code>excanvas.js</code>.
 
-<p><a href=http://code.google.com/p/explorercanvas/>Explorercanvas</a> (<code>excanvas.js</code>) is an open source, Apache-licensed JavaScript library that implements the canvas <abbr>API</abbr> in Internet Explorer. To use it, include the following <code>&lt;script></code> element at the top of your page.
+<p><a href=http://code.google.com/p/explorercanvas/>Explorercanvas</a> (<code>excanvas.js</code>) é uma biblioteca JavaScript de código livre, licenciada pela Apache que implementa a <abbr>API</abbr> de canvas no Internet Explorer. Para utilizá-la, inclua o seguinte elemento <code>&lt;script></code> no topo da sua página.
 
 <pre><code>&lt;!DOCTYPE html>
 &lt;html>
@@ -541,23 +541,23 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 &lt;/html>
 </code></pre>
 
-<p>The <code>&lt;!--[if lt IE 9]></code> and <code>&lt;![endif]--></code> bits are <a href="http://msdn.microsoft.com/en-us/library/ms537512(VS.85).aspx">conditional comments</a>. Internet Explorer interprets them like an <code>if</code> statement: &#8220;if the current browser is a version of Internet Explorer prior to (but not including) version 9, then execute this block.&#8221; Every other browser will treat the entire block as an <abbr>HTML</abbr> comment. The net result is that Internet Explorer 7 and 8 will download the <code>excanvas.js</code> script and execute it, but other browsers will ignore the script altogether (not download it, not execute it, not anything). This makes your page load faster in browsers that implement the canvas <abbr>API</abbr> natively.
+<p>O <code>&lt;!--[if lt IE 9]></code> e <code>&lt;![endif]--></code> são <a href="http://msdn.microsoft.com/en-us/library/ms537512(VS.85).aspx">comentários condicionais</a>. Internet Explorer interpreta eles como uma declaração <code>if</code>: &#8220;se o navegador é uma versão do Internet Explorer inferior da (mas não inclusa) versão 9, então execute o bloco.&#8221; Cada outro navegador vai tratar o bloco inteiro como um bloco de comentário <abbr>HTML</abbr>. O resultado na prática é que o Internet Explorer 7 e 8 irão realizar o download do script <code>excanvas.js</code> e executá-los, mas outros navegadores irão ignorar o script (não realizando o download dele, não executando ele, não fazendo nada). Isso irá fazer com que sua página carregue mais rapidamente para aqueles navegadores que implementem a <abbr>API</abbr> de canvas nativamente.
 
-<p>Once you include the <code>excanvas.js</code> in the <code>&lt;head></code> of your page, you don&#8217;t need to do anything else to accomodate Internet Explorer. Just include <code>&lt;canvas></code> elements in your markup, or create them dynamically with JavaScript. Follow the instructions in this chapter to get the drawing context of a <code>&lt;canvas></code> element, and you can draw shapes, text, and patterns.
+<p>Uma vez incluindo o <code>excanvas.js</code> no <code>&lt;head></code> da sua página, você não precisa fazer nada mais para acomodar o Internet Explorer. Só incluia os elementos <code>&lt;canvas></code> na sua marcação, ou crie eles dinâmicamente com JavaScript. Siga as instruções desse capítulo para capturar o contexto de desenho do elemento <code>&lt;canvas></code>, e você poderá desenhar formas, texto, e padrões.
 
-<p>Well&hellip; not quite. There are a few limitations:
+<p>Bem&hellip; não exatamente. Existem algumas limitações:
 
 <ol>
-<li><a href=#gradients>Gradients</a> can only be linear. <a href=https://developer.mozilla.org/En/Canvas_tutorial/Applying_styles_and_colors#A_createRadialGradient_example>Radial gradients</a> are not supported.
-<li>Patterns must be repeating in both directions.
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#clipping-region>Clipping regions</a> are not supported.
-<li>Non-uniform <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-scale>scaling</a> does not correctly scale strokes.
-<li>It&#8217;s slow. This should not come as a raging shock to anyone, since Internet Explorer's JavaScript parser is slower than other browsers to begin with. Once you start drawing complex shapes via a JavaScript library that translates commands to a completely different technology, things are going to get bogged down. You won&#8217;t notice the performance degradation in simple examples like drawing a few lines and transforming an image, but you&#8217;ll see it right away once you start doing canvas-based animation and other crazy stuff.
+<li><a href=#gradients>Degradês</a> só podem ser lineares. <a href=https://developer.mozilla.org/En/Canvas_tutorial/Applying_styles_and_colors#A_createRadialGradient_example>Degradês radiais</a> não são suportados.
+<li>Padrões devem se repetir em ambas as direções.
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#clipping-region>Regiões clipping </a> não são suportadas.
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-scale>Escala</a> não uniforme não funciona corretamente com escalas de bordas.
+<li>É lento. Isso não deve ser um choque violento para ninguém, já que o parser de JavaScript do Internet Explorer é mais lento do que dos outros navegadores para começar. Uma vez começando a desenhar formas complexas usando a biblioteca JavaScript library que traduz comandos para outro tecnologia completamente diferente, coisas vão naturalmente atolar. Você não irá notar degradação de performance em exemplos simples como desenhando algumas linhas e transformando uma imagem, mas você rapidamente irá notar uma vez que comece realizando animações baseadas em canvas ou outras coisas loucas.
 </ol>
 
-<p>There is one more caveat about using <code>excanvas.js</code>, and it&#8217;s a problem that I ran into while creating the examples in this chapter. ExplorerCanvas initializes its own faux-canvas interface automatically whenever you include the <code>excanvas.js</code> script in your <abbr>HTML</abbr> page. But that doesn&#8217;t mean that Internet Explorer is ready to use it immediately. In certain situations, you can run into a race condition where the faux-canvas interface is <em>almost</em>, but not quite, ready to use. The primary symptom of this state is that Internet Explorer will complain that &#8220;<samp>object doesn&#8217;t support this property or method</samp>&#8221; whenever you try to do anything with a <code>&lt;canvas></code> element, such as get its drawing context.
+<p>Há mais uma advertência sobre o uso de <code>excanvas.js</code>, e é um problema que passei enquanto criava o exemplo desse capítulo. ExplorerCanvas inicializa sua própria interface de falso-canvas automaticamente uma vez incluindo o script <code>excanvas.js</code> na sua página <abbr>HTML</abbr>. Mas isso não significa que o  Internet Explorer está pronto para usá-lo imediatamente. Em algumas situações, você pode rodar sob uma condição onde a interface do falso-canvas está <em>quase</em>, mas ainda não, pronta para ser usada. O principal sintoma desse estado é que o Internet Explorer irá reclamar que o &#8220;<samp>objeto não suporta essa propriedade ou método</samp>&#8221; sempre que você tentar fazer qualquer coisa com o elemento <code>&lt;canvas></code>, como pegar seu contexto de desenho.
 
-<p>The easiest solution to this is to defer all of your canvas-related manipulation until after the <code>onload</code> event fires. This may be a while &mdash; if your page has a lot of images or videos, they will delay the <code>onload</code> event &mdash; but it will give ExplorerCanvas time to work its magic.
+<p>A solução mais simples para fazer é adiar todas as suas manipulações relacionadas ao canvas até depois que evento <code>onload</code> seja disparado. Isto pode levar um tempo &mdash; se a sua página possui muitas imagens ou vídeos, elas irão atrasar o <code>onload</code> &mdash; mas irá dar ao ExplorerCanvas tempo para trabalhar na sua mágina.
 
 <p class=a>&#x2767;
 
