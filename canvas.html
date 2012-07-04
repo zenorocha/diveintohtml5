@@ -561,36 +561,36 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=halma>A Complete, Live Example</h2>
+<h2 id=halma>Um completo exemplo ao vivo</h2>
 
-<p>Halma is a centuries-old board game. Many variations exist. In this example, I&#8217;ve created a solitaire version of Halma with 9 pieces on a 9 &times; 9 board. In the beginning of the game, the pieces form a 3 &times; 3 square in the bottom-left corner of the board. The object of the game is to move all the pieces so they form a 3 &times; 3 square in the upper-right corner of the board, in the least number of moves.
+<p>Halma é um jogo de tabuleiro com séculos de idade. Muitas variações existem. Nesse exemplo, criei uma versão solitária de Halma com 9 peças em um tabuleiro 9 &times; 9. No início do jogo, as peças formam quadrado 3 &times; 3 no canto interior esquerdo do tabuleiro. O objetivo do jogo é mover todas as peças até que formem um quadrado 3 &times; 3 no canto superior direito do tabuleiro, com o menor número de movimentos.
 
-<p>There are two types of legal moves in Halma:
+<p>Existem dois tipos de movimentos legais no Halma:
 
 <ul>
-<li>Take a piece and move it to any adjacent empty square. An &#8220;empty&#8221; square is one that does not currently have a piece in it. An &#8220;adjacent&#8221; square is immediately north, south, east, west, northwest, northeast, southwest, or southeast of the piece&#8217;s current position. (The board does not wrap around from one side to the other. If a piece is in the left-most column, it can not move west, northwest, or southwest. If a piece is in the bottom-most row, it can not move south, southeast, or southwest.)
-<li>Take a piece and hop over an adjacent piece, and possibly repeat. That is, if you hop over an adjacent piece, then hop over <em>another</em> piece adjacent to your new position, that counts as a single move. In fact, any number of hops still counts as a single move. (Since the goal is to minimize the total number of moves, doing well in Halma involves constructing, and then using, long chains of staggered pieces so that other pieces can hop over them in long sequences.)
+<li>Pegue uma peça e mova para qualquer quadrado vazio adjacente. Um quadrado &#8220;vazio&#8221; é um que não contém nenhuma peça nele. Um quadrado &#8220;adjacente&#8221; é um imediatamente ao norte, sul, leste, oeste, noroeste, nordeste, sudoeste ou sudeste da peça na sua posição atual. (O tabuleiro não é girado em torno de um lado para outro. Se uma peça está na coluna mais a esquerda, não pode se mover para oeste, noroeste ou sudoeste. Se uma peça está na linha mais embaixo, não pode se mover para o sul, sudeste ou sudoeste.)
+<li>Pegue uma peça e pule por cima de uma peça adjacente, e possivelmente repita. Isso é, se você pular por cima de uma peça adjacente, então pule por cima de <em>outra</em> peça adjacente para sua nova posição, isso conta como um único movimento. Na verdade, qualquer número de puladas por cima continuam contando como um movimento único. (Já que o objetivo é minimizar o número total de movimentos, ir bem no Halma envolve construir, e depois usar, longas cadeias escalonadas para que então outras peças possam pular por cima em uma longa sequência.)
 </ul>
 
-<p>Here is the game itself. You can also <a href=examples/canvas-halma.html>play it on a separate page</a> if you want to poke at it with your browser&#8217;s developer tools.</p>
+<p>Aqui está o jogo propriamente dito. Você também pode <a href=examples/canvas-halma.html>jogá-lo em uma página separada</a> se você quiser cutucar seu developer tools.</p>
 
 <canvas id=halmacanvas></canvas>
 
 <p style="margin-top:0;font-style:normal" class="legend">Moves: <span id=halmamovecount>0</span>
 
-<p>How does it work? I&#8217;m so glad you asked. I won&#8217;t show <em>all</em> the code here. (You can see it at <a href=examples/halma.js>diveintohtml5.org/examples/halma.js</a>.) I&#8217;ll skip over most of the gameplay code itself, but I want to highlight a few parts of the code that deal with actually drawing on the canvas and responding to mouse clicks on the canvas element.
+<p>Como isso funciona? Estou feliz que você perguntou. Não irei mostrar <em>todo</em> código aqui. (Você pode vê-lo em <a href=examples/halma.js>diveintohtml5.org/examples/halma.js</a>.) Na verdade irei pular a maioria do código de jogabilidade, mas quero ressaltar algumas partes do código que realmente mexem o desenho no canvas e a resposta aos cliques de mouse no elemento canvas.
 
-<p>During page load, we initialize the game by setting the dimensions of the <code>&lt;canvas></code> itself and storing a reference to its drawing context.
+<p>Durante o carregamento da página, nós inicializamos o jogo ao definir as dimensões no <code>&lt;canvas></code> e guardamos as referências no seu contexto de desenho.
 
 <pre><code>gCanvasElement.width = kPixelWidth;
 gCanvasElement.height = kPixelHeight;
 gDrawingContext = gCanvasElement.getContext("2d");</code></pre>
 
-<p>Then we do something you haven&#8217;t seen yet: we add an event listener to the <code>&lt;canvas></code> element to listen for click events.
+<p>Depois fazemos algo que você ainda não viu: nós adicionamos uma escuta de evento ao elemento <code>&lt;canvas></code>para ouvir por eventos de clique.
 
 <pre><code>gCanvasElement.<mark>addEventListener</mark>(<mark>"click"</mark>, halmaOnClick, false);</code></pre>
 
-<p>The <code>halmaOnClick()</code> function gets called when the user clicks anywhere within the canvas. Its argument is a <code>MouseEvent</code> object that contains information about where the user clicked.
+<p>A função <code>halmaOnClick()</code> é chamada quando o usuário clica em qualquer lugar no canvas. Seu argumento é um objeto <code>MouseEvent</code> que contém as informações sobre onde o usuário clicou.
 
 <pre><code>function halmaOnClick(e) {
     var cell = <mark>getCursorPosition(e)</mark>;
