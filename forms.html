@@ -193,7 +193,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p>Todos esses campos continuam funcionando em <abbr>HTML5</abbr>. Se você &#8220;atualizar para <abbr>HTML5</abbr>&#8221; (quem sabe, <a href=semantics.html#the-doctype>mudando o DOCTYPE</a>), não vai ser preciso fazer nenhuma mudança nos formulários. Viva a compatibilidade!
 
-<p>No entanto, há 13 novos tipos de campos no <abbr>HTML5</abbr> , e por razões que ficarão claras em breve <em>não</em> há porque não começar a utiliza-los.
+<p>No entanto, há 13 novos tipos de campos na <abbr>HTML5</abbr> , e por razões que ficarão claras em breve <em>não</em> há porque não começar a utiliza-los.
 
 <p>O primeiro destes novos campos é o <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state>endereço de email</a>. Se declara assim:
 
@@ -204,13 +204,13 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p>Eu estava prestes a escrever uma frase que começava com &#8220;nos navegadores que não suportam <code>type="email"</code>&hellip;&#8221; mas me impedi. Por que? Porquê eu não tenho certeza do que quer dizer um navegador não suportar <code>type="email"</code>. Todos os navegadores &#8220;suportam&#8221; <code>type="email"</code>. Eles só não fazem nada de especial com ele (você verá alguns exemplos especiais de tratamento em breve), mas navegadores que não reconhecem <code>type="email"</code> irão trata-lo como <code>type="text"</code> e renderizar um tipo de campo simples.
 
-<p>Eu não consigo enfatizar quão importante ele é. A internet possui milhões de formulários que pedem para digitar um endereço de email, e todos eles usam <code>&lt;input type="text"></code>. Você vê um campo de texto, você digita um endereço de email na caixa, e é isto. Com o <abbr>HTML5</abbr> utilize a definição <code>type="email"</code>. Os navegadores vão surtar? Não. Todo o tipo de navegador da Terra trata um atributo <code>type</code> nulo como <code>type="text"</code> &mdash; inclusive o IE6. Então você pode &#8220;atualizar&#8221; seu formulário para <code>type="email"</code> agora.
+<p>Eu não consigo enfatizar quão importante ele é. A internet possui milhões de formulários que pedem para digitar um endereço de email, e todos eles usam <code>&lt;input type="text"></code>. Você vê um campo de texto, você digita um endereço de email na caixa, e é isto. Com a <abbr>HTML5</abbr> utilize a definição <code>type="email"</code>. Os navegadores vão surtar? Não. Todo o tipo de navegador da Terra trata um atributo <code>type</code> nulo como <code>type="text"</code> &mdash; inclusive o IE6. Então você pode &#8220;atualizar&#8221; seu formulário para <code>type="email"</code> agora.
 
-<p>O que você quer dizer com os navegadores <em>AINDA</em> suportam <code>type="email"</code>? Bom, significa várias coisas. A especificação do <abbr>HTML5</abbr> não exige nenhuma interface particular para este novo tipo de campo. A maioria dos navegadores desktop como Safari, Chrome, Opera e Firefox simplesmente renderiam uma caixa de texto &mdash; exatamente como <code>type="text"</code> &mdash; logo, seu usuário nunca irá notar a diferença (<a href=#validation>até tentar enviar o formulário</a>).
+<p>O que você quer dizer com os navegadores <em>AINDA</em> suportam <code>type="email"</code>? Bom, significa várias coisas. A especificação da <abbr>HTML5</abbr> não exige nenhuma interface particular para este novo tipo de campo. A maioria dos navegadores desktop como Safari, Chrome, Opera e Firefox simplesmente renderiam uma caixa de texto &mdash; exatamente como <code>type="text"</code> &mdash; logo, seu usuário nunca irá notar a diferença (<a href=#validation>até tentar enviar o formulário</a>).
 
 <p>Então surge o iPhone.
 
-<p>O iPhone não possui um teclado físico. A digitação é feita por toque no teclado virtual, que surge nos momentos apropriados. Por exemplo, quando você seleciona um campo de um formulário web. A Apple fez algo inteligente no navegador do iPhone. Ele reconhece vários dos novos tipos de campos do <abbr>HTML5</abbr> e <em>dinamicamente altera o teclado virtual</em> adaptado para o campo específico.
+<p>O iPhone não possui um teclado físico. A digitação é feita por toque no teclado virtual, que surge nos momentos apropriados. Por exemplo, quando você seleciona um campo de um formulário web. A Apple fez algo inteligente no navegador do iPhone. Ele reconhece vários dos novos tipos de campos da <abbr>HTML5</abbr> e <em>dinamicamente altera o teclado virtual</em> adaptado para o campo específico.
 
 <p>Por exemplo, o campo de endereço de email é um texto, certo? Certo, mas ele precisa de um tipo especial de texto, praticamente todos os endereços de email contém o <code>@</code> sign and e pelo menos um ponto (<code>.</code>), e não costumam ter nenhum espaço. Então quando você usa o iPhone e foca em um campo <code>&lt;input type="email"></code> , você tem um teclado virtual que possui uma barra de espaço menor que a usual, mais teclas especificas para os caracteres <code>@</code> e (<code>.</code>).
 
