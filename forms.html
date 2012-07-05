@@ -220,17 +220,17 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p class=a>&#x2767;
 
-<h2 id=type-url>Web Addresses</h2>
+<h2 id=type-url>Endereços web</h2>
 
-<p>Web addresses &mdash; which standards wonks call <abbr>URLs</abbr>, except for a few <a href="http://www.douglasadams.com/dna/pedants.html">pedants</a> which call them <abbr>URIs</abbr> &mdash; are another type of specialized text. The syntax of a web address is constrained by the relevant Internet standards. If someone asks you to enter a web address into a form, they&#8217;re expecting something like &#8220;<code>http://www.google.com/</code>&#8221;, not &#8220;125 Farwood Road.&#8221; Forward slashes are common &mdash; even Google&#8217;s home page has three of them. Periods are also common, but spaces are forbidden. And every web address has a domain suffix like &#8220;.com&#8221; or &#8220;.org&#8221;.
+<p>Endereços web - que a maioria dos usuários avançados de internet chamam de <abbr>URLs</abbr>, exceto por alguns poucos  <a href="http://www.douglasadams.com/dna/pedants.html">pedantes</a> que chamam de <abbr>URIs</abbr> &mdash; outro tipo de texto especializado. A sintaxe dos endereços web é definida pelos padrões de relevância da Internet. Se alguém pedir para você digitar um endereço web em um formulário, é esperado algo como &#8220;<code>http://www.google.com/</code>&#8221;, não &#8220;Rua Getulio Vargas, 160.&#8221; Barras são comuns &mdash; inclusive a pagina inicial do Google possui três delas. Pontos são tão comuns quanto, mas espaços são proibidos. E todos os endreços web possui um sufixo relacionado a um domínio como:  &#8220;.com&#8221; ou &#8220;.org&#8221;.
 
-<p>Behold... (drum roll please)... <code>&lt;input type="url"></code>. On the iPhone, it looks like this:
+<p>Observem... (rufar de tambores, por favor)... o <code>&lt;input type="url"></code>. No iPhone:
 
-<p class=c><img src=i/input-type-url.png alt="iPhone rendering input type=url field" width=222 height=333 class=fr><br><a href=examples/input-type-url.html>Test <code>type="url"</code> for yourself</a>.
+<p class=c><img src=i/input-type-url.png alt="Renderização do iPhone de campo tipo=url" width=222 height=333 class=fr><br><a href=examples/input-type-url.html>Faça você o teste do campo <code>type="url"</code></a>.
 
-<p>The iPhone altered its virtual keyboard, just like it did for <a href=#type-email>email addresses</a>, but now optimized for web addresses instead. The space bar has been completely replaced with three virtual keys: a period, a forward slash, and a &#8220;.com&#8221; button. (You can long-press the &#8220;.com&#8221; button to choose other common suffixes like &#8220;.org&#8221; or &#8220;.net&#8221;.)
+<p>O Iphone altera seu teclado virtual, do mesmo modo que ele faz para os campos de <a href=#type-email>endereço de email</a>, só que desta vez otimizado para endereços web. A barra de espaço é trocada por três teclas virtuais: um ponto, uma barra, e um botão &#8220;.com&#8221;. (Você pode pressionar por um tempo o botão &#8220;.com&#8221; para escolher outros sufixos comuns como &#8220;.org&#8221; ou &#8220;.net&#8221;.)
 
-<p>Most modern desktop browsers simply render <code>type="url"</code> like a regular text box, so users won&#8217;t even notice <a href=#validation>until they submit the form</a>. Browsers that don&#8217;t support <abbr>HTML5</abbr> will treat <code>type="url"</code> exactly like <code>type="text"</code>, so there&#8217;s no downside to using it for all your web-address-inputting needs.
+<p>A maioria dos navegadores modernos, simplesmente irão renderizar um campo <code>type="url"</code> como uma caixa de texto, logo seu usuário não irão notar a diferença <a href=#validation>até enviarem o formulário</a>. Navegadores que suportam a <abbr>HTML5</abbr> irão tratar o <code>type="url"</code> exatamente como um <code>type="text"</code>, por isso não há desvantagem em usa-los para todos os campos que requisitam um endereço web.
 
 <p class=a>&#x2767;
 
