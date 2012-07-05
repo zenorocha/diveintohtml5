@@ -595,7 +595,7 @@ gDrawingContext = gCanvasElement.getContext("2d");</code></pre>
 <pre><code>function halmaOnClick(e) {
     var cell = <mark>getCursorPosition(e)</mark>;
 
-    // the rest of this is just gameplay logic
+    // o resto é só lógica do jogo
     for (var i = 0; i &lt; gNumPieces; i++) {
 	if ((gPieces[i].row == cell.row) && 
 	    (gPieces[i].column == cell.column)) {
@@ -606,7 +606,7 @@ gDrawingContext = gCanvasElement.getContext("2d");</code></pre>
     clickOnEmptyCell(cell);
 }</code></pre>
 
-<p>The next step is to take the <code>MouseEvent</code> object and calculate which square on the Halma board just got clicked. The Halma board takes up the entire canvas, so every click is <em>somewhere</em> on the board. We just need to figure out where. This is tricky, because mouse events are implemented differently in just about every browser.
+<p>O próximo passo é pegar o objeto <code>MouseEvent</code> e calcular em qual quadrado no tabuleiro Halma acaba de ser clicado. O tabuleiro Halma contempla todo o  canvas, ou seja cada clique em <em>qualquer lugar</em> do tabuleiro. Nós só precisamos descobrir onde. Isto é complicado, porque eventos de mouse são implementados diferentemente em quase todo navegador.
 
 <pre><code>function getCursorPosition(e) {
     var x;
@@ -622,47 +622,47 @@ gDrawingContext = gCanvasElement.getContext("2d");</code></pre>
             document.documentElement.scrollTop;
     }</code></pre>
 
-<p>At this point, we have <code>x</code> and <code>y</code> coordinates that are relative to the document (that is, the entire <abbr>HTML</abbr> page). That&#8217;s not quite useful yet. We want coordinates relative to the canvas.
+<p>Nesse ponto, nós temos as coordenadas <code>x</code> e <code>y</code> que são relativas ao documento (isso é, a página <abbr>HTML</abbr> inteira). Isso não é muito útil ainda. Nós queremos as coordenadas relativas ao canvas.
 
 <pre><code>    x -= gCanvasElement.offsetLeft;
     y -= gCanvasElement.offsetTop;</code></pre>
 
-<p>Now we have <code>x</code> and <code>y</code> coordinates that are <a href=#coordinates>relative to the canvas</a>. That is, if <code>x</code> is 0 and <code>y</code> is 0 at this point, we know that the user just clicked the top-left pixel of the canvas.
+<p>Agora nós temos as coordenadas <code>x</code> e <code>y</code> que são <a href=#coordinates>relativas ao canvas</a>. Isso é, se <code>x</code> é 0 e <code>y</code> é 0 nesse ponto, nós sabemos que o usuário acabou de clicar no pixel do canto superior esquerdo do canvas.
 
-<p>From here, we can calculate which Halma square the user clicked, and then act accordingly.
+<p>Daqui em diante, nós podemos calcular em qual quadrado do Halma o usuário clicou, e então agir de acordo com isso.
 
 <pre><code>    var cell = new Cell(Math.floor(y/kPieceHeight),
                         Math.floor(x/kPieceWidth));
     return cell;
 }</code></pre>
 
-<p>Whew! Mouse events are tough. But you can use the same logic (in fact, this exact code) in all of your own canvas-based applications. Remember: mouse click &rarr; document-relative coordinates &rarr; canvas-relative coordinates &rarr; application-specific code.
+<p>Ufa! Eventos de mouse são difíceis. Mas você pode usar a mesma lógica (na verdade, o exato mesmo código) em todas as suas aplicações baseadas em canvas. Lembre-se: mouse click &rarr; coordenadas relativas ao documento &rarr; coordenadas relativas ao canvas &rarr; código específico de aplicação.
 
-<p>OK, let&#8217;s look at the main drawing routine. Because the graphics are so simple, I&#8217;ve chosen to clear and redraw the board in its entirety every time anything changes within the game. This is not strictly necessary. The canvas drawing context will retain whatever you have previously drawn on it, even if the user scrolls the canvas out of view or changes to another tab and then comes back later. If you&#8217;re developing a canvas-based application with more complicated graphics (such as an arcade game), you can optimize performance by tracking which regions of the canvas are &#8220;dirty&#8221; and redrawing just the dirty regions. But that is outside the scope of this book.
+<p>OK, vamos olhar para a rotina principal do desenho. Porque os gráficos são simples, escolhi limpar e redesenhar o tabuleiro em cada hora que houver qualquer mudança no jogo. Isso não é estritamente necessário. O contexto de desenho do canvas irá reter qualquer coisa que você tenha desenhado anteriormente nele, até mesmo se o usuário realizar scroll para fora do campo de visão ou mudar de uma aba para outra e depois voltar. Se você está desenvolvendo uma aplicação baseada em canvas com gráficos mais complicados (como um jogo de), você pode otimizar a performance ao identificar quais regiões do canvas estão &#8220;sujas&#8221; e redesenhar apenas as regiões sujas. Mas isso está fora do escopo desse livro.
 
 <pre><code>gDrawingContext.clearRect(0, 0, kPixelWidth, kPixelHeight);</code></pre>
 
-<p>The board-drawing routine should look familiar. It&#8217;s similar to how we drew the <a href=#coordinates>canvas coordinates diagram</a> earlier in this chapter.
+<p>A rotina de desenho do tabuleiro deve lhe parecer familiar. É similar como nós desenhamos o <a href=#coordinates>digrama de coordenadas do canvas</a> anteriormmente nesse capítulo.
 
 <pre><code>gDrawingContext.<mark>beginPath()</mark>;
 
-/* vertical lines */
+/* linhas verticais */
 for (var x = 0; x &lt;= kPixelWidth; x += kPieceWidth) {
     gDrawingContext.<mark>moveTo</mark>(0.5 + x, 0);
     gDrawingContext.<mark>lineTo</mark>(0.5 + x, kPixelHeight);
 }
 
-/* horizontal lines */
+/* linhas horizontais */
 for (var y = 0; y &lt;= kPixelHeight; y += kPieceHeight) {
     gDrawingContext.<mark>moveTo</mark>(0, 0.5 + y);
     gDrawingContext.<mark>lineTo</mark>(kPixelWidth, 0.5 +  y);
 }
 
-/* draw it! */
+/* desenhe! */
 gDrawingContext.<mark>strokeStyle</mark> = "#ccc";
 gDrawingContext.<mark>stroke()</mark>;</code></pre>
 
-<p>The real fun begins when we go to draw each of the individual pieces. A piece is a circle, something we haven&#8217;t drawn before. Furthermore, if the user selects a piece in anticipation of moving it, we want to draw that piece as a filled-in circle. Here, the argument <code>p</code> represents a piece, which has <code>row</code> and <code>column</code> properties that denote the piece&#8217;s current location on the board. We use some in-game constants to translate <code>(column, row)</code> into canvas-relative <code>(x, y)</code> coordinates, then draw a circle, then (if the piece is selected) fill in the circle with a solid color.
+<p>A brincadeira começa de verdade quando nós vamos desenhar cada peça individual. Uma peça é um círculo, algo que ainda não desenhamos antes. Além disso, se o usuário seleciona a peça em antecipação ao seu movimento, nós queremos desenhar a peça em forma de um círculo preenchido. Aqui, o argumento <code>p</code> representa a peça, na qual possui as propriedades de <code>linha</code> e <code>coluna</code> que denotam a posição atual da peça no tabuleiro. Nós usamos algumas constante do jogo para traduzir <code>(coluna, linha)</code> em coordenadas <code>(x, y)</code> relativas ao canvas, então desenhar o círculo, então (se a peça for selecionada) preencher o círculo com uma cor sólida.
 
 <pre><code>function drawPiece(p, selected) {
     var column = p.column;
@@ -671,48 +671,48 @@ gDrawingContext.<mark>stroke()</mark>;</code></pre>
     var <mark>y</mark> = (row * kPieceHeight) + (kPieceHeight/2);
     var radius = (kPieceWidth/2) - (kPieceWidth/10);</code></pre>
 
-<p>That&#8217;s the end of the game-specific logic. Now we have <code>(x, y)</code> coordinates, relative to the canvas, for the center of the circle we want to draw. There is no <code>circle()</code> method in the canvas <abbr>API</abbr>, but there is an <code>arc()</code> method. And really, what is a circle but an arc that goes all the way around? Do you remember your basic geometry? The <code>arc()</code> method takes a center point <code>(x, y)</code>, a radius, a start and end angle (in radians), and a direction flag (<code>false</code> for clockwise, <code>true</code> for counter-clockwise). You can use the <code>Math</code> module that&#8217;s built into JavaScript to calculate radians.
+<p>Esse é o fim da lógica específica do jogo. Agora nós temos as coordenadas <code>(x, y)</code>, relativas ao canvas, para o centro do círculo que queremos desenhar. Não há um método <code>circle()</code> na <abbr>API</abbr> do canvas, mas há um método <code>arc()</code>. E realmente, o que é um círculo sem um arco que vai a toda volta? Você lembra de geometria básica? O método <code>arc()</code> pega o ponto central <code>(x, y)</code>, o raio, o ângulo inicial e final (em radianos), e a direção (<code>false</code> para sentido horário, <code>true</code> para sentido anti-horário). Você pode usar o módulo <code>Math</code> que está dentro do JavaScript para calcular radianos.
 
 <pre><code>gDrawingContext.beginPath();
 gDrawingContext.<mark>arc</mark>(x, y, radius, 0, <mark>Math.PI * 2</mark>, false);
 gDrawingContext.closePath();</code></pre>
 
-<p>But wait! Nothing has been drawn yet. Like <code>moveTo()</code> and <code>lineTo</code>, the <code>arc()</code> method is <a href=#paths>a &#8220;pencil&#8221; method</a>. To actually draw the circle, we need to set the <code>strokeStyle</code> and call <code>stroke()</code> to trace it in &#8220;ink.&#8221;
+<p>Mas espera aí! Nada foi desenhado ainda. Como <code>moveTo()</code> e <code>lineTo</code>, o método <code>arc()</code> é um método <a href=#paths>&#8220;lápis&#8221;</a>. Para realmente desenhar o círculo, nós precisamos definir o <code>strokeStyle</code> e chamar o <code>stroke()</code> para traçar a &#8220;tinta.&#8221;
 
 <pre><code>gDrawingContext.<mark>strokeStyle</mark> = "#000";
 gDrawingContext.<mark>stroke()</mark>;</code></pre>
 
-<p>What if the piece is selected? We can re-use the same path we created to draw the outline of the piece, to fill in the circle with a solid color.
+<p>E se a peça estiver selecionada? Nós podemos reutilizar o mesmo caminho que criamos para desenhar o contorno da peça, para preencher o círculo com uma cor sólida.
 
 <pre><code>if (selected) {
     gDrawingContext.<mark>fillStyle</mark> = "#000";
     gDrawingContext.<mark>fill()</mark>;
 }</code></pre>
 
-<p>And that&#8217;s&hellip; well, that&#8217;s pretty much it. The rest of the program is game-specific logic &mdash; distinguishing between valid and invalid moves, keeping track of the number of moves, detecting whether the game is over. With 9 circles, a few straight lines, and 1 <code>onclick</code> handler, we&#8217;ve created an entire game in <code>&lt;canvas></code>. Huzzah!
+<p>E isso é&hellip; bem, isso é tudo. O resto do programa é lógica específica do jogo &mdash; distinguindo entre movimentos válidos e inválidos, registrando o número de movimentos, detectando se o jogo está terminado. Com 9 círculos, algumas linhas, e 1 <code>onclick</code> handler, nós criamos um jogo inteiramente em <code>&lt;canvas></code>. Huzzah!
 
 <p class=a>&#x2767;
 
-<h2 id=further-reading>Further Reading</h2>
+<h2 id=further-reading>Leitura complementar</h2>
 
 <ul>
-<li><a href=https://developer.mozilla.org/en/Canvas_tutorial>Canvas tutorial</a> on Mozilla Developer Center
-<li><a href=http://dev.opera.com/articles/view/html-5-canvas-the-basics/><abbr>HTML5</abbr> <code>canvas</code> &mdash; the basics</a>, by Mihai Sucan
-<li><a href=http://www.canvasdemos.com/>CanvasDemos.com</a>: demos, tools, and tutorials for the <abbr>HTML</abbr> <code>canvas</code> element
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>The <code>canvas</code> element</a> in the <abbr>HTML5</abbr> draft standard
-<li><a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML5_canvas>Internet Explorer 9 Guide for Developers: HTML5 <code>canvas</code> element</a>
+<li><a href=https://developer.mozilla.org/en/Canvas_tutorial>Canvas tutorial</a> no Mozilla Developer Center
+<li><a href=http://dev.opera.com/articles/view/html-5-canvas-the-basics/><abbr>HTML5</abbr> <code>canvas</code> &mdash; o básico</a>, por Mihai Sucan
+<li><a href=http://www.canvasdemos.com/>CanvasDemos.com</a>: demos, ferramentas, e tutoriais para o elemento <abbr>HTML</abbr> <code>canvas</code>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>O elemento <code>canvas</code></a> no rascunho da especificação do <abbr>HTML5</abbr>
+<li><a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML5_canvas>Internet Explorer 9 Guia para desenvolvedores: elemento HTML5 <code>canvas</code></a>
 </ul>
 
 <p class=a>&#x2767;
 
-<p>This has been &#8220;Let&#8217;s Call It A Draw(ing Surface).&#8221; The <a href=table-of-contents.html>full table of contents</a> has more if you&#8217;d like to keep reading.
+<p>Isso foi &#8220;Vamos Chamá-lo (Superfície) De Desenho.&#8221; Consulte o <a href=table-of-contents.html>Sumário</a>, caso queira continuar com a leitura.
 
-<div class=pf>
-<h4>Did You Know?</h4>
-<div class=moneybags>
-<blockquote><p>In association with Google Press, O&#8217;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &#8220;HTML5: Up &amp; Running,&#8221; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &#8220;HTML5: Up &amp; Running&#8221; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&#8217;Reilly</a>. You&#8217;ll get a book, and I&#8217;ll get a buck. I do not currently accept direct donations.
-</blockquote>
+<div class="pf">
+<h4>Você sabia?</h4>
+<div class="moneybags">
+<blockquote><p>Em associação a <span lang="en">Google Press</span>, O&#8217;Reilly está distruindo este livro em variados formatos, incluindo papel, ePub, Mobi, <abbr>DRM</abbr>-free e <abbr>PDF</abbr>. A edição paga é chamada <span lang="en">“HTML5: Up &amp; Running”</span> e está disponível agora. Este capítulo está incluído na versão paga.
+</p><p>Se você gostou deste capítulo e quer mostrar sua apreciação, basta <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">comprar o livro “<abbr>HTML5</abbr>: Up &amp; Running” com esse link afiliado</a> ou <a href="http://oreilly.com/catalog/9780596806033">comprar a edição eletrônica diretamente da O&#8217;Reilly</a>. Você vai ganhar um livro, e eu vou ganhar um trocado. Atualmente, não aceito doações diretas.
+</p></blockquote>
 </div>
 </div>
 
