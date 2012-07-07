@@ -16,7 +16,7 @@ body{counter-reset:h1 4}
 
 <h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-h.png alt=H width=107 height=105>TML 5 define <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>o elemento &lt;canvas&gt; </a> como &#8220;uma tela bitmap de resolução depentente que pode ser usada para renderizar gráficos, jogos, ou outras imagens em tempo real.&#8221; A tag <dfn>canvas</dfn> é um retângulo na sua página, onde você pode usar JavaScript para desenhar o que você quiser.</p>
+<p class=f><img src=i/aoc-h.png alt=H width=107 height=105>TML 5 define <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>o elemento &lt;canvas&gt; </a> como &#8220;uma tela bitmap de resolução dependente que pode ser usada para renderizar gráficos, jogos, ou outras imagens em tempo real.&#8221; A tag <dfn>canvas</dfn> é um retângulo na sua página, onde você pode usar JavaScript para desenhar o que você quiser.</p>
 
 <table class=bc>
 <caption>Suporte Básico ao &lt;canvas></caption>
@@ -430,7 +430,7 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=images>Images</h2>
+<h2 id=images>Imagens</h2>
 
 <table class=bc>
 <thead>
@@ -441,38 +441,38 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 <tr><td colspan=7 style="text-align:left">* Internet Explorer 7 e 8 necessitam da biblioteca <a href=http://code.google.com/p/explorercanvas/>explorercanvas</a>. Internet Explorer 9 suporta <code>&lt;canvas></code> imagens nativamente.
 </table>
 
-<p>Here is a cat:
+<p>Aqui está um gato:
 
 <p style="float:left"><img src=i/openclipart.org_media_files_johnny_automatic_1360.png alt="sleeping cat" width=177 height=113 id=cat>
-<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> An &lt;img> element</p>
+<p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x21dc;</span> Um elemento &lt;img></p>
 
-<p class=clear>Here is the same cat, drawn on a canvas:
+<p class=clear>Aqui está o mesmo gato, só que desenhado em um canvas:
 
 <div style="float:right">
-<p class="legend left" style="margin-top:2em">A &lt;canvas> element <span class=arrow>&#x21dd;&nbsp;</span></p>
+<p class="legend left" style="margin-top:2em">Um elemento &lt;canvas> <span class=arrow>&#x21dd;&nbsp;</span></p>
 <canvas id=e width=177 height=113></canvas>
 </div>
 
-<p class=clear>The canvas drawing context defines a <code>drawImage()</code> method for drawing an image on a canvas. The method can take three, five, or nine arguments.
+<p class=clear>O contexto de desenho do canvas define o método <code>drawImage()</code> para desenhar uma imagem no canvas. O método pode ter três, cinco ou nove argumentos.
 
 <ul>
-<li><code>drawImage(image, dx, dy)</code> takes an image and draws it on the canvas. The given coordinates <code>(dx, dy)</code> will be the upper-left corner of the image. Coordinates <code>(0, 0)</code> would draw the image at the upper-left corner of the canvas.
-<li><code>drawImage(image, dx, dy, dw, dh)</code> takes an image, scales it to a width of <code>dw</code> and a height of <code>dh</code>, and draws it on the canvas at coordinates <code>(dx, dy)</code>.
-<li><code>drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh)</code> takes an image, clips it to the rectangle <code>(sx, sy, sw, sh)</code>, scales it to dimensions <code>(dw, dh)</code>, and draws it on the canvas at coordinates <code>(dx, dy)</code>.
+<li><code>drawImage(image, dx, dy)</code> pega uma imagem e a desenha no canvas. A coordenada <code>(dx, dy)</code> será o canto superior esquerdo da imagem. Coordenadas <code>(0, 0)</code> devem desenhar a imagem no canto superior esquerdo do canvas.
+<li><code>drawImage(image, dx, dy, dw, dh)</code> pega uma imagem, escala para a largura de <code>dw</code> e altura de <code>dh</code>, e a desenha no canvas nas coordenadas <code>(dx, dy)</code>.
+<li><code>drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh)</code> pega uma imagem, ajusta ela para o retângulo <code>(sx, sy, sw, sh)</code>, escala para as dimensões <code>(dw, dh)</code>, e a desenha no canvas nas coordenadas <code>(dx, dy)</code>.
 </ul>
 
-<p>The <abbr>HTML5</abbr> specification <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#images>explains the <code>drawImage()</code> parameters</a>:
+<p>A especificação da <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#images>explica os parâmetros de <code>drawImage()</code></a>:
 
 <blockquote cite=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#images>
-<p>The source rectangle is the rectangle [within the source image] whose corners are the four points <code>(sx, sy)</code>, <code>(sx+sw, sy)</code>, <code>(sx+sw, sy+sh)</code>, <code>(sx, sy+sh)</code>.
-<p>The destination rectangle is the rectangle [within the canvas] whose corners are the four points <code>(dx, dy)</code>, <code>(dx+dw, dy)</code>, <code>(dx+dw, dy+dh)</code>, <code>(dx, dy+dh)</code>.
+<p>O retângulo de origem é o retângulo [no interior da imagem fonte] cujos cantos são os quatro pontos <code>(sx, sy)</code>, <code>(sx+sw, sy)</code>, <code>(sx+sw, sy+sh)</code>, <code>(sx, sy+sh)</code>.
+<p>O retângulo de destino é o retângulo [no interior do canvas] cujos cantos são os quatro pontos <code>(dx, dy)</code>, <code>(dx+dw, dy)</code>, <code>(dx+dw, dy+dh)</code>, <code>(dx, dy+dh)</code>.
 <p><img src=i/drawImage.png alt="diagram of drawImage parameters" width=327 height=330>
 </blockquote>
 
-<p>To draw an image on a canvas, you need an image. The image can be an existing <code>&lt;img></code> element, or you can create an <code>Image()</code> object with JavaScript. Either way, you need to ensure that the image is fully loaded before you can draw it on the canvas.
+<p>Para desenhar uma imagem no canvas, você precisa de uma imagem. A imagem pode ser um elemento <code>&lt;img></code> existente, ou pode ser criada com o objeto <code>Image()</code> do JavaScript. De qualquer maneira, você precisa garantir que a imagem está completamente carregada antes de desenhá-la no canvas.
 
-<p>If you&#8217;re using an existing <code>&lt;img></code> element, you can safely draw it on the canvas during the <code>window.onload</code> event.
-<p class="legend top" style="margin-left:6.5em"><span class=arrow>&#x21b6;</span> using an &lt;img> element<br></p>
+<p>Se você está usando um elemento <code>&lt;img></code> existente, você pode seguramente desenhá-la no canvas durante o evento <code>window.onload</code>.
+<p class="legend top" style="margin-left:6.5em"><span class=arrow>&#x21b6;</span> usando um elemento &lt;img><br></p>
 <pre><code>&lt;img <mark>id="cat"</mark> src="images/cat.png" alt="sleeping cat" width="177" height="113">
 &lt;canvas id="e" width="177" height="113">&lt;/canvas>
 &lt;script>
@@ -484,9 +484,9 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 };
 &lt;/script></code></pre>
 
-<p>If you&#8217;re creating the image object entirely in JavaScript, you can safely draw the image on the canvas during the <code>Image.onload</code> event.
+<p>Se você está criando o objeto de imagem inteiramente no JavaScript, você pode seguramente desenhar a imagem no canvas durante o evento <code>Image.onload</code>.
 
-<p class="legend top" style="margin-left:3.5em">using an Image() object <span class=arrow>&#x21b7;</span><br></p>
+<p class="legend top" style="margin-left:3.5em">usando um objeto Image() <span class=arrow>&#x21b7;</span><br></p>
 <pre><code>&lt;canvas id="e" width="177" height="113">&lt;/canvas>
 &lt;script>
   var canvas = document.getElementById("e");
@@ -498,11 +498,11 @@ context.fillRect(0, 0, 300, 225);</code></pre>
   };
 &lt;/script></code></pre>
 
-<p>The optional 3<sup>rd</sup> and 4<sup>th</sup> parameters to the <code>drawImage()</code> method control image scaling. This is the same image, scaled to half its width and height and drawn repeatedly at different coordinates within a single canvas.</p>
+<p>O 3<sup>º</sup> e 4<sup>º</sup> parâmetros opcionais do método <code>drawImage()</code> controlam a escala da imagem. Essa é a mesma imagem, escalada pela metade de sua largura e altura e desenhada repetidamente em diferentes coordenadas no mesmo canvas.</p>
 
 <canvas id=multicat width=500 height=375></canvas>
 
-<p>Here is the script that produces the &#8220;multicat&#8221; effect:
+<p>Aqui está o script que produz o efeito &#8220;multicat&#8221;:
 
 <pre style="float:left"><code>cat.onload = function() {
   for (var x = 0, y = 0;
@@ -512,19 +512,19 @@ context.fillRect(0, 0, 300, 225);</code></pre>
   }
 };
 </code></pre>
-<p class="legend right" style="margin-top:6em"><span class=arrow>&nbsp;&#x21dc;</span> Scale the image</p>
+<p class="legend right" style="margin-top:6em"><span class=arrow>&nbsp;&#x21dc;</span> Escala a imagem</p>
 
-<p class=clear>All this effort raises a legitimate question: why would you want to draw an image on a canvas in the first place? What does the extra complexity of image-on-a-canvas buy you over an <code>&lt;img></code> element and some <abbr>CSS</abbr> rules? Even the &#8220;multicat&#8221; effect could be replicated with 10 overlapping <code>&lt;img></code> elements.
+<p class=clear>Todo esse esforço levanta a seguinte questão: por que você deveria desenhar uma imagem dentro de um canvas em primeiro lugar? O que faz com que a complexidade extra de uma imagem em um canvas ofereça em cima de um elemento <code>&lt;img></code> e algumas regras <abbr>CSS</abbr>? Até mesmo o efeito &#8220;multicat&#8221; pode ser replicado com 10 elementos <code>&lt;img></code> sobrepostos.
 
-<p>The simple answer is, for the same reason you might want to <a href=#text>draw text on a canvas</a>. The <a href=#coordinates>canvas coordinates diagram</a> included text, lines, and shapes; the text-on-a-canvas was just one part of a larger work. A more complex diagram could easily use <code>drawImage()</code> to include icons, sprites, or other graphics.
+<p>A resposta simples é, pelo mesmo motivo que você iria querer <a href=#text>desenhar um texto no canvas</a>. O <a href=#coordinates>diagrama de coordenadas do canvas</a> inclui texto, linhas, e formas; o texto no canvas é só uma parte de um grande trabalho. Um diagrama mais complexo poderia facilmente utilizar o <code>drawImage()</code> para incluir ícones, sprites, e outros gráficos.
 
 <p class=a>&#x2767;
 
-<h2 id=ie>What About IE?</h2>
+<h2 id=ie>E quanto ao IE?</h2>
 
-<p>Versions of Internet Explorer before 9.0 do not support the canvas <abbr>API</abbr>. (IE9 does <a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML5_canvas>fully support the canvas <abbr>API</abbr></a>.) However, those older versions of Internet Explorer <em>do</em> support a Microsoft-proprietary technology called <abbr>VML</abbr>, which can do many of the same things as the <code>&lt;canvas></code> element. And thus, <code>excanvas.js</code> was born.
+<p>Versões do Internet Explorer antes de 9.0 não suportam a <abbr>API</abbr> de canvas. (IE9 <a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML5_canvas>suporta completamente a <abbr>API</abbr></a> de canvas.) Entretanto, essas versões antigas do Internet Explorer suportam <em>sim</em> uma tecnologia proprietária da Microsoft chamada <abbr>VML</abbr>, na qual pode fazer muitas das coisas que o elemento <code>&lt;canvas></code> faz. E assim, nasceu o <code>excanvas.js</code>.
 
-<p><a href=http://code.google.com/p/explorercanvas/>Explorercanvas</a> (<code>excanvas.js</code>) is an open source, Apache-licensed JavaScript library that implements the canvas <abbr>API</abbr> in Internet Explorer. To use it, include the following <code>&lt;script></code> element at the top of your page.
+<p><a href=http://code.google.com/p/explorercanvas/>Explorercanvas</a> (<code>excanvas.js</code>) é uma biblioteca JavaScript de código livre, licenciada pela Apache que implementa a <abbr>API</abbr> de canvas no Internet Explorer. Para utilizá-la, inclua o seguinte elemento <code>&lt;script></code> no topo da sua página.
 
 <pre><code>&lt;!DOCTYPE html>
 &lt;html>
@@ -541,61 +541,61 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 &lt;/html>
 </code></pre>
 
-<p>The <code>&lt;!--[if lt IE 9]></code> and <code>&lt;![endif]--></code> bits are <a href="http://msdn.microsoft.com/en-us/library/ms537512(VS.85).aspx">conditional comments</a>. Internet Explorer interprets them like an <code>if</code> statement: &#8220;if the current browser is a version of Internet Explorer prior to (but not including) version 9, then execute this block.&#8221; Every other browser will treat the entire block as an <abbr>HTML</abbr> comment. The net result is that Internet Explorer 7 and 8 will download the <code>excanvas.js</code> script and execute it, but other browsers will ignore the script altogether (not download it, not execute it, not anything). This makes your page load faster in browsers that implement the canvas <abbr>API</abbr> natively.
+<p>O <code>&lt;!--[if lt IE 9]></code> e <code>&lt;![endif]--></code> são <a href="http://msdn.microsoft.com/en-us/library/ms537512(VS.85).aspx">comentários condicionais</a>. Internet Explorer interpreta eles como uma declaração <code>if</code>: &#8220;se o navegador é uma versão do Internet Explorer inferior da (mas não inclusa) versão 9, então execute o bloco.&#8221; Cada outro navegador vai tratar o bloco inteiro como um bloco de comentário <abbr>HTML</abbr>. O resultado na prática é que o Internet Explorer 7 e 8 irão realizar o download do script <code>excanvas.js</code> e executá-los, mas outros navegadores irão ignorar o script (não realizando o download dele, não executando ele, não fazendo nada). Isso irá fazer com que sua página carregue mais rapidamente para aqueles navegadores que implementem a <abbr>API</abbr> de canvas nativamente.
 
-<p>Once you include the <code>excanvas.js</code> in the <code>&lt;head></code> of your page, you don&#8217;t need to do anything else to accomodate Internet Explorer. Just include <code>&lt;canvas></code> elements in your markup, or create them dynamically with JavaScript. Follow the instructions in this chapter to get the drawing context of a <code>&lt;canvas></code> element, and you can draw shapes, text, and patterns.
+<p>Uma vez incluindo o <code>excanvas.js</code> no <code>&lt;head></code> da sua página, você não precisa fazer nada mais para acomodar o Internet Explorer. Só incluia os elementos <code>&lt;canvas></code> na sua marcação, ou crie eles dinâmicamente com JavaScript. Siga as instruções desse capítulo para capturar o contexto de desenho do elemento <code>&lt;canvas></code>, e você poderá desenhar formas, texto, e padrões.
 
-<p>Well&hellip; not quite. There are a few limitations:
+<p>Bem&hellip; não exatamente. Existem algumas limitações:
 
 <ol>
-<li><a href=#gradients>Gradients</a> can only be linear. <a href=https://developer.mozilla.org/En/Canvas_tutorial/Applying_styles_and_colors#A_createRadialGradient_example>Radial gradients</a> are not supported.
-<li>Patterns must be repeating in both directions.
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#clipping-region>Clipping regions</a> are not supported.
-<li>Non-uniform <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-scale>scaling</a> does not correctly scale strokes.
-<li>It&#8217;s slow. This should not come as a raging shock to anyone, since Internet Explorer's JavaScript parser is slower than other browsers to begin with. Once you start drawing complex shapes via a JavaScript library that translates commands to a completely different technology, things are going to get bogged down. You won&#8217;t notice the performance degradation in simple examples like drawing a few lines and transforming an image, but you&#8217;ll see it right away once you start doing canvas-based animation and other crazy stuff.
+<li><a href=#gradients>Degradês</a> só podem ser lineares. <a href=https://developer.mozilla.org/En/Canvas_tutorial/Applying_styles_and_colors#A_createRadialGradient_example>Degradês radiais</a> não são suportados.
+<li>Padrões devem se repetir em ambas as direções.
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#clipping-region>Regiões clipping </a> não são suportadas.
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-scale>Escala</a> não uniforme não funciona corretamente com escalas de bordas.
+<li>É lento. Isso não deve ser um choque violento para ninguém, já que o parser de JavaScript do Internet Explorer é mais lento do que dos outros navegadores para começar. Uma vez começando a desenhar formas complexas usando a biblioteca JavaScript library que traduz comandos para outro tecnologia completamente diferente, coisas vão naturalmente atolar. Você não irá notar degradação de performance em exemplos simples como desenhando algumas linhas e transformando uma imagem, mas você rapidamente irá notar uma vez que comece realizando animações baseadas em canvas ou outras coisas loucas.
 </ol>
 
-<p>There is one more caveat about using <code>excanvas.js</code>, and it&#8217;s a problem that I ran into while creating the examples in this chapter. ExplorerCanvas initializes its own faux-canvas interface automatically whenever you include the <code>excanvas.js</code> script in your <abbr>HTML</abbr> page. But that doesn&#8217;t mean that Internet Explorer is ready to use it immediately. In certain situations, you can run into a race condition where the faux-canvas interface is <em>almost</em>, but not quite, ready to use. The primary symptom of this state is that Internet Explorer will complain that &#8220;<samp>object doesn&#8217;t support this property or method</samp>&#8221; whenever you try to do anything with a <code>&lt;canvas></code> element, such as get its drawing context.
+<p>Há mais uma advertência sobre o uso de <code>excanvas.js</code>, e é um problema que passei enquanto criava o exemplo desse capítulo. ExplorerCanvas inicializa sua própria interface de falso-canvas automaticamente uma vez incluindo o script <code>excanvas.js</code> na sua página <abbr>HTML</abbr>. Mas isso não significa que o  Internet Explorer está pronto para usá-lo imediatamente. Em algumas situações, você pode rodar sob uma condição onde a interface do falso-canvas está <em>quase</em>, mas ainda não, pronta para ser usada. O principal sintoma desse estado é que o Internet Explorer irá reclamar que o &#8220;<samp>objeto não suporta essa propriedade ou método</samp>&#8221; sempre que você tentar fazer qualquer coisa com o elemento <code>&lt;canvas></code>, como pegar seu contexto de desenho.
 
-<p>The easiest solution to this is to defer all of your canvas-related manipulation until after the <code>onload</code> event fires. This may be a while &mdash; if your page has a lot of images or videos, they will delay the <code>onload</code> event &mdash; but it will give ExplorerCanvas time to work its magic.
+<p>A solução mais simples para fazer é adiar todas as suas manipulações relacionadas ao canvas até depois que evento <code>onload</code> seja disparado. Isto pode levar um tempo &mdash; se a sua página possui muitas imagens ou vídeos, elas irão atrasar o <code>onload</code> &mdash; mas irá dar ao ExplorerCanvas tempo para trabalhar na sua mágina.
 
 <p class=a>&#x2767;
 
-<h2 id=halma>A Complete, Live Example</h2>
+<h2 id=halma>Um completo exemplo ao vivo</h2>
 
-<p>Halma is a centuries-old board game. Many variations exist. In this example, I&#8217;ve created a solitaire version of Halma with 9 pieces on a 9 &times; 9 board. In the beginning of the game, the pieces form a 3 &times; 3 square in the bottom-left corner of the board. The object of the game is to move all the pieces so they form a 3 &times; 3 square in the upper-right corner of the board, in the least number of moves.
+<p>Halma é um jogo de tabuleiro com séculos de idade. Muitas variações existem. Nesse exemplo, criei uma versão solitária de Halma com 9 peças em um tabuleiro 9 &times; 9. No início do jogo, as peças formam quadrado 3 &times; 3 no canto interior esquerdo do tabuleiro. O objetivo do jogo é mover todas as peças até que formem um quadrado 3 &times; 3 no canto superior direito do tabuleiro, com o menor número de movimentos.
 
-<p>There are two types of legal moves in Halma:
+<p>Existem dois tipos de movimentos legais no Halma:
 
 <ul>
-<li>Take a piece and move it to any adjacent empty square. An &#8220;empty&#8221; square is one that does not currently have a piece in it. An &#8220;adjacent&#8221; square is immediately north, south, east, west, northwest, northeast, southwest, or southeast of the piece&#8217;s current position. (The board does not wrap around from one side to the other. If a piece is in the left-most column, it can not move west, northwest, or southwest. If a piece is in the bottom-most row, it can not move south, southeast, or southwest.)
-<li>Take a piece and hop over an adjacent piece, and possibly repeat. That is, if you hop over an adjacent piece, then hop over <em>another</em> piece adjacent to your new position, that counts as a single move. In fact, any number of hops still counts as a single move. (Since the goal is to minimize the total number of moves, doing well in Halma involves constructing, and then using, long chains of staggered pieces so that other pieces can hop over them in long sequences.)
+<li>Pegue uma peça e mova para qualquer quadrado vazio adjacente. Um quadrado &#8220;vazio&#8221; é um que não contém nenhuma peça nele. Um quadrado &#8220;adjacente&#8221; é um imediatamente ao norte, sul, leste, oeste, noroeste, nordeste, sudoeste ou sudeste da peça na sua posição atual. (O tabuleiro não é girado em torno de um lado para outro. Se uma peça está na coluna mais a esquerda, não pode se mover para oeste, noroeste ou sudoeste. Se uma peça está na linha mais embaixo, não pode se mover para o sul, sudeste ou sudoeste.)
+<li>Pegue uma peça e pule por cima de uma peça adjacente, e possivelmente repita. Isso é, se você pular por cima de uma peça adjacente, então pule por cima de <em>outra</em> peça adjacente para sua nova posição, isso conta como um único movimento. Na verdade, qualquer número de puladas por cima continuam contando como um movimento único. (Já que o objetivo é minimizar o número total de movimentos, ir bem no Halma envolve construir, e depois usar, longas cadeias escalonadas para que então outras peças possam pular por cima em uma longa sequência.)
 </ul>
 
-<p>Here is the game itself. You can also <a href=examples/canvas-halma.html>play it on a separate page</a> if you want to poke at it with your browser&#8217;s developer tools.</p>
+<p>Aqui está o jogo propriamente dito. Você também pode <a href=examples/canvas-halma.html>jogá-lo em uma página separada</a> se você quiser cutucar seu developer tools.</p>
 
 <canvas id=halmacanvas></canvas>
 
 <p style="margin-top:0;font-style:normal" class="legend">Moves: <span id=halmamovecount>0</span>
 
-<p>How does it work? I&#8217;m so glad you asked. I won&#8217;t show <em>all</em> the code here. (You can see it at <a href=examples/halma.js>diveintohtml5.org/examples/halma.js</a>.) I&#8217;ll skip over most of the gameplay code itself, but I want to highlight a few parts of the code that deal with actually drawing on the canvas and responding to mouse clicks on the canvas element.
+<p>Como isso funciona? Estou feliz que você perguntou. Não irei mostrar <em>todo</em> código aqui. (Você pode vê-lo em <a href=examples/halma.js>diveintohtml5.org/examples/halma.js</a>.) Na verdade irei pular a maioria do código de jogabilidade, mas quero ressaltar algumas partes do código que realmente mexem o desenho no canvas e a resposta aos cliques de mouse no elemento canvas.
 
-<p>During page load, we initialize the game by setting the dimensions of the <code>&lt;canvas></code> itself and storing a reference to its drawing context.
+<p>Durante o carregamento da página, nós inicializamos o jogo ao definir as dimensões no <code>&lt;canvas></code> e guardamos as referências no seu contexto de desenho.
 
 <pre><code>gCanvasElement.width = kPixelWidth;
 gCanvasElement.height = kPixelHeight;
 gDrawingContext = gCanvasElement.getContext("2d");</code></pre>
 
-<p>Then we do something you haven&#8217;t seen yet: we add an event listener to the <code>&lt;canvas></code> element to listen for click events.
+<p>Depois fazemos algo que você ainda não viu: nós adicionamos uma escuta de evento ao elemento <code>&lt;canvas></code>para ouvir por eventos de clique.
 
 <pre><code>gCanvasElement.<mark>addEventListener</mark>(<mark>"click"</mark>, halmaOnClick, false);</code></pre>
 
-<p>The <code>halmaOnClick()</code> function gets called when the user clicks anywhere within the canvas. Its argument is a <code>MouseEvent</code> object that contains information about where the user clicked.
+<p>A função <code>halmaOnClick()</code> é chamada quando o usuário clica em qualquer lugar no canvas. Seu argumento é um objeto <code>MouseEvent</code> que contém as informações sobre onde o usuário clicou.
 
 <pre><code>function halmaOnClick(e) {
     var cell = <mark>getCursorPosition(e)</mark>;
 
-    // the rest of this is just gameplay logic
+    // o resto é só lógica do jogo
     for (var i = 0; i &lt; gNumPieces; i++) {
 	if ((gPieces[i].row == cell.row) && 
 	    (gPieces[i].column == cell.column)) {
@@ -606,7 +606,7 @@ gDrawingContext = gCanvasElement.getContext("2d");</code></pre>
     clickOnEmptyCell(cell);
 }</code></pre>
 
-<p>The next step is to take the <code>MouseEvent</code> object and calculate which square on the Halma board just got clicked. The Halma board takes up the entire canvas, so every click is <em>somewhere</em> on the board. We just need to figure out where. This is tricky, because mouse events are implemented differently in just about every browser.
+<p>O próximo passo é pegar o objeto <code>MouseEvent</code> e calcular em qual quadrado no tabuleiro Halma acaba de ser clicado. O tabuleiro Halma contempla todo o  canvas, ou seja cada clique em <em>qualquer lugar</em> do tabuleiro. Nós só precisamos descobrir onde. Isto é complicado, porque eventos de mouse são implementados diferentemente em quase todo navegador.
 
 <pre><code>function getCursorPosition(e) {
     var x;
@@ -622,47 +622,47 @@ gDrawingContext = gCanvasElement.getContext("2d");</code></pre>
             document.documentElement.scrollTop;
     }</code></pre>
 
-<p>At this point, we have <code>x</code> and <code>y</code> coordinates that are relative to the document (that is, the entire <abbr>HTML</abbr> page). That&#8217;s not quite useful yet. We want coordinates relative to the canvas.
+<p>Nesse ponto, nós temos as coordenadas <code>x</code> e <code>y</code> que são relativas ao documento (isso é, a página <abbr>HTML</abbr> inteira). Isso não é muito útil ainda. Nós queremos as coordenadas relativas ao canvas.
 
 <pre><code>    x -= gCanvasElement.offsetLeft;
     y -= gCanvasElement.offsetTop;</code></pre>
 
-<p>Now we have <code>x</code> and <code>y</code> coordinates that are <a href=#coordinates>relative to the canvas</a>. That is, if <code>x</code> is 0 and <code>y</code> is 0 at this point, we know that the user just clicked the top-left pixel of the canvas.
+<p>Agora nós temos as coordenadas <code>x</code> e <code>y</code> que são <a href=#coordinates>relativas ao canvas</a>. Isso é, se <code>x</code> é 0 e <code>y</code> é 0 nesse ponto, nós sabemos que o usuário acabou de clicar no pixel do canto superior esquerdo do canvas.
 
-<p>From here, we can calculate which Halma square the user clicked, and then act accordingly.
+<p>Daqui em diante, nós podemos calcular em qual quadrado do Halma o usuário clicou, e então agir de acordo com isso.
 
 <pre><code>    var cell = new Cell(Math.floor(y/kPieceHeight),
                         Math.floor(x/kPieceWidth));
     return cell;
 }</code></pre>
 
-<p>Whew! Mouse events are tough. But you can use the same logic (in fact, this exact code) in all of your own canvas-based applications. Remember: mouse click &rarr; document-relative coordinates &rarr; canvas-relative coordinates &rarr; application-specific code.
+<p>Ufa! Eventos de mouse são difíceis. Mas você pode usar a mesma lógica (na verdade, o exato mesmo código) em todas as suas aplicações baseadas em canvas. Lembre-se: mouse click &rarr; coordenadas relativas ao documento &rarr; coordenadas relativas ao canvas &rarr; código específico de aplicação.
 
-<p>OK, let&#8217;s look at the main drawing routine. Because the graphics are so simple, I&#8217;ve chosen to clear and redraw the board in its entirety every time anything changes within the game. This is not strictly necessary. The canvas drawing context will retain whatever you have previously drawn on it, even if the user scrolls the canvas out of view or changes to another tab and then comes back later. If you&#8217;re developing a canvas-based application with more complicated graphics (such as an arcade game), you can optimize performance by tracking which regions of the canvas are &#8220;dirty&#8221; and redrawing just the dirty regions. But that is outside the scope of this book.
+<p>OK, vamos olhar para a rotina principal do desenho. Porque os gráficos são simples, escolhi limpar e redesenhar o tabuleiro em cada hora que houver qualquer mudança no jogo. Isso não é estritamente necessário. O contexto de desenho do canvas irá reter qualquer coisa que você tenha desenhado anteriormente nele, até mesmo se o usuário realizar scroll para fora do campo de visão ou mudar de uma aba para outra e depois voltar. Se você está desenvolvendo uma aplicação baseada em canvas com gráficos mais complicados (como um jogo de), você pode otimizar a performance ao identificar quais regiões do canvas estão &#8220;sujas&#8221; e redesenhar apenas as regiões sujas. Mas isso está fora do escopo desse livro.
 
 <pre><code>gDrawingContext.clearRect(0, 0, kPixelWidth, kPixelHeight);</code></pre>
 
-<p>The board-drawing routine should look familiar. It&#8217;s similar to how we drew the <a href=#coordinates>canvas coordinates diagram</a> earlier in this chapter.
+<p>A rotina de desenho do tabuleiro deve lhe parecer familiar. É similar como nós desenhamos o <a href=#coordinates>digrama de coordenadas do canvas</a> anteriormmente nesse capítulo.
 
 <pre><code>gDrawingContext.<mark>beginPath()</mark>;
 
-/* vertical lines */
+/* linhas verticais */
 for (var x = 0; x &lt;= kPixelWidth; x += kPieceWidth) {
     gDrawingContext.<mark>moveTo</mark>(0.5 + x, 0);
     gDrawingContext.<mark>lineTo</mark>(0.5 + x, kPixelHeight);
 }
 
-/* horizontal lines */
+/* linhas horizontais */
 for (var y = 0; y &lt;= kPixelHeight; y += kPieceHeight) {
     gDrawingContext.<mark>moveTo</mark>(0, 0.5 + y);
     gDrawingContext.<mark>lineTo</mark>(kPixelWidth, 0.5 +  y);
 }
 
-/* draw it! */
+/* desenhe! */
 gDrawingContext.<mark>strokeStyle</mark> = "#ccc";
 gDrawingContext.<mark>stroke()</mark>;</code></pre>
 
-<p>The real fun begins when we go to draw each of the individual pieces. A piece is a circle, something we haven&#8217;t drawn before. Furthermore, if the user selects a piece in anticipation of moving it, we want to draw that piece as a filled-in circle. Here, the argument <code>p</code> represents a piece, which has <code>row</code> and <code>column</code> properties that denote the piece&#8217;s current location on the board. We use some in-game constants to translate <code>(column, row)</code> into canvas-relative <code>(x, y)</code> coordinates, then draw a circle, then (if the piece is selected) fill in the circle with a solid color.
+<p>A brincadeira começa de verdade quando nós vamos desenhar cada peça individual. Uma peça é um círculo, algo que ainda não desenhamos antes. Além disso, se o usuário seleciona a peça em antecipação ao seu movimento, nós queremos desenhar a peça em forma de um círculo preenchido. Aqui, o argumento <code>p</code> representa a peça, na qual possui as propriedades de <code>linha</code> e <code>coluna</code> que denotam a posição atual da peça no tabuleiro. Nós usamos algumas constante do jogo para traduzir <code>(coluna, linha)</code> em coordenadas <code>(x, y)</code> relativas ao canvas, então desenhar o círculo, então (se a peça for selecionada) preencher o círculo com uma cor sólida.
 
 <pre><code>function drawPiece(p, selected) {
     var column = p.column;
@@ -671,48 +671,48 @@ gDrawingContext.<mark>stroke()</mark>;</code></pre>
     var <mark>y</mark> = (row * kPieceHeight) + (kPieceHeight/2);
     var radius = (kPieceWidth/2) - (kPieceWidth/10);</code></pre>
 
-<p>That&#8217;s the end of the game-specific logic. Now we have <code>(x, y)</code> coordinates, relative to the canvas, for the center of the circle we want to draw. There is no <code>circle()</code> method in the canvas <abbr>API</abbr>, but there is an <code>arc()</code> method. And really, what is a circle but an arc that goes all the way around? Do you remember your basic geometry? The <code>arc()</code> method takes a center point <code>(x, y)</code>, a radius, a start and end angle (in radians), and a direction flag (<code>false</code> for clockwise, <code>true</code> for counter-clockwise). You can use the <code>Math</code> module that&#8217;s built into JavaScript to calculate radians.
+<p>Esse é o fim da lógica específica do jogo. Agora nós temos as coordenadas <code>(x, y)</code>, relativas ao canvas, para o centro do círculo que queremos desenhar. Não há um método <code>circle()</code> na <abbr>API</abbr> do canvas, mas há um método <code>arc()</code>. E realmente, o que é um círculo sem um arco que vai a toda volta? Você lembra de geometria básica? O método <code>arc()</code> pega o ponto central <code>(x, y)</code>, o raio, o ângulo inicial e final (em radianos), e a direção (<code>false</code> para sentido horário, <code>true</code> para sentido anti-horário). Você pode usar o módulo <code>Math</code> que está dentro do JavaScript para calcular radianos.
 
 <pre><code>gDrawingContext.beginPath();
 gDrawingContext.<mark>arc</mark>(x, y, radius, 0, <mark>Math.PI * 2</mark>, false);
 gDrawingContext.closePath();</code></pre>
 
-<p>But wait! Nothing has been drawn yet. Like <code>moveTo()</code> and <code>lineTo</code>, the <code>arc()</code> method is <a href=#paths>a &#8220;pencil&#8221; method</a>. To actually draw the circle, we need to set the <code>strokeStyle</code> and call <code>stroke()</code> to trace it in &#8220;ink.&#8221;
+<p>Mas espera aí! Nada foi desenhado ainda. Como <code>moveTo()</code> e <code>lineTo</code>, o método <code>arc()</code> é um método <a href=#paths>&#8220;lápis&#8221;</a>. Para realmente desenhar o círculo, nós precisamos definir o <code>strokeStyle</code> e chamar o <code>stroke()</code> para traçar a &#8220;tinta.&#8221;
 
 <pre><code>gDrawingContext.<mark>strokeStyle</mark> = "#000";
 gDrawingContext.<mark>stroke()</mark>;</code></pre>
 
-<p>What if the piece is selected? We can re-use the same path we created to draw the outline of the piece, to fill in the circle with a solid color.
+<p>E se a peça estiver selecionada? Nós podemos reutilizar o mesmo caminho que criamos para desenhar o contorno da peça, para preencher o círculo com uma cor sólida.
 
 <pre><code>if (selected) {
     gDrawingContext.<mark>fillStyle</mark> = "#000";
     gDrawingContext.<mark>fill()</mark>;
 }</code></pre>
 
-<p>And that&#8217;s&hellip; well, that&#8217;s pretty much it. The rest of the program is game-specific logic &mdash; distinguishing between valid and invalid moves, keeping track of the number of moves, detecting whether the game is over. With 9 circles, a few straight lines, and 1 <code>onclick</code> handler, we&#8217;ve created an entire game in <code>&lt;canvas></code>. Huzzah!
+<p>E isso é&hellip; bem, isso é tudo. O resto do programa é lógica específica do jogo &mdash; distinguindo entre movimentos válidos e inválidos, registrando o número de movimentos, detectando se o jogo está terminado. Com 9 círculos, algumas linhas, e 1 <code>onclick</code> handler, nós criamos um jogo inteiramente em <code>&lt;canvas></code>. Huzzah!
 
 <p class=a>&#x2767;
 
-<h2 id=further-reading>Further Reading</h2>
+<h2 id=further-reading>Leitura complementar</h2>
 
 <ul>
-<li><a href=https://developer.mozilla.org/en/Canvas_tutorial>Canvas tutorial</a> on Mozilla Developer Center
-<li><a href=http://dev.opera.com/articles/view/html-5-canvas-the-basics/><abbr>HTML5</abbr> <code>canvas</code> &mdash; the basics</a>, by Mihai Sucan
-<li><a href=http://www.canvasdemos.com/>CanvasDemos.com</a>: demos, tools, and tutorials for the <abbr>HTML</abbr> <code>canvas</code> element
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>The <code>canvas</code> element</a> in the <abbr>HTML5</abbr> draft standard
-<li><a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML5_canvas>Internet Explorer 9 Guide for Developers: HTML5 <code>canvas</code> element</a>
+<li><a href=https://developer.mozilla.org/en/Canvas_tutorial>Canvas tutorial</a> no Mozilla Developer Center
+<li><a href=http://dev.opera.com/articles/view/html-5-canvas-the-basics/><abbr>HTML5</abbr> <code>canvas</code> &mdash; o básico</a>, por Mihai Sucan
+<li><a href=http://www.canvasdemos.com/>CanvasDemos.com</a>: demos, ferramentas, e tutoriais para o elemento <abbr>HTML</abbr> <code>canvas</code>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>O elemento <code>canvas</code></a> no rascunho da especificação do <abbr>HTML5</abbr>
+<li><a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML5_canvas>Internet Explorer 9 Guia para desenvolvedores: elemento HTML5 <code>canvas</code></a>
 </ul>
 
 <p class=a>&#x2767;
 
-<p>This has been &#8220;Let&#8217;s Call It A Draw(ing Surface).&#8221; The <a href=table-of-contents.html>full table of contents</a> has more if you&#8217;d like to keep reading.
+<p>Isso foi &#8220;Vamos Chamá-lo (Superfície) De Desenho.&#8221; Consulte o <a href=table-of-contents.html>Sumário</a>, caso queira continuar com a leitura.
 
-<div class=pf>
-<h4>Did You Know?</h4>
-<div class=moneybags>
-<blockquote><p>In association with Google Press, O&#8217;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &#8220;HTML5: Up &amp; Running,&#8221; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &#8220;HTML5: Up &amp; Running&#8221; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&#8217;Reilly</a>. You&#8217;ll get a book, and I&#8217;ll get a buck. I do not currently accept direct donations.
-</blockquote>
+<div class="pf">
+<h4>Você sabia?</h4>
+<div class="moneybags">
+<blockquote><p>Em associação a <span lang="en">Google Press</span>, O&#8217;Reilly está distruindo este livro em variados formatos, incluindo papel, ePub, Mobi, <abbr>DRM</abbr>-free e <abbr>PDF</abbr>. A edição paga é chamada <span lang="en">“HTML5: Up &amp; Running”</span> e está disponível agora. Este capítulo está incluído na versão paga.
+</p><p>Se você gostou deste capítulo e quer mostrar sua apreciação, basta <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">comprar o livro “<abbr>HTML5</abbr>: Up &amp; Running” com esse link afiliado</a> ou <a href="http://oreilly.com/catalog/9780596806033">comprar a edição eletrônica diretamente da O&#8217;Reilly</a>. Você vai ganhar um livro, e eu vou ganhar um trocado. Atualmente, não aceito doações diretas.
+</p></blockquote>
 </div>
 </div>
 
