@@ -288,37 +288,38 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p class=a>&#x2767;
 
-<h2 id=type-range>Numbers as Sliders</h2>
+<h2 id=type-range>Números em controles deslizantes</h2>
 
-<p><a href=#type-number>Spinboxes</a> are not the only way to represent numeric input. You&#8217;ve probably also seen &#8220;slider&#8221; controls that look like this:
+<p><a href=#type-number>Números em caixas rotativas</a> não são o único modo de representar campos numéricos. Você provavelmente já deve ter visto  "controles deslizantes" como este:
 
-<p class=c><img src=i/input-type-range.png alt="Chrome rendering of input type=range field as slider control" width=175 height=25><br><a href=examples/input-type-range.html>Test <code>type="range"</code> for yourself</a>.
+<p class=c><img src=i/input-type-range.png alt="Chrome rendering of input type=range field as slider control" width=175 height=25><br><a href=examples/input-type-range.html>Faça você o teste do campo <code>type="range"</code></a>.
 
-<p>You can now have slider controls in your web forms, too. The markup looks eerily similar to <a href=#type-range>spinbox controls</a>:
+<p>Agora você pode ter controles deslizantes no seu formulário web também. A marcação é bem semelhante com as <a href=#type-range>caixas rotativas</a>:
 
-<p class="legend top" style="margin-left:8em"><span class=arrow>&#x21b6;</span> The spitting image
+
+<p class="legend top" style="margin-left:8em"><span class=arrow>&#x21b6;</span> A imagem para comprovar
 <pre><code>&lt;input <mark>type="range"</mark>
        min="0"
        max="10"
        step="2"
        value="6"></code></pre>
 
-<p>All the available attributes are the same as <code>type="number"</code> &mdash; <code>min</code>, <code>max</code>, <code>step</code>, <code>value</code> &mdash; and they mean the same thing. The only difference is the user interface. Instead of a field for typing, browsers are expected to render <code>type="range"</code> as a slider control. Safari, Chrome, and Opera all do this. (Sadly, the iPhone renders it as a simple text box. It doesn&#8217;t even optimize its on-screen keyboard for numeric input.) All other browsers simply treat the field as <code>type="text"</code>, so there&#8217;s no reason you can&#8217;t start using it immediately.
+<p>Todos os atributos válidos são os mesmos do <code>type="number"</code> &mdash; <code>min</code>, <code>max</code>, <code>step</code>, <code>value</code> &mdash; e funcionam do mesmo modo. A única diferença é a interface. Ao invés de ser um campo para digitar, é esperado dos navegadores renderizarem  <code>type="range"</code> como um controle deslizante. Safari, Chrome e Opera fazem isto. (Infelizmente, o iPhone renderiza uma caixa de texto simples. Que nem ao menos otimiza o seu teclado virtual para entradas numéricas). Todos os outros navegadores simplesmente tratam o campo como <code>type="text"</code>, então não há razão para não começar a usa-lo imediatamente.
 
 <p class=a>&#x2767;
 
-<h2 id=type-date>Date Pickers</h2>
+<h2 id=type-date>Selecionadores de data</h2>
 
-<p><abbr>HTML</abbr> 4 did not include a date picker control. JavaScript frameworks have picked up the slack (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>), but of course each of these solutions requires &#8220;buying into&#8221; the framework on which the date picker is built.
+<p><abbr>HTML</abbr> ão possui selecionadores de data. As Bibliotecas JavaScript  tiveram que resolver esta negligência (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>), mas é claro estas soluções exigem assumir o uso da biblioteca que o selecionador de data é construído. 
 
-<p><abbr>HTML5</abbr> finally defines a way to include a native date picker control without having to script it yourself. In fact, it defines six: date, month, week, time, date + time, and date + time - timezone.
+<p><abbr>HTML5</abbr> finalmente definiu um modo para incluir selecionadores de data nativos. Sem uso de scripts personalizados. Na verdade, é definido seis: data, mês, semana, hora, data + hora, e data + hora - fuso horário.
 
-<p>So far, support is&hellip; sparse.
+<p>Até agora, o suporte é… escasso.
 
 <table class=bc>
-<caption>Date picker support</caption>
+<caption>Suporte ao selecionadores de data</caption>
 <thead>
-<tr><th style="text-align:left">Input Type<th>Opera<th>Every other browser
+<tr><th style="text-align:left">Tipo de Campo<th>Opera<th>Qualquer outro navegador
 <tbody>
 <tr><th><code>type="date"</code><td>9.0+<td>&middot;
 <tr><th><code>type="month"</code><td>9.0+<td>&middot;
@@ -328,39 +329,39 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 <tr><th><code>type="datetime-local"</code><td>9.0+<td>&middot;
 </table>
 
-<p>This is how Opera renders <a href=examples/input-type-date.html><code>&lt;input type="date"></code></a>:
+<p>Assim é como o Opera renderiza <a href=examples/input-type-date.html><code>&lt;input type="date"></code></a>:
 
 <blockquote>
-<p><img src=i/input-type-date.png alt="Opera's type=date picker" width=210 height=190>
+<p><img src=i/input-type-date.png alt="Opera selecionador type=date" width=210 height=190>
 </blockquote>
 
-<p>If you need a time to go with that date, Opera also supports <a href=examples/input-type-datetime.html><code>&lt;input type="datetime"></code></a>:
+<p>Se você precisar da hora junto com a data. O Opera também suporta <a href=examples/input-type-datetime.html><code>&lt;input type="datetime"></code></a>:
 
 <blockquote>
-<p><img src=i/input-type-datetime.png alt="Opera's type=datetime picker" width=225 height=191>
+<p><img src=i/input-type-datetime.png alt="Opera selecionador type=datetime" width=225 height=191>
 </blockquote>
 
-<p>If you only need a month + year (perhaps a credit card expiration date), Opera can render a <a href=examples/input-type-month.html><code>&lt;input type="month"></code></a>:
+<p>Se você só precisar de mês e ano (por exemplo, a data de vencimento de um cartão de crédito). O Opera pode renderizar  <a href=examples/input-type-month.html><code>&lt;input type="month"></code></a>:
 
 <blockquote>
-<p><img src=i/input-type-month.png alt="Opera's type=month picker" width=210 height=189>
+<p><img src=i/input-type-month.png alt="Opera selecionador type=month" width=210 height=189>
 </blockquote>
 
-<p>Less common, but also available, is the ability to pick a specific week of a year with <a href=examples/input-type-week.html><code>&lt;input type="week"></code></a>:
+<p>Menos comum, mas também válido, é a possibilidade de selecionar uma semana específica do ano com <a href=examples/input-type-week.html><code>&lt;input type="week"></code></a>:
 
 <blockquote>
-<p><img src=i/input-type-week.png alt="Opera's type=week picker" width=210 height=191>
+<p><img src=i/input-type-week.png alt="Opera selecionador type=week" width=210 height=191>
 </blockquote>
 
-<p>Last but not least, you can pick a time with <a href=examples/input-type-time.html><code>&lt;input type="time"></code></a>:
+<p>Último e não menos importante, você poder selecionar uma hora com <a href=examples/input-type-time.html><code>&lt;input type="time"></code></a>:
 
 <blockquote>
-<p><img src=i/input-type-time.png alt="Opera's type=time picker" width=98 height=22>
+<p><img src=i/input-type-time.png alt="Opera selecionador type=time" width=98 height=22>
 </blockquote>
 
-<p>It&#8217;s likely that other browsers will eventually support these input types. But just like <a href=#type-email><code>type="email"</code></a> and the other input types, these form fields will be rendered as plain text boxes in browsers that don&#8217;t recognize <code>type="date"</code> and the other variants. If you like, you can simply use <code>&lt;input type="date"></code> and friends, make Opera users happy, and wait for other browsers to catch up. More realistically, you can use <code>&lt;input type="date"></code>, <a href=detect.html#input-types>detect whether the browser has native support for date pickers</a>, and fall back to a scripted solution of your choice (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>, or some other solution).
+<p>É provável que os outros navegadores, eventualmente, venham a suportar os selecionadores de data. Mas como <a href=#type-email><code>type="email"</code></a> e os outros tipos campos, eles serão renderizado como uma caixa de texto, nos navegadores que não reconhecerem o <code>type="date"</code> e as outras variações. Se você preferir, pode simplesmente usar <code>&lt;input type="date"></code> e companhia, e fazer usuários do Opera felizes, e esperar o suporte dos outros navegadores. Mais realístico, você pode usar <code>&lt;input type="date"></code>, <a href=detect.html#input-types>detectar se o navegador possui suporte nativo para seletores de data</a>, e utilizar um fallback para um script utilizando a biblioteca a sua escolha (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>, ou outra solução).
 
-<p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> Date picker with fallback
+<p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> Selecionador de data com fallback
 <pre><code>&lt;form>
   &lt;input type="date">
 &lt;/form>
@@ -369,9 +370,9 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
   var i = document.createElement("input");
   i.setAttribute("type", "date");
   if (i.type == "text") {
-    // No native date picker support :(
-    // Use Dojo/jQueryUI/YUI/Closure to create one,
-    // then dynamically replace that &lt;input> element.
+  	// Sem suporte nativo ao selecionador de data :[
+    // Utilize Dojo/jQueryUI/YUI/Closure para criar um,
+    // então dinamicamente substitua este &lt;input> element.
   }
 &lt;/script></code></pre>
 
