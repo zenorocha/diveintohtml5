@@ -378,37 +378,37 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p class=a>&#x2767;
 
-<h2 id=type-search>Search Boxes</h2>
+<h2 id=type-search>Caixas de busca</h2>
 
-<p>OK, this one is subtle. Well, the idea is simple enough, but the implementations may require some explanation. Here goes&hellip;
+<p>OK, este assunto é sutil. Bem, a ideia é bastante simples, mas as implementações requerem algumas explicações. Aqui vai&hellip;
 
-<p>Search. Not just Google Search or Yahoo Search. (Well, those too.) Think of any search box, on any page, on any site. Amazon has a search box. Newegg has a search box. Most blogs have a search box. How are they marked up? <code>&lt;input type="text"></code>, just like every other text box on the web. Let&#8217;s fix that.
+<p>Busca. Não só o buscador do Google ou do Yahoo. (Os demais.) Pense em qualquer caixa de busca de uma página de um site. A Amazom possui uma caixa de busca. Neweeg possui uma caixa de busca. A maioria dos blogs possui uma caixa de busca. Como eles são marcados? <code>&lt;input type="text"></code>, assim como todas as outras caixas de texto da web. Vamos corrigir isto.
 
 <pre style="float:left"><code>&lt;form>
   &lt;input name="q" <mark>type="search"</mark>>
   &lt;input type="submit" value="Find">
 &lt;/form></code></pre>
-<p class="legend right" style="margin-top:2.75em"><span class=arrow>&nbsp;&#x21dc;</span> New-age search box
+<p class="legend right" style="margin-top:2.75em"><span class=arrow>&nbsp;&#x21dc;</span> Nova era dos campos de pesquisa
 
-<p class="clear"><a href=examples/input-type-search.html>Test <code>&lt;input type="search"></code> in your own browser</a>. In some browsers, you won&#8217;t notice any difference from a regular text box. But if you&#8217;re using Safari on Mac OS X, it will look like this:
+<p class="clear"><a href=examples/input-type-search.html>Teste <code>&lt;input type="search"></code> no seu próprio navegador</a>. Em alguns navegadores, você não irá notar diferença de uma caixa de texto normal. Mas se você utilizar Safari no Mac OS X, ele irá aparecer assim:
 
-<p class=c><img src=i/input-type-search-safari.png alt="Safari/Mac rendering input type=search field" width=191 height=121>
+<p class=c><img src=i/input-type-search-safari.png alt="Renderização do Safari/Mac do campo type=search" width=191 height=121>
 
-<p>Can you spot the difference? The input box has rounded corners! I know, I know, you can hardly contain your excitement. But wait, there&#8217;s more! When you actually start typing into the <code>type="search"</code> box, Safari inserts a small &#8220;x&#8221; button on the right side of the box. Clicking the &#8220;x&#8221; clears the contents of the field. (Google Chrome, which shares much technology with Safari under the hood, also exhibits this behavior.) Both of these small tweaks are done to match the look and feel of native search boxes in iTunes and other Mac OS X client applications.
+<p>Você pode ver a diferença? O campo possui cantos redondos! Eu sei, Eu sei, você mal consegue conter a empolgação. Mas espere, tem mais! Quando você começa digitar na caixa <code>type="search"</code>, o Safari inseri um pequeno botão "x" no canto direito da caixa. Clicando no "x" o conteúdo do campo é limpo. (O Google Chrome, que divide muitas tecnologias com o Safari debaixo do capô, também possui este comportamento. ) Ambas dessas pequenas modificações são feitas para combinar com a aparência e comportamento das caixas de buscas nativas no iTunes e outras aplicações do Mac OS X. 
 
-<p class=c><img src=i/input-type-search-safari-typing.png alt="Typing in a type=search field in Safari" width=191 height=121>
+<p class=c><img src=i/input-type-search-safari-typing.png alt="Digitando no campo type=search no Safari" width=191 height=121>
 
-<p><a href=http://www.apple.com/>Apple.com</a> uses <code>&lt;input type="search"></code> for their site-search box, to help give their site a &#8220;Mac-like&#8221; feel. But there&#8217;s nothing Mac-specific about it. It&#8217;s just markup, so each browser on each platform can choose to render it according to platform-specific conventions. As with all the other new input types, browsers that don&#8217;t recognize <code>type="search"</code> will treat it like <code>type="text"</code>, so there is absolutely no reason not to start using <code>type="search"</code> for all your search boxes today.
+<p><a href=http://www.apple.com/>Apple.com</a> usa <code>&lt;input type="search"></code> para os campos de pesquisa dos seus sites, de forma a incrementar a experiência "Mac". Mas não há nenhuma especificação do Mac sobre. É apenas uma marcação, então cada navegador em cada plataforma pode escolher a renderização de acordo com as especificações e convenções. Como todos os outros novos tipos de campo, navegadores que não reconhecem <code>type="search"</code> irão trata-lo como <code>type="text"</code>, logo não existe absolutamente nenhuma razão para na começar usar <code>type="search"</code> para todas as suas caixas de pesquisa hoje.
 
 <div class="pf clear">
-<h4>Professor Markup Says</h4>
+<h4>Professor Marcação diz</h4>
 <div class=inner>
 <blockquote class=note>
-<p>By default, older versions of Safari will not apply even the most basic CSS styles to <code>&lt;input type="search"></code> fields. If you want to force Safari to treat your search field like a normal text field (so you can apply your own <abbr>CSS</abbr> styles), add this rule to your stylesheet:
+<p>Por padrão, versões antigas do Safari não aplicam nem os mais básicos estilos <abbr>CSS</abbr> no campo <code>&lt;input type="search"></code>. Se você quer forçar o Safari tratar seus campos de pesquisa como um campo de texto normal (para poder inserir seus próprios estilos <abbr>CSS</abbr>), adicione esta regra em sua folha de estilo:
 <blockquote><pre><code>input[type="search"] {
   -webkit-appearance: textfield;
 }</code></pre></blockquote>
-<p><i>Thanks to John Lein for teaching me this trick.</i>
+<p><i>Obrigado a Jonh Lein por me ensinar este truque.</i>
 </blockquote>
 </div>
 </div>
