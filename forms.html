@@ -425,39 +425,39 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p class=a>&#x2767;
 
-<h2 id=validation>Form Validation</h2>
+<h2 id=validation>Validação de formulários</h2>
 
 <table class=bc>
-<caption>Form validation support</caption>
+<caption>Suporte a validação de formulário</caption>
 <thead>
 <tr><th title="Internet Explorer">IE<th title="Mozilla Firefox">Firefox<th title="Apple Safari">Safari<th title="Google Chrome">Chrome<th>Opera<th>iPhone<th>Android
 <tbody>
 <tr><td>&middot;<td>4.0+<td>5.0+<td>10.0+<td>9.0+<td>&middot;<td>&middot;
 </table>
 
-<p>In this chapter, I&#8217;ve talked about new input types and new features like auto-focus form fields, but I haven&#8217;t mentioned what is perhaps the most exciting part of <abbr>HTML5</abbr> forms: automatic input validation. Consider the common problem of entering an email address into a web form. You probably have some client-side validation in JavaScript, followed by server-side validation in PHP or Python or some other server-side scripting language. <abbr>HTML5</abbr> can never replace your server-side validation, but it might someday replace your client-side validation.
+<p>Neste capítulo, eu falo sobre os novos tipos de campos e suas características, como foco automático, mas eu não mencionei o que é, talvez, a parte mais emocionante nos formulários <abbr>HTML5</abbr>: validação automática dos campos. Considerando o problema comum de digitar um endereço de email em um formulário web. Você provavelmente possui uma validação no lado do cliente em JavaScript, seguido por uma no lado do servidor em PHP ou Python ou outra linguagem de servidor. <abbr>HTML5</abbr> nunca poderá substituir a validação do servidor, mas pode um dia substituir a do lado do cliente.
 
-<p>There are two big problems with validating email addresses in JavaScript:
+<p>Há dois grandes problemas em validar um endereço de email em JavaScript:
 
 <ol>
-<li>A surprising number of your visitors (probably around 10%) won&#8217;t have JavaScript enabled
-<li>You&#8217;ll get it wrong
+<li>Um número surpreendente do seus visitantes (provavelmente cerca de 10%) não possui JavaScript habilitado
+<li>Você vai fazer errado.
 </ol>
 
-<p>Seriously, you&#8217;ll get it wrong. Determining whether a random string of characters is a valid email address <a href="http://www.regular-expressions.info/email.html">is unbelievably complicated</a>. The harder you look, <a href="http://www.ex-parrot.com/pdw/Mail-RFC822-Address.html">the more complicated it gets</a>. Did I mention it&#8217;s <a href="http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx">really, really complicated</a>? Wouldn&#8217;t it be easier to offload the entire headache to your browser?
+<p>Sério, você vai fazer errado. Determinar se uma seqüência aleatória de caracteres é um endereço de email válido <a href="http://www.regular-expressions.info/email.html">é inacreditavelmente complicado</a>. Quanto mais você olha, <a href="http://www.ex-parrot.com/pdw/Mail-RFC822-Address.html">mais complicado fica</a>. Eu já falei que é <a href="http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx">muito, muito complicado</a>? Não seria mais fácil deixar esta dor de cabeça para o navegador?
 
-<p class="legend top" style="width:500px;text-align:center">Most modern browsers validate type=&#8220;email&#8221; <span class=arrow>&#x21b7;</span><br></p>
-<p class=c><img src=i/input-type-email-validation.png alt="error message on invalid type=email field" width=243 height=76>
+<p class="legend top" style="width:500px;text-align:center">Navegadores modernos validam o type=&#8220;email&#8221; <span class=arrow>&#x21b7;</span><br></p>
+<p class=c><img src=i/input-type-email-validation.png alt="mensagem de erro na validação do campo type=email" width=243 height=76>
 
-<p>That screenshot is from Opera 10, although the functionality has been present since Opera 9. <a href=http://blog.mozilla.com/webdev/2011/03/14/html5-form-validation-on-sumo/>Firefox 4 and Chrome 10 provide similar functionality</a>. The only markup involved is <a href=#type-email>setting the <code>type</code> attribute to <code>"email"</code></a>. When the user tries to submit a form with an <code>&lt;input type="email"></code> field, the browser automatically offers <abbr>RFC</abbr>-compliant email validation, even if scripting is disabled.
+<p>A imagem de tela pertence ao Opera 10, porém a funcionalidade está presente desde o Opera 9. <a href=http://blog.mozilla.com/webdev/2011/03/14/html5-form-validation-on-sumo/>Firefox 4 e Chrome 10 também fornecem a mesma funcionalidade</a>. A única marcação envolvida é <a href=#type-email>setar o atributo <code>type</code> para <code>"email"</code></a>. Quando o usuário tentar enviar o formulário com um campo <code>&lt;input type="email"></code> o navegador automaticamente oferece uma validação <abbr>RFC</abbr>-compliant, mesmo se os scripts estiverem desabilitados.
 
-<p><abbr>HTML5</abbr> also offers validation of web addresses entered into <code>&lt;input type="url"></code> fields, and numbers in <code>&lt;input type="number"></code> fields. The validation of numbers even takes into account the <code>min</code> and <code>max</code> attributes, so browsers will not let you submit the form if you enter a number that is too large.
+<p><abbr>HTML5</abbr> também oferece validação para endereços web no campo <code>&lt;input type="url"></code> e de números no <code>&lt;input type="number"></code>. A validação de números também leva em conta os atributos <code>min</code> e <code>max</code> attributes, ou seja os navegadores não irão permitir enviar o formulário se você digitar um número que seja muito grande.
 
-<p class=c><img src=i/input-type-number-validation.png alt="error message on invalid type=number field" width=135 height=76>
+<p class=c><img src=i/input-type-number-validation.png alt="mensagem de erro na validação do campo type=number" width=135 height=76>
 
-<p>There is no markup required to activate <abbr>HTML5</abbr> form validation; it is on by default. To turn it off, use the <code>novalidate</code> attribute.
+<p>Não há nenhuma marcação para ativar a validação de formulário do <abbr>HTML5</abbr>; é feita por padrão. Para desligar, use o atributo <code>novalidate</code>.
 
-<p class="legend top">Don&#8217;t validate me, bro <span class=arrow>&#x21b7;</span><br></p>
+<p class="legend top">Não me valide, parceiro <span class=arrow>&#x21b7;</span><br></p>
 <pre><code>&lt;form <mark>novalidate</mark>>
   &lt;input type="email" id="addr">
   &lt;input type="submit" value="Subscribe">
@@ -465,71 +465,71 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p class=a>&#x2767;
 
-<h2 id=required>Required Fields</h2>
+<h2 id=required>Campos obrigatórios</h2>
 
 <table class=bc>
-<caption>&lt;input required> support</caption>
+<caption>Suporte aos campos obrigatórios</caption>
 <thead>
 <tr><th title="Internet Explorer">IE<th title="Mozilla Firefox">Firefox<th title="Apple Safari">Safari<th title="Google Chrome">Chrome<th>Opera<th>iPhone<th>Android
 <tbody>
 <tr><td>&middot;<td>4.0+<td>&middot;<td>10.0+<td>9.0+<td>&middot;<td>&middot;
 </table>
 
-<p><a href=#validation><abbr>HTML5</abbr> form validation</a> isn&#8217;t limited to the type of each field. You can also specify that certain fields are required. Required fields must have a value before you can submit the form.
+<p><a href=#validation>Validação de formulários com <abbr>HTML5</abbr></a> não se limita a cada tipo de campo. Você pode também especificar que certo campo é obrigatório. Os campos obrigatórios precisam de um valor antes de serem enviados.
 
-<p>The markup for required fields is as simple as can be:
+<p>A marcação para um campo obrigatório é a mais simples possível:
 
 <pre><code>&lt;form>
   &lt;input id="q" <mark>required</mark>>
   &lt;input type="submit" value="Search">
 &lt;/form></code></pre>
 
-<p class="clear"><a href=examples/input-required.html>Test <code>&lt;input required></code> in your own browser</a>. Browsers may alter the default appearance of required fields. For example, this is what a required field looks like in Mozilla Firefox 4.0:
+<p class="clear"><a href=examples/input-required.html>Teste <code>&lt;input required></code> em seu navegador</a>. Navegadores podem alterar a aparência padrão dos campos obrigatórios. Por exemplo, assim é como um campo obrigatório parece no Mozilla Firefox 4.0
 
-<p class=c><img src=i/input-required.png alt="default appearance of required fields in Firefox" width=250 height=122>
+<p class=c><img src=i/input-required.png alt="aparência padrão de um campo obrigatório no Firefox" width=250 height=122>
 
-<p>Furthermore, if you attempt to submit the form without filling in the required value, Firefox will pop up an infobar telling you that the field is mandatory and can not be left blank.
-
-<p class=a>&#x2767;
-
-<h2 id=further-reading>Further Reading</h2>
-
-<p>Specifications and standards:
-
-<ul>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#states-of-the-type-attribute><code>&lt;input></code> types</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>the <code>&lt;input placeholder></code> attribute</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>the <code>&lt;input autofocus></code> attribute</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#attr-fs-novalidate>the <code>&lt;form novalidate></code> attribute</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-required-attribute>The <code>&lt;input required></code> attribute</a>
-</ul>
-
-<p>JavaScript libraries:
-
-<ul>
-<li><a href=http://www.modernizr.com/>Modernizr</a>, an <abbr>HTML5</abbr> detection library
-</ul>
-
-<p>Useful articles:
-
-<ul>
-<li><a href=http://www.alistapart.com/articles/forward-thinking-form-validation/>Forward Thinking Form Validation</a>
-<li><a href=http://dev.opera.com/articles/view/new-form-features-in-html5/>New form features in Opera 11</a>
-<li><a href=https://developer.mozilla.org/en/HTML/HTML5/Forms_in_HTML5>Mozilla Developer Center: Forms in HTML5</a>
-<li><a href=https://developer.mozilla.org/en/HTML/HTML5/Forms_in_HTML5><abbr>HTML5</abbr> Forms in Mozilla Firefox 4.0+</a>
-<li><a href=http://blog.mozilla.com/webdev/2011/03/14/html5-form-validation-on-sumo/>HTML5 Form Validation</a>
-</ul>
+<p>Além disso, se você tentar enviar o formulário sem preencher o valor requerido, o Firefox irá mostrar uma mensagem informando que o campo é obrigatório e não pode ser deixado em branco.
 
 <p class=a>&#x2767;
 
-<p>This has been &#8220;A Form of Madness.&#8221; The <a href=table-of-contents.html>full table of contents</a> has more if you&#8217;d like to keep reading.
+<h2 id=further-reading>Leitura Complementar</h2>
+
+<p>Especificações e normas:
+
+<ul>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#states-of-the-type-attribute>tipos de <code>&lt;input></code></a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>o atributo <code>&lt;input placeholder></code></a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>o atributo <code>&lt;input autofocus></code></a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#attr-fs-novalidate>o atributo <code>&lt;form novalidate></code></a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-required-attribute>o atributo <code>&lt;input required></code></a>
+</ul>
+
+<p>Bibliotecas JavaScript
+
+<ul>
+<li><a href=http://www.modernizr.com/>Modernizr</a>, biblioteca de detecção de <abbr>HTML5</abbr>
+</ul>
+
+<p>Artigos Úteis
+
+<ul>
+<li><a href=http://www.alistapart.com/articles/forward-thinking-form-validation/>Pensando pra frente Validação de formulários</a>
+<li><a href=http://dev.opera.com/articles/view/new-form-features-in-html5/>Novos recursos de formulários no Opera 11</a>
+<li><a href=https://developer.mozilla.org/en/HTML/HTML5/Forms_in_HTML5>Mozilla Developer Center: Formulários na HMTL5</a>
+<li><a href=https://developer.mozilla.org/en/HTML/HTML5/Forms_in_HTML5>Formulários na <abbr>HTML5</abbr> no Mozilla Firefox 4.0+</a>
+<li><a href=http://blog.mozilla.com/webdev/2011/03/14/html5-form-validation-on-sumo/>Validação de formulários na HTML5</a>
+</ul>
+
+<p class=a>&#x2767;
+
+<p>Isso foi o &#8220;Uma forma de loucura.&#8221; Consulte o <a href=table-of-contents.html>sumário</a> caso queria continuar com a leitura.
 
 <div class=pf>
-<h4>Did You Know?</h4>
-<div class=moneybags>
-<blockquote><p>In association with Google Press, O&#8217;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &#8220;HTML5: Up &amp; Running,&#8221; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &#8220;HTML5: Up &amp; Running&#8221; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&#8217;Reilly</a>. You&#8217;ll get a book, and I&#8217;ll get a buck. I do not currently accept direct donations.
-</blockquote>
+<h4>Você Sabia?</h4>
+<div class="moneybags">
+<blockquote><p>Em associação a <span lang="en">Google Press</span>, O&#8217;Reilly está distruindo este livro em variados formatos, incluindo papel, ePub, Mobi, <abbr>DRM</abbr>-free e <abbr>PDF</abbr>. A edição paga é chamada <span lang="en">“HTML5: Up &amp; Running”</span> e está disponível agora. Este capítulo está incluído na versão paga.
+</p><p>Se você gostou deste capítulo e quer mostrar sua apreciação, basta <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">comprar o livro “<abbr>HTML5</abbr>: Up &amp; Running” com esse link afiliado</a> ou <a href="http://oreilly.com/catalog/9780596806033">comprar a edição eletrônica diretamente da O&#8217;Reilly</a>. Você vai ganhar um livro, e eu vou ganhar um trocado. Atualmente, não aceito doações diretas.
+</p></blockquote>
 </div>
 </div>
 
