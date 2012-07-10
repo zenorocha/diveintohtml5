@@ -181,7 +181,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 <p>Por mais de uma década, existiam apenas alguns tipos de campos nos formulários web. Os mais comuns eram:
 
 <table class=st>
-<tr class=ho><th>Field Type<th><abbr>HTML</abbr> Code<th>Notes
+<tr class=ho><th>Tipo do Campo<th>Código <abbr>HTML</abbr><th>Notas
 <tr class=zebra><th>checkbox<td><code>&lt;input type="checkbox"></code><td>pode ser marcado ou não
 <tr><th>radio button<td><code>&lt;input type="radio"></code><td>pode ser agrupado com outros
 <tr class=zebra><th>password field<td><code>&lt;input type="password"></code><td>exibe pontos ao invés dos caracteres digitados
@@ -193,7 +193,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p>Todos esses campos continuam funcionando em <abbr>HTML5</abbr>. Se você &#8220;atualizar para <abbr>HTML5</abbr>&#8221; (quem sabe, <a href=semantics.html#the-doctype>mudando o DOCTYPE</a>), não vai ser preciso fazer nenhuma mudança nos formulários. Viva a compatibilidade!
 
-<p>No entanto, há 13 novos tipos de campos na <abbr>HTML5</abbr> , e por razões que ficarão claras em breve <em>não</em> há porque não começar a utiliza-los.
+<p>No entanto, há 13 novos tipos de campos na <abbr>HTML5</abbr>, e por razões que ficarão claras em breve <em>não</em> há porque não começar a utilizá-los.
 
 <p>O primeiro destes novos campos é o <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state>endereço de email</a>. Se declara assim:
 
@@ -202,7 +202,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
   &lt;input type="submit" value="Go">
 &lt;/form></code></pre>
 
-<p>Eu estava prestes a escrever uma frase que começava com &#8220;nos navegadores que não suportam <code>type="email"</code>&hellip;&#8221; mas me impedi. Por que? Porquê eu não tenho certeza do que quer dizer um navegador não suportar <code>type="email"</code>. Todos os navegadores &#8220;suportam&#8221; <code>type="email"</code>. Eles só não fazem nada de especial com ele (você verá alguns exemplos especiais de tratamento em breve), mas navegadores que não reconhecem <code>type="email"</code> irão trata-lo como <code>type="text"</code> e renderizar um tipo de campo simples.
+<p>Eu estava prestes a escrever uma frase que começava com &#8220;nos navegadores que não suportam <code>type="email"</code>&hellip;&#8221; mas me impedi. Por que? Porque eu não tenho certeza do que quer dizer um navegador não suportar <code>type="email"</code>. Todos os navegadores &#8220;suportam&#8221; <code>type="email"</code>. Eles só não fazem nada de especial com ele (você verá alguns exemplos especiais de tratamento em breve), mas navegadores que não reconhecem <code>type="email"</code> irão tratá-lo como <code>type="text"</code> e renderizar um tipo de campo simples.
 
 <p>Eu não consigo enfatizar quão importante ele é. A internet possui milhões de formulários que pedem para digitar um endereço de email, e todos eles usam <code>&lt;input type="text"></code>. Você vê um campo de texto, você digita um endereço de email na caixa, e é isto. Com a <abbr>HTML5</abbr> utilize a definição <code>type="email"</code>. Os navegadores vão surtar? Não. Todo o tipo de navegador da Terra trata um atributo <code>type</code> nulo como <code>type="text"</code> &mdash; inclusive o IE6. Então você pode &#8220;atualizar&#8221; seu formulário para <code>type="email"</code> agora.
 
@@ -212,7 +212,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p>O iPhone não possui um teclado físico. A digitação é feita por toque no teclado virtual, que surge nos momentos apropriados. Por exemplo, quando você seleciona um campo de um formulário web. A Apple fez algo inteligente no navegador do iPhone. Ele reconhece vários dos novos tipos de campos da <abbr>HTML5</abbr> e <em>dinamicamente altera o teclado virtual</em> adaptado para o campo específico.
 
-<p>Por exemplo, o campo de endereço de email é um texto, certo? Certo, mas ele precisa de um tipo especial de texto, praticamente todos os endereços de email contém o <code>@</code> sign and e pelo menos um ponto (<code>.</code>), e não costumam ter nenhum espaço. Então quando você usa o iPhone e foca em um campo <code>&lt;input type="email"></code> , você tem um teclado virtual que possui uma barra de espaço menor que a usual, mais teclas especificas para os caracteres <code>@</code> e (<code>.</code>).
+<p>Por exemplo, o campo de endereço de email é um texto, certo? Certo, mas ele precisa de um tipo especial de texto, praticamente todos os endereços de email contém o símbolo <code>@</code> e pelo menos um ponto (<code>.</code>), e não costumam ter nenhum espaço. Então quando você usa o iPhone e foca em um campo <code>&lt;input type="email"></code> , você tem um teclado virtual que possui uma barra de espaço menor que a usual, mais teclas especificas para os caracteres <code>@</code> e (<code>.</code>).
 
 <p class=c><img src=i/input-type-email.png alt="Renderização do iPhone do campo type=email" title="observe as teclas específicas para os caracteres @ e . ao lado da barra de espaço" width=222 height=333 class=fr><br><a href=examples/input-type-email.html>Faça você o teste do campo <code>type="email"</code></a>.
 
@@ -222,15 +222,15 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <h2 id=type-url>Endereços web</h2>
 
-<p>Endereços web - que a maioria dos usuários avançados de internet chamam de <abbr>URLs</abbr>, exceto por alguns poucos  <a href="http://www.douglasadams.com/dna/pedants.html">pedantes</a> que chamam de <abbr>URIs</abbr> &mdash; outro tipo de texto especializado. A sintaxe dos endereços web é definida pelos padrões de relevância da Internet. Se alguém pedir para você digitar um endereço web em um formulário, é esperado algo como &#8220;<code>http://www.google.com/</code>&#8221;, não &#8220;Rua Getulio Vargas, 160.&#8221; Barras são comuns &mdash; inclusive a pagina inicial do Google possui três delas. Pontos são tão comuns quanto, mas espaços são proibidos. E todos os endreços web possuem um sufixo relacionado a um domínio como:  &#8220;.com&#8221; ou &#8220;.org&#8221;.
+<p>Endereços web - que a maioria dos usuários avançados de internet chamam de <abbr>URLs</abbr>, exceto por alguns poucos  <a href="http://www.douglasadams.com/dna/pedants.html">pedantes</a> que chamam de <abbr>URIs</abbr> &mdash; outro tipo de texto especializado. A sintaxe dos endereços web é definida pelos padrões de relevância da Internet. Se alguém pedir para você digitar um endereço web em um formulário, é esperado algo como &#8220;<code>http://www.google.com/</code>&#8221;, não &#8220;Rua Getulio Vargas, 160.&#8221; Barras são comuns &mdash; inclusive a página inicial do Google possui três delas. Pontos são tão comuns quanto, mas espaços são proibidos. E todos os endreços web possuem um sufixo relacionado a um domínio como:  &#8220;.com&#8221; ou &#8220;.org&#8221;.
 
 <p>Observem... (rufar de tambores, por favor)... o <code>&lt;input type="url"></code>. No iPhone:
 
 <p class=c><img src=i/input-type-url.png alt="Renderização do iPhone do campo tipo=url" width=222 height=333 class=fr><br><a href=examples/input-type-url.html>Faça você o teste do campo <code>type="url"</code></a>.
 
-<p>O Iphone altera seu teclado virtual, do mesmo modo que ele faz para os campos de <a href=#type-email>endereço de email</a>, só que desta vez otimizado para endereços web. A barra de espaço é trocada por três teclas virtuais: um ponto, uma barra, e um botão &#8220;.com&#8221;. (Você pode pressionar por um tempo o botão &#8220;.com&#8221; para escolher outros sufixos comuns como &#8220;.org&#8221; ou &#8220;.net&#8221;.)
+<p>O iPhone altera seu teclado virtual, do mesmo modo que ele faz para os campos de <a href=#type-email>endereço de email</a>, só que desta vez otimizado para endereços web. A barra de espaço é trocada por três teclas virtuais: um ponto, uma barra, e um botão &#8220;.com&#8221;. (Você pode pressionar por um tempo o botão &#8220;.com&#8221; para escolher outros sufixos comuns como &#8220;.org&#8221; ou &#8220;.net&#8221;.)
 
-<p>A maioria dos navegadores modernos, simplesmente irão renderizar um campo <code>type="url"</code> como uma caixa de texto, logo seu usuário não irão notar a diferença <a href=#validation>até enviarem o formulário</a>. Navegadores que suportam a <abbr>HTML5</abbr> irão tratar o <code>type="url"</code> exatamente como um <code>type="text"</code>, por isso não há desvantagem em usa-los para todos os campos que requerem um endereço web.
+<p>A maioria dos navegadores modernos, simplesmente irão renderizar um campo <code>type="url"</code> como uma caixa de texto, logo seus usuários não irão notar a diferença <a href=#validation>até enviarem o formulário</a>. Navegadores que suportam a <abbr>HTML5</abbr> irão tratar o <code>type="url"</code> exatamente como um <code>type="text"</code>, por isso não há desvantagem em usá-los para todos os campos que requerem um endereço web.
 
 <p class=a>&#x2767;
 
@@ -238,7 +238,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p>Em seguida: Números. Pedir um número é mais complicado do que pedir um endereço de e-mail ou endereço de web. Primeiro de tudo, números são mais complicados do que você imagina. Rápido: escolha um número. -1? Não, eu quero um número entre 1 e 10. 7&frac12;? Não, não uma fração, bobo. <span class=u>&pi;</span>? Agora você está começando a ser irracional.
 
-<p>Meu ponto é, você geralmente não pede &#8220;apenas um número.&#8221; É mais provável que você queira um número em determinado intervalo. E você deseja apenas certo tipo de número neste intervalo - talvez todos os números, mas não frações ou decimais, ou algo mais esotérico como números divisíveis por 10. A <abbr>HTML5</abbr> lhe dá cobertura. 
+<p>Meu ponto é, você geralmente não pede &#8220;apenas um número.&#8221; É mais provável que você queira um número em determinado intervalo. E você deseja apenas certo tipo de número neste intervalo - talvez todos os números, mas não frações ou decimais, ou algo mais esotérico como números divisíveis por 10. A <abbr>HTML5</abbr> lhe dá cobertura.
 
 <p class="legend top" style="margin-left:8em"><span class=arrow>&#x21b6;</span> Escolha um número, (quase) qualquer número 
 <pre><code>&lt;input <mark>type="number"</mark>
@@ -275,11 +275,11 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p class=c><img src=i/input-type-number-opera.png alt="Renderização do Opera do campo type=number" width=227 height=203 class=fr>
 
-<p>O Opera respeita os atributos <code>min</code>, <code>max</code>, and <code>step</code>,  você sempre irá acabar com um valor númerico aceitável. Caso você aumente o valor até o máximo, a seta superior da caixa rotativa fica desabilitada.
+<p>O Opera respeita os atributos <code>min</code>, <code>max</code>, and <code>step</code>, você sempre irá acabar com um valor númerico aceitável. Caso você aumente o valor até o máximo, a seta superior da caixa rotativa fica desabilitada.
 
 <p class=c><img src=i/input-type-number-at-max-opera.png alt="Renderização do Opera do campo type=number com um valor máximo" width=142 height=28 class=fr>
 
-<p>Como acontece com todos os tipos de campos que comentei neste capítulo, navegadores que não suportam  <code>type="number"</code> irão trata-lo como <code>type="text"</code>. O valor padrão irá aparecer no campo (já que é armazenado no atributo <code>value</code>), mas os outros atributos como <code>min</code> e <code>max</code> serão ignorados. Você é livre para implementa-los como quiser, ou pode reutilizar um biblioteca Javascript que já possui um controle de caixa rotativa. Apenas <a href=detect.html#input-types>cheque o suporte nativo da <abbr>HTML5</abbr> primeiro</a>, deste jeito:
+<p>Como acontece com todos os tipos de campos que comentei neste capítulo, navegadores que não suportam  <code>type="number"</code> irão trata-lo como <code>type="text"</code>. O valor padrão irá aparecer no campo (já que é armazenado no atributo <code>value</code>), mas os outros atributos como <code>min</code> e <code>max</code> serão ignorados. Você é livre para implementá-los como quiser, ou pode reutilizar uma biblioteca Javascript que já possui um controle de caixa rotativa. Apenas <a href=detect.html#input-types>cheque o suporte nativo da <abbr>HTML5</abbr> primeiro</a>, deste jeito:
 
 <pre><code>if (!<a href=detect.html#modernizr>Modernizr</a>.inputtypes.number) {
   // sem suporte nativo ao campo type=number
@@ -304,13 +304,13 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
        step="2"
        value="6"></code></pre>
 
-<p>Todos os atributos válidos são os mesmos do <code>type="number"</code> &mdash; <code>min</code>, <code>max</code>, <code>step</code>, <code>value</code> &mdash; e funcionam do mesmo modo. A única diferença é a interface. Ao invés de ser um campo para digitar, é esperado dos navegadores renderizarem  <code>type="range"</code> como um controle deslizante. Safari, Chrome e Opera fazem isto. (Infelizmente, o iPhone renderiza uma caixa de texto simples. Que nem ao menos otimiza o seu teclado virtual para entradas numéricas). Todos os outros navegadores simplesmente tratam o campo como <code>type="text"</code>, então não há razão para não começar a usa-lo imediatamente.
+<p>Todos os atributos válidos são os mesmos do <code>type="number"</code> &mdash; <code>min</code>, <code>max</code>, <code>step</code>, <code>value</code> &mdash; e funcionam do mesmo modo. A única diferença é a interface. Ao invés de ser um campo para digitar, é esperado dos navegadores renderizarem  <code>type="range"</code> como um controle deslizante. Safari, Chrome e Opera fazem isto. (Infelizmente, o iPhone renderiza uma caixa de texto simples. Que nem ao menos otimiza o seu teclado virtual para entradas numéricas). Todos os outros navegadores simplesmente tratam o campo como <code>type="text"</code>, então não há razão para não começar a usá-lo imediatamente.
 
 <p class=a>&#x2767;
 
 <h2 id=type-date>Selecionadores de data</h2>
 
-<p><abbr>HTML</abbr> ão possui selecionadores de data. As Bibliotecas JavaScript  tiveram que resolver esta negligência (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>), mas é claro estas soluções exigem assumir o uso da biblioteca que o selecionador de data é construído. 
+<p><abbr>HTML</abbr> não possui selecionadores de data. As bibliotecas JavaScript tiveram que resolver esta negligência (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>), mas é claro estas soluções exigem assumir o uso da biblioteca que o selecionador de data é construído. 
 
 <p><abbr>HTML5</abbr> finalmente definiu um modo para incluir selecionadores de data nativos. Sem uso de scripts personalizados. Na verdade, é definido seis: data, mês, semana, hora, data + hora, e data + hora - fuso horário.
 
@@ -370,7 +370,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
   var i = document.createElement("input");
   i.setAttribute("type", "date");
   if (i.type == "text") {
-  	// Sem suporte nativo ao selecionador de data :[
+    // Sem suporte nativo ao selecionador de data :[
     // Utilize Dojo/jQueryUI/YUI/Closure para criar um,
     // então dinamicamente substitua este &lt;input> element.
   }
@@ -382,7 +382,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p>OK, este assunto é sutil. Bem, a ideia é bastante simples, mas as implementações requerem algumas explicações. Aqui vai&hellip;
 
-<p>Busca. Não só o buscador do Google ou do Yahoo. (Os demais.) Pense em qualquer caixa de busca de uma página de um site. A Amazom possui uma caixa de busca. Neweeg possui uma caixa de busca. A maioria dos blogs possui uma caixa de busca. Como eles são marcados? <code>&lt;input type="text"></code>, assim como todas as outras caixas de texto da web. Vamos corrigir isto.
+<p>Busca. Não só o buscador do Google ou do Yahoo. (Os demais.) Pense em qualquer caixa de busca de uma página de um site. A Amazon possui uma caixa de busca. Neweeg possui uma caixa de busca. A maioria dos blogs possui uma caixa de busca. Como eles são marcados? <code>&lt;input type="text"></code>, assim como todas as outras caixas de texto da web. Vamos corrigir isto.
 
 <pre style="float:left"><code>&lt;form>
   &lt;input name="q" <mark>type="search"</mark>>
@@ -398,7 +398,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p class=c><img src=i/input-type-search-safari-typing.png alt="Digitando no campo type=search no Safari" width=191 height=121>
 
-<p><a href=http://www.apple.com/>Apple.com</a> usa <code>&lt;input type="search"></code> para os campos de pesquisa dos seus sites, de forma a incrementar a experiência "Mac". Mas não há nenhuma especificação do Mac sobre. É apenas uma marcação, então cada navegador em cada plataforma pode escolher a renderização de acordo com as especificações e convenções. Como todos os outros novos tipos de campo, navegadores que não reconhecem <code>type="search"</code> irão trata-lo como <code>type="text"</code>, logo não existe absolutamente nenhuma razão para na começar usar <code>type="search"</code> para todas as suas caixas de pesquisa hoje.
+<p><a href=http://www.apple.com/>Apple.com</a> usa <code>&lt;input type="search"></code> para os campos de pesquisa dos seus sites, de forma a incrementar a experiência "Mac". Mas não há nenhuma especificação do Mac sobre. É apenas uma marcação, então cada navegador em cada plataforma pode escolher a renderização de acordo com as especificações e convenções. Como todos os outros novos tipos de campo, navegadores que não reconhecem <code>type="search"</code> irão tratá-lo como <code>type="text"</code>, logo não existe absolutamente nenhuma razão para na começar usar <code>type="search"</code> para todas as suas caixas de pesquisa hoje.
 
 <div class="pf clear">
 <h4>Professor Marcação diz</h4>
@@ -535,7 +535,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p class=c>Copyright MMIX&ndash;MMXI <a href=about.html>Mark Pilgrim</a>
 
-<form action=http://www.google.com/cse><div><input type=hidden name=cx value=017884302975346027366:bgclqh8nvse><input type=hidden name=ie value=UTF-8><input type=search name=q size=25 placeholder="powered by Google&trade;">&nbsp;<input type=submit name=sa value=Search></div></form>
+<form action=http://www.google.com/cse><div><input type=hidden name=cx value=017884302975346027366:bgclqh8nvse><input type=hidden name=ie value=UTF-8><input type=search name=q size=25 placeholder="powered by Google&trade;">&nbsp;<input type=submit name=sa value=Pesquisar></div></form>
 <script src=j/jquery.js></script>
 <script src=j/modernizr.js></script>
 <script src=j/dih5.js></script>
