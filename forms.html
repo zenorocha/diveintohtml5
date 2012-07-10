@@ -288,37 +288,38 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p class=a>&#x2767;
 
-<h2 id=type-range>Numbers as Sliders</h2>
+<h2 id=type-range>Números em controles deslizantes</h2>
 
-<p><a href=#type-number>Spinboxes</a> are not the only way to represent numeric input. You&#8217;ve probably also seen &#8220;slider&#8221; controls that look like this:
+<p><a href=#type-number>Números em caixas rotativas</a> não são o único modo de representar campos numéricos. Você provavelmente já deve ter visto  "controles deslizantes" como este:
 
-<p class=c><img src=i/input-type-range.png alt="Chrome rendering of input type=range field as slider control" width=175 height=25><br><a href=examples/input-type-range.html>Test <code>type="range"</code> for yourself</a>.
+<p class=c><img src=i/input-type-range.png alt="Chrome rendering of input type=range field as slider control" width=175 height=25><br><a href=examples/input-type-range.html>Faça você o teste do campo <code>type="range"</code></a>.
 
-<p>You can now have slider controls in your web forms, too. The markup looks eerily similar to <a href=#type-range>spinbox controls</a>:
+<p>Agora você pode ter controles deslizantes no seu formulário web também. A marcação é bem semelhante com as <a href=#type-range>caixas rotativas</a>:
 
-<p class="legend top" style="margin-left:8em"><span class=arrow>&#x21b6;</span> The spitting image
+
+<p class="legend top" style="margin-left:8em"><span class=arrow>&#x21b6;</span> A imagem para comprovar
 <pre><code>&lt;input <mark>type="range"</mark>
        min="0"
        max="10"
        step="2"
        value="6"></code></pre>
 
-<p>All the available attributes are the same as <code>type="number"</code> &mdash; <code>min</code>, <code>max</code>, <code>step</code>, <code>value</code> &mdash; and they mean the same thing. The only difference is the user interface. Instead of a field for typing, browsers are expected to render <code>type="range"</code> as a slider control. Safari, Chrome, and Opera all do this. (Sadly, the iPhone renders it as a simple text box. It doesn&#8217;t even optimize its on-screen keyboard for numeric input.) All other browsers simply treat the field as <code>type="text"</code>, so there&#8217;s no reason you can&#8217;t start using it immediately.
+<p>Todos os atributos válidos são os mesmos do <code>type="number"</code> &mdash; <code>min</code>, <code>max</code>, <code>step</code>, <code>value</code> &mdash; e funcionam do mesmo modo. A única diferença é a interface. Ao invés de ser um campo para digitar, é esperado dos navegadores renderizarem  <code>type="range"</code> como um controle deslizante. Safari, Chrome e Opera fazem isto. (Infelizmente, o iPhone renderiza uma caixa de texto simples. Que nem ao menos otimiza o seu teclado virtual para entradas numéricas). Todos os outros navegadores simplesmente tratam o campo como <code>type="text"</code>, então não há razão para não começar a usa-lo imediatamente.
 
 <p class=a>&#x2767;
 
-<h2 id=type-date>Date Pickers</h2>
+<h2 id=type-date>Selecionadores de data</h2>
 
-<p><abbr>HTML</abbr> 4 did not include a date picker control. JavaScript frameworks have picked up the slack (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>), but of course each of these solutions requires &#8220;buying into&#8221; the framework on which the date picker is built.
+<p><abbr>HTML</abbr> ão possui selecionadores de data. As Bibliotecas JavaScript  tiveram que resolver esta negligência (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>), mas é claro estas soluções exigem assumir o uso da biblioteca que o selecionador de data é construído. 
 
-<p><abbr>HTML5</abbr> finally defines a way to include a native date picker control without having to script it yourself. In fact, it defines six: date, month, week, time, date + time, and date + time - timezone.
+<p><abbr>HTML5</abbr> finalmente definiu um modo para incluir selecionadores de data nativos. Sem uso de scripts personalizados. Na verdade, é definido seis: data, mês, semana, hora, data + hora, e data + hora - fuso horário.
 
-<p>So far, support is&hellip; sparse.
+<p>Até agora, o suporte é… escasso.
 
 <table class=bc>
-<caption>Date picker support</caption>
+<caption>Suporte ao selecionadores de data</caption>
 <thead>
-<tr><th style="text-align:left">Input Type<th>Opera<th>Every other browser
+<tr><th style="text-align:left">Tipo de Campo<th>Opera<th>Qualquer outro navegador
 <tbody>
 <tr><th><code>type="date"</code><td>9.0+<td>&middot;
 <tr><th><code>type="month"</code><td>9.0+<td>&middot;
@@ -328,39 +329,39 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 <tr><th><code>type="datetime-local"</code><td>9.0+<td>&middot;
 </table>
 
-<p>This is how Opera renders <a href=examples/input-type-date.html><code>&lt;input type="date"></code></a>:
+<p>Assim é como o Opera renderiza <a href=examples/input-type-date.html><code>&lt;input type="date"></code></a>:
 
 <blockquote>
-<p><img src=i/input-type-date.png alt="Opera's type=date picker" width=210 height=190>
+<p><img src=i/input-type-date.png alt="Opera selecionador type=date" width=210 height=190>
 </blockquote>
 
-<p>If you need a time to go with that date, Opera also supports <a href=examples/input-type-datetime.html><code>&lt;input type="datetime"></code></a>:
+<p>Se você precisar da hora junto com a data. O Opera também suporta <a href=examples/input-type-datetime.html><code>&lt;input type="datetime"></code></a>:
 
 <blockquote>
-<p><img src=i/input-type-datetime.png alt="Opera's type=datetime picker" width=225 height=191>
+<p><img src=i/input-type-datetime.png alt="Opera selecionador type=datetime" width=225 height=191>
 </blockquote>
 
-<p>If you only need a month + year (perhaps a credit card expiration date), Opera can render a <a href=examples/input-type-month.html><code>&lt;input type="month"></code></a>:
+<p>Se você só precisar de mês e ano (por exemplo, a data de vencimento de um cartão de crédito). O Opera pode renderizar  <a href=examples/input-type-month.html><code>&lt;input type="month"></code></a>:
 
 <blockquote>
-<p><img src=i/input-type-month.png alt="Opera's type=month picker" width=210 height=189>
+<p><img src=i/input-type-month.png alt="Opera selecionador type=month" width=210 height=189>
 </blockquote>
 
-<p>Less common, but also available, is the ability to pick a specific week of a year with <a href=examples/input-type-week.html><code>&lt;input type="week"></code></a>:
+<p>Menos comum, mas também válido, é a possibilidade de selecionar uma semana específica do ano com <a href=examples/input-type-week.html><code>&lt;input type="week"></code></a>:
 
 <blockquote>
-<p><img src=i/input-type-week.png alt="Opera's type=week picker" width=210 height=191>
+<p><img src=i/input-type-week.png alt="Opera selecionador type=week" width=210 height=191>
 </blockquote>
 
-<p>Last but not least, you can pick a time with <a href=examples/input-type-time.html><code>&lt;input type="time"></code></a>:
+<p>Último e não menos importante, você poder selecionar uma hora com <a href=examples/input-type-time.html><code>&lt;input type="time"></code></a>:
 
 <blockquote>
-<p><img src=i/input-type-time.png alt="Opera's type=time picker" width=98 height=22>
+<p><img src=i/input-type-time.png alt="Opera selecionador type=time" width=98 height=22>
 </blockquote>
 
-<p>It&#8217;s likely that other browsers will eventually support these input types. But just like <a href=#type-email><code>type="email"</code></a> and the other input types, these form fields will be rendered as plain text boxes in browsers that don&#8217;t recognize <code>type="date"</code> and the other variants. If you like, you can simply use <code>&lt;input type="date"></code> and friends, make Opera users happy, and wait for other browsers to catch up. More realistically, you can use <code>&lt;input type="date"></code>, <a href=detect.html#input-types>detect whether the browser has native support for date pickers</a>, and fall back to a scripted solution of your choice (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>, or some other solution).
+<p>É provável que os outros navegadores, eventualmente, venham a suportar os selecionadores de data. Mas como <a href=#type-email><code>type="email"</code></a> e os outros tipos campos, eles serão renderizado como uma caixa de texto, nos navegadores que não reconhecerem o <code>type="date"</code> e as outras variações. Se você preferir, pode simplesmente usar <code>&lt;input type="date"></code> e companhia, e fazer usuários do Opera felizes, e esperar o suporte dos outros navegadores. Mais realístico, você pode usar <code>&lt;input type="date"></code>, <a href=detect.html#input-types>detectar se o navegador possui suporte nativo para seletores de data</a>, e utilizar um fallback para um script utilizando a biblioteca a sua escolha (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>, ou outra solução).
 
-<p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> Date picker with fallback
+<p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> Selecionador de data com fallback
 <pre><code>&lt;form>
   &lt;input type="date">
 &lt;/form>
@@ -369,94 +370,94 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
   var i = document.createElement("input");
   i.setAttribute("type", "date");
   if (i.type == "text") {
-    // No native date picker support :(
-    // Use Dojo/jQueryUI/YUI/Closure to create one,
-    // then dynamically replace that &lt;input> element.
+  	// Sem suporte nativo ao selecionador de data :[
+    // Utilize Dojo/jQueryUI/YUI/Closure para criar um,
+    // então dinamicamente substitua este &lt;input> element.
   }
 &lt;/script></code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=type-search>Search Boxes</h2>
+<h2 id=type-search>Caixas de busca</h2>
 
-<p>OK, this one is subtle. Well, the idea is simple enough, but the implementations may require some explanation. Here goes&hellip;
+<p>OK, este assunto é sutil. Bem, a ideia é bastante simples, mas as implementações requerem algumas explicações. Aqui vai&hellip;
 
-<p>Search. Not just Google Search or Yahoo Search. (Well, those too.) Think of any search box, on any page, on any site. Amazon has a search box. Newegg has a search box. Most blogs have a search box. How are they marked up? <code>&lt;input type="text"></code>, just like every other text box on the web. Let&#8217;s fix that.
+<p>Busca. Não só o buscador do Google ou do Yahoo. (Os demais.) Pense em qualquer caixa de busca de uma página de um site. A Amazom possui uma caixa de busca. Neweeg possui uma caixa de busca. A maioria dos blogs possui uma caixa de busca. Como eles são marcados? <code>&lt;input type="text"></code>, assim como todas as outras caixas de texto da web. Vamos corrigir isto.
 
 <pre style="float:left"><code>&lt;form>
   &lt;input name="q" <mark>type="search"</mark>>
   &lt;input type="submit" value="Find">
 &lt;/form></code></pre>
-<p class="legend right" style="margin-top:2.75em"><span class=arrow>&nbsp;&#x21dc;</span> New-age search box
+<p class="legend right" style="margin-top:2.75em"><span class=arrow>&nbsp;&#x21dc;</span> Nova era dos campos de pesquisa
 
-<p class="clear"><a href=examples/input-type-search.html>Test <code>&lt;input type="search"></code> in your own browser</a>. In some browsers, you won&#8217;t notice any difference from a regular text box. But if you&#8217;re using Safari on Mac OS X, it will look like this:
+<p class="clear"><a href=examples/input-type-search.html>Teste <code>&lt;input type="search"></code> no seu próprio navegador</a>. Em alguns navegadores, você não irá notar diferença de uma caixa de texto normal. Mas se você utilizar Safari no Mac OS X, ele irá aparecer assim:
 
-<p class=c><img src=i/input-type-search-safari.png alt="Safari/Mac rendering input type=search field" width=191 height=121>
+<p class=c><img src=i/input-type-search-safari.png alt="Renderização do Safari/Mac do campo type=search" width=191 height=121>
 
-<p>Can you spot the difference? The input box has rounded corners! I know, I know, you can hardly contain your excitement. But wait, there&#8217;s more! When you actually start typing into the <code>type="search"</code> box, Safari inserts a small &#8220;x&#8221; button on the right side of the box. Clicking the &#8220;x&#8221; clears the contents of the field. (Google Chrome, which shares much technology with Safari under the hood, also exhibits this behavior.) Both of these small tweaks are done to match the look and feel of native search boxes in iTunes and other Mac OS X client applications.
+<p>Você pode ver a diferença? O campo possui cantos redondos! Eu sei, Eu sei, você mal consegue conter a empolgação. Mas espere, tem mais! Quando você começa digitar na caixa <code>type="search"</code>, o Safari inseri um pequeno botão "x" no canto direito da caixa. Clicando no "x" o conteúdo do campo é limpo. (O Google Chrome, que divide muitas tecnologias com o Safari debaixo do capô, também possui este comportamento. ) Ambas dessas pequenas modificações são feitas para combinar com a aparência e comportamento das caixas de buscas nativas no iTunes e outras aplicações do Mac OS X. 
 
-<p class=c><img src=i/input-type-search-safari-typing.png alt="Typing in a type=search field in Safari" width=191 height=121>
+<p class=c><img src=i/input-type-search-safari-typing.png alt="Digitando no campo type=search no Safari" width=191 height=121>
 
-<p><a href=http://www.apple.com/>Apple.com</a> uses <code>&lt;input type="search"></code> for their site-search box, to help give their site a &#8220;Mac-like&#8221; feel. But there&#8217;s nothing Mac-specific about it. It&#8217;s just markup, so each browser on each platform can choose to render it according to platform-specific conventions. As with all the other new input types, browsers that don&#8217;t recognize <code>type="search"</code> will treat it like <code>type="text"</code>, so there is absolutely no reason not to start using <code>type="search"</code> for all your search boxes today.
+<p><a href=http://www.apple.com/>Apple.com</a> usa <code>&lt;input type="search"></code> para os campos de pesquisa dos seus sites, de forma a incrementar a experiência "Mac". Mas não há nenhuma especificação do Mac sobre. É apenas uma marcação, então cada navegador em cada plataforma pode escolher a renderização de acordo com as especificações e convenções. Como todos os outros novos tipos de campo, navegadores que não reconhecem <code>type="search"</code> irão trata-lo como <code>type="text"</code>, logo não existe absolutamente nenhuma razão para na começar usar <code>type="search"</code> para todas as suas caixas de pesquisa hoje.
 
 <div class="pf clear">
-<h4>Professor Markup Says</h4>
+<h4>Professor Marcação diz</h4>
 <div class=inner>
 <blockquote class=note>
-<p>By default, older versions of Safari will not apply even the most basic CSS styles to <code>&lt;input type="search"></code> fields. If you want to force Safari to treat your search field like a normal text field (so you can apply your own <abbr>CSS</abbr> styles), add this rule to your stylesheet:
+<p>Por padrão, versões antigas do Safari não aplicam nem os mais básicos estilos <abbr>CSS</abbr> no campo <code>&lt;input type="search"></code>. Se você quer forçar o Safari tratar seus campos de pesquisa como um campo de texto normal (para poder inserir seus próprios estilos <abbr>CSS</abbr>), adicione esta regra em sua folha de estilo:
 <blockquote><pre><code>input[type="search"] {
   -webkit-appearance: textfield;
 }</code></pre></blockquote>
-<p><i>Thanks to John Lein for teaching me this trick.</i>
+<p><i>Obrigado a Jonh Lein por me ensinar este truque.</i>
 </blockquote>
 </div>
 </div>
 
 <p class=a>&#x2767;
 
-<h2 id=type-color>Color Pickers</h2>
+<h2 id=type-color>Selecionadores de cor</h2>
 
-<p><abbr>HTML5</abbr> also defines <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#color-state><code>&lt;input type="color"></code></a>, which lets you pick a color and returns the color&#8217;s hexadecimal representation. <del>No browser supports it yet, which is a shame, because I&#8217;ve always loved <a href=http://earthlingsoft.net/ssp/blog/2006/04/colour_me_picked>the Mac OS color picker</a>. Maybe someday.</del> Good news, everyone! <a href=http://dev.opera.com/articles/view/new-form-features-in-html5/#input-color>Opera 11 now supports <code>type=color</code></a>. On Mac and Windows, it integrates with the platform's native color picker. On Linux, it drops down a basic color picker. On all platforms, the return value of the input control is a six-digit hexadecimal RGB color, suitable for framing or using anywhere that accepts a CSS color.
+<p><abbr>HTML5</abbr> também possui  <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#color-state><code>&lt;input type="color"></code></a>, que permite você selecionar uma cor e retornar sua representação hexadecimal. <del>Nenhum navegador suporta por enquanto, o que é uma vergonha, porque eu sempre adorei <a href=http://earthlingsoft.net/ssp/blog/2006/04/colour_me_picked>o selecionador de cor do Mac OS</a>. Talvez algum dia.</del> Boas notícias, pessoal! <a href=http://dev.opera.com/articles/view/new-form-features-in-html5/#input-color>Opera 11 agora suporta <code>type=color</code></a>. No Mac e no Windows, o campo é integrado com o selecionador de cor nativo da plataforma. No Linux, desce um seletor de cores básico. Em todas as outras plataformas, o campo possui um limite de seis caracteres hexademical de cor RGB, apropriado para utilizar onde aceitar uma cor CSS.
 
-<p class=c><img src=i/input-type-color.png alt="Opera rendering of input type=range field on multiple platforms" width=582 height=444><br><a href=examples/input-type-color.html>Test <code>type="color"</code> for yourself</a>.
+<p class=c><img src=i/input-type-color.png alt="Renderização do Opera do campo type=color em múltiplas plataformas" width=582 height=444><br><a href=examples/input-type-color.html>Teste você mesmo o campo <code>type="color"</code></a>.
 
-<p><i>Thanks to Patrick Lauke and Chris Mills for relicensing this image for inclusion in this book.</i> You should <a href=http://dev.opera.com/articles/view/new-form-features-in-html5/>read their article about the new form features in Opera 11</a>.
+<p><i>Obrigado ao Patrick Lauke e Chris Mills por liberar esta imagem para ser inclusa no livro.</i> Você deveria <a href=http://dev.opera.com/articles/view/new-form-features-in-html5/>ler o artigo deles sobre as novas características dos formulários no Opera 11</a>.
 
 <p class=a>&#x2767;
 
-<h2 id=validation>Form Validation</h2>
+<h2 id=validation>Validação de formulários</h2>
 
 <table class=bc>
-<caption>Form validation support</caption>
+<caption>Suporte a validação de formulário</caption>
 <thead>
 <tr><th title="Internet Explorer">IE<th title="Mozilla Firefox">Firefox<th title="Apple Safari">Safari<th title="Google Chrome">Chrome<th>Opera<th>iPhone<th>Android
 <tbody>
 <tr><td>&middot;<td>4.0+<td>5.0+<td>10.0+<td>9.0+<td>&middot;<td>&middot;
 </table>
 
-<p>In this chapter, I&#8217;ve talked about new input types and new features like auto-focus form fields, but I haven&#8217;t mentioned what is perhaps the most exciting part of <abbr>HTML5</abbr> forms: automatic input validation. Consider the common problem of entering an email address into a web form. You probably have some client-side validation in JavaScript, followed by server-side validation in PHP or Python or some other server-side scripting language. <abbr>HTML5</abbr> can never replace your server-side validation, but it might someday replace your client-side validation.
+<p>Neste capítulo, eu falo sobre os novos tipos de campos e suas características, como foco automático, mas eu não mencionei o que é, talvez, a parte mais emocionante nos formulários <abbr>HTML5</abbr>: validação automática dos campos. Considerando o problema comum de digitar um endereço de email em um formulário web. Você provavelmente possui uma validação no lado do cliente em JavaScript, seguido por uma no lado do servidor em PHP ou Python ou outra linguagem de servidor. <abbr>HTML5</abbr> nunca poderá substituir a validação do servidor, mas pode um dia substituir a do lado do cliente.
 
-<p>There are two big problems with validating email addresses in JavaScript:
+<p>Há dois grandes problemas em validar um endereço de email em JavaScript:
 
 <ol>
-<li>A surprising number of your visitors (probably around 10%) won&#8217;t have JavaScript enabled
-<li>You&#8217;ll get it wrong
+<li>Um número surpreendente do seus visitantes (provavelmente cerca de 10%) não possui JavaScript habilitado
+<li>Você vai fazer errado.
 </ol>
 
-<p>Seriously, you&#8217;ll get it wrong. Determining whether a random string of characters is a valid email address <a href="http://www.regular-expressions.info/email.html">is unbelievably complicated</a>. The harder you look, <a href="http://www.ex-parrot.com/pdw/Mail-RFC822-Address.html">the more complicated it gets</a>. Did I mention it&#8217;s <a href="http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx">really, really complicated</a>? Wouldn&#8217;t it be easier to offload the entire headache to your browser?
+<p>Sério, você vai fazer errado. Determinar se uma seqüência aleatória de caracteres é um endereço de email válido <a href="http://www.regular-expressions.info/email.html">é inacreditavelmente complicado</a>. Quanto mais você olha, <a href="http://www.ex-parrot.com/pdw/Mail-RFC822-Address.html">mais complicado fica</a>. Eu já falei que é <a href="http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx">muito, muito complicado</a>? Não seria mais fácil deixar esta dor de cabeça para o navegador?
 
-<p class="legend top" style="width:500px;text-align:center">Most modern browsers validate type=&#8220;email&#8221; <span class=arrow>&#x21b7;</span><br></p>
-<p class=c><img src=i/input-type-email-validation.png alt="error message on invalid type=email field" width=243 height=76>
+<p class="legend top" style="width:500px;text-align:center">Navegadores modernos validam o type=&#8220;email&#8221; <span class=arrow>&#x21b7;</span><br></p>
+<p class=c><img src=i/input-type-email-validation.png alt="mensagem de erro na validação do campo type=email" width=243 height=76>
 
-<p>That screenshot is from Opera 10, although the functionality has been present since Opera 9. <a href=http://blog.mozilla.com/webdev/2011/03/14/html5-form-validation-on-sumo/>Firefox 4 and Chrome 10 provide similar functionality</a>. The only markup involved is <a href=#type-email>setting the <code>type</code> attribute to <code>"email"</code></a>. When the user tries to submit a form with an <code>&lt;input type="email"></code> field, the browser automatically offers <abbr>RFC</abbr>-compliant email validation, even if scripting is disabled.
+<p>A imagem de tela pertence ao Opera 10, porém a funcionalidade está presente desde o Opera 9. <a href=http://blog.mozilla.com/webdev/2011/03/14/html5-form-validation-on-sumo/>Firefox 4 e Chrome 10 também fornecem a mesma funcionalidade</a>. A única marcação envolvida é <a href=#type-email>setar o atributo <code>type</code> para <code>"email"</code></a>. Quando o usuário tentar enviar o formulário com um campo <code>&lt;input type="email"></code> o navegador automaticamente oferece uma validação <abbr>RFC</abbr>-compliant, mesmo se os scripts estiverem desabilitados.
 
-<p><abbr>HTML5</abbr> also offers validation of web addresses entered into <code>&lt;input type="url"></code> fields, and numbers in <code>&lt;input type="number"></code> fields. The validation of numbers even takes into account the <code>min</code> and <code>max</code> attributes, so browsers will not let you submit the form if you enter a number that is too large.
+<p><abbr>HTML5</abbr> também oferece validação para endereços web no campo <code>&lt;input type="url"></code> e de números no <code>&lt;input type="number"></code>. A validação de números também leva em conta os atributos <code>min</code> e <code>max</code> attributes, ou seja os navegadores não irão permitir enviar o formulário se você digitar um número que seja muito grande.
 
-<p class=c><img src=i/input-type-number-validation.png alt="error message on invalid type=number field" width=135 height=76>
+<p class=c><img src=i/input-type-number-validation.png alt="mensagem de erro na validação do campo type=number" width=135 height=76>
 
-<p>There is no markup required to activate <abbr>HTML5</abbr> form validation; it is on by default. To turn it off, use the <code>novalidate</code> attribute.
+<p>Não há nenhuma marcação para ativar a validação de formulário do <abbr>HTML5</abbr>; é feita por padrão. Para desligar, use o atributo <code>novalidate</code>.
 
-<p class="legend top">Don&#8217;t validate me, bro <span class=arrow>&#x21b7;</span><br></p>
+<p class="legend top">Não me valide, parceiro <span class=arrow>&#x21b7;</span><br></p>
 <pre><code>&lt;form <mark>novalidate</mark>>
   &lt;input type="email" id="addr">
   &lt;input type="submit" value="Subscribe">
@@ -464,71 +465,71 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p class=a>&#x2767;
 
-<h2 id=required>Required Fields</h2>
+<h2 id=required>Campos obrigatórios</h2>
 
 <table class=bc>
-<caption>&lt;input required> support</caption>
+<caption>Suporte aos campos obrigatórios</caption>
 <thead>
 <tr><th title="Internet Explorer">IE<th title="Mozilla Firefox">Firefox<th title="Apple Safari">Safari<th title="Google Chrome">Chrome<th>Opera<th>iPhone<th>Android
 <tbody>
 <tr><td>&middot;<td>4.0+<td>&middot;<td>10.0+<td>9.0+<td>&middot;<td>&middot;
 </table>
 
-<p><a href=#validation><abbr>HTML5</abbr> form validation</a> isn&#8217;t limited to the type of each field. You can also specify that certain fields are required. Required fields must have a value before you can submit the form.
+<p><a href=#validation>Validação de formulários com <abbr>HTML5</abbr></a> não se limita a cada tipo de campo. Você pode também especificar que certo campo é obrigatório. Os campos obrigatórios precisam de um valor antes de serem enviados.
 
-<p>The markup for required fields is as simple as can be:
+<p>A marcação para um campo obrigatório é a mais simples possível:
 
 <pre><code>&lt;form>
   &lt;input id="q" <mark>required</mark>>
   &lt;input type="submit" value="Search">
 &lt;/form></code></pre>
 
-<p class="clear"><a href=examples/input-required.html>Test <code>&lt;input required></code> in your own browser</a>. Browsers may alter the default appearance of required fields. For example, this is what a required field looks like in Mozilla Firefox 4.0:
+<p class="clear"><a href=examples/input-required.html>Teste <code>&lt;input required></code> em seu navegador</a>. Navegadores podem alterar a aparência padrão dos campos obrigatórios. Por exemplo, assim é como um campo obrigatório parece no Mozilla Firefox 4.0
 
-<p class=c><img src=i/input-required.png alt="default appearance of required fields in Firefox" width=250 height=122>
+<p class=c><img src=i/input-required.png alt="aparência padrão de um campo obrigatório no Firefox" width=250 height=122>
 
-<p>Furthermore, if you attempt to submit the form without filling in the required value, Firefox will pop up an infobar telling you that the field is mandatory and can not be left blank.
-
-<p class=a>&#x2767;
-
-<h2 id=further-reading>Further Reading</h2>
-
-<p>Specifications and standards:
-
-<ul>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#states-of-the-type-attribute><code>&lt;input></code> types</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>the <code>&lt;input placeholder></code> attribute</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>the <code>&lt;input autofocus></code> attribute</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#attr-fs-novalidate>the <code>&lt;form novalidate></code> attribute</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-required-attribute>The <code>&lt;input required></code> attribute</a>
-</ul>
-
-<p>JavaScript libraries:
-
-<ul>
-<li><a href=http://www.modernizr.com/>Modernizr</a>, an <abbr>HTML5</abbr> detection library
-</ul>
-
-<p>Useful articles:
-
-<ul>
-<li><a href=http://www.alistapart.com/articles/forward-thinking-form-validation/>Forward Thinking Form Validation</a>
-<li><a href=http://dev.opera.com/articles/view/new-form-features-in-html5/>New form features in Opera 11</a>
-<li><a href=https://developer.mozilla.org/en/HTML/HTML5/Forms_in_HTML5>Mozilla Developer Center: Forms in HTML5</a>
-<li><a href=https://developer.mozilla.org/en/HTML/HTML5/Forms_in_HTML5><abbr>HTML5</abbr> Forms in Mozilla Firefox 4.0+</a>
-<li><a href=http://blog.mozilla.com/webdev/2011/03/14/html5-form-validation-on-sumo/>HTML5 Form Validation</a>
-</ul>
+<p>Além disso, se você tentar enviar o formulário sem preencher o valor requerido, o Firefox irá mostrar uma mensagem informando que o campo é obrigatório e não pode ser deixado em branco.
 
 <p class=a>&#x2767;
 
-<p>This has been &#8220;A Form of Madness.&#8221; The <a href=table-of-contents.html>full table of contents</a> has more if you&#8217;d like to keep reading.
+<h2 id=further-reading>Leitura Complementar</h2>
+
+<p>Especificações e normas:
+
+<ul>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#states-of-the-type-attribute>tipos de <code>&lt;input></code></a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>o atributo <code>&lt;input placeholder></code></a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>o atributo <code>&lt;input autofocus></code></a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#attr-fs-novalidate>o atributo <code>&lt;form novalidate></code></a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-required-attribute>o atributo <code>&lt;input required></code></a>
+</ul>
+
+<p>Bibliotecas JavaScript
+
+<ul>
+<li><a href=http://www.modernizr.com/>Modernizr</a>, biblioteca de detecção de <abbr>HTML5</abbr>
+</ul>
+
+<p>Artigos Úteis
+
+<ul>
+<li><a href=http://www.alistapart.com/articles/forward-thinking-form-validation/>Pensando pra frente Validação de formulários</a>
+<li><a href=http://dev.opera.com/articles/view/new-form-features-in-html5/>Novos recursos de formulários no Opera 11</a>
+<li><a href=https://developer.mozilla.org/en/HTML/HTML5/Forms_in_HTML5>Mozilla Developer Center: Formulários na HMTL5</a>
+<li><a href=https://developer.mozilla.org/en/HTML/HTML5/Forms_in_HTML5>Formulários na <abbr>HTML5</abbr> no Mozilla Firefox 4.0+</a>
+<li><a href=http://blog.mozilla.com/webdev/2011/03/14/html5-form-validation-on-sumo/>Validação de formulários na HTML5</a>
+</ul>
+
+<p class=a>&#x2767;
+
+<p>Isso foi o &#8220;Uma forma de loucura.&#8221; Consulte o <a href=table-of-contents.html>sumário</a> caso queria continuar com a leitura.
 
 <div class=pf>
-<h4>Did You Know?</h4>
-<div class=moneybags>
-<blockquote><p>In association with Google Press, O&#8217;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &#8220;HTML5: Up &amp; Running,&#8221; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &#8220;HTML5: Up &amp; Running&#8221; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&#8217;Reilly</a>. You&#8217;ll get a book, and I&#8217;ll get a buck. I do not currently accept direct donations.
-</blockquote>
+<h4>Você Sabia?</h4>
+<div class="moneybags">
+<blockquote><p>Em associação a <span lang="en">Google Press</span>, O&#8217;Reilly está distruindo este livro em variados formatos, incluindo papel, ePub, Mobi, <abbr>DRM</abbr>-free e <abbr>PDF</abbr>. A edição paga é chamada <span lang="en">“HTML5: Up &amp; Running”</span> e está disponível agora. Este capítulo está incluído na versão paga.
+</p><p>Se você gostou deste capítulo e quer mostrar sua apreciação, basta <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">comprar o livro “<abbr>HTML5</abbr>: Up &amp; Running” com esse link afiliado</a> ou <a href="http://oreilly.com/catalog/9780596806033">comprar a edição eletrônica diretamente da O&#8217;Reilly</a>. Você vai ganhar um livro, e eu vou ganhar um trocado. Atualmente, não aceito doações diretas.
+</p></blockquote>
 </div>
 </div>
 
