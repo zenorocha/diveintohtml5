@@ -119,31 +119,31 @@ R: Privacidade é uma preocupação óbvia quando se está falando sobre compart
 
 <p class=a>&#x2767;
 
-<h2 id=errors>Handling Errors</h2>
+<h2 id=errors>Lidando com erros</h2>
 
-<p>Geolocation is complicated. Things can go wrong. I&#8217;ve mentioned the &#8220;user consent&#8221; angle already. If your web application wants the user&#8217;s location but the user doesn&#8217;t want to give it to you, you&#8217;re screwed. The user always wins. But what does that look like in code? It looks like the second argument to the <code>getCurrentPosition()</code> function: an error handling callback function.
+<p>Geolocalização é complicado. Coisas podem dar errado. Eu havia dito que o &#8220;consentimento do usuário&#8221; é estranho. Se sua aplicação precisa da localização do usuário mas o usuário não permitir, você está ferrado. O usuário sempre ganha. Se ele não permitir, o que apareceria como mensagem? Veja o segundo parâmetro do método <code>getCurrentPosition()</code>: um erro é chamado na função de callback.
 
 <pre><code>navigator.geolocation.getCurrentPosition(
   show_map, <mark>handle_error</mark>)</code></pre>
 
-<p>If anything goes wrong, your error callback function will be called with a <code>PositionError</code> object.
+<p>Se qualquer coisa sair errado, sua função callback de erro será chamada com um objeto <code>PositionError</code>.
 
 <table class=st>
-<caption>PositionError Object</caption>
-<tr class=ho><th>Property<th>Type<th>Notes
-<tr class=zebra><th><code>code</code><td>short<td>an enumerated value
-<tr><th><code>message</code><td>DOMString<td>not intended for end users
+<caption>Objeto PositionError</caption>
+<tr class=ho><th>Propriedade<th>Tipo<th>Observações
+<tr class=zebra><th><code>code</code><td>short<td>um valor enumerado
+<tr><th><code>message</code><td>DOMString<td>não usado para usuários finais
 </table>
 
-<p>The <code>code</code> property will be one of
+<p>A propriedade <code>code</code> retornará um desses resultados
 
 <ul>
-<li><code>PERMISSION_DENIED</code> (<code>1</code>) if the user clicks that &#8220;Don&#8217;t Share&#8221; button or otherwise denies you access to their location.
-<li><code>POSITION_UNAVAILABLE</code> (<code>2</code>) if the network is down or the positioning satellites can&#8217;t be contacted.
-<li><code>TIMEOUT</code> (<code>3</code>) if the network is up but it takes too long to calculate the user&#8217;s position. How long is &#8220;too long&#8221;? I&#8217;ll show you how to define that in the next section.
+<li><code>PERMISSION_DENIED</code> (<code>1</code>) se o usuário clicar em &#8220;não compartilhar&#8221; ou qualquer outra coisa que bloqueará seu acesso a sua localização.
+<li><code>POSITION_UNAVAILABLE</code> (<code>2</code>) se a rede cair ou a posição do satélite não poder ser resgatada.
+<li><code>TIMEOUT</code> (<code>3</code>) se a rede não cair mas o tempo para calcular a posição do usuário for longo demais. Como saber o que é &#8220;longo demais&#8221;? Vou mostrar como definir isso numa próxima seção.
 </ul>
 
-<p class="legend top" style="padding-left:8.5em"><span class=arrow>&#x21b6;</span> Be gracious in defeat
+<p class="legend top" style="padding-left:8.5em"><span class=arrow>&#x21b6;</span> Seja educado na derrota
 <pre><code>function handle_error(err) {
   if (<mark>err.code</mark> == 1) {
     // user said no!
@@ -151,11 +151,11 @@ R: Privacidade é uma preocupação óbvia quando se está falando sobre compart
 }</code></pre>
 
 <div class=pf>
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao professor markup</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Does the geolocation <abbr>API</abbr> work on the International Space Station, on the moon, or on other planets?<br>
-A: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>The geolocation specification states</a>, &#8220;The geographic coordinate reference system used by the attributes in this interface is the World Geodetic System (2d) [WGS84]. No other reference system is supported.&#8221; The International Space Station is orbiting Earth, so <a href=http://twitter.com/Astro_TJ>astronauts on the station</a> can describe their location by latitude, longitude, and altitude. However, the World Geodetic System is Earth-centric, so it can&#8217;t be used to describe locations on the moon or on other planets.
+<p><span>&#x261E;</span>P: A <abbr>API</abbr> de geolocalização pega na Estação Espacial Internacional, na Lua, ou em outros planetas?<br>
+R: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Os estados específicos da geolocalização</a>, &#8220;O sistema de referência geográfica de coordenadas usado pelos atributos é referente ao World Geodetic System (2d) [WGS84]. Nenhum outro sistema de referência é suportado.&#8221; A Estação Espacial Internacional está em órbita na Terra, então os <a href=http://twitter.com/Astro_TJ>astronautas na estacão</a> podem dizer suas localizações por latitude, longitude e latitude. No entanto, o World Geodetic System é centralizado somente na Terra, por isso não podemos usar para saber localizações na Lua ou em outros planetas.
 </blockquote>
 </div>
 </div>
