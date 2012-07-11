@@ -121,39 +121,38 @@ NETWORK:
 
 <p class=a>&#x2767;
 
-<h2 id=events>The Flow of Events</h2>
+<h2 id=events>O Fluxo de Eventos</h2>
 
-<p>So far, I&#8217;ve talked about offline web applications, the cache manifest, and the offline application cache (&#8220;appcache&#8221;) in vague, semi-magical terms. Things are downloaded, browsers make decisions, and everything Just Works. You know better than that, right? I mean, this is web development we&#8217;re talking about. Nothing ever Just Works.
+<p>Até agora, falei sobre aplicações web offline, sobre cache manifest e vaganebte sobre cache de aplicações offline (&#8220;appcache&#8221;), com termos quase mágicos. Coisas são carregadas, navegadores fazem decisões e tudo simplesmente funciona. Você sabe melhor que isso, certo? Quero dizer, desse desenvolvimento web que estamos falando. Nada sempre &#8220;apenas funciona&#8221;.
 
-<p>First, let&#8217;s talk about the flow of events. Specifically, <abbr>DOM</abbr> events. When your browser visits a page that points to a cache manifest, it fires off a series of events on the <code>window.applicationCache</code> object. I know this looks complicated, but trust me, this is the simplest version I could come up with that didn&#8217;t leave out important information.
+<p>Primeiro, vamos falar sobre o fluxo dos eventos. Especificamente, eventos <abbr>DOM</abbr>. Quando seu navegador acessa uma página que aponta para um arquivo de cache manifest, ele aciona uma série de eventos no objeto <code>window.applicationCache</code>. Eu sei que parece complicado mas, confie em mim, essa é a versão mais simples que eu pude pensar e que não deixa de fora informações importantes.</p>
 
 <ol>
-<li>As soon as it notices a <code>manifest</code> attribute on the <code>&lt;html></code> element, your browser fires a <strong><code>checking</code></strong> event. (All the events listed here are fired on the <code>window.applicationCache</code> object.) The <code>checking</code> event is always fired, regardless of whether you have previously visited this page or any other page that points to the same cache manifest.
-<li>If your browser has never seen this cache manifest before...
+<li>Assim que o navegador percebe o atributo <code>manifest</code> no elemento <code>&lt;html></code>, ele dispara um evento <strong><code>checking</code></strong>. (Todos os eventos listados aqui são acionados pelo objeto <code>window.applicationCache</code>). O evento <code>checking</code> é sempre disparado, independente de você ter visitado esta página ou outra página que aponte para o mesmo arquivo de cache manifest.</li>
+<li>Se seu navegador nunca viu este cache manifest antes...
   <ul>
-  <li>It will fire a <strong><code>downloading</code></strong> event, then start to download the resources listed in the cache manifest.
-  <li>While it&#8217;s downloading, your browser will periodically fire <strong><code>progress</code></strong> events, which contain information on how many files have been downloaded already and how many files are still queued to be downloaded.
-  <li>After all resources listed in the cache manifest have been downloaded successfully, the browser fires one final event, <strong><code>cached</code></strong>. This is your signal that the offline web application is fully cached and ready to be used offline. That&#8217;s it; you&#8217;re done.
+  <li>Ele irá acionar o evento <strong><code>downloading</code></strong>, e então iniciar o download dos arquivos listados no cache manifest.
+  <li>Enquanto ele está baixando, seu navegador irá disparar periodicamente o evento <strong><code>progress</code></strong>, que contém informações de quantos arquivos já foram baixados e quantos arquivos ainda estão na fila download.
+  <li>Depois que de todos os arquivos listados no cache manifest forem baixados com sucesso, o navegador dispara um evento final, o <strong><code>cached</code></strong>. Este é seu sinal de que a aplicação web offline está completamente cacheada e pronta para ser usada sem conexão. Pronto, você terminou.
   </ul>
-<li>On the other hand, if you have previously visited this page or any other page that points to the same cache manifest, then your browser already knows about this cache manifest. It may already have some resources in the appcache. It may have the entire working offline web application in the appcache. So now the question is, has the cache manifest changed since the last time your browser checked it?
+<li>Por outro lado, se você visitou esta página anteriormente ou alguma outra página que aponte para o mesmo arquivo de cache manifest, então seu navegador já sabe sobre esse cache manifest. Ele pode já ter alguns arquivos no appcache. Ele pode até conter toda a aplcação web offline funcionando no appcache. Sendo assim, a questão é: o cache manifest mudou desde a última vez que seu navegador o acessou?
   <ul>
-  <li>If the answer is no, the cache manifest has not changed, your browser will immediately fire a <strong><code>noupdate</code></strong> event. That&#8217;s it; you&#8217;re done.
-  <li>If the answer is yes, the cache manifest <em>has</em> changed, your browser will fire a <strong><code>downloading</code></strong> event and start re-downloading every single resource listed in the cache manifest.
-  <li>While it&#8217;s downloading, your browser will periodically fire <strong><code>progress</code></strong> events, which contain information on how many files have been downloaded already and how many files are still queued to be downloaded.
-  <li>After all resources listed in the cache manifest have been re-downloaded successfully, the browser fires one final event, <strong><code>updateready</code></strong>. This is your signal that the new version of your offline web application is fully cached and ready to be used offline. <em>The new version is not yet in use.</em> To &#8220;hot-swap&#8221; to the new version without forcing the user to reload the page, you can manually call the <code>window.applicationCache.swapCache()</code> function.
+  <li>Se a resposta for não, o cache manifest não mudou, seu navegador irá imadiatamente disparar o evento <strong><code>noupdate</code></strong>. E é isso, está tudo pronto.
+  <li>Se a resposta for sim, o cache manifest <em>mudou</em>, seu navegador irá disparar o evento <strong><code>downloading</code></strong> e começar a baixar todos os arquivos listados no cache manifest novamente.
+  <li>Enquanto os arquivos são baixados, seu navegador irá disparar periodicamente o evento <strong><code>progress</code></strong>, que contém informações como quantos arquivos foram baixados até agora e quantos arquivos ainda estão na fila para serem baixados.
+  <li>Depois de todo os arquivos listados no cache manifest forem baixados novamente com sucesso, o navegador irá acionar um evento final chamado <strong><code>updateready</code></strong>. Este é o sinal de que uma nova versão de sua aplicação web offline está totalmente cacheada e pronta para ser usada sem conexão. <em>A nova versão ainda não está sendo usada.</em> Para fazer uma &#8220;troca rápida&#8221; para a nova versão sem forçar o usuário a atualizar a página atual, você pode chamar manualmente a função <code>window.applicationCache.swapCache()</code>.
   </ul>
 </ol>
 
-<p>If, at any point in this process, something goes horribly wrong, your browser will fire an <strong><code>error</code></strong> event and stop. Here is a hopelessly abbreviated list of things that could go wrong:
-
+<p>Se, em qualquer ponto deste processo, alguma coisa terrível acontecer de errado, seu navegador irá acionar o evento <strong><code>error</code></strong> e parar. Aqui está uma lista resumida do que pode ter dado errado:
 <ul>
-<li>The cache manifest returned an <abbr>HTTP</abbr> error 404 (Page Not Found) or 410 (Permanently Gone).
-<li>The cache manifest was found and hadn&#8217;t changed, but the <abbr>HTML</abbr> page that pointed to the manifest failed to download properly.
-<li>The cache manifest changed while the update was being run.
-<li>The cache manifest was found and had changed, but the browser failed to download one of the resources listed in the cache manifest.
+  <li>O cache manifest retornou um erro 404 de <abbr>HTTP</abbr> (Page Not Found) ou 410 (Permanently Gone).
+  <li>O cache manifest foi encontrado e não foi alterado, mas a página <abbr>HTTP</abbr> que aponta para o arquivo cache manifest não foi carregada corretamente.
+  <li>O cache manifest mudou enquanto o carregamento estava em andamento.
+  <li>O cache manifest foi encontrado e alterado, mas o navegador falhou em baixar um dos arquivos listados no arquivo de cache manifest.
 </ul>
 
-<h2 id=debugging>The fine art of debugging, a.k.a. &#8220;Kill me! Kill me now!&#8221;</h2>
+<h2 id=debugging>A fina arte de depurar, também conhecida como &#8220;Me mate! Me mate agora!&#8221;</h2>
 
 <p>I want to call out two important points here. The first is something you just read, but I bet it didn&#8217;t really sink in, so here it is again: if even a single resource listed in your cache manifest file fails to download properly, the entire process of caching your offline web application will fail. Your browser will fire the <code>error</code> event, but there is no indication of what the actual problem was. This can make debugging offline web applications even more frustrating than usual.
 
