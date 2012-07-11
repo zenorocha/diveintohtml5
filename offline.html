@@ -123,7 +123,7 @@ NETWORK:
 
 <h2 id=events>O Fluxo de Eventos</h2>
 
-<p>Até agora, falei sobre aplicações web offline, sobre cache manifest e vaganebte sobre cache de aplicações offline (&#8220;appcache&#8221;), com termos quase mágicos. Coisas são carregadas, navegadores fazem decisões e tudo simplesmente funciona. Você sabe melhor que isso, certo? Quero dizer, desse desenvolvimento web que estamos falando. Nada sempre &#8220;apenas funciona&#8221;.
+<p>Até agora, falei sobre aplicações web offline, sobre cache manifest e vagamente sobre cache de aplicações offline (&#8220;appcache&#8221;), com termos quase mágicos. Coisas são carregadas, navegadores fazem decisões e tudo simplesmente funciona. Você sabe melhor que isso, certo? Quero dizer, desse desenvolvimento web que estamos falando. Nada sempre &#8220;apenas funciona&#8221;.
 
 <p>Primeiro, vamos falar sobre o fluxo dos eventos. Especificamente, eventos <abbr>DOM</abbr>. Quando seu navegador acessa uma página que aponta para um arquivo de cache manifest, ele aciona uma série de eventos no objeto <code>window.applicationCache</code>. Eu sei que parece complicado mas, confie em mim, essa é a versão mais simples que eu pude pensar e que não deixa de fora informações importantes.</p>
 
@@ -133,14 +133,14 @@ NETWORK:
   <ul>
   <li>Ele irá acionar o evento <strong><code>downloading</code></strong>, e então iniciar o download dos arquivos listados no cache manifest.
   <li>Enquanto ele está baixando, seu navegador irá disparar periodicamente o evento <strong><code>progress</code></strong>, que contém informações de quantos arquivos já foram baixados e quantos arquivos ainda estão na fila download.
-  <li>Depois que de todos os arquivos listados no cache manifest forem baixados com sucesso, o navegador dispara um evento final, o <strong><code>cached</code></strong>. Este é seu sinal de que a aplicação web offline está completamente cacheada e pronta para ser usada sem conexão. Pronto, você terminou.
+  <li>Depois que todos os arquivos listados no cache manifest forem baixados com sucesso, o navegador dispara um evento final, o <strong><code>cached</code></strong>. Este é seu sinal de que a aplicação web offline está completamente cacheada e pronta para ser usada sem conexão. Pronto, você terminou.
   </ul>
 <li>Por outro lado, se você visitou esta página anteriormente ou alguma outra página que aponte para o mesmo arquivo de cache manifest, então seu navegador já sabe sobre esse cache manifest. Ele pode já ter alguns arquivos no appcache. Ele pode até conter toda a aplcação web offline funcionando no appcache. Sendo assim, a questão é: o cache manifest mudou desde a última vez que seu navegador o acessou?
   <ul>
-  <li>Se a resposta for não, o cache manifest não mudou, seu navegador irá imadiatamente disparar o evento <strong><code>noupdate</code></strong>. E é isso, está tudo pronto.
+  <li>Se a resposta for não, o cache manifest não mudou, seu navegador irá imediatamente disparar o evento <strong><code>noupdate</code></strong>. E é isso, está tudo pronto.
   <li>Se a resposta for sim, o cache manifest <em>mudou</em>, seu navegador irá disparar o evento <strong><code>downloading</code></strong> e começar a baixar todos os arquivos listados no cache manifest novamente.
   <li>Enquanto os arquivos são baixados, seu navegador irá disparar periodicamente o evento <strong><code>progress</code></strong>, que contém informações como quantos arquivos foram baixados até agora e quantos arquivos ainda estão na fila para serem baixados.
-  <li>Depois de todo os arquivos listados no cache manifest forem baixados novamente com sucesso, o navegador irá acionar um evento final chamado <strong><code>updateready</code></strong>. Este é o sinal de que uma nova versão de sua aplicação web offline está totalmente cacheada e pronta para ser usada sem conexão. <em>A nova versão ainda não está sendo usada.</em> Para fazer uma &#8220;troca rápida&#8221; para a nova versão sem forçar o usuário a atualizar a página atual, você pode chamar manualmente a função <code>window.applicationCache.swapCache()</code>.
+  <li>Depois que todos os arquivos listados no cache manifest forem baixados novamente com sucesso, o navegador irá acionar um evento final chamado <strong><code>updateready</code></strong>. Este é o sinal de que uma nova versão de sua aplicação web offline está totalmente cacheada e pronta para ser usada sem conexão. <em>A nova versão ainda não está sendo usada.</em> Para fazer uma &#8220;troca rápida&#8221; para a nova versão sem forçar o usuário a atualizar a página atual, você pode chamar manualmente a função <code>window.applicationCache.swapCache()</code>.
   </ul>
 </ol>
 
