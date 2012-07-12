@@ -23,43 +23,83 @@ table.faketable{border-collapse:collapse}
 <link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
 <link rel=prefetch href=index.html>
 <p>You are here: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#extensibility>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
-<h1><br>&#8220;“Distribuído,&#8221;<br>&#8220;Extensível,&#8221;<br>&amp;<br>e Outras Palavras Bonitas</h1>
+<h1><br>&#8220;“Distribuído,&#8221;<br>&#8220;Extensível,&#8221;<br>e Outras Palavras Bonitas</h1>
 <p id=toc>&nbsp;
 <p class=a>&#x2767;
 <h2 id=divingin>Mergulhando</h2>
 
 <p class=f><img src=i/aoc-t.png alt=T width=107 height=105>here are <a href=http://simon.html5.org/html5-elements>over 100 elements</a> in <abbr>HTML5</abbr>. Some are <a href=semantics.html>purely semantic</a>, others are <a href=canvas.html>just containers for scripted <abbr>APIs</abbr></a>. Throughout <a href=past.html>the history of <abbr>HTML</abbr></a>, standards wonks have argued about which elements should be included in the language. Should <abbr>HTML</abbr> include a <code>&lt;figure></code> element? A <code>&lt;person></code> element? How about a <code>&lt;rant></code> element? Decisions are made, specs are written, authors author, implementors implement, and the web lurches ever forward.
+<!-- translated start -->
+<p class=f><img src=i/aoc-e.png alt=E width=107 height=105>xistem <a href=http://simon.html5.org/html5-elements>mais de 100 elementos</a> no <abbr>HTML5</abbr>. Alguns são <a href=semantics.html>puramente semânticos</a>, outros são <a href=canvas.html>apenas recipientes para <abbr>APIs</abbr> de script</a>. Ao longo <a href=past.html>da história do <abbr>HTML</abbr></a>, conhecedores dos padrões vêem discutindo sobre que elemenos devem ser incluídos na linguagem. O elemento <code>&lt;figure></code> deveria ser incluso no <abbr>HTML</abbr>? O elemento <code>&lt;person></code>? Que tal um elemento <code>&lt;rant></code>? Decisões são tomadas, especificações são escritas, atores atuam, implementadores implementam, e a web dá um grande passo à frente.
+<!-- translated end -->
 
 <p>Of course, <abbr>HTML</abbr> can&#8217;t please everyone. No standard can. Algumas ideias não atendem aos requisitos. Por exemplo, não existe o elemento <code>&lt;person></code> no <abbr>HTML5</abbr>. (Não há também o elemento <code>&lt;rant></code>, droga!) Nada impede de você usar o elemento <code>&lt;person></code> numa página web, porém <a href=http://html5.validator.nu/>não vai validar</a>, <a href=semantics.html#unknown-elements>não vai funcionar consistentemente nos navegadores</a>, and it might conflict with future <abbr>HTML</abbr> specs if we want to add it later.
+<!-- translated start -->
+<p>Claro, <abbr>HTML</abbr> não pode agradar a todos. Nenhum padrão pode. Algumas ideias não atendem aos requisitos. Por exemplo, não existe o elemento <code>&lt;person></code> no <abbr>HTML5</abbr>. (Não há também o elemento <code>&lt;rant></code>, droga!) Nada impede de você usar o elemento <code>&lt;person></code> numa página web, porém <a href=http://html5.validator.nu/>não vai validar</a>, <a href=semantics.html#unknown-elements>não vai funcionar consistentemente nos navegadores</a>, e poderá conflitar com especificações futuras do <abbr>HTML</abbr>, se o elemento for adicionado mais à frente.
+<!-- translated end -->
 
 <p>Right, so if making up your own elements isn&#8217;t the answer, what&#8217;s a semantically inclined web author to do? There have been attempts to extend previous versions of <abbr>HTML</abbr>. The most popular method is <a href=http://microformats.org/>microformats</a>, which uses the <code>class</code> and <code>rel</code> attributes in <abbr>HTML</abbr>. Another option is <a href=http://www.w3.org/TR/rdfa-syntax/>RDFa</a>, which was originally designed to be used in <a href=past.html#postscript><abbr>XHTML</abbr></a> but has <a href=http://www.w3.org/TR/rdfa-in-html/>been ported to <abbr>HTML</abbr></a> as well.
+<!-- translated start -->
+<p>Certo, então se fazer seu próprio elemento não é a resposta, o que faz um escritor semanticamente correto? Houveram tentativas de estender as versões anteriores do <abbr>HTML</abbr>. O método mais popular são os <a href=http://microformats.org/>microformats</a>, que usam os atributos <code>class</code> e <code>rel</code> no <abbr>HTML</abbr>. Outra opção é <a href=http://www.w3.org/TR/rdfa-syntax/>RDFa</a>, que foi originamente projetado para ser usado no <a href=past.html#postscript><abbr>XHTML</abbr></a> mas <a href=http://www.w3.org/TR/rdfa-in-html/>também foi portado para o <abbr>HTML</abbr></a>.
+<!-- translated end -->
 
 <p>Microformats and <abbr>RDFa</abbr> each have their strengths and weaknesses. They take radically different approaches towards the same goal: extending web pages with additional semantics that are not part of the core <abbr>HTML</abbr> language. I don&#8217;t intend to turn this chapter into a format flamewar. (That would definitely require a <code>&lt;rant></code> element!) Instead, I want to focus on a third option developed using lessons learned from microformats and RDFa, and designed to be integrated into <abbr>HTML5</abbr> itself: microdata.
+<!-- translated start -->
+<p>Microformats e <abbr>RDFa</abbr> cada um tem seus pontos fortes e fracos. Eles usam abordagens complamente diferentes em direção ao mesmo objetivo: extender as páginas web com semântica adicional que não é parte do core da linguagem <abbr>HTML</abbr>. Eu não pretendo transformar este capítulo em um formato "flamewar". (Isso definitivamente precisaria de um elemento <code>&lt;rant></code>!) Em vez disso, quero focar em uma terceira opção desenvolvida usando as lições aprendidas a partir de microformats e RDFa, e projetada para ser integra no próprio <abbr>HTML5</abbr>: microdata.
+<!-- translated end -->
 
 <p class=a>&#x2767;
 
-<h2 id=what-is-microdata>What is Microdata?</h2>
+<h2 id=what-is-microdata>O que é Microdata?</h2>
 
 <p>Each word in the following sentence is important, so pay attention.
+<!-- translated start -->
+<p>Cada palavra na sentença seguinte é importante, então preste atenção.
+<!-- translated end -->
 
 <div class=pf>
-<h4>Professor Markup Says</h4>
-<div class=inner>
-<blockquote>
-<p>Microdata annotates the <abbr>DOM</abbr> with scoped name/value pairs from custom vocabularies.
-</blockquote>
-</div>
+	<h4>Professor Markup Says</h4>
+	<!-- translated start -->
+	<h4>Professor de Marcação Diz</h4>
+	<!-- translated end -->
+
+	<div class=inner>
+		<blockquote>
+		<p>Microdata annotates the <abbr>DOM</abbr> with scoped name/value pairs from custom vocabularies.
+		</blockquote>
+		<!-- translated start -->
+		<blockquote>
+		<p>Microdata escreve o <abbr>DOM</abbr> com escopo dos pares de nome/valor a partir de vocabulários personalizados.
+		</blockquote>	
+		<!-- translated end -->
+	</div>
+
 </div>
 
 <p>Now what does that mean? Let&#8217;s start from the end and work backwards. Microdata centers around custom vocabularies. Think of &#8220;the set of all <abbr>HTML5</abbr> elements&#8221; as one vocabulary. This vocabulary includes elements to represent <a href=semantics.html#new-elements>a section or an article</a>, but it doesn&#8217;t include elements to represent a person or an event. If you want to represent a person on a web page, you&#8217;ll need to define your own vocabulary. Microdata lets you do this. Anyone can define a microdata vocabulary and start embedding custom properties in their own web pages.
+<!-- translated start -->
+<p>Sim, mas o que isso significa? Vamos começar do fim e vamos retrocedendo. Microdados gira em torno de vocabulários personalizados. Pense no &#8220;conjunto de todos os elementos da <abbr>HTML5</abbr>&#8221; como um vocabulário. Este vocabulário inclui elementos para representar <a href=semantics.html#new-elements>uma seção ou um artigo</a>, mas isto não inclui elementos para representar uma possa ou um evento. Se você deseja representar uma pessoa na página web, você vai precisar definir seu próprio vocabulário. Microdata deixa você fazer isso. Qualquer um pode definir um vocabulário microdata e começar a incorporar propriedades personalizadas em suas próprias páginas web.
+<!-- translated end -->
 
 <p>The next thing to know about microdata is that it works with name/value pairs. Every microdata vocabulary defines a set of named properties. For example, a Person vocabulary could define properties like <code>name</code> and <code>photo</code>. To include a specific microdata property on your web page, you provide the property name in a specific place. Depending on where you declare the property name, microdata has rules about how to extract the property value. (More on this in the next section.)
+<!-- translated start -->
+<p>A próxima coisa a fazer para conhecer o microdata é que ele funciona com pares de nome/valor. Todo vocabulário microdata define um conjunto de propriedades nomeadas. Por exemplo, um vocabulário Pessoa poderia definir propriedades como <code>nome</code> e <code>foto</code>. Para incluir um microdata específico na sua página web, você fornecer o nome da propriedade em um lugar específico. Dependendo de onde você declara o nome da propriedade, microdata tem regras sobre como extrair o valor da propriedade. (Mais sobre isto na próxima seção)
+<!-- translated end -->
 
 <p>Along with named properties, microdata relies heavily on the concept of &#8220;scoping.&#8221; The simplest way to think of microdata scoping is to think about the natural parent-child relationship of elements in the <abbr>DOM</abbr>. The <a href=semantics.html#html-element><code>&lt;html></code></a> element usually contains two children, <a href=semantics.html#head-element><code>&lt;head></code></a> and <code>&lt;body></code>. The <code>&lt;body></code> element usually contains multiple children, each of which may have child elements of their own. For example, your page might include an <code>&lt;h1></code> element within an <code>&lt;hgroup></code> element within a <a href=semantics.html#header-element><code>&lt;header></code></a> element within the <code>&lt;body></code> element. A data table might contain <code>&lt;td></code> within <code>&lt;tr></code> within <code>&lt;table></code> (within <code>&lt;body></code>). Microdata re-uses the hierarchical structure of the <abbr>DOM</abbr> itself to provide a way to say &#8220;all the properties within <em>this</em> element are taken from <em>this</em> vocabulary.&#8221; This allows you to use more than one microdata vocabulary on the same page. You can even nest microdata vocabularies within other vocabularies, all by re-using the natural structure of the <abbr>DOM</abbr>. (I&#8217;ll show multiple examples of nested vocabularies throughout this chapter.)
+<!-- translated start -->
+<p>Junto com propriedades nomeadas, microdados depende muito do conceito de  &#8220;escopo.&#8221; A maneira mais simples de pensar no escopo do microdata é pensar na relação pai-filho natural dos elementos no <abbr>DOM</abbr>. O elemento <a href=semantics.html#html-element><code>&lt;html></code></a> geralmente contém dois filhos, <a href=semantics.html#head-element><code>&lt;head></code></a> e <code>&lt;body></code>. O elemento <code>&lt;body></code> geralmente contém vários filhos, cada um deles pode ter seus próprios elementos filho. Por exemplo, sua página pode incluir um elemento  <code>&lt;h1></code> dentro de um elemento <code>&lt;hgroup></code> dentro de um elemento <a href=semantics.html#header-element><code>&lt;header></code></a> que está dentro de um elemento <code>&lt;body></code>. Uma tabale de informações pode conter <code>&lt;td></code> dentro de <code>&lt;tr></code> dentro de um <code>&lt;table></code> (Dentro do <code>&lt;body></code>). Microdata reutiliza a estrutura hierarquica do próprio <abbr>DOM</abbr> para fornecer uma forma de dizer &#8220;todas as propriedades dentro <em>deste</em> elemento são tomadas <em>deste</em> vocabulário.&#8221; Isso permite que você use mais de um vocabulário microdata na mesma página. Você pode até aninhar vocabulários microdata dentro de outros vocabulários, tudo pelo reuso da estrutura natural do <abbr>DOM</abbr>. (Irei mostrar vários exemplos de vocabulários aninhados ao longo deste capítulo)
+<!-- translated end -->
 
 <p>Now, I&#8217;ve already touched on the <abbr>DOM</abbr>, but let me elaborate on that. Microdata is about applying additional semantics to <em>data that&#8217;s already visible on your web page</em>. Microdata is not designed to be a standalone data format. It&#8217;s a complement to <abbr>HTML</abbr>. As you&#8217;ll see in the next section, microdata works best when you&#8217;re already using <abbr>HTML</abbr> correctly, but the <abbr>HTML</abbr> vocabulary isn&#8217;t quite expressive enough. Microdata is great for fine-tuning the semantics of data that&#8217;s already in the <abbr>DOM</abbr>. If the data you&#8217;re <span title="I totally just made that up">semanti-fying</span> isn&#8217;t in the <abbr>DOM</abbr>, you should step back and re-evaluate whether microdata is the right solution.
+<!-- translated start -->
+<p>Agora, já toquei no assunto <abbr>DOM</abbr>, mas deixe me dissertar sobre isso. Microdata se trata de aplicar semantica adicional para <em>informações que já são visíveis na sua página web</em>. Microdata não foi projetada para ser um formato de dados independente. Ele é um complemento ao <abbr>HTML</abbr>. Como você verá na próxima seção, microdata funciona melhor quando você já está usando o <abbr>HTML</abbr> corretamente, porém o vocabulário da <abbr>HTML</abbr> não é expressivo o bastante. Microdata é excelente para aprimorar a semântica da informação que já está no <abbr>DOM</abbr>. Se a informação que você está tentando tornar semântica não está no <abbr>DOM</abbr>, você deveria volar atrás e reavaliar se microdata é a solução correta.
+<!-- translated end -->
 
 <p>Does this sentence make more sense now? &#8220;Microdata annotates the <abbr>DOM</abbr> with scoped name/value pairs from custom vocabularies.&#8221; I hope so. Let&#8217;s see it in action.
+<!-- translated start -->
+<p>Essa sentenção faz mais sentido agora? &#8220;Microdata escreve o <abbr>DOM</abbr> com escopo dos pares de nome/valora partir de vocabulários personalizados.&#8221; Espero que sim. Vamos ver isto na prática.
+<!-- translated end -->
 
 <p class=a>&#x2767;
 
