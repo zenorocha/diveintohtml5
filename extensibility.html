@@ -104,18 +104,37 @@ table.faketable{border-collapse:collapse}
 <p class=a>&#x2767;
 
 <h2 id=data-model>The Microdata Data Model</h2>
+<!-- translated start -->
+<h2 id=data-model>Modelo de Dados do Microdata</h2>
+<!-- translated end -->
 
 <p>Defining your own microdata vocabulary is easy. First, you need a namespace, which is just a <abbr>URL</abbr>. The namespace <abbr>URL</abbr> could actually point to a working web page, although that&#8217;s not strictly required. Let&#8217;s say I want to create a microdata vocabulary that describes a person. If I own the <code>data-vocabulary.org</code> domain, I&#8217;ll use the <abbr>URL</abbr> <code>http://data-vocabulary.org/Person</code> as the namespace for my microdata vocabulary. That&#8217;s an easy way to create a globally unique identifier: pick a <abbr>URL</abbr> on a domain that you control.
+<!-- translated start -->
+<p>Definir seu próprio vocabulário microdata é fácil. Primeiro, você precisa de um namespace, que é apenas uma <abbr>URL</abbr>. O namespace <abbr>URL</abbr> pode realmente apontar para uma página web funcionando, apesar de não ser estritamente necessário. Vamos dizer que eu quero criar um vocabulário microdata que descreve uma pessoa. Se teho o domínio <code>data-vocabulary.org</code>, irei usar a <abbr>URL</abbr> <code>http://data-vocabulary.org/Person</code> como o namespace para meu vocabulário microdata. Essa é uma maneira fácil de criar um identificador global exclusivo: escolha uma <abbr>URL</abbr> em um domínio que você tem controle.
+<!-- translated end -->	
 
 <p>In this vocabulary, I need to define some named properties. Let&#8217;s start with three basic properties:
+<!-- translated start -->
+<p>Nesse vocabulário, eu preciso definir algumas propriedades nomeadas. Vamos começar com três propriedades básicas:
+<!-- translated end -->	
 
 <ul>
 <li><code>name</code> (your full name)
 <li><code>photo</code> (a link to a picture of you)
 <li><code>url</code> (a link to a site associated with you, like a weblog or a Google profile)
 </ul>
+<!-- translated start -->
+<ul>
+<li><code>name</code> (seu nome completo)
+<li><code>photo</code> (um link para uma foto sua)
+<li><code>url</code> (um link para um site associado a você, como um blog ou um perfil do Google)
+</ul>
+<!-- translated end -->	
 
 <p>Some of these properties are <abbr>URLs</abbr>, others are plain text. Each of them lends itself to a natural form of markup, even before you start thinking about microdata or vocabularies or whatnot. Imagine that you have a profile page or an &#8220;about&#8221; page. Your name is probably marked up as a heading, like an <code>&lt;h1></code> element. Your photo is probably an <code>&lt;img></code> element, since you want people to see it. And any <abbr>URL</abbr>s associated your profile are probably already marked up as hyperlinks, because you want people to be able to click them. For the sake of discussion, let&#8217;s say your entire profile is also wrapped in a <code>&lt;section></code> element to separate it from the rest of the page content. Thus:
+<!-- translated start -->
+<p>Algumas dessas propriedades são <abbr>URLs</abbr>, outras são texto plano. Cada uma delas presta-se a forma natural de marcação, mesmo antes de você começar a pensar em microdata ou vocabulários ou outros enfeites. Imagine que você tem um perfil ou uma página &#8220;sobre&#8221;. Seu nome provalvelmente é marcado como um título, como um elemento <code>&lt;h1></code>. Sua foto provavelmente é um elemento <code>&lt;img></code>, já que você quer que as pessoas vejam. E quaisquer <abbr>URL</abbr>s associadas ao seu perfil provavelmente já esta marcada como hyperlinks, pois você precisa que as pessoas sejam aptas a clicar neles. Para fins de discussão, vamos dizer que todo seu perfil também é englobado em um elemento <code>&lt;section></code> para seperá-lo do resto do conteúdo da página. Assim:
+<!-- translated end -->	
 
 <p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> It&#8217;s all about me
 <pre><code>&lt;section>
