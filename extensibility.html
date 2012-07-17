@@ -142,8 +142,19 @@ table.faketable{border-collapse:collapse}
   &lt;p>&lt;img src="http://www.example.com/photo.jpg" alt="[me smiling]">&lt;/p>
   &lt;p>&lt;a href="http://diveintomark.org/">weblog&lt;/a>&lt;/p>
 &lt;/section></code></pre>
+<!-- translated start -->
+<p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> Minhas informações
+<pre><code>&lt;section>
+  &lt;h1>Mark Pilgrim&lt;/h1>
+  &lt;p>&lt;img src="http://www.example.com/photo.jpg" alt="[eu sorrindo]">&lt;/p>
+  &lt;p>&lt;a href="http://diveintomark.org/">blog&lt;/a>&lt;/p>
+&lt;/section></code></pre>
+<!-- translated end -->	
 
 <p>Microdata&#8217;s data model is name/value pairs. A microdata property name (like <code>name</code> or <code>photo</code> or <code>url</code> in this example) is always declared on an <abbr>HTML</abbr> element. The corresponding property value is then taken from the element&#8217;s <abbr>DOM</abbr>. For most <abbr>HTML</abbr> elements, the property value is simply the text content of the element. But there are a handful of exceptions.
+<!-- translated start -->
+<p>O modelo microdata são pares de nome/valor. A propriedade microdata name (como <code>name</code> ou <code>photo</code> ou <code>url</code> neste exemplo) é sempre declarado no elemento <abbr>HTML</abbr>. A propriedade value correspondente é então retirada do elemento <abbr>DOM</abbr>. Para muitos dos elementos <abbr>HTML</abbr>, a propriedade value é simplesmente o conteúdo textual do elemento. Porém, há uma boa quantidade de exceções. 
+<!-- translated end -->	
 
 <table id=property-values class=st>
 <caption>Where Do Microdata Property Values Come From?</caption>
@@ -155,32 +166,68 @@ table.faketable{border-collapse:collapse}
 <tr class=zebra><td><code>&lt;time></code><td><code>datetime</code> attribute
 <tr><td>all other elements<td>text content
 </table>
+<!-- translated start -->
+<table id=property-values class=st>
+<caption>De Onde Vêm as Propriedades Value?</caption>
+<tr class=ho><th>Elemento<th>Valor
+<tr class=zebra><td><code>&lt;meta></code><td>Atributo <code>content</code>
+<tr><td><ul><li><code>&lt;audio></code><li><code>&lt;embed></code><li><code>&lt;iframe></code><li><code>&lt;img></code><li><code>&lt;source></code><li><code>&lt;video></code></ul><td>Atributo <code>src</code>
+<tr class=zebra><td><ul><li><code>&lt;a></code><li><code>&lt;area></code><li><code>&lt;link></code></ul><td>Atributo <code>href</code>
+<tr><td><code>&lt;object></code><td>Atributo <code>data</code>
+<tr class=zebra><td><code>&lt;time></code><td>Atributo <code>datetime</code>
+<tr><td>Demais elementos<td>Conteúdo textual
+</table>
+<!-- translated end -->	
 
 <p>&#8220;Adding microdata&#8221; to your page is a matter of adding a few attributes to the <abbr>HTML</abbr> elements you already have. The first thing you always do is declare which microdata vocabulary you&#8217;re using, by adding an <code>itemtype</code> attribute. The second thing you always do is declare the scope of the vocabulary, using an <code>itemscope</code> attribute. In this example, all the data we want to semanti-fy is in a <code>&lt;section></code> element, so we&#8217;ll declare the <code>itemtype</code> and <code>itemscope</code> attributes on the <code>&lt;section></code> element.
+<!-- translated start -->
+<p>&#8220;Adicionar microdata&#8221; na sua página é uma questão de adicionar alguns atributos nos elementos <abbr>HTML</abbr> que você já tem. A primeira coisa que você sempre faz é declarar que vocabulário microdata você está usando, adicionando um atributo <code>itemtype</code>. A segunda coisa que você sempre faz é declarar o escopo do vocabulário, usando um atributo <code>itemscope</code>. Neste exemplo, toda a informação que queremos tornar semântica é um elemento <code>&lt;section></code>, então vamos declarar os atributos <code>itemtype</code> e <code>itemscope</code> no elemento <code>&lt;section></code>.
+<!-- translated end -->	
 
 <pre><code>  &lt;section <mark>itemscope</mark> <mark>itemtype="http://data-vocabulary.org/Person"</mark>></code></pre>
 
 <p>Your name is the first bit of data within the <code>&lt;section></code> element. It&#8217;s wrapped in an <code>&lt;h1></code> element. The <code>&lt;h1></code> element doesn&#8217;t have any special processing in the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a>, so it falls under the &#8220;all other elements&#8221; rule where the microdata property value is simply the text content of an element. (This would work equally well if your name was wrapped in a <code>&lt;p></code>, <code>&lt;div></code>, or <code>&lt;span></code> element.)
+<!-- translated start -->
+<p>Seu nome é o primeiro pedaço de informação dentro do elemento <code>&lt;section></code>. Ele está englobado em um elemento <code>&lt;h1></code>. O elemento <code>&lt;h1></code> não tem nenhum tratamento especial no <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, por isso se enquadra na regra &#8220;demais elementos&#8221; onde a pripriedade microdata value é simplismente conteúdo textual de um elemento. (Isso funcionaria igualmente bem se o seu nome foi envolvido em um elemento <code>&lt;p></code>, <code>&lt;div></code>, ou <code>&lt;span></code>.)
+<!-- translated end -->	
 
 <pre><code>  &lt;h1 <mark>itemprop="name"</mark>>Mark Pilgrim&lt;/h1></code></pre>
 
 <p>In English, this says &#8220;here is the <code>name</code> property of the <code>http://data-vocabulary.org/Person</code> vocabulary, and the value of the property is <code>Mark Pilgrim</code>.&#8221;
+<!-- translated start -->
+<p>Traduzindo, isto quez dizer &#8220;aqui está a propriedade <code>name</code> do vocabulário <code>http://data-vocabulary.org/Person</code>, e o valor da propriedade é <code>Mark Pilgrim</code>.&#8221;
+<!-- translated end -->	
 
 <p id=person-photo>Next up: the <code>photo</code> property. This is supposed to be a <abbr>URL</abbr>. According to the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a>, the &#8220;value&#8221; of an <code>&lt;img></code> element is its <code>src</code> attribute. Hey look, the <abbr>URL</abbr> of your profile photo is already in an <code>&lt;img src></code> attribute. All you need to do is declare that the <code>&lt;img></code> element is the <code>photo</code> property.
+<!-- translated start -->
+<p id=person-photo>Em seguida: a propriedade <code>photo</code>. Isto deveria ser uma <abbr>URL</abbr>. De acordo com o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, o &#8220;value&#8221; de um elemento <code>&lt;img></code> é seu atributo <code>src</code>. Ei! Olhe, a <abbr>URL</abbr> da foto do seu perfil já esta em um atributo <code>&lt;img src></code>. Tudo que você precisa fazer é declarar que o elemento <code>&lt;img></code> é a propriedade <code>photo</code>.
+<!-- translated end -->		
 
 <pre><code>  &lt;p>&lt;img <mark>itemprop="photo"</mark>
           src="http://www.example.com/photo.jpg"
-          alt="[me smiling]">&lt;/p></code></pre>
+          alt="[eu sorrindo]">&lt;/p></code></pre>
 
 <p>In English, this says &#8220;here is the <code>photo</code> property of the <code>http://data-vocabulary.org/Person</code> vocabulary, and the value of the property is <code>http://www.example.com/photo.jpg</code>.
+<!-- translated start -->
+<p>Traduzindo, isto quer dizer &#8220;aqui está a propriedade <code>photo</code> do vocabulário <code>http://data-vocabulary.org/Person</code>, e o valor da propriedade é <code>http://www.example.com/photo.jpg</code>.&#8221;
+<!-- translated end -->	
 
 <p>Finally, the <code>url</code> property is also a <abbr>URL</abbr>. According to the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a>, the &#8220;value&#8221; of an <code>&lt;a></code> element is its <code>href</code> attribute. And once again, this fits perfectly with your existing markup. All you need to do is say that your existing <code>&lt;a></code> element is the <code>url</code> property:
+<!-- translated start -->
+<p>Finalmente, a propriedade <code>url</code> também é uma <abbr>URL</abbr>. De acordo com o <a href=#property-values>modelo de dados microdata da<abbr>HTML5</abbr></a>, o &#8220;value&#8221; de um elemento <code>&lt;a></code> é seu atributo <code>href</code>. E mais uma vez, isto funciona perfeitamente com a sua marcação existente. Tudo que você precisa fazer é dizer que seu elemento <code>&lt;a></code> existente é a propriedade <code>url</code>:
+<!-- translated end -->
 
 <pre><code>  &lt;a <mark>itemprop="url"</mark> href="http://diveintomark.org/">dive into mark&lt;/a></code></pre>
 
 <p>In English, this says &#8220;here is the <code>url</code> property of the <code>http://data-vocabulary.org/Person</code> vocabulary, and the value of the property is <code>http://diveintomark.org/</code>.
+<!-- translated start -->
+<p>Traduzindo, isto quer dizer &#8220;aqui está a propriedade <code>url</code> do vocabulário <code>http://data-vocabulary.org/Person</code>, e o valor da propriedade é <code>http://diveintomark.org/</code>.
+<!-- translated end -->
 
 <p>Of course, if your markup looks a little different, that&#8217;s not a problem. You can add microdata properties and values to any <abbr>HTML</abbr> markup, even really gnarly 20th-century-era, tables-for-layout, Oh-God-why-did-I-agree-to-maintain-this markup. While I don&#8217;t recommend this kind of markup, it is still common, and you can still add microdata to it.
+<!-- translated start -->
+<p>Claro, se sua marcação parece um pouco diferente, não tem problema. Você pode adicionar propriedades e valores microdata em qualquer marcação <abbr>HTML</abbr>, até mesmo "deformado do século 20", "tabelas para layout", "meu Deus porque eu concordei em manter esta" marcação.
+<!-- translated end -->
 
 <p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> For the love of God, don&#8217;t do this
 <pre><code>&lt;TABLE>
