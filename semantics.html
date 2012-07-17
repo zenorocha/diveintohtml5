@@ -16,9 +16,9 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 <h1><br>O que significa tudo isso?</h1>
 <p id=toc>&nbsp;
 <p class=a>&#x2767;
-<h2 id=divingin>Diving In</h2>
+<h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-e.png alt=E width=107 height=105>sse capítulo pegará uma página <abbr>HTML</abbr> a qual não há nada de errado e irá melhorá-la. Algumas partes ficarão menores, outras partes maiores. Tudo isso ficará com uma melhor semântica. E ficará demais.
+<p class=f><img src=i/aoc-e.png alt=E width=107 height=105>sse capítulo pegará uma página <abbr>HTML</abbr> a qual não há nada de errado e irá melhorá-la. Algumas partes ficarão menores, outras partes maiores. Tudo isso ficará com uma melhor semântica. E ficará incrível.
 
 <p style="clear:both"><a href=examples/blog-original.html>Esta é a página em questão</a>. Abra a página em uma nova aba e não volte até dar uma olhada no código fonte pelo menos uma vez.
 
@@ -126,7 +126,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <p class=a>&#x2767;
 
-<h2 id=encoding>Character Encoding</h2>
+<h2 id=encoding>Codificação de caracteres</h2>
 
 <p>Quando você pensa em &#8220;texto,&#8221; provavelmente pensa em &#8220;caracteres e símbolos que vejo na tela do meu computador.&#8221; Mas os computadores não lidam com caracteres e símbolos, mas sim com bits e bytes. Cada pedaço de texto que vê na tela de seu computador, é na verdade armazenado em uma <em>codificação de caracteres (character encoding)</em>. Há <a href=http://www.iana.org/assignments/character-sets>centenas de character encodings diferentes</a>, alguns otimizados para algumas línguas em particular como russo, chinês ou inglês, e outras que podem ser utilizadas para várias línguas. Rudemente falando, o character encoding fornece um mapeamento entre as coisas que você vê em sua tela e as coisas que o computador armazena na memória ou em disco.
 <p>Na realidade, é mais complicado que isso. O mesmo caracter pode aparecer em mais de uma codificação, mas cada uma pode usar uma sequência diferente de bytes para realmente armazenar o caracter em memória ou em disco. Então, você pode pensar no character encoding como um tipo de chave de decodificação para o texto. Sempre que alguém lhe der uma sequência de bytes e reivindicar seu &#8220;texto&#8221;, você precisa saber qual character encoding eles usaram, assim você pode decodificar os bytes em caracteres e exibí-los (ou processá-los, que seja).
@@ -277,11 +277,11 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 <dt><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-section-element><code>&lt;section></code></a>
 <dd>O elemento <code>section</code> representa uma seção genérica de um documento ou aplicação. Uma seção, neste contexto, é um agrupamento de conteúdo, geralmente com um título. Exemplos de seções podem ser capítulos, páginas em abas de uma caixa de diálogo, ou as seções numeradas de uma tese. A página inicial de um website pode ser separada em seções para introdução, itens de notícias, informações para contato.
 <dt><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-nav-element><code>&lt;nav></code></a>
-<dd>O elemento <code>nav</code> representa a seção de uma página que aponta para outras páginas ou para partes dentro da página: uma seção com links de navegação. Nem todos os grupos de links de uma página precisam estar em um elemento <code>nav</code> &mdash; apenas seções que consistem em grandes blocos de navegação são apropriados para o elemento <code>nav</code>. Particularmente, é comum para rodapés(footers) possuir uma pequena lista de links para páginas em comum de um site, tal como termos de uso, página inicial e página de direitos autorais. O elemento <code>footer</code> sozinho é suficiente para esses casos, sem o elemento <code>nav</code>.
+<dd>O elemento <code>nav</code> representa a seção de uma página que aponta para outras páginas ou para partes dentro da página: uma seção com links de navegação. Nem todos os grupos de links de uma página precisam estar em um elemento <code>nav</code> &mdash; apenas seções que consistem em grandes blocos de navegação são apropriados para o elemento <code>nav</code>. Particularmente, é comum para rodapés (footers) possuir uma pequena lista de links para páginas em comum de um site, tal como termos de uso, página inicial e página de direitos autorais. O elemento <code>footer</code> sozinho é suficiente para esses casos, sem o elemento <code>nav</code>.
 <dt><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-article-element><code>&lt;article></code></a>
 <dd>O elemento <code>article</code> representa um componente de uma página que consiste em uma composição de conteúdo próprio em um documento, página, aplicação, ou site e que destina-se a ser independentemente distribuível ou reutilizável, e.g. in syndication. Pode ser uma postagem em um fórum, um artigo de uma revista ou jornal, o comentário de um usuário, um widget ou gadget interativo, ou qualquer outro item independente de conteúdo.
 <dt><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-aside-element><code>&lt;aside></code></a>
-<dd>O elemento <code>aside</code> representa a seção de uma página que consiste em conteúdo que é tangencialmente relacionado ao conteúdo em torno do elemento <code>aside</code>, e o qual pode ser considerado separado daquele conteúdo. Tais seções são frequentemente representadas como barras laterias em tipografia impressa. O elemento pode ser usado para efeitos tipográficos como citações e barras laterias, para publicidade, para grupos de elementos <code>nav</code>, e para outro conteúdo que é considerado separado do conteúdo principal da página.
+<dd>O elemento <code>aside</code> representa a seção de uma página que consiste em conteúdo que é tangencialmente relacionado ao conteúdo em torno do elemento <code>aside</code>, e o qual pode ser considerado separado daquele conteúdo. Tais seções são frequentemente representadas como barras laterias em tipografia impressa. O elemento pode ser usado para efeitos tipográficos como citações e barras laterais, para publicidade, para grupos de elementos <code>nav</code>, e para outro conteúdo que é considerado separado do conteúdo principal da página.
 <dt><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-hgroup-element><code>&lt;hgroup></code></a>
 <dd>O elemento <code>hgroup</code> representa o título de uma seção. O elemento é usado para agrupar um conjunto de elementos <code>h1</code>&ndash;<code>h6</code> quando o título possui vários níveis, tais como subtítulos, títulos alternativos, ou slogans.
 <dt><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-header-element><code>&lt;header></code></a>
@@ -298,7 +298,7 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 
 <p class=a>&#x2767;
 
-<h2 id=unknown-elements>Uma longa digressão em como os browsers lidam com elementos desconhecidos</h2>
+<h2 id=unknown-elements>Um longo desvio em como os browsers lidam com elementos desconhecidos</h2>
 
 <p>Todo browser tem uma lista de elementos <abbr>HTML</abbr> que suporta. Por exemplo, a lista do Mozilla Firefox está armazenada em <a href="http://mxr.mozilla.org/seamonkey/source/parser/htmlparser/src/nsElementTable.cpp">nsElementTable.cpp</a>. Elementos que não estão nesta lista são tratados como &#8220;elementos desconhecidos.&#8221;  Há dois problemas fundamentais com elementos desconhecidos:
 
@@ -397,7 +397,7 @@ p (irmão de h1)
 
 <p>Isso funciona em todas as versões do Internet Explorer, até o IE 6! Nós podemos extender essa técnica para criar cópias falsas de todos os novos elementos do <abbr>HTML5</abbr> agora mesmo &mdash; novamente, eles nunca são inseridos no <abbr>DOM</abbr>, sendo que você nunca verá esses elementos falsos &mdash; e apenas começar usá-los sem se preocupar muito com os browsers não compatíveis com o HTML5.
 
-<p>Remy Sharp fez justamente isso, com seu acertadamente chamado <a href=http://remysharp.com/2009/01/07/html5-enabling-script/><abbr>HTML5</abbr> enabling script</a>. Esse script passou por mais de uma dúzia de revisões desde quando começei a escrever este livro, mas a idéia é basicamente esta:
+<p>Remy Sharp fez justamente isso, com seu acertadamente chamado <a href=http://remysharp.com/2009/01/07/html5-enabling-script/><abbr>HTML5</abbr> enabling script</a>. Esse script passou por mais de uma dúzia de revisões desde quando comecei a escrever este livro, mas a idéia é basicamente esta:
 
 <pre><code>&lt;!--[if lt IE 9]>
 &lt;script>
@@ -589,7 +589,7 @@ p (irmão de h1)
 
 <p>Esta é uma mudança drástica do <abbr>HTML</abbr> 4, e aqui está o porque isso é uma coisa boa. Muitas páginas da web são realmente geradas por templates. Um pouco de conteúdo é tirado de uma fonte e inserido na página aqui; um pouco de conteúdo é tirado de outra fonte e inserido na página ali. Muitos tutoriais são estruturados da mesma maneira. &#8220;Aqui está uma implementação <abbr>HTML</abbr>. Apenas copie e cole em sua página.&#8221; Tudo bem para pequenos trechos de conteúdo, mas e se a implementação que você está colando é uma seção inteira? Neste caso, o tutorial vai estar como algo do tipo: &#8220;Aqui está uma implementação <abbr>HTML</abbr>. Apenas copie e cole em seu editor de texto, e corrija as tags de cabeçalho para que possam coincidir com o nível de aninhamento das tags correspondentes da página em que você o está colando.
 
-<p>Deixe-me colocar isso de outra forma. <abbr>HTML</abbr> 4 não possui um elemento de cabeçalho <em>genérico</em>. Ele possui seis elementos estritamente numerados, <code>&lt;h1></code>&ndash;<code>&lt;h6></code>, os quais têm que estar exatamente nesta ordem. Este tipo de coisa fede, especialmente se sua página é &#8220;montada&#8221; ao invés de &#8220;criada.&#8221; E este é o problema que o <abbr>HTML5</abbr> resolve com os novos elementos de seção e as novas regras para os elementos de cabeçalho existentes. Se você está usando os novos elementos de seção, possso lhe dar esta implementação:
+<p>Deixe-me colocar isso de outra forma. <abbr>HTML</abbr> 4 não possui um elemento de cabeçalho <em>genérico</em>. Ele possui seis elementos estritamente numerados, <code>&lt;h1></code>&ndash;<code>&lt;h6></code>, os quais têm que estar exatamente nesta ordem. Este tipo de coisa fede, especialmente se sua página é &#8220;montada&#8221; ao invés de &#8220;criada.&#8221; E este é o problema que o <abbr>HTML5</abbr> resolve com os novos elementos de seção e as novas regras para os elementos de cabeçalho existentes. Se você está usando os novos elementos de seção, posso lhe dar esta implementação:
 
 <pre><code>&lt;article>
   &lt;header>
@@ -749,7 +749,7 @@ p (irmão de h1)
 <ul>
 <li><a href=http://www.cnn.com/>CNN</a> possui um footer que contém uma declaração de copyright, links para traduções, links para termos de uso e páginas de privacidade, &#8220;sobre,&#8221; &#8220;contato,&#8221; e &#8220;ajuda&#8221;. Todas totalmente apropriadas para o <code>&lt;footer></code>.
 <li><a href=http://www.google.com/>Google</a> possui uma home page esparsa, mas no final dela há links para &#8220;Programas de publicidade,&#8221; &#8220;Solução para negócios,&#8221; e &#8220;Sobre o Google&#8221;; uma declaração de copyright; e um link para a política de publicidade do Google. Tudo isso pode ser incluído em um <code>&lt;footer></code>.
-<li><a href=http://diveintomark.org/>My weblog</a> possui um footer com links para meus outros sites, mais uma declaração de copyright. Definitivamente apropriado pra um elemento <code>&lt;footer></code>. (Note que os links <em>não</em> devem ser incluídos em um elemento <code>&lt;nav></code>, porque eles não são links de naveagação do site; eles são apenas uma coleção de links para meus outros projetos em outros sites).
+<li><a href=http://diveintomark.org/>My weblog</a> possui um footer com links para meus outros sites, mais uma declaração de copyright. Definitivamente apropriado pra um elemento <code>&lt;footer></code>. (Note que os links <em>não</em> devem ser incluídos em um elemento <code>&lt;nav></code>, porque eles não são links de navegação do site; eles são apenas uma coleção de links para meus outros projetos em outros sites).
 </ul>
 
 <p>&#8220;<a href=http://ui-patterns.com/pattern/FatFooter>Footers gordos</a>&#8221; são raivosos hoje em dia. Dê uma olhada no footer do <a href=http://www.w3.org/>site da <abbr>W3C</abbr></a>. Ele contém três colunas, rotuladas &#8220;Navigation,&#8221; &#8220;Contact W3C,&#8221; e &#8220;W3C Updates.&#8221; A implementação se parece mais ou menos com isso:

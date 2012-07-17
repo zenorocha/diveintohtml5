@@ -70,14 +70,14 @@ body{counter-reset:h1 1}
  
 <p><a href="http://en.wikipedia.org/wiki/X_BitMap">Xbm</a> e <a href="http://en.wikipedia.org/wiki/X_PixMap">Xpm</a> eram formatos gráficos populares no Unix.
 	
-<p>"Mosaic" foi um dos primeiros navegadores web. ("X Mosaic" era a versão que rodava no Unix.) Quando ele mandou essa mensagem no início de 1993, <a href="http://en.wikipedia.org/wiki/Marc_Andreessen">Marc Andreessen</a> ainda não havia fundado a companhia que fez ele famoso, <a href="http://en.wikipedia.org/wiki/Mosaic_Communications_Corporation">Mosaic Communications Corporation</a>, nem tinha começado a trabalhar no principal produto da empresa: "Mosaic Netscape." (Você deve conhecer melhor pelos nomes posteriores, "Netscape Corporation" e "Netscape Navigador.")
+<p>"Mosaic" foi um dos primeiros navegadores web. ("X Mosaic" era a versão que rodava no Unix.) Quando ele mandou essa mensagem no início de 1993, <a href="http://en.wikipedia.org/wiki/Marc_Andreessen">Marc Andreessen</a> ainda não havia fundado a companhia que fez ele famoso, <a href="http://en.wikipedia.org/wiki/Mosaic_Communications_Corporation">Mosaic Communications Corporation</a>, nem tinha começado a trabalhar no principal produto da empresa: "Mosaic Netscape." (Você deve conhecer melhor pelos nomes posteriores, "Netscape Corporation" e "Netscape Navigator.")
  
-<p>&#8220;MIME, um dia, quem sabe&#8221; é uma referência a <a href="http://en.wikipedia.org/wiki/Content_negotiation">negociação de conteúdo</a>, que é uma funcionalidade do HTTP onde um cliente (como um navegador web) diz ao servidor (como um servidor web) qual tipo de recursos ele suporta (como <code>image/jpeg</code>) para que então o servidor retorne para o cliente no seu formato preferido<a href="http://www.w3.org/Protocols/HTTP/AsImplemented.html">O protocolo HTTP original foi definido em 1991</a> (a única versão que havia implementada em Fevereiro de 1993) não possuía nenhuma maneira dos clientes dizerem aos servidores que tipo de imagens eram suportadas, o que levou ao dilema de design que Marc encontrou.
+<p>&#8220;MIME, um dia, quem sabe&#8221; é uma referência a <a href="http://en.wikipedia.org/wiki/Content_negotiation">negociação de conteúdo</a>, que é uma funcionalidade do HTTP onde um cliente (como um navegador web) diz ao servidor (como um servidor web) qual tipo de recursos ele suporta (como <code>image/jpeg</code>) para que então o servidor retorne para o cliente no seu formato preferido <a href="http://www.w3.org/Protocols/HTTP/AsImplemented.html">O protocolo HTTP original foi definido em 1991</a> (a única versão que havia implementada em Fevereiro de 1993) não possuía nenhuma maneira dos clientes dizerem aos servidores que tipo de imagens eram suportadas, o que levou ao dilema de design que Marc encontrou.
  
 <p>Algumas horas depois, <a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0183.html"><cite>Tony Johnson</cite> respondeu</a>: 
  
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0183.html"> 
-<p>Eu tenho bastante simular no Midas 2.0 (em uso aqui no SLAC, e haverá um release público a qualquer semana), exceto que todos os nomes são diferentes, e tem um argumento extra <code>NAME="name"</code>. Tem quase exatamente a mesma funcionalidade que você propôs na tag <code>IMG</code>, como por exemplo:
+<p>Eu tenho algo bastante similar no Midas 2.0 (em uso aqui no SLAC, e haverá um release público a qualquer semana), exceto que todos os nomes são diferentes, e tem um argumento extra <code>NAME="name"</code>. Tem quase exatamente a mesma funcionalidade que você propôs na tag <code>IMG</code>, como por exemplo:
 <p><code>&lt;ICON name="NoEntry" href="http://note/foo/bar/NoEntry.xbm"></code> 
 <p>A ideia do parâmetro name é de permitir ao navegador o uso de imagens internas. Se o nome for o mesmo que uma imagem interna, ele usará ela ao invés de buscar a imagem. O nome pode atuar também como uma dica para quando o navegador rodarem no terminal como um tipo de símbolo para substituir a imagem.
 <p>Eu não ligo muito sobre os nomes dos parâmetros ou das tags, mas eles devem ser sensíveis se forem utilizados para mais de uma coisa. Eu não ligo muito para abreviações, ou seja porque não <code>IMAGE=</code> e <code>SOURCE=</code>. Eu prefiro <code>ICON</code> uma vez que é menos que <code>IMAGE</code>, mas talvez <code>ICON</code> seja uma palavra sobrecarregada, não?
@@ -89,24 +89,24 @@ body{counter-reset:h1 1}
  
 <blockquote> 
 <p>Enquanto ainda estamos no assunto de novas tags, eu tenho outra, de algum modo parecida, tag que eu gostaria de suportar no Midas 2.0.
-	A principio ela é:
+	A princípio ela é:
 <p><code>&lt;INCLUDE HREF="..."></code> 
-<p>A intenção aqui é de poder colocar um segundo documento dentro do primeiro documento no ponto que a tag aparece. A principio o documento referenciado pode ser qualquer coisa, mas o objetivo principal é de permitir imagens (nesse caso de tamanho arbitrário) para ser incluída dentro de documentos. Novamente a intenção é de que quando o HTTP2 surgir, o formato do documento incluído possa ser negociado separadamente. 
+<p>A intenção aqui é de poder colocar um segundo documento dentro do primeiro documento no ponto que a tag aparece. A princípio o documento referenciado pode ser qualquer coisa, mas o objetivo principal é de permitir imagens (nesse caso de tamanho arbitrário) para ser incluída dentro de documentos. Novamente a intenção é de que quando o HTTP2 surgir, o formato do documento incluído possa ser negociado separadamente. 
 </blockquote> 
  
-<p>&#8220;HTTP2&#8221;é uma referência ao<a href="http://www.w3.org/Protocols/HTTP/HTTP2.html">HTTP básico definido em 1992</a>. Neste ponto, no início de 1993, ele ainda não estava largamente implementado. O rascunho conhecido HTTP2 foi eventualmente padronizado e implementado como "HTTP 1.0" ( <a href="http://www.w3.org/Protocols/HTTP/1.0/spec.html"> embora não por mais três anos </a>). HTTP 1.0 não incluía a <a href="http://www.w3.org/Protocols/HTTP/HTRQ_Headers.html#z3"> requisição de cabeçalhos para negociação de conteúdo</a>, a.k.a. &#8220;MIME, um dia, quem sabe.&#8221; 
+<p>&#8220;HTTP2&#8221;é uma referência ao <a href="http://www.w3.org/Protocols/HTTP/HTTP2.html">HTTP básico definido em 1992</a>. Neste ponto, no início de 1993, ele ainda não estava largamente implementado. O rascunho conhecido HTTP2 foi eventualmente padronizado e implementado como "HTTP 1.0" ( <a href="http://www.w3.org/Protocols/HTTP/1.0/spec.html"> embora não por mais três anos </a>). HTTP 1.0 não incluía a <a href="http://www.w3.org/Protocols/HTTP/HTRQ_Headers.html#z3"> requisição de cabeçalhos para negociação de conteúdo</a>, a.k.a. &#8220;MIME, um dia, quem sabe.&#8221; 
  
 <p>Tony continuou: 
  
 <blockquote> 
-<p>Uma alternatica que eu considerei foi: 
+<p>Uma alternativa que considerei foi: 
 <p><code>&lt;A HREF="..." INCLUDE>See photo&lt;/A></code> 
 <p>Eu não gosto muito de colocar mais funcionalidade na tag <code>&lt;A></code>, mas a idéia aqui é de manter a compatibilidade entre os navegadores que não podem honrar com o parâmetro <code>INCLUDE</code>. A intenção é que os navegadores que entendam <code>INCLUDE</code>, alterem o texto do link (nesse caso "See photo") com o documento incluído (foto), enquanto os navegadores antigos ou burros ignorem completamente a tag <code>INCLUDE</code>.
 </blockquote> 
  
-<p>Esta proposta nunca foi implementada, no entanto a ideia de colocar um texto quando a imagem não é encontrada, é uma<a href="http://diveintoaccessibility.org/day_23_providing_text_equivalents_for_images.html">importante técnica de acessibilidade</a> esquecida pela proposta inicial da tag <code>&lt;IMG</code> de Marc. anos depois esse atributo foi incluído como <a href="http://www.w3.org/TR/html4/struct/objects.html#h-13.8">a tag<code>&lt;img alt></code></a>, que o Netscape mostrava erroneamente  <a href="http://www.cs.tut.fi/~jkorpela/html/alt.html#tooltip"> o nome quando se colocava o mouse em cima da imagem</a>. 
+<p>Esta proposta nunca foi implementada, no entanto a ideia de colocar um texto quando a imagem não é encontrada, é uma <a href="http://diveintoaccessibility.org/day_23_providing_text_equivalents_for_images.html">importante técnica de acessibilidade</a> esquecida pela proposta inicial da tag <code>&lt;IMG</code> de Marc. anos depois esse atributo foi incluído como <a href="http://www.w3.org/TR/html4/struct/objects.html#h-13.8">a tag <code>&lt;img alt></code></a>, que o Netscape mostrava erroneamente  <a href="http://www.cs.tut.fi/~jkorpela/html/alt.html#tooltip"> o nome quando se colocava o mouse em cima da imagem</a>. 
  
-<p>Algumas horas depois que Tony enviou aquela mensagem,<a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0186.html"><cite>Tim Berners-Lee</cite> respondeu</a>: 
+<p>Algumas horas depois que Tony enviou aquela mensagem, <a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0186.html"><cite>Tim Berners-Lee</cite> respondeu</a>: 
  
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0186.html"> 
 <p>Eu imaginei que figuras poderiam ser representadas como
@@ -118,22 +118,22 @@ PRESENT	 Mostre isso sempre que o documento fonte for apresentado</pre>
 <p>[Eu] vejo que usando esse método para ícones selecionáveis significam links. Hmmm. Mas eu não quero nenhuma tag especial
 </blockquote> 
  
-<p>Esta proposta nunca foi implementada, mas o atributo <code>rel</code><a href="http://diveintohtml5.org/semantics.html#link">continua por ai</a>. 
+<p>Esta proposta nunca foi implementada, mas o atributo <code>rel</code> <a href="http://diveintohtml5.org/semantics.html#link">continua por aí</a>. 
  
 <p><a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0188.html"><cite>Jim Davis</cite> adicionou</a>: 
  
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0188.html"> 
-<p>Seria legal se houvesse um content type especifico, por exemplo: 
+<p>Seria legal se houvesse um content type específico, por exemplo: 
 <p><code>&lt;IMG HREF="http://nsa.gov/pub/sounds/gorby.au" CONTENT-TYPE=audio/basic></code> 
 <p>Mas eu estou completamente disposto a viver com a necessidade de especificar o content type pela extensão do arquivo.
 </blockquote> 
  
-<p>Esta proposta nunca foi implementada, mas o Netscape posteriormente incluiu o suporte de inserir audio e vídeo com o elemento <code>&lt;embed></code>. 
+<p>Esta proposta nunca foi implementada, mas o Netscape posteriormente incluiu o suporte de inserir áudio e vídeo com o elemento <code>&lt;embed></code>. 
  
 <p><a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0192.html"><cite>Jay C. Weber</cite> perguntou</a>: 
  
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0192.html"> 
-<p>Enquanto imagens estão no topo da minha lista de tipos de mídias num navegador WWWW, eu não acho que nós devemos incluir especificações idiossincrátiacs para cada tipo de mídia. O que aconteceu com o entusiasmo de usar um mecanismo de MIME type?
+<p>Enquanto imagens estão no topo da minha lista de tipos de mídias num navegador WWW, eu não acho que nós devemos incluir especificações idiossincráticas para cada tipo de mídia. O que aconteceu com o entusiasmo de usar um mecanismo de MIME type?
 </blockquote> 
  
 <p><a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0194.html"><cite>Marc Andreessen</cite> respondeu</a>: 
@@ -146,11 +146,11 @@ PRESENT	 Mostre isso sempre que o documento fonte for apresentado</pre>
  
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0198.html"> 
 <p>Vamos temporariamente esquecer do MIME, se é o que está atrapalhando. Minha objeção é a discussão sobre "como nós iremos incluir o suporte a imagens" e não sobre "como nós vamos suportar os diversos problemas nas diversas mídias"
-<p>De outra maneira, semana que vem alguém vai sugerir &#8216;vamos colocar uma nova tag<code>&lt;AUD SRC="file://foobar.com/foo/bar/blargh.snd"></code>&#8216; para audio. 
+<p>De outra maneira, semana que vem alguém vai sugerir &#8216;vamos colocar uma nova tag <code>&lt;AUD SRC="file://foobar.com/foo/bar/blargh.snd"></code>&#8216; para áudio. 
 <p>Isto é muito custo no lugar de usar algo que generalize.
 </blockquote> 
  
-<p>Com o beneficio de termos uma retrospectiva, parece que as preocupações de Jay estavam bem fundamentadas. Levou mais de uma semana, mas o HTML5 finalmente inclui os novos elementos<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#video"><code>&lt;video></code></a> e <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#audio"><code>&lt;audio></code></a>. 
+<p>Com o benefício de termos uma retrospectiva, parece que as preocupações de Jay estavam bem fundamentadas. Levou mais de uma semana, mas o HTML5 finalmente inclui os novos elementos <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#video"><code>&lt;video></code></a> e <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#audio"><code>&lt;audio></code></a>. 
  
 <p>Respondendo a mensagem original de Jay, <a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0204.html"><cite>Dave Raggett</cite> disse</a>: 
  
@@ -158,7 +158,7 @@ PRESENT	 Mostre isso sempre que o documento fonte for apresentado</pre>
 <p>Verdade! Eu gostaria de considerar toda a gama de possibilidade de tipo de arte em imagens, além da possibilidade de negociação do formato. A mensagem de Tim sobre áreas clicáveis nas imagens também são importantes.
 </blockquote> 
  
-<p>Mais tarde em 1993,<a href="http://www.w3.org/People/Raggett/">Dave Raggett</a> propôs <a href="http://www.w3.org/MarkUp/HTMLPlus/htmlplus_1.html">HTML+</a> como uma evolução do padrão HTML. Esta proposta nunca foi implementada, e foi substituída pela<a href="http://www.w3.org/MarkUp/html-spec/html-spec_toc.html">HTML 2.0</a>. HTML 2.0 foi uma "retrospectiva", o que significa que formalizou as funcionalidades já em uso &#8220;<a href="http://www.w3.org/MarkUp/html-spec/html-spec_1.html#SEC1.1">Essa especificação reúne, esclarece e formaliza o conjunto de funcionalidades</a> que grosseiramente corresponde as capacidades do HTML que estavam em uso em Junho de 1994.&#8221; 
+<p>Mais tarde em 1993, <a href="http://www.w3.org/People/Raggett/">Dave Raggett</a> propôs <a href="http://www.w3.org/MarkUp/HTMLPlus/htmlplus_1.html">HTML+</a> como uma evolução do padrão HTML. Esta proposta nunca foi implementada, e foi substituída pela <a href="http://www.w3.org/MarkUp/html-spec/html-spec_toc.html">HTML 2.0</a>. HTML 2.0 foi uma "retrospectiva", o que significa que formalizou as funcionalidades já em uso &#8220;<a href="http://www.w3.org/MarkUp/html-spec/html-spec_1.html#SEC1.1">Essa especificação reúne, esclarece e formaliza o conjunto de funcionalidades</a> que grosseiramente corresponde as capacidades do HTML que estavam em uso em Junho de 1994.&#8221; 
  
 <p>Dave mais tarde escreveu a <a href="http://www.w3.org/MarkUp/html3/CoverPage.html">HTML 3.0</a>,  baseado no rascunho feito por eles do HTML+. Fora isso existia a referência da W3C do <a href="http://www.w3.org/Arena/">Arena</a>, HTML 3.0  nunca foi implementado, e foi substituído pelo <a href="http://www.w3.org/MarkUp/Wilbur/">HTML 3.2</a>, outra "retrospectiva":&#8220;<a href="http://www.w3.org/TR/REC-html32.html#intro">HTML 3.2 incluiu largamente outras funcionalidades</a> como tabelas, applets e textos ao redor de imagens, enquanto mantinha a retro-compatibilidade com o padrão existente: HTML 2.0.&#8221; 
  
@@ -172,17 +172,17 @@ PRESENT	 Mostre isso sempre que o documento fonte for apresentado</pre>
  
 <p><a href="http://en.wikipedia.org/wiki/Intermedia_(hypertext)">Intermedia</a> foi um projeto de uso de hipertexto da Brown University. Ela foi desenvolvida de 1985 até 1991 e rodava no <a href="http://en.wikipedia.org/wiki/A/UX">A/UX</a>, um sistema operacional Unix-like utilizado nos primeiros computadores Macintosh. 
  
-<p>A ideia de "uma linguagem procedural genérica para gráficos" foi eventualmente implementada. Navegadores modernos suportam tanto<a href="http://www.w3.org/Graphics/SVG/">SVG</a> (marcação declarativa com scripts embutidos) e <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#the-canvas-element"><code>&lt;canvas></code></a> (uma API procedural e direta para gráficos), mesmo que <a href="http://ln.hixie.ch/?start=1089635050&amp;count=1">começasse como uma extensão proprietária</a> antes de começar a ser "revista"pela  <a href="http://www.whatwg.org/">WHATWG</a>. 
+<p>A ideia de "uma linguagem procedural genérica para gráficos" foi eventualmente implementada. Navegadores modernos suportam tanto <a href="http://www.w3.org/Graphics/SVG/">SVG</a> (marcação declarativa com scripts embutidos) e <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#the-canvas-element"><code>&lt;canvas></code></a> (uma API procedural e direta para gráficos), mesmo que <a href="http://ln.hixie.ch/?start=1089635050&amp;count=1">começasse como uma extensão proprietária</a> antes de começar a ser "revista" pela <a href="http://www.whatwg.org/">WHATWG</a>. 
  
 <p><a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0217.html"><cite>Bill Janssen</cite> respondeu</a>: 
  
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0217.html"> 
-<p>Outros sistemas para olharmos que tem alguma noção disso (bastante válida) são Andrew e Slate. Andrew foi feito com _insetos_, e cada um deles tem um tipo interessante, como texto, bitmap, desenhos, animações, mensagens, planilhas, etc. A noção de inclusão arbitrária e recursiva está presente, então se um inseto de qualquer tipo pode ser incluído em qualquer lugar que suporte inclusa. Por exemplo, um inseto pode ser incluído em qualquer ponto do texto de um widget de texto, ou em qualquer área retangular de um widget de desenho ou em qualquer célula de uma planilha.
+<p>Outros sistemas para olharmos que tem alguma noção disso (bastante válida) são Andrew e Slate. Andrew foi feito com _insets_, e cada um deles tem um tipo interessante, como texto, bitmap, desenhos, animações, mensagens, planilhas, etc. A noção de inclusão arbitrária e recursiva está presente, então se um inset de qualquer tipo pode ser incluído em qualquer lugar que suporte inclusa. Por exemplo, um inset pode ser incluído em qualquer ponto do texto de um widget de texto, ou em qualquer área retangular de um widget de desenho ou em qualquer célula de uma planilha.
 </blockquote> 
  
-<p>&#8220;Andrew&#8221; é uma referencia a <a href="http://www-2.cs.cmu.edu/~AUIS/">Andrew User Interface System</a> ( nessa época era conhecida apenas como <a href="http://en.wikipedia.org/wiki/Andrew_Project">Andrew Project</a>). 
+<p>&#8220;Andrew&#8221; é uma referência a <a href="http://www-2.cs.cmu.edu/~AUIS/">Andrew User Interface System</a> (nessa época era conhecida apenas como <a href="http://en.wikipedia.org/wiki/Andrew_Project">Andrew Project</a>). 
  
-<p>Ao mesmo tempo,<a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0215.html"><cite>Thomas Fine</cite> teve uma ideia diferente</a>: 
+<p>Ao mesmo tempo, <a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0215.html"><cite>Thomas Fine</cite> teve uma ideia diferente</a>: 
  
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0215.html"> 
 <p>Esta é a minha opinião. A melhor maneira de usar imagens na WWW é utilizando MIME. Eu tenho certeza que postscript é um tipo suportado no MIME, e que lida tranquilamente com a mistura de texto e imagens.
@@ -196,7 +196,7 @@ PRESENT	 Mostre isso sempre que o documento fonte for apresentado</pre>
 <p><a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0221.html"><cite>Tim Berners-Lee</cite>, 2 de Março de 1993</a>: 
  
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0221.html"> 
-<p>HTTP2 permite que um documento contenha qualquer tipo que usuário diga que pode lidar, não apenas os MIME types registrados. Então pode ser feito um experimento. Sim eu acho que tem algum caso que funciona postscript com hipertexto, Eu não entendo de display postscript o suficiente. Eu sei que a Adobe está tentando estabelecer seu próprio tipo de postscript "PDF" que terá links e poderá ser lido pelos leitores proprietários deles.
+<p>HTTP2 permite que um documento contenha qualquer tipo que usuário diga que pode lidar, não apenas os MIME types registrados. Então pode ser feito um experimento. Sim eu acho que tem algum caso que funciona postscript com hipertexto, eu não entendo de display postscript o suficiente. Eu sei que a Adobe está tentando estabelecer seu próprio tipo de postscript "PDF" que terá links e poderá ser lido pelos leitores proprietários deles.
 <p>Eu penso que uma linguagem genérica para links entre camadas (baseados em Hytime?) pode permitir padrões hipertexto e imagens/video que envolva-os separadamente, que pode ajudar ambos.
 <p>Deixem que a tag <code>IMG</code> possa ser <code>INCLUDE</code> (incluída) e deixe ela se referir a um tipo arbitrário de documento. Ou <code>EMBED</code> se <code>INCLUDE</code> parece com um include do cpp e que as pessoas possam esperar por um código fonte SGML para ser interpretado  &#8212; o que não é a intenção.
 </blockquote> 
@@ -206,11 +206,11 @@ PRESENT	 Mostre isso sempre que o documento fonte for apresentado</pre>
  
 <p>A proposta de Tim para uma tag <code>&lt;INCLUDE</code> nunca foi implementada, no entanto pode-se ver ecos dela nos elementos <code>&lt;object></code>, <code>&lt;embed></code>, e <code>&lt;iframe></code>. 
  
-<p>Finalmente em 12 de Março de 1993,<a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0257.html">Marc Andreessen revisitou a thread</a>: 
+<p>Finalmente em 12 de Março de 1993, <a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0257.html">Marc Andreessen revisitou a thread</a>: 
  
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0257.html"> 
 <p>Voltando a thread sobre inclusão de imagens &#8212; eu estou chegando perto de lançar o Mosaic v0.10, que irá suportar a inclusão de GIF e imagens/bitmaps XBM, como eu disse anteriormente. ... 
-<p>Nós não estamos preparados para suportar as tags <code>INCLUDE</code>/<code>EMBED</code> nesse momento. ... Então nós provavelmente iremos usar as tags <code>&lt;IMG SRC="url"></code> (não a tag <code>ICON</code>, dado que nem todas as imagens podem ser propriamente chamadas de ícones). Por enquanto as imagens incluidas não deverão possuir um contet-type especifico; futuramente, nós planejamos dar suporte a isto (junto com a adaptação do MIME). Na verdade, a rotina de leitura de imagens que nós estamos utilizando lida com o formato da imagem no momento de renderizar, então a extensão do arquivo não é tão relevante.
+<p>Nós não estamos preparados para suportar as tags <code>INCLUDE</code>/<code>EMBED</code> nesse momento. ... Então nós provavelmente iremos usar as tags <code>&lt;IMG SRC="url"></code> (não a tag <code>ICON</code>, dado que nem todas as imagens podem ser propriamente chamadas de ícones). Por enquanto as imagens incluídas não deverão possuir um contet-type específico; futuramente, nós planejamos dar suporte a isto (junto com a adaptação do MIME). Na verdade, a rotina de leitura de imagens que nós estamos utilizando lida com o formato da imagem no momento de renderizar, então a extensão do arquivo não é tão relevante.
 </blockquote> 
  
 <p class=a>&#x2767;
@@ -241,13 +241,13 @@ PRESENT	 Mostre isso sempre que o documento fonte for apresentado</pre>
 
 <h2 id=timeline>Uma linha do tempo do desenvolvimento da HTML de 1997 à 2004</h2>
 
-<p>Em Dezembro de 1997, a World Wide Web Consortium (W3C) publicou a <a href=http://www.w3.org/TR/REC-html40-971218/><abbr>HTML</abbr> 4.0</a> e provavelmente fechou o grupo de trabalho da <abbr>HTML</abbr>. Menos de dois meses depois, um grupo de trabalho separado da <abbr>W3C</abbr> publicou o <a href=http://www.w3.org/TR/1998/REC-xml-19980210><abbr>XML</abbr> 1.0</a>. Três meses depois apenas, as pessoas que faziam parte da W3C deram um workshop chamado: <a href=http://www.w3.org/MarkUp/future/>Moldando o futuro da <abbr>HTML</abbr></a>&#8221; para responder a questão: &#8220;A W3C desistiu da HTML?&#8221; Esta foi a resposta:
+<p>Em Dezembro de 1997, a World Wide Web Consortium (W3C) publicou a <a href=http://www.w3.org/TR/REC-html40-971218/><abbr>HTML</abbr> 4.0</a> e provavelmente fechou o grupo de trabalho da <abbr>HTML</abbr>. Menos de dois meses depois, um grupo de trabalho separado da <abbr>W3C</abbr> publicou o <a href=http://www.w3.org/TR/1998/REC-xml-19980210><abbr>XML</abbr> 1.0</a>. Três meses depois apenas, as pessoas que faziam parte da W3C deram um workshop chamado: &#8220;<a href=http://www.w3.org/MarkUp/future/>Moldando o futuro da <abbr>HTML</abbr></a>&#8221; para responder a questão: &#8220;A W3C desistiu da HTML?&#8221; Esta foi a resposta:
 
 <blockquote cite=http://esw.w3.org/topic/HTML/history>
-<p>Nas conversas foi concordado que seria dificil ocorrer uma futura extensão da <abbr>HTML</abbr>, como a conversão da 4.0 para uma aplicação <abbr>XML</abbr>. Foi proposto quebrar com estas restrições e fazer um novo começo para a nova geração da HTML baseada em um conjuto de tags <abbr>XML</abbr>.
+<p>Nas conversas foi concordado que seria difícil ocorrer uma futura extensão da <abbr>HTML</abbr>, como a conversão da 4.0 para uma aplicação <abbr>XML</abbr>. Foi proposto quebrar com estas restrições e fazer um novo começo para a nova geração da HTML baseada em um conjuto de tags <abbr>XML</abbr>.
 </blockquote>
 
-<p>A <abbr>W3C</abbr> recriou o grupo de trabalho da <abrr>HTML</abbr> para criação do seu &#8220;conjunto de tags <abbr>XML</abbr>.&#8221; O primeiro passo deles, em dezembro de 1998, foi um rascunho de uma especificação interna que simplesmente <a href=http://www.w3.org/TR/1998/WD-html-in-xml-19981205/> reformulou a <abbr>HTML</abbr> no <abbr>XML</abbr></a> sem adicionar nenhum novo elemento ou atributo. Esta especificação posteriormente ficou conhecida como &#8220;<a href=http://www.w3.org/TR/xhtml1/><abbr>XHTML</abbr> 1.0</a>.&#8221; Ela definiu um novo <abbr>MIME</abbr> tupe para documentos <abbr>XHTML</abbr>: <code>application/html+xml</code>. Entretando, para realizar a migração das atuais 4 páginas da <abbr>HTML</abbr> existentes, segundo o <a href=http://www.w3.org/TR/xhtml1/#guidelines>Apêndice C</a>, resume nas &#8220;principais guias de design para os autores que desejam processar documentos <abbr>XHTML</abbr> nos  agentes HTML existentes.&#8221; O apêndice C diz também que é permitido ao autor chamar documentos &#8220;<abbr>XHTML</abbr>&#8221;, mas utilizar ainda o <abbr>MIME</abbr> type <code>text/html</code>.
+<p>A <abbr>W3C</abbr> recriou o grupo de trabalho da <abrr>HTML</abbr> para criação do seu &#8220;conjunto de tags <abbr>XML</abbr>.&#8221; O primeiro passo deles, em dezembro de 1998, foi um rascunho de uma especificação interna que simplesmente <a href=http://www.w3.org/TR/1998/WD-html-in-xml-19981205/> reformulou a <abbr>HTML</abbr> no <abbr>XML</abbr></a> sem adicionar nenhum novo elemento ou atributo. Esta especificação posteriormente ficou conhecida como &#8220;<a href=http://www.w3.org/TR/xhtml1/><abbr>XHTML</abbr> 1.0</a>.&#8221; Ela definiu um novo <abbr>MIME</abbr> type para documentos <abbr>XHTML</abbr>: <code>application/html+xml</code>. Entretando, para realizar a migração das atuais 4 páginas da <abbr>HTML</abbr> existentes, segundo o <a href=http://www.w3.org/TR/xhtml1/#guidelines>Apêndice C</a>, resume nas &#8220;principais guias de design para os autores que desejam processar documentos <abbr>XHTML</abbr> nos  agentes HTML existentes.&#8221; O apêndice C diz também que é permitido ao autor chamar documentos &#8220;<abbr>XHTML</abbr>&#8221;, mas utilizar ainda o <abbr>MIME</abbr> type <code>text/html</code>.
 
 <p>O próximo objetivo deles foram os formulários web. Em agosto de 1999, o mesmo grupo de trabalho da <abbr>HTML</abbr> publicou o primeiro rascunho da <a href=http://www.w3.org/TR/1999/WD-xhtml-forms-req-19990830><abbr>XHTML</abbr> Extended Forms</a>. Eles colocaram as expectativas <a href=http://www.w3.org/TR/1999/WD-xhtml-forms-req-19990830#intro>no primeiro parágrafo</a>:
 
@@ -263,13 +263,13 @@ PRESENT	 Mostre isso sempre que o documento fonte for apresentado</pre>
 
 <h2 id=xhtml>Tudo que você sabe sobre XHTML está errado</h2>
 
-<p>Por que os <abbr>MIME</abbr> types são importantes? Por que eu fico voltando a eles? Três palavras: <a href=http://esw.w3.org/topic/HTML/DraconianErrorHandling>draconian error handling</a> (tratamento de erros draconianos). Navegadores sempre foram &#8220;tolerantes&#8221; com a <abbr>HTML</abbr>. Se você criar uma página <abbr>HTML</abbr> mas esquecer a tag <code>&lt;/head></code>, os navegadores irão mostrar a página de todo modo. (Algumas tags implicitamente realizam o fechamando da tag <code>&lt;/head><code> e o inicio da tag <code>&lt;body></code>.) Você supostamente aninha as tags de maneira hierárquica &mdash; fechando elas da última para primeira &mdash; mas, se você criar uma marcação como <code>&lt;b>&lt;i>&lt;/b>&lt;/i></code>, os navegadores simplismente vão lidar com isso (de algum jeito) sem mostrar nenhuma mensagem de erro.
+<p>Por que os <abbr>MIME</abbr> types são importantes? Por que eu fico voltando a eles? Três palavras: <a href=http://esw.w3.org/topic/HTML/DraconianErrorHandling>draconian error handling</a> (tratamento de erros draconianos). Navegadores sempre foram &#8220;tolerantes&#8221; com a <abbr>HTML</abbr>. Se você criar uma página <abbr>HTML</abbr> mas esquecer a tag <code>&lt;/head></code>, os navegadores irão mostrar a página de todo modo. (Algumas tags implicitamente realizam o fechamando da tag <code>&lt;/head></code> e o inicio da tag <code>&lt;body></code>.) Você supostamente aninha as tags de maneira hierárquica &mdash; fechando elas da última para primeira &mdash; mas, se você criar uma marcação como <code>&lt;b>&lt;i>&lt;/b>&lt;/i></code>, os navegadores simplesmente vão lidar com isso (de algum jeito) sem mostrar nenhuma mensagem de erro.
 
 <p style="float:left;margin-right:1.75em"><img src=i/openclipart.org_johnny_automatic_3_birds.png width=187 height=362 alt="three birds laughing">
 
 <p>Como você pode esperar, o fato dessa marcação <abbr>HTML</abbr> &#8220;quebrada&#8221; continuar funcionando em alguns navegadores, permite que os autores criem páginas <abbr>HTML</abbr> quebradas. Muitas páginas quebradas. Segundo algumas estimativas, cerca de 99% das páginas <abbr>HTML</abbr> na internet hoje possuem pelo menos um erro nelas. Mas como os navegadores não mostram mensagens de erro para isto, ninguém conserta.
 
-<p>A W3C viu que este era o problema fundamental com a web, e, então, eles decidiram corrigir isso. O <abbr>XML</abbr> publicado em 1997 quebrou com a tradição de perdoar os clientes e mandou que todos os programas que consumissem <abbr>XML</abbr> deveriam tratar os erros chamados de &#8220;boa-formatação&#8221; como erros fatais. Este conceito de falha ficou conhecido como &#8220;tratamento de erro draconiano&#8221; depois do líder grego <a href="http://en.wikipedia.org/wiki/Draco_(lawgiver)">Draco</a> que foi quem instituiu a pena de morte para quem cometesse menores infrações das suas leis. Quando a W3C reformulou a <abbr>HTML</abbr> como um vocabulário <abrr>XML</abbr>, eles mandaram que todos os documentos servidos pelo novo <abbr>MIME</abbr> type <code>application/xhtml+xml<code> deveriam submeter um tratamento de erro draconiano. Caso houvesse apenas um erro de boa-formação na sua página <abrr>XHTML</abbr> &mdash; Como por exemplo esquecer a tag <code>&lt;/head></code> ou uma colocação errada de tags de início e fim &mdash; os navegadores não teriam escolha a não ser parar o processamento e mostrar uma mensagem de erro para o usuário final.
+<p>A W3C viu que este era o problema fundamental com a web, e, então, eles decidiram corrigir isso. O <abbr>XML</abbr> publicado em 1997 quebrou com a tradição de perdoar os clientes e mandou que todos os programas que consumissem <abbr>XML</abbr> deveriam tratar os erros chamados de &#8220;boa-formatação&#8221; como erros fatais. Este conceito de falha ficou conhecido como &#8220;tratamento de erro draconiano&#8221; depois do líder grego <a href="http://en.wikipedia.org/wiki/Draco_(lawgiver)">Draco</a> que foi quem instituiu a pena de morte para quem cometesse menores infrações das suas leis. Quando a W3C reformulou a <abbr>HTML</abbr> como um vocabulário <abrr>XML</abbr>, eles mandaram que todos os documentos servidos pelo novo <abbr>MIME</abbr> type <code>application/xhtml+xml</code> deveriam submeter um tratamento de erro draconiano. Caso houvesse apenas um erro de boa-formação na sua página <abrr>XHTML</abbr> &mdash; Como por exemplo esquecer a tag <code>&lt;/head></code> ou uma colocação errada de tags de início e fim &mdash; os navegadores não teriam escolha a não ser parar o processamento e mostrar uma mensagem de erro para o usuário final.
 
 <p>Essa ideia não foi popular universalmente. Com uma taxa estimada de erro em 99% das páginas, a sempre presente possibilidade de mostrar mensagens de erro para o usuário final e a escassez de novos recursos no <abbr>XHTML</abbr> 1.0 e 1.1 que justificassem o custo, os autores web basicamente ignoraram a <code>application/xhtml+xml</code>. Mas isso não significa que eles também ignoraram o <abbr>XHTML</abbr>. Definitivamente eles não fizeram isso. O Apêndice C da especificação do <abbr>XHTML</abbr> 1.0 deu aos autores da web uma nova brecha: &#8220;Usar algo que pareça com a sintaxe do <abrr>XHTML</abbr>, mas que continua gerando o <abbr>MIME</abbr> type <code>text/html</code>.&#8221; Isso foi exatamente o que centenas de desenvolvedores web fizeram: eles fizeram um <em>upgrade</em> para a sintaxe do <abrr>XHTML</abbr> mas que continuassem gerando o <abbr>MIME</abbr> type <code>text/html</code>
 

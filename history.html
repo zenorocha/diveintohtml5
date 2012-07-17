@@ -26,7 +26,7 @@ body{counter-reset:h1 11}
 
 <p>Por que você iria manipular manualmente a barra de endereços do navegador? Afinal, um simples link pode navegar até uma nova <abbr>URL</abbr>; essa é a forma que a web tem funcionado nos últimos 20 anos. E isso vai continuar funcionando desta forma. Esta <abbr>API</abbr> não tenta revolucionar a web. Muito pelo contrário. Nos últimos anos, os desenvolvedores web têm encontrado novas e excitantes formas de revolucionar a web sem a ajuda de padrões emergentes. A <abbr>API</abbr> de histórico da <abbr>HTML5</abbr> foi na verdade criada para garantir que as <abbr>URL</abbr>s continuem sendo úteis em aplicações web com scripts pesados.
 
-<p>Voltando aos princípios, o que uma <abbr>URL</abbr> faz? Ela identifica um recurso único. Você pode fazer um link direto para ela; você pode marcá-la; motores de busca podem indexá-la; você pode copiar, colar e enviá-la por e-mail para outra pessoa, esta pessoa pode clicar e acabar vendo o mesmo recurso que você viu originalmente. Estas são todas qualidades excelentes.  <abbr>URL</abbr>s são importantes.
+<p>Voltando aos princípios, o que uma <abbr>URL</abbr> faz? Ela identifica um recurso único. Você pode fazer um link direto para ela; você pode marcá-la; motores de busca podem indexá-la; você pode copiar, colar e enviá-la por e-mail para outra pessoa, esta pessoa pode clicar e acabar vendo o mesmo recurso que você viu originalmente. Estas são todas qualidades excelentes. <abbr>URL</abbr>s são importantes.
 
 <p>Então nos queremos que recursos únicos tenham <abbr>URL</abbr>s únicas. Mas ao mesmo tempo, navegadores sempre tiveram uma limitação fundamental: Se você mudar a <abbr>URL</abbr>, mesmo através de script, ele dispara uma requisição ao servidor web remoto e recarrega toda a página. Isso consome tempo e recursos, e parece um desperdício quando você esta navegando para uma página que é substancialmente semelhante à sua página atual. Tudo que possui na nova página é baixado, até mesmo as partes que são exatamente as mesmas da página atual. Não tem como alterar a <abbr>URL</abbr> em um navegador e este fazer download de apenas metade da página.
 
@@ -131,7 +131,7 @@ body{counter-reset:h1 11}
 
 <p>A segunda metade da função <code>swapPhoto()</code> realiza a segunda etapa de nossa <a href=#illusion>ilusão de três etapas</a>: inserindo a nova marcação baixada dentro da página atual. Lembre-se que tínhamos um <code>&lt;aside></code> envolvendo todo a figura, foto e legenda. Então inserindo a nova marcação da foto é uma linha, atribuindo a propriedade <code>innerHTML</code> do <code>&lt;aside></code> para a propriedade <code>responseText</code> retornada do <code>XMLHttpRequest</code>.
 
-<pre><code>  if (req.status == 200) {
+<pre><code> if (req.status == 200) {
     document.getElementById("gallery").innerHTML = req.responseText;
     setupHistoryClicks();
     return true;
@@ -156,7 +156,7 @@ body{counter-reset:h1 11}
 
 <p>Ao chamar <code>history.pushState</code> mudará imediatamente a <abbr>URL</abbr> na barra de endereços do navegador. Então, este é o final da ilusão? Bom, não exatamente. Nós ainda precisamos falar sobre o que acontece quando o usuário pressiona o importantíssimo botão de voltar.
 
-<p>Geralmente quando um usuário navega a uma nova página (com uma atualização de página inteira), o navegador joga a nova <abbr>URL</abbr> para a lista de histórico, faz os downloads e desenha a nova página. Quando o usuário pressiona o botão voltar, o navegador joga uma página para fora da pilha de histórico e redesenha a página anterior. Mas o que acontece agora que você gerou um curto-circuito de navegação para evitar a atualização da página toda? Bom, você fingiu o "avançar" para uma nova <abbr>URL</abbr>, então agora você pode também fingir um "voltar" para a <abbr>URL</abbr> anterior. E a chave para  forjar este "retorno" é o evento <code>popstate</code>.
+<p>Geralmente quando um usuário navega a uma nova página (com uma atualização de página inteira), o navegador joga a nova <abbr>URL</abbr> para a lista de histórico, faz os downloads e desenha a nova página. Quando o usuário pressiona o botão voltar, o navegador joga uma página para fora da pilha de histórico e redesenha a página anterior. Mas o que acontece agora que você gerou um curto-circuito de navegação para evitar a atualização da página toda? Bom, você fingiu o "avançar" para uma nova <abbr>URL</abbr>, então agora você pode também fingir um "voltar" para a <abbr>URL</abbr> anterior. E a chave para forjar este "retorno" é o evento <code>popstate</code>.
 
 <p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> O prestígio
 <pre><code>window.addEventListener("popstate", function(e) {
@@ -203,9 +203,9 @@ body{counter-reset:h1 11}
 <div class=pf>
 <h4>Você sabia?</h4>
 <div class=moneybags>
-	<blockquote><p>Em associação a Google Press, O&#8217;Reilly está distribuindo este livro em variados formatos, incluindo papel, ePub, Mobi, <abbr>DRM</abbr>-free e <abbr>PDF</abbr>. A edição paga é chamada &#8220;HTML5: Up &amp; Running,&#8221; e está disponível agora.
-	<p>Se você gostou dessa introdução e quer mostrar como apreciou, basta <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">comprar o livro &#8220;HTML5: Up &amp; Running&#8221; com esse link afiliado</a> ou <a href=http://oreilly.com/catalog/9780596806033>comprar a edição eletrônica diretamente da O&#8217;Reilly</a>. Você vai ganhar um livro, e eu vou ganhar um trocado. Atualmente não aceito doações diretas.
-	</blockquote>
+<blockquote><p>Em associação a Google Press, O&#8217;Reilly está distribuindo este livro em variados formatos, incluindo papel, ePub, Mobi, <abbr>DRM</abbr>-free e <abbr>PDF</abbr>. A edição paga é chamada &#8220;HTML5: Up &amp; Running,&#8221; e está disponível agora.
+<p>Se você gostou dessa introdução e quer mostrar como apreciou, basta <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">comprar o livro &#8220;HTML5: Up &amp; Running&#8221; com esse link afiliado</a> ou <a href=http://oreilly.com/catalog/9780596806033>comprar a edição eletrônica diretamente da O&#8217;Reilly</a>. Você vai ganhar um livro, e eu vou ganhar um trocado. Atualmente não aceito doações diretas.
+</blockquote>
 </div>
 </div>
 
