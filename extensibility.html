@@ -650,10 +650,35 @@ Suite 415</mark>
 </blockquote>
 </div>
 </div>
+<!-- translated start -->
+<div class="pf clear">
+<h4>Pergunte ao Professor de Marcação</h4>
+<div class=inner>
+<blockquote class=note>
+<p><span>&#x261E;</span>P: Esse formato de endereço postal é específico dos EUA?<br>
+R: Não. As propriedades do vocabulário Address são genéricas o suficiente que podem descrever vários endereços postais do mundo. Nem todo endereço terá os valores para cada propriedade, mas não tem problema. Alguns endereços podem exigir mais de uma &#8220;linha&#8221; em uma única propriedade, mas sem problemas também. Por exemplo, se o seu endereço postal tem uma rua e um número de suíte, eles podem ir juntos dentro da subpropriedade <code>street-address</code>:
+<pre><code>&lt;p itemprop="address" itemscope
+    itemtype="http://data-vocabulary.org/Address">
+  &lt;span itemprop="street-address">
+    <mark>100 Main Street
+Suite 415</mark>
+  &lt;/span>
+  ...
+&lt;/p></code></pre>
+</blockquote>
+</div>
+</div>
+<!-- translated end -->	
 
 <p id=person-url>There&#8217;s one more thing on this sample &#8220;about&#8221; page: a list of <abbr>URLs</abbr>. The Person vocabulary has a property for this, called <code>url</code>. A <code>url</code> property can be anything, really. (Well, it has to be a <abbr>URL</abbr>, but you probably guessed that.) What I mean is that the <code>url</code> property is loosely defined. The property can be any sort of <abbr>URL</abbr> that you want to associate with a Person: a weblog, a photo gallery, or a profile on another site like Facebook or Twitter.
+<!-- translated start -->
+<p id=person-url>Não há de mais nessa página &#8220;sobre&#8221;: uma lista de <abbr>URLs</abbr>. O vocabulário Person tem a a propriedade pra isso, chamada de <code>url</code>. A propriedade <code>url</code> pode ser qualquer coisa, de verdade. (Bem, ela deve ser uma <abbr>URL</abbr>, mas você provavelmente já adivinhou isso.) O que quero dizer é que a propriedade <code>url</code> é vagamente definida. A propriedade pode ser qualquer tipo de <abbr>URL</abbr> que você queira associar a uma pessoa: um blog, uma galeria de fotos, ou um perfil em um outro site como Facebook ou Twitter.
+<!-- translated end -->		
 
 <p>The other important thing to note here is that a single Person can have multiple <code>url</code> properties. Technically, any property can appear more than once, but until now, we haven&#8217;t taken advantage of that. For example, you could have two <code>photo</code> properties, each pointing to a different image <abbr>URL</abbr>. Here, I want to list four different <abbr>URLs</abbr>: my weblog, my Google profile page, my user profile on Reddit, and my Twitter account. In <abbr>HTML</abbr>, that&#8217;s a list of links: four <code>&lt;a></code> elements, each in their own <code>&lt;li></code> element. In microdata, each <code>&lt;a></code> element gets an <code>itemprop="url"</code> attribute.
+<!-- translated start -->
+<p>Outra coisa importante de notar aqui é que uma única pessoa pode ter várias propriedades <code>url</code>. Tecnicamente, qualquer propriedade pode aparecer mais de uma vez, mas até agora, não tiramos proveito disso. Por exemplo, poderíamos ter duas propriedades <code>photo</code>, cada uma apontando para uma <abbr>URL</abbr> de imagem diferente. Aqui, gostaria de listar quatro <abbr>URLs</abbr> diferentes: meu blog, meu perfil do Google, meu perfil de usuário no Reddit, e minha conta no Twitter. Na <abbr>HTML</abbr>, está uma lista de links: quatro elementos <code>&lt;a></code>, cada um em seu próprio elemento <code>&lt;li></code>. Em microdata, cada elemento <code>&lt;a></code> leva um atributo <code>itemprop="url"</code>.
+<!-- translated end -->	
 
 <pre><code>  &lt;h1>My Digital Footprints&lt;/h1>
   &lt;ul>
@@ -666,8 +691,25 @@ Suite 415</mark>
     &lt;li>&lt;a href="http://www.twitter.com/diveintomark"
            <mark>itemprop="url"</mark>>Twitter&lt;/a>&lt;/li>
   &lt;/ul></code></pre>
+<!-- translated start -->
+<pre><code>  &lt;h1>Meus rastros digitais&lt;/h1>
+  &lt;ul>
+    &lt;li>&lt;a href="http://diveintomark.org/"
+           <mark>itemprop="url"</mark>>blog&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="http://www.google.com/profiles/pilgrim"
+           <mark>itemprop="url"</mark>>Perfil do Google&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="http://www.reddit.com/user/MarkPilgrim"
+           <mark>itemprop="url"</mark>>Perfil do Reddit.com&lt;/a>&lt;/li>
+    &lt;li>&lt;a href="http://www.twitter.com/diveintomark"
+           <mark>itemprop="url"</mark>>Twitter&lt;/a>&lt;/li>
+  &lt;/ul></code></pre>
+<!-- translated end -->	  
+
 
 <p>According to the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a>, <code>&lt;a></code> elements have special processing. The microdata property value is the <code>href</code> attribute, not the child text content. The text of each link is actually ignored by a microdata processor. Thus, in English, this says &#8220;This person has a <abbr>URL</abbr> at <code>http://diveintomark.org/</code>. This person has another <abbr>URL</abbr> at <code>http://www.google.com/profiles/pilgrim</code>. This person has another <abbr>URL</abbr> at <code>http://www.reddit.com/user/MarkPilgrim</code>. This person has another <abbr>URL</abbr> at <code>http://www.twitter.com/diveintomark</code>.&#8221;
+<!-- translated start -->
+<p>De acordo com o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, elementos <code>&lt;a></code> tem processamento especial. O valor da propriedade microdata é o atributo <code>href</code>, não o conteúdo textual filho. O texto de cada link é na verdade ignorado pelo processador microdata. Assim, traduzindo, isso quer dizer &#8220;Essa pessoa tem uma <abbr>URL</abbr> no <code>http://diveintomark.org/</code>. Essa pessoa tem outra <abbr>URL</abbr> no <code>http://www.reddit.com/user/MarkPilgrim</code>. Ela tem outra <abbr>URL</abbr> no <code>http://www.twitter.com/diveintomark</code>.&#8221;
+<!-- translated end -->	 
 
 <h3 id=rich-snippets>Introducing Google Rich Snippets</h3>
 
