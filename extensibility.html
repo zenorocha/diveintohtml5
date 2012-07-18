@@ -136,7 +136,7 @@ table.faketable{border-collapse:collapse}
 <p>Algumas dessas propriedades são <abbr>URLs</abbr>, outras são texto plano. Cada uma delas presta-se a forma natural de marcação, mesmo antes de você começar a pensar em microdata ou vocabulários ou outros enfeites. Imagine que você tem um perfil ou uma página &#8220;sobre&#8221;. Seu nome provalvelmente é marcado como um título, como um elemento <code>&lt;h1></code>. Sua foto provavelmente é um elemento <code>&lt;img></code>, já que você quer que as pessoas vejam. E quaisquer <abbr>URL</abbr>s associadas ao seu perfil provavelmente já esta marcada como hyperlinks, pois você precisa que as pessoas sejam aptas a clicar neles. Para fins de discussão, vamos dizer que todo seu perfil também é englobado em um elemento <code>&lt;section></code> para seperá-lo do resto do conteúdo da página. Assim:
 <!-- translated end -->	
 
-<p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> It&#8217;s all about me
+<p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> Isto é sobre mim
 <pre><code>&lt;section>
   &lt;h1>Mark Pilgrim&lt;/h1>
   &lt;p>&lt;img src="http://www.example.com/photo.jpg" alt="[me smiling]">&lt;/p>
@@ -144,6 +144,9 @@ table.faketable{border-collapse:collapse}
 &lt;/section></code></pre>
 
 <p>Microdata&#8217;s data model is name/value pairs. A microdata property name (like <code>name</code> or <code>photo</code> or <code>url</code> in this example) is always declared on an <abbr>HTML</abbr> element. The corresponding property value is then taken from the element&#8217;s <abbr>DOM</abbr>. For most <abbr>HTML</abbr> elements, the property value is simply the text content of the element. But there are a handful of exceptions.
+<!-- translated start -->
+<p>
+<!-- translated end -->	
 
 <table id=property-values class=st>
 <caption>Where Do Microdata Property Values Come From?</caption>
