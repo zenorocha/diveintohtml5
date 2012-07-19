@@ -23,165 +23,165 @@ table.faketable{border-collapse:collapse}
 <link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
 <link rel=prefetch href=index.html>
 <p>Você está aqui: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#extensibility>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
-<h1><br>&#8220;Distributed,&#8221;<br>&#8220;Extensibility,&#8221;<br>&amp;<br>Other Fancy Words</h1>
+<h1><br>&#8220;“Distribuído,&#8221;<br>&#8220;Extensível,&#8221;<br>e Outras Palavras Bonitas</h1>
 <p id=toc>&nbsp;
 <p class=a>&#x2767;
-<h2 id=divingin>Diving In</h2>
+<h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-t.png alt=T width=107 height=105>here are <a href=http://simon.html5.org/html5-elements>over 100 elements</a> in <abbr>HTML5</abbr>. Some are <a href=semantics.html>purely semantic</a>, others are <a href=canvas.html>just containers for scripted <abbr>APIs</abbr></a>. Throughout <a href=past.html>the history of <abbr>HTML</abbr></a>, standards wonks have argued about which elements should be included in the language. Should <abbr>HTML</abbr> include a <code>&lt;figure></code> element? A <code>&lt;person></code> element? How about a <code>&lt;rant></code> element? Decisions are made, specs are written, authors author, implementors implement, and the web lurches ever forward.
+<p class=f><img src=i/aoc-e.png alt=E width=107 height=105>xistem <a href=http://simon.html5.org/html5-elements>mais de 100 elementos</a> no <abbr>HTML5</abbr>. Alguns são <a href=semantics.html>puramente semânticos</a>, outros são <a href=canvas.html>apenas recipientes para <abbr>APIs</abbr> de script</a>. Ao longo <a href=past.html>da história do <abbr>HTML</abbr></a>, conhecedores dos padrões vêem discutindo sobre que elemenos devem ser incluídos na linguagem. O elemento <code>&lt;figure></code> deveria ser incluso no <abbr>HTML</abbr>? O elemento <code>&lt;person></code>? Que tal um elemento <code>&lt;rant></code>? Decisões são tomadas, especificações são escritas, atores atuam, implementadores implementam, e a web dá um grande passo à frente.
 
-<p>Of course, <abbr>HTML</abbr> can&#8217;t please everyone. No standard can. Some ideas don&#8217;t make the cut. For example, there is no <code>&lt;person></code> element in <abbr>HTML5</abbr>. (There&#8217;s no <code>&lt;rant></code> element either, damn it!) There&#8217;s nothing stopping you from including a <code>&lt;person></code> element in a web page, but <a href=http://html5.validator.nu/>it won&#8217;t validate</a>, <a href=semantics.html#unknown-elements>it won&#8217;t work consistently across browsers</a>, and it might conflict with future <abbr>HTML</abbr> specs if we want to add it later.
+<p>Claro, <abbr>HTML</abbr> não pode agradar a todos. Nenhum padrão pode. Algumas ideias não atendem aos requisitos. Por exemplo, não existe o elemento <code>&lt;person></code> no <abbr>HTML5</abbr>. (Não há também o elemento <code>&lt;rant></code>, droga!) Nada impede de você usar o elemento <code>&lt;person></code> numa página web, porém <a href=http://html5.validator.nu/>não vai validar</a>, <a href=semantics.html#unknown-elements>não vai funcionar consistentemente nos navegadores</a>, e poderá conflitar com especificações futuras do <abbr>HTML</abbr>, se o elemento for adicionado mais à frente.
 
-<p>Right, so if making up your own elements isn&#8217;t the answer, what&#8217;s a semantically inclined web author to do? There have been attempts to extend previous versions of <abbr>HTML</abbr>. The most popular method is <a href=http://microformats.org/>microformats</a>, which uses the <code>class</code> and <code>rel</code> attributes in <abbr>HTML</abbr>. Another option is <a href=http://www.w3.org/TR/rdfa-syntax/>RDFa</a>, which was originally designed to be used in <a href=past.html#postscript><abbr>XHTML</abbr></a> but has <a href=http://www.w3.org/TR/rdfa-in-html/>been ported to <abbr>HTML</abbr></a> as well.
+<p>Certo, então se fazer seu próprio elemento não é a resposta, o que faz um escritor semanticamente correto? Houveram tentativas de estender as versões anteriores do <abbr>HTML</abbr>. O método mais popular são os <a href=http://microformats.org/>microformats</a>, que usam os atributos <code>class</code> e <code>rel</code> no <abbr>HTML</abbr>. Outra opção é <a href=http://www.w3.org/TR/rdfa-syntax/>RDFa</a>, que foi originamente projetado para ser usado no <a href=past.html#postscript><abbr>XHTML</abbr></a> mas <a href=http://www.w3.org/TR/rdfa-in-html/>também foi portado para o <abbr>HTML</abbr></a>.
 
-<p>Microformats and <abbr>RDFa</abbr> each have their strengths and weaknesses. They take radically different approaches towards the same goal: extending web pages with additional semantics that are not part of the core <abbr>HTML</abbr> language. I don&#8217;t intend to turn this chapter into a format flamewar. (That would definitely require a <code>&lt;rant></code> element!) Instead, I want to focus on a third option developed using lessons learned from microformats and RDFa, and designed to be integrated into <abbr>HTML5</abbr> itself: microdata.
+<p>Microformats e <abbr>RDFa</abbr> cada um tem seus pontos fortes e fracos. Eles usam abordagens complamente diferentes em direção ao mesmo objetivo: extender as páginas web com semântica adicional que não é parte do core da linguagem <abbr>HTML</abbr>. Eu não pretendo transformar este capítulo em um formato &#8220;flamewar&#8221;. (Isso definitivamente precisaria de um elemento <code>&lt;rant></code>!) Em vez disso, quero focar em uma terceira opção desenvolvida usando as lições aprendidas a partir de microformats e RDFa, e projetada para ser integra no próprio <abbr>HTML5</abbr>: microdata.
 
 <p class=a>&#x2767;
 
-<h2 id=what-is-microdata>What is Microdata?</h2>
+<h2 id=what-is-microdata>O que é Microdata?</h2>
 
-<p>Each word in the following sentence is important, so pay attention.
+<p>Cada palavra na sentença seguinte é importante, então preste atenção.
 
 <div class=pf>
-<h4>Professor Markup Says</h4>
-<div class=inner>
-<blockquote>
-<p>Microdata annotates the <abbr>DOM</abbr> with scoped name/value pairs from custom vocabularies.
-</blockquote>
+	<h4>Professor de Marcação Diz</h4>
+	<div class=inner>
+		<blockquote>
+		<p>Microdata escreve o <abbr>DOM</abbr> com escopo dos pares de nome/valor a partir de vocabulários personalizados.
+		</blockquote>	
+	</div>
 </div>
-</div>
 
-<p>Now what does that mean? Let&#8217;s start from the end and work backwards. Microdata centers around custom vocabularies. Think of &#8220;the set of all <abbr>HTML5</abbr> elements&#8221; as one vocabulary. This vocabulary includes elements to represent <a href=semantics.html#new-elements>a section or an article</a>, but it doesn&#8217;t include elements to represent a person or an event. If you want to represent a person on a web page, you&#8217;ll need to define your own vocabulary. Microdata lets you do this. Anyone can define a microdata vocabulary and start embedding custom properties in their own web pages.
+<p>Sim, mas o que isso significa? Vamos começar do fim e vamos retrocedendo. Microdados gira em torno de vocabulários personalizados. Pense no &#8220;conjunto de todos os elementos da <abbr>HTML5</abbr>&#8221; como um vocabulário. Este vocabulário inclui elementos para representar <a href=semantics.html#new-elements>uma seção ou um artigo</a>, mas isto não inclui elementos para representar uma possa ou um evento. Se você deseja representar uma pessoa na página web, você vai precisar definir seu próprio vocabulário. Microdata deixa você fazer isso. Qualquer um pode definir um vocabulário microdata e começar a incorporar propriedades personalizadas em suas próprias páginas web.
 
-<p>The next thing to know about microdata is that it works with name/value pairs. Every microdata vocabulary defines a set of named properties. For example, a Person vocabulary could define properties like <code>name</code> and <code>photo</code>. To include a specific microdata property on your web page, you provide the property name in a specific place. Depending on where you declare the property name, microdata has rules about how to extract the property value. (More on this in the next section.)
+<p>A próxima coisa a fazer para conhecer o microdata é que ele funciona com pares de nome/valor. Todo vocabulário microdata define um conjunto de propriedades nomeadas. Por exemplo, um vocabulário Person poderia definir propriedades como <code>nome</code> e <code>foto</code>. Para incluir um microdata específico na sua página web, você fornecer o nome da propriedade em um lugar específico. Dependendo de onde você declara o nome da propriedade, microdata tem regras sobre como extrair o valor da propriedade. (Mais sobre isto na próxima seção)
 
-<p>Along with named properties, microdata relies heavily on the concept of &#8220;scoping.&#8221; The simplest way to think of microdata scoping is to think about the natural parent-child relationship of elements in the <abbr>DOM</abbr>. The <a href=semantics.html#html-element><code>&lt;html></code></a> element usually contains two children, <a href=semantics.html#head-element><code>&lt;head></code></a> and <code>&lt;body></code>. The <code>&lt;body></code> element usually contains multiple children, each of which may have child elements of their own. For example, your page might include an <code>&lt;h1></code> element within an <code>&lt;hgroup></code> element within a <a href=semantics.html#header-element><code>&lt;header></code></a> element within the <code>&lt;body></code> element. A data table might contain <code>&lt;td></code> within <code>&lt;tr></code> within <code>&lt;table></code> (within <code>&lt;body></code>). Microdata re-uses the hierarchical structure of the <abbr>DOM</abbr> itself to provide a way to say &#8220;all the properties within <em>this</em> element are taken from <em>this</em> vocabulary.&#8221; This allows you to use more than one microdata vocabulary on the same page. You can even nest microdata vocabularies within other vocabularies, all by re-using the natural structure of the <abbr>DOM</abbr>. (I&#8217;ll show multiple examples of nested vocabularies throughout this chapter.)
+<p>Junto com propriedades nomeadas, microdados depende muito do conceito de  &#8220;escopo.&#8221; A maneira mais simples de pensar no escopo do microdata é pensar na relação pai-filho natural dos elementos no <abbr>DOM</abbr>. O elemento <a href=semantics.html#html-element><code>&lt;html></code></a> geralmente contém dois filhos, <a href=semantics.html#head-element><code>&lt;head></code></a> e <code>&lt;body></code>. O elemento <code>&lt;body></code> geralmente contém vários filhos, cada um deles pode ter seus próprios elementos filho. Por exemplo, sua página pode incluir um elemento  <code>&lt;h1></code> dentro de um elemento <code>&lt;hgroup></code> dentro de um elemento <a href=semantics.html#header-element><code>&lt;header></code></a> que está dentro de um elemento <code>&lt;body></code>. Uma tabale de informações pode conter <code>&lt;td></code> dentro de <code>&lt;tr></code> dentro de um <code>&lt;table></code> (Dentro do <code>&lt;body></code>). Microdata reutiliza a estrutura hierarquica do próprio <abbr>DOM</abbr> para fornecer uma forma de dizer &#8220;todas as propriedades dentro <em>deste</em> elemento são tomadas <em>deste</em> vocabulário.&#8221; Isso permite que você use mais de um vocabulário microdata na mesma página. Você pode até aninhar vocabulários microdata dentro de outros vocabulários, tudo pelo reuso da estrutura natural do <abbr>DOM</abbr>. (Irei mostrar vários exemplos de vocabulários aninhados ao longo deste capítulo)
 
-<p>Now, I&#8217;ve already touched on the <abbr>DOM</abbr>, but let me elaborate on that. Microdata is about applying additional semantics to <em>data that&#8217;s already visible on your web page</em>. Microdata is not designed to be a standalone data format. It&#8217;s a complement to <abbr>HTML</abbr>. As you&#8217;ll see in the next section, microdata works best when you&#8217;re already using <abbr>HTML</abbr> correctly, but the <abbr>HTML</abbr> vocabulary isn&#8217;t quite expressive enough. Microdata is great for fine-tuning the semantics of data that&#8217;s already in the <abbr>DOM</abbr>. If the data you&#8217;re <span title="I totally just made that up">semanti-fying</span> isn&#8217;t in the <abbr>DOM</abbr>, you should step back and re-evaluate whether microdata is the right solution.
+<p>Agora, já toquei no assunto <abbr>DOM</abbr>, mas deixe me dissertar sobre isso. Microdata se trata de aplicar semantica adicional para <em>informações que já são visíveis na sua página web</em>. Microdata não foi projetada para ser um formato de dados independente. Ele é um complemento ao <abbr>HTML</abbr>. Como você verá na próxima seção, microdata funciona melhor quando você já está usando o <abbr>HTML</abbr> corretamente, porém o vocabulário da <abbr>HTML</abbr> não é expressivo o bastante. Microdata é excelente para aprimorar a semântica da informação que já está no <abbr>DOM</abbr>. Se a informação que você está tentando tornar semântica não está no <abbr>DOM</abbr>, você deveria volar atrás e reavaliar se microdata é a solução correta.
 
-<p>Does this sentence make more sense now? &#8220;Microdata annotates the <abbr>DOM</abbr> with scoped name/value pairs from custom vocabularies.&#8221; I hope so. Let&#8217;s see it in action.
+<p>Essa sentenção faz mais sentido agora? &#8220;Microdata escreve o <abbr>DOM</abbr> com escopo dos pares de nome/valora partir de vocabulários personalizados.&#8221; Espero que sim. Vamos ver isto na prática.
 
 <p class=a>&#x2767;
 
-<h2 id=data-model>The Microdata Data Model</h2>
+<h2 id=data-model>Modelo de Dados do Microdata</h2>
 
-<p>Defining your own microdata vocabulary is easy. First, you need a namespace, which is just a <abbr>URL</abbr>. The namespace <abbr>URL</abbr> could actually point to a working web page, although that&#8217;s not strictly required. Let&#8217;s say I want to create a microdata vocabulary that describes a person. If I own the <code>data-vocabulary.org</code> domain, I&#8217;ll use the <abbr>URL</abbr> <code>http://data-vocabulary.org/Person</code> as the namespace for my microdata vocabulary. That&#8217;s an easy way to create a globally unique identifier: pick a <abbr>URL</abbr> on a domain that you control.
+<p>Definir seu próprio vocabulário microdata é fácil. Primeiro, você precisa de um namespace, que é apenas uma <abbr>URL</abbr>. O namespace <abbr>URL</abbr> pode realmente apontar para uma página web funcionando, apesar de não ser estritamente necessário. Vamos dizer que eu quero criar um vocabulário microdata que descreve uma pessoa. Se teho o domínio <code>data-vocabulary.org</code>, irei usar a <abbr>URL</abbr> <code>http://data-vocabulary.org/Person</code> como o namespace para meu vocabulário microdata. Essa é uma maneira fácil de criar um identificador global exclusivo: escolha uma <abbr>URL</abbr> em um domínio que você tem controle.
 
-<p>In this vocabulary, I need to define some named properties. Let&#8217;s start with three basic properties:
+<p>Nesse vocabulário, eu preciso definir algumas propriedades nomeadas. Vamos começar com três propriedades básicas:
 
 <ul>
-<li><code>name</code> (your full name)
-<li><code>photo</code> (a link to a picture of you)
-<li><code>url</code> (a link to a site associated with you, like a weblog or a Google profile)
+<li><code>name</code> (seu nome completo)
+<li><code>photo</code> (um link para uma foto sua)
+<li><code>url</code> (um link para um site associado a você, como um blog ou um perfil do Google)
 </ul>
 
-<p>Some of these properties are <abbr>URLs</abbr>, others are plain text. Each of them lends itself to a natural form of markup, even before you start thinking about microdata or vocabularies or whatnot. Imagine that you have a profile page or an &#8220;about&#8221; page. Your name is probably marked up as a heading, like an <code>&lt;h1></code> element. Your photo is probably an <code>&lt;img></code> element, since you want people to see it. And any <abbr>URL</abbr>s associated your profile are probably already marked up as hyperlinks, because you want people to be able to click them. For the sake of discussion, let&#8217;s say your entire profile is also wrapped in a <code>&lt;section></code> element to separate it from the rest of the page content. Thus:
+<p>Algumas dessas propriedades são <abbr>URLs</abbr>, outras são texto plano. Cada uma delas presta-se a forma natural de marcação, mesmo antes de você começar a pensar em microdata ou vocabulários ou outros enfeites. Imagine que você tem um perfil ou uma página &#8220;sobre&#8221;. Seu nome provalvelmente é marcado como um título, como um elemento <code>&lt;h1></code>. Sua foto provavelmente é um elemento <code>&lt;img></code>, já que você quer que as pessoas vejam. E quaisquer <abbr>URL</abbr>s associadas ao seu perfil provavelmente já esta marcada como hyperlinks, pois você precisa que as pessoas sejam aptas a clicar neles. Para fins de discussão, vamos dizer que todo seu perfil também é englobado em um elemento <code>&lt;section></code> para seperá-lo do resto do conteúdo da página. Assim:
 
-<p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> It&#8217;s all about me
+<p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> Minhas informações
 <pre><code>&lt;section>
   &lt;h1>Mark Pilgrim&lt;/h1>
-  &lt;p>&lt;img src="http://www.example.com/photo.jpg" alt="[me smiling]">&lt;/p>
-  &lt;p>&lt;a href="http://diveintomark.org/">weblog&lt;/a>&lt;/p>
+  &lt;p>&lt;img src="http://www.example.com/photo.jpg" alt="[eu sorrindo]">&lt;/p>
+  &lt;p>&lt;a href="http://diveintomark.org/">blog&lt;/a>&lt;/p>
 &lt;/section></code></pre>
 
-<p>Microdata&#8217;s data model is name/value pairs. A microdata property name (like <code>name</code> or <code>photo</code> or <code>url</code> in this example) is always declared on an <abbr>HTML</abbr> element. The corresponding property value is then taken from the element&#8217;s <abbr>DOM</abbr>. For most <abbr>HTML</abbr> elements, the property value is simply the text content of the element. But there are a handful of exceptions.
+<p>O modelo microdata são pares de nome/valor. A propriedade microdata name (como <code>name</code> ou <code>photo</code> ou <code>url</code> neste exemplo) é sempre declarado no elemento <abbr>HTML</abbr>. A propriedade value correspondente é então retirada do elemento <abbr>DOM</abbr>. Para muitos dos elementos <abbr>HTML</abbr>, a propriedade value é simplesmente o conteúdo textual do elemento. Porém, há uma boa quantidade de exceções. 
 
 <table id=property-values class=st>
-<caption>Where Do Microdata Property Values Come From?</caption>
-<tr class=ho><th>Element<th>Value
-<tr class=zebra><td><code>&lt;meta></code><td><code>content</code> attribute
-<tr><td><ul><li><code>&lt;audio></code><li><code>&lt;embed></code><li><code>&lt;iframe></code><li><code>&lt;img></code><li><code>&lt;source></code><li><code>&lt;video></code></ul><td><code>src</code> attribute
-<tr class=zebra><td><ul><li><code>&lt;a></code><li><code>&lt;area></code><li><code>&lt;link></code></ul><td><code>href</code> attribute
-<tr><td><code>&lt;object></code><td><code>data</code> attribute
-<tr class=zebra><td><code>&lt;time></code><td><code>datetime</code> attribute
-<tr><td>all other elements<td>text content
+<caption>De Onde Vêm as Propriedades Value?</caption>
+<tr class=ho><th>Elemento<th>Valor
+<tr class=zebra><td><code>&lt;meta></code><td>Atributo <code>content</code>
+<tr><td><ul><li><code>&lt;audio></code><li><code>&lt;embed></code><li><code>&lt;iframe></code><li><code>&lt;img></code><li><code>&lt;source></code><li><code>&lt;video></code></ul><td>Atributo <code>src</code>
+<tr class=zebra><td><ul><li><code>&lt;a></code><li><code>&lt;area></code><li><code>&lt;link></code></ul><td>Atributo <code>href</code>
+<tr><td><code>&lt;object></code><td>Atributo <code>data</code>
+<tr class=zebra><td><code>&lt;time></code><td>Atributo <code>datetime</code>
+<tr><td>Demais elementos<td>Conteúdo textual
 </table>
 
-<p>&#8220;Adding microdata&#8221; to your page is a matter of adding a few attributes to the <abbr>HTML</abbr> elements you already have. The first thing you always do is declare which microdata vocabulary you&#8217;re using, by adding an <code>itemtype</code> attribute. The second thing you always do is declare the scope of the vocabulary, using an <code>itemscope</code> attribute. In this example, all the data we want to semanti-fy is in a <code>&lt;section></code> element, so we&#8217;ll declare the <code>itemtype</code> and <code>itemscope</code> attributes on the <code>&lt;section></code> element.
+<p>&#8220;Adicionar microdata&#8221; na sua página é uma questão de adicionar alguns atributos nos elementos <abbr>HTML</abbr> que você já tem. A primeira coisa que você sempre faz é declarar que vocabulário microdata você está usando, adicionando um atributo <code>itemtype</code>. A segunda coisa que você sempre faz é declarar o escopo do vocabulário, usando um atributo <code>itemscope</code>. Neste exemplo, toda a informação que queremos tornar semântica é um elemento <code>&lt;section></code>, então vamos declarar os atributos <code>itemtype</code> e <code>itemscope</code> no elemento <code>&lt;section></code>.
 
 <pre><code>  &lt;section <mark>itemscope</mark> <mark>itemtype="http://data-vocabulary.org/Person"</mark>></code></pre>
 
-<p>Your name is the first bit of data within the <code>&lt;section></code> element. It&#8217;s wrapped in an <code>&lt;h1></code> element. The <code>&lt;h1></code> element doesn&#8217;t have any special processing in the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a>, so it falls under the &#8220;all other elements&#8221; rule where the microdata property value is simply the text content of an element. (This would work equally well if your name was wrapped in a <code>&lt;p></code>, <code>&lt;div></code>, or <code>&lt;span></code> element.)
+<p>Seu nome é o primeiro pedaço de informação dentro do elemento <code>&lt;section></code>. Ele está englobado em um elemento <code>&lt;h1></code>. O elemento <code>&lt;h1></code> não tem nenhum tratamento especial no <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, por isso se enquadra na regra &#8220;demais elementos&#8221; onde a pripriedade microdata value é simplismente conteúdo textual de um elemento. (Isso funcionaria igualmente bem se o seu nome foi envolvido em um elemento <code>&lt;p></code>, <code>&lt;div></code>, ou <code>&lt;span></code>.)
 
 <pre><code>  &lt;h1 <mark>itemprop="name"</mark>>Mark Pilgrim&lt;/h1></code></pre>
 
-<p>In English, this says &#8220;here is the <code>name</code> property of the <code>http://data-vocabulary.org/Person</code> vocabulary, and the value of the property is <code>Mark Pilgrim</code>.&#8221;
+<p>Traduzindo, isto quez dizer &#8220;aqui está a propriedade <code>name</code> do vocabulário <code>http://data-vocabulary.org/Person</code>, e o valor da propriedade é <code>Mark Pilgrim</code>.&#8221;
 
-<p id=person-photo>Next up: the <code>photo</code> property. This is supposed to be a <abbr>URL</abbr>. According to the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a>, the &#8220;value&#8221; of an <code>&lt;img></code> element is its <code>src</code> attribute. Hey look, the <abbr>URL</abbr> of your profile photo is already in an <code>&lt;img src></code> attribute. All you need to do is declare that the <code>&lt;img></code> element is the <code>photo</code> property.
+<p id=person-photo>Em seguida: a propriedade <code>photo</code>. Isto deveria ser uma <abbr>URL</abbr>. De acordo com o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, o &#8220;value&#8221; de um elemento <code>&lt;img></code> é seu atributo <code>src</code>. Ei! Olhe, a <abbr>URL</abbr> da foto do seu perfil já esta em um atributo <code>&lt;img src></code>. Tudo que você precisa fazer é declarar que o elemento <code>&lt;img></code> é a propriedade <code>photo</code>.
 
 <pre><code>  &lt;p>&lt;img <mark>itemprop="photo"</mark>
           src="http://www.example.com/photo.jpg"
-          alt="[me smiling]">&lt;/p></code></pre>
+          alt="[eu sorrindo]">&lt;/p></code></pre>
 
-<p>In English, this says &#8220;here is the <code>photo</code> property of the <code>http://data-vocabulary.org/Person</code> vocabulary, and the value of the property is <code>http://www.example.com/photo.jpg</code>.
+<p>Traduzindo, isto quer dizer &#8220;aqui está a propriedade <code>photo</code> do vocabulário <code>http://data-vocabulary.org/Person</code>, e o valor da propriedade é <code>http://www.example.com/photo.jpg</code>.&#8221;
 
-<p>Finally, the <code>url</code> property is also a <abbr>URL</abbr>. According to the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a>, the &#8220;value&#8221; of an <code>&lt;a></code> element is its <code>href</code> attribute. And once again, this fits perfectly with your existing markup. All you need to do is say that your existing <code>&lt;a></code> element is the <code>url</code> property:
+<p>Finalmente, a propriedade <code>url</code> também é uma <abbr>URL</abbr>. De acordo com o <a href=#property-values>modelo de dados microdata da<abbr>HTML5</abbr></a>, o &#8220;value&#8221; de um elemento <code>&lt;a></code> é seu atributo <code>href</code>. E mais uma vez, isto funciona perfeitamente com a sua marcação existente. Tudo que você precisa fazer é dizer que seu elemento <code>&lt;a></code> existente é a propriedade <code>url</code>:
 
 <pre><code>  &lt;a <mark>itemprop="url"</mark> href="http://diveintomark.org/">dive into mark&lt;/a></code></pre>
 
-<p>In English, this says &#8220;here is the <code>url</code> property of the <code>http://data-vocabulary.org/Person</code> vocabulary, and the value of the property is <code>http://diveintomark.org/</code>.
+<p>Traduzindo, isto quer dizer &#8220;aqui está a propriedade <code>url</code> do vocabulário <code>http://data-vocabulary.org/Person</code>, e o valor da propriedade é <code>http://diveintomark.org/</code>.
 
-<p>Of course, if your markup looks a little different, that&#8217;s not a problem. You can add microdata properties and values to any <abbr>HTML</abbr> markup, even really gnarly 20th-century-era, tables-for-layout, Oh-God-why-did-I-agree-to-maintain-this markup. While I don&#8217;t recommend this kind of markup, it is still common, and you can still add microdata to it.
+<p>Claro, se sua marcação parece um pouco diferente, não tem problema. Você pode adicionar propriedades e valores microdata em qualquer marcação <abbr>HTML</abbr>, até mesmo "deformado do século 20", "tabelas para layout", "meu Deus porque eu concordei em manter esta" marcação.
 
-<p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> For the love of God, don&#8217;t do this
+<p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> Pelo amor de Deus, não faça isso
 <pre><code>&lt;TABLE>
-  &lt;TR>&lt;TD>Name&lt;TD>Mark Pilgrim
+  &lt;TR>&lt;TD>Nome&lt;TD>Mark Pilgrim
   &lt;TR>&lt;TD>Link&lt;TD>
     &lt;A href=# onclick=goExternalLink()>http://diveintomark.org/&lt;/A>
 &lt;/TABLE></code></pre>
 
-<p>For marking up the <code>name</code> property, just add an <code>itemprop</code> attribute on the table cell that contains the name. Table cells have no special rules in the microdata property value table, so they get the default value, &#8220;the microdata property is the text content.&#8221;
+<p>Para marcar a propriedade <code>name</code>, apenas adicione um atributo <code>itemprop</code> na celula da tabela que contém o nome. Celulas de tabela não têm regras especiais no valor da propriedade microdata table, então elas pegam o valor padrão, &#8220;a propriedade microdata é o conteúdo textual.&#8221;
 
-<pre><code>  &lt;TR>&lt;TD>Name&lt;TD <mark>itemprop="name"</mark>>Mark Pilgrim</code></pre>
+<pre><code>  &lt;TR>&lt;TD>Nome&lt;TD <mark>itemprop="name"</mark>>Mark Pilgrim</code></pre>
 
-<p>Adding the <code>url</code> property looks trickier. This markup doesn&#8217;t use the <code>&lt;a></code> element properly. Instead of putting the link target in the <code>href</code> attribute, it has nothing useful in the <code>href</code> attribute and uses Javascript in the <code>onclick</code> attribute to call a function (not shown) that extracts the <abbr>URL</abbr> and navigates to it. For extra &#8220;holy fuck, please stop doing that&#8221; bonus points, let&#8217;s pretend that the function also opens the link in a tiny popup window with no scroll bars. Wasn&#8217;t the internet fun last century?
+<p>Adicionar a propriedade <code>url</code> parece complicado. Essa marcação não usa o elemento <code>&lt;a></code> corretamente. Em vez de colocar o destino do link no atributo <code>href</code>, não tem nada de útil no atributo <code>href</code> e usa Javascript no atributo <code>onclick</code> para chamar a função (não visível) que extrai a <abbr>URL</abbr> e navega até ela. Para extra &#8220;caralho, pare de fazer isso por favor&#8221; pontos de bônus, vamos supor que a função abre também o link numa minúscula jánela popup sem barra de rolagem. Não foi a diversão da internet do século passado?
 
-<p>Anyway, you can still convert this into a microdata property, you just need to be a little creative. Using the <code>&lt;a></code> element directly is out of the question. The link target isn&#8217;t in the <code>href</code> attribute, and there&#8217;s no way to override the rule that says &#8220;in an <code>&lt;a></code> element, look for the microdata property value in the <code>href</code> attribute.&#8221; But you <em>can</em> add a wrapper element around the entire mess, and use that to add the <code>url</code> microdata property.
+<p>De qualquer forma, você ainda pode converter isso em propriedade microdata, você precisa apenas ser um pouco criativo. Usar o elemento <code>&lt;a></code> diretamente está fora de questão. O destino do link não está no atributo <code>href</code>, e não há forma de passar por cima da regra que diz &#8220;em um elemento <code>&lt;a></code>, procure o valor da propriedade microdata no atributo <code>href</code>.&#8221; Mas você <em>pode</em> adicionar um elemento emglobador em torno de toda a bagunça, e usar ele para adicionar a propriedade microdata <code>url</code>.
 
-<p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> This is what you get for subverting HTML
+<p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> Isto é o que você ganha por subverter a HTML
 <pre><code>&lt;TABLE itemscope itemtype="http://data-vocabulary.org/Person">
-  &lt;TR>&lt;TD>Name&lt;TD>Mark Pilgrim
+  &lt;TR>&lt;TD>Nome&lt;TD>Mark Pilgrim
   &lt;TR>&lt;TD>Link&lt;TD>
     <mark>&lt;span itemprop="url"></mark>
       &lt;A href=# onclick=goExternalLink()>http://diveintomark.org/&lt;/A>
     <mark>&lt;/span></mark>
 &lt;/TABLE></code></pre>
 
-<p>Since the <code>&lt;span></code> element has no special processing, it uses the default rule, &#8220;the microdata property is the text content.&#8221; &#8220;Text content&#8221; doesn&#8217;t mean &#8220;all the markup inside this element&#8221; (like you would get with, say, the <code>innerHTML</code> <abbr>DOM</abbr> property). It means &#8220;just the text, ma&#8217;am.&#8221; In this case, <code>http://diveintomark.org/</code>, the text content of the <code>&lt;a></code> element inside the <code>&lt;span></code> element.
+<p>Já que o elemento <code>&lt;span></code> não tem processamento especial, ele usa regras padrões, &#8220;a propriedade microdata está no conteúdo textual.&#8221; &#8220;Conteúdo textual&#8221; não significa &#8220;toda marcação dentro deste elemento&#8221; (como você pegaria com, digamos, a propriedade <abbr>DOM</abbr> <code>innerHTML</code>). Isso significa  &#8220;apenas o texto, senhora&#8221;. Nesse caso, <code>http://diveintomark.org/</code>, o conteúdo textual do elemento <code>&lt;a></code> dentro do elemento <code>&lt;span></code>.
 
-<p>To sum up: you can add microdata properties to any markup. If you&#8217;re using <abbr>HTML</abbr> correctly, you&#8217;ll find it easier to add microdata than if your <abbr>HTML</abbr> markup sucks, but it can always be done.
+<p>Para resumir: você pode adicionar propriedades microdata em qualquer marcação. Se você está usando <abbr>HTML</abbr> corretamente, você vai achar mais fácil adicionar microdata do que se a sua marcação <abbr>HTML</abbr> for uma sujeira, mas o microdata pode sempre ser aplicado.
 
 <p class=a>&#x2767;
 
-<h2 id=person>Marking Up People</h2>
+<h2 id=person>Marcando &#8220;People&#8221;</h2>
 
-<p>By the way, the starter examples in the previous section weren&#8217;t completely made up. There really is a microdata vocabulary for marking up information about people, and it really is that easy. Let&#8217;s take a closer look.
+<p>A propósito, os exemplos iniciais na seção anterior não foram completamente formados. Existe realmente um vocabulário microdata para marcar informação sobre pessoas, e ele é realmente assim fácil. Vamos dar uma olhada.
 
-<p>The easiest way to integrate microdata into a personal website is on your &#8220;about&#8221; page. You <em>do</em> have an &#8220;about&#8221; page, don&#8217;t you? If not, you can follow along as I extend <a href=examples/person.html>this sample &#8220;about&#8221; page</a> with additional semantics. The final result is here: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>.
+<p>A maneira mais fácil de integrar microdata em um website pessoal é na sua página &#8220;sobre&#8221;. Você <em>com certeza</em> tem uma página &#8220;sobre&#8221;, não é verdade? Se não, você pode seguir como eu estendo <a href=examples/person.html>este exemplo de página &#8220;sobre&#8221;</a> com semânticas adicionais. O resultado final está aqui: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>.
 
-<p>Let&#8217;s look at the raw markup first, before any microdata properties have been added:
+<p>Primeiro vamos olhar para a marcação crua, antes de qualquer propriedade microdata ser adicionada:
 
 <pre><code>&lt;section>
   &lt;img width="204" height="250"
        src="http://diveintohtml5.org/examples/2000_05_mark.jpg"
        alt="[Mark Pilgrim, circa 2000]">
 
-  &lt;h1>Contact Information&lt;/h1>
+  &lt;h1>Informação para Contato&lt;/h1>
   &lt;dl>
-    &lt;dt>Name&lt;/dt>
+    &lt;dt>Nome&lt;/dt>
     &lt;dd>Mark Pilgrim&lt;/dd>
 
-    &lt;dt>Position&lt;/dt>
-    &lt;dd>Developer advocate for Google, Inc.&lt;/dd>
+    &lt;dt>Cargo&lt;/dt>
+    &lt;dd>Defensor do Desenvolvedor na Google, Inc.&lt;/dd>
   
-    &lt;dt>Mailing address&lt;/dt>
+    &lt;dt>Endereço Postal&lt;/dt>
     &lt;dd>
       100 Main Street&lt;br>
       Anytown, PA 19999&lt;br>
       USA
     &lt;/dd>
   &lt;/dl>
-  &lt;h1>My Digital Footprints&lt;/h1>
+  &lt;h1>Meus rastros digitais&lt;/h1>
   &lt;ul>
     &lt;li>&lt;a href="http://diveintomark.org/">weblog&lt;/a>&lt;/li>
     &lt;li>&lt;a href="http://www.google.com/profiles/pilgrim">Google profile&lt;/a>&lt;/li>
@@ -191,90 +191,91 @@ table.faketable{border-collapse:collapse}
 &lt;/section>    
 </code></pre>
 
-<p>The first thing you always need to do is declare the vocabulary you&#8217;re using, and the scope of the properties you want to add. You do this by adding the <code>itemtype</code> and <code>itemscope</code> attributes on the outermost element that contains the other elements that contain the actual data. In this case, that&#8217;s a <code>&lt;section></code> element.
+<p>A primeira coisa que você sempre precisa fazer é declarar o vocabulário que você está usando, e o escopo das propriedades que você quer adicionar. Você faz isso adicionando os atributos <code>itemtype</code> e <code>itemscope</code> no elemento exterior que contém os outros elementos que contêm os dados reais. Neste caso, ele é um elemento <code>&lt;section></code>.
 
 <pre><code>&lt;section <mark>itemscope</mark> <mark>itemtype="http://data-vocabulary.org/Person"</mark>></code></pre>
 
-<p class=follow>[Follow along! Before: <a href=examples/person.html>person.html</a>, after: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
+<p class=follow>[Acompanhe comigo! Antes: <a href=examples/person.html>person.html</a>, depois: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
 
-<p>Now you can start defining microdata properties from the <code>http://data-vocabulary.org/Person</code> vocabulary. But what are those properties? As it happens, you can see the list of properties by navigating to <a href=http://data-vocabulary.org/Person>data-vocabulary.org/Person</a> in your browser. The microdata specification does not require this, but I&#8217;d say it&#8217;s certainly a &#8220;best practice.&#8221; After all, if you want developers to actually <em>use</em> your microdata vocabulary, you need to document it. And where better to put your documentation than the vocabulary <abbr>URL</abbr> itself?
+<p>Agora você pode começar definindo propriedades microdata do vocabulário <code>http://data-vocabulary.org/Person</code>. Mas o que são essas propriedades? Como acontece, você pode fer a lista de propriedades navegando no <a href=http://data-vocabulary.org/Person>data-vocabulary.org/Person</a> em seu navegador. A especificação do microdata não necessita disso, mas eu diria que isso é certamente uma &#8220;melhor prática.&#8221; Afinal, se você deseja que os desenvolvedores <em>usem</em> de verdade seu vocabulário microdata, você precisa documentá-lo. E onde mais colocar sua documentação do que na própria <abbr>URL</abbr> do vocabulário?
 
 <table class=st>
-<caption>Person vocabulary</caption>
-<tr class=ho><th>Property<th>Description
-<tr class=zebra><td><code>name</code><td>Name
-<tr><td><code>nickname</code><td>Nickname
-<tr class=zebra><td><code>photo</code><td>An image link
-<tr><td><code>title</code><td>The person&#8217;s title (for example, &#8220;Financial Manager&#8221;)
-<tr class=zebra><td><code>role</code><td>The person&#8217;s role (for example, &#8220;Accountant&#8221;)
-<tr><td><code>url</code><td>Link to a web page, such as the person&#8217;s home page
-<tr class=zebra><td><code>affiliation</code><td>The name of an organization with which the person is associated (for example, an employer)
-<tr><td><code>friend</code><td>Identifies a social relationship between the person described and another person
-<tr class=zebra><td><code>contact</code><td>Identifies a social relationship between the person described and another person
-<tr><td><code>acquaintance</code><td>Identifies a social relationship between the person described and another person
-<tr class=zebra><td><code>address</code><td>The location of the person. Can have the subproperties <code>street-address</code>, <code>locality</code>, <code>region</code>, <code>postal-code</code>, and <code>country-name</code>.
+<caption>Vocabulário &#8220;Person&#8221;</caption>
+<tr class=ho><th>Propriedade<th>Descrição
+<tr class=zebra><td><code>name</code><td>Nome
+<tr><td><code>nickname</code><td>Apelido
+<tr class=zebra><td><code>photo</code><td>Um link de imagem
+<tr><td><code>title</code><td>O título da pessoa (por exemplo, &#8220;Gerente Financeiro&#8221;)
+<tr class=zebra><td><code>role</code><td>O papel da pessoa (Por exemplo, &#8220;Contador&#8221;)
+<tr><td><code>url</code><td>Link para uma página web, tal como a página pessoal da pessoa
+<tr class=zebra><td><code>affiliation</code><td>O nome da organização com que a pessoa é associada (por exemplo, um empregador)
+<tr><td><code>friend</code><td>Identifica uma relação social entre a pessoa descrita e outra pessoa
+<tr class=zebra><td><code>contact</code><td>Identifica uma relação social entre a pessoa descrita e outra pessoa
+<tr><td><code>acquaintance</code><td>Identifica uma relação social entre a pessoa descrita e outra pessoa
+<tr class=zebra><td><code>address</code><td>A localização da pessoa. Pode ter as subpropriedades <code>street-address</code>, <code>locality</code>, <code>region</code>, <code>postal-code</code>, e <code>country-name</code>.
 </table>
 
-<p>The first thing in <a href=examples/person-plus-microdata.html>this sample &#8220;about&#8221; page</a> is a picture of me. Naturally, it&#8217;s marked up with an <code>&lt;img></code> element. To declare that this <code>&lt;img></code> element is my profile picture, all we need to do is add <code>itemprop="photo"</code> to the <code>&lt;img></code> element.
+<p>A primeira coisa <a href=examples/person-plus-microdata.html>neste exemplo de página &#8220;sobre&#8221;</a> é uma foto minha. Naturalmente, ela é marcada com elemento <code>&lt;img></code>. Para declarar que este elemento <code>&lt;img></code> é a foto do meu perfil, tudo que precisamos fazer é adicionar <code>itemprop="photo"</code> no elemento <code>&lt;img></code>.
 
 <pre><code>  &lt;img <mark>itemprop="photo"</mark> width="204" height="250"
       src="http://diveintohtml5.org/examples/2000_05_mark.jpg"
       alt="[Mark Pilgrim, circa 2000]"></code></pre>
 
-<p class=follow>[Follow along! Before: <a href=examples/person.html>person.html</a>, after: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
+<p class=follow>[Acompanhe comigo! Antes: <a href=examples/person.html>person.html</a>, depois: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
 
-<p>Where&#8217;s the microdata property value? It&#8217;s already there, in the <code>src</code> attribute. If you recall from the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a>, the &#8220;value&#8221; of an <code>&lt;img></code> element is its <code>src</code> attribute. Every <code>&lt;img></code> element has a <code>src</code> attribute &mdash; otherwise it would just be a broken image &mdash; and the <code>src</code> is always a <abbr>URL</abbr>. See? If you&#8217;re using <abbr>HTML</abbr> correctly, microdata is easy.
+<p>Onde está o valor da propriedade microdata? Já está lá, no atributo <code>src</code>. Se você chamar novamente no <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, o &#8220;valor&#8221; de um elemento <code>&lt;img></code> é seu atributo <code>src</code>. Cada atributo <code>&lt;img></code> tem um atributo <code>src</code> &mdash; caso contrário, seria apenas uma imagem quebrada &mdash; e o <code>src</code> é sempre uma <abbr>URL</abbr>. Viu? Se você está usando <abbr>HTML</abbr> corretamente, microdata é fácil.
 
-<p>Furthermore, this <code>&lt;img></code> element isn&#8217;t alone on the page. It&#8217;s a child element of the <code>&lt;section></code> element, the one we just declared with the <code>itemscope</code> attribute. Microdata reuses the parent-child relationship of elements on the page to define the scoping of microdata properties. In plain English, we&#8217;re saying, &#8220;This <code>&lt;section></code> element represents a person. Any microdata properties you might find on the children of the <code>&lt;section></code> element are properties of that person.&#8221; If it helps, you can think of the <code>&lt;section></code> element has the subject of a sentence. The <code>itemprop</code> attribute represents the verb of the sentence, something like &#8220;is pictured at.&#8221; The microdata property value represents the object of the sentence.
+<p>Além disso, esse elemento <code>&lt;img></code> não está sozinho na página. Ele é um element filho de um elemento <code>&lt;section></code>, aquele que acabamos de declarar com o atributo <code>itemscope</code>. Microdata reusa o relacionamento pai-filho dos elementos na página para definir o escopo das propriedades microdata. Em linguagem clara, estamos dizendo, &#8220;Este é elemento <code>&lt;section></code> representa uma pessoa. Qualquer propriedade microdata você venha encontrar nos filhos do elemento <code>&lt;section></code> são propriedades desta pessoa.&#8221; Se isso ajuda, você pode pensar que o elemento <code>&lt;section></code> tem o assunto de uma frase. O atributo <code>itemprop</code> representa o verbo da frase, algo como &#8220;é fotografada em.&#8221; O valor da propriedade microdata representa o objeto da frase.
 
 <blockquote>
-<p>This person [explicit, from <code>&lt;section itemscope itemtype="..."></code>]
-<p>is pictured at [explicit, from <code>&lt;img itemprop="photo"></code>]
-<p><code>http://diveintohtml5.org/examples/2000_05_mark.jpg</code> [implicit, from <code>&lt;img src></code> attribute]
+<p>Esta pessoa [explícito, do <code>&lt;section itemscope itemtype="..."></code>]
+<p>[é fotografada em] [explícito, do <code>&lt;img itemprop="photo"></code>]
+<p><code>http://diveintohtml5.org/examples/2000_05_mark.jpg</code> [implícito, do atributo <code>&lt;img src></code>]
 </blockquote>
 
-<p>The subject only needs to be defined once, by putting <code>itemscope</code> and <code>itemtype</code> attributes on the outermost <code>&lt;section></code> element. The verb is defined by putting the <code>itemprop="photo"</code> attribute on the <code>&lt;img></code> element. The object of the sentence doesn&#8217;t need any special markup at all, because the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a> says that the property value of an <code>&lt;img></code> element is its <code>src</code> attribute.
 
-<p>Moving on to the next bit of markup, we see an <code>&lt;h1></code> header and the beginnings of a <code>&lt;dl></code> list. Neither the <code>&lt;h1></code> nor the <code>&lt;dl></code> need to be marked up with microdata. Not every piece of <abbr>HTML</abbr> needs to be a microdata property. Microdata is about the properties themselves, not the markup or headers surrounding the properties. This <code>&lt;h1></code> isn&#8217;t a property; it&#8217;s just a header. Similarly, the <code>&lt;dt></code> that says &#8220;Name&#8221; isn&#8217;t a property; it&#8217;s just a label.
+<p>O assunto precisa ser definido apenas uma vez, colocando os atributos <code>itemscope</code> e <code>itemtype</code> no elemento externo <code>&lt;section></code>. O verbo é definido colocando o atributo <code>itemprop="photo"</code> no elemento <code>&lt;img></code>. O objeto da sentença não precisa de nenhuma marcação especial, pois o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a> diz que a propriedade valor de um elemento <code>&lt;img></code> é o seu atributo <code>src</code>.
 
-<p class="legend top" style="margin-left:8em"><span class=arrow>&#x21b6;</span> Boring
-<p class="legend left" style="margin-top:2.2em">Boring <span class=arrow>&#x21dd;</span>&nbsp;</p>
-<pre><code>  &lt;h1><mark>Contact Information</mark>&lt;/h1>
+<p>Passando para o próximo pedaço de marcação, vemos um título <code>&lt;h1></code> e o começo de uma lista <code>&lt;dl></code>. Nem o <code>&lt;h1></code> nem o <code>&lt;dl></code> precisa ser marcado com microdata. Não é toda parte do <abbr>HTML</abbr> que precisa ser uma propriedade microdata. Microdata trata-se das próprias propriedades, não da marcação ou cabeçalhos em torno das propriedades. Esse  <code>&lt;h1></code> não é uma propriedade; é apenas um título. Semelhantemente, o code>&lt;dt></code> que diz &#8220;Nome&#8221; não é uma propriedade; é apenas um rótulo.
+
+<p class="legend top" style="margin-left:8em"><span class=arrow>&#x21b6;</span> Chato
+<p class="legend left" style="margin-top:2.2em">Chato <span class=arrow>&#x21dd;</span>&nbsp;</p>
+<pre><code>  &lt;h1><mark>Informações de contato</mark>&lt;/h1>
   &lt;dl>
     &lt;dt><mark>Name</mark>&lt;/dt>
     &lt;dd>Mark Pilgrim&lt;/dd></code></pre>
 
-<p>So where is the real information? It&#8217;s in the <code>&lt;dd></code> element, so that&#8217;s where we need to put the <code>itemprop</code> attribute. Which property is it? It&#8217;s the <code>name</code> property. Where is the property value? It&#8217;s the text within the <code>&lt;dd></code> element. Does that need to be marked up? the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a> says no, <code>&lt;dd></code> elements have no special processing, so the property value is just the text within the element.
+<p>Então onde está a verdadeira informação? Ela está no elemento <code>&lt;dd></code>, então é nele que precisamos colocar o atributo <code>itemprop</code>. Que propriedade é essa? É a propriedade <code>name</code>. Onde está o valor da propriedade? Ele é o texto dentro do elemento <code>&lt;dd></code>. Ele precisa ser marcado? o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a> diz que não, elementos <code>&lt;dd></code> não têmm processamento especial, então o valor da propriedade é apenas o texto dentro do elemento.
 
-<p class="legend top" style="margin-left:5em"><span class=arrow>&#x21b6;</span> That&#8217;s my name, don&#8217;t wear it out&nbsp;</p>
+<p class="legend top" style="margin-left:5em"><span class=arrow>&#x21b6;</span> Este é meu nome, não use-o por aí&nbsp;</p>
 <pre><code>    &lt;dd <mark>itemprop="name"</mark>>Mark Pilgrim&lt;/dd></code></pre>
 
-<p class=follow>[Follow along! Before: <a href=examples/person.html>person.html</a>, after: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
+<p class=follow>[Acompanhe comigo! Antes: <a href=examples/person.html>person.html</a>, depois: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
 
-<p>What did we just say, in English? &#8220;This person&#8217;s name is Mark Pilgrim.&#8221; Well OK then. Onward.
+<p>O que acabamos de dizer, traduzindo? O nome &#8220;dessa pessoa é Mark Pilgrim.&#8221; Bom, Ok então. Adiante.
 
-<p id=title-and-affiliation>The next two properties are a little tricky. This is the markup, pre-microdata:
+<p id=title-and-affiliation>As próximas duas propriedades são um pouco complicado. Essa é a marcação, pré-microdata:
 
-<pre><code>    &lt;dt>Position&lt;/dt>
-    &lt;dd>Developer advocate for Google, Inc.&lt;/dd></code></pre>
+<pre><code>    &lt;dt>Cargo&lt;/dt>
+    &lt;dd>Defensor do Desenvolvedor na Google, Inc.&lt;/dd></code></pre>
 
-<p>If you look at the definition of the Person vocabulary, the text &#8220;Developer advocate for Google, Inc.&#8221; actually encompasses <em>two</em> properties: <code>title</code> (&#8220;Developer advocate&#8221;) and <code>affiliation</code> (&#8220;Google, Inc.&#8221;). How can you express that in microdata? The short answer is, you can&#8217;t. Microdata doesn&#8217;t have a way to break up runs of text into separate properties. You can&#8217;t say &#8220;the first 18 characters of this text is one microdata property, and the last 12 characters of this text is another microdata property.&#8221;
+<p>Se você olhar na definição do vocabulário Pessoa, o texto &#8220;Defensor do Desenvolvedor na Google, Inc.&#8221; na verdade engloba <em>duas</em> propriedades: <code>title</code> (&#8220;Defensor do desenvolvedor&#8221;) e <code>affiliation</code> (&#8220;Google, Inc.&#8221;). Como você pode expressar isso em microdata? A resposta curta é, você não pode. Microdata não tem uma forma de quebrar textos corridos em propriedades separadas. Você não pode dizer &#8220;os primeiros 18 caracteres desse texto é uma propriedade de microdata, e os 12 caracteres finais desse texto são outra propriedade microdata.&#8221;
 
-<p>But all is not lost. Imagine that you wanted to style the text &#8220;Developer advocate&#8221; in a different font from the text &#8220;Google, Inc.&#8221; <abbr>CSS</abbr> can&#8217;t do that either. So what would you do? You would first need to wrap the different bits of text in dummy elements, like <code>&lt;span></code>, then apply different <abbr>CSS</abbr> rules to each <code>&lt;span></code> element.
+<p>Mas nem tudo está perdido. Imagine que você gostaria de estilizar o texto &#8220;Defensor do Desenvolvedor&#8221; em uma fonte diferente do texto  &#8220;Google, Inc.&#8221; <abbr>CSS</abbr> também não consegue fazer isso. Então o que você faria? Primeiramente você precisaria englobar os diferentes pedaços de texto em elementos &#8220;fictícios&#8221;, como <code>&lt;span></code>, em seguida aplicar regras <abbr>CSS</abbr> diferentes para cada elemento <code>&lt;span></code>.
 
-<p>This technique is also useful for microdata. There are two distinct pieces of information here: a <code>title</code> and an <code>affiliation</code>. If you wrap each piece in a dummy <code>&lt;span></code> element, you can declare that each <code>&lt;span></code> is a separate microdata property.
+<p>Essa tecnica também é útil para microdata. Existem dois pedaços distintos de informação aqui: um <code>title</code> e um <code>affiliation</code>. Se você engloba cada pedaço em um elemento <code>&lt;span></code> &#8220;fictício&#8221;, você pode declarar que cada <code>&lt;span></code> é uma propriedade microdata separada.
 
-<pre><code>    &lt;dt>Position&lt;/dt>
-    &lt;dd>&lt;span <mark>itemprop="title"</mark>>Developer advocate&lt;/span> for
-        &lt;span <mark>itemprop="affiliation"</mark>>Google, Inc.&lt;span>&lt;/dd></code></pre>
+<pre><code>    &lt;dt>Cargo&lt;/dt>
+    &lt;dd>&lt;span <mark>itemprop="title"</mark>>Defensor do Desenvolvedor&lt;/span> na
+        &lt;span <mark>itemprop="affiliation"</mark>>Google, Inc.&lt;span>&lt;/dd></code></pre>.
 
-<p class=follow>[Follow along! Before: <a href=examples/person.html>person.html</a>, after: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
+<p class=follow>[Acompanhe comigo! Antes: <a href=examples/person.html>person.html</a>, depois: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
 
-<p>Tada! &#8220;This person&#8217;s title is 'Developer advocate.' This person is employed by Google, Inc.&#8221; Two sentences, two microdata properties. A little more markup, but a worthwhile tradeoff.
+<p>Tada! O título &#8220;dessa pessoa é 'Defensor do Desenvolvedor.' Essa pessoa é contratada pela Google, Inc.&#8221; Duas sentenças, duas propriedades microdata. Um pouco mais de marcação, mas uma compensação que vale a pena.
 
-<p id=address>The same technique is useful for marking up street addresses. The Person vocabulary defines an <code>address</code> property, which itself is a microdata item. That means the address has its own vocabulary (<code>http://data-vocabulary.org/Address</code>) and defines its own properties. The Address vocabulary defines 5 properties: <code>street-address</code>, <code>locality</code>, <code>region</code>, <code>postal-code</code>, and <code>country-name</code>.
+<p id=address>A mesma técnica é útil para marcar logradouro. O vocabulário Person define uma propriedade <code>address</code>, que é um próprio item microdata. Isso significa que o endenreço tem seu próprio vocabulário  (<code>http://data-vocabulary.org/Address</code>) e define suas próprias propriedades. O vocabulário Address define 5 propriedades: <code>street-address</code>, <code>locality</code>, <code>region</code>, <code>postal-code</code>, e <code>country-name</code>.
 
-<p>If you&#8217;re a programmer, you are probably familiar with dot notation to define objects and their properties. Think of the relationship like this:
+<p>Se você é um programador, você provavelmente está familiarizado com notação de ponto para definir objetos e suas propriedades. Pense na relação como esse:
 
 <ul>
 <li><code>Person</code>
@@ -286,22 +287,22 @@ table.faketable{border-collapse:collapse}
 <li><code>Person.address.country-name</code>
 </ul>
 
-<p>In this example, the entire street address is contained in a single <code>&lt;dd></code> element. (Once again, the <code>&lt;dt></code> element is just a label, so it plays no role in adding semantics with microdata.) Notating the <code>address</code> property is easy. Just add an <code>itemprop</code> attribute on the <code>&lt;dd></code> element.
+<p>Nesse exemplo, todo o logradouro está contido em um único elemento <code>&lt;dd></code>. (Novamente, o elemento <code>&lt;dt></code> é apenas um rótulo, logo ele não desempenha nenhum papel na adição de semântica com microdata.) Notar a propriedade <code>address</code> é fácil. Adicione apenas um atributo <code>itemprop</code> no elemento <code>&lt;dd></code>.
 
-<pre><code>    &lt;dt>Mailing address&lt;/dt>
+<pre><code>    &lt;dt>Endereço Postal&lt;/dt>
     &lt;dd <mark>itemprop="address"</mark>></code></pre>
-<p class=follow>[Follow along! Before: <a href=examples/person.html>person.html</a>, after: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
+<p class=follow>[Acompanhe comigo! Antes: <a href=examples/person.html>person.html</a>, depois: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
 
-<p>But remember, the address property is itself a microdata item. That means we need to add the <code>itemscope</code> and <code>itemtype</code> attributes too.
+<p>Mas lembre-se, a propriedade address é propriamente um item microdata. Isso significa que também precisamos adicionar os atributos <code>itemscope</code> e <code>itemtype</code>.
 
-<pre><code>    &lt;dt>Mailing address&lt;/dt>
+<pre><code>    &lt;dtEndereço Posta&lt;/dt>
     &lt;dd itemprop="address" <mark>itemscope</mark>
         <mark>itemtype="http://data-vocabulary.org/Address"</mark>></code></pre>
-<p class=follow>[Follow along! Before: <a href=examples/person.html>person.html</a>, after: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
+<p class=follow>[Acompanhe comigo! Antes: <a href=examples/person.html>person.html</a>, depois: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
 
-<p>We&#8217;ve seen all of this before, but only for top-level items. A <code>&lt;section></code> element defines <code>itemtype</code> and <code>itemscope</code>, and all the elements within the <code>&lt;section></code> element that define microdata properties are &#8220;scoped&#8221; within that specific vocabulary. But this is the first time we&#8217;ve seen <em>nested</em> scopes &mdash; defining a new <code>itemtype</code> and <code>itemscope</code> (on the <code>&lt;dd></code> element) within an existing one (on the <code>&lt;section></code> element). This nested scope works exactly like the <abbr>HTML</abbr> <abbr>DOM</abbr>. The <code>&lt;dd></code> element has a certain number of child elements, all of which are scoped to the vocabulary defined on the <code>&lt;dd></code> element. Once the <code>&lt;dd></code> element is closed with a corresponding <code>&lt;/dd></code> tag, the scope reverts to the vocabulary defined by the parent element (<code>&lt;section></code>, in this case).
+<p>Vemos isso tudo antes, porém para itens de alto nível. Um elemento <code>&lt;section></code> define <code>itemtype</code> e <code>itemscope</code>, e todos elementos dentro do elemento <code>&lt;section></code> que define as propriedades microdata são &#8220;escopadas&#8221; dentro desse vocabulário específico. Mas esse é o primeiro caso que vemos escopos <em>aninhados</em> &mdash; definir um novo <code>itemtype</code> e <code>itemscope</code>  (no elemento <code>&lt;dd></code>) dentro de um já existente (no elemento <code>&lt;section></code>). Esse escopo aninhado funciona exatamente como o <abbr>DOM</abbr> <abbr>HTML</abbr>. O elemento <code>&lt;dd></code> tem um certo número de elementos filho, todos que estã no escopo do vocabulário definido no elemento <code>&lt;dd></code>. Um vez que o elemento <code>&lt;dd></code> é fechado com uma tag <code>&lt;/dd></code> correspondente, o escopo reverte para o vocabulário definido pelo elemento pai (<code>&lt;section></code>, nesse caso).
 
-<p>The properties of the Address suffer the same problem we encountered with <a href=#title-and-affiliation>the <code>title</code> and <code>affiliation</code> properties</a>. There&#8217;s just one long run of text, but we want to break it up into five separate microdata properties. The solution is the same: wrap each distinct piece of information in a dummy <code>&lt;span></code> element, then declare microdata properties on each <code>&lt;span></code> element.
+<p>As propriedades do Address sofrem o mesmo problema que nós encontramos com <a href=#title-and-affiliation>as propriedades <code>title</code> e <code>affiliation</code></a>. Existe apenas um longo texto corrido, porém nós queremos quebrá-lo em cinco propriedades microdata separadas. A solução é a mesma: englobe cada pedaço destinto de informação é um elemento <code>&lt;span></code> fictício, em seguida declare propriedades microdata em cada elemento <code>&lt;span></code>.
 
 <pre><code>    &lt;dd itemprop="address" itemscope
         itemtype="http://data-vocabulary.org/Address">
@@ -313,16 +314,16 @@ table.faketable{border-collapse:collapse}
     &lt;/dd>
   &lt;/dl></code></pre>
 
-<p class=follow>[Follow along! Before: <a href=examples/person.html>person.html</a>, after: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
+<p class=follow>[Acompanhe comigo! Antes: <a href=examples/person.html>person.html</a>, depois: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
 
-<p>In English: &#8220;This person has a mailing address. The street address part of the mailing address is '100 Main Street.' The locality part is 'Anytown.' The region is 'PA.' The postal code is '19999.' The country name is 'USA.'&#8221; Easy peasy.
+<p>Traduzindo: &#8220;Esta pessoa tem um endereço postal. O logradouro parte do endereço postal é '100 Main Street.' A localidade é 'Anytown.' A região é 'PA.' O código postal é '19999.' O nome do país é 'USA.'&#8221; Extremamente simples.
 
 <div class="pf clear">
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor de Marcação</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Is this mailing address format US-specific?<br>
-A: No. The properties of the Address vocabulary are generic enough that they can describe most mailing addresses in the world. Not all addresses will have values for every property, but that&#8217;s OK. Some addresses might require fitting more than one &#8220;line&#8221; into a single property, but that&#8217;s OK too. For example, if your mailing address has a street address and a suite number, they would both go into the <code>street-address</code> subproperty:
+<p><span>&#x261E;</span>P: Esse formato de endereço postal é específico dos EUA?<br>
+R: Não. As propriedades do vocabulário Address são genéricas o suficiente que podem descrever vários endereços postais do mundo. Nem todo endereço terá os valores para cada propriedade, mas não tem problema. Alguns endereços podem exigir mais de uma &#8220;linha&#8221; em uma única propriedade, mas sem problemas também. Por exemplo, se o seu endereço postal tem uma rua e um número de suíte, eles podem ir juntos dentro da subpropriedade <code>street-address</code>:
 <pre><code>&lt;p itemprop="address" itemscope
     itemtype="http://data-vocabulary.org/Address">
   &lt;span itemprop="street-address">
@@ -335,23 +336,24 @@ Suite 415</mark>
 </div>
 </div>
 
-<p id=person-url>There&#8217;s one more thing on this sample &#8220;about&#8221; page: a list of <abbr>URLs</abbr>. The Person vocabulary has a property for this, called <code>url</code>. A <code>url</code> property can be anything, really. (Well, it has to be a <abbr>URL</abbr>, but you probably guessed that.) What I mean is that the <code>url</code> property is loosely defined. The property can be any sort of <abbr>URL</abbr> that you want to associate with a Person: a weblog, a photo gallery, or a profile on another site like Facebook or Twitter.
+<p id=person-url>Não há de mais nessa página &#8220;sobre&#8221;: uma lista de <abbr>URLs</abbr>. O vocabulário Person tem a a propriedade pra isso, chamada de <code>url</code>. A propriedade <code>url</code> pode ser qualquer coisa, de verdade. (Bem, ela deve ser uma <abbr>URL</abbr>, mas você provavelmente já adivinhou isso.) O que quero dizer é que a propriedade <code>url</code> é vagamente definida. A propriedade pode ser qualquer tipo de <abbr>URL</abbr> que você queira associar a uma pessoa: um blog, uma galeria de fotos, ou um perfil em um outro site como Facebook ou Twitter.
 
-<p>The other important thing to note here is that a single Person can have multiple <code>url</code> properties. Technically, any property can appear more than once, but until now, we haven&#8217;t taken advantage of that. For example, you could have two <code>photo</code> properties, each pointing to a different image <abbr>URL</abbr>. Here, I want to list four different <abbr>URLs</abbr>: my weblog, my Google profile page, my user profile on Reddit, and my Twitter account. In <abbr>HTML</abbr>, that&#8217;s a list of links: four <code>&lt;a></code> elements, each in their own <code>&lt;li></code> element. In microdata, each <code>&lt;a></code> element gets an <code>itemprop="url"</code> attribute.
+<p>Outra coisa importante de notar aqui é que uma única pessoa pode ter várias propriedades <code>url</code>. Tecnicamente, qualquer propriedade pode aparecer mais de uma vez, mas até agora, não tiramos proveito disso. Por exemplo, poderíamos ter duas propriedades <code>photo</code>, cada uma apontando para uma <abbr>URL</abbr> de imagem diferente. Aqui, gostaria de listar quatro <abbr>URLs</abbr> diferentes: meu blog, meu perfil do Google, meu perfil de usuário no Reddit, e minha conta no Twitter. Na <abbr>HTML</abbr>, está uma lista de links: quatro elementos <code>&lt;a></code>, cada um em seu próprio elemento <code>&lt;li></code>. Em microdata, cada elemento <code>&lt;a></code> leva um atributo <code>itemprop="url"</code>.
 
-<pre><code>  &lt;h1>My Digital Footprints&lt;/h1>
+<pre><code>  &lt;h1>Meus rastros digitais&lt;/h1>
   &lt;ul>
     &lt;li>&lt;a href="http://diveintomark.org/"
-           <mark>itemprop="url"</mark>>weblog&lt;/a>&lt;/li>
+           <mark>itemprop="url"</mark>>blog&lt;/a>&lt;/li>
     &lt;li>&lt;a href="http://www.google.com/profiles/pilgrim"
-           <mark>itemprop="url"</mark>>Google profile&lt;/a>&lt;/li>
+           <mark>itemprop="url"</mark>>Perfil do Google&lt;/a>&lt;/li>
     &lt;li>&lt;a href="http://www.reddit.com/user/MarkPilgrim"
-           <mark>itemprop="url"</mark>>Reddit.com profile&lt;/a>&lt;/li>
+           <mark>itemprop="url"</mark>>Perfil do Reddit.com&lt;/a>&lt;/li>
     &lt;li>&lt;a href="http://www.twitter.com/diveintomark"
            <mark>itemprop="url"</mark>>Twitter&lt;/a>&lt;/li>
   &lt;/ul></code></pre>
 
-<p>According to the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a>, <code>&lt;a></code> elements have special processing. The microdata property value is the <code>href</code> attribute, not the child text content. The text of each link is actually ignored by a microdata processor. Thus, in English, this says &#8220;This person has a <abbr>URL</abbr> at <code>http://diveintomark.org/</code>. This person has another <abbr>URL</abbr> at <code>http://www.google.com/profiles/pilgrim</code>. This person has another <abbr>URL</abbr> at <code>http://www.reddit.com/user/MarkPilgrim</code>. This person has another <abbr>URL</abbr> at <code>http://www.twitter.com/diveintomark</code>.&#8221;
+
+<p>De acordo com o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, elementos <code>&lt;a></code> tem processamento especial. O valor da propriedade microdata é o atributo <code>href</code>, não o conteúdo textual filho. O texto de cada link é na verdade ignorado pelo processador microdata. Assim, traduzindo, isso quer dizer &#8220;Essa pessoa tem uma <abbr>URL</abbr> no <code>http://diveintomark.org/</code>. Essa pessoa tem outra <abbr>URL</abbr> no <code>http://www.reddit.com/user/MarkPilgrim</code>. Ela tem outra <abbr>URL</abbr> no <code>http://www.twitter.com/diveintomark</code>.&#8221;
 
 <h3 id=rich-snippets>Introducing Google Rich Snippets</h3>
 
