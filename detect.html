@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset=utf-8>
-<title>Detecting HTML5 Features - Dive Into HTML5</title>
+<title>Detectando funcionalidade da HTML5 - Dive Into HTML5</title>
 <!--[if lt IE 9]><script src=j/html5.js></script><![endif]-->
 <link rel=alternate type=application/atom+xml href=https://github.com/diveintomark/diveintohtml5/commits/master.atom>
 <link rel=stylesheet href=screen.css>
@@ -9,46 +9,46 @@ body{counter-reset:h1 2}
 </style>
 <link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
 <link rel=prefetch href=index.html>
-<p>You are here: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#detect>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
-<h1><br>Detecting <abbr>HTML5</abbr> Features</h1>
+<p>Você está aqui: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#detect>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
+<h1><br>Detectando funcionalidades da <abbr>HTML5</abbr></h1>
 <p id=toc>&nbsp;
 <p class=a>&#x2767;
-<h2 id=divingin>Diving In</h2>
+<h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-y.png alt=Y width=109 height=105>ou may well ask: &#8220;How can I start using <abbr>HTML5</abbr> if older browsers don&#8217;t support it?&#8221; But the question itself is misleading. <abbr>HTML5</abbr> is not one big thing; it is a collection of individual features. So you can&#8217;t detect &#8220;<abbr>HTML5</abbr> support,&#8221; because that doesn&#8217;t make any sense. But you <em>can</em> detect support for individual features, like canvas, video, or geolocation.
+<p class=f><img src=i/aoc-v.png alt=V width=109 height=105>ocê pode se perguntar: &#8220;Como eu posso começar a usar <abbr>HTML5</abbr> se os navegadores não o suportam?&#8221; Mas a questão por si só é enganosa. <abbr>HTML5</abbr> não é uma coisa grande e única; é uma coleção de funcionalidades individuais. Então você não pode detectar &#8220;suporte ao <abbr>HTML5</abbr>,&#8221; por que isso não faz sentido. Mas você <em>pode</em> verificar o suporte a funcionalidades individuais, como canvas, video, ou geolocalização.
 
 <p class=a>&#x2767;
 
-<h2 id=techniques>Detection Techniques</h2>
+<h2 id=techniques>Técnicas de detecção</h2>
 
-<p>When your browser renders a web page, it constructs a Document Object Model (<abbr><dfn>DOM</dfn></abbr>), a collection of objects that represent the <abbr>HTML</abbr> elements on the page. Every element &mdash; every <code>&lt;p></code>, every <code>&lt;div></code>, every <code>&lt;span></code> &mdash; is represented in the <abbr>DOM</abbr> by a different object. (There are also global objects, like <code>window</code> and <code>document</code>, that aren&#8217;t tied to specific elements.)
+<p>Quando seu navegador renderiza uma página web, ele constrói um Modelo Objeto Documento (<abbr><dfn>DOM</dfn></abbr>, Document Object Model em inglês), uma coleção de objetos que representam os elementos <abbr>HTML</abbr> na página. Cada elemento &mdash; todo <code>&lt;p></code>, todo <code>&lt;div></code>, todo <code>&lt;span></code> &mdash; é representado no <abbr>DOM</abbr> por um objeto diferente. (Também existem objetos globais, como <code>window</code> e <code>document</code>, que não estão vinculado a elementos específicos.)
 
 <p class=ss style="width:257px"><img src=i/openclipart.org_johnny_automatic_peeking_out_the_window.png width=257 height=436 alt="girl peeking out the window">
 
-<p>All <abbr>DOM</abbr> objects share a set of common properties, but some objects have more than others. In browsers that support <abbr>HTML5</abbr> features, certain objects will have unique properties. A quick peek at the <abbr>DOM</abbr> will tell you which features are supported.
+<p>Todos os objetos no <abbr>DOM</abbr> compartilham um conjunto comum de propriedades, mas alguns objetos têm mais do que outros. Em navegadores que suportam funcionalidades da <abbr>HTML5</abbr>, alguns objetos terão propriedades únicas. Uma espiada rápida no <abbr>DOM</abbr> irá te dizer quais funcionalidades são suportadas.
 
-<p>There are four basic techniques for detecting whether a browser supports a particular feature. From simplest to most complex:
+<p>Existem quatros técnicas básicas para detectar se o browser suporta uma funcionalidade específica. Do mais simples até o mais complexo:
 
 <ol>
 <li>
-<p>Check if a certain property exists on a global object (such as <code>window</code> or <code>navigator</code>).
-<p>Example: <a href=#geolocation>testing for geolocation support</a>
+<p>Verifica se uma determinada propriedade existe em um objeto global (como <code>window</code> ou <code>navigator</code>).
+<p>Exemplo: <a href=#geolocation>testando o suporte a geolocalização</a>
 <li>
-<p>Create an element, then check if a certain property exists on that element.
-<p>Example: <a href=#canvas>testing for canvas support</a>
+<p>Crie um elemento, então verifique se uma determinada propriedade existe naquele elemento.
+<p>Exemplo: <a href=#canvas>testanto suporte ao canvas</a>
 <li>
-<p>Create an element, check if a certain method exists on that element, then call the method and check the value it returns.
-<p>Example: <a href=#video-formats>testing which video formats are supported</a>
+<p>Crie um elemento, verifique se um determinado método existe naquele elemento, então chame o método e verifique o valor que ele retorna.
+<p>Exemplo: <a href=#video-formats>testando quais formatos de vídeos são suportados</a>
 <li>
-<p>Create an element, set a property to a certain value, then check if the property has retained its value.
-<p>Example: <a href=#input-types>testing which <code>&lt;input></code> types are supported</a>
+<p>Crie um elemento, defina uma propriedade para um determinado valor, então verifique se a propriedade manteve seu valor.
+<p>Exemplo: <a href=#input-types>testando quais tipos de <code>&lt;input></code> são suportados</a>
 </ol>
 
 <p class=a>&#x2767;
 
-<h2 id=modernizr>Modernizr, an HTML5 Detection Library</h2>
+<h2 id=modernizr>Modernizr, uma biblioteca de detecção HTML5</h2>
 
-<p><a href=http://www.modernizr.com/>Modernizr</a> is an open source, <abbr>MIT</abbr>-licensed JavaScript library that detects support for many <abbr>HTML5</abbr> <i class=baa>&amp;</i> <abbr>CSS3</abbr> features. You should always use the latest version. To use it, include the following <code>&lt;script></code> element at the top of your page.
+<p><a href=http://www.modernizr.com/>Modernizr</a> é um biblioteca Javascript de código aberto, sob licença <abbr>MIT</abbr>, que detecta suporte a várias funcionalidades de <abbr>HTML5</abbr> <i class=baa>&amp;</i> <abbr>CSS3</abbr>. Você deve usar sempre a última versão. Para usá-la, inclua o seguinte elemento <code>&lt;script></code> no topo da sua página.
 
 <pre style="float:left"><code>&lt;!DOCTYPE html>
 &lt;html>
@@ -62,14 +62,14 @@ body{counter-reset:h1 2}
 &lt;/body>
 &lt;/html>
 </code></pre>
-<p class="legend right" style="margin-top:7em"><span class=arrow>&nbsp;&#x219c;</span> It goes to your &lt;head>
+<p class="legend right" style="margin-top:7em"><span class=arrow>&nbsp;&#x219c;</span> Isso vai no seu &lt;head>
 
-<p class=clear>Modernizr runs automatically. There is no <code>modernizr_init()</code> function to call. When it runs, it creates a global object called <code>Modernizr</code>, that contains a set of Boolean properties for each feature it can detect. For example, if your browser supports the <a href=canvas.html>canvas <abbr>API</abbr></a>, the <code>Modernizr.canvas</code> property will be <code>true</code>. If your browser does not support the canvas <abbr>API</abbr>, the <code>Modernizr.canvas</code> property will be <code>false</code>.
+<p class=clear>Modernizr executa automaticamente. Não existe uma função <code>modernizr_init()</code> para ser chamada. Quando ela roda, cria um objeto global chamado <code>Modernizr</code>, que contém um conjunto de propriedades Booleanas para cada funcionalidade que ela puder detectar. Por exemplo, se seu navegador suporta a <a href=canvas.html><abbr>API</abbr> do canvas</a>, a propriedade <code>Modernizr.canvas</code> será <code>true</code>. Se seu navagador não suportar a <abbr>API</abbr> do canvas, a propriedade <code>Modernizr.canvas</code> será <code>false</code>.
 
 <pre><code>if (Modernizr.canvas) {
-  // let's draw some shapes!
+  // vamos desenhar algumas formas!
 } else {
-  // no native canvas support available :(
+  // o suporte nativo ao canvas não está disponível :(
 }</code></pre>
 
 <p class=a>&#x2767;
@@ -78,49 +78,49 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:300px"><img src=i/openclipart.org_johnny_automatic_fishing_boat.png width=300 height=203 alt="man fishing in a canoe"><br><span id=live-canvas></span>
 
-<p><abbr>HTML5</abbr> defines <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>the &lt;canvas> element</a> as &#8220;a resolution-dependent bitmap canvas that can be used for rendering graphs, game graphics, or other visual images on the fly.&#8221; A <dfn>canvas</dfn> is a rectangle in your page where you can use JavaScript to draw anything you want. <abbr>HTML5</abbr> defines a set of functions (&#8220;the canvas <abbr>API</abbr>&#8221;) for drawing shapes, defining paths, creating gradients, and applying transformations.
+<p>A <abbr>HTML5</abbr> define <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>o elemento &lt;canvas> </a> como &#8220;uma tela bitmap de resolução dependente que pode ser usada para renderizar grafos, gráficos de jogos, ou outras imagens visuais em tempo real.&#8221; Um <dfn>canvas</dfn> é um retângulo na sua página onde você pode usar Javascript para desenhar qualquer coisa que você quiser. A <abbr>HTML5</abbr> define um conjunto de funções (&#8220;a <abbr>API</abbr> canvas&#8221;) para desenhar formas, definindo caminhos, criando gradientes e aplicando transformações.
 
-<p>Checking for the canvas <abbr>API</abbr> uses <a href=#techniques>detection technique #2</a>. If your browser supports the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;canvas></code> element will have a <a href=canvas.html#shapes><code>getContext()</code> method</a>. If your browser doesn&#8217;t support the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates for a <code>&lt;canvas></code> element will only have the set of common properties, but not anything canvas-specific.
+<p>A verificação da <abbr>API</abbr> do canvas usa a <a href=#techniques>técnica de detecção #2</a>. Se seu navegador suporta a <abbr>API</abbr> do canvas, o objeto <abbr>DOM</abbr> o cria para representar um elemento <code>&lt;canvas></code> que terá um <a href=canvas.html#shapes>método <code>getContext()</code></a>. Se seu navegador não suporta a <abbr>API</abbr> do canvas, o objeto <abbr>DOM</abbr> o cria  para um elemento <code>&lt;canvas></code> que terá apenas um conjunto comum de propriedades, mas nada específico do canvas.
 
 <pre><code>function supports_canvas() {
   return !!document.createElement('canvas').getContext;
 }
 </code></pre>
 
-<p>This function starts by creating a dummy <code>&lt;canvas></code> element. But the element is never attached to your page, so no one will ever see it. It&#8217;s just floating in memory, going nowhere and doing nothing, like a canoe on a lazy river.
+<p>Essa função começa com a criação de elemento <code>&lt;canvas></code> de teste. Mas o elemento nunca é adicionado a sua página, então ninguém nunca o verá. Está apenas flutuando na memória, indo a lugar nenhum e fazendo nada, como uma canoa em um rio calmo.
 
 <pre><code>return !!document.<mark>createElement('canvas')</mark>.getContext;</code></pre>
 
-<p>As soon as you create the dummy <code>&lt;canvas></code> element, you test for the presence of a <code>getContext()</code> method. This method will only exist if your browser supports the canvas <abbr>API</abbr>.
+<p>Asssim que você cria o elemento <code>&lt;canvas></code> de teste, você testa a existência de um método <code>getContext()</code>. Esse método só existirá se o seu navegador suportar a <abbr>API</abbr> do canvas.
 
 <pre><code>return !!document.createElement('canvas').<mark>getContext</mark>;</code></pre>
 
-<p>Finally, you use the double-negative trick to force the result to a Boolean value (<code>true</code> or <code>false</code>).
+<p>Finalmente, você usa o truque da negação dupla para forçar a conversão do resultado em um valor booleano(<code>true</code> ou <code>false</code>).
 
 <pre><code>return <mark>!!</mark>document.createElement('canvas').getContext;</code></pre>
 
-<p>This function will detect support for most of the canvas <abbr>API</abbr>, including <a href=canvas.html#shapes>shapes</a>, <a href=canvas.html#paths>paths</a>, <a href=canvas.html#gradients>gradients <i class=baa>&amp;</i> patterns</a>. It will not detect the third-party <a href=canvas.html#ie><code>explorercanvas</code> library</a> that implements the canvas <abbr>API</abbr> in Microsoft Internet Explorer.
+<p>Essa função irá detectar para grande parte da <abbr>API</abbr> do canvas, incluindo <a href=canvas.html#shapes>shapes</a>, <a href=canvas.html#paths>paths</a>, <a href=canvas.html#gradients>gradients <i class=baa>&amp;</i> patterns</a>. Ela não detectará a biblioteca de terceiros <a href=canvas.html#ie><code>explorercanvas</code></a> que implementa a <abbr>API</abbr> do canvas no Microsoft Internet Explorer.
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> to detect support for the canvas <abbr>API</abbr>.
+<p>Ao invés de escrever essa função você mesmo, você pode usar a <a href=#modernizr>Modernizr</a> para detectar o suporte a <abbr>API</abbr> do canvas.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for canvas support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verifica o suporte ao canvas
 <pre><code>if (<mark>Modernizr.canvas</mark>) {
-  // let's draw some shapes!
+  // vamos desenhar algumas formas!
 } else {
-  // no native canvas support available :(
+  // o suporte nativo ao canvas não está disponível :(
 }</code></pre>
 
-<p>There is a separate test for the canvas text <abbr>API</abbr>, which I will demonstrate next.
+<p>Existe um teste separado para a <abbr>API</abbr> do canvas text, que será demonstrado a seguir.
 
 <p class=a>&#x2767;
 
-<h2 id=canvas-text>Canvas Text</h2>
+<h2 id=canvas-text>Texto Canvas</h2>
 
 <p class=ss style="width:414px"><img src=i/openclipart.org_johnny_automatic_baseball_at_bat.png width=414 height=254 alt="baseball player at bat"><br><span id=live-canvas-text></span>
 
-<p>Even if your browser supports the <a href=#canvas>canvas <abbr>API</abbr></a>, it might not support the <dfn>canvas text</dfn> <abbr>API</abbr>. The canvas <abbr>API</abbr> grew over time, and the text functions were added late in the game. Some browsers shipped with canvas support before the text <abbr>API</abbr> was complete.
+<p>Mesmo que o seu navegador suporte a <a href=#canvas><abbr>API</abbr> canvas</a>, ele pode não suportar a <abbr>API</abbr> do <dfn>texto canvas</dfn>. A <abbr>API</abbr> do canvas cresceu através do tempo, e as funções de texto foram adicionadas por último. Alguns navegadores passaram a suportar o canvas antes da <abbr>API</abbr> de texto estar completa.
 
-<p>Checking for the canvas text <abbr>API</abbr> uses <a href=#techniques>detection technique #2</a>. If your browser supports the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;canvas></code> element will have the <a href=canvas.html#shapes><code>getContext()</code> method</a>. If your browser doesn&#8217;t support the canvas <abbr>API</abbr>, the <abbr>DOM</abbr> object it creates for a <code>&lt;canvas></code> element will only have the set of common properties, but not anything canvas-specific.
+<p>A verificação da <abbr>API</abbr> do texto canvas usa a <a href=#techniques>técnica de detecção #2</a>. Se seu navegador suporta a <abbr>API</abbr> do canvas, o objeto <abbr>DOM</abbr> o cria para representar um elemento <code>&lt;canvas></code> que terá um <a href=canvas.html#shapes>método <code>getContext()</code></a>. Se seu navegador não suporta a <abbr>API</abbr> do canvas, o objeto <abbr>DOM</abbr> o cria  para um elemento <code>&lt;canvas></code> que terá apenas um conjunto comum de propriedades, mas nada específico do canvas.
 
 <pre><code>function supports_canvas_text() {
   if (!supports_canvas()) { return false; }
@@ -129,33 +129,32 @@ body{counter-reset:h1 2}
   return typeof context.fillText == 'function';
 }</code></pre>
 
-<p>The function starts by <a href=#canvas>checking for canvas support</a>, using the <code>supports_canvas()</code> function you just saw in the previous section. If your browser doesn&#8217;t support the canvas <abbr>API</abbr>, it certainly won&#8217;t support the canvas text <abbr>API</abbr>!
+<p>A função começa <a href=#canvas>verificando o suporte ao canvas</a>, usando a função <code>supports_canvas()</code> que você acabou de ver na seção anterior. Se seu navegador não suporta a <abbr>API</abbr> do canvas, ele certamente não suportará a <abbr>API</abbr> de texto canvas!
 
 <pre><code>if (<mark>!supports_canvas()</mark>) { return false; }</code></pre>
 
-<p>Next, you create a dummy <code>&lt;canvas></code> element and get its drawing context. This is guaranteed to work, because the <code>supports_canvas()</code> function already checked that the <code>getContext()</code> method exists on all canvas objects.
+<p>Depois, você cria um elemento <code>&lt;canvas></code> de teste e pega seu contexto de desenho. Isso funcionará de forma garantida, porque a função <code>supports_canvas()</code> já verificou que o método <code>getContext()</code> existe em todo objeto canvas.
 
 <pre><code>  var dummy_canvas = document.createElement('canvas');
   var context = <mark>dummy_canvas.getContext('2d')</mark>;</code></pre>
 
-<p>Finally, you check whether the drawing context has a <code>fillText()</code> function. If it does, the canvas text <abbr>API</abbr> is available. Hooray!
+<p>Finalmente, você verifica se o contexto de desenho tem uma função <code>fillText()</code>. Se tiver, a <abbr>API</abbr> de texto canvas está disponível. Hooray!
 
 <pre><code>  return <mark>typeof context.fillText == 'function'</mark>;</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> to detect support for the canvas text <abbr>API</abbr>.
+<p>Ao invés de escrever essa função você mesmo, você pode usar <a href=#modernizr>Modernizr</a> para detectar o suporte à <abbr>API</abbr> do texto canvas.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for canvas text support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verifica o suporte ao texto canvas
 <pre><code>if (<mark>Modernizr.canvastext</mark>) {
-  // let's draw some text!
+  // vamos desenhar algum texto!
 } else {
-  // no native canvas text support available :(
+  // sem suporte nativo ao texto canvas disponível :(
 }</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=video>Video</h2>
-
-<p><abbr>HTML5</abbr> defines a new element called <code>&lt;video></code> for embedding video in your web pages. Embedding video used to be impossible without third-party plugins such as Apple QuickTime&reg; or Adobe Flash&reg;.
+<h2 id=video>Vídeo</h2>
+<p>A <abbr>HTML5</abbr> define um novo elemento chamado <code>&lt;video></code> para embutir vídeo nas suas páginas web. Embutir vídeos costuma ser impossível sem plugins de terceiros como Apple QuickTime&reg; ou Adobe Flash&reg;.
 
 <p class=ss style="width:224px"><img src=i/openclipart.org_johnny_automatic_at_the_theater.png alt="audience at the theater" width=224 height=334><br><span id=live-video></span>
 
@@ -385,7 +384,7 @@ A: Geolocation support is being added to browsers right now, along with support 
 
 <p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for geolocation support
 <pre><code>if (<mark>Modernizr.geolocation</mark>) {
-  // let's find out where you are!
+  // Vamos ver onde você está!
 } else {
   // no native geolocation support available :(
   // maybe try Gears or another third-party solution
@@ -578,14 +577,14 @@ A: Geolocation support is being added to browsers right now, along with support 
 
 <p class=a>&#x2767;
 
-<p>This has been &#8220;Detecting <abbr>HTML5</abbr> Features.&#8221; The <a href=table-of-contents.html>full table of contents</a> has more if you&#8217;d like to keep reading.
+<p>Isso foi &#8220;Detectando funcionalidades da <abbr>HTML5</abbr>.&#8221; Consulte o <a href=table-of-contents.html>Sumário</a>, caso queira continuar com a leitura.
 
-<div class=pf>
-<h4>Did You Know?</h4>
-<div class=moneybags>
-<blockquote><p>In association with Google Press, O&#8217;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &#8220;HTML5: Up &amp; Running,&#8221; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &#8220;HTML5: Up &amp; Running&#8221; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&#8217;Reilly</a>. You&#8217;ll get a book, and I&#8217;ll get a buck. I do not currently accept direct donations.
-</blockquote>
+<div class="pf">
+<h4>Você sabia?</h4>
+<div class="moneybags">
+<blockquote><p>Em associação a <span lang="en">Google Press</span>, O&#8217;Reilly está distribuindo este livro em variados formatos, incluindo papel, ePub, Mobi, <abbr>DRM</abbr>-free e <abbr>PDF</abbr>. A edição paga é chamada <span lang="en">“HTML5: Up &amp; Running”</span> e está disponível agora. Este capítulo está incluído na versão paga.
+</p><p>Se você gostou deste capítulo e quer mostrar sua apreciação, basta <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">comprar o livro “<abbr>HTML5</abbr>: Up &amp; Running” com esse link afiliado</a> ou <a href="http://oreilly.com/catalog/9780596806033">comprar a edição eletrônica diretamente da O&#8217;Reilly</a>. Você vai ganhar um livro, e eu vou ganhar um trocado. Atualmente, não aceito doações diretas.
+</p></blockquote>
 </div>
 </div>
 
@@ -623,7 +622,7 @@ function lookup_location() {
 function show_map(loc) {
   $("#geo-wrapper").css({'width':'320px','height':'350px'});
   var map = new google.maps.Map(document.getElementById("geo-wrapper"), {zoom: 14, mapTypeControl:true, zoomControl: true, mapTypeId: google.maps.MapTypeId.ROADMAP});
-  var center = new google.maps.LatLng(loc.coords.latitude,loc.coords.longitude);  
+  var center = new google.maps.LatLng(loc.coords.latitude,loc.coords.longitude);
   map.setCenter(center);
   var marker = new google.maps.Marker({map: map, position: center, draggable: false, title: "You are here (more or less)"});
 }
