@@ -391,13 +391,13 @@ Most non-PC devices that play H.264 video (including iPhones and standalone Blu-
 
 <p class=a>&#x2767;
 
-<h2 id=ffmpeg2theora>Codificação em Lotes de Videos Ogg com ffmpeg2theora</h2>
+<h2 id=ffmpeg2theora>Codificação em Lotes de Vídeos Ogg com ffmpeg2theora</h2>
 
-<p>(Como na seção anterior, nesta eu iréi usar "Video Ogg", como encurtamento de "Theora vídeo e áudio Vorbis em um contêiner Ogg" Esta é a combinação de codecs+contêiners que funciona nativamente no Mozilla Firefox e Google Chrome.)
+<p>(Como na seção anterior, nesta eu vou usar "Video Ogg", como encurtamento de "Theora vídeo e áudio Vorbis em um contêiner Ogg". Esta é a combinação de codecs+contêiners que funciona nativamente no Mozilla Firefox e Google Chrome.)
 
 <p>Se você está procurando por uma codificação em lotes de diversos arquivos de vídeo Ogg e você quer automatizar o processo, você definitivamente deveria dar uma olhada no <a href=http://v2v.cc/~j/ffmpeg2theora/>ffmpeg2theora</a>.
 
-<p>O ffmpeg2theora é uma aplicação para codificação de vídeos Ogg de código livre e licensa GPL. Binários pré-compilados estão disponíveis<a href=http://v2v.cc/~j/ffmpeg2theora/download.html> para Mac OS X, Windows, e distribuições Linux modernas</a>. Ele pode pegar virtualmente qualquer tipo de arquivo como entrada, incluindo vídeos DV produzidos por câmeras simples, não profissionais.
+<p>O ffmpeg2theora é uma aplicação para codificação de vídeos Ogg de código livre e licença GPL. Binários pré-compilados estão disponíveis<a href=http://v2v.cc/~j/ffmpeg2theora/download.html> para Mac OS X, Windows, e distribuições Linux modernas</a>. Ele pode pegar virtualmente qualquer tipo de arquivo como entrada, incluindo vídeos DV produzidos por câmeras simples, não profissionais.
 
 <p>Para usar o ffmpeg2theora, você precisará chamá-lo pela linha de comando. (No Mac OS X, abra Aplicações <span class=u>&rarr;</span> Utilitários <span class=u>&rarr;</span> Terminal. No Windows, abra o seu menu Iniciar <span class=u>&rarr;</span> Programas <span class=u>&rarr;</span> Acessórios <span class=u>&rarr;</span> Prompt de Comando.)
 
@@ -406,10 +406,10 @@ Most non-PC devices that play H.264 video (including iPhones and standalone Blu-
 <ul>
 <li><code>--video-quality Q</code>, onde &#8220;Q&#8221; é um número entre 0&ndash;10.
 <li><code>--audio-quality Q</code>, onde &#8220;Q&#8221; é um número entre -2&ndash;10.
-<li><code>--max_size=WxH</code>, onde &#8220;W&#8221; e &#8220;H&#8221; são a largura e altura máximos que você deseja para o vídeo. (O "x" entre eles é realmente apenas a letra "x".) o ffmpeg2theora irá redimensionar o vídeo proporcionalmente para ajustar a estas dimensões, então o vídeo codificado deverá ser menor que <code>W&times;H<code>. Por exemplo, realizar o codificação de um vídeo 720&times;480 com tamanho máximo <code>--max_size 320x240</code> irá produzir um arquivo que será <code>230&times;213</code>.
+<li><code>--max_size=WxH</code>, onde &#8220;W&#8221; e &#8220;H&#8221; são a largura e altura máximos que você deseja para o vídeo (o "x" entre eles é realmente apenas a letra "x"). O ffmpeg2theora irá redimensionar o vídeo proporcionalmente para ajustar a estas dimensões, então o vídeo codificado deverá ser menor que <code>W&times;H</code>. Por exemplo, realizar a codificação de um vídeo 720&times;480 com tamanho máximo <code>--max_size 320x240</code> irá produzir um arquivo que será <code>230&times;213</code>.
 </ul>
 
-<p>Assim, aqui está como você deve codificar um vídeo com as mesmas configurações que nós usamos na seção anterior(<a href=#firefogg>codificação com Firefogg</a>).
+<p>Assim, aqui está como você deve codificar um vídeo com as mesmas configurações que nós usamos na seção anterior (<a href=#firefogg>codificação com Firefogg</a>).
 
 <pre><samp class=p>you@localhost$ </samp><kbd>ffmpeg2theora --videoquality 5</kbd>
 <samp class=p>               </samp><kbd>              --audioquality 1</kbd>
