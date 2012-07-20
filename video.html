@@ -380,42 +380,42 @@ Most non-PC devices that play H.264 video (including iPhones and standalone Blu-
 <p class="legend top">Ajuste da largura e altura do video <span class=arrow>&#x21b7;</span><br></p>
 <p><img src=i/firefogg-10.png alt="Firefogg: ajustando a largura e a altura" width=800 height=600>
 
-<p>Uma vez preenchido todos os botões, clique em &#8220;Salvar Ogg&#8221; para iniciar o processo de encoding. O Firefogg irá mostrar uma janela para que seja preenchido o nome do arquivo de video.
+<p>Uma vez preenchido todos os botões, clique em &#8220;Salvar Ogg&#8221; para iniciar o processo de codificação. O Firefogg irá mostrar uma janela para que seja preenchido o nome do arquivo de video.
 <p class="legend top">&#8220;Salvar Ogg&#8221; <span class=arrow>&#x21b7;</span><br></p>
 <p><img src=i/firefogg-12.png alt="Firefogg: Salvar Ogg" width=800 height=600>
 
 <p>O Firefogg irá mostrar uma barra de progresso da codificação do video. Tudo que você precisa é esperar (e esperar, e esperar)!
-<p class="legend top" style="text-align:right"><span class=arrow>&#x21b6;</span> Progresso do encoding
-<p><img src=i/firefogg-13.png alt="Firefogg: Progresso do encoding" width=800 height=600>
+<p class="legend top" style="text-align:right"><span class=arrow>&#x21b6;</span> Progresso do codificação
+<p><img src=i/firefogg-13.png alt="Firefogg: Progresso do codificação" width=800 height=600>
 
 <p class=a>&#x2767;
 
-<h2 id=ffmpeg2theora>Batch Encoding Ogg Video with ffmpeg2theora</h2>
+<h2 id=ffmpeg2theora>Codificação em Lotes de Videos Ogg com ffmpeg2theora</h2>
 
-<p>(Just as in the previous section, in this section I&#8217;m going to use &#8220;Ogg video&#8221; as a shorthand for &#8220;Theora video and Vorbis audio in an Ogg container.&#8221; This is the combination of codecs+container that works natively in Mozilla Firefox and Google Chrome.)
+<p>(Como na seção anterior, nesta eu iréi usar "Video Ogg", como encurtamento de "Theora vídeo e áudio Vorbis em um contêiner Ogg" Esta é a combinação de codecs+contêiners que funciona nativamente no Mozilla Firefox e Google Chrome.)
 
-<p>If you&#8217;re looking at batch encoding a lot of Ogg video files and you want to automate the process, you should definitely check out <a href=http://v2v.cc/~j/ffmpeg2theora/>ffmpeg2theora</a>.
+<p>Se você está procurando por uma codificação em lotes de diversos arquivos de vídeo Ogg e você quer automatizar o processo, você definitivamente deveria dar uma olhada no <a href=http://v2v.cc/~j/ffmpeg2theora/>ffmpeg2theora</a>.
 
-<p>ffmpeg2theora is an open source, GPL-licensed application for encoding Ogg video. Pre-built binaries are available <a href=http://v2v.cc/~j/ffmpeg2theora/download.html>for Mac OS X, Windows, and modern Linux distributions</a>. It can take virtually any video file as input, including DV video produced by consumer-level camcorders.
+<p>O ffmpeg2theora é uma aplicação para codificação de vídeos Ogg de código livre e licensa GPL. Binários pré-compilados estão disponíveis<a href=http://v2v.cc/~j/ffmpeg2theora/download.html> para Mac OS X, Windows, e distribuições Linux modernas</a>. Ele pode pegar virtualmente qualquer tipo de arquivo como entrada, incluindo vídeos DV produzidos por câmeras simples, não profissionais.
 
-<p>To use ffmpeg2theora, you need to call it from the command line. (On Mac OS X, open Applications <span class=u>&rarr;</span> Utilities <span class=u>&rarr;</span> Terminal. On Windows, open your Start Menu <span class=u>&rarr;</span> Programs <span class=u>&rarr;</span> Accessories <span class=u>&rarr;</span> Command Prompt.)
+<p>Para usar o ffmpeg2theora, você precisará chamá-lo pela linha de comando. (No Mac OS X, abra Aplicações <span class=u>&rarr;</span> Utilitários <span class=u>&rarr;</span> Terminal. No Windows, abra o seu menu Iniciar <span class=u>&rarr;</span> Programas <span class=u>&rarr;</span> Acessórios <span class=u>&rarr;</span> Prompt de Comando.)
 
-<p>ffmpeg2theora can take a large number of command line flags. (Type <code>ffmpeg2theora --help</code> to read about them all.) I&#8217;ll focus on just three of them.
+<p>O ffmpeg2theora tem diversos parâmetros de linha de comando. (Escreva <code>ffmpeg2theora --help</code> para ler sobre todos eles.) Eu irei focar em apenas três deles.
 
 <ul>
-<li><code>--video-quality Q</code>, where &#8220;Q&#8221; is a number from 0&ndash;10.
-<li><code>--audio-quality Q</code>, where &#8220;Q&#8221; is a number from -2&ndash;10.
-<li><code>--max_size=WxH</code>, where &#8220;W&#8221; and &#8220;H&#8221; are the maximum width and height you want for the video. (The &#8220;x&#8221; in between is really just the letter &#8220;x&#8221;.) ffmpeg2theora will resize the video proportionally to fit within these dimensions, so the encoded video might be smaller than <code>W&times;H</code>. For example, encoding a 720&times;480 video with <code>--max_size 320x240</code> will produce a video that is <code>320&times;213</code>.
+<li><code>--video-quality Q</code>, onde &#8220;Q&#8221; é um número entre 0&ndash;10.
+<li><code>--audio-quality Q</code>, onde &#8220;Q&#8221; é um número entre -2&ndash;10.
+<li><code>--max_size=WxH</code>, onde &#8220;W&#8221; e &#8220;H&#8221; são a largura e altura máximos que você deseja para o vídeo. (O "x" entre eles é realmente apenas a letra "x".) o ffmpeg2theora irá redimensionar o vídeo proporcionalmente para ajustar a estas dimensões, então o vídeo codificado deverá ser menor que <code>W&times;H<code>. Por exemplo, realizar o codificação de um vídeo 720&times;480 com tamanho máximo <code>--max_size 320x240</code> irá produzir um arquivo que será <code>230&times;213</code>.
 </ul>
 
-<p>Thus, here is how you could encode a video with the same settings as we used in the previous section (<a href=#firefogg>encoding with Firefogg</a>).
+<p>Assim, aqui está como você deve codificar um vídeo com as mesmas configurações que nós usamos na seção anterior(<a href=#firefogg>codificação com Firefogg</a>).
 
 <pre><samp class=p>you@localhost$ </samp><kbd>ffmpeg2theora --videoquality 5</kbd>
 <samp class=p>               </samp><kbd>              --audioquality 1</kbd>
 <samp class=p>               </samp><kbd>              --max_size 320x240</kbd>
 <samp class=p>               </samp><kbd>              pr6.dv</kbd></pre>
 
-<p>The encoded video will be saved in the same directory as the original video, with a <code>.ogv</code> extension added. You can specify a different location and/or filename by passing an <code>--output=/path/to/encoded/video</code> command line flag to ffmpeg2theora.
+<p>O vídeo codificado será salvo no mesmo diretório do arquivo de vídeo original, com a extensão <code>.ogv</code> adicionada. Você pode especificar um lugar diferente e/ou um nome diferente passando os seguintes parâmetros <code>--output=/path/to/encoded/video</code> para o ffmpeg2theora.
 
 <p class=a>&#x2767;
 
