@@ -22,19 +22,19 @@ table.faketable{border-collapse:collapse}
 </style>
 <link rel=stylesheet media='only screen and (max-device-width: 480px)' href=mobile.css>
 <link rel=prefetch href=index.html>
-<p>You are here: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#extensibility>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
-<h1><br>&#8220;“Distribuído,&#8221;<br>&#8220;Extensível,&#8221;<br>e Outras Palavras Bonitas</h1>
+<p>Você está aqui: <a href=index.html>Home</a> <span class=u>&#8227;</span> <a href=table-of-contents.html#extensibility>Dive Into <abbr>HTML5</abbr></a> <span class=u>&#8227;</span>
+<h1><br>&#8220;Distribuído&#8221;,<br>&#8220;Extensível,&#8221;<br>e Outras Palavras Bonitas</h1>
 <p id=toc>&nbsp;
 <p class=a>&#x2767;
 <h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-e.png alt=E width=107 height=105>xistem <a href=http://simon.html5.org/html5-elements>mais de 100 elementos</a> no <abbr>HTML5</abbr>. Alguns são <a href=semantics.html>puramente semânticos</a>, outros são <a href=canvas.html>apenas recipientes para <abbr>APIs</abbr> de script</a>. Ao longo <a href=past.html>da história do <abbr>HTML</abbr></a>, conhecedores dos padrões vêem discutindo sobre que elemenos devem ser incluídos na linguagem. O elemento <code>&lt;figure></code> deveria ser incluso no <abbr>HTML</abbr>? O elemento <code>&lt;person></code>? Que tal um elemento <code>&lt;rant></code>? Decisões são tomadas, especificações são escritas, atores atuam, implementadores implementam, e a web dá um grande passo à frente.
+<p class=f><img src=i/aoc-e.png alt=E width=107 height=105>xistem <a href=http://simon.html5.org/html5-elements>mais de 100 elementos</a> na <abbr>HTML5</abbr>. Alguns são <a href=semantics.html>puramente semânticos</a>, outros são <a href=canvas.html>apenas recipientes para <abbr>APIs</abbr> de script</a>. Ao longo <a href=past.html>da história da <abbr>HTML</abbr></a>, conhecedores dos padrões vêm discutindo sobre que elementos devem ser incluídos na linguagem. O elemento <code>&lt;figure></code> deveria ser incluso na <abbr>HTML</abbr>? O elemento <code>&lt;person></code>? Que tal um elemento <code>&lt;rant></code>? Decisões são tomadas, especificações são escritas, atores atuam, implementadores implementam, e a web dá um grande passo à frente.
 
-<p>Claro, <abbr>HTML</abbr> não pode agradar a todos. Nenhum padrão pode. Algumas ideias não atendem aos requisitos. Por exemplo, não existe o elemento <code>&lt;person></code> no <abbr>HTML5</abbr>. (Não há também o elemento <code>&lt;rant></code>, droga!) Nada impede de você usar o elemento <code>&lt;person></code> numa página web, porém <a href=http://html5.validator.nu/>não vai validar</a>, <a href=semantics.html#unknown-elements>não vai funcionar consistentemente nos navegadores</a>, e poderá conflitar com especificações futuras do <abbr>HTML</abbr>, se o elemento for adicionado mais à frente.
+<p>Claro, <abbr>HTML</abbr> não pode agradar a todos. Nenhum padrão pode. Algumas ideias não atendem aos requisitos. Por exemplo, não existe o elemento <code>&lt;person></code> na <abbr>HTML5</abbr> (Não há também o elemento <code>&lt;rant></code>, droga!). Nada impede de você usar o elemento <code>&lt;person></code> numa página web, porém <a href=http://html5.validator.nu/>não vai validar</a>, <a href=semantics.html#unknown-elements>não vai funcionar consistentemente nos navegadores</a>, e poderá conflitar com especificações futuras da <abbr>HTML</abbr>, se o elemento for adicionado mais à frente.
 
-<p>Certo, então se fazer seu próprio elemento não é a resposta, o que faz um escritor semanticamente correto? Houveram tentativas de estender as versões anteriores do <abbr>HTML</abbr>. O método mais popular são os <a href=http://microformats.org/>microformats</a>, que usam os atributos <code>class</code> e <code>rel</code> no <abbr>HTML</abbr>. Outra opção é <a href=http://www.w3.org/TR/rdfa-syntax/>RDFa</a>, que foi originamente projetado para ser usado no <a href=past.html#postscript><abbr>XHTML</abbr></a> mas <a href=http://www.w3.org/TR/rdfa-in-html/>também foi portado para o <abbr>HTML</abbr></a>.
+<p>Certo, então se fazer seu próprio elemento não é a resposta, o que faz um escritor semanticamente correto? Houveram tentativas de estender as versões anteriores da <abbr>HTML</abbr>. O método mais popular são os <a href=http://microformats.org/>microformats</a>, que usam os atributos <code>class</code> e <code>rel</code> na <abbr>HTML</abbr>. Outra opção é <a href=http://www.w3.org/TR/rdfa-syntax/>RDFa</a>, que foi originamente projetado para ser usado na <a href=past.html#postscript><abbr>XHTML</abbr></a> mas <a href=http://www.w3.org/TR/rdfa-in-html/>também foi portado para <abbr>HTML</abbr></a>.
 
-<p>Microformats e <abbr>RDFa</abbr> cada um tem seus pontos fortes e fracos. Eles usam abordagens complamente diferentes em direção ao mesmo objetivo: extender as páginas web com semântica adicional que não é parte do core da linguagem <abbr>HTML</abbr>. Eu não pretendo transformar este capítulo em um formato &#8220;flamewar&#8221;. (Isso definitivamente precisaria de um elemento <code>&lt;rant></code>!) Em vez disso, quero focar em uma terceira opção desenvolvida usando as lições aprendidas a partir de microformats e RDFa, e projetada para ser integra no próprio <abbr>HTML5</abbr>: microdata.
+<p>Microformats e <abbr>RDFa</abbr> cada um tem seus pontos fortes e fracos. Eles usam abordagens complamente diferentes em direção ao mesmo objetivo: extender as páginas web com semântica adicional que não é parte do núcleo da linguagem <abbr>HTML</abbr>. Eu não pretendo transformar este capítulo em um formato &#8220;flamewar&#8221;. (Isso definitivamente precisaria de um elemento <code>&lt;rant></code>!) Em vez disso, quero focar em uma terceira opção desenvolvida usando as lições aprendidas a partir de microformats e RDFa, e projetada para ser íntegra na própria <abbr>HTML5</abbr>: microdata.
 
 <p class=a>&#x2767;
 
@@ -47,25 +47,25 @@ table.faketable{border-collapse:collapse}
 	<div class=inner>
 		<blockquote>
 		<p>Microdata escreve o <abbr>DOM</abbr> com escopo dos pares de nome/valor a partir de vocabulários personalizados.
-		</blockquote>	
+		</blockquote>
 	</div>
 </div>
 
-<p>Sim, mas o que isso significa? Vamos começar do fim e vamos retrocedendo. Microdados gira em torno de vocabulários personalizados. Pense no &#8220;conjunto de todos os elementos da <abbr>HTML5</abbr>&#8221; como um vocabulário. Este vocabulário inclui elementos para representar <a href=semantics.html#new-elements>uma seção ou um artigo</a>, mas isto não inclui elementos para representar uma possa ou um evento. Se você deseja representar uma pessoa na página web, você vai precisar definir seu próprio vocabulário. Microdata deixa você fazer isso. Qualquer um pode definir um vocabulário microdata e começar a incorporar propriedades personalizadas em suas próprias páginas web.
+<p>Sim, mas o que isso significa? Vamos começar do fim e vamos retrocedendo. Microdados giram em torno de vocabulários personalizados. Pense no &#8220;conjunto de todos os elementos da <abbr>HTML5</abbr>&#8221; como um vocabulário. Este vocabulário inclui elementos para representar <a href=semantics.html#new-elements>uma seção ou um artigo</a>, mas isto não inclui elementos para representar uma possa ou um evento. Se você deseja representar uma pessoa na página web, você vai precisar definir seu próprio vocabulário. Microdata deixa você fazer isso. Qualquer um pode definir um vocabulário microdata e começar a incorporar propriedades personalizadas em suas próprias páginas web.
 
-<p>A próxima coisa a fazer para conhecer o microdata é que ele funciona com pares de nome/valor. Todo vocabulário microdata define um conjunto de propriedades nomeadas. Por exemplo, um vocabulário Person poderia definir propriedades como <code>nome</code> e <code>foto</code>. Para incluir um microdata específico na sua página web, você fornecer o nome da propriedade em um lugar específico. Dependendo de onde você declara o nome da propriedade, microdata tem regras sobre como extrair o valor da propriedade. (Mais sobre isto na próxima seção)
+<p>A próxima coisa a fazer para conhecer o microdata é que ele funciona com pares de nome/valor. Todo vocabulário microdata define um conjunto de propriedades nomeadas. Por exemplo, um vocabulário Pessoa poderia definir propriedades como <code>nome</code> e <code>foto</code>. Para incluir um microdata específico na sua página web, você pode fornecer o nome da propriedade em um lugar específico. Dependendo de onde você declara o nome da propriedade, microdata tem regras sobre como extrair o valor da propriedade. (Mais sobre isto na próxima seção)
 
-<p>Junto com propriedades nomeadas, microdados depende muito do conceito de  &#8220;escopo.&#8221; A maneira mais simples de pensar no escopo do microdata é pensar na relação pai-filho natural dos elementos no <abbr>DOM</abbr>. O elemento <a href=semantics.html#html-element><code>&lt;html></code></a> geralmente contém dois filhos, <a href=semantics.html#head-element><code>&lt;head></code></a> e <code>&lt;body></code>. O elemento <code>&lt;body></code> geralmente contém vários filhos, cada um deles pode ter seus próprios elementos filho. Por exemplo, sua página pode incluir um elemento  <code>&lt;h1></code> dentro de um elemento <code>&lt;hgroup></code> dentro de um elemento <a href=semantics.html#header-element><code>&lt;header></code></a> que está dentro de um elemento <code>&lt;body></code>. Uma tabale de informações pode conter <code>&lt;td></code> dentro de <code>&lt;tr></code> dentro de um <code>&lt;table></code> (Dentro do <code>&lt;body></code>). Microdata reutiliza a estrutura hierarquica do próprio <abbr>DOM</abbr> para fornecer uma forma de dizer &#8220;todas as propriedades dentro <em>deste</em> elemento são tomadas <em>deste</em> vocabulário.&#8221; Isso permite que você use mais de um vocabulário microdata na mesma página. Você pode até aninhar vocabulários microdata dentro de outros vocabulários, tudo pelo reuso da estrutura natural do <abbr>DOM</abbr>. (Irei mostrar vários exemplos de vocabulários aninhados ao longo deste capítulo)
+<p>Junto com propriedades nomeadas, microdados dependem muito do conceito de  &#8220;escopo.&#8221; A maneira mais simples de pensar no escopo do microdata é pensar na relação pai-filho natural dos elementos no <abbr>DOM</abbr>. O elemento <a href=semantics.html#html-element><code>&lt;html></code></a> geralmente contém dois filhos, <a href=semantics.html#head-element><code>&lt;head></code></a> e <code>&lt;body></code>. O elemento <code>&lt;body></code> geralmente contém vários filhos, cada um deles pode ter seus próprios elementos-filho. Por exemplo, sua página pode incluir um elemento  <code>&lt;h1></code> dentro de um elemento <code>&lt;hgroup></code> dentro de um elemento <a href=semantics.html#header-element><code>&lt;header></code></a> que está dentro de um elemento <code>&lt;body></code>. Uma tabela de informações pode conter <code>&lt;td></code> dentro de <code>&lt;tr></code> dentro de um <code>&lt;table></code> (Dentro do <code>&lt;body></code>). Microdata reutiliza a estrutura hierarquica do próprio <abbr>DOM</abbr> para fornecer uma forma de dizer &#8220;todas as propriedades dentro <em>deste</em> elemento são tomadas <em>deste</em> vocabulário.&#8221; Isso permite que você use mais de um vocabulário microdata na mesma página. Você pode até aninhar vocabulários microdata dentro de outros vocabulários, tudo pelo reuso da estrutura natural do <abbr>DOM</abbr>. (Irei mostrar vários exemplos de vocabulários aninhados ao longo deste capítulo)
 
-<p>Agora, já toquei no assunto <abbr>DOM</abbr>, mas deixe me dissertar sobre isso. Microdata se trata de aplicar semantica adicional para <em>informações que já são visíveis na sua página web</em>. Microdata não foi projetada para ser um formato de dados independente. Ele é um complemento ao <abbr>HTML</abbr>. Como você verá na próxima seção, microdata funciona melhor quando você já está usando o <abbr>HTML</abbr> corretamente, porém o vocabulário da <abbr>HTML</abbr> não é expressivo o bastante. Microdata é excelente para aprimorar a semântica da informação que já está no <abbr>DOM</abbr>. Se a informação que você está tentando tornar semântica não está no <abbr>DOM</abbr>, você deveria volar atrás e reavaliar se microdata é a solução correta.
+<p>Agora, já toquei no assunto <abbr>DOM</abbr>, mas deixe me dissertar sobre isso. Microdata se trata de aplicar semântica adicional para <em>informações que já são visíveis na sua página web</em>. Microdata não foi projetada para ser um formato de dados independente. Ele é um complemento da <abbr>HTML</abbr>. Como você verá na próxima seção, microdata funciona melhor quando você já está usando a <abbr>HTML</abbr> corretamente, porém o vocabulário da <abbr>HTML</abbr> não é expressivo o bastante. Microdata é excelente para aprimorar a semântica da informação que já está no <abbr>DOM</abbr>. Se a informação que você está tentando tornar semântica não está no <abbr>DOM</abbr>, você deveria voltar atrás e reavaliar se microdata é a solução correta.
 
-<p>Essa sentenção faz mais sentido agora? &#8220;Microdata escreve o <abbr>DOM</abbr> com escopo dos pares de nome/valora partir de vocabulários personalizados.&#8221; Espero que sim. Vamos ver isto na prática.
+<p>Essa sentença faz mais sentido agora? &#8220;Microdata escreve o <abbr>DOM</abbr> com escopo dos pares de nome/valor a partir de vocabulários personalizados.&#8221; Espero que sim. Vamos ver isto na prática.
 
 <p class=a>&#x2767;
 
 <h2 id=data-model>Modelo de Dados do Microdata</h2>
 
-<p>Definir seu próprio vocabulário microdata é fácil. Primeiro, você precisa de um namespace, que é apenas uma <abbr>URL</abbr>. O namespace <abbr>URL</abbr> pode realmente apontar para uma página web funcionando, apesar de não ser estritamente necessário. Vamos dizer que eu quero criar um vocabulário microdata que descreve uma pessoa. Se teho o domínio <code>data-vocabulary.org</code>, irei usar a <abbr>URL</abbr> <code>http://data-vocabulary.org/Person</code> como o namespace para meu vocabulário microdata. Essa é uma maneira fácil de criar um identificador global exclusivo: escolha uma <abbr>URL</abbr> em um domínio que você tem controle.
+<p>Definir seu próprio vocabulário microdata é fácil. Primeiro, você precisa de um namespace, que é apenas uma <abbr>URL</abbr>. O namespace <abbr>URL</abbr> pode realmente apontar para uma página web funcionando, apesar de não ser estritamente necessário. Vamos dizer que eu quero criar um vocabulário microdata que descreve uma pessoa. Se tenho o domínio <code>data-vocabulary.org</code>, irei usar a <abbr>URL</abbr> <code>http://data-vocabulary.org/Person</code> como o namespace para meu vocabulário microdata. Essa é uma maneira fácil de criar um identificador global exclusivo: escolha uma <abbr>URL</abbr> em um domínio que você tem controle.
 
 <p>Nesse vocabulário, eu preciso definir algumas propriedades nomeadas. Vamos começar com três propriedades básicas:
 
@@ -75,7 +75,7 @@ table.faketable{border-collapse:collapse}
 <li><code>url</code> (um link para um site associado a você, como um blog ou um perfil do Google)
 </ul>
 
-<p>Algumas dessas propriedades são <abbr>URLs</abbr>, outras são texto plano. Cada uma delas presta-se a forma natural de marcação, mesmo antes de você começar a pensar em microdata ou vocabulários ou outros enfeites. Imagine que você tem um perfil ou uma página &#8220;sobre&#8221;. Seu nome provalvelmente é marcado como um título, como um elemento <code>&lt;h1></code>. Sua foto provavelmente é um elemento <code>&lt;img></code>, já que você quer que as pessoas vejam. E quaisquer <abbr>URL</abbr>s associadas ao seu perfil provavelmente já esta marcada como hyperlinks, pois você precisa que as pessoas sejam aptas a clicar neles. Para fins de discussão, vamos dizer que todo seu perfil também é englobado em um elemento <code>&lt;section></code> para seperá-lo do resto do conteúdo da página. Assim:
+<p>Algumas dessas propriedades são <abbr>URLs</abbr>, outras são texto plano. Cada uma delas se presta a forma natural de marcação, mesmo antes de você começar a pensar em microdata ou vocabulários ou outros enfeites. Imagine que você tem um perfil ou uma página &#8220;sobre&#8221;. Seu nome provalvelmente é marcado como um título, como um elemento <code>&lt;h1></code>. Sua foto provavelmente é um elemento <code>&lt;img></code>, já que você quer que as pessoas vejam. E quaisquer <abbr>URL</abbr>s associadas ao seu perfil provavelmente já esta marcada como hyperlinks, pois você precisa que as pessoas sejam aptas a clicar neles. Para fins de discussão, vamos dizer que todo seu perfil também é englobado em um elemento <code>&lt;section></code> para separá-lo do resto do conteúdo da página. Assim:
 
 <p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> Minhas informações
 <pre><code>&lt;section>
@@ -101,7 +101,7 @@ table.faketable{border-collapse:collapse}
 
 <pre><code>  &lt;section <mark>itemscope</mark> <mark>itemtype="http://data-vocabulary.org/Person"</mark>></code></pre>
 
-<p>Seu nome é o primeiro pedaço de informação dentro do elemento <code>&lt;section></code>. Ele está englobado em um elemento <code>&lt;h1></code>. O elemento <code>&lt;h1></code> não tem nenhum tratamento especial no <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, por isso se enquadra na regra &#8220;demais elementos&#8221; onde a pripriedade microdata value é simplismente conteúdo textual de um elemento. (Isso funcionaria igualmente bem se o seu nome foi envolvido em um elemento <code>&lt;p></code>, <code>&lt;div></code>, ou <code>&lt;span></code>.)
+<p>Seu nome é o primeiro pedaço de informação dentro do elemento <code>&lt;section></code>. Ele está englobado em um elemento <code>&lt;h1></code>. O elemento <code>&lt;h1></code> não tem nenhum tratamento especial no <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, por isso se enquadra na regra &#8220;demais elementos&#8221; onde a propriedade microdata value é simplesmente conteúdo textual de um elemento. (Isso funcionaria igualmente bem se o seu nome for envolvido em um elemento <code>&lt;p></code>, <code>&lt;div></code>, ou <code>&lt;span></code>.)
 
 <pre><code>  &lt;h1 <mark>itemprop="name"</mark>>Mark Pilgrim&lt;/h1></code></pre>
 
@@ -115,7 +115,7 @@ table.faketable{border-collapse:collapse}
 
 <p>Traduzindo, isto quer dizer &#8220;aqui está a propriedade <code>photo</code> do vocabulário <code>http://data-vocabulary.org/Person</code>, e o valor da propriedade é <code>http://www.example.com/photo.jpg</code>.&#8221;
 
-<p>Finalmente, a propriedade <code>url</code> também é uma <abbr>URL</abbr>. De acordo com o <a href=#property-values>modelo de dados microdata da<abbr>HTML5</abbr></a>, o &#8220;value&#8221; de um elemento <code>&lt;a></code> é seu atributo <code>href</code>. E mais uma vez, isto funciona perfeitamente com a sua marcação existente. Tudo que você precisa fazer é dizer que seu elemento <code>&lt;a></code> existente é a propriedade <code>url</code>:
+<p>Finalmente, a propriedade <code>url</code> também é uma <abbr>URL</abbr>. De acordo com o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, o &#8220;value&#8221; de um elemento <code>&lt;a></code> é seu atributo <code>href</code>. E mais uma vez, isto funciona perfeitamente com a sua marcação existente. Tudo que você precisa fazer é dizer que seu elemento <code>&lt;a></code> existente é a propriedade <code>url</code>:
 
 <pre><code>  &lt;a <mark>itemprop="url"</mark> href="http://diveintomark.org/">dive into mark&lt;/a></code></pre>
 
@@ -130,13 +130,13 @@ table.faketable{border-collapse:collapse}
     &lt;A href=# onclick=goExternalLink()>http://diveintomark.org/&lt;/A>
 &lt;/TABLE></code></pre>
 
-<p>Para marcar a propriedade <code>name</code>, apenas adicione um atributo <code>itemprop</code> na celula da tabela que contém o nome. Celulas de tabela não têm regras especiais no valor da propriedade microdata table, então elas pegam o valor padrão, &#8220;a propriedade microdata é o conteúdo textual.&#8221;
+<p>Para marcar a propriedade <code>name</code>, apenas adicione um atributo <code>itemprop</code> na célula da tabela que contém o nome. Células de tabela não têm regras especiais no valor da propriedade microdata table, então elas pegam o valor padrão, &#8220;a propriedade microdata é o conteúdo textual.&#8221;
 
 <pre><code>  &lt;TR>&lt;TD>Nome&lt;TD <mark>itemprop="name"</mark>>Mark Pilgrim</code></pre>
 
-<p>Adicionar a propriedade <code>url</code> parece complicado. Essa marcação não usa o elemento <code>&lt;a></code> corretamente. Em vez de colocar o destino do link no atributo <code>href</code>, não tem nada de útil no atributo <code>href</code> e usa Javascript no atributo <code>onclick</code> para chamar a função (não visível) que extrai a <abbr>URL</abbr> e navega até ela. Para extra &#8220;caralho, pare de fazer isso por favor&#8221; pontos de bônus, vamos supor que a função abre também o link numa minúscula jánela popup sem barra de rolagem. Não foi a diversão da internet do século passado?
+<p>Adicionar a propriedade <code>url</code> parece complicado. Essa marcação não usa o elemento <code>&lt;a></code> corretamente. Em vez de colocar o destino do link no atributo <code>href</code>, não tem nada de útil no atributo <code>href</code> e usa Javascript no atributo <code>onclick</code> para chamar a função (não visível) que extrai a <abbr>URL</abbr> e navega até ela. Para extra &#8220;caralho, pare de fazer isso por favor&#8221; pontos de bônus, vamos supor que a função abre também o link numa minúscula janela popup sem barra de rolagem. Não foi a diversão da internet do século passado?
 
-<p>De qualquer forma, você ainda pode converter isso em propriedade microdata, você precisa apenas ser um pouco criativo. Usar o elemento <code>&lt;a></code> diretamente está fora de questão. O destino do link não está no atributo <code>href</code>, e não há forma de passar por cima da regra que diz &#8220;em um elemento <code>&lt;a></code>, procure o valor da propriedade microdata no atributo <code>href</code>.&#8221; Mas você <em>pode</em> adicionar um elemento emglobador em torno de toda a bagunça, e usar ele para adicionar a propriedade microdata <code>url</code>.
+<p>De qualquer forma, você ainda pode converter isso em propriedade microdata, você precisa apenas ser um pouco criativo. Usar o elemento <code>&lt;a></code> diretamente está fora de questão. O destino do link não está no atributo <code>href</code>, e não há forma de passar por cima da regra que diz &#8220;em um elemento <code>&lt;a></code>, procure o valor da propriedade microdata no atributo <code>href</code>.&#8221; Mas você <em>pode</em> adicionar um elemento englobador em torno de toda a bagunça, e usar ele para adicionar a propriedade microdata <code>url</code>.
 
 <p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> Isto é o que você ganha por subverter a HTML
 <pre><code>&lt;TABLE itemscope itemtype="http://data-vocabulary.org/Person">
@@ -153,7 +153,7 @@ table.faketable{border-collapse:collapse}
 
 <p class=a>&#x2767;
 
-<h2 id=person>Marcando &#8220;People&#8221;</h2>
+<h2 id=person>Marcando &#8220;Pessoa&#8221;</h2>
 
 <p>A propósito, os exemplos iniciais na seção anterior não foram completamente formados. Existe realmente um vocabulário microdata para marcar informação sobre pessoas, e ele é realmente assim fácil. Vamos dar uma olhada.
 
@@ -172,7 +172,7 @@ table.faketable{border-collapse:collapse}
     &lt;dd>Mark Pilgrim&lt;/dd>
 
     &lt;dt>Cargo&lt;/dt>
-    &lt;dd>Defensor do Desenvolvedor na Google, Inc.&lt;/dd>
+    &lt;dd>Developer Advocate na Google, Inc.&lt;/dd>
   
     &lt;dt>Endereço Postal&lt;/dt>
     &lt;dd>
@@ -225,7 +225,7 @@ table.faketable{border-collapse:collapse}
 
 <p>Onde está o valor da propriedade microdata? Já está lá, no atributo <code>src</code>. Se você chamar novamente no <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, o &#8220;valor&#8221; de um elemento <code>&lt;img></code> é seu atributo <code>src</code>. Cada atributo <code>&lt;img></code> tem um atributo <code>src</code> &mdash; caso contrário, seria apenas uma imagem quebrada &mdash; e o <code>src</code> é sempre uma <abbr>URL</abbr>. Viu? Se você está usando <abbr>HTML</abbr> corretamente, microdata é fácil.
 
-<p>Além disso, esse elemento <code>&lt;img></code> não está sozinho na página. Ele é um element filho de um elemento <code>&lt;section></code>, aquele que acabamos de declarar com o atributo <code>itemscope</code>. Microdata reusa o relacionamento pai-filho dos elementos na página para definir o escopo das propriedades microdata. Em linguagem clara, estamos dizendo, &#8220;Este é elemento <code>&lt;section></code> representa uma pessoa. Qualquer propriedade microdata você venha encontrar nos filhos do elemento <code>&lt;section></code> são propriedades desta pessoa.&#8221; Se isso ajuda, você pode pensar que o elemento <code>&lt;section></code> tem o assunto de uma frase. O atributo <code>itemprop</code> representa o verbo da frase, algo como &#8220;é fotografada em.&#8221; O valor da propriedade microdata representa o objeto da frase.
+<p>Além disso, esse elemento <code>&lt;img></code> não está sozinho na página. Ele é um elemento filho de um elemento <code>&lt;section></code>, aquele que acabamos de declarar com o atributo <code>itemscope</code>. Microdata reusa o relacionamento pai-filho dos elementos na página para definir o escopo das propriedades microdata. Em linguagem clara, estamos dizendo, &#8220;Este é elemento <code>&lt;section></code> representa uma pessoa. Qualquer propriedade microdata você venha encontrar nos filhos do elemento <code>&lt;section></code> são propriedades desta pessoa.&#8221; Se isso ajuda, você pode pensar que o elemento <code>&lt;section></code> tem o assunto de uma frase. O atributo <code>itemprop</code> representa o verbo da frase, algo como &#8220;é fotografada em.&#8221; O valor da propriedade microdata representa o objeto da frase.
 
 <blockquote>
 <p>Esta pessoa [explícito, do <code>&lt;section itemscope itemtype="..."></code>]
@@ -236,7 +236,7 @@ table.faketable{border-collapse:collapse}
 
 <p>O assunto precisa ser definido apenas uma vez, colocando os atributos <code>itemscope</code> e <code>itemtype</code> no elemento externo <code>&lt;section></code>. O verbo é definido colocando o atributo <code>itemprop="photo"</code> no elemento <code>&lt;img></code>. O objeto da sentença não precisa de nenhuma marcação especial, pois o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a> diz que a propriedade valor de um elemento <code>&lt;img></code> é o seu atributo <code>src</code>.
 
-<p>Passando para o próximo pedaço de marcação, vemos um título <code>&lt;h1></code> e o começo de uma lista <code>&lt;dl></code>. Nem o <code>&lt;h1></code> nem o <code>&lt;dl></code> precisa ser marcado com microdata. Não é toda parte do <abbr>HTML</abbr> que precisa ser uma propriedade microdata. Microdata trata-se das próprias propriedades, não da marcação ou cabeçalhos em torno das propriedades. Esse  <code>&lt;h1></code> não é uma propriedade; é apenas um título. Semelhantemente, o code>&lt;dt></code> que diz &#8220;Nome&#8221; não é uma propriedade; é apenas um rótulo.
+<p>Passando para o próximo pedaço de marcação, vemos um título <code>&lt;h1></code> e o começo de uma lista <code>&lt;dl></code>. Nem o <code>&lt;h1></code> nem o <code>&lt;dl></code> precisa ser marcado com microdata. Não é toda parte da <abbr>HTML</abbr> que precisa ser uma propriedade microdata. Microdata trata-se das próprias propriedades, não da marcação ou cabeçalhos em torno das propriedades. Esse  <code>&lt;h1></code> não é uma propriedade; é apenas um título. Semelhantemente, o code>&lt;dt></code> que diz &#8220;Nome&#8221; não é uma propriedade; é apenas um rótulo.
 
 <p class="legend top" style="margin-left:8em"><span class=arrow>&#x21b6;</span> Chato
 <p class="legend left" style="margin-top:2.2em">Chato <span class=arrow>&#x21dd;</span>&nbsp;</p>
@@ -257,21 +257,21 @@ table.faketable{border-collapse:collapse}
 <p id=title-and-affiliation>As próximas duas propriedades são um pouco complicado. Essa é a marcação, pré-microdata:
 
 <pre><code>    &lt;dt>Cargo&lt;/dt>
-    &lt;dd>Defensor do Desenvolvedor na Google, Inc.&lt;/dd></code></pre>
+    &lt;dd>Developer Advocate na Google, Inc.&lt;/dd></code></pre>
 
-<p>Se você olhar na definição do vocabulário Pessoa, o texto &#8220;Defensor do Desenvolvedor na Google, Inc.&#8221; na verdade engloba <em>duas</em> propriedades: <code>title</code> (&#8220;Defensor do desenvolvedor&#8221;) e <code>affiliation</code> (&#8220;Google, Inc.&#8221;). Como você pode expressar isso em microdata? A resposta curta é, você não pode. Microdata não tem uma forma de quebrar textos corridos em propriedades separadas. Você não pode dizer &#8220;os primeiros 18 caracteres desse texto é uma propriedade de microdata, e os 12 caracteres finais desse texto são outra propriedade microdata.&#8221;
+<p>Se você olhar na definição do vocabulário Pessoa, o texto &#8220;Developer Advocate na Google, Inc.&#8221; na verdade engloba <em>duas</em> propriedades: <code>title</code> (&#8220;Developer Advocate&#8221;) e <code>affiliation</code> (&#8220;Google, Inc.&#8221;). Como você pode expressar isso em microdata? A resposta curta é, você não pode. Microdata não tem uma forma de quebrar textos corridos em propriedades separadas. Você não pode dizer &#8220;os primeiros 18 caracteres desse texto é uma propriedade de microdata, e os 12 caracteres finais desse texto são outra propriedade microdata.&#8221;
 
-<p>Mas nem tudo está perdido. Imagine que você gostaria de estilizar o texto &#8220;Defensor do Desenvolvedor&#8221; em uma fonte diferente do texto  &#8220;Google, Inc.&#8221; <abbr>CSS</abbr> também não consegue fazer isso. Então o que você faria? Primeiramente você precisaria englobar os diferentes pedaços de texto em elementos &#8220;fictícios&#8221;, como <code>&lt;span></code>, em seguida aplicar regras <abbr>CSS</abbr> diferentes para cada elemento <code>&lt;span></code>.
+<p>Mas nem tudo está perdido. Imagine que você gostaria de estilizar o texto &#8220;Developer Advocate&#8221; em uma fonte diferente do texto  &#8220;Google, Inc.&#8221; <abbr>CSS</abbr> também não consegue fazer isso. Então o que você faria? Primeiramente você precisaria englobar os diferentes pedaços de texto em elementos &#8220;fictícios&#8221;, como <code>&lt;span></code>, em seguida aplicar regras <abbr>CSS</abbr> diferentes para cada elemento <code>&lt;span></code>.
 
-<p>Essa tecnica também é útil para microdata. Existem dois pedaços distintos de informação aqui: um <code>title</code> e um <code>affiliation</code>. Se você engloba cada pedaço em um elemento <code>&lt;span></code> &#8220;fictício&#8221;, você pode declarar que cada <code>&lt;span></code> é uma propriedade microdata separada.
+<p>Essa técnica também é útil para microdata. Existem dois pedaços distintos de informação aqui: um <code>title</code> e um <code>affiliation</code>. Se você engloba cada pedaço em um elemento <code>&lt;span></code> &#8220;fictício&#8221;, você pode declarar que cada <code>&lt;span></code> é uma propriedade microdata separada.
 
 <pre><code>    &lt;dt>Cargo&lt;/dt>
-    &lt;dd>&lt;span <mark>itemprop="title"</mark>>Defensor do Desenvolvedor&lt;/span> na
+    &lt;dd>&lt;span <mark>itemprop="title"</mark>>Developer Advocate&lt;/span> na
         &lt;span <mark>itemprop="affiliation"</mark>>Google, Inc.&lt;span>&lt;/dd></code></pre>.
 
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/person.html>person.html</a>, depois: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
 
-<p>Tada! O título &#8220;dessa pessoa é 'Defensor do Desenvolvedor.' Essa pessoa é contratada pela Google, Inc.&#8221; Duas sentenças, duas propriedades microdata. Um pouco mais de marcação, mas uma compensação que vale a pena.
+<p>Tada! O título &#8220;dessa pessoa é 'Developer Advocate.' Essa pessoa é contratada pela Google, Inc.&#8221; Duas sentenças, duas propriedades microdata. Um pouco mais de marcação, mas uma compensação que vale a pena.
 
 <p id=address>A mesma técnica é útil para marcar logradouro. O vocabulário Person define uma propriedade <code>address</code>, que é um próprio item microdata. Isso significa que o endenreço tem seu próprio vocabulário  (<code>http://data-vocabulary.org/Address</code>) e define suas próprias propriedades. O vocabulário Address define 5 propriedades: <code>street-address</code>, <code>locality</code>, <code>region</code>, <code>postal-code</code>, e <code>country-name</code>.
 
@@ -300,7 +300,7 @@ table.faketable{border-collapse:collapse}
         <mark>itemtype="http://data-vocabulary.org/Address"</mark>></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/person.html>person.html</a>, depois: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>]
 
-<p>Vemos isso tudo antes, porém para itens de alto nível. Um elemento <code>&lt;section></code> define <code>itemtype</code> e <code>itemscope</code>, e todos elementos dentro do elemento <code>&lt;section></code> que define as propriedades microdata são &#8220;escopadas&#8221; dentro desse vocabulário específico. Mas esse é o primeiro caso que vemos escopos <em>aninhados</em> &mdash; definir um novo <code>itemtype</code> e <code>itemscope</code>  (no elemento <code>&lt;dd></code>) dentro de um já existente (no elemento <code>&lt;section></code>). Esse escopo aninhado funciona exatamente como o <abbr>DOM</abbr> <abbr>HTML</abbr>. O elemento <code>&lt;dd></code> tem um certo número de elementos filho, todos que estã no escopo do vocabulário definido no elemento <code>&lt;dd></code>. Um vez que o elemento <code>&lt;dd></code> é fechado com uma tag <code>&lt;/dd></code> correspondente, o escopo reverte para o vocabulário definido pelo elemento pai (<code>&lt;section></code>, nesse caso).
+<p>Vemos isso tudo antes, porém para itens de alto nível. Um elemento <code>&lt;section></code> define <code>itemtype</code> e <code>itemscope</code>, e todos elementos dentro do elemento <code>&lt;section></code> que define as propriedades microdata são &#8220;escopadas&#8221; dentro desse vocabulário específico. Mas esse é o primeiro caso que vemos escopos <em>aninhados</em> &mdash; definir um novo <code>itemtype</code> e <code>itemscope</code>  (no elemento <code>&lt;dd></code>) dentro de um já existente (no elemento <code>&lt;section></code>). Esse escopo aninhado funciona exatamente como o <abbr>DOM</abbr> <abbr>HTML</abbr>. O elemento <code>&lt;dd></code> tem um certo número de elementos filho, todos que estã no escopo do vocabulário definido no elemento <code>&lt;dd></code>. Uma vez que o elemento <code>&lt;dd></code> é fechado com uma tag <code>&lt;/dd></code> correspondente, o escopo reverte para o vocabulário definido pelo elemento pai (<code>&lt;section></code>, nesse caso).
 
 <p>As propriedades do Address sofrem o mesmo problema que nós encontramos com <a href=#title-and-affiliation>as propriedades <code>title</code> e <code>affiliation</code></a>. Existe apenas um longo texto corrido, porém nós queremos quebrá-lo em cinco propriedades microdata separadas. A solução é a mesma: englobe cada pedaço destinto de informação é um elemento <code>&lt;span></code> fictício, em seguida declare propriedades microdata em cada elemento <code>&lt;span></code>.
 
@@ -336,7 +336,7 @@ Suite 415</mark>
 </div>
 </div>
 
-<p id=person-url>Não há de mais nessa página &#8220;sobre&#8221;: uma lista de <abbr>URLs</abbr>. O vocabulário Person tem a a propriedade pra isso, chamada de <code>url</code>. A propriedade <code>url</code> pode ser qualquer coisa, de verdade. (Bem, ela deve ser uma <abbr>URL</abbr>, mas você provavelmente já adivinhou isso.) O que quero dizer é que a propriedade <code>url</code> é vagamente definida. A propriedade pode ser qualquer tipo de <abbr>URL</abbr> que você queira associar a uma pessoa: um blog, uma galeria de fotos, ou um perfil em um outro site como Facebook ou Twitter.
+<p id=person-url>Não há nada de mais nessa página &#8220;sobre&#8221;: uma lista de <abbr>URLs</abbr>. O vocabulário Person tem a propriedade para isso, chamada de <code>url</code>. A propriedade <code>url</code> pode ser qualquer coisa, de verdade. (Bem, ela deve ser uma <abbr>URL</abbr>, mas você provavelmente já adivinhou isso.) O que quero dizer é que a propriedade <code>url</code> é vagamente definida. A propriedade pode ser qualquer tipo de <abbr>URL</abbr> que você queira associar a uma pessoa: um blog, uma galeria de fotos, ou um perfil em um outro site como Facebook ou Twitter.
 
 <p>Outra coisa importante de notar aqui é que uma única pessoa pode ter várias propriedades <code>url</code>. Tecnicamente, qualquer propriedade pode aparecer mais de uma vez, mas até agora, não tiramos proveito disso. Por exemplo, poderíamos ter duas propriedades <code>photo</code>, cada uma apontando para uma <abbr>URL</abbr> de imagem diferente. Aqui, gostaria de listar quatro <abbr>URLs</abbr> diferentes: meu blog, meu perfil do Google, meu perfil de usuário no Reddit, e minha conta no Twitter. Na <abbr>HTML</abbr>, está uma lista de links: quatro elementos <code>&lt;a></code>, cada um em seu próprio elemento <code>&lt;li></code>. Em microdata, cada elemento <code>&lt;a></code> leva um atributo <code>itemprop="url"</code>.
 
@@ -925,14 +925,14 @@ Trecho da página aparecerá aqui..</span><br>
 
 <p class=a>&#x2767;
 
-<p>This has been &#8216;&#8220;Distributed,&#8221; &#8220;Extensibility,&#8221; &amp; Other Fancy Words.&#8217; The <a href=table-of-contents.html>full table of contents</a> has more if you&#8217;d like to keep reading.
+<p>Isso foi &#8220;Distribuído&#8221;, &#8220;Extensível&#8221; e Outras Palavras Bonitas; Consulte o <a href=table-of-contents.html>Sumário</a>, caso queira continuar com a leitura.
 
-<div class=pf>
-<h4>Did You Know?</h4>
-<div class=moneybags>
-<blockquote><p>In association with Google Press, O&#8217;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &#8220;HTML5: Up &amp; Running,&#8221; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &#8220;HTML5: Up &amp; Running&#8221; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&#8217;Reilly</a>. You&#8217;ll get a book, and I&#8217;ll get a buck. I do not currently accept direct donations.
-</blockquote>
+<div class="pf">
+<h4>Você sabia?</h4>
+<div class="moneybags">
+<blockquote><p>Em associação a <span lang="en">Google Press</span>, O&#8217;Reilly está distribuindo este livro em variados formatos, incluindo papel, ePub, Mobi, <abbr>DRM</abbr>-free e <abbr>PDF</abbr>. A edição paga é chamada <span lang="en">“HTML5: Up &amp; Running”</span> e está disponível agora. Este capítulo está incluído na versão paga.
+</p><p>Se você gostou deste capítulo e quer mostrar sua apreciação, basta <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">comprar o livro “<abbr>HTML5</abbr>: Up &amp; Running” com esse link afiliado</a> ou <a href="http://oreilly.com/catalog/9780596806033">comprar a edição eletrônica diretamente da O&#8217;Reilly</a>. Você vai ganhar um livro, e eu vou ganhar um trocado. Atualmente, não aceito doações diretas.
+</p></blockquote>
 </div>
 </div>
 

@@ -89,17 +89,17 @@ body{counter-reset:h1 4}
 
 <p class=ss><img src=i/openclipart.org_media_files_johnny_automatic_4145.png width=312 height=300 alt="man drawing in front of a mirror">
 
-<p>Todo canvas possui um <dfn>contexto</dfn> de desenho, que é onde toda diversão acontece. Uma vez tendo encontradoo elemento <code>&lt;canvas></code> no <abbr>DOM</abbr> (ao usar <code>document.getElementById()</code> ou qualquer método que você queira), você chama seu método <code>getContext()</code>. Você <strong>deve</strong> passar a string <code>"2d"</code> para o método <code>getContext()</code>.
+<p>Todo canvas possui um <dfn>contexto</dfn> de desenho, que é onde toda diversão acontece. Uma vez tendo encontrado o elemento <code>&lt;canvas></code> no <abbr>DOM</abbr> (ao usar <code>document.getElementById()</code> ou qualquer método que você queira), você chama seu método <code>getContext()</code>. Você <strong>deve</strong> passar a string <code>"2d"</code> para o método <code>getContext()</code>.
 
 <blockquote class=note>
 <p><span>&#x261E;</span>P: Existe um canvas 3-D?<br>
-R: Ainda não. Fornecedores têm experimentado suas próprias <abbr>API</abbr>s para canvas tridimensionais, mas nenhuma se tornou padrão ainda. A especificação da <abbr>HTML5</abbr> nota, &#8220;Uma futura versão dessa especificação irá provavelmente definir um contexto 3d.&#8221;
+R: Ainda não. Fornecedores têm experimentado suas próprias <abbr>API</abbr>s para canvas tridimensionais, mas nenhuma se tornou padrão ainda. De acordo com a especificação da <abbr>HTML5</abbr>, &#8220;Uma futura versão dessa especificação irá provavelmente definir um contexto 3d.&#8221;
 </blockquote>
 
 <p>Então você tem elemento <code>&lt;canvas></code>, e tem seu contexto desenho. O contexto de desenho é onde todos métodos e propriedades do desenho são definidos. Há um bando de propriedades e métodos dedicados ao desenho de retângulos:
 
 <ul>
-<li>A propriedade <code>fillStyle</code> pode ser uma cor, padrão ou degradê do <abbr>CSS</abbr>. (Mais sobre degradês mais em breve.) O padrão para o <code>fillStyle</code> é preto sólido, mas você pode definir o que quiser. Cada contexto de desenho guarda suas próprias propriedades enquanto a página estiver aberta, a não ser que você faça alguma coisa para resetar isso.
+<li>A propriedade <code>fillStyle</code> pode ser uma cor, padrão ou degradê do <abbr>CSS</abbr>. (Mais sobre degradês em breve.) O padrão para o <code>fillStyle</code> é preto sólido, mas você pode definir o que quiser. Cada contexto de desenho guarda suas próprias propriedades enquanto a página estiver aberta, a não ser que você faça alguma coisa para resetar isso.
 <li><code>fillRect(x, y, largura, altura)</code> desenha um retângulo preenchido com o fillStyle atual.
 <li>A propriedade <code>strokeStyle</code> é como <code>fillStyle</code> &mdash; pode ser uma cor, um padrão ou um degradê.
 <li><code>strokeRect(x, y, largura, altura)</code> desenha um retângulo com o strokeStyle atual. <code>strokeRect</code> não preenche o meio, apenas desenha as bordas.
@@ -124,7 +124,7 @@ R: Sim. Definindo a altura e a largura de um elemento <code>&lt;canvas></code> i
 var b_context = b_canvas.getContext("2d");
 <mark>b_context.fillRect(50, 25, 150, 100);</mark></code></pre>
 
-<p class=clear>Chamando o método <code>fillRect()</code> desenhamos um retângulo e o preenche com o estilo de preenchimento atual, no qual é preto até você alterar isso. Um retângulo é limitado por seu canto superior esquerdo (50,&nbsp;25), sua largura (150), e sua altura (100). Para ter uma imagem melhor de como isso funciona, vamos ver o sistema de coordenadas desse canvas.
+<p class=clear>Chamando o método <code>fillRect()</code> desenha-se um retângulo e o preenche com o estilo de preenchimento atual, no qual é preto até você alterar isso. Um retângulo é limitado por seu canto superior esquerdo (50,&nbsp;25), sua largura (150), e sua altura (100). Para ter uma visão melhor de como isso funciona, vamos ver o sistema de coordenadas desse canvas.
 
 <p class=a>&#x2767;
 
@@ -151,7 +151,7 @@ var b_context = b_canvas.getContext("2d");
 <li>um ponto no canto superior esquerdo, e outro no canto inferior direito
 </ul>
 
-<p>Primeiro temos que definir o elemento <code>&lt;canvas></code>. O elemento <code>&lt;canvas></code> define a largura (<code>width</code>) e a altura (<code>height</code>), e o identificador (<code>id</code>) para que possamos encontrá-lo mais tarde.
+<p>Primeiro temos que definir o elemento <code>&lt;canvas></code>. O elemento <code>&lt;canvas></code> define a largura (<code>width</code>), a altura (<code>height</code>) e o identificador (<code>id</code>) para que possamos encontrá-lo mais tarde.
 
 <pre><code>&lt;canvas id="c" width="500" height="375">&lt;/canvas></code></pre>
 
@@ -217,7 +217,7 @@ var context = c_canvas.getContext("2d");</code></pre>
 <h4>Pergunte ao Professor Marcação</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>P: Por quê você começou com <var>x</var> e <var>y</var> com <code>0.5</code>? Por quê não <code>0</code>?<br>
+<p><span>&#x261E;</span>P: Por que você começou com <var>x</var> e <var>y</var> com <code>0.5</code>? Por que não <code>0</code>?<br>
 R: Imagine cada pixel como um grande quadrado. As coordenadas inteiras (0, 1, 2&hellip;) são arestas desse quadrado. Se você desenhar uma linha com uma unidade de largura entre coordenadas inteiras, ele irá sobrepor lados opostos do quadrado de pixel, e a linha resultante será desenhada com dois pixels de largura. Para desenhar uma linha que tenha apenas um pixel de largura, você precisa mudar as coordenadas para 0.5 perpendicular à direção da linha.
 
 <p>Por exemplo, se você tentar desenhar a linha de <code>(1,&nbsp;0)</code> para <code>(1,&nbsp;3)</code>, o navegador irá desenhar a linha cobrindo 0.5 pixels da tela em ambos os lados <code>x=1</code>. A tela não consegue exibir meio pixel, então irá expandir a linha para cobrir um total de dois pixels:
@@ -241,7 +241,7 @@ context.moveTo(495, 35);
 context.lineTo(500, 40);
 context.lineTo(495, 45);</code></pre>
 
-<p>A flecha vertical é praticamente igual. Já que a flecha vertical utiliza a mesma cor que a flecha horizontal, nós <strong>não</strong> vamos precisar criar um novo caminho. As duas flechas farão parte um mesmo caminho.
+<p>A flecha vertical é praticamente igual. Já que a flecha vertical utiliza a mesma cor que a flecha horizontal, nós <strong>não</strong> vamos precisar criar um novo caminho. As duas flechas farão parte de um mesmo caminho.
 
 <pre style="float:left"><code>context.moveTo(60, 0);
 context.lineTo(60, 153);
@@ -252,7 +252,7 @@ context.lineTo(60, 375);
 context.lineTo(55, 370);</code></pre>
 <p class="legend right" style="margin-top:4em"><span class=arrow>&nbsp;&#x219c;</span> Não é um novo caminho</p>
 
-<p class=clear>Eu disse que essas flechas serão pretas, mas o <code>strokeStyle</code> continua esbranquiçado. (O <code>fillStyle</code> e o <code>strokeStyle</code> não são resetados quando você começa um novo caminho.) Tudo bem, porque nós vamos apenas rodar uma série de métodos &#8220;lápis&#8221;. Mas antes de desenhar de verdade, na &#8220;tinta,&#8221; nós vamos precisar definir o <code>strokeStyle</code> para preto. Caso contrário, essas duas flechas ficarão esbranquiçadas, e nós vamos dificilmente ser capazes de vê-las! As linhas seguintes mudam a cor para preto e desenham as linhas no canvas:
+<p class=clear>Eu disse que essas flechas serão pretas, mas o <code>strokeStyle</code> continua esbranquiçado. (O <code>fillStyle</code> e o <code>strokeStyle</code> não são resetados quando você começa um novo caminho.) Tudo bem, porque nós vamos apenas rodar uma série de métodos &#8220;lápis&#8221;. Mas antes de desenhar de verdade, na &#8220;tinta&#8221;, nós vamos precisar definir o <code>strokeStyle</code> para preto. Caso contrário, essas duas flechas ficarão esbranquiçadas, e nós dificilmente vamos ser capazes de vê-las! As seguintes linhas mudam a cor para preto e desenham as linhas no canvas:
 
 <pre><code>context.strokeStyle = "#000";
 context.stroke();</code></pre>
@@ -275,7 +275,7 @@ context.stroke();</code></pre>
 <tr><td colspan=7 style="text-align:left">&dagger; Mozilla Firefox 3.0 necessita uma biblioteca compatível.
 </table>
 
-<p>Em adição ao desenho de <a href=#paths>linhas com canvas</a>, você também pode desenhar texto com um canvas. Diferentemente do texto em torno de uma página web, não há box model. Isso significa que nenhuma das técnicas familiares de layout em CSS são válidas: sem floats, sem margins, sem padding, sem word wrapping. (Talvez você pensa que isso é uma boa coisa!) Você pode definir alguns poucos atributos de fonte, depois pode pegar um ponto no canvas e começar a desenhar seu texto ali.
+<p>Em adição ao desenho de <a href=#paths>linhas com canvas</a>, você também pode desenhar texto com um canvas. Diferentemente do texto em torno de uma página web, não há box model. Isso significa que nenhuma das técnicas familiares de layout em CSS são válidas: sem floats, sem margins, sem padding, sem word wrapping. (Talvez você pense que isso é uma boa coisa!) Você pode definir alguns poucos atributos de fonte, depois pode pegar um ponto no canvas e começar a desenhar seu texto ali.
 
 <p>Os atributos de fonte a seguir estão disponíveis no <a href=#shapes>contexto do desenho</a>:
 
@@ -288,13 +288,13 @@ context.stroke();</code></pre>
 <p><code>textBaseline</code> é complicado, porque texto é complicado (Inglês não é, mas você pode desenhar qualquer caracter Unicode que queira no  canvas, e Unicode é complicado). A especificação da <abbr>HTML5</abbr> <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-textbaseline>explica os diferentes textBaselines</a>:
 
 <blockquote cite=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-textbaseline>
-<p>A parte superior do quadrado 'em' é fica aproximadamente na parte superior dos glifos em uma fonte, a linha de base é pendurada no lugar onde alguns glifos como <span class=u>आ</span> são âncoradas, o meio é metade do caminho entre a parte superior do quadrado 'em' e a base do quadrado 'em', a linha de base alfabética é onde os caracteres como <span class=u>Á</span>, <span class=u>ÿ</span>, <span class=u>f</span>, e <span class=u>Ω</span> são âncorados, a linha de base ideográfica é onde glifos como <span class=u>私</span> e <span class=u>達</span> são âncorados, e a base do quadrado 'em' fica aproximadamente na base do glifo em uma fonte. O topo e a base da caixa delimitadora pode ser longe das linhas de base, devido a glifos que se estendem muito além do quadrado.</p>
+<p>A parte superior do quadrado 'em' fica aproximadamente na parte superior dos glifos em uma fonte, a linha de base é pendurada no lugar onde alguns glifos como <span class=u>आ</span> são âncoradas, o meio é metade do caminho entre a parte superior do quadrado 'em' e a base do quadrado 'em', a linha de base alfabética é onde os caracteres como <span class=u>Á</span>, <span class=u>ÿ</span>, <span class=u>f</span>, e <span class=u>Ω</span> são âncorados, a linha de base ideográfica é onde glifos como <span class=u>私</span> e <span class=u>達</span> são âncorados, e a base do quadrado 'em' fica aproximadamente na base do glifo em uma fonte. O topo e a base da caixa delimitadora podem ser longe das linhas de base, devido a glifos que se estendem muito além do quadrado.</p>
 <p><img src=i/baselines.png alt="diagram of different values of the textBaseline property" width=680 height=227>
 </blockquote>
 
-<p>Para alfabetos simples como o Inglês, você pode ficar com segurança com<code>top</code>, <code>middle</code>, ou <code>bottom</code> para a propriedade <code>textBaseline</code>.
+<p>Para alfabetos simples como o Inglês, você pode usar com segurança o <code>top</code>, <code>middle</code>, ou <code>bottom</code> para a propriedade <code>textBaseline</code>.
 
-<p>Vamos desenhar algum texto! O texto desenhado dentro do canvas herda o tamanho da fonte e o estilo do próprio elemento <code>&lt;canvas></code>, você pode sobrescrever isso definindo a propriedade fonte <code>font</code> para o contexto de desenho.
+<p>Vamos desenhar algum texto! O texto desenhado dentro do canvas herda o tamanho da fonte e o estilo do próprio elemento <code>&lt;canvas></code>, você pode sobrescrever isso definindo a propriedade <code>font</code> para o contexto de desenho.
 
 <pre style="float:left"><code><mark>context.font = "bold 12px sans-serif";</mark>
 context.fillText("x", 248, 43);
@@ -306,7 +306,7 @@ context.fillText("y", 58, 165);</code></pre>
 <pre style="float:left"><code>context.font = "bold 12px sans-serif";
 <mark>context.fillText("x", 248, 43);</mark>
 context.fillText("y", 58, 165);</code></pre>
-<p class="legend right" style="margin-top:2.6em"><span class=arrow>&nbsp;&#x21dc;</span> Desenhar o texto</p>
+<p class="legend right" style="margin-top:2.6em"><span class=arrow>&nbsp;&#x21dc;</span> Desenha o texto</p>
 
 <div class="pf clear" id=relative-font-size>
 <h4>Pergunte ao Professor Marcação</h4>
@@ -323,7 +323,7 @@ R: Sim. Como qualquer outro elemento <abbr>HTML</abbr> na sua página, o própri
 <pre><code>context.textBaseline = "top";
 context.fillText("( 0 , 0 )", <mark>8, 5</mark>);</code></pre>
 
-<p>Agora para o texto no canto inferior direito. Vamos dizer que eu queira para que fique na coordenada <code>(492,370)</code> &mdash; somente há alguns pixels de distância do canto inferior direito do canvas &mdash; mas eu não quero medir a altura e largura do texto. Posso definir a propriedade <code>textAlign</code> para <code>right</code> e a <code>textBaseline</code> para <code>bottom</code>, então chamar <code>fillText()</code> com as coordenadas do canto inferior direito da caixa delimitadora do texto.
+<p>Agora para o texto no canto inferior direito. Vamos dizer que eu queira que fique na coordenada <code>(492,370)</code> &mdash; somente há alguns pixels de distância do canto inferior direito do canvas &mdash; mas eu não quero medir a altura e largura do texto. Posso definir a propriedade <code>textAlign</code> para <code>right</code> e a <code>textBaseline</code> para <code>bottom</code>, então chamar <code>fillText()</code> com as coordenadas do canto inferior direito da caixa delimitadora do texto.
 
 <pre><code>context.textAlign = "right";
 context.textBaseline = "bottom";
@@ -333,7 +333,7 @@ context.fillText("( 500 , 375 )", <mark>492, 370</mark>);</code></pre>
 
 <canvas id=c4 width=500 height=375></canvas>
 
-<p>Oops! Nós nos esquecemos dos pontos nos cantos. Nós iremos ver como desenhar círculos um pouco mais tarde. Por agora, irei roubar um pouquinho e <a href=#shapes>desenhar eles como retângulos</a>. 
+<p>Oops! Nós nos esquecemos dos pontos nos cantos. Nós iremos ver como desenhar círculos um pouco mais tarde. Por enquanto, vou trapacear um pouquinho e <a href=#shapes>desenhar eles como retângulos</a>. 
 
 <pre style="float:left"><code>context.fillRect(0, 0, 3, 3);
 context.fillRect(497, 372, 3, 3);</code></pre>
@@ -543,7 +543,7 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 
 <p>O <code>&lt;!--[if lt IE 9]></code> e <code>&lt;![endif]--></code> são <a href="http://msdn.microsoft.com/en-us/library/ms537512(VS.85).aspx">comentários condicionais</a>. Internet Explorer interpreta eles como uma declaração <code>if</code>: &#8220;se o navegador é uma versão do Internet Explorer inferior da (mas não inclusa) versão 9, então execute o bloco.&#8221; Cada outro navegador vai tratar o bloco inteiro como um bloco de comentário <abbr>HTML</abbr>. O resultado na prática é que o Internet Explorer 7 e 8 irão realizar o download do script <code>excanvas.js</code> e executá-los, mas outros navegadores irão ignorar o script (não realizando o download dele, não executando ele, não fazendo nada). Isso irá fazer com que sua página carregue mais rapidamente para aqueles navegadores que implementem a <abbr>API</abbr> de canvas nativamente.
 
-<p>Uma vez incluindo o <code>excanvas.js</code> no <code>&lt;head></code> da sua página, você não precisa fazer nada mais para acomodar o Internet Explorer. Só incluia os elementos <code>&lt;canvas></code> na sua marcação, ou crie eles dinâmicamente com JavaScript. Siga as instruções desse capítulo para capturar o contexto de desenho do elemento <code>&lt;canvas></code>, e você poderá desenhar formas, texto, e padrões.
+<p>Uma vez incluindo o <code>excanvas.js</code> no <code>&lt;head></code> da sua página, você não precisa fazer nada mais para acomodar o Internet Explorer. Só inclua os elementos <code>&lt;canvas></code> na sua marcação, ou crie eles dinâmicamente com JavaScript. Siga as instruções desse capítulo para capturar o contexto de desenho do elemento <code>&lt;canvas></code>, e você poderá desenhar formas, texto, e padrões.
 
 <p>Bem&hellip; não exatamente. Existem algumas limitações:
 
@@ -557,11 +557,11 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 
 <p>Há mais uma advertência sobre o uso de <code>excanvas.js</code>, e é um problema que passei enquanto criava o exemplo desse capítulo. ExplorerCanvas inicializa sua própria interface de falso-canvas automaticamente uma vez incluindo o script <code>excanvas.js</code> na sua página <abbr>HTML</abbr>. Mas isso não significa que o  Internet Explorer está pronto para usá-lo imediatamente. Em algumas situações, você pode rodar sob uma condição onde a interface do falso-canvas está <em>quase</em>, mas ainda não, pronta para ser usada. O principal sintoma desse estado é que o Internet Explorer irá reclamar que o &#8220;<samp>objeto não suporta essa propriedade ou método</samp>&#8221; sempre que você tentar fazer qualquer coisa com o elemento <code>&lt;canvas></code>, como pegar seu contexto de desenho.
 
-<p>A solução mais simples para fazer é adiar todas as suas manipulações relacionadas ao canvas até depois que evento <code>onload</code> seja disparado. Isto pode levar um tempo &mdash; se a sua página possui muitas imagens ou vídeos, elas irão atrasar o <code>onload</code> &mdash; mas irá dar ao ExplorerCanvas tempo para trabalhar na sua mágina.
+<p>A solução mais simples para fazer é adiar todas as suas manipulações relacionadas ao canvas até depois que evento <code>onload</code> seja disparado. Isto pode levar um tempo &mdash; se a sua página possui muitas imagens ou vídeos, elas irão atrasar o <code>onload</code> &mdash; mas irá dar ao ExplorerCanvas tempo para trabalhar na sua mágica.
 
 <p class=a>&#x2767;
 
-<h2 id=halma>Um completo exemplo ao vivo</h2>
+<h2 id=halma>Um exemplo completo ao vivo</h2>
 
 <p>Halma é um jogo de tabuleiro com séculos de idade. Muitas variações existem. Nesse exemplo, criei uma versão solitária de Halma com 9 peças em um tabuleiro 9 &times; 9. No início do jogo, as peças formam quadrado 3 &times; 3 no canto interior esquerdo do tabuleiro. O objetivo do jogo é mover todas as peças até que formem um quadrado 3 &times; 3 no canto superior direito do tabuleiro, com o menor número de movimentos.
 
@@ -586,7 +586,7 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 gCanvasElement.height = kPixelHeight;
 gDrawingContext = gCanvasElement.getContext("2d");</code></pre>
 
-<p>Depois fazemos algo que você ainda não viu: nós adicionamos uma escuta de evento ao elemento <code>&lt;canvas></code>para ouvir por eventos de clique.
+<p>Depois fazemos algo que você ainda não viu: nós adicionamos uma escuta de evento ao elemento <code>&lt;canvas></code> para ouvir por eventos de clique.
 
 <pre><code>gCanvasElement.<mark>addEventListener</mark>(<mark>"click"</mark>, halmaOnClick, false);</code></pre>
 
@@ -638,7 +638,7 @@ gDrawingContext = gCanvasElement.getContext("2d");</code></pre>
 
 <p>Ufa! Eventos de mouse são difíceis. Mas você pode usar a mesma lógica (na verdade, o exato mesmo código) em todas as suas aplicações baseadas em canvas. Lembre-se: mouse click &rarr; coordenadas relativas ao documento &rarr; coordenadas relativas ao canvas &rarr; código específico de aplicação.
 
-<p>OK, vamos olhar para a rotina principal do desenho. Porque os gráficos são simples, escolhi limpar e redesenhar o tabuleiro em cada hora que houver qualquer mudança no jogo. Isso não é estritamente necessário. O contexto de desenho do canvas irá reter qualquer coisa que você tenha desenhado anteriormente nele, até mesmo se o usuário realizar scroll para fora do campo de visão ou mudar de uma aba para outra e depois voltar. Se você está desenvolvendo uma aplicação baseada em canvas com gráficos mais complicados (como um jogo de), você pode otimizar a performance ao identificar quais regiões do canvas estão &#8220;sujas&#8221; e redesenhar apenas as regiões sujas. Mas isso está fora do escopo desse livro.
+<p>OK, vamos olhar para a rotina principal do desenho. Porque os gráficos são simples, escolhi limpar e redesenhar o tabuleiro em cada hora que houver qualquer mudança no jogo. Isso não é estritamente necessário. O contexto de desenho do canvas irá reter qualquer coisa que você tenha desenhado anteriormente nele, até mesmo se o usuário realizar scroll para fora do campo de visão ou mudar de uma aba para outra e depois voltar. Se você está desenvolvendo uma aplicação baseada em canvas com gráficos mais complicados (como um jogo de arcade), você pode otimizar a performance ao identificar quais regiões do canvas estão &#8220;sujas&#8221; e redesenhar apenas as regiões sujas. Mas isso está fora do escopo desse livro.
 
 <pre><code>gDrawingContext.clearRect(0, 0, kPixelWidth, kPixelHeight);</code></pre>
 
@@ -662,7 +662,7 @@ for (var y = 0; y &lt;= kPixelHeight; y += kPieceHeight) {
 gDrawingContext.<mark>strokeStyle</mark> = "#ccc";
 gDrawingContext.<mark>stroke()</mark>;</code></pre>
 
-<p>A brincadeira começa de verdade quando nós vamos desenhar cada peça individual. Uma peça é um círculo, algo que ainda não desenhamos antes. Além disso, se o usuário seleciona a peça em antecipação ao seu movimento, nós queremos desenhar a peça em forma de um círculo preenchido. Aqui, o argumento <code>p</code> representa a peça, na qual possui as propriedades de <code>linha</code> e <code>coluna</code> que denotam a posição atual da peça no tabuleiro. Nós usamos algumas constante do jogo para traduzir <code>(coluna, linha)</code> em coordenadas <code>(x, y)</code> relativas ao canvas, então desenhar o círculo, então (se a peça for selecionada) preencher o círculo com uma cor sólida.
+<p>A brincadeira começa de verdade quando nós vamos desenhar cada peça individual. Uma peça é um círculo, algo que ainda não desenhamos antes. Além disso, se o usuário seleciona a peça em antecipação ao seu movimento, nós queremos desenhar a peça em forma de um círculo preenchido. Aqui, o argumento <code>p</code> representa a peça, na qual possui as propriedades de <code>linha</code> e <code>coluna</code> que denotam a posição atual da peça no tabuleiro. Nós usamos algumas constantes do jogo para traduzir <code>(coluna, linha)</code> em coordenadas <code>(x, y)</code> relativas ao canvas, então desenhar o círculo, e (se a peça for selecionada) preencher o círculo com uma cor sólida.
 
 <pre><code>function drawPiece(p, selected) {
     var column = p.column;
@@ -671,7 +671,7 @@ gDrawingContext.<mark>stroke()</mark>;</code></pre>
     var <mark>y</mark> = (row * kPieceHeight) + (kPieceHeight/2);
     var radius = (kPieceWidth/2) - (kPieceWidth/10);</code></pre>
 
-<p>Esse é o fim da lógica específica do jogo. Agora nós temos as coordenadas <code>(x, y)</code>, relativas ao canvas, para o centro do círculo que queremos desenhar. Não há um método <code>circle()</code> na <abbr>API</abbr> do canvas, mas há um método <code>arc()</code>. E realmente, o que é um círculo sem um arco que vai a toda volta? Você lembra de geometria básica? O método <code>arc()</code> pega o ponto central <code>(x, y)</code>, o raio, o ângulo inicial e final (em radianos), e a direção (<code>false</code> para sentido horário, <code>true</code> para sentido anti-horário). Você pode usar o módulo <code>Math</code> que está dentro do JavaScript para calcular radianos.
+<p>Esse é o fim da lógica específica do jogo. Agora nós temos as coordenadas <code>(x, y)</code>, relativas ao canvas, para o centro do círculo que queremos desenhar. Não há um método <code>circle()</code> na <abbr>API</abbr> do canvas, mas há um método <code>arc()</code>. E realmente, o que é um círculo se não um arco que faz uma volta completa? Você lembra de geometria básica? O método <code>arc()</code> pega o ponto central <code>(x, y)</code>, o raio, o ângulo inicial e final (em radianos), e a direção (<code>false</code> para sentido horário, <code>true</code> para sentido anti-horário). Você pode usar o módulo <code>Math</code> que está dentro do JavaScript para calcular radianos.
 
 <pre><code>gDrawingContext.beginPath();
 gDrawingContext.<mark>arc</mark>(x, y, radius, 0, <mark>Math.PI * 2</mark>, false);
@@ -710,7 +710,7 @@ gDrawingContext.<mark>stroke()</mark>;</code></pre>
 <div class="pf">
 <h4>Você sabia?</h4>
 <div class="moneybags">
-<blockquote><p>Em associação a <span lang="en">Google Press</span>, O&#8217;Reilly está distruindo este livro em variados formatos, incluindo papel, ePub, Mobi, <abbr>DRM</abbr>-free e <abbr>PDF</abbr>. A edição paga é chamada <span lang="en">“HTML5: Up &amp; Running”</span> e está disponível agora. Este capítulo está incluído na versão paga.
+<blockquote><p>Em associação a <span lang="en">Google Press</span>, O&#8217;Reilly está distribuindo este livro em variados formatos, incluindo papel, ePub, Mobi, <abbr>DRM</abbr>-free e <abbr>PDF</abbr>. A edição paga é chamada <span lang="en">“HTML5: Up &amp; Running”</span> e está disponível agora. Este capítulo está incluído na versão paga.
 </p><p>Se você gostou deste capítulo e quer mostrar sua apreciação, basta <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">comprar o livro “<abbr>HTML5</abbr>: Up &amp; Running” com esse link afiliado</a> ou <a href="http://oreilly.com/catalog/9780596806033">comprar a edição eletrônica diretamente da O&#8217;Reilly</a>. Você vai ganhar um livro, e eu vou ganhar um trocado. Atualmente, não aceito doações diretas.
 </p></blockquote>
 </div>

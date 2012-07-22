@@ -15,7 +15,7 @@ body{counter-reset:h1 8}
 <p class=a>&#x2767;
 <h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-w.png alt=O width=110 height=108>que são aplicações web offline? Em um primeiro momento, parece uma contradição de termos. Páginas da web são coisas que você faz download e renderiza. Download implica conexão com a rede. Como você pode fazer download quando você está offline? É claro, você não pode. Mas você <em>pode</em> fazer download quando você está online. E é assim que as aplicacões offline da <abbr>HTML5</abbr> funcionam.
+<p class=f><img src=i/aoc-o.png alt=O width=110 height=108>que são aplica	ções web offline? Em um primeiro momento, parece uma contradição de termos. Páginas da web são coisas que você faz download e renderiza. Download implica conexão com a rede. Como você pode fazer download quando você está offline? É claro, você não pode. Mas você <em>pode</em> fazer download quando você está online. E é assim que as aplicacões offline da <abbr>HTML5</abbr> funcionam.
 
 <p>De forma simples, uma aplicacão web offline é uma lista de <abbr>URL</abbr>s &mdash; <abbr>HTML</abbr>, <abbr>CSS</abbr>, JavaScript, imagens, ou qualquer tipo de recurso. A página inicial de uma aplicação web offline aponta para essa lista, chamado de arquivo manifesto, que é apenas um arquivo texto localizado em qualquer lugar no servidor web. Um navegador web que implementa aplicações offline em <abbr>HTML5</abbr> irá ler a lista de <abbr>URL</abbr>s do arquivo manifesto, fazer download dos recursos, realizar o cache deles localmente, e automaticamente manter os arquivos locais atualizados à medida que são alterados. Quando chegar a hora em que você tentar acessar as aplicações web sem uma conexão de rede, seu navegador web irá automaticamente apontar para as cópias locais.
 
@@ -53,7 +53,7 @@ body{counter-reset:h1 8}
 <div class=inner>
 <blockquote class=note>
 <p><span>&#x261E;</span>P: Minha aplicação web abrange mais de uma página. Preciso de um atributo <code>manifest</code> em cada página, ou posso colocar apenas na home page?
-<p>R: Cada página da sua aplicação web precisa de um atributo <code>manifest</code> que ponta para o manifesto cache para toda aplicação.
+<p>R: Cada página da sua aplicação web precisa de um atributo <code>manifest</code> que aponta para o manifesto cache para toda aplicação.
 </blockquote>
 </div>
 </div>
@@ -73,7 +73,7 @@ body{counter-reset:h1 8}
 /clock.js
 /clock-face.jpg</code></pre>
 
-<p>Esse arquivo de manifesto cache não possui cabeçalhos de seção, então todos os recursos listados estão na seção &#8220;explícita&#8221; por padrão. Recursos na seção &#8220;explícita&#8221; serão feitos download e cache localmente, e serão usados no lugar de seus respectivos semelhantes sempre que você estiver descontectado de uma rede. Assim que for carregamento esse arquivo de manifesto cache, seu navegador irá realizar o download de <code>clock.css</code>, <code>clock.js</code>, e <code>clock-face.jpg</code> do diretório raíz do seu servidor web. Então você pode desplugar seu cabo de rede e atualizar a página, e todos aqueles recursos estarão disponíveis offline.
+<p>Esse arquivo de manifesto cache não possui cabeçalhos de seção, então todos os recursos listados estão na seção &#8220;explícita&#8221; por padrão. Recursos na seção &#8220;explícita&#8221; serão feitos download e cache localmente, e serão usados no lugar de seus respectivos semelhantes sempre que você estiver desconectado de uma rede. Assim que for carregado esse arquivo de manifesto cache, seu navegador irá realizar o download de <code>clock.css</code>, <code>clock.js</code>, e <code>clock-face.jpg</code> do diretório raíz do seu servidor web. Então você pode desplugar seu cabo de rede e atualizar a página, e todos aqueles recursos estarão disponíveis offline.
 
 <div class="pf clear">
 <h4>Pergunte ao Professor Marcação</h4>
@@ -111,7 +111,7 @@ NETWORK:
 
 <p>O que isso faz? Primeiro, considere um site que contém milhões de páginas, como no <a href=http://pt.wikipedia.org/wiki/Main_Page>Wikipedia</a>. Você não poderia fazer download do site inteiro, nem você iria querer. Mas suponha que você consiga deixar <em>parte</em> disso disponível offline. Como você iria decidir quais página fazer cache? Que tal isso: cada página que você já tenha visto em uma hipotética Wikipedia offline seriam feitos download e cache. Isso incluiria cada entrada da enciclopédia que você já visitou, cada página de discussão (onde você encontra discussões improvisadas sobre uma entrada particular da enciclopédia), e cada página de edição (onde você consegue, de fato, realizar alterações sobre uma entrada particular).
 
-<p>É isso que o manifesto cache faz. Suponha que cada página <abbr>HTML</abbr> (entrada, discussão, edição, histórico) no Wikipedia apontasse para esse arquivo de manifesto cache. Quando você visita qualquer página que aponta para o manifesto cache, seu navegador diz your browser says &#8220;ei, essa página é parte de uma aplicação web offline, essa é alguma que eu conheço?&#8221; Se o seu navegador nunca fez download desse arquivo de manifesto cache, ele irá definir um novo &#8220;appcache&#8221 offline; (curto para &#8220;aplicação cache&#8221;), fazer download de todos os recursos listados no manifesto cache, e depois adicionar a página corrente para o appcache. Se o seu navegador conhece o manifesto cache, irá simplesmente adicionar a págona corrente para o appcache existente. Dessa forma, a página que você acabou de visitar acaba no appcache. Isso é importante. Significa que você pode ter uma aplicação web offline que, de forma &#8220;preguiçosa&#8221;, adiciona páginas à medida que as visita. Você não precisa listar cada uma das suas páginas <abbr>HTML</abbr> no seu manifesto cache.
+<p>É isso que o manifesto cache faz. Suponha que cada página <abbr>HTML</abbr> (entrada, discussão, edição, histórico) no Wikipedia apontasse para esse arquivo de manifesto cache. Quando você visita qualquer página que aponta para o manifesto cache, seu navegador diz &#8220;ei, essa página é parte de uma aplicação web offline, essa é alguma que eu conheço?&#8221; Se o seu navegador nunca fez download desse arquivo de manifesto cache, ele irá definir um novo &#8220;appcache&#8221 offline; (nome curto para &#8220;aplicação cache&#8221;), fazer download de todos os recursos listados no manifesto cache, e depois adicionar a página corrente para o appcache. Se o seu navegador conhece o manifesto cache, irá simplesmente adicionar a página corrente para o appcache existente. Dessa forma, a página que você acabou de visitar acaba no appcache. Isso é importante. Significa que você pode ter uma aplicação web offline que, de forma &#8220;preguiçosa&#8221;, adiciona páginas à medida que as visita. Você não precisa listar cada uma das suas páginas <abbr>HTML</abbr> no seu manifesto cache.
 
 <p>Agora veja a seção fallback. A seção fallback nesse manifesto cache tem apenas uma única linha. A primeira parte da linha (antes do espaço) não é uma <abbr>URL</abbr>. É na verdade um padrão de <abbr>URL</abbr>. O único caractere (<code>/</code>) irá definir qualquer página do seu site, não apenas a página de entrada. Quando você tentar visitar a página enquanto estiver offline, seu navegador irá procurar por ele no appcache. Se o seu navegador encontra a página no appcache (porque você a visitou enquanto esteve online, e a página foi adicionada de forma implícita no appcache naquela hora), então seu navegador irá exibir uma cópia da página em cache. Se o seu navegador não encontrar a página no appcache, ao invés de exibir uma mensagem de erro, irá exibir a página <code>/offline.html</code>, como especificado na segunda parte daquela linha na seção fallback.
 
@@ -135,7 +135,7 @@ NETWORK:
   <li>Enquanto ele está baixando, seu navegador irá disparar periodicamente o evento <strong><code>progress</code></strong>, que contém informações de quantos arquivos já foram baixados e quantos arquivos ainda estão na fila download.
   <li>Depois que todos os arquivos listados no cache manifest forem baixados com sucesso, o navegador dispara um evento final, o <strong><code>cached</code></strong>. Este é seu sinal de que a aplicação web offline está completamente cacheada e pronta para ser usada sem conexão. Pronto, você terminou.
   </ul>
-<li>Por outro lado, se você visitou esta página anteriormente ou alguma outra página que aponte para o mesmo arquivo de cache manifest, então seu navegador já sabe sobre esse cache manifest. Ele pode já ter alguns arquivos no appcache. Ele pode até conter toda a aplcação web offline funcionando no appcache. Sendo assim, a questão é: o cache manifest mudou desde a última vez que seu navegador o acessou?
+<li>Por outro lado, se você visitou esta página anteriormente ou alguma outra página que aponte para o mesmo arquivo de cache manifest, então seu navegador já sabe sobre esse cache manifest. Ele pode já ter alguns arquivos no appcache. Ele pode até conter toda a aplicação web offline funcionando no appcache. Sendo assim, a questão é: o cache manifest mudou desde a última vez que seu navegador o acessou?
   <ul>
   <li>Se a resposta for não, o cache manifest não mudou, seu navegador irá imediatamente disparar o evento <strong><code>noupdate</code></strong>. E é isso, está tudo pronto.
   <li>Se a resposta for sim, o cache manifest <em>mudou</em>, seu navegador irá disparar o evento <strong><code>downloading</code></strong> e começar a baixar todos os arquivos listados no cache manifest novamente.
@@ -154,35 +154,36 @@ NETWORK:
 
 <h2 id=debugging>A fina arte de depurar, também conhecida como &#8220;Me mate! Me mate agora!&#8221;</h2>
 
-<p>I want to call out two important points here. The first is something you just read, but I bet it didn&#8217;t really sink in, so here it is again: if even a single resource listed in your cache manifest file fails to download properly, the entire process of caching your offline web application will fail. Your browser will fire the <code>error</code> event, but there is no indication of what the actual problem was. This can make debugging offline web applications even more frustrating than usual.
+<p>Eu quero falar sobre dois pontos importantes aqui. O primeiro é algo que você acabou de ler, mas aposto que não absorveu muito bem, então, lá vai novamente: mesmo que um único arquivo listado em seu arquivo de cache manifest falhar na hora de ser carregado corretamente, todo o processo de cache de sua aplicação web offline irá falhar. Seu navegador irá disparar o evento <code>error</code>, mas não existe nada indicando qual é o problema. Isso pode tornar a depuração de aplicações web offline ainda mais frustrante do que normalmente é.
 
-<p>The second important point is something that is not, technically speaking, an error, but it will look like a serious browser bug until you realize what&#8217;s going on. It has to do with exactly how your browser checks whether a cache manifest file has changed. This is a three-phase process. This is boring but important, so pay attention.
+<p>O segundo ponto importante é algo que, tecnicamente falando, não é um erro, mas vai parecer um problema sério do navegador até que você descubra o que está acontecendo. Tem relação exatamente com o modo que seu navegador checa como um arquivo cache manifest foi alterado. Este é um processo de três fases. É chato mas muito importante, então preste atenção.
+
 
 <ol>
-<li>Via normal <abbr>HTTP</abbr> semantics, your browser will check whether the cache manifest has expired. Just like any other file being served over <abbr>HTTP</abbr>, your web server will typically include meta-information about the file in the <abbr>HTTP</abbr> response headers. Some of these <abbr>HTTP</abbr> headers (<code>Expires</code> and <code>Cache-Control</code>) tell your browser how it is allowed to cache the file without ever asking the server whether it has changed. This kind of caching has nothing to do with offline web applications. It happens for pretty much every <abbr>HTML</abbr> page, stylesheet, script, image, or other resource on the web.
-<li>If the cache manifest has expired (according to its <abbr>HTTP</abbr> headers), then your browser will ask the server whether there is a new version, and if so, the browser will download it. To do this, your browser issues an <abbr>HTTP</abbr> request that includes that last-modified date of the cache manifest, which your web server included in the <abbr>HTTP</abbr> response headers the last time your browser downloaded the manifest file. If the web server determines that the manifest file hasn&#8217;t changed since that date, it will simply return a <code>304 (Not Modified)</code> status. Again, none of this is specific to offline web applications. This happens for essentially every kind of resource on the web.
-<li>If the web server thinks the manifest file has changed since that date, it will return an <abbr>HTTP</abbr> <code>200 (OK)</code> status code, followed by the contents of the new file, along with new <code>Cache-Control</code> headers and a new last-modified date, so that steps 1 and 2 will work properly the next time. (<abbr>HTTP</abbr> is cool; web servers are always planning for the future. If your web server absolutely must send you a file, it does everything it can to ensure that it doesn&#8217;t need to send it twice for no reason.) Once it&#8217;s downloaded the new cache manifest file, your browser will check the contents against the copy it downloaded last time. If the contents of the cache manifest file are the same as they were last time, your browser won&#8217;t re-download any of the resources listed in the manifest.
+  <li>Via semântica normal de <abbr>HTTP</abbr>, seu navegador vai checar se o cache manifest expirou. Bem como qualquer outro arquivo sendo servido em <abbr>HTTP</abbr>, seu servidor vai incluir meta-informações, como faz tipicamente, sobre o arquivo nos cabeçalhos de resposta <abbr>HTTP</abbr>. Alguns desses cabeçalhos <abbr>HTTP</abbr> (<code>Expires</code> e <code>Cache-Control</code>) dizem para seu navegador como é permitido cachear arquivos sem ao menos ter que perguntar o que mudou pro servidor. Este tipo de cache não tem relação nenhuma com aplicações web offline. Isso acontece para praticamente todas as páginas <abbr>HTML</abbr>, folhas de estilo, script, imagens ou qualquer outro arquivo na web.
+  <li>Se o cache manifest expirou (de acordo com seu cabeçalho <abbr>HTTP</abbr>), então o navegador irá pedir ao servidor qual a versão mais nova, e se existir uma, o navegador irá baixar a mesma. Para isso, seu navegador aponta uma requisição <abbr>HTTP</abbr> que inclui a data da última modificação do cache manifest, a qual seu servidor inclui na resposta do cabeçalho <abbr>HTTP</abbr> da última vez que seu navegador baixou o arquivo de cache manifest. Se o servidor determinar que o arquivo de cache manifest não mudou desde tal data, ele vai retornar, simplesmente, um status <abbr>304 (Not Modified)</abbr>. Novamente, nada disso é específico para aplicações web offline. Isso acontece, essencialmente, para todos os tipos de arquivos na web.
+  <li>Se o servidor acha que o arquivo de cache manifest mudou desde tal data, ele vai retornar um código de status <abbr>HTTP</abbr> <code>200 (OK)</code>, seguido pelo conteúdo do novo arquivo, junto de um novo cabeçalho <code>Cache-Control</code> e uma nova data de última modificação do arquivo, então o passo 1 e 2 irão funcionar devidamente da próxima vez. (<abbr>HTTP</abbr> é legal; servidores web estão sempre preparados para o futuro. Se seu servidor web definitivamente deve te enviar um arquivo, ele fará tudo que pode para ter certeza que ele não lhe enviará duas vezes, atoa.) Uma vez baixado o novo arquivo de cache manifest, seu navegador irá verificar o conteúdo do seu arquivo baixado com o arquivo baixado da última vez. Se o conteúdo dos arquivos de cache manifest forem iguais, seu navegador não irá fazer o download novamente de qualquer um dos arquivos nele listados.
 </ol>
 
-<p>Any one of these steps can trip you up while you&#8217;re developing and testing your offline web application. For example, say you deploy one version of your cache manifest file, then 10 minutes later, you realize you need to add another resource to it. No problem, right? Just add another line and redeploy. Bzzt. Here&#8217;s what will happen: you reload the page, your browser notices the <code>manifest</code> attribute, it fires the <code>checking</code> event, and then... nothing. Your browser stubbornly insists that the cache manifest file has not changed. Why? Because, by default, your web server is probably configured to tell browsers to cache static files for a few hours (via <abbr>HTTP</abbr> semantics, using <code>Cache-Control</code> headers). That means your browser will never get past step 1 of that three-phase process. Sure, the web server knows that the file has changed, but your browser never even gets around to asking the web server. Why? Because the last time your browser downloaded the cache manifest, the web server told it to cache the resource for a few hours (via <abbr>HTTP</abbr> semantics, using <code>Cache-Control</code> headers). And now, 10 minutes later, that&#8217;s exactly what your browser is doing.
+<p>Qualquer um desses passos pode te confundir enquanto estiver programando e testando sua aplicação web offline. Por exemplo, digamos que você publicou uma versão do seu arquivo de cache manifest; então, dez minutos depois, você percebeu que precisa adicionar outro arquivo nele. Sem problema, certo? Apenas adicione uma linha e publique novamente. OPA! Irá acontecer o seguinte: você atualiza a página, seu navegador percebe que existe o atributo <code>manifest</code>, ele dispara o evento <code>checking</code>, e então... nada. Seu navegador insiste que o arquivo de cache manifest não mudou. Por que? Porque, por padrão, seu servidor web provavelmente está configurado para avisar o navegador para cachear arquivos estáticos por algumas horas (via semântica <abbr>HTTP</abbr>, usando cabeçalhos <code>Cache-Control</code>). Isso significa que seu navegardor nunca vai passar o passo 1 daquele processo de três passos. Certamente, o servidor web sabe que o arquivo mudou, mas seu navegador nunca vai passar perto de fazer a solicitação ao servidor. Por que? Porque a última vez que seu navegador baixou o arquivo de cache manifest, o servidor pediu para cachear os arquivos por algumas horas (via semântica <abbr>HTTP</abbr>, usando cabeçalhos <code>Cache-control</code>). E agora, 10 minutos depois, é exatamente isso que seu navegador está fazendo.
 
-<p>To be clear, this is not a bug, it&#8217;s a feature. Everything is working exactly the way it&#8217;s supposed to. If web servers didn&#8217;t have a way to tell browsers (and intermediate proxies) to cache things, the web would collapse overnight. But that&#8217;s no comfort to you after you spend a few hours trying to figure out why your browser won&#8217;t notice your updated cache manifest. (And even better, if you wait long enough, it will mysteriously starts working again! Because the <abbr>HTTP</abbr> cache expired! Just like it&#8217;s supposed to! Kill me! Kill me now!)
+<p>Para deixar claro, isso não é um bug, é uma característica. Tudo está funcionando exatamente do jeito que deveria. Se servidores web não tivessem uma maneira de dizer aos navegadores (e intermediar proxies) a cachear coisas, a web poderia entrar em colapso do dia para noite. Mas isso não é confortante, depois de gastar horas tentando imaginar por que seu navegador não avisa sobre a atualização no arquivo de cache manifest. (E ainda melhor, se você esperar o suficiente, isso vai começar a funcionar novamente! Porque o cache <abbr>HTTP</abbr> expirou! Bem como deveria ser! Me mate! Me mate AGORA!)
 
-<p>So here&#8217;s one thing you should absolutely do: reconfigure your web server so that your cache manifest file is not cacheable by <abbr>HTTP</abbr> semantics. If you&#8217;re running an Apache-based web server, these two lines in your <code>.htaccess</code> file will do the trick:
+<p>Então aqui está uma coisa que você deveria, definitivamente, fazer: reconfigure seu servidor web para que arquivos de cache manifest não sejam cacheados por semânticas <abbr>HTTP</abbr>. Se você esta usando um servidor baseado em Apache, estas duas linhas em seu <code>.htaccess</code> irão fazer a mágica:
 
 <pre><code>ExpiresActive On
 ExpiresDefault "access"</code></pre>
 
-<p>That will actually disable caching for every file in that directory and all subdirectories. That&#8217;s probably not what you want in production, so you should either qualify this with a <code>&lt;Files></code> directive so it only affects your cache manifest file, or create a subdirectory that contains nothing but this <code>.htaccess</code> file and your cache manifest file. As usual, configuration details vary by web server, so consult your server&#8217;s documentation for how to control <abbr>HTTP</abbr> caching headers.
+<p>Isso vai, na verdade, desabilitar o cache para todos os arquivos desse tipo do diretório e subdiretórios. Provavelmente, isso não é o que você quer em produção, então você deve qualificar isso com uma diretiva <code>&lt;Files&gt;</code> para que, assim, irá afetar apenas seu arquivo de cache manifest, ou criar um subdiretório que não contenha nada além desse arquivo <code>.htaccess</code> e seus arquivos de cache manifest. Como sempre, detalhes de configuração variam dependendo do servidor, então consulte a documentação do seu para como controlar headers de cache <abbr>HTTP</abbr>.
 
-<p>Once you&#8217;ve disabled <abbr>HTTP</abbr> caching on the cache manifest file itself, you&#8217;ll still have times where you&#8217;ve changed one of the resources in the appcache, but it&#8217;s still at the same <abbr>URL</abbr> on your web server. Here, step 2 of the three-phase process will screw you. If your cache manifest file hasn&#8217;t changed, the browser will never notice that one of the previously cached resources has changed. Consider the following example:
+<p>Uma vez que tenha desabilitado o cache <abbr>HTTP</abbr> para arquivos de cache manifest, você ainda irá encontrar situações onde você atualiza um dos arquivos listados no appcache, mas ele irá continuar com a mesma <abbr>URL</abbr> em seu servidor. Aqui, o segundo passo do processo de três fases irá te sacanear. Se seu arquivo de cache manifest não mudou, o navegador nunca vai te avisar que um dos arquivos cacheados anteriormente mudou. Considere o exemplo a seguir:
 
 <pre><code>CACHE MANIFEST
 # rev 42
 clock.js
 clock.css</code></pre>
 
-<p>If you change <code>clock.css</code> and redeploy it, you won&#8217;t see the changes, because the cache manifest file itself hasn&#8217;t changed. Every time you make a change to one of the resources in your offline web application, you&#8217;ll need to change the cache manifest file itself. This can be as simple as changing a single character. The easiest way I&#8217;ve found to accomplish this is to include a comment line with a revision number. Change the revision number in the comment, then the web server will return the newly changed cache manifest file, your browser will notice that the contents of the file have changed, and it will kick off the process to re-download all the resources listed in the manifest.
+<p>Se você mudou o arquivo <code>clock.css</code> e publicou novamente, você não vai ver mudanças, porque o arquivo de cache manifest não mudou. Toda vez que você faz uma alteração em um dos arquivos da sua aplicação web offline, você vai precisar mudar também o arquivo de cache manifest. Isso pode ser tão fácil quanto mudar um caractere. A maneira mais fácil que encontrei para fazer isso, é incluir uma linha de comentário com um número de revisão. Mude o número da revisão no comentário e, então, o servidor irá entregar as mudanças dos arquivos listados no arquivo de cache manifest, seu navegador irá perceber que o conteúdo do arquivo mudou e irá iniciar o processo de baixar novamente os arquivos listados no arquivo manifest.
 
 <pre><code>CACHE MANIFEST
 <mark># rev 43</mark>
@@ -191,50 +192,50 @@ clock.css</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=halma>Let&#8217;s Build One!</h2>
+<h2 id=halma>Vamos Construir Um!</h2>
 
-<p>Remember the Halma game that we introduced in <a href=canvas.html#halma>the canvas chapter</a> and later improved by <a href=storage.html#halma>saving state with persistent local storage</a>? Let&#8217;s take our Halma game offline.
+<p>Lembra-se do jogo Halma que apresentei no <a href=canvas.html#halma>capítulo de canvas</a>, e depois foi melhorado <a href=storage.html#halma>salvando o estado com persistência de armazenamento local</a>? Vamos deixar nosso jogo, Halma, offline.
 
-<p>To do that, we need a manifest that lists all the resources the game needs. Well, there&#8217;s the main <abbr>HTML</abbr> page, a single JavaScript file that contains all the game code, and&hellip; that&#8217;s it. There are no images, because all the drawing is done programmatically via the <a href=canvas.html>canvas <abbr>API</abbr></a>. All the necessary <abbr>CSS</abbr> styles are in a <code>&lt;style></code> element at the top of the <abbr>HTML</abbr> page. So this is our cache manifest:
+<p>Para fazer isso, precisamos de um arquivo manifest que liste todos os arquivos que o jogo precisa acessar. Bem, temos a página principal em <abbr>HTML</abbr>, um único arquivo JavaScript que contém todo o código do jogo e&hellip; só. Não existem imagens, porque todos os desenhos são feitos programaticamente via <a href="canvas.html">canvas <abbr>API</abbr></a>. Todo o <abbr>CSS</abbr> necessário está em um elemento <code>&lt;style&gt;</code>, no topo da página <abbr>HTML</abbr>. Então, nosso arquivo de cache manifest fica assim:
 
 <pre><code>CACHE MANIFEST
 halma.html
 ../halma-localstorage.js</code></pre>
 
-<p>A word about paths. I&#8217;ve created an <code>offline/</code> subdirectory in the <code>examples/</code> directory, and this cache manifest file lives inside the subdirectory. Because the <abbr>HTML</abbr> page will need one minor addition to work offline (more on that in a minute), I&#8217;ve created a separate copy of the <abbr>HTML</abbr> file, which also lives in the <code>offline/</code> subdirectory. But because there are no changes to the JavaScript code itself since <a href=storage.html#halma>we added local storage support</a>, I&#8217;m literally reusing the same <code>.js</code> file, which lives in the parent directory (<code>examples/</code>). Altogether, the files look like this:
+<p>Uma palavrinha sobre caminhos. Criei um subdiretório <code>offline/</code> no diretório <code>examples/</code>, e este arquivo de cache manifest mora dentro desse subdiretório. Devido a página <abbr>HTML</abbr>, vamos precisar acrescentar uma coisinha para que funcione offline (mais sobre isso em um minuto), criei também uma cópia separada do arquivo <abbr>HTML</abbr>, que também mora dentro do subdiretório <code>offline/</code>. Porém, graças a não haver mudanças no código JavaScript, <a href="storage.html#halma">adicionamos suporte a armazenamento local</a>, então estou literalmente reutilizando o mesmo arquivo <code>.js</code>, que mora no diretório pai (<code>examples/</code>). Todos juntos, os arquivos parecem com essa estrutura:
 
 <pre><samp>/examples/localstorage-halma.html
 /examples/halma-localstorage.js
 /examples/offline/halma.manifest
 /examples/offline/halma.html</samp></pre>
 
-<p>In the cache manifest file (<code>/examples/offline/halma.manifest</code>), we want to reference two files. First, the offline version of the <abbr>HTML</abbr> file (<code>/examples/offline/halma.html</code>). Since these two files are in the same directory, it is listed in the manifest file without any path prefix. Second, the JavaScript file which lives in the parent directory (<code>/examples/halma-localstorage.js</code>). This is listed in the manifest file using relative <abbr>URL</abbr> notation: <code>../halma-localstorage.js</code>. This is just like you might use a relative <abbr>URL</abbr> in an <code>&lt;img src></code> attribute. As you&#8217;ll see in the next example, you can also use absolute paths (that start at the root of the current domain) or even absolute <abbr>URL</abbr>s (that point to resources on other domains).
+<p>No arquivo de cache manifest (<code>/examples/offline/halma.manifest</code>), nós queremos referenciar dois arquivos. Primeiro, a versão offline do <abbr>HTML</abbr> (<code>/examples/offline/hamla.html</code>). Desde que estes dois arquivos estejam no mesmo diretório, será listado no arquivo de manifest sem qualquer prefixo de caminho. Segundo, o arquivo JavaScript que mora no diretório pai (<code>/examples/hamla-localstorage.js</code>). Este está listado no arquivo de manifest usando notação de <abbr>URL</abbr> relativa: <code>../halma-localstorage.js</code>. Isso está do jeito que você deve usar uma <abbr>URL</abbr> em um atributo <code>&lt;img src&gt;</code>. Como você verá no próximo exemplo, também é possível usar caminhos absolutos (que começa na raiz do domínio atual) ou até <abbr>URL</abbr>s absolutas (que apontam arquivos em outros domínios).
 
-<p>Now, in the <abbr>HTML</abbr> file, we need to add the <code>manifest</code> attribute that points to the cache manifest file.
+<p>Agora, no arquivo <abbr>HTML</abbr>, precisamos adicionar o atributo <code>manifest</code> que aponta para o arquivo de cache manifest.
 
 <pre><code>&lt;!DOCTYPE html>
 &lt;html lang="en" <mark>manifest="halma.manifest"</mark>></code></pre>
 
-<p>And that&#8217;s it! When an offline-capable browser first loads <a href=examples/offline/halma.html>the offline-enabled <abbr>HTML</abbr> page</a>, it will download the linked cache manifest file and start downloading all the referenced resources and storing them in the offline application cache. From then on, the offline application algorithm takes over whenever you revisit the page. You can play the game offline, and since it remembers its state locally, you can leave and come back as often as you like.
+<p>Pronto! Quando um navegador de suporte offline carregar pela primeira vez a <a href=examples/offline/halma.html>página <abbr>HTML</abbr> com suporte offline habilitado<a>, será baixado o arquivo de cache manifest e, também baixar todos os arquivos referenciados, armazenando todos no cache da aplicação offline. Deste momento em diante, o algorítmo offline da aplicação tomará conta de tudo, sempre que a página for visitada. Você pode jogar offline, e já que o jogo lembra de seu estado localmente, você pode sair e voltar quantas vezes quiser.
 
 <p class=a>&#x2767;
 
-<h2 id=further-reading>Further Reading</h2>
+<h2 id=further-reading>Leia mais (em inglês)</h2>
 
-<p>Standards:
+<p>Padrões:
 
 <ul>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html>Offline web applications</a> in the <abbr>HTML5</abbr> specification
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html>Offline web applications</a> na especificação <abbr>HTML5</abbr>
 </ul>
 
-<p>Browser vendor documentation:
+<p>Documentação de browser vendors:
 
 <ul>
 <li><a href=https://developer.mozilla.org/En/Offline_resources_in_Firefox>Offline resources in Firefox</a>
-<li><a href=http://developer.apple.com/safari/library/documentation/iPhone/Conceptual/SafariJSDatabaseGuide/OfflineApplicationCache/OfflineApplicationCache.html><abbr>HTML5</abbr> offline application cache</a>, part of the <a href=http://developer.apple.com/safari/library/documentation/iPhone/Conceptual/SafariJSDatabaseGuide/Introduction/Introduction.html>Safari client-side storage and offline applications programming guide</a>
+<li><a href=http://developer.apple.com/safari/library/documentation/iPhone/Conceptual/SafariJSDatabaseGuide/OfflineApplicationCache/OfflineApplicationCache.html><abbr>HTML5</abbr> offline application cache</a>, parte do <a href=http://developer.apple.com/safari/library/documentation/iPhone/Conceptual/SafariJSDatabaseGuide/Introduction/Introduction.html>Safari client-side storage and offline applications programming guide</a>
 </ul>
 
-<p>Tutorials and demos:
+<p>Tutoriais e demos:
 
 <ul>
 <li><a href=http://googlecode.blogspot.com/2009/04/gmail-for-mobile-html5-series-using.html>Gmail for mobile <abbr>HTML5</abbr> series: using appcache to launch offline - part 1</a>
@@ -242,18 +243,18 @@ halma.html
 <li><a href=http://googlecode.blogspot.com/2009/05/gmail-for-mobile-html5-series-part-3.html>Gmail for mobile <abbr>HTML5</abbr> series: using appcache to launch offline - part 3</a>
 <li><a href=http://jonathanstark.com/blog/2009/09/27/debugging-html-5-offline-application-cache/>Debugging <abbr>HTML5</abbr> offline application cache</a>
 <li><a href=http://hacks.mozilla.org/2010/02/an-html5-offline-image-editor-and-uploader-application/>an HTML5 offline image editor and uploader application</a>
-<li><a href=http://www.20thingsilearned.com/>20 Things I Learned About Browsers and the Web</a>, an advanced demo that uses the application cache and other <abbr>HTML5</abbr> techniques
+<li><a href=http://www.20thingsilearned.com/>20 Things I Learned About Browsers and the Web</a>, uma demonstração avançada que usa aplicações cache e outras técnicas <abbr>HTML5</abbr>.
 </ul>
 
 <p class=a>&#x2767;
 
-<p>This has been &#8220;Let&#8217;s Take This Offline.&#8221; The <a href=table-of-contents.html>full table of contents</a> has more if you&#8217;d like to keep reading.
+<p>Este foi &#8220;Vamos Tornar Isso Offline&#8221; O <a href=table-of-contents.html>Sumário</a> tem muito mais, se você quiser continuar a leitura.
 
 <div class=pf>
-<h4>Did You Know?</h4>
+<h4>Você sabia?</h4>
 <div class=moneybags>
-<blockquote><p>In association with Google Press, O&#8217;Reilly is distributing this book in a variety of formats, including paper, ePub, Mobi, and <abbr>DRM</abbr>-free <abbr>PDF</abbr>. The paid edition is called &#8220;HTML5: Up &amp; Running,&#8221; and it is available now. This chapter is included in the paid edition.
-<p>If you liked this chapter and want to show your appreciation, you can <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">buy &#8220;HTML5: Up &amp; Running&#8221; with this affiliate link</a> or <a href=http://oreilly.com/catalog/9780596806033>buy an electronic edition directly from O&#8217;Reilly</a>. You&#8217;ll get a book, and I&#8217;ll get a buck. I do not currently accept direct donations.
+<blockquote><p>Em parceria com Google Press, O&#8217;Reilly está distribuindo este livro e uma variadade de formatos, incluindo papel, ePub, Mobi e <abbr>PDF</abbr> sem <abbr>DRM</abbr>. A versão paga é chamada &#8220;HTML5: Up &amp; Running,&#8221; e está disponível agora. Este capítulo está incluso na edição paga.
+<p>Se você gostar deste capítulo e quiser demonstrar, você pode <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">comprar &#8220;HTML5: Up &amp; Running&#8221; com este link afiliado</a> ou <a href=http://oreilly.com/catalog/9780596806033>comprar a edição eletrônica diretamente com a O&#8217;Reilly</a>. Você irá ter o livro, e eu terei um trocado. Atualmente não aceito doações diretas.
 </blockquote>
 </div>
 </div>

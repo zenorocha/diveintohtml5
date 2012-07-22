@@ -115,7 +115,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p>Muitas páginas da web esperam o carregamento do <code>window.onload</code> para definir um foco. Mas o evento  <code>window.onload</code> não executa nenhuma ação <em>até que</em> todas as imagens tenham sido carregadas. Se sua página possui diversas imagens, seu script pode atrapalhar e refazer o foco em um campo, enquanto o usuário já estiver interagindo em outra parte da página. Por isso que usuários experientes odeiam scripts de foco automático.
 
-<p>O exemplo a seguir executa o script de foco automático imediatamente depois que os campos de formulário são declarados. Está é a solução ideal, mas pode ofender seu ego, por colocar um bloco de código JavaScript no meio da página. (Ou, mais prático, seu sistema de back-end, pode não ter esta flexibilidade.) Se você não pode colocar um script no meio da página, você deverá definir o foco durante um evento personalizado. Por exemplo, o <a href="http://docs.jquery.com/Tutorials:Introducing_$(document).ready()"><code>$(document).ready()</code></a> do jQuery ao invés de <code>window.onload</code>.
+<p>O exemplo a seguir executa o script de foco automático imediatamente depois que os campos de formulário são declarados. Esta é a solução ideal, mas pode ofender seu ego, por colocar um bloco de código JavaScript no meio da página. (Ou, mais prático, seu sistema de back-end, pode não ter esta flexibilidade.) Se você não pode colocar um script no meio da página, você deverá definir o foco durante um evento personalizado. Por exemplo, o <a href="http://docs.jquery.com/Tutorials:Introducing_$(document).ready()"><code>$(document).ready()</code></a> do jQuery ao invés de <code>window.onload</code>.
 
 <p class="legend top" style="margin-left:10em"><span class=arrow>&#x21b6;</span> Autofocus com jQuery fallback
 <pre><code>&lt;head>
@@ -170,7 +170,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 <li>Definir o foco corretamente é importante.
 <li>De todas as possibilidades, deixe o navegador trabalhar definindo o atributo <code>autofocus</code> no campo de formulário no qual deseja o foco.
 <li>Se codificar um fallback para navegadores antigos, detecte o suporte do atributo <code>autofocus</code> e garanta que o fallback será executado <em>apenas</em> em navegadores antigos.
-<li>Defina o foco o mais cedo possível. Insira o script de foco dentro da marcação imediatamente pós o campo de formulário. Se isto ofender você, use bibliotecas JavaScript que suportem eventos personalizados para acionar um evento personalizado imediatamente depois que o campo de formulário estiver disponível. Se não for possível, use apenas algo como o evento <code>$(document).ready()</code>.
+<li>Defina o foco o mais cedo possível. Insira o script de foco dentro da marcação imediatamente após o campo de formulário. Se isto ofender você, use bibliotecas JavaScript que suportem eventos personalizados para acionar um evento personalizado imediatamente depois que o campo de formulário estiver disponível. Se não for possível, use apenas algo como o evento <code>$(document).ready()</code>.
 <li>Sobre outras circunstâncias espere até carregar <code>window.onload</code> para ter o foco definido.
 </ul>
 
@@ -206,7 +206,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p>Eu não consigo enfatizar quão importante ele é. A internet possui milhões de formulários que pedem para digitar um endereço de email, e todos eles usam <code>&lt;input type="text"></code>. Você vê um campo de texto, você digita um endereço de email na caixa, e é isto. Com a <abbr>HTML5</abbr> utilize a definição <code>type="email"</code>. Os navegadores vão surtar? Não. Todo o tipo de navegador da Terra trata um atributo <code>type</code> nulo como <code>type="text"</code> &mdash; inclusive o IE6. Então você pode &#8220;atualizar&#8221; seu formulário para <code>type="email"</code> agora.
 
-<p>O que você quer dizer com os navegadores <em>AINDA</em> suportam <code>type="email"</code>? Bom, significa várias coisas. A especificação da <abbr>HTML5</abbr> não exige nenhuma interface particular para este novo tipo de campo. A maioria dos navegadores desktop como Safari, Chrome, Opera e Firefox simplesmente renderiam uma caixa de texto &mdash; exatamente como <code>type="text"</code> &mdash; logo, seu usuário nunca irá notar a diferença (<a href=#validation>até tentar enviar o formulário</a>).
+<p>O que você quer dizer com os navegadores <em>AINDA</em> suportam <code>type="email"</code>? Bom, significa várias coisas. A especificação da <abbr>HTML5</abbr> não exige nenhuma interface particular para este novo tipo de campo. A maioria dos navegadores desktop como Safari, Chrome, Opera e Firefox simplesmente renderizam uma caixa de texto &mdash; exatamente como <code>type="text"</code> &mdash; logo, seu usuário nunca irá notar a diferença (<a href=#validation>até tentar enviar o formulário</a>).
 
 <p>Então surge o iPhone.
 
@@ -222,7 +222,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <h2 id=type-url>Endereços web</h2>
 
-<p>Endereços web - que a maioria dos usuários avançados de internet chamam de <abbr>URLs</abbr>, exceto por alguns poucos  <a href="http://www.douglasadams.com/dna/pedants.html">pedantes</a> que chamam de <abbr>URIs</abbr> &mdash; outro tipo de texto especializado. A sintaxe dos endereços web é definida pelos padrões de relevância da Internet. Se alguém pedir para você digitar um endereço web em um formulário, é esperado algo como &#8220;<code>http://www.google.com/</code>&#8221;, não &#8220;Rua Getulio Vargas, 160.&#8221; Barras são comuns &mdash; inclusive a página inicial do Google possui três delas. Pontos são tão comuns quanto, mas espaços são proibidos. E todos os endreços web possuem um sufixo relacionado a um domínio como:  &#8220;.com&#8221; ou &#8220;.org&#8221;.
+<p>Endereços web - que a maioria dos usuários avançados de internet chamam de <abbr>URLs</abbr>, exceto por alguns poucos  <a href="http://www.douglasadams.com/dna/pedants.html">pedantes</a> que chamam de <abbr>URIs</abbr> &mdash; outro tipo de texto especializado. A sintaxe dos endereços web é definida pelos padrões de relevância da Internet. Se alguém pedir para você digitar um endereço web em um formulário, é esperado algo como &#8220;<code>http://www.google.com/</code>&#8221;, não &#8220;Rua Getulio Vargas, 160.&#8221; Barras são comuns &mdash; inclusive a página inicial do Google possui três delas. Pontos são tão comuns quanto, mas espaços são proibidos. E todos os endereços web possuem um sufixo relacionado a um domínio como:  &#8220;.com&#8221; ou &#8220;.org&#8221;.
 
 <p>Observem... (rufar de tambores, por favor)... o <code>&lt;input type="url"></code>. No iPhone:
 
@@ -522,12 +522,12 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p class=a>&#x2767;
 
-<p>Isso foi o &#8220;Uma forma de loucura.&#8221; Consulte o <a href=table-of-contents.html>sumário</a> caso queria continuar com a leitura.
+<p>Isso foi o &#8220;Uma forma de loucura.&#8221; Consulte o <a href=table-of-contents.html>Sumário</a> caso queria continuar com a leitura.
 
 <div class=pf>
 <h4>Você Sabia?</h4>
 <div class="moneybags">
-<blockquote><p>Em associação a <span lang="en">Google Press</span>, O&#8217;Reilly está distruindo este livro em variados formatos, incluindo papel, ePub, Mobi, <abbr>DRM</abbr>-free e <abbr>PDF</abbr>. A edição paga é chamada <span lang="en">“HTML5: Up &amp; Running”</span> e está disponível agora. Este capítulo está incluído na versão paga.
+<blockquote><p>Em associação a <span lang="en">Google Press</span>, O&#8217;Reilly está distribuindo este livro em variados formatos, incluindo papel, ePub, Mobi, <abbr>DRM</abbr>-free e <abbr>PDF</abbr>. A edição paga é chamada <span lang="en">“HTML5: Up &amp; Running”</span> e está disponível agora. Este capítulo está incluído na versão paga.
 </p><p>Se você gostou deste capítulo e quer mostrar sua apreciação, basta <a href="http://www.amazon.com/HTML5-Up-Running-Mark-Pilgrim/dp/0596806027?ie=UTF8&amp;tag=diveintomark-20&amp;creativeASIN=0596806027">comprar o livro “<abbr>HTML5</abbr>: Up &amp; Running” com esse link afiliado</a> ou <a href="http://oreilly.com/catalog/9780596806033">comprar a edição eletrônica diretamente da O&#8217;Reilly</a>. Você vai ganhar um livro, e eu vou ganhar um trocado. Atualmente, não aceito doações diretas.
 </p></blockquote>
 </div>
