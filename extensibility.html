@@ -1073,7 +1073,7 @@ Excerpt from the page will show up here.</span><br>
 </blockquote>
 <!-- translated start -->
 <blockquote class=fakeresults>
-<p><a href=examples/event-plus-microdata.html>Calendário de Eventos de Mark Pilgrim&#8217;</a><br>
+<p><a href=examples/event-plus-microdata.html>Calendário de Eventos de Mark Pilgrim</a><br>
 <span class=fakeexcerpt>Trecho da página aparecerá aqui.<br>
 Trecho da página aparecerá aqui.</span><br>
 <table class=faketable>
@@ -1097,10 +1097,19 @@ Trecho da página aparecerá aqui.</span><br>
 <p class=a>&#x2767;
 
 <h2 id=review>Marking Up Reviews</h2>
+<!-- translated start -->
+<h2 id=review>Marcando Reviews</h2>
+<!-- translated end -->
 
 <p>Here&#8217;s another example of making the web (and possibly search result listings) better through markup: business and product reviews.
+<!-- translated start -->
+<p>Aqui está outro exemplo de fazer a web melhor (e possivelmente ser listado no resultado de busca) através de marcação: avaliação de produtos e negócios.
+<!-- translated end -->
 
 <p>This is a short review I wrote of my favorite pizza place near my house. (This is a real restaurant, by the way. If you&#8217;re ever in Apex, NC, I highly recommend it.) Let&#8217;s look at <a href=examples/review.html>the original markup</a>:
+<!-- translated start -->
+<p>Esse é uma pequena avaliação que escrevi da minha pizzaria favorita perto da minha casa. (A propósito, isso é um restaurante de verdade. Se você alguma vez estiver em Apex, NC, recomendo altamente ele.) Vamos olhar para <a href=examples/review.html>a marcação original</a>:
+<!-- translated end -->
 
 <pre><code>&lt;article>
   &lt;h1>Anna&#8217;s Pizzeria&lt;/h1>
@@ -1121,14 +1130,40 @@ Trecho da página aparecerá aqui.</span><br>
   &lt;/p>
   &lt;p>&mdash; reviewed by Mark Pilgrim, last updated March 31, 2010&lt;/p>
 &lt;/article></code></pre>
+<!-- translated start -->
+<pre><code>&lt;article>
+  &lt;h1>Anna&#8217;s Pizzeria&lt;/h1>
+  &lt;p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2606; (4 estrelas de 5)&lt;/p>
+  &lt;p>Nova pizza no estilo Nova York logo alí no centro histórico Apex&lt;/p>
+  &lt;p>
+    A comida é de primeira linha. A atmosfera está alí para a &#8220;pizzaria do bairro.&#8221;
+    O restaurante em si é um pouco apertado; se você está acima do peso, 
+    você pode ter dificuldade de entrar e sair de sua cadeira e caminhar entre outras mesas.
+    Costumava dar gratuitamente &#8220;garlic knots&#8221; quando você sentava; agora eles lhe dão pão simples 
+    e você tem que pagar pelas coisas boas. No geral, é um vencedor.
+  &lt;/p>
+  &lt;p>
+    100 North Salem Street&lt;br>
+    Apex, NC 27502&lt;br>
+    USA
+  &lt;/p>
+  &lt;p>&mdash; avaliado por Mark Pilgrim, última atualização 31 de Março, 2010&lt;/p>
+&lt;/article></code></pre>
+<!-- translated end -->
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/review.html>review.html</a>, depois: <a href=examples/review-plus-microdata.html>review-plus-microdata.html</a>]
 
 <p>This review is contained in an <code>&lt;article></code> element, so that&#8217;s where we&#8217;ll put the <code>itemtype</code> and <code>itemscope</code> attributes. The namespace <abbr>URL</abbr> for this vocabulary is <code>http://data-vocabulary.org/Review</code>.
+<!-- translated start -->
+<p>Essa avaliação está contida em um elemento <code>&lt;article></code>, então é nele que vamos colocar os atributos <code>itemtype</code> e <code>itemscope</code>. A <abbr>URL</abbr> namespace para esse vocabulário é <code>http://data-vocabulary.org/Review</code>.
+<!-- translated end -->
 
 <pre><code>&lt;article <mark>itemscope</mark> <mark>itemtype="http://data-vocabulary.org/Review"</mark>></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/review.html>review.html</a>, depois: <a href=examples/review-plus-microdata.html>review-plus-microdata.html</a>]
 
 <p>What are the available properties in the Review vocabulary? I&#8217;m glad you asked.
+<!-- translated start -->
+<p>Quais são as propriedades disponíveis no vocabulário Review? Estou feliz que você perguntou.
+<!-- translated end -->
 
 <table class=st>
 <caption>Review vocabulary</caption>
@@ -1140,15 +1175,36 @@ Trecho da página aparecerá aqui.</span><br>
 <tr class=zebra><td><code>summary</code><td>A short summary of the review
 <tr><td><code>description</code><td>The body of the review
 </table>
+<!-- translated start -->
+<table class=st>
+<caption>Vocabulário Review</caption>
+<tr class=ho><th>Propriedade<th>Descrição
+<tr class=zebra><td><code>itemreviewed</code><td>O nome do item que está sendo avaliado. Pode ser um produto, serviço, negócio, entre outros.
+<tr><td><code>rating</code><td>Uma classificação numerica para o item, em uma escala de 1 até 5. Pode ser também um vocabulário <code>http://data-vocabulary.org/Rating</code> aninhado para usar uma escala diferente do padrão.
+<tr class=zebra><td><code>reviewer</code><td>O nome do autor que escreveu a avaliação
+<tr><td><code>dtreviewed</code><td>A data que o item foi avaliado no <a href=http://www.iso.org/iso/date_and_time_format>formato de data ISO</a>
+<tr class=zebra><td><code>summary</code><td>Um pequeno resumo da avaliação 
+<tr><td><code>description</code><td>O corpo da avaliação
+</table>
+<!-- translated end -->
 
 <p>The first property is simple: <code>itemreviewed</code> is just text, and here it&#8217;s contained in an <code>&lt;h1></code> element, so that&#8217;s where we should put the <code>itemprop</code> attribute.
+<!-- translated start -->
+<p>A primeira propriedade é simples: <code>itemreviewed</code> é apenas texto, e aqui ele está contido no elemento <code>&lt;h1></code>, então é aqui onde devemos colocar o atributo <code>itemprop</code>.
+<!-- translated end -->
 
 <pre><code>  &lt;h1 <mark>itemprop="itemreviewed"</mark>>Anna&#8217;s Pizzeria&lt;/h1></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/review.html>review.html</a>, depois: <a href=examples/review-plus-microdata.html>review-plus-microdata.html</a>]
 
 <p>I&#8217;m going to skip over the actual rating and come back to that at the end.
+<!-- translated start -->
+<p>Vou pular a classificação real e voltarei a ela no final.
+<!-- translated end -->
 
 <p>The next two properties are also straightforward. The <code>summary</code> property is a short description of what you&#8217;re reviewing, and the <code>description</code> property is the body of the review.
+<!-- translated start -->
+<p>As próximas duas propriedades também são simples. A propriedade <code>summary</code> é uma pequena descrição do que você está avaliando, e a propriedade <code>description</code> é o corpo da avaliação.
+<!-- translated end -->
 
 <pre><code>  &lt;p <mark>itemprop="summary"</mark>>New York-style pizza right in historic downtown Apex&lt;/p>
   &lt;p <mark>itemprop="description"</mark>>
@@ -1159,9 +1215,22 @@ Trecho da página aparecerá aqui.</span><br>
     garlic knots when you sat down; now they give you plain bread
     and you have to pay for the good stuff. Overall, it&#8217;s a winner.
   &lt;/p></code></pre>
+<!-- translated start -->
+<pre><code>  &lt;p <mark>itemprop="summary"</mark>>Nova pizza no estilo Nova York logo alí no centro histórico Apex&lt;/p>
+  &lt;p <mark>itemprop="description"</mark>>
+   A comida é de primeira linha. A atmosfera está alí para a &#8220;pizzaria do bairro.&#8221;
+    O restaurante em si é um pouco apertado; se você está acima do peso, 
+    você pode ter dificuldade de entrar e sair de sua cadeira e caminhar entre outras mesas.
+    Costumava dar gratuitamente &#8220;garlic knots&#8221; quando você sentava; agora eles lhe dão pão simples 
+    e você tem que pagar pelas coisas boas. No geral, é um vencedor.
+  &lt;/p></code></pre>
+<!-- translated end -->
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/review.html>review.html</a>, depois: <a href=examples/review-plus-microdata.html>review-plus-microdata.html</a>]
 
 <p>The <code>location</code> and <code>geo</code> properties aren&#8217;t anything we haven&#8217;t tackled Antes. (If you&#8217;re just tuning in, check out <a href=#address>marking up the address of a Person</a>, <a href=#organization-address>marking up the address of an Organization</a>, and <a href=#geo>marking up geolocation information</a> from earlier in this chapter.)
+<!-- translated start -->
+<p>As propriedades <code>location</code> e <code>geo</code> não tem nada de novidade. (Se você está mal sintonizando, confira <a href=#address>marcando o endereço de uma pessoa</a>, <a href=#organization-address>marcando o endereço de uma empresa</a>, e <a href=#geo>marcando informação de geolocalização</a> anteriormente nesse capítulo.)
+<!-- translated end -->
 
 <pre><code>  &lt;p <mark>itemprop="location"</mark> <mark>itemscope</mark>
            <mark>itemtype="http://data-vocabulary.org/Address"</mark>>
@@ -1179,6 +1248,9 @@ Trecho da página aparecerá aqui.</span><br>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/review.html>review.html</a>, depois: <a href=examples/review-plus-microdata.html>review-plus-microdata.html</a>]
 
 <p>The final line presents a familiar problem: it contains two bits of information in one element. The name of the reviewer is <code>Mark Pilgrim</code>, and the review date is <code>March 31, 2010</code>. How do we mark up these two distinct properties? <a href=#title-and-affiliation>Wrap them in their own elements</a> and put an <code>itemprop</code> attribute on each element. In fact, the date in this example should have been marked up with a <code>&lt;time></code> element in the first place, so that provides a natural hook on which to hang our <code>itemprop</code> attribute. The reviewer name can just be wrapped in a dummy <code>&lt;span></code> element.
+<!-- translated start -->
+<p>A linha final representa um problema familiar: ela contém duas partes de informação de um elemento. O nome do avaliador é <code>Mark Pilgrim</code>, e a data de avaliação é <code>31 de March, 2010</code>. Como marcar essas duas propriedades distintas? <a href=#title-and-affiliation>Englobe eles em seus próprios elementos</a> e coloque um atributo <code>itemprop</code> em cada elemento. Na verdade, em primero lugar a data nesse exemplo deveria ser marcada com um elemento <code>&lt;time></code>, assim isso daria um gancho natural sobre para pendurar o nosso atributo <code>itemprop</code>. O nome do avaliador pode ser apenas englobado em um fictício elemento <code>&lt;span></code>.
+<!-- translated end -->
 
 <pre><code>  &lt;p>&mdash; &lt;span <mark>itemprop="reviewer"</mark>>Mark Pilgrim&lt;/span>, last updated
      &lt;<mark>time</mark> <mark>itemprop="dtreviewed"</mark> <mark>datetime="2010-03-31"</mark>>
@@ -1186,14 +1258,27 @@ Trecho da página aparecerá aqui.</span><br>
      &lt;/time>
   &lt;/p>
 &lt;/article></code></pre>
+<!-- translated start -->
+<pre><code>  &lt;p>&mdash; &lt;span <mark>itemprop="reviewer"</mark>>Mark Pilgrim&lt;/span>, última atualização
+     &lt;<mark>time</mark> <mark>itemprop="dtreviewed"</mark> <mark>datetime="2010-03-31"</mark>>
+      31 de Março, 2010
+     &lt;/time>
+  &lt;/p>
+&lt;/article></code></pre>
+<!-- translated end -->
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/review.html>review.html</a>, depois: <a href=examples/review-plus-microdata.html>review-plus-microdata.html</a>]
 
 <p>OK, let&#8217;s talk ratings. The trickiest part of marking up a review is the rating. By default, ratings in the Review vocabulary are on a scale of 1&ndash;5, 1 being &#8220;terrible&#8221; and 5 being &#8220;awesome.&#8221; If you want to use a different scale, you can definitely do that. But let&#8217;s talk about the default scale first.
-
+<!-- translated start -->
+<p>Ok, vamos falar de classificações. A parte mais complicada de marcar uma revisão é a classificação. Por padrão, classificação no vocabulário Review está numa escala de  1&ndash;5, 1 sendo &#8220;terrível&#8221; e 5 sendo &#8220;maravilhoso.&#8221; Se você quer usar uma escala diferente, você definitivamente pode fazer isso. Mas vamos falar sobre a escala padrão primeiro.
+<!-- translated end -->
 <pre><code>  &lt;p>&#x2605;&#x2605;&#x2605;&#x2605;&#x2606; (&lt;span <mark>itemprop="rating"</mark>>4&lt;/span> stars out of 5)&lt;/p></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/review.html>review.html</a>, depois: <a href=examples/review-plus-microdata.html>review-plus-microdata.html</a>]
 
 <p>If you&#8217;re using the default 1&ndash;5 scale, the only property you need to mark up is the rating itself (4, in this case). But what if you want to use a different scale? You can do that; you just need to declare the limits of the scale you&#8217;re using. For example, if you wanted to use a 0&ndash;10 point scale, you would still declare the <code>itemprop="rating"</code> property, but instead of giving the rating value directly, you would use a nested vocabulary of <code>http://data-vocabulary.org/Rating</code> to declare the worst and best values in your custom scale and the actual rating value within that scale.
+<!-- translated start -->
+<p>
+<!-- translated end -->
 
 <pre><code>&lt;p <mark>itemprop="rating"</mark> <mark>itemscope</mark>
    <mark>itemtype="http://data-vocabulary.org/Rating"</mark>>
