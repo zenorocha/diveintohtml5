@@ -973,12 +973,18 @@ Android, AJAX APIs, Chrome, and Google Web Toolkit.&lt;/p></code></pre>
 
 <p>The <a href=examples/event.html>sample event page</a> also lists a second event, my speaking engagement at the ConFoo conference in Montréal. For brevity, I&#8217;m not going to go through that markup line by line. It&#8217;s essentially the same as the event in Prague: an Event item with nested Geo and Address items. I just mention it in passing to reiterate that a single page can have multiple events, each marked up with microdata.
 <!-- translated start -->
-<p>A <a href=examples/event.html>página de evento exemplo</a> também lista um segundo evento, minha palestra no ConFoo conference em Montréal. Para abreviar, não vou passar por essa marcação linha a linha. É essencialmente o mesmo que o evento em Prague: um item Event com itens Geo e Address aninhados. Estou mencionando apenas de passagem para recordar que uma única página pode ter vários eventos, cada um marcado com microdata.
+<p>A <a href=examples/event.html>página de evento exemplo</a> também lista um segundo evento, minha palestra no ConFoo conference em Montréal. Para ser breve, não vou passar por essa marcação linha a linha. É essencialmente o mesmo que o evento em Prague: um item Event com itens Geo e Address aninhados. Estou mencionando apenas de passagem para recordar que uma única página pode ter vários eventos, cada um marcado com microdata.
 <!-- translated end --> 
 
 <h3 id=event-rich-snippets>The Return of Google Rich Snippets</h3>
+<!-- translated start -->
+<h3 id=event-rich-snippets>O Retorno do Google Rich Snippets</h3>
+<!-- translated end -->
 
 <p><a href="http://www.google.com/webmasters/tools/richsnippets?url=http://diveintohtml5.org/examples/event-plus-microdata.html">According to Google&#8217;s Rich Snippets Testing Tool</a>, this is the information that Google&#8217;s crawlers will glean from <a href=examples/event-plus-microdata.html>our sample event listing page</a>:
+<!-- translated start -->
+<p><a href="http://www.google.com/webmasters/tools/richsnippets?url=http://diveintohtml5.org/examples/event-plus-microdata.html">De acordo com a ferramenta de testo do Google Rich Snippets</a>, essa é a informação que os rastreadores do Google vão imprimir do <a href=examples/event-plus-microdata.html>nosso exemplo de eventos na página de listagem</a>:
+<!-- translated end -->
 
 <pre><samp>Item
     <b>Type:</b> http://data-vocabulary.org/Event
@@ -1011,10 +1017,49 @@ Item
     <b>Type:</b> http://data-vocabulary.org/Geo
     latitude = 50.047893 
     longitude = 14.4491</samp></pre>
+<!-- translated start -->
+<pre><samp>Item
+    <b>Type:</b> http://data-vocabulary.org/Event
+    summary = Google Developer Day 2009 
+    eventType = conference 
+    photo = http://diveintohtml5.org/examples/gdd-2009-prague-pilgrim.jpg 
+    description = Google Developer Days é uma chance de aprender sobre o desenvolvimento dos produtos Google pelos engenheros que os constrói. Essa conferência de um dia inclui seminários e &#8220;horário de trabalho&#8221; em tecnologias web como Goo..
+    startDate = 2009-11-06T08:30+01:00 
+    endDate = 2009-11-06T20:30+01:00 
+    location = Item(__1) 
+    geo = Item(__3) 
+    url = http://code.google.com/intl/cs/events/developerday/2009/home.html 
+
+Item
+    Id: __1
+    <b>Type:</b> http://data-vocabulary.org/Organization
+    name = Congress Center 
+    address = Item(__2) 
+
+Item
+    Id: __2
+    <b>Type:</b> http://data-vocabulary.org/Address
+    street-address = 5th května 65 
+    postal-code = 140 21 
+    locality = Praha 4 
+    country-name = Czech Republic 
+
+Item
+    Id: __3
+    <b>Type:</b> http://data-vocabulary.org/Geo
+    latitude = 50.047893 
+    longitude = 14.4491</samp></pre>
+<!-- translated end -->
 
 <p>As you can see, all the information we added in microdata is there. Properties that are separate microdata items are given internal <abbr>IDs</abbr> (<code>Item(__1)</code>, <code>Item(__2)</code> and so on). This is not part of the microdata specification. It&#8217;s just a convention that Google&#8217;s testing tool uses to linearize the sample output and show you the grouping of nested items and their properties.
+<!-- translated start -->
+<p>Como você pode ver, toda informação que adicionamos no microdata está lá. Propriedades que são itens separados de microdata recebem <abbr>IDs</abbr> internos (<code>Item(__1)</code>, <code>Item(__2)</code> e assim por diante). Isso não faz parte da especificação microdata. É apenas uma convenção que ferramentas de teste do Google usam para linearizar a saída de exemplo e mostrar-lhe o agrupamento de itens aninhados e suas propriedades.
+<!-- translated end -->
 
 <p>Here is how Google might choose to represent this sample page in its search results. (Again, I have to preface this with the disclaimer that this is just an example. Google may change the format of their search results at any time, and there is no guarantee that Google will even pay attention to your microdata markup. Sorry to sound like a broken record, but our lawyers make me say these things.)
+<!-- translated start -->
+<p>Aqui está como Google pode escolher representar essa página exemplo em seus resultados de busca. (Novamente, tenho que introduzir isso com o aviso que isso é apenas um exemplo. Google pode mudar o formato dos seus resultados de busca a qualquer momento, e não há garantia que o Google vai prestar atenção em sua marcação microdata. Desculpa parecer uma recordação chata, mas nossos advogados me fazem dizer essas coisas.)
+<!-- translated end -->
 
 <blockquote class=fakeresults>
 <p><a href=examples/event-plus-microdata.html>Mark Pilgrim&#8217;s event calendar</a><br>
@@ -1026,10 +1071,28 @@ Excerpt from the page will show up here.</span><br>
 </table>
 <p><span class=fakeurl>diveintohtml5.org/examples/event-plus-microdata.html</span> - <span class=fakelink>Cached</span> - <span class=fakelink>Similar pages</span>
 </blockquote>
+<!-- translated start -->
+<blockquote class=fakeresults>
+<p><a href=examples/event-plus-microdata.html>Calendário de Eventos de Mark Pilgrim&#8217;</a><br>
+<span class=fakeexcerpt>Trecho da página aparecerá aqui.<br>
+Trecho da página aparecerá aqui.</span><br>
+<table class=faketable>
+<tr><td class=padright><a href=http://code.google.com/intl/cs/events/developerday/2009/home.html>Google Developer Day 2009</a><td class="fakeinfo padright">Fri, Nov 6<td class=fakeinfo>Congress Center, Praha 4, Czech Republic
+<tr><td class=padright><a href=http://confoo.ca/en>ConFoo.ca 2010</a><td class="fakeinfo padright">Wed, Mar 10<td class=fakeinfo>Hilton Montreal Bonaventure, Montréal, Québec, Canada
+</table>
+<p><span class=fakeurl>diveintohtml5.org/examples/event-plus-microdata.html</span> - <span class=fakelink>Cached</span> - <span class=fakelink>Páginas similares</span>
+</blockquote>
+<!-- translated end -->
 
 <p>After the page title and auto-generated excerpt text, Google starts using the microdata markup we added to the page to display a little table of events. Note the date format: &#8220;Fri, Nov 6.&#8221; That is not a string that appeared anywhere in our <abbr>HTML</abbr> or microdata markup. We used two fully qualified <abbr>ISO</abbr>-formatted strings, <code>2009-11-06T08:30+01:00</code> and <code>2009-11-06T20:30+01:00</code>. Google took those two dates, figured out that they were on the same day, and decided to display a single date in a more friendly format.
+<!-- translated start -->
+<p>Após o título da página e o auto-gerado texto resumido, o Google começa usar a marcação microdata que adicionamos na página para mostrar uma pequena tabela de eventos. Observe o formato de data: &#8220;Fri, Nov 6.&#8221; Isso não é uma string que apareceu em algum lugar do nosso <abbr>HTML</abbr> ou marcação microdata. Usamos duas completamentes qualificadas strings formatadas <abbr>ISO</abbr>. <code>2009-11-06T08:30+01:00</code> e <code>2009-11-06T20:30+01:00</code>. Google pegou essas duas datas, descobriu que se tratava do mesmo dia, e deciu mostrar uma única data em um formato mais amigável.
+<!-- translated end -->
 
 <p>Now look at the physical addresses. Google chose to display just the venue name + locality + country, not the exact street address. This is made possible by the fact that we split up the address into five subproperties &mdash; <code>name</code>, <code>street-address</code>, <code>region</code>, <code>locality</code>, and <code>country-name</code> &mdash; and marked up each part of the address as a different microdata property. Google takes advantage of that to show an abbreviated address. Other consumers of the same microdata markup might make different choices about what to display or how to display it. There&#8217;s no right or wrong choice here. It&#8217;s up to you to provide as much data as possible, as accurately as possible. It&#8217;s up to the rest of the world to interpret it.
+<!-- translated start -->
+<p>Agora olhe para o endereço físico. Google escolhei mostrar apenas o nome do local + localização + país, não exatamente o logradouro. Isso é possível pelo fato de que nós separamos o endereço em cinco subpropriedades &mdash; <code>name</code>, <code>street-address</code>, <code>region</code>, <code>locality</code>, e <code>country-name</code> &mdash; e marcamos cada parte do endereço como uma propriedade microdata diferente. Google se aproveita disso para mostrar um endereço abreviado. Outros consumidores da mesma marcação microdata pode fazer diferentes escolhas sobre o que mostrar ou como mostrar isso. Não existe escolha certa ou errada aqui. Está a seu cargo prover o máximo de informação possível, o mais fielmente possível. Interpretar isso está a cargo do resto do mundo.
+<!-- translated end -->
 
 <p class=a>&#x2767;
 
