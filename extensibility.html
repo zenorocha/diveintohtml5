@@ -595,7 +595,7 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 
 <p>Next up: a telephone number for the Organization. Telephone numbers are notoriously tricky, and the exact syntax is country-specific. (And if you want to call another country, it&#8217;s even worse.) In this example, we have a United States telephone number, in a format suitable for calling from elsewhere in the United States.
 <!-- translated start -->
-<p>Próximo: um número de telefone para a empresa. Números de telefone são notoriamente complicados, e a sintaxe exata é específica da localização. (E se você gostaria de ligar para outro lugar, é ainda pior.) Nesse exemplo, temos um número de telefone dos Estados Unidos, em um formato adequado para ligar de qualquer lugar nos Estados Unidos.
+<p>Em seguida: um número de telefone para a empresa. Números de telefone são notoriamente complicados, e a sintaxe exata é específica da localização. (E se você gostaria de ligar para outro lugar, é ainda pior.) Nesse exemplo, temos um número de telefone dos Estados Unidos, em um formato adequado para ligar de qualquer lugar nos Estados Unidos.
 <!-- translated end -->  
 
 <pre><code>  &lt;p <mark>itemprop="tel"</mark>>650-253-0000&lt;/p></code></pre>
@@ -709,10 +709,19 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 <p class=a>&#x2767;
 
 <h2 id=event>Marking Up Events</h2>
+<!-- translated start -->
+<h2 id=event>Marcando &#8220;Events&#8221;</h2>
+<!-- translated end --> 
 
 <p>Shit happens. Some shit happens at pre-determined times. Wouldn&#8217;t it be nice if you could tell search engines exactly when shit was about to happen? There&#8217;s an angle bracket for that.
+<!-- translated start -->
+<p>Merda acontece. Algumas merdas acontecem em pré-determinadas vezes. Não seria legal se você pudesse dizer aos motores de busca exatamente quando a merda estava prestes a acontecer?
+<!-- translated end --> 
 
 <p>Let&#8217;s start by looking at <a href=examples/event.html>a sample schedule of my speaking engagements</a>.
+<!-- translated start -->
+<p>Vamos começar olhando para <a href=examples/event.html>um cronograma exemplo de amostra das minhas palestras</a>.
+<!-- translated end --> 
 
 <pre><code>&lt;article>
   &lt;h1>Google Developer Day 2009&lt;/h1>
@@ -739,6 +748,29 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
   &lt;/p>
   &lt;p>&lt;a href="http://code.google.com/intl/cs/events/developerday/2009/home.html">GDD/Prague home page&lt;/a>&lt;/p>
 &lt;/article></code></pre>
+<!-- translated start -->
+<pre><code>&lt;article>
+  &lt;h1>Google Developer Day 2009&lt;/h1>
+  &lt;img width="300" height="200"
+       src="http://diveintohtml5.org/examples/gdd-2009-prague-pilgrim.jpg"
+       alt="[Mark Pilgrim at podium]">
+  &lt;p>
+    Google Developer Days é uma chance de aprender sobre o desenvolvimento dos produtos Google pelos engenheros que os constrói. Essa conferência de um dia inclui seminários e &#8220;horário de trabalho&#8221; em tecnologias web como Google Maps, OpenSocial, Android, APIs AJAX, Chrome, e Google Web Toolkit.
+  &lt;/p>
+  &lt;p>
+    &lt;time datetime="2009-11-06T08:30+01:00">2009 November 6, 8:30&lt;/time>
+      &amp;ndash;
+    &lt;time datetime="2009-11-06T20:30+01:00">20:30&lt;/time>
+  &lt;/p>
+  &lt;p>
+    Congress Center&lt;br>
+    5th května 65&lt;br>
+    140 21 Praha 4&lt;br>
+    Czech Republic
+  &lt;/p>
+  &lt;p>&lt;a href="http://code.google.com/intl/cs/events/developerday/2009/home.html">GDD/Prague home page&lt;/a>&lt;/p>
+&lt;/article></code></pre>
+<!-- translated end -->
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
 <p>All the information about the event is contained within the <code>&lt;article></code> element, so that&#8217;s where we need to put the <code>itemtype</code> and <code>itemscope</code> attributes.
@@ -747,6 +779,9 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
 <p>The <abbr>URL</abbr> for the Event vocabulary is <code><a href=http://data-vocabulary.org/Event>http://data-vocabulary.org/Event</a></code>, which also happens to contain a nice little chart describing the vocabulary&#8217;s properties. And what are those properties?
+<!-- translated start -->
+<p>A <abbr>URL</abbr> para o vocabuário Event é <code><a href=http://data-vocabulary.org/Event>http://data-vocabulary.org/Event</a></code>, que ocorre de conter também um pequeno bonito gráfico descrevendo as propriedades do vocabulário. E o que são essas propriedades?
+<!-- translated end --> 
 
 <table class=st>
 <caption>Event vocabulary</caption>
@@ -762,37 +797,78 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 <tr class=zebra><td><code>geo</code><td>Specifies the geographical coordinates of the location. Always contains two subproperties, <code>latitude</code> and <code>longitude</code>.
 <tr><td><code>photo</code><td>A link to a photo or image related to the event
 </table>
+<!-- translated start -->
+<table class=st>
+<caption>Vocabulário Event</caption>
+<tr class=ho><th>Propriedade<th>Descrição
+<tr class=zebra><td><code>summary</code><td>O nome do evento
+<tr><td><code>url</code><td>Link para a página de detalhes do evento
+<tr class=zebra><td><code>location</code><td>A localização ou lugar do evento. Pode opcionalmente ser representado por um <a href=#organization>Organization</a> ou <a href=#address>Address</a> aninhado.
+<tr><td><code>description</code><td>Uma descrição do evento
+<tr class=zebra><td><code>startDate</code><td>A data e hora inicial do evento no <a href=http://www.iso.org/iso/date_and_time_format>foramato de data ISO</a>
+<tr><td><code>endDate</code><td>A data e hora final do evento no <a href=http://www.iso.org/iso/date_and_time_format>foramato de data ISO</a>
+<tr class=zebra><td><code>duration</code><td>A data de duração no <a href=http://en.wikipedia.org/wiki/ISO_8601#Durations>formato de duração ISO</a>
+<tr><td><code>eventType</code><td>A categoria do evento (por exemplo, &#8220;Show&#8221; ou &#8220;Palestra&#8221;). Esta é uma string de forma livre, não um atributo enumerado.
+<tr class=zebra><td><code>geo</code><td>Especifica as coordenadas geográficas da localização. Sempre contém duas subpropriedades, <code>latitude</code> e <code>longitude</code>.
+<tr><td><code>photo</code><td>Um link para uma foto ou imagem relacionada ao evento
+</table>
+<!-- translated end -->
 
 <p>The event&#8217;s name is in an <code>&lt;h1></code> element. According to the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a>, <code>&lt;h1></code> elements have no special processing. The microdata property value is simply the text content of the <code>&lt;h1></code> element. All we need to do is add the <code>itemprop</code> attribute to declare that this <code>&lt;h1></code> element contains the name of the event.
+<!-- translated start -->
+<p>O nome do evento está em um elemento <code>&lt;h1></code>. <p>De acordo com o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, elementos <code>&lt;h1></code> não tem processamento especial. O valor da propriedade microdata é apenas o conteúdo textual do elemento <code>&lt;h1></code>. Tudo que precisamos adicionar é o atributo <code>itemprop</code> para declarar que esse elemento <code>&lt;h1></code> contém o nome do evento.
+<!-- translated end --> 
 
 <pre><code>  &lt;h1 <mark>itemprop="summary"</mark>>Google Developer Day 2009&lt;/h1></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
 <p>In English, this says, &#8220;The name of this event is Google Developer Day 2009.&#8221;
 <p>This event listing has a photo, which can be marked up with the <code>photo</code> property. As you would expect, the photo is already marked up with an <code>&lt;img></code> element. Like <a href=#person-photo>the <code>photo</code> property in the Person vocabulary</a>, an Event photo is a <abbr>URL</abbr>. Since the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a> says that the property value of an <code>&lt;img></code> element is its <code>src</code> attribute, the only thing we need to do is add the <code>itemprop</code> attribute to the <code>&lt;img></code> element.
+<!-- translated start -->
+<p>Traduzindo, isso quer dizer, &#8220;O nome desse evento é Google Developer Day 2009.&#8221;
+<p>Essa listagem de evento tem uma foto, que pode ser marcada com uma propriedade <code>photo</code>. Como você poderia esperar, a foto já está marcada com um elemento <code>&lt;img></code>. Como <a href=#person-photo>a propriedade <code>photo</code> no vocabulário Person</a>, uma foto de um evento é uma <abbr>URL</abbr>. Já que o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a> diz que o valor da propriedade de um elemento <code>&lt;img></code> está em seu atributo <code>src</code>, a única coisa que precisamoa fazer é adicionar o atributo <code>itemprop</code> no elemento <code>&lt;img></code>.
+<!-- translated end --> 
 
 <pre><code>  &lt;img <mark>itemprop="photo"</mark> width="300" height="200"
        src="http://diveintohtml5.org/examples/gdd-2009-prague-pilgrim.jpg"
-       alt="[Mark Pilgrim at podium]"></code></pre>
+       alt="[Mark Pilgrim no pódio]"></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
 <p>In English, this says, &#8220;The photo for this event is at <code>http://diveintohtml5.org/examples/gdd-2009-prague-pilgrim.jpg</code>.&#8221;
+<!-- translated start -->
+<p>Traduzindo, isso quer dizer, &#8220;A foto para esse evento está aqui <code>http://diveintohtml5.org/examples/gdd-2009-prague-pilgrim.jpg</code>.&#8221;
+<!-- translated end --> 
 
 <p>Next up is a longer description of the event, which is just a pargaraph of freeform text.
+<!-- translated start -->
+<p>Em seguida está uma descrição mais longa do evento, que é apeanas um parágrafo de texto livre.
+<!-- translated end --> 
 
 <pre><code>  &lt;p <mark>itemprop="description"</mark>>Google Developer Days are a chance to
 learn about Google developer products from the engineers who built
 them. This one-day conference includes seminars and &#8220;office
 hours&#8221; on web technologies like Google Maps, OpenSocial,
 Android, AJAX APIs, Chrome, and Google Web Toolkit.&lt;/p></code></pre>
+<!-- translated start -->
+<pre><code>  &lt;p <mark>itemprop="description"</mark>>Google Developer Days é uma chance de aprender sobre o desenvolvimento dos produtos Google pelos engenheros que os constrói. Essa conferência de um dia inclui seminários e &#8220;horário de trabalho&#8221; em tecnologias web como Google Maps, OpenSocial, Android, APIs AJAX, Chrome, e Google Web Toolkit.&lt;/p></code></pre>
+<!-- translated end -->
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
 <p>The next bit is something new. Events generally occur on specific dates and start and end at specific times. In <abbr>HTML5</abbr>, dates and times should be marked up with <a href=semantics.html#time-element>the <code>&lt;time></code> element</a>, and we are already doing that here. So the question becomes, how do we add microdata propeties to these <code>&lt;time></code> elements? Looking back at the <a href=#property-values><abbr>HTML5</abbr> microdata data model</a>, we see that the <code>&lt;time></code> element has special processing. The value of a microdata property on a <code>&lt;time></code> element is the value of the <code>datetime</code> attribute. And hey, the <code>startDate</code> and <code>endDate</code> properties of the Event vocabulary take an <abbr>ISO</abbr>-style date, just like the <code>datetime</code> property of a <code>&lt;time></code> element. Once again, the semantics of the core <abbr>HTML</abbr> vocabulary dovetail nicely with semantics of our custom microdata vocabulary. Marking up start and end dates with microdata is as simple as
+<!-- translated start -->
+<p>O próximo pedaço é algo novo. Eventos geralmente ocorrem em datas específicas e começam e terminam em horas específicas. Na <abbr>HTML5</abbr>, data e hora deve ser marcada com <a href=semantics.html#time-element>o elemento <code>&lt;time></code></a>, e já estamos fazendo isso aqui. Então fica a questão, como adicionamos propriedades microdata nesses elementos <code>&lt;time></code>? Olhando atrás no  <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, vemos que o elemento <code>&lt;time></code> tem processamento especial. O valor da propriedade microdata em um elemento <code>&lt;time></code> é o valor do atributo <code>datetime</code>. E olhe, as propriedades <code>startDate</code> e <code>endDate</code> do vocabulário Event leva um estilo de data <abbr>ISO</abbr>, assim como a propriedade <code>datetime</code> de um elemento <code>&lt;time></code>. Mais uma vez, a semântica do principal vocabulário <abbr>HTML</abbr> se encaixam muito bem com a semântica de nosso vocabulário microdata personalizado. Marcar data inicial e final com microdata é tão simples como:
+<!-- translated end -->
 
 <ol>
 <li>Using <abbr>HTML</abbr> correctly in the first place (using <code>&lt;time></code> elements to mark up dates and times), and
 <li>Adding a single <code>itemprop</code> attribute
 </ol>
+<!-- translated start -->
+<ol>
+<li>Usar <abbr>HTML</abbr> corretamente em primeiro lugar (usar elemento <code>&lt;time></code> para marcar data e hora), e
+<li>Adicionar um  simples atributo <code>itemprop</code>
+</ol>
+<!-- translated end -->
 
 <pre><code>  &lt;p>
     &lt;time <mark>itemprop="startDate"</mark> datetime="2009-11-06T08:30+01:00">2009 November 6, 8:30&lt;/time>
@@ -802,23 +878,41 @@ Android, AJAX APIs, Chrome, and Google Web Toolkit.&lt;/p></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
 <p>In English, this says, &#8220;This event starts on November 6, 2009, at 8:30 in the morning, and goes until November 6, 2009, at 20:30 (times local to Prague, <abbr>GMT</abbr>+1).&#8221;
+<!-- translated start -->
+<p>Traduzindo, isso quer dizer, &#8220;Esse vento comeaça em 6 de Novembro, 2009, às 8:30 da manhã, e vai até 6 de Novembro, 2009, às 20:30 (horário local para Prague, <abbr>GMT</abbr>+1).&#8221;
+<!-- translated end -->
 
 <p>Next up is the <code>location</code> property. The <a href=http://data-vocabulary.org/Event>definition of the Event vocabulary</a> says that this can be either an Organization or an Address. In this case, the event is being held at a venue that specializes in conferences, the Congress Center in Prague. Marking it up as an Organization allows us to include the name of the venue as well as its address.
+<!-- translated start -->
+<p>Em seguida está a propriedade <code>location</code>. A <a href=http://data-vocabulary.org/Event>definição do vocabulário Event</a> diz que isso pode ser tanto uma &#8220;Organization&#8221; ou um &#8220;Address&#8221;. Nesse caso, o evento está sendo realizado em um local especializado em conferências, o Congress Center in Prague. Marcar isso como uma &#8220;Organization&#8221; nos permite incluir o nome do local, bem como seu endereço.
+<!-- translated end -->
 
 <p>First, let&#8217;s declare that the <code>&lt;p></code> element that contains the address is the <code>location</code> property of the Event, and that this element is also its own microdata item that conforms to the <code>http://data-vocabulary.org/Organization</code> vocabulary.
+<!-- translated start -->
+<p>Primeiro, vamos declarar que o elemento <code>&lt;p></code> que contém o endereço é a propriedade <code>location</code> do evento, e que esse elemento é também seu próprio item microdata que está em conformidade com o vocabulário <code>http://data-vocabulary.org/Organization</code>
+<!-- translated end -->
 
 <pre><code>  &lt;p <mark>itemprop="location"</mark> <mark>itemscope</mark>
            <mark>itemtype="http://data-vocabulary.org/Organization"</mark>></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
 <p>Next, mark up the name of the Organization by wrapping the name in a dummy <code>&lt;span></code> element and adding an <code>itemprop</code> attribute to the <code>&lt;span></code> element.
+<!-- translated start -->
+<p>Depois, marcar o nome da empresa através de um elemento <code>&lt;span></code> externo e adicionar um atributo <code>itemprop</code> no elemento <code>&lt;span></code>.
+<!-- translated end -->
 
 <pre><code>    &lt;span <mark>itemprop="name"</mark>>Congress Center&lt;/span>&lt;br></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
 <p>Due to the microdata scoping rules, this <code>itemprop="name"</code> is defining a property in the Organization vocabulary, not the Event vocabulary. The <code>&lt;p></code> element defined the beginning of the scope of the Organization properties, and that <code>&lt;p></code> element hasn&#8217;t yet been closed with an <code>&lt;/p></code> tag. Any microdata properties we define here are properties of the most-recently-scoped vocabulary. Nested vocabularies are like a <a href="http://en.wikipedia.org/wiki/Stack_(data_structure)">stack</a>. We haven&#8217;t yet popped the stack, so we&#8217;re still talking about properties of the Organization.
+<!-- translated start -->
+<p>Devido as regras microdata de escopo, esse <code>itemprop="name"</code> está definindo uma propriedae no vocabulário Organization, não no vocabulário Event. O elemento <code>&lt;p></code> definido no começo do escopo das propriedades Organization, e que elemento <code>&lt;p></code> não foi fechado ainda com uma tag  <code>&lt;/p></code>. Qualquer propriedade microdata que definimos aqui são propriedades do mais recente vocabulário com escopo. Vocabulários aninhadas são como uma <a href="http://en.wikipedia.org/wiki/Stack_(data_structure)">pilha</a>. Não desempilhamos ainda, então ainda estamos falando sobre propriedades da &#8220;Organization&#8221;.
+<!-- translated end -->  
 
 <p>In fact, we&#8217;re going to add a third vocabulary onto the stack: an Address for the Organization for the Event.
+<!-- translated start -->
+<p>Na verdade, vamos adicionar um terceiro vocabulário na pilha: um &#8220;Address&#8221; da &#8220;Organization&#8221; para o &#8220;Event&#8221;.
+<!-- translated end -->  
 
 <pre><code>
     &lt;span <mark>itemprop="address"</mark> <mark>itemscope</mark>
@@ -826,6 +920,10 @@ Android, AJAX APIs, Chrome, and Google Web Toolkit.&lt;/p></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
 <p>Once again, we want to mark up every piece of the address as a separate microdata property, so we need a slew of dummy <code>&lt;span></code> elements to hang our <code>itemprop</code> attributes onto. (If I&#8217;m going too fast for you here, go back and read about <a href=#address>marking up the address of a Person</a> and <a href=#organization-address>marking up the address of an Organization</a>.)
+<!-- translated start -->
+<p>Mais uma vez, queremos marcar cada pedaço de um endereço como uma propriedade microdata separada, então precisamos uma série de elementos <code>&lt;span></code> fictícios para pendurar nossos atributos <code>itemprop</code> dentro. (Se estou indo muito rápido para você aqui, volte e leia sobre <a href=#address>marcando o endereço de uma pessoa</a> e <a href=#organization-address>marcando o endereço de uma empresa</a>.)
+<!-- translated end -->  
+
 
 <pre><code>      &lt;span <mark>itemprop="street-address"</mark>>5th května 65&lt;/span>&lt;br>
       &lt;span <mark>itemprop="postal-code"</mark>>140 21&lt;/span>
@@ -834,14 +932,23 @@ Android, AJAX APIs, Chrome, and Google Web Toolkit.&lt;/p></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
 <p>There are no more properties of the Address, so we close the <code>&lt;span></code> element that started the Address scope, and pop the stack.
+<!-- translated start -->
+<p>Não existem mais propriedades do Address, então fechamos o elemento <code>&lt;span></code> que começou o escopo Address, e desempilhamos.
+<!-- translated end --> 
 
 <pre><code>    &lt;/span></code></pre>
 
 <p>There are no more properties of the Organization, so we close the <code>&lt;p></code> element that started the Organization scope, and pop the stack again.
+<!-- translated start -->
+<p>Não existe mais propriedades da &#8220;Organization&#8221;, então fechamos o elemento <code>&lt;p></code> que começou o escopo Organization, e desempilhamos novamente. 
+<!-- translated end --> 
 
 <pre><code>  &lt;/p></code></pre>
 
 <p>Now we&#8217;re back to defining properties on the Event. The next property is <code>geo</code>, to represent the physical location of the Event. This uses the same Geo vocabulary that we used to <a href=#geo>mark up the physical location of an Organization</a> in the previous section. We need a <code>&lt;span></code> element to act as the container; it gets the <code>itemtype</code> and <code>itemscope</code> attributes. Within that <code>&lt;span></code> element, we need two <code>&lt;meta></code> elements, one for the <code>latitude</code> property and one for the <code>longitude</code> property.
+<!-- translated start -->
+<p>Agora voltamos para definir propriedades no evento. A próxima propriedade é <code>geo</code>, para representar a localização física do evento. Ela usa o mesmo vocabulário Geo que usamos para <a href=#geo>marcar a localização fisica de uma empresa</a> na seção anterior. Precisamos de um elemento <code>&lt;span></code> para agir como um container; ele leva os atributos <code>itemtype</code> e <code>itemscope</code>. Dentro desse elemento <code>&lt;span></code>, precisamos dois elementos <code>&lt;meta></code>, um para a propriedade <code>latitude</code> e outro para a propriedade <code>longitude</code>.
+<!-- translated end --> 
 
 <pre><code>
   &lt;span <mark>itemprop="geo"</mark> <mark>itemscope</mark> <mark>itemtype="http://data-vocabulary.org/Geo"</mark>>
@@ -851,6 +958,9 @@ Android, AJAX APIs, Chrome, and Google Web Toolkit.&lt;/p></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
 <p>And we&#8217;ve closed the <code>&lt;span></code> that contained the Geo properties, so we&#8217;re back to defining properties on the Event. The last property is the <code>url</code> property, which should look familiar. Associating a <abbr>URL</abbr> with an Event works the same way as <a href=#person-url>associating a <abbr>URL</abbr> with a Person</a> and <a href=#organization-url>associating a <abbr>URL</abbr> with an Organization</a>. If you&#8217;re using <abbr>HTML</abbr> correctly (marking up hyperlinks with <code>&lt;a href></code>), then declaring that the hyperlink is a microdata <code>url</code> property is simply a matter of adding the <code>itemprop</code> attribute.
+<!-- translated start -->
+<p>E fechamos o <code>&lt;span></code> que guardava as propriedades Geo, então estamos voltando a definir propriedades do evento. A última propriedade é a propriedade <code>url</code>, que deve parecer familiar. Associar uma <abbr>URL</abbr> com um evento funciona da mesma forma que<a href=#person-url>associar uma <abbr>URL</abbr> com uma pessoa</a> e <a href=#organization-url>associar uma <abbr>URL</abbr> com uma empresa</a>. Se você está usando <abbr>HTML</abbr> corretamente (marcando hyperlinks com <code>&lt;a href></code>), então declarar que o hyperlink é uma propriedade <code>url</code> microdata é uma simples questão de adicionar o atributo <code>itemprop</code>.
+<!-- translated end --> 
 
 <pre><code>  &lt;p>
     &lt;a <mark>itemprop="url"</mark>
@@ -862,6 +972,9 @@ Android, AJAX APIs, Chrome, and Google Web Toolkit.&lt;/p></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
 <p>The <a href=examples/event.html>sample event page</a> also lists a second event, my speaking engagement at the ConFoo conference in Montréal. For brevity, I&#8217;m not going to go through that markup line by line. It&#8217;s essentially the same as the event in Prague: an Event item with nested Geo and Address items. I just mention it in passing to reiterate that a single page can have multiple events, each marked up with microdata.
+<!-- translated start -->
+<p>A <a href=examples/event.html>página de evento exemplo</a> também lista um segundo evento, minha palestra no ConFoo conference em Montréal. Para abreviar, não vou passar por essa marcação linha a linha. É essencialmente o mesmo que o evento em Prague: um item Event com itens Geo e Address aninhados. Estou mencionando apenas de passagem para recordar que uma única página pode ter vários eventos, cada um marcado com microdata.
+<!-- translated end --> 
 
 <h3 id=event-rich-snippets>The Return of Google Rich Snippets</h3>
 
