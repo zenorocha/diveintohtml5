@@ -367,7 +367,6 @@ Most non-PC devices that play H.264 video (including iPhones and standalone Blu-
 <p id=firefogg-options>A única opção que eu vou cobrir estão na tabela "Qualidade básica e controle de resolução". Ela contém todas as opções importantes:
 
 <ul>
-<<<<<<< HEAD
 <li>Qualidade de Vídeo. É mensurada em uma escala de 0 (menor qualidade) a 10 (maior qualidade). Números altos significam tamanhos de arquivos maiores, então você terá de experimentar para determinar qual a melhor relação tamanho/qualidade para sua necessidade.
 <li>Qualidade de Áudio. É mensurada em uma escala de -1 (menor qualidade) a 10 (maior qualidade). Números altos significam tamanhos de arquivos maiores, assim como as configurações de qualidade de vídeo.
 <li>Vídeo Codec. Sempre deve ser "Theora"
@@ -420,41 +419,45 @@ Most non-PC devices that play H.264 video (including iPhones and standalone Blu-
 
 <p class=a>&#x2767;
 
-<h2 id=handbrake-gui>Encoding H.264 Video with HandBrake</h2>
+<h2 id=handbrake-gui>Codificando Vídeos H.264 com o HandBrake</h2>
 
-<p>(In this section, I&#8217;m going to use &#8220;H.264 video&#8221; as a shorthand for &#8220;H.264 baseline profile video and AAC low-complexity profile audio in an MPEG-4 container.&#8221; This is the combination of codecs+container that works natively in Safari, in Adobe Flash, on the iPhone, and on Google Android devices.)
+<p>(Nesta seção, eu irei usar "vídeo H.264" como uma abreviação para "Conjunto de especificações e perfis de video H.264 e Perfil de áudio de baixa complexidade AAC em um container MPEG-4". Esta é a combinação de codificadores+containers que funciona nativamente no Safari, no Adobe Flash, no iPhone e nos aparelhos que utilizam Google Android.)
 
-<p><a href=#licensing>Licensing issues</a> aside, the easiest way to encode H.264 video is <a href=http://handbrake.fr/>HandBrake</a>. HandBrake is an open source, GPL-licensed application for encoding H.264 video. (It used to do other video formats too, but in the latest version the developers have dropped support for most other formats and are focusing all their efforts on H.264 video.) <a href=http://handbrake.fr/downloads.php>Pre-built binaries are available</a> for Windows, Mac OS X, and modern Linux distributions.
+<p>Tirando as <a href=#licensing>questões de licenciamento</a>, o jeito mais fácil de codificar um vídeo H.264 é usar o <a href=http://handbrake.fr/>HandBrake</a>. O HandBrake é uma aplicação para codificação de vídeos H.264 open source, com licensa GPL. (As versões anteriores realizavam codificações para outros formatos de vídeo também, mas na última versão os desenvolvedores resolveram retirar o suporte para a maioria dos outros formatos e estão focando todos seus esforços nos vídeos H.264.)Os <a href=http://handbrake.fr/downloads.php>binários pré-compilados estão disponíveis</a> para Windows, Mac OS X e distribuições Linux modernas.
 
-<p>HandBrake comes in two flavors: graphical and command-line. I&#8217;ll walk you through the graphical interface first, then we&#8217;ll see how my recommended settings translate into the command-line version.
+<p>O HandBrake possui duas versões: gráfica e linha de comando. Eu irei fazer um passo-a-passo da interface gráfica primeiro, então veremos quais são as configurações recomendadas traduzidas para a versão de linha de comando.
 
-<p>After you open the HandBrake application, the first thing to do is select your source video. Click the &#8220;Source&#8221; dropdown button and choose &#8220;Video File&#8221; to select a file. HandBrake can take virtually any video file as input, including DV video produced by consumer-level camcorders.
-<p class="legend top">Select your source video <span class=arrow>&#x21b7;</span><br></p>
-<p><img src=i/handbrake-01.png alt="HandBrake: select source file" width=800 height=600>
+<p>Depois de abrir a aplicação HandBrake a primeira coisa a fazer é selecionar o seu vídeo de origem. Clique em "Origem" no menu dropdown e escolha "Arquivo de Vídeo" para selecionar um arquivo. O HandBrake teoricamente pode pegar qualquer arquivo de vídeo como origem, incluindo vídeos DV produzidos por câmeras simples.
 
-<p>HandBrake will complain that you haven&#8217;t set a default directory to save your encoded videos. You can safely ignore this warning, or you can open the options window (under the &#8220;Tools&#8221; menu) and set a default output directory.
-<p class="legend top" style="text-align:right"><span class=arrow>&#x21b6;</span> Ignore this
-<p><img src=i/handbrake-02.png alt="HandBrake: default directory warning" width=800 height=600>
+<p class="legend top">Selecione seu vídeo de Origem <span class=arrow>&#x21b7;</span><br></p>
+<p><img src=i/handbrake-01.png alt="HandBrake: selecione o arquivo de origem" width=800 height=600>
 
-<p>On the right-hand side is a list of presets. Selecting the &#8220;iPhone &amp; iPod Touch&#8221; preset will set most of the options you need.
-<p class="legend top">Select iPhone preset <span class=arrow>&#x21b7;</span><br></p>
-<p><img src=i/handbrake-03.png alt="HandBrake: select iPhone preset" width=800 height=600>
+<p>O HandBrake irá reclamar que você não configurou um diretório padrão para salvar os arquivos codificados. Você pode ignorar esse alerta com segurança ou, então, abrir a janela de opções (dentro do menu "Tools") e configurar o diretório padrão de saída.
 
-<p>One important option that is off by default is the &#8220;Web optimized&#8221; option. Selecting this option reorders some of the metadata within the encoded video so you can watch the start of the video while the rest is downloading in the background. I highly recommend always checking this option. It does not affect the quality or file size of the encoded video, so there&#8217;s really no reason not to.
-<p class="legend top" style="text-align:right"><span class=arrow>&#x21b6;</span> Always optimize for web
-<p><img src=i/handbrake-04.png alt="HandBrake: select Web Optimized option" width=800 height=600>
+<p class="legend top" style="text-align:right"><span class=arrow>&#x21b6;</span> Ignore isso
+<p><img src=i/handbrake-02.png alt="HandBrake: alerta de diretório padrão" width=800 height=600>
 
-<p>In the &#8220;Picture&#8221; tab, you can set the maximum width and height of the encoded video. You should also select the &#8220;Keep Aspect Ratio&#8221; option to ensure that HandBrake doesn&#8217;t smoosh or stretch your video while resizing it.
-<p class="legend top">Set width and height <span class=arrow>&#x21b7;</span><br></p>
-<p><img src=i/handbrake-05.png alt="HandBrake: set width, height, and aspect ratio" width=800 height=600>
+<p>No lado direito há uma lista de predefinições. Selecionando a opção "iPhone & iPod Touch" ira configurar a maioria das opções que você precisa.
+<p class="legend top">Selecione a predefinição iPhone <span class=arrow>&#x21b7;</span><br></p>
+<p><img src=i/handbrake-03.png alt="HandBrake: selecione a predefinição iPhone" width=800 height=600>
 
-<p>In the &#8220;Video&#8221; tab, you can set four important options.
+<p>Uma importante opção é que está desativada por padrão é a de "Otimizar para Web". Selecionando esta opção os metadados do vídeo codificado serão reordenados, para que você possa assistir o início do vídeo enquanto o resto está sendo baixado em segundo plano. Eu recomendo fortemente sempre conferir esta opção. Ela não ageta a qualidade ou tamanho do arquivo do vídeo codificado, portanto, não há razão para não utilizá-la.
+
+<p class="legend top" style="text-align:right"><span class=arrow>&#x21b6;</span> Sempre otimizar para web
+<p><img src=i/handbrake-04.png alt="HandBrake: selecione a opção Otimizar para Web" width=800 height=600>
+
+<p>Na aba de "Imagem" você pode configurar a altura e largura máxima do vídeo codificado. Você também deve selecionar a opção "Manter a proporção" para assegurar que o HandBrake não irá alargar ou esticar o seu vídeo enquanto o redimensiona.
+
+<p class="legend top">Confiure a largura e altura <span class=arrow>&#x21b7;</span><br></p>
+<p><img src=i/handbrake-05.png alt="HandBrake: configure a largura, altura e proporção" width=800 height=600>
+
+<p>Na aba "Vídeo" você pode configurar quatro opções importantes.
 
 <ul>
-<li>Video Codec. Make sure this is &#8220;H.264 (x264)&#8221;
-<li id=two-pass-encoding>2-Pass Encoding. If this is checked, HandBrake will run the video encoder twice. The first time, it just analyzes the video, looking for things like color composition, motion, and scene breaks. The second time, it actually encodes the video using the information it learned during the first pass. As you might expect, this takes about twice as long as single-pass encoding, but it results in better video without increasing file size. I always enable two-pass encoding for H.264 video. Unless you&#8217;re building the next YouTube and encoding videos 24 hours a day, you should probably use two-pass encoding too.
-<li>Turbo First Pass. Once you enable 2-pass encoding, you can get a little bit of time back by enabling &#8220;turbo first pass.&#8221; This reduces the amount of work done in the first pass (analyzing the video), while only slightly degrading quality. I usually enable this option, but if quality is of the utmost importance to you, you should leave it disabled.
-<li>Quality. There are different ways to specify the &#8220;quality&#8221; of your encoded video. You can set a target file size, and HandBrake will do its best to ensure that your encoded video is not larger than that. You can set an average &#8220;bitrate,&#8221; which is the quite literally the number of bits required to store one second worth of encoded video. (It&#8217;s called an &#8220;average&#8221; bitrate because some seconds will require more bits than others.) Or you can specify a constant quality, on a scale of 0 to 100%. Higher numbers will result in better quality but larger files. There is no single right answer for what quality setting you should use.
+<li>Codec de Vídeo. Tenha certeza que é "H.264 (x264)"
+<li id=two-pass-encoding>Codificação em dois passos. Se esta opção estiver selecionada, o HandBrake irá rodar duas vezes a codificação de vídeo. Na primeira vez, ela apenas analizará o vídeo, procurando por coisas como composição de cores, movimento e paradas de cena. Na segunda vez é que realmente será codificado o vídeo utilizando a informação obtida durante a primeira vez. Como você pode esperar, isto toma duas vezes o tempo do que o encoding em um passo, mas o resultado é um video melhor sem aumentar o tamanho do arquivo. Eu sempre habilito o encoding em dois passos para vídeos H.264. A menos que você esteja fazendo o próximo YouTube e codificando vídeos 24 horas por dia, você provavelmente deveria utilizar a codificação em dois passos também.
+<li>Primeira passagem turbo. Uma vez que você tenha habilitado a codificação em dois passos, você pode recuperar algum tempo habilitando a "primeira passagem turbo." Isto reduzirá a quantidade de trabalho feita durante a primeira passagem (análise do vídeo), enquanto degrada levemente a qualidade. Eu usualmente habilito esta opção, mas se a qualidade é a coisa mais importante para você, você deveria deixar isto desabilitado.
+<li>Qualidade. Existem diferentes modos de especificar a "qualidade" dos seus vídeos codificados. Você pode configurar o tamanho final do arquivo e o HandBrake irá fazer o melhor para que o vídeo codificado não seja maior do que o definido. Você pode configurar a média da "taxa de bits" o que é literalmente o número de bits requeridos para armazenar um segundo valor do vídeo codificado (Isto é chamado de "média" da taxa de bits porque alguns segundos irão precisar de mais bits que outros.)Ou você pode especificar uma qualidade constante numa escada de 0 à 100%. Números maiores irá resultar em uma melhor qualidade, mas em arquivos maiores. Não há apenas uma resposta certa para qual qualidade que você deve usar.
 </ul>
 
 <div class=pf>
