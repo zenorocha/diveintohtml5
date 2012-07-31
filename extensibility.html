@@ -157,7 +157,7 @@ table.faketable{border-collapse:collapse}
 
 <p>A propósito, os exemplos iniciais na seção anterior não foram completamente formados. Existe realmente um vocabulário microdata para marcar informação sobre pessoas, e ele é realmente assim fácil. Vamos dar uma olhada.
 
-<p>A maneira mais fácil de integrar microdata em um website pessoal é na sua página &#8220;sobre&#8221;. Você <em>com certeza</em> tem uma página &#8220;sobre&#8221;, não é verdade? Se não, você pode seguir como eu estendo <a href=examples/person.html>este exemplo de página &#8220;sobre&#8221;</a> com semânticas adicionais. O resultado final está aqui: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>.
+<p>A maneira mais fácil de integrar microdata em um website pessoal é na sua página &#8220;sobre&#8221;. Você <em>com certeza</em> tem uma página &#8220;sobre&#8221;, não é verdade? Se não, você pode seguir como eu estudando <a href=examples/person.html>este exemplo de página &#8220;sobre&#8221;</a> com semânticas adicionais. O resultado final está aqui: <a href=examples/person-plus-microdata.html>person-plus-microdata.html</a>.
 
 <p>Primeiro vamos olhar para a marcação crua, antes de qualquer propriedade microdata ser adicionada:
 
@@ -369,7 +369,7 @@ Suite 415</mark>
 
 <p>Para navegadores, <abbr>HTML5</abbr> define <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#microdata-dom-api>um conjunto de <abbr>APIs</abbr> <abbr>DOM</abbr></a> para extrair itens microdata, propriedades, e valores de propriedades de uma página web. No momento que escrevo (Fevereiro 2011), nenhum navegador suporta essa <abbr>API</abbr>. Nenhuma delas. Então, isso é&hellip; uma espécie de beco sem saída, pelo menos até os navegadores pegarem e implementarem as <abbr>APIs</abbr> no lado do cliente.
 
-<p>Outro grande consumidor de <abbr>HTML</abbr> são os motores de busca. O que poderia um motor de busca fazer com propriedades microdata sobre uma pessoa? Imagine isso: em vez de simplesmente exibir o título da página e um resumo de texto, o motor de busca poderia integrar alguns das informações estruturadas e mostrá-las. Nome completo, cargo, empregador, talvez até uma miniatura da foto de um perfil. Isso chamaria sua atenção? Isso chamaria a minha.
+<p>Outro grande consumidor de <abbr>HTML</abbr> são os motores de busca. O que poderia um motor de busca fazer com propriedades microdata sobre uma pessoa? Imagine isso: em vez de simplesmente exibir o título da página e um resumo de texto, o motor de busca poderia integrar algumas das informações estruturadas e mostrá-las. Nome completo, cargo, empregador, talvez até uma miniatura da foto de um perfil. Isso chamaria sua atenção? Isso chamaria a minha.
 
 <p>Google apoia microdata como parte de seu programa <a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&amp;answer=99170">Rich Snippets</a>. Quando web crawler do Google analisa sua página e encontra propriedades microdata que obedecem ao vocabulário <code>http://data-vocabulary.org/Person</code>, ele analisa essas propriedades e armazena elas juntamente com o restante dos dados da página. Google ainda oferece <a href=http://www.google.com/webmasters/tools/richsnippets>uma ferramenta útil para ver como o Google &#8220;enxerga&#8221; suas propriedades microdata</a>.
 
@@ -439,14 +439,13 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 &lt;/article></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/organization.html>organization.html</a>, depois: <a href=examples/organization-plus-microdata.html>organization-plus-microdata.html</a>]
 
-<p>Short and sweet. All the information about the organization is contained within the <code>&lt;article></code> element, so let&#8217;s start there.
 <p>Curto e suave. Toda a informação sobre a organização está contida dentro do elemento <code>&lt;article></code>, então vamos começar por aqui.
 
 <pre><code>&lt;article <mark>itemscope</mark> <mark>itemtype="http://data-vocabulary.org/Organization"</mark>></code></pre>
 
 <p>Tal como com <a href=#person>marcando &#8220;people&#8221;</a>, você precisa configurar os atributos <code>itemscope</code> e <code>itemtype</code> no elemento externo. Nesse caso, o elemento externo é o elemento <code>&lt;article></code>; O atributo <code>itemtype</code> declara o vocabulário microdata que você está usando (nesse caso, <code>http://data-vocabulary.org/Organization</code>), e o atributo <code>itemscope</code> declara que todas as propriedades que você configura em elementos filho relacionados a esse vocabulário.
 
-<p>Então que está dentro do vocabulário &#8220;Organization&#8221;? É simples e direto. Na verdade, alguns deles já deve parecer familiar.
+<p>Então o que está dentro do vocabulário &#8220;Organization&#8221;? É simples e direto. Na verdade, alguns deles já deve parecer familiar.
 
 <table class=st>
 <caption>Vocabulário Organization</caption>
@@ -458,12 +457,12 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 <tr class=zebra><td><code>geo</code><td>Especifica as coordenadas geográficas da localização. Sempre contém duas subpropriedades, <code>latitude</code> e <code>longitude</code>.
 </table>
 
-<p>O primeiro pedaço de marcação dentro do elemento externo <code>&lt;article></code> é um <code>&lt;h1></code>. Esse elemento <code>&lt;h1></code> contém o nome de uma emmpresa, então vamos colocar um atributo <code>itemprop="name"</code> diretamente no elemento <code>&lt;h1></code>.
+<p>O primeiro pedaço de marcação dentro do elemento externo <code>&lt;article></code> é um <code>&lt;h1></code>. Esse elemento <code>&lt;h1></code> contém o nome de uma empresa, então vamos colocar um atributo <code>itemprop="name"</code> diretamente no elemento <code>&lt;h1></code>.
 
 <pre><code>  &lt;h1 <mark>itemprop="name"</mark>>Google, Inc.&lt;/h1></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/organization.html>organization.html</a>, depois: <a href=examples/organization-plus-microdata.html>organization-plus-microdata.html</a>]
 
-<p>De acordo com o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, elementos <code>&lt;h1></code> não precisam de nenhum processamento especial. O valor da propriedade microdata é simplismente o conteúdo textual do elemento <code>&lt;h1></code>. Traduzindo, acabamos de dizer &#8220;o nome da empresa é 'Google, Inc.'&#8221;
+<p>De acordo com o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, elementos <code>&lt;h1></code> não precisam de nenhum processamento especial. O valor da propriedade microdata é simplesmente o conteúdo textual do elemento <code>&lt;h1></code>. Traduzindo, acabamos de dizer &#8220;o nome da empresa é 'Google, Inc.'&#8221;
 
 <p id=organization-address>Próximo é um logradouro. Marcar endereço de uma empresa funciona exatamente da mesma forma como <a href=#address>marcar o endereço de um pessoa</a>. Primeiro, adicione um atributo <code>itemprop="address"</code> no elemento externo do endereço (nesse caso, um elemento <code>&lt;p></code>). Que indica que esta é a propriedade <code>address</code> da &#8220;Organization&#8221;. Mas e as propriedades do próprio endereço? Também precisamos definir os atributos <code>itemtype</code> e <code>itemscope</code> para dizer que esse é um item Address que tem suas próprias propriedades.
 
@@ -490,9 +489,9 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 <pre><code>  &lt;p <mark>itemprop="tel"</mark>>650-253-0000&lt;/p></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/organization.html>organization.html</a>, depois: <a href=examples/organization-plus-microdata.html>organization-plus-microdata.html</a>]
 
-<p>(Ei, caso você não tenha percebido, o vocabulátio Address saiu do escopo quando seu elemento <code>&lt;p></code foi fechado. Agora estamos voltando a definir propriedades no vocabulário Organization.)
+<p>(Ei, caso você não tenha percebido, o vocabulátio Address saiu do escopo quando seu elemento <code>&lt;p></code> foi fechado. Agora estamos voltando a definir propriedades no vocabulário Organization.)
 
-<p>Se você gostaria de listar mais de um número de telefone &mdash; talvez um para clientes dos Estados Unidos e outro para clientes internacionais &mdash; você pode fazer isso. Qualquer propriedade microdata pode ser repetida. Apenas certifique-se que cada número de telefone esta em seu próprio elemento <abbr>HTML</abbr>, separado de qualquer rótulo que você tenha dado a ele.
+<p>Se você gostaria de listar mais de um número de telefone &mdash; talvez um para clientes dos Estados Unidos e outro para clientes internacionais &mdash; você pode fazer isso. Qualquer propriedade microdata pode ser repetida. Apenas certifique-se que cada número de telefone está em seu próprio elemento <abbr>HTML</abbr>, separado de qualquer rótulo que você tenha dado a ele.
 
 <pre><code>
   &lt;p>
@@ -513,9 +512,9 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 
 <p>Até o momento, todos os nossos exemplos têm-se focado na marcação de dados <em>visíveis</em>. Isto é, você tem um <code>&lt;h1></code> com um nome de uma empresa, então você adiciona um atributo <code>itemprop</code> no elemento <code>&lt;h1></code> para declarar que o título textual (visível) é, na verdade, o nome de uma empresa. Ou você tem um elemento <code>&lt;img></code> que aponta para uma foto, então você adiciona um atributo <code>itemprop</code> no elemento <code>&lt;img></code> para declarar que a imagem (visível) é a foto de uma pessoa.
 
-<p id=geo>Nesse exemplo, informação de geolocalização não é assim. Não há texto visível que mostra a exata latiture e longitude (com quatro casas decimais!) da empresa. Na verdade, o exemplo <a href=examples/organization.html>organization.html</a> (sem microdata) não tem nenhuma informação de geolocalização. Tem um link para o Google Maps, mas até mesmo a <abbr>URL</abbr> desse link não contém as coordenadas de latitude e longitude. (Ele contém informações semelhantes num formato específico do Google.) Porém, mesmo se tivessemos um link para um hipotético serviço online de mapas que pegasse as coordenadas de latitude e longitude como parâmetros da <abbr>URL</abbr>, microdata não tem como separar diferentes partes de uma <abbr>URL</abbr>. Você não pode declarar que o primeiro parâmetro query da <abbr>URL</abbr> é a latitude e o segundo parâmetro query da <abbr>URL</abbr> é a longitude e o resto dos parâmetros são irrelevantes.
+<p id=geo>Nesse exemplo, informação de geolocalização não é assim. Não há texto visível que mostra a exata latiture e longitude (com quatro casas decimais!) da empresa. Na verdade, o exemplo <a href=examples/organization.html>organization.html</a> (sem microdata) não tem nenhuma informação de geolocalização. Tem um link para o Google Maps, mas até mesmo a <abbr>URL</abbr> desse link não contém as coordenadas de latitude e longitude. (Ele contém informações semelhantes num formato específico do Google.) Porém, mesmo se tivéssemos um link para um hipotético serviço online de mapas que pegasse as coordenadas de latitude e longitude como parâmetros da <abbr>URL</abbr>, microdata não tem como separar diferentes partes de uma <abbr>URL</abbr>. Você não pode declarar que o primeiro parâmetro query da <abbr>URL</abbr> é a latitude e o segundo parâmetro query da <abbr>URL</abbr> é a longitude e o resto dos parâmetros são irrelevantes.
 
-<p>Para lidar com casos extremos como este, <abbr>HTML5</abbr> fornece uma maneira de anotar dados <em>invisíveis</em>. Essa técnica deve ser usada apenas como último recurso. Se existir uma forma de mostrar ou processar os dados que você se importa com, você deve fazer assim. Dados invisíveis que apenas maquinas pode ler tende a &#8220;banalizar-se&#8221; rapidamente. Isto é, alguém chegará mais tarde e atualizará o texto visível mas esquecerá de atualizar as informações invisíveis. Isso acontece mais frequente do que você pensa, e isso <em>vai</em> acontecer com você também.
+<p>Para lidar com casos extremos como este, <abbr>HTML5</abbr> fornece uma maneira de anotar dados <em>invisíveis</em>. Essa técnica deve ser usada apenas como último recurso. Se existir uma forma de mostrar ou processar os dados que você se importa com, você deve fazer assim. Dados invisíveis que apenas máquinas podem ler tendem a &#8220;banalizar-se&#8221; rapidamente. Isto é, alguém chegará mais tarde e atualizará o texto visível mas esquecerá de atualizar as informações invisíveis. Isso acontece com mais frequência do que você pensa, e isso <em>vai</em> acontecer com você também.
 
 <p>Ainda, existem casos que dado invisível é inevitável. Talvez o seu chefe queira <em>realmente</em> informação de geolocalização legível para máquina mas não queira bagunçar a interface com pares de incompreensíveis números de seis dígitos. Dado invisível é a única opção. A única salvação aqui é que você pode colocar a informação invisível imediatamente depois do texto visível que o descreve, o que pode ajudar a pessoa que vem mais tarde e atualiza o texto visível que eles precisam atualizar a informação invisível logo depois disso.
 
@@ -542,15 +541,15 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 <pre><code>&lt;<mark>meta</mark> itemprop="latitude" content="37.4149" /></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/organization.html>organization.html</a>, depois: <a href=examples/organization-plus-microdata.html>organization-plus-microdata.html</a>]
 
-<p>De acordo com o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, o elemento <code>&lt;meta></code> tem processamento especial. O valor da propriedade microdata é o atributo <code>content</code>. Já que esse atributo nunca é visivelmente mostrado, temos a configuração perfeita para quantidades ilimitadas de dados invisíveis. Como grande poder vem grandes responsabilidades. Nesse caso, a responsabilidade é sua de certifica-se de que esse dado invisível fique sincronizado com o texto visível em volta dele.
+<p>De acordo com o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, o elemento <code>&lt;meta></code> tem processamento especial. O valor da propriedade microdata é o atributo <code>content</code>. Já que esse atributo nunca é visivelmente mostrado, temos a configuração perfeita para quantidades ilimitadas de dados invisíveis. Com grandes poderes vem grandes responsabilidades. Nesse caso, a responsabilidade é sua de certifica-se de que esse dado invisível fique sincronizado com o texto visível em volta dele.
 
-<p>Não há suporte direto para o vocabulário Organization no Google Rich Snippets, então não tenho nenhum bom exemplo de listagem no resultado de busca para mostrá-lo. Mas as organizações aparece fortemente nos próximos dois estudos de caso: eventos e revisões, e essas <em>são</em> suportadas pelo Google Rich Snippets.
+<p>Não há suporte direto para o vocabulário Organization no Google Rich Snippets, então não tenho nenhum bom exemplo de listagem no resultado de busca para mostrá-lo. Mas as organizações aparecem fortemente nos próximos dois estudos de caso: eventos e revisões, e essas <em>são</em> suportadas pelo Google Rich Snippets.
 
 <p class=a>&#x2767;
 
 <h2 id=event>Marcando &#8220;Events&#8221;</h2>
 
-<p>Merda acontece. Algumas merdas acontecem em pré-determinadas vezes. Não seria legal se você pudesse dizer aos motores de busca exatamente quando a merda estava prestes a acontecer?
+<p>Merdas aconteces. Algumas merdas acontecem em pré-determinadas vezes. Não seria legal se você pudesse dizer aos motores de busca exatamente quando a merda estava prestes a acontecer?
 
 <p>Vamos começar olhando para <a href=examples/event.html>um cronograma exemplo de amostra das minhas palestras</a>.
 
@@ -560,7 +559,7 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
        src="http://diveintohtml5.org/examples/gdd-2009-prague-pilgrim.jpg"
        alt="[Mark Pilgrim at podium]">
   &lt;p>
-    Google Developer Days é uma chance de aprender sobre o desenvolvimento dos produtos Google pelos engenheros que os constrói. Essa conferência de um dia inclui seminários e &#8220;horário de trabalho&#8221; em tecnologias web como Google Maps, OpenSocial, Android, APIs AJAX, Chrome, e Google Web Toolkit.
+    Google Developer Day é uma chance de aprender sobre o desenvolvimento dos produtos Google pelos engenheros que os constroem. Essa conferência de um dia inclui seminários e &#8220;horário de trabalho&#8221; em tecnologias web como Google Maps, OpenSocial, Android, APIs AJAX, Chrome, e Google Web Toolkit.
   &lt;/p>
   &lt;p>
     &lt;time datetime="2009-11-06T08:30+01:00">2009 November 6, 8:30&lt;/time>
@@ -606,7 +605,7 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
 <p>Traduzindo, isso quer dizer, &#8220;O nome desse evento é Google Developer Day 2009.&#8221;
-<p>Essa listagem de evento tem uma foto, que pode ser marcada com uma propriedade <code>photo</code>. Como você poderia esperar, a foto já está marcada com um elemento <code>&lt;img></code>. Como <a href=#person-photo>a propriedade <code>photo</code> no vocabulário Person</a>, uma foto de um evento é uma <abbr>URL</abbr>. Já que o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a> diz que o valor da propriedade de um elemento <code>&lt;img></code> está em seu atributo <code>src</code>, a única coisa que precisamoa fazer é adicionar o atributo <code>itemprop</code> no elemento <code>&lt;img></code>.
+<p>Essa listagem de evento tem uma foto, que pode ser marcada com uma propriedade <code>photo</code>. Como você poderia esperar, a foto já está marcada com um elemento <code>&lt;img></code>. Como <a href=#person-photo>a propriedade <code>photo</code> no vocabulário Person</a>, uma foto de um evento é uma <abbr>URL</abbr>. Já que o <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a> diz que o valor da propriedade de um elemento <code>&lt;img></code> está em seu atributo <code>src</code>, a única coisa que precisamos fazer é adicionar o atributo <code>itemprop</code> no elemento <code>&lt;img></code>.
 
 <pre><code>  &lt;img <mark>itemprop="photo"</mark> width="300" height="200"
        src="http://diveintohtml5.org/examples/gdd-2009-prague-pilgrim.jpg"
@@ -617,10 +616,10 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 
 <p>Em seguida está uma descrição mais longa do evento, que é apeanas um parágrafo de texto livre.
 
-<pre><code>  &lt;p <mark>itemprop="description"</mark>>Google Developer Days é uma chance de aprender sobre o desenvolvimento dos produtos Google pelos engenheros que os constrói. Essa conferência de um dia inclui seminários e &#8220;horário de trabalho&#8221; em tecnologias web como Google Maps, OpenSocial, Android, APIs AJAX, Chrome, e Google Web Toolkit.&lt;/p></code></pre>
+<pre><code>  &lt;p <mark>itemprop="description"</mark>>Google Developer Day é uma chance de aprender sobre o desenvolvimento dos produtos Google pelos engenheros que os constroem. Essa conferência de um dia inclui seminários e &#8220;horário de trabalho&#8221; em tecnologias web como Google Maps, OpenSocial, Android, APIs AJAX, Chrome, e Google Web Toolkit.&lt;/p></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
-<p>O próximo pedaço é algo novo. Eventos geralmente ocorrem em datas específicas e começam e terminam em horas específicas. Na <abbr>HTML5</abbr>, data e hora deve ser marcada com <a href=semantics.html#time-element>o elemento <code>&lt;time></code></a>, e já estamos fazendo isso aqui. Então fica a questão, como adicionamos propriedades microdata nesses elementos <code>&lt;time></code>? Olhando atrás no  <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, vemos que o elemento <code>&lt;time></code> tem processamento especial. O valor da propriedade microdata em um elemento <code>&lt;time></code> é o valor do atributo <code>datetime</code>. E olhe, as propriedades <code>startDate</code> e <code>endDate</code> do vocabulário Event leva um estilo de data <abbr>ISO</abbr>, assim como a propriedade <code>datetime</code> de um elemento <code>&lt;time></code>. Mais uma vez, a semântica do principal vocabulário <abbr>HTML</abbr> se encaixam muito bem com a semântica de nosso vocabulário microdata personalizado. Marcar data inicial e final com microdata é tão simples como:
+<p>O próximo pedaço é algo novo. Eventos geralmente ocorrem em datas específicas e começam e terminam em horas específicas. Na <abbr>HTML5</abbr>, data e hora deve ser marcada com <a href=semantics.html#time-element>o elemento <code>&lt;time></code></a>, e já estamos fazendo isso aqui. Então fica a questão, como adicionamos propriedades microdata nesses elementos <code>&lt;time></code>? Olhando atrás no  <a href=#property-values>modelo de dados microdata da <abbr>HTML5</abbr></a>, vemos que o elemento <code>&lt;time></code> tem processamento especial. O valor da propriedade microdata em um elemento <code>&lt;time></code> é o valor do atributo <code>datetime</code>. E olhe, as propriedades <code>startDate</code> e <code>endDate</code> do vocabulário Event leva um estilo de data <abbr>ISO</abbr>, assim como a propriedade <code>datetime</code> de um elemento <code>&lt;time></code>. Mais uma vez, a semântica do principal vocabulário <abbr>HTML</abbr> se encaixa muito bem com a semântica de nosso vocabulário microdata personalizado. Marcar data inicial e final com microdata é tão simples como:
 
 <ol>
 <li>Usar <abbr>HTML</abbr> corretamente em primeiro lugar (usar elemento <code>&lt;time></code> para marcar data e hora), e
@@ -634,7 +633,7 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
   &lt;/p></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
-<p>Traduzindo, isso quer dizer, &#8220;Esse vento comeaça em 6 de Novembro, 2009, às 8:30 da manhã, e vai até 6 de Novembro, 2009, às 20:30 (horário local para Prague, <abbr>GMT</abbr>+1).&#8221;
+<p>Traduzindo, isso quer dizer, &#8220;Esse evento começa em 6 de Novembro, 2009, às 8:30 da manhã, e vai até 6 de Novembro, 2009, às 20:30 (horário local para Prague, <abbr>GMT</abbr>+1).&#8221;
 
 <p>Em seguida está a propriedade <code>location</code>. A <a href=http://data-vocabulary.org/Event>definição do vocabulário Event</a> diz que isso pode ser tanto uma &#8220;Organization&#8221; ou um &#8220;Address&#8221;. Nesse caso, o evento está sendo realizado em um local especializado em conferências, o Congress Center in Prague. Marcar isso como uma &#8220;Organization&#8221; nos permite incluir o nome do local, bem como seu endereço.
 
@@ -674,7 +673,7 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 
 <pre><code>  &lt;/p></code></pre>
 
-<p>Agora voltamos para definir propriedades no evento. A próxima propriedade é <code>geo</code>, para representar a localização física do evento. Ela usa o mesmo vocabulário Geo que usamos para <a href=#geo>marcar a localização fisica de uma empresa</a> na seção anterior. Precisamos de um elemento <code>&lt;span></code> para agir como um container; ele leva os atributos <code>itemtype</code> e <code>itemscope</code>. Dentro desse elemento <code>&lt;span></code>, precisamos dois elementos <code>&lt;meta></code>, um para a propriedade <code>latitude</code> e outro para a propriedade <code>longitude</code>.
+<p>Agora voltamos para definir propriedades no evento. A próxima propriedade é <code>geo</code>, para representar a localização física do evento. Ela usa o mesmo vocabulário Geo que usamos para <a href=#geo>marcar a localização fisica de uma empresa</a> na seção anterior. Precisamos de um elemento <code>&lt;span></code> para agir como um container; ele leva os atributos <code>itemtype</code> e <code>itemscope</code>. Dentro desse elemento <code>&lt;span></code>, precisamos de dois elementos <code>&lt;meta></code>, um para a propriedade <code>latitude</code> e outro para a propriedade <code>longitude</code>.
 
 <pre><code>
   &lt;span <mark>itemprop="geo"</mark> <mark>itemscope</mark> <mark>itemtype="http://data-vocabulary.org/Geo"</mark>>
@@ -683,7 +682,7 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
   &lt;/span></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
-<p>E fechamos o <code>&lt;span></code> que guardava as propriedades Geo, então estamos voltando a definir propriedades do evento. A última propriedade é a propriedade <code>url</code>, que deve parecer familiar. Associar uma <abbr>URL</abbr> com um evento funciona da mesma forma que<a href=#person-url>associar uma <abbr>URL</abbr> com uma pessoa</a> e <a href=#organization-url>associar uma <abbr>URL</abbr> com uma empresa</a>. Se você está usando <abbr>HTML</abbr> corretamente (marcando hyperlinks com <code>&lt;a href></code>), então declarar que o hyperlink é uma propriedade <code>url</code> microdata é uma simples questão de adicionar o atributo <code>itemprop</code>.
+<p>E fechamos o <code>&lt;span></code> que guardava as propriedades Geo, então estamos voltando a definir propriedades do evento. A última propriedade é a propriedade <code>url</code>, que deve parecer familiar. Associar uma <abbr>URL</abbr> com um evento funciona da mesma forma que <a href=#person-url>associar uma <abbr>URL</abbr> com uma pessoa</a> e <a href=#organization-url>associar uma <abbr>URL</abbr> com uma empresa</a>. Se você está usando <abbr>HTML</abbr> corretamente (marcando hyperlinks com <code>&lt;a href></code>), então declarar que o hyperlink é uma propriedade <code>url</code> microdata é uma simples questão de adicionar o atributo <code>itemprop</code>.
 
 <pre><code>  &lt;p>
     &lt;a <mark>itemprop="url"</mark>
@@ -694,11 +693,11 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 &lt;/article></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/event.html>event.html</a>, depois: <a href=examples/event-plus-microdata.html>event-plus-microdata.html</a>]
 
-<p>A <a href=examples/event.html>página de evento exemplo</a> também lista um segundo evento, minha palestra no ConFoo conference em Montréal. Para ser breve, não vou passar por essa marcação linha a linha. É essencialmente o mesmo que o evento em Prague: um item Event com itens Geo e Address aninhados. Estou mencionando apenas de passagem para recordar que uma única página pode ter vários eventos, cada um marcado com microdata.
+<p>A <a href=examples/event.html>página de evento exemplo</a> também lista um segundo evento, minha palestra no ConFoo Conference em Montréal. Para ser breve, não vou passar por essa marcação linha a linha. É essencialmente o mesmo que o evento em Prague: um item Event com itens Geo e Address aninhados. Estou mencionando apenas de passagem para recordar que uma única página pode ter vários eventos, cada um marcado com microdata.
 
 <h3 id=event-rich-snippets>O Retorno do Google Rich Snippets</h3>
 
-<p><a href="http://www.google.com/webmasters/tools/richsnippets?url=http://diveintohtml5.org/examples/event-plus-microdata.html">De acordo com a ferramenta de testo do Google Rich Snippets</a>, essa é a informação que os rastreadores do Google vão imprimir do <a href=examples/event-plus-microdata.html>nosso exemplo de eventos na página de listagem</a>:
+<p><a href="http://www.google.com/webmasters/tools/richsnippets?url=http://diveintohtml5.org/examples/event-plus-microdata.html">De acordo com a ferramenta de teste do Google Rich Snippets</a>, essa é a informação que os rastreadores do Google vão imprimir do <a href=examples/event-plus-microdata.html>nosso exemplo de eventos na página de listagem</a>:
 
 <pre><samp>Item
     <b>Type:</b> http://data-vocabulary.org/Event
@@ -747,9 +746,9 @@ Trecho da página aparecerá aqui.</span><br>
 <p><span class=fakeurl>diveintohtml5.org/examples/event-plus-microdata.html</span> - <span class=fakelink>Cached</span> - <span class=fakelink>Páginas similares</span>
 </blockquote>
 
-<p>Após o título da página e o auto-gerado texto resumido, o Google começa usar a marcação microdata que adicionamos na página para mostrar uma pequena tabela de eventos. Observe o formato de data: &#8220;Fri, Nov 6.&#8221; Isso não é uma string que apareceu em algum lugar do nosso <abbr>HTML</abbr> ou marcação microdata. Usamos duas completamentes qualificadas strings formatadas <abbr>ISO</abbr>. <code>2009-11-06T08:30+01:00</code> e <code>2009-11-06T20:30+01:00</code>. Google pegou essas duas datas, descobriu que se tratava do mesmo dia, e deciu mostrar uma única data em um formato mais amigável.
+<p>Após o título da página e o auto-gerado texto resumido, o Google começa usar a marcação microdata que adicionamos na página para mostrar uma pequena tabela de eventos. Observe o formato de data: &#8220;Fri, Nov 6.&#8221; Isso não é uma string que apareceu em algum lugar do nosso <abbr>HTML</abbr> ou marcação microdata. Usamos duas completamentes qualificadas strings formatadas <abbr>ISO</abbr>. <code>2009-11-06T08:30+01:00</code> e <code>2009-11-06T20:30+01:00</code>. Google pegou essas duas datas, descobriu que se tratava do mesmo dia, e decidiu mostrar uma única data em um formato mais amigável.
 
-<p>Agora olhe para o endereço físico. Google escolhei mostrar apenas o nome do local + localização + país, não exatamente o logradouro. Isso é possível pelo fato de que nós separamos o endereço em cinco subpropriedades &mdash; <code>name</code>, <code>street-address</code>, <code>region</code>, <code>locality</code>, e <code>country-name</code> &mdash; e marcamos cada parte do endereço como uma propriedade microdata diferente. Google se aproveita disso para mostrar um endereço abreviado. Outros consumidores da mesma marcação microdata pode fazer diferentes escolhas sobre o que mostrar ou como mostrar isso. Não existe escolha certa ou errada aqui. Está a seu cargo prover o máximo de informação possível, o mais fielmente possível. Interpretar isso está a cargo do resto do mundo.
+<p>Agora olhe para o endereço físico. Google escolheu mostrar apenas o nome do local + localização + país, não exatamente o logradouro. Isso é possível pelo fato de que nós separamos o endereço em cinco subpropriedades &mdash; <code>name</code>, <code>street-address</code>, <code>region</code>, <code>locality</code>, e <code>country-name</code> &mdash; e marcamos cada parte do endereço como uma propriedade microdata diferente. Google se aproveita disso para mostrar um endereço abreviado. Outros consumidores da mesma marcação microdata podem fazer diferentes escolhas sobre o que mostrar ou como mostrar isso. Não existe escolha certa ou errada aqui. Está a seu cargo prover o máximo de informação possível, o mais fielmente possível. Interpretar isso está a cargo do resto do mundo.
 
 <p class=a>&#x2767;
 
@@ -767,8 +766,8 @@ Trecho da página aparecerá aqui.</span><br>
     A comida é de primeira linha. A atmosfera está alí para a &#8220;pizzaria do bairro.&#8221;
     O restaurante em si é um pouco apertado; se você está acima do peso, 
     você pode ter dificuldade de entrar e sair de sua cadeira e caminhar entre outras mesas.
-    Costumava dar gratuitamente &#8220;garlic knots&#8221; quando você sentava; agora eles lhe dão pão simples 
-    e você tem que pagar pelas coisas boas. No geral, é um vencedor.
+    Costumava dar gratuitamente &#8220;garlic knots&#8221; quando você sentava; agora eles lhe dão pão
+    simples e você tem que pagar pelas coisas boas. No geral, é um vencedor.
   &lt;/p>
   &lt;p>
     100 North Salem Street&lt;br>
@@ -790,7 +789,7 @@ Trecho da página aparecerá aqui.</span><br>
 <caption>Vocabulário Review</caption>
 <tr class=ho><th>Propriedade<th>Descrição
 <tr class=zebra><td><code>itemreviewed</code><td>O nome do item que está sendo avaliado. Pode ser um produto, serviço, negócio, entre outros.
-<tr><td><code>rating</code><td>Uma classificação numerica para o item, em uma escala de 1 até 5. Pode ser também um vocabulário <code>http://data-vocabulary.org/Rating</code> aninhado para usar uma escala diferente do padrão.
+<tr><td><code>rating</code><td>Uma classificação numérica para o item, em uma escala de 1 até 5. Pode ser também um vocabulário <code>http://data-vocabulary.org/Rating</code> aninhado para usar uma escala diferente do padrão.
 <tr class=zebra><td><code>reviewer</code><td>O nome do autor que escreveu a avaliação
 <tr><td><code>dtreviewed</code><td>A data que o item foi avaliado no <a href=http://www.iso.org/iso/date_and_time_format>formato de data ISO</a>
 <tr class=zebra><td><code>summary</code><td>Um pequeno resumo da avaliação 
@@ -811,8 +810,8 @@ Trecho da página aparecerá aqui.</span><br>
    A comida é de primeira linha. A atmosfera está alí para a &#8220;pizzaria do bairro.&#8221;
     O restaurante em si é um pouco apertado; se você está acima do peso, 
     você pode ter dificuldade de entrar e sair de sua cadeira e caminhar entre outras mesas.
-    Costumava dar gratuitamente &#8220;garlic knots&#8221; quando você sentava; agora eles lhe dão pão simples 
-    e você tem que pagar pelas coisas boas. No geral, é um vencedor.
+    Costumava dar gratuitamente &#8220;garlic knots&#8221; quando você sentava; agora eles lhe dão pão
+    simples e você tem que pagar pelas coisas boas. No geral, é um vencedor.
   &lt;/p></code></pre>
 <p class=follow>[Acompanhe comigo! Antes: <a href=examples/review.html>review.html</a>, depois: <a href=examples/review-plus-microdata.html>review-plus-microdata.html</a>]
 
@@ -886,7 +885,7 @@ Item
   <b>Type:</b> http://data-vocabulary.org/Geo
   latitude = 35.730796 
   longitude = -78.851426</samp></pre>
-<p>E aqui (modulo dos caprichos do Google, a fase da lua, e assim por diante e assim por diante) está como minha avaliação pode aparecer em uma listagem de resultado de busca:
+<p>E aqui (módulo dos caprichos do Google, a fase da lua, e assim por diante e assim por diante) está como minha avaliação pode aparecer em uma listagem de resultado de busca:
 
 
 <blockquote class=fakeresults>
