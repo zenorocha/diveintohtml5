@@ -164,15 +164,15 @@ R: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Os estado
 
 <h2 id=options>Escolhas! Eu quero escolhas!</h2>
 
-<p>Alguns aparelhos &mdash; como iPhone e Android &mdash; suportam <em>dois</em> métodos para mostrar sua localização. O primeiro método triangula a sua posição baseado-se na sua localização relativa das diferentes torres da sua operadora de celular. Este método é rápido e não necessita de qualquer hardware de <abbr>GPS</abbr> dedicado, mas ele só pega uma ideia aproximada de onde você está.
+<p>Alguns aparelhos &mdash; como iPhone e Android &mdash; suportam <em>dois</em> métodos para mostrar sua localização. O primeiro método triangula a sua posição baseando-se na sua localização relativa das diferentes torres da sua operadora de celular. Este método é rápido e não necessita de qualquer hardware de <abbr>GPS</abbr> dedicado, mas ele só pega uma ideia aproximada de onde você está.
 
 <p style="float:left;margin:1.75em 1.75em 1.75em 0"><img src=i/openclipart.org_johnny_automatic_young_girl_pointing.png alt="young girl pointing" width=336 height=229>
 
-<p>O segundo método atualmente usa algum hardware de <abbr>GPS</abbr> dedicado em seu aparelho para se comunicar com algum satélite de <abbr>GPS</abbr> dedicado que está orbitando na Terra. O <abbr>GPS</abbr> normalmente pode identificar a sua localização a poucos metros. O lado negativo de um chip de <abbr>GPS</abbr> dedicado em seu aparelho é que consome muita energia, então telefones e outros dispositivos geralmente desligam esse chip quando precisa. Isso significa que terá uma atraso quando o chip for inicializado para se conectar com o satélite. Se você sempre usa o Google Maps em um iPhone ou outro smartphone, você já viu os dois métodos em ação. Primeiro você  vê um grande círculo que aproxima sua posição (procurando uma torre de celular próxima), então um círculo menor (triangulando com outras torres de celulares), então um único ponto com sua posição exata (pego por um satélite de <abbr>GPS</abbr>).
+<p>O segundo método atualmente usa algum hardware de <abbr>GPS</abbr> dedicado em seu aparelho para se comunicar com algum satélite de <abbr>GPS</abbr> dedicado que está orbitando na Terra. O <abbr>GPS</abbr> normalmente pode identificar a sua localização a poucos metros. O lado negativo de um chip de <abbr>GPS</abbr> dedicado em seu aparelho é que consome muita energia, então telefones e outros dispositivos geralmente desligam esse chip quando precisa. Isso significa que terá um atraso quando o chip for inicializado para se conectar com o satélite. Se você sempre usa o Google Maps em um iPhone ou outro smartphone, você já viu os dois métodos em ação. Primeiro você  vê um grande círculo que aproxima sua posição (procurando uma torre de celular próxima), então um círculo menor (triangulando com outras torres de celulares), então um único ponto com sua posição exata (pego por um satélite de <abbr>GPS</abbr>).
 
-<p>A razão de eu falar isso é que, dependendo da sua aplicação web, você talvez não terá uma grande precisão. Se voce estiver somente procurando por alguns cinemas nas proximidades, uma precisão menor provavelmente será o suficiente pra você. Não há muitas salas de cinema, mesmo em cidades maiores, e você provavelmente vair listar mais de uma. Por outro lado, se voce está querendo direções em tempo real, você realmente terá que saber onde o usuário está exatamente para poder dizer &#8220;vire a direita em 20 metros&#8221; ou qualquer outra coisa.
+<p>A razão de eu falar isso é que, dependendo da sua aplicação web, você talvez não terá uma grande precisão. Se você estiver somente procurando por alguns cinemas nas proximidades, uma precisão menor provavelmente será o suficiente pra você. Não há muitas salas de cinema, mesmo em cidades maiores, e você provavelmente vai listar mais de uma. Por outro lado, se voce está querendo direções em tempo real, você realmente terá que saber onde o usuário está exatamente para poder dizer &#8220;vire à direita em 20 metros&#8221; ou qualquer outra coisa.
 
-<p>O método <code>getCurrentPosition()</code> tem como um terceiro argumento opcional, <a href=http://www.w3.org/TR/geolocation-API/#position-options>um objeto <code>PositionOptions</code></a>. Existem três propriedades que você pode setar no objeto <code>PositionOptions</code>. Todas as propriedades são opcionais. Você pode setar qualquer uma ou todas ou nenhuma delas.
+<p>O método <code>getCurrentPosition()</code> tem como um terceiro argumento opcional, <a href=http://www.w3.org/TR/geolocation-API/#position-options>um objeto <code>PositionOptions</code></a>. Existem três propriedades que você pode definir no objeto <code>PositionOptions</code>. Todas as propriedades são opcionais. Você pode definir qualquer uma ou todas, ou nenhuma delas.
 
 <table class=st>
 <caption>Objeto PositionOptions</caption>
@@ -182,16 +182,16 @@ R: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Os estado
 <tr class=zebra><th><code>maximumAge</code><td>long<td>0<td>em millisegundos
 </table>
 
-<p>A propriedade <code>enableHighAccuracy</code> é exatamente o que se parece. Se true, e o dispositivo tiver suporte para tal, e o usuário permitir compartilhar sua posição, então o dispositivo irá tentar fornecer uma precisão maior. Tanto iPhones quanto Androids tem uma permissão separada para baixa- e alta-precisão, por isso, é possível que a chamada <code>getCurrentPosition()</code> com <code>enableHighAccuracy:true</code> possa falhar, mas chamar com <code>enableHighAccuracy:false</code> poderá dar certo.
+<p>A propriedade <code>enableHighAccuracy</code> é exatamente o que se parece. Se for verdadeiro, e o dispositivo tiver suporte para tal, e o usuário permitir compartilhar sua posição, então o dispositivo irá tentar fornecer uma precisão maior. Tanto iPhones quanto Androids tem uma permissão separada para baixa e alta precisão, por isso, é possível que a chamada <code>getCurrentPosition()</code> com <code>enableHighAccuracy:true</code> possa falhar, mas chamar com <code>enableHighAccuracy:false</code> poderá dar certo.
 
 <p>A propriedade <code>timeout</code> é um número em millisegundos que sua aplicação irá esperar pela posição. Este tempo não será contado <em>antes</em> do usuário dar permissão para tentar calcular sua posição. Não é o tempo do usuário; é o tempo da rede.
 
-<p>A propriedade <code>maximumAge</code> permite que os dispositivos respondam imediatamente com uma posição em cache. Por exemplo, vamos chamar o método <code>getCurrentPosition()</code> por um período, o usuário permitiu, e a função de callback chamou a posição que foi calculada exatamente as 10:00 horas da manhã, você chamou o método <code>getCurrentPosition()</code> novamente com a propriedade <code>maximumAge</code> em <code>75000</code>.
+<p>A propriedade <code>maximumAge</code> permite que os dispositivos respondam imediatamente com uma posição em cache. Por exemplo, vamos chamar o método <code>getCurrentPosition()</code> por um período, o usuário permitiu, e a função de callback chamou a posição que foi calculada exatamente às 10:00 horas da manhã, você chamou o método <code>getCurrentPosition()</code> novamente com a propriedade <code>maximumAge</code> em <code>75000</code>.
 
 <pre><code>navigator.geolocation.getCurrentPosition(
   success_callback, error_callback, <mark>{maximumAge: 75000}</mark>);</code></pre>
 
-<p>O que você está dizendo é que você não precisa necessariamente da posição atual do usuário. Você provavelmente ficará satisfeito sabendo onde ele esteve em 75 segundos atrás (75000 millisegundos). O dispositivo sabe onde o usuário foi em 60 segundos atrás (60000 millisegundos), porquê sua posição foi calculada antes da primeira chamada do método <code>getCurrentPosition()</code>. Então o dispositivo não precisa recalcular o localização do usuário novamente. Ele somente retorna exatamente a mesma informação que foi retornada na primeira chamada: mesma latitude, mesma longitude, mesma precisão, e mesmo timestamp (10:00 da manhã).
+<p>O que você está dizendo é que você não precisa necessariamente da posição atual do usuário. Você provavelmente ficará satisfeito sabendo onde ele esteve em 75 segundos atrás (75000 millisegundos). O dispositivo sabe onde o usuário foi em 60 segundos atrás (60000 millisegundos), porque sua posição foi calculada antes da primeira chamada do método <code>getCurrentPosition()</code>. Então o dispositivo não precisa recalcular o localização do usuário novamente. Ele somente retorna exatamente a mesma informação que foi retornada na primeira chamada: mesma latitude, mesma longitude, mesma precisão, e mesmo timestamp (10:00 da manhã).
 
 <p class=ss><img src=i/openclipart.org_maven_Galileo_Galilei.png alt="velho homem olhando em seu telescópio" width=208 height=508>
 
@@ -205,7 +205,7 @@ R: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Os estado
 
 <h2 id=ie>E o IE?</h2>
 
-<p>Antes da versão 9 (tecnicamente 9.0RC1), o Internet Explorer não tem suporte para a <a href=#w3c><abbr>API</abbr> de geolocalização da <abbr>W3C</abbr></a>. Mas não se desespere! <a href=http://tools.google.com/gears/>Gears</a> é um plugin open source do Google que funciona em Windows, Mac, Linux, Windows Mobile, e Android, que fornece recursos para os navegadores antigos. Um desses recursos que o Gears fornece é a <abbr>API</abbr> de geolocalzação. Ele não é bem a <abbr>API</abbr> de geolocalização da <abbr>W3C</abbr>, mas tem o mesmo resultado.
+<p>Antes da versão 9 (tecnicamente 9.0RC1), o Internet Explorer não tem suporte para a <a href=#w3c><abbr>API</abbr> de geolocalização da <abbr>W3C</abbr></a>. Mas não se desespere! <a href=http://tools.google.com/gears/>Gears</a> é um plugin de código aberto da Google que funciona em Windows, Mac, Linux, Windows Mobile, e Android, que fornece recursos para os navegadores antigos. Um desses recursos que o Gears fornece é a <abbr>API</abbr> de geolocalzação. Ele não é bem a <abbr>API</abbr> de geolocalização da <abbr>W3C</abbr>, mas tem o mesmo resultado.
 
 <p>Enquantos estamos em um assunto de plataformas legadas, gostaria de deixar bem claro que as plataformas antigas tem suas próprias <abbr>API</abbr>s de geoloalização. <a href="http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx">BlackBerry</a>, <a href="http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html">Nokia</a>, <a href="http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition">Palm</a>, e <a href=http://bondi.omtp.org/1.0/apis/geolocation.html><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI</a> todas fornecem suas próprias <abbr>API</abbr>s. É claro, todas elas trabalham de forma diferente do Gears, que por sua vez funciona de forma diferente da <abbr>API</abbr> de geolocalização da <abbr>W3C</abbr>. Wheeeeee!
 
@@ -213,7 +213,7 @@ R: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Os estado
 
 <h2 id=geo-js>geo.js ao resgate</h2>
 
-<p><a href=http://code.google.com/p/geo-location-javascript/><code>geo.js</code></a> é de código aberto, uma biblioteca JavaScript com licença <abbr>MIT</abbr> que facilita o uso entre as diferenças da <abbr>API</abbr> de geolocalização da <abbr>W3C</abbr>, a Gears <abbr>API</abbr>, e as <abbr>API</abbr>s fornecidas pela próprias plataformas. Para usá-la, você irá precisar adicionar dois scripts no rodapé da sua página. (Tecnicamente, você poderia colocar eles em qualquer lugar, mas scripts no <code>&lt;head&gt;</code> vai fazer com que sua página carregue mais devagar. Então, não faça isso!)
+<p><a href=http://code.google.com/p/geo-location-javascript/><code>geo.js</code></a> é uma biblioteca JavaScript, de código aberto, com licença <abbr>MIT</abbr> que facilita o uso entre as diferentes <abbr>APIs</abbr> de geolocalização da <abbr>W3C</abbr>, a Gears <abbr>API</abbr>, e as <abbr>API</abbr>s fornecidas pela próprias plataformas. Para usá-la, você irá precisar adicionar dois scripts no rodapé da sua página. (Tecnicamente, você poderia colocar eles em qualquer lugar, mas scripts no <code>&lt;head&gt;</code> vão fazer com que sua página carregue mais devagar. Então, não faça isso!)
 
 <p>O primeiro script é o <a href=http://code.google.com/apis/gears/gears_init.js><code>gears_init.js</code></a>, que inicializará o Gears caso estiver instalado. O segundo script é o <a href=http://geo-location-javascript.googlecode.com/svn/trunk/js/geo.js><code>geo.js</code></a>.
 
@@ -232,7 +232,7 @@ R: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Os estado
 </code></pre>
 <p class="legend right" style="margin-top:11.2em"><span class=arrow>&nbsp;&#x21dc;</span> Não deixe isso no seu &lt;head>
 
-<p class=clear>Agora você esta pronto para usar qualquer <abbr>API</abbr> de geolocalização.
+<p class=clear>Agora você está pronto para usar qualquer <abbr>API</abbr> de geolocalização.
 
 <pre><code>if (geo_position_js.init()) {
   geo_position_js.getCurrentPosition(geo_success, geo_error);
@@ -247,7 +247,7 @@ R: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Os estado
 
 <pre><code>  <mark>geo_position_js.getCurrentPosition</mark>(geo_success, geo_error);</code></pre>
 
-<p>O método <code>getCurrentPosition()</code> irá fazer seu navegador pedir sua permissão para encontrar e compartilhar sua localização. Se sua geolocalização está sendo fornecida pelo Gears, irá aparecer uma janela perguntando se você permite o Gears utilizar alguns dados. Se seu nevageador tem suporte nativo para geolocalização, a janela que irá aparecer, é diferente. Por exemplo, o Firefox 3.5 tem suporte nativo para geolocalização. Se você tentar procurar sua localização no Firefox 3.5, aparecerá uma barra de notificação no topo da página perguntando se você quer compartilhar sua localização com este site.
+<p>O método <code>getCurrentPosition()</code> irá fazer seu navegador pedir sua permissão para encontrar e compartilhar sua localização. Se sua geolocalização está sendo fornecida pelo Gears, irá aparecer uma janela perguntando se você permite o Gears utilizar alguns dados. Se seu navegador tem suporte nativo para geolocalização, a janela que irá aparecer, é diferente. Por exemplo, o Firefox 3.5 tem suporte nativo para geolocalização. Se você tentar procurar sua localização no Firefox 3.5, aparecerá uma barra de notificação no topo da página perguntando se você quer compartilhar sua localização com este site.
 
 <p>O método <code>getCurrentPosition()</code> passa dois parâmetros, ambos funções. Se o método <code>getCurrentPosition()</code> conseguiu encontrar sua localização &mdash; isto é, se você deu permissão, a <abbr>API</abbr> de geolocalização irá funcionar como mágica &mdash; a função passada no primeiro parâmetro será chamada. Neste exemplo, a função de callback de sucesso é chamada de <code>geo_success</code>.
 
@@ -288,7 +288,7 @@ R: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Os estado
   geo_position_js.getCurrentPosition(show_map, show_map_error);
 }</code></pre>
 
-<p>Se você permitir rastrear sua localização, <em>e</em> o serviço de backend conseguir determinar sua localização, <code>geo.js</code> chama a primeira função de callback, <code>show_map()</code>, com um único parâmetro, <code>loc</code>. O objeto <code>loc</code> têm uma propriedade <code>coords</code> no qual contém sua latitude, longitude e precisão. (Este exemplo não usa a precisão.) O resto do método <code>show_map()</code> usa a <abbr>API</abbr> de mapas do Google Maps para mostrar um mapa.
+<p>Se você permitir rastrear sua localização, <em>e</em> o serviço de backend conseguir determinar sua localização, <code>geo.js</code> chama a primeira função de callback, <code>show_map()</code>, com um único parâmetro, <code>loc</code>. O objeto <code>loc</code> tem uma propriedade <code>coords</code> no qual contém sua latitude, longitude e precisão. (Este exemplo não usa a precisão.) O resto do método <code>show_map()</code> usa a <abbr>API</abbr> de mapas do Google Maps para mostrar um mapa.
 
 <pre><code>function show_map(loc) {
   $("#geo-wrapper").css({'width':'320px','height':'350px'});
@@ -335,7 +335,7 @@ R: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Os estado
 
 <p class=c>Copyright MMIX&ndash;MMXI <a href=about.html>Mark Pilgrim</a>
 
-<form action=http://www.google.com/cse><div><input type=hidden name=cx value=017884302975346027366:bgclqh8nvse><input type=hidden name=ie value=UTF-8><input type=search name=q size=25 placeholder="powered by Google&trade;">&nbsp;<input type=submit name=sa value=Search></div></form>
+<form action=http://www.google.com/cse><div><input type=hidden name=cx value=017884302975346027366:bgclqh8nvse><input type=hidden name=ie value=UTF-8><input type=search name=q size=25 placeholder="powered by Google&trade;">&nbsp;<input type=submit name=sa value=Pesquisar></div></form>
 <script src=j/jquery.js></script>
 <script src=j/modernizr.js></script>
 <script src=j/gears_init.js></script>
