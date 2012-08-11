@@ -158,43 +158,43 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:224px"><img src=i/openclipart.org_johnny_automatic_at_the_theater.png alt="audience at the theater" width=224 height=334><br><span id=live-video></span>
 
-<p>The <code>&lt;video></code> element is designed to be usable without any detection scripts. You can specify multiple video files, and browsers that support <abbr>HTML5</abbr> video will choose one based on what video formats they support. (See &#8220;A gentle introduction to video encoding&#8221; <a href=http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats>part 1: container formats</a> and <a href=http://diveintomark.org/archives/2008/12/19/give-part-2-lossy-video-codecs>part 2: lossy video codecs</a> to learn about different video formats.)
+<p>O elemento <code>&lt;video></code> é projetado para funcionar sem a necessidade de scripts de detecção. Você pode especificar multiplos arquivos de video, e os navegadores que possuirem suporte ao <abbr>HTML5</abbr> video escolherão um baseado nos formatos suportados por eles. (See &#8220;A gentle introduction to video encoding&#8221; <a href=http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats>part 1: container formats</a> and <a href=http://diveintomark.org/archives/2008/12/19/give-part-2-lossy-video-codecs>part 2: lossy video codecs</a> to learn about different video formats.)
 
-<p>Browsers that don&#8217;t support <abbr>HTML5</abbr> video will ignore the <code>&lt;video></code> element completely, but you can use this to your advantage and tell them to play video through a third-party plugin instead. Kroc Camen has designed a solution called <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a> that uses <abbr>HTML5</abbr> video where available, but falls back to QuickTime or Flash in older browsers. This solution uses no JavaScript whatsoever, and it works in virtually every browser, including mobile browsers.
+<p>Navegadores que não possuem suporte a <abbr>HTML5</abbr> video irão ignorar o elemento <code>&lt;video></code> completamente, mas você pode usar isso a seu favor dizendo a eles para tocar o video através de plugins. Kroc Camen desenvolveu uma solução chamada <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a> que faz uso do <abbr>HTML5</abbr> video onde estiver disponivel, porém fazendo tratamento para uso de QuickTime ou Flash em navegadores antigos. Essa solução não usa Javascript, e funciona praticamente em qualquer navegador, inclusive em mobiles.
 
-<p>If you want to do more with video than plop it on your page and play it, you&#8217;ll need to use JavaScript. Checking for video support uses <a href=#techniques>detection technique #2</a>. If your browser supports <abbr>HTML5</abbr> video, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;video></code> element will have a <code>canPlayType()</code> method. If your browser doesn&#8217;t support <abbr>HTML5</abbr> video, the <abbr>DOM</abbr> object it creates for a <code>&lt;video></code> element will have only the set of properties common to all elements. You can check for video support using this function:
+<p>Se você quiser fazer mais com video do que apenas colocá-lo em sua página e tocá-lo, terá que usar Javascript. Checar suporte a video utiliza a <a href=#techniques>técnica e detecção #2</a>. Se seu navegador possui suporte para <abbr>HTML5</abbr> video, o objeto <abbr>DOM</abbr> criado para representar o elemento <code>&lt;video></code> terá um método <code>canPlayType()</code>. Caso o navegador não tenha suporte para <abbr>HTML5</abbr> video, o objeto <abbr>DOM</abbr> criado para o elemento <code>&lt;video></code> terá apenas uma coleção de proprieades comum à todos os elementos. Você pode verificar o suporte a video usando essa função:
 
 <pre><code>function supports_video() {
   return !!document.createElement('video').canPlayType;
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> to detect support for <abbr>HTML5</abbr> video.
+<p>Ao invés de escrever a função você mesmo, você pode usar o <a href=#modernizr>Modernizr</a> para detectar suporte a <abbr>HTML5</abbr> video.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for <abbr>HTML5</abbr> video support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verificando suporte a <abbr>HTML5</abbr> video
 <pre><code>if (<mark>Modernizr.video</mark>) {
-  // let's play some video!
+  // vamos tocar alguns videos!
 } else {
-  // no native video support available :(
-  // maybe check for QuickTime or Flash instead
+  // suporte nativo a videos indisponível :(
+  // verifique suporte a QuickTime ou Flash talvez
 }</code></pre>
 
-<p>In <a href=video.html>the Video chapter</a>, I&#8217;ll explain another solution that uses these detection techniques to convert <code>&lt;video></code> elements to Flash-based video players, for the benefit of browsers that don&#8217;t support <abbr>HTML5</abbr> video.
+<p>No <a href=video.html>capítulo de Video</a>, explicarei outra solução que faz uso dessas técnicas de detecção para converter elementos <code>&lt;video></code> para players baseados em Flash, para atender a navegadores que não possuem suporte ao <abbr>HTML5</abbr> video.
 
-<p>There is a separate test for detecting which video formats your browser can play, which I will demonstrate next.
+<p>Existe um teste separado para detectar quais formatos de video seu navegador pode tocar, o qual demonstrarei em seguida.
 
 <p class=a>&#x2767;
 
-<h2 id=video-formats>Video Formats</h2>
+<h2 id=video-formats>Formatos de Video</h2>
 
-<p>Video formats are like written languages. An English newspaper may convey the same information as a Spanish newspaper, but if you can only read English, only one of them will be useful to you! To play a video, your browser needs to understand the &#8220;language&#8221; in which the video was written.
+<p>Formatos de video são como linguagens escritas. Um jornal em inglês contém a mesma informação que um jornal em espanhol, mas se você só sabe ler inglês, apenas um dos jornais será útil pra você! Para tocar um video, seu navegador precisa entender o &#8220;idioma&#8221; no qual o video foi escrito.
 
 <p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:250px"><img src=i/openclipart.org_johnny_automatic_man_reading_newspaper.png alt="man reading newspaper" width=250 height=261><br><span id=live-video-formats></span>
 
-<p>The &#8220;language&#8221; of a video is called a &#8220;codec&#8221; &mdash; this is the algorithm used to encode the video into a stream of bits. There are dozens of codecs in use all over the world. Which one should you use? The unfortunate reality of <abbr>HTML5</abbr> video is that browsers can&#8217;t agree on a single codec. However, they seem to have narrowed it down to two. One codec costs money (because of patent licensing), but it works in <a href=http://www.apple.com/safari/>Safari</a> and on the iPhone.  (This one also works in Flash if you use a solution like <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a>) The other codec is free and works in open source browsers like <a href=http://code.google.com/chromium/>Chromium</a> and <a href=http://www.getfirefox.com/>Mozilla Firefox</a>.
+<p>O &#8220;idioma&#8221; de um video é chamado de &#8220;codec&#8221; &mdash; é um algoritmo usado para codificar o video em uma sequência de bits. Existem vários codecs em uso ao redor do mundo. Qual deles você usa? A triste realidade do <abbr>HTML5</abbr> video é que os navegadores não trabalham com um único codec em comum. Contudo, aparentemente eles se limitaram a dois tipos. Um codec é pago (por causa da licensa de patente), mas funciona no <a href=http://www.apple.com/safari/>Safari</a> e no iPhone. (Este também funciona com Flash se você utiliza uma solução como <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a>) O outro codec é gratuito e funciona em navegadores open source como <a href=http://code.google.com/chromium/>Chromium</a> and <a href=http://www.getfirefox.com/>Mozilla Firefox</a>.
 
-<p>Checking for video format support uses <a href=#techniques>detection technique #3</a>. If your browser supports <abbr>HTML5</abbr> video, the <abbr>DOM</abbr> object it creates to represent a <code>&lt;video></code> element will have a <code>canPlayType()</code> method. This method will tell you whether the browser supports a particular video format.
+<p>A verificação de suporte a formatos de video utiliza a <a href=#techniques>técnica de detecção #3</a>. Se o seu navegador possui suporte a <abbr>HTML5</abbr> video, o objeto <abbr>DOM</abbr> criado para representar um elemento <code>&lt;video></code> element terá um método <code>canPlayType()</code>. Esse método dirá se seu browser possui suporte a um determinado formato de video.
 
-<p>This function checks for the patent-encumbered format supported by Macs and iPhones.
+<p>Essa função verifica formatos suportados por Macs e iPhones.
 
 <pre><code>function supports_h264_baseline_video() {
   if (!supports_video()) { return false; }
@@ -202,27 +202,27 @@ body{counter-reset:h1 2}
   return v.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
 }</code></pre>
 
-<p>The function starts by <a href=#video>checking for <abbr>HTML5</abbr> video support</a>, using the <code>supports_video()</code> function you just saw in the previous section. If your browser doesn&#8217;t support <abbr>HTML5</abbr> video, it certainly won&#8217;t support any video formats!
+<p>A função começa <a href=#video>verificando suporte a <abbr>HTML5</abbr> video</a>, usando ao função <code>supports_video()</code> que você acabou de ver na seção anterior. Se o seu navegador não possui suporte a  <abbr>HTML5</abbr> video, com certeza não terá suporte para formatos de video!
 
 <pre><code>  if (<mark>!supports_video()</mark>) { return false; }</code></pre>
 
-<p>Then the function creates a dummy <code>&lt;video></code> element (but doesn&#8217;t attach it to the page, so it won&#8217;t be visible) and calls the <code>canPlayType()</code> method. This method is guaranteed to be there, because the <code>supports_video()</code> function just checked for it.
+<p>Então a função cria um elemento <code>&lt;video></code> (mas não o inclui na página, assim ele não será visível) e invoca o método <code>canPlayType()</code>. Este método está lá seguramente, pois a função <code>supports_video()</code> acabou de garantir sua existência.
 
 <pre><code>  var <mark>v</mark> = document.createElement("video");</code></pre>
 
-<p>A &#8220;video format&#8221; is really a combination of different things. In technical terms, you&#8217;re asking the browser whether it can play H.264 Baseline video and AAC LC audio in an MPEG-4 container. (I&#8217;ll explain what all that means in <a href=video.html>the Video chapter</a>. You might also be interested in reading <a href=http://diveintomark.org/tag/give>A gentle introduction to video encoding</a>.)
+<p>Um &#8220;formato de video&#8221; é na verdade uma combinação de diferentes coisas. Em termos técnicos, vocês está perguntando ao navegador se ele pode tocar um video de base H.264 e um áudio AAC LC em um container MPEG-4. (Irei explicar o que tudo isso significa no  <a href=video.html>capítulo de Video</a>. Você também pode querer ler <a href=http://diveintomark.org/tag/give>Uma breve introdução à codificação de video</a>.)
 
 <pre><code>  return v.canPlayType('<mark>video/mp4; codecs="avc1.42E01E, mp4a.40.2"</mark>');</code></pre>
 
-<p>The <code>canPlayType()</code> function doesn&#8217;t return <code>true</code> or <code>false</code>. In recognition of how complex video formats are, the function returns a string:
+<p>A função <code>canPlayType()</code> não retorna <code>true</code> ou <code>false</code>. Considerando a complexidade que os formatos de video possuem, a função retorna uma string:
 
 <ul>
-<li><code>"probably"</code> if the browser is fairly confident it can play this format
-<li><code>"maybe"</code> if the browser thinks it might be able to play this format
-<li><code>""</code> (an empty string) if the browser is certain it can&#8217;t play this format
+<li><code>"probably"</code> se o navegador está pouco confiante de que possa tocar este formato
+<li><code>"maybe"</code> se o navegador acha que tem condições de tocar este formato
+<li><code>""</code> (uma string vazia) se o navegador tem certeza de que não consegue tocar este formato
 </ul>
 
-<p>This second function checks for the open video format supported by Mozilla Firefox and other open source browsers. The process is exactly the same; the only difference is the string you pass in to the <code>canPlayType()</code> function. In technical terms, you&#8217;re asking the browser whether it can play Theora video and Vorbis audio in an Ogg container.
+<p>Essa segunda função verifica pelo formato de video livre suportado pelo Mozilla Firefox e outros navegadores de código aberto. O processo é extaamente o mesmo; a única diferença é a string que você passa à função <code>canPlayType()</code>. Em termos técnicos, você pergunta ao navegador se ele é capaz de tocar video Theora e áudio Vorbis em um container Ogg.
 
 <pre><code>function supports_ogg_theora_video() {
   if (!supports_video()) { return false; }
@@ -230,7 +230,7 @@ body{counter-reset:h1 2}
   return v.canPlayType(<mark>'video/ogg; codecs="theora, vorbis"'</mark>);
 }</code></pre>
 
-<p>Finally, <a href=http://www.webmproject.org/>WebM</a> is a newly open-sourced (and non-patent-encumbered) video codec that will be included in the next version of major browsers, including Chrome, <a href=http://nightly.mozilla.org/webm/>Firefox</a>, and <a href=http://labs.opera.com/news/2010/05/19/>Opera</a>. You can use the same technique to detect support for open WebM video.
+<p>Finalmente, <a href=http://www.webmproject.org/>WebM</a> é um recente codec de video open-source (e livre de patentes) que será incluido nas próximas versões dos principais navegadores, tais como o Chrome, <a href=http://nightly.mozilla.org/webm/>Firefox</a>, e <a href=http://labs.opera.com/news/2010/05/19/>Opera</a>. Você pode utilizar a mesma técnica para detectar suporte ao video livre WebM.
 
 <pre><code>function supports_webm_video() {
   if (!supports_video()) { return false; }
@@ -238,17 +238,17 @@ body{counter-reset:h1 2}
   return v.canPlayType(<mark>'video/webm; codecs="vp8, vorbis"'</mark>);
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.5 or later) to detect support for different <abbr>HTML5</abbr> video formats.
+<p>Ao invés de escrever essa função você mesmo, você pode utilizar o <a href=#modernizr>Modernizr</a> (1.5 ou superior) para detectar suporte aos diferentes formatos de <abbr>HTML5</abbr> video.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for <abbr>HTML5</abbr> video formats
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verificando suporte a formatos para <abbr>HTML5</abbr> video
 <pre><code>if (Modernizr.video) {
-  // let's play some video! but what kind?
+  // vamos tocar alguns videos! mas de qual tipo?
   if (<mark>Modernizr.video.webm</mark>) {
-    // try WebM
+    // tentar o WebM
   } else if (<mark>Modernizr.video.ogg</mark>) {
-    // try Ogg Theora + Vorbis in an Ogg container
+    // tentar Ogg Theora + Vorbis em um container Ogg
   } else if (<mark>Modernizr.video.h264</mark>){
-    // try H.264 video + AAC audio in an MP4 container
+    // tentar video H.264 + áudio AAC em um container MP4
   }
 }</code></pre>
 
@@ -258,19 +258,19 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:135px"><img src=i/openclipart.org_johnny_automatic_half_stack_of_horizontal_sections.png alt="filing cabinet with drawers of different sizes" width=135 height=341><br><span id=live-storage></span>
 
-<p><a href=http://dev.w3.org/html5/webstorage/><abbr>HTML5</abbr> storage</a> provides a way for web sites to store information on your computer and retrieve it later. The concept is similar to cookies, but it&#8217;s designed for larger quantities of information. Cookies are limited in size, and your browser sends them back to the web server every time it requests a new page (which takes extra time and precious bandwidth). <abbr>HTML5</abbr> storage stays on your computer, and web sites can access it with JavaScript after the page is loaded.
+<p><a href=http://dev.w3.org/html5/webstorage/><abbr>HTML5</abbr> storage</a> fornece aos web sites uma forma de armazenar informações em seu computador e recuperá-lo mais tarde. O conceito é semelhante ao dos cookies, porém ele é projetado para armazenar quantidades de informação superiores. Cookies possuem tamanho bem limitado, e o seu navegador os envia de volta ao servidor web sempre que uma nova página é solicitada (o que leva um tempo extra e uma banda valiosa). O <abbr>HTML5</abbr> storage permanece em seu computador, e os web sites podem acessá-lo através de Javascript depois que a página é carregada.
 
 <div class="pf clear">
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor Markup</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Is local storage really part of <abbr>HTML5</abbr>? Why is it in a separate specification?<br>
-A: The short answer is yes, local storage is part of <abbr>HTML5</abbr>. The slightly longer answer is that local storage used to be part of the main <abbr>HTML5</abbr> specification, but it was split out into a separate specification because some people in the <abbr>HTML5</abbr> Working Group complained that <abbr>HTML5</abbr> was too big. If that sounds like slicing a pie into more pieces to reduce the total number of calories&hellip; well, welcome to the wacky world of standards.
+<p><span>&#x261E;</span>P: O local storage é realmente parte do <abbr>HTML5</abbr>? Porque ele fica em uma especificação separada?<br>
+R: A resposta curta é sim, local storage é parte do <abbr>HTML5</abbr>. A resposta um pouco mais completa é que o local storage fazia parte da especificação principal do <abbr>HTML5</abbr>, mas foi dividido em uma especificação isolada porque algumas pessoas no Working Group do <abbr>HTML5</abbr> se queixaram que o <abbr>HTML5</abbr> estava ficando muito grande. Se partir um bolo em mais pedaços passa a sensação de reduzir o número de calorias, bem, bem vindo ao mundo estranho dos padrões.
 </blockquote>
 </div>
 </div>
 
-<p>Checking for <abbr>HTML5</abbr> storage support uses <a href=#techniques>detection technique #1</a>. If your browser supports <abbr>HTML5</abbr> storage, there will be a <code>localStorage</code> property on the global <code>window</code> object. If your browser doesn&#8217;t support <abbr>HTML5</abbr> storage, the <code>localStorage</code> property will be undefined. Due to an unfortunate bug in older versions of Firefox, this test will raise an exception if cookies are disabled, so the entire test is wrapped in a <code>try..catch</code> statement.
+<p>A verificação de suporte ao <abbr>HTML5</abbr> storage utiliza a <a href=#techniques>técnica de detecção #1</a>. Se o seu navegador possui suporte ao <abbr>HTML5</abbr> storage, haverá uma propriedade chamada <code>localStorage</code> no objeto global <code>window</code>. Se o seu navegador não possui suporte ao <abbr>HTML5</abbr> storage, a propriedade <code>localStorage</code> será undefined. Devido a um bug em versões anteriores do Firefox, este teste causará uma exception se os cookies estiverem desabilitados, por isso o teste todo é envolvido por um bloco  <code>try..catch</code>.
 
 <pre><code>function supports_local_storage() {
   try {
@@ -280,24 +280,24 @@ A: The short answer is yes, local storage is part of <abbr>HTML5</abbr>. The sli
   }
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.1 or later) to detect support for <abbr>HTML5</abbr> local storage.
+<p>Ao invés de escrever essa função, você pode usar o <a href=#modernizr>Modernizr</a> (1.1 ou superior) para detectar suporte ao <abbr>HTML5</abbr> local storage.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for <abbr>HTML5</abbr> local storage
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verificando suporte ao <abbr>HTML5</abbr> local storage
 <pre><code>if (<mark>Modernizr.localstorage</mark>) {
-  // window.localStorage is available!
+  // window.localStorage está disponível!
 } else {
-  // no native support for local storage :(
-  // maybe try Gears or another third-party solution
+  // sem suporte nativo ao local storage :(
+  // tente usar o Gears ou outra solução, talvez
 }</code></pre>
 
-<p>Note that JavaScript is case-sensitive. The Modernizr attribute is called <code>localstorage</code> (all lowercase), but the <abbr>DOM</abbr> property is called <code>window.localStorage</code> (mixed case).
+<p>Note que o Javascript faz distinção entre letras maiúsculas e minúsculas. O atributo do Modernizr é chamado <code>localstorage</code> (todas as letras minúsculas), mas a propriedade <abbr>DOM</abbr> é chamada <code>window.localStorage</code> (letras maiúsculas e minúsculas misturadas).
 
 <div class="pf clear">
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor Markup</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: How secure is my <abbr>HTML5</abbr> storage database? Can anyone read it?<br>
-A: Anyone who has physical access to your computer can probably look at (or even change) your <abbr>HTML5</abbr> storage database. Within your browser, any web site can read and modify its own values, but sites can&#8217;t access values stored by other sites. This is called a <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#origin-0>same-origin restriction</a>.
+<p><span>&#x261E;</span>P: Quão seguro é o banco de dados do <abbr>HTML5</abbr> storage? Qualquer um pode acessá-lo?<br>
+R: Qualquer um que possua acesso físico ao seu computador provavelmente poderá ler (ou até mesmo editar) seu banco de dados do <abbr>HTML5</abbr> storage. Com seu navegador, qualquer web site pode ler e modificar seus próprios valores, mas sites não podem acessar valores armazenados por outros sites. Isso é chamado de <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#origin-0>same-origin restriction</a>.
 </blockquote>
 </div>
 </div>
