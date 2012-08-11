@@ -308,57 +308,57 @@ R: Qualquer um que possua acesso físico ao seu computador provavelmente poderá
 
 <p class=ss style="margin:1.75em"><span id=live-web-workers></span>
 
-<p><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a> provide a standard way for browsers to run JavaScript in the background. With web workers, you can spawn multiple &#8220;threads&#8221; that all run at the same time, more or less. (Think of how your computer can run multiple applications at the same time, and you&#8217;re most of the way there.) These &#8220;background threads&#8221; can do complex mathematical calculations, make network requests, or access <a href=#local-storage>local storage</a> while the main web page responds to the user scrolling, clicking, or typing.
+<p><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a> fornece uma maneira padrão aos navegadores de executarem Javascript em background. Com web workers, você pode disparar múltiplas &#8220;threads&#8221; que irão todas ser executadas ao mesmo tempo, mais ou menos. (Pense em como o computador pode executar múltiplas aplicações ao mesmo tempo e você terá praticamente entendido tudo.) Essas &#8220;threads em background&#8221; podem realizar cálculos matemáticos complexos, fazer requisições HTTP ou acessar o <a href=#local-storage>local storage</a> enquanto a página principal atende aos comandos do usuário tais como rolando a página, cliques ou digitação.
 
-<p>Checking for web workers uses <a href=#techniques>detection technique #1</a>. If your browser supports the Web Worker <abbr>API</abbr>, there will be a <code>Worker</code> property on the global <code>window</code> object. If your browser doesn&#8217;t support the Web Worker <abbr>API</abbr>, the <code>Worker</code> property will be undefined.
+<p>Verificar o suporte às web workers utiliza a <a href=#techniques>técnica de detecção #1</a>. Se o seu navegador possui suporte à <abbr>API</abbr> do Web Worker, haverá uma propriedade <code>Worker</code> no objeto global <code>window</code>. Se o seu navegador não possui suporte à <abbr>API</abbr> do Web Worker, a propriedade <code>Worker</code> será undefined.
 
 <pre><code>function supports_web_workers() {
   return !!window.Worker;
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.1 or later) to detect support for web workers.
+<p>Ao invés de escrever essa função, você pode utilizar o <a href=#modernizr>Modernizr</a> (1.1 ou superior) para detectar suport a web workers.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for web workers
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verificando suporte a web workers
 <pre><code>if (<mark>Modernizr.webworkers</mark>) {
-  // window.Worker is available!
+  // window.Worker está disponível!
 } else {
-  // no native support for web workers :(
-  // maybe try Gears or another third-party solution
+  // sem sporte nativo a web workers :(
+  // tente o Gears ou outra solução
 }</code></pre>
 
-<p>Note that JavaScript is case-sensitive. The Modernizr attribute is called <code>webworkers</code> (all lowercase), but the <abbr>DOM</abbr> object is called <code>window.Worker</code> (with a capital &#8220;W&#8221; in &#8220;Worker&#8221;).
+<p>Note que o Javascript faz distinção entre letras maiúsculas e minúsculas. O atributo do Modernizr é chamado <code>webworkers</code> (todas as letras minúsculas), mas a propriedade <abbr>DOM</abbr> é chamada <code>window.Worker</code> (letras maiúsculas e minúsculas misturadas).
 
 <p class=a>&#x2767;
 
-<h2 id=offline>Offline Web Applications</h2>
+<h2 id=offline>Aplicações Web Offline</h2>
 
 <p class=ss style="width:257px"><img src=i/openclipart.org_johnny_automatic_cabin_along_stream.png alt="cabin in the woods" width=257 height=242><br><span id=live-offline></span>
 
-<p>Reading static web pages offline is easy: connect to the Internet, load a web page, disconnect from the Internet, drive to a secluded cabin, and read the web page at your leisure. (To save time, you may wish to skip the step about the cabin.) But what about web applications like <a href=http://mail.google.com/>Gmail</a> or <a href=http://docs.google.com/>Google Docs</a>? Thanks to <abbr>HTML5</abbr>, anyone (not just Google!) can build a web application that works offline.
+<p>Ler páginas web estáticas é fácil: conecte-se na Internet, carregue uma página, se disconecte da Internet, dirija até uma cabine isolada, e leia a página comodamente. (Para ganhar tempo, pule a parte de ir até uma cabine.) Mas e as aplicações como o <a href=http://mail.google.com/>Gmail</a> ou <a href=http://docs.google.com/>Google Docs</a>? Graças ao <abbr>HTML5</abbr>, qualquer um (não só o Google!) pode construir uma aplicação web que funcione offline.
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline>Offline web applications</a> start out as online web applications. The first time you visit an offline-enabled web site, the web server tells your browser which files it needs in order to work offline. These files can be anything &mdash; <abbr>HTML</abbr>, JavaScript, images, even <a href=#video>videos</a>. Once your browser downloads all the necessary files, you can revisit the web site even if you&#8217;re not connected to the Internet. Your browser will notice that you&#8217;re offline and use the files it has already downloaded. When you get back online, any changes you&#8217;ve made can be uploaded to the remote web server.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline>Aplicações web offline</a> começam como aplicações web online. A primeira vez que você visita um site com conteúdo offline habilitado, o servidor web diz ao navegador quais arquivos ele precisa para trabalhar offline. Esses arquivos podem ser qualquer coisa &mdash; <abbr>HTML</abbr>, JavaScript, imagens, até mesmo <a href=#video>videos</a>. Uma vez que o navegador carregou todos os arquivos necessários, você pode revisitar o web site até mesmo se você não estiver conectado a Internet. Seu navegador perceberá que você está offline e usará os arquivos que ele já havia feito download. Quando você se reconectar, quaisquer alterações que você tenha feito podem ser enviadas ao servidor web.
 
-<p>Checking for offline support uses <a href=#techniques>detection technique #1</a>. If your browser supports offline web applications, there will be an <code>applicationCache</code> property on the global <code>window</code> object. If your browser doesn&#8217;t support offline web applications, the <code>applicationCache</code> property will be undefined. You can check for offline support with the following function:
+<p>Verificar o suporte conteúdo offline utiliza a <a href=#techniques>técnica de detecção #1</a>. Se o seu navegador possui suporte à aplicações web offline, haverá uma propriedade <code>applicationCache</code> no objeto global <code>window</code>. Se o seu navegador não possui suporte à aplicações web offline, a propriedade <code>applicationCache</code> será undefined. Você pode verificar a disponibilidade de aplicações web offline através da seguinte função:
 
 <pre><code>function supports_offline() {
   return !!window.applicationCache;
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.1 or later) to detect support for offline web applications.
+<p>Ao invés de escrever essa função, você pode utilizar o <a href=#modernizr>Modernizr</a> (1.1 ou superior) para detectar suport a aplicações web offline.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for offline support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verificando suporte a aplicações web offline
 <pre><code>if (<mark>Modernizr.applicationcache</mark>) {
-  // window.applicationCache is available!
+  // window.applicationCache está disponível!
 } else {
-  // no native support for offline :(
-  // maybe try Gears or another third-party solution
+  // sem suporte nativo a conteudo offline :(
+  // tente usar o Gears ou outra solução
 }</code></pre>
 
-<p>Note that JavaScript is case-sensitive. The Modernizr attribute is called <code>applicationcache</code> (all lowercase), but the <abbr>DOM</abbr> object is called <code>window.applicationCache</code> (mixed case).
+<p>Note que o Javascript faz distinção entre letras maiúsculas e minúsculas. O atributo do Modernizr é chamado <code>applicationcache</code> (todas as letras minúsculas), mas a propriedade <abbr>DOM</abbr> é chamada <code>window.applicationCache</code> (letras maiúsculas e minúsculas misturadas).
 
 <p class=a>&#x2767;
 
-<h2 id=geolocation>Geolocation</h2>
+<h2 id=geolocation>Geolocalização</h2>
 
 <p>Geolocation is the art of figuring out where you are in the world and (optionally) sharing that information with people you trust. There is more than one way to figure out where you are &mdash; your <abbr>IP</abbr> address, your wireless network connection, which cell tower your phone is talking to, or dedicated <abbr>GPS</abbr> hardware that calculates latitude and longitude from information sent by satellites in the sky.
 
