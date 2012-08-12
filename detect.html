@@ -444,27 +444,27 @@ R: O suporte a geolocalização foi adicionado aos navegadores agora a pouco, ju
 
 <p class=a>&#x2767;
 
-<h2 id=input-placeholder>Placeholder Text</h2>
+<h2 id=input-placeholder>Placeholder</h2>
 
 <form style="float:right;margin:1.75em"><input placeholder="Your browser supports placeholder text" size=38></form>
 
-<p>Besides <a href=#input-types>new input types</a>, <abbr>HTML5</abbr> includes several small tweaks to existing forms. One improvement is the ability to set <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>placeholder text in an input field</a>. Placeholder text is displayed inside the input field as long as the field is empty and not focused. As soon you click on (or tab to) the input field, the placeholder text disappears. The <a href=forms.html#placeholder>chapter on web forms</a> has screenshots if you&#8217;re having trouble visualizing it.
+<p>Além dos <a href=#input-types>novos tipos de entrada</a>, o <abbr>HTML5</abbr> inclui vários pequenos ajustes aos formulários já existentes. Uma melhoria é colocar um <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>placeholder em um campo de entrada</a>. O placeholder é exibido dentro de um capo de entrada enquanto o campo estiver vazio e sem foco. Assim que você clica no campo (ou navega com o tab até ele), o placeholder some. O <a href=forms.html#placeholder>capítulo sobre formulários web</a> tem screenshots se você está tendo dificuldades em visualizá-lo.
 
-<p>Checking for placeholder support uses <a href=#techniques>detection technique #2</a>. If your browser supports placeholder text in input fields, the <abbr>DOM</abbr> object it creates to represent an <code>&lt;input></code> element will have a <code>placeholder</code> property (even if you don&#8217;t include a <code>placeholder</code> attribute in your <abbr>HTML</abbr>). If your browser doesn&#8217;t support placeholder text, the <abbr>DOM</abbr> object it creates for an <code>&lt;input></code> element will not have a <code>placeholder</code> property.
+<p>A verificação de suporte ao placeholder utiliza a <a href=#techniques>técnica de detecção #2</a>. Se o seu navegador possui suporte à colocar placeholders em campos de entrada, o objeto <abbr>DOM</abbr> criado para representar o elemento <code>&lt;input></code> terá uma propriedade <code>placeholder</code> (mesmo que você não inclua um atributo <code>placeholder</code> em seu <abbr>HTML</abbr>). Se o seu navegador não possui suporte ao placeholder, o objeto <abbr>DOM</abbr> criado para um elemento <code>&lt;input></code> não terá uma propriedade <code>placeholder</code>.
 
 <pre><code>function supports_input_placeholder() {
   var i = document.createElement('input');
   return 'placeholder' in i;
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.1 or later) to detect support for placeholder text.
+<p>Ao invés de escrever essa função, você pode utilizar o <a href=#modernizr>Modernizr</a> (1.1 ou superior) para detectar suporte ao placeholder.
 
 <p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for placeholder text
 <pre><code>if (<mark>Modernizr.input.placeholder</mark>) {
-  // your placeholder text should already be visible!
+  // seu placeholder já deve estar visível!
 } else {
-  // no placeholder support :(
-  // fall back to a scripted solution
+  // sem suporte ao placeholder :(
+  // implemente uma solução com script
 }</code></pre>
 
 <p class=a>&#x2767;
