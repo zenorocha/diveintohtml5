@@ -360,86 +360,86 @@ R: Qualquer um que possua acesso físico ao seu computador provavelmente poderá
 
 <h2 id=geolocation>Geolocalização</h2>
 
-<p>Geolocation is the art of figuring out where you are in the world and (optionally) sharing that information with people you trust. There is more than one way to figure out where you are &mdash; your <abbr>IP</abbr> address, your wireless network connection, which cell tower your phone is talking to, or dedicated <abbr>GPS</abbr> hardware that calculates latitude and longitude from information sent by satellites in the sky.
+<p>Geolocalização é a arte de descobrir em que lugar do mundo você está e (eventualmente) compartilhar essa informação com as pessoas de sua confiança. Existe mais de uma maneira de saber onde você está &mdash; seu endereço <abbr>IP</abbr>, sua conexão de rede sem fio, com qual torre seu celular está se comunicando, ou o <abbr>GPS</abbr> que calcula a latitude e longitude através das informações enviadas pelos satélites no céu.
 
 <p style="margin:0 auto;width:194px" id=geo-wrapper><img src=i/openclipart.org_johnny_automatic_globe_man.png alt="man with a globe for a head" width=194 height=317><br><span id=live-geolocation></span>
 
 <div class="pf clear">
-<h4>Ask Professor Markup</h4>
+<h4>Pergunte ao Professor Markup</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Is geolocation part of <abbr>HTML5</abbr>? Why are you talking about it?<br>
-A: Geolocation support is being added to browsers right now, along with support for new <abbr>HTML5</abbr> features. Strictly speaking, geolocation is being standardized by the <a href=http://www.w3.org/2008/geolocation/>Geolocation Working Group</a>, which is separate from the <abbr>HTML5</abbr> Working Group. But I&#8217;m going to talk about geolocation in this book anyway, because it&#8217;s part of the evolution of the web that&#8217;s happening now.
+<p><span>&#x261E;</span>P: A geolocalização faz parte do <abbr>HTML5</abbr>? Porque você está falando sobre ela?<br>
+R: O suporte a geolocalização foi adicionado aos navegadores agora a pouco, juntamente com o suporte para novos recursos <abbr>HTML5</abbr>. Na verdade, a geolocalização está sendo padronizada pelo <a href=http://www.w3.org/2008/geolocation/>Geolocation Working Group</a>, o qual está separado do <abbr>HTML5</abbr> Working Group. Porém eu irei falar sobre a geolocalização neste livro assim mesmo, porque ela é parte da evolução da web que está acontecendo nesse momento.
 </blockquote>
 </div>
 </div>
 
-<p>Checking for geolocation support uses <a href=#techniques>detection technique #1</a>. If your browser supports the geolocation <abbr>API</abbr>, there will be a <code>geolocation</code> property on the global <code>navigator</code> object. If your browser doesn&#8217;t support the geolocation <abbr>API</abbr>, the <code>geolocation</code> property will be undefined. Here&#8217;s how to check for geolocation support:
+<p>Verificar o suporte à geolocalização utiliza a <a href=#techniques>técnica de detecção #1</a>. Se o seu navegador possui suporte à geolocalização, haverá uma propriedade <code>geolocation</code> no objeto global <code>window</code>. Se o seu navegador não possui suporte à geolocalização, a propriedade <code>geolocation</code> será undefined. Veja como você pode verificar se há suporte à geolocalização:
 
 <pre><code>function supports_geolocation() {
   return !!navigator.geolocation;
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> to detect support for the geolocation <abbr>API</abbr>.
+<p>Ao invés de escrever essa função, você pode utilizar o <a href=#modernizr>Modernizr</a> para detectar suport a <abbr>API</abbr> da geolocalização.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for geolocation support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verificando suporte a geolocalização
 <pre><code>if (<mark>Modernizr.geolocation</mark>) {
   // Vamos ver onde você está!
 } else {
-  // no native geolocation support available :(
-  // maybe try Gears or another third-party solution
+  // suporte nativo à geolocalizaçãono indisponível :(
+  // tente o Gears ou outra solução
 }</code></pre>
 
-<p>If your browser does not support the geolocation <abbr>API</abbr> natively, there is still hope. <a href=http://tools.google.com/gears/>Gears</a> is an open source browser plugin from Google that works on Windows, Mac, Linux, Windows Mobile, and Android. It provides features for older browsers that do not support all the fancy new stuff we&#8217;ve discussed in this chapter. One of the features that Gears provides is a geolocation <abbr>API</abbr>. It&#8217;s not the same as the <code>navigator.geolocation</code> <abbr>API</abbr>, but it serves the same purpose.
+<p>Se o seu navegador não possui suporte nativo à geolocalização, ainda há esperança. O <a href=http://tools.google.com/gears/>Gears</a> é um plugin para navegadores livre desenvolvido pelo Google que funciona no Windows, Mac, Linux, Windows Mobile e Android. Ele fornece recursos para browsers mais antigos que não possuem suporte a todas essas novas coisas estilosas que vimos discutindo neste capítulo. Um dos recursos que o Gears fornece é a <abbr>API</abbr> de geolocalização. Não é exatamente a mesma coisa que <code>navigator.geolocation</code>, mas funciona como se fosse.
 
-<p>There are also device-specific geolocation <abbr>API</abbr>s on older mobile phone platforms, including <a href="http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx">BlackBerry</a>, <a href="http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html">Nokia</a>, <a href="http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition">Palm</a>, and <a href=http://bondi.omtp.org/1.0/apis/geolocation.html><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI</a>.
+<p>Existem ainda <abbr>API</abbr>s de geolocalização específicas para determinados dispositivos para alguns celulares antigos, incluindo <a href="http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx">BlackBerry</a>, <a href="http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html">Nokia</a>, <a href="http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition">Palm</a> e <a href=http://bondi.omtp.org/1.0/apis/geolocation.html><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI</a>.
 
-<p>The <a href=geolocation.html>chapter on geolocation</a> will go into excruciating detail about how to use all of these different <abbr>API</abbr>s.
+<p>O <a href=geolocation.html>capítulo sobre geolocalização</a> falará nos mínimos detalhes sobre como usar as diferentes <abbr>API</abbr>s.
 
 <p class=a>&#x2767;
 
-<h2 id=input-types>Input Types</h2>
+<h2 id=input-types>Tipos de entrada</h2>
 
 <p class=ss style="width:261px"><img src=i/openclipart.org_johnny_automatic_typewriter.png alt="manual typewriter" width=261 height=228><br><span id=live-input-types></span>
 
-<p>You know all about web forms, right? Make a <code>&lt;form></code>, add a few <code>&lt;input type="text"></code> elements and maybe an <code>&lt;input type="password"></code>, and finish it off with an <code>&lt;input type="submit"></code> button.
+<p>Você sabe tudo sobre formulários web, certo? Fazer um <code>&lt;form></code>, adicionar alguns elementos <code>&lt;input type="text"></code> e quem sabe um <code>&lt;input type="password"></code>, e por fim um botão <code>&lt;input type="submit"></code>.
 
-<p>You don&#8217;t know the half of it. <abbr>HTML5</abbr> defines over a dozen new input types that you can use in your forms.
+<p>Você não sabe a metade deles. O <abbr>HTML5</abbr> define um monte de novos tipos de entrada de dados que você pode usar em seus formulários.
 
 <ol>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#text-state-and-search-state><code>&lt;input type="search"></code></a> for search boxes
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#number-state><code>&lt;input type="number"></code></a> for spinboxes
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#range-state><code>&lt;input type="range"></code></a> for sliders
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#color-state><code>&lt;input type="color"></code></a> for color pickers
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#telephone-state><code>&lt;input type="tel"></code></a> for telephone numbers
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#url-state><code>&lt;input type="url"></code></a> for web addresses
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state><code>&lt;input type="email"></code></a> for email addresses
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#date-state><code>&lt;input type="date"></code></a> for calendar date pickers
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#month-state><code>&lt;input type="month"></code></a> for months
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#week-state><code>&lt;input type="week"></code></a> for weeks
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#time-state><code>&lt;input type="time"></code></a> for timestamps
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#date-and-time-state><code>&lt;input type="datetime"></code></a> for precise, absolute date+time stamps
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#local-date-and-time-state><code>&lt;input type="datetime-local"></code></a> for local dates and times
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#text-state-and-search-state><code>&lt;input type="search"></code></a> para caixas de busca
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#number-state><code>&lt;input type="number"></code></a> para campos incrementais
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#range-state><code>&lt;input type="range"></code></a> para sliders
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#color-state><code>&lt;input type="color"></code></a> para seleção de cores
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#telephone-state><code>&lt;input type="tel"></code></a> para números de telefone
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#url-state><code>&lt;input type="url"></code></a> para endereços na web
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state><code>&lt;input type="email"></code></a> para endereços de e-mail
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#date-state><code>&lt;input type="date"></code></a> para calendários
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#month-state><code>&lt;input type="month"></code></a> para mêses
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#week-state><code>&lt;input type="week"></code></a> para semanas
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#time-state><code>&lt;input type="time"></code></a> para horas
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#date-and-time-state><code>&lt;input type="datetime"></code></a> para precisos e absolutos data+hora
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#local-date-and-time-state><code>&lt;input type="datetime-local"></code></a> para datas e horas locais
 </ol>
 
-<p>Checking for <abbr>HTML5</abbr> input types uses <a href=#techniques>detection technique #4</a>. First, you create a dummy <code>&lt;input></code> element in memory. The default input type for all <code>&lt;input></code> elements is <code>"text"</code>. This will prove to be vitally important.
+<p>Verificando suporte ao tipos de entrada do <abbr>HTML5</abbr> utiliza a <a href=#techniques>técnica de detecção #4</a>. Primeiro, você cria um elemento <code>&lt;input></code> em memória. O tipo padrão para todos os elementos <code>&lt;input></code> é <code>"text"</code>. 
 
 <pre><code>  var i = document.createElement("input");</code></pre>
 
-<p>Next, set the <code>type</code> attribute on the dummy <code>&lt;input></code> element to the input type you want to detect.
+<p>Em seguida, configure o atributo <code>type</code> ao elemento <code>&lt;input></code> para o tipo de entrada que você quer detectar.
 
 <pre><code>  i.setAttribute("type", "color");</code></pre>
 
-<p>If your browser supports that particular input type, the <code>type</code> property will retain the value you set. If your browser doesn&#8217;t support that particular input type, it will ignore the value you set and the <code>type</code> property will still be <code>"text"</code>.
+<p>Se o seu navegador possuir suporte para aquele tipo de entrada em particular, a propriedade <code>type</code> irá reter o valor que você configurou. Se o seu navegador não possuir suporte para aquele tipo de entrada em particular, ele será irá ignorar o valor que você configurou e a propriedade <code>type</code> ainda será <code>"text"</code>.
 
 <pre><code>  return i.type !== "text";</code></pre>
 
-<p>Instead of writing 13 separate functions yourself, you can use <a href=#modernizr>Modernizr</a> to detect support for all the new input types defined in <abbr>HTML5</abbr>. Modernizr reuses a single <code>&lt;input></code> element to efficiently detect support for all 13 input types. Then it builds a hash called <code>Modernizr.inputtypes</code>, that contains 13 keys (the <abbr>HTML5</abbr> <code>type</code> attributes) and 13 Boolean values (<code>true</code> if supported, <code>false</code> if not).
+<p>Ao invés de ter de escrever 13 diferentes funções, você pode usar o <a href=#modernizr>Modernizr</a> para detectar suporte para todos os novos tipos de entrada definidos no <abbr>HTML5</abbr>. O Modernizr reaproveita um único elemento <code>&lt;input></code> para eficientemente detectar o suporte aos 13 tipos de entrada. Então ele constrói um hash chamado de <code>Modernizr.inputtypes</code>, que possui 13 chaves (os atributos <code>type</code> do <abbr>HTML5</abbr>) e 13 valores booleanos (<code>true</code> se for suportado, <code>false</code> se não).
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for native date picker
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verificando suporte nativo ao date picker
 <pre><code>if (<mark>!Modernizr.inputtypes.date</mark>) {
-  // no native support for &lt;input type="date"> :(
-  // maybe build one yourself with <a href=http://docs.dojocampus.org/dojox/widget/Calendar>Dojo</a> or <a href=http://jqueryui.com/demos/datepicker/>jQueryUI</a>
+  // sem suporte nativo para &lt;input type="date"> :(
+  // talvez você deva fazer um você mesmo com <a href=http://docs.dojocampus.org/dojox/widget/Calendar>Dojo</a> ou <a href=http://jqueryui.com/demos/datepicker/>jQueryUI</a>
 }</code></pre>
 
 <p class=a>&#x2767;
