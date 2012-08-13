@@ -520,52 +520,52 @@ R: O suporte a geolocalização foi adicionado aos navegadores agora a pouco, ju
 
 <p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:218px"><img src=i/openclipart.org_johnny_automatic_demon_reading_Stewart_Orr.png alt="demon reading book" width=218 height=231><br><span id=live-history-api></span>
 
-<p>The <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html><abbr>HTML5</abbr> history <abbr>API</abbr></a> is a standardized way to manipulate the browser history via script. Part of this <abbr>API</abbr> &mdash; navigating the history &mdash; has been available in previous versions of <abbr>HTML</abbr>. The new part in <abbr>HTML5</abbr> is a way to add entries to the browser history, and respond when those entries are removed from the stack by the user pressing the browser&#8217;s back button. This means that the <abbr>URL</abbr> can continue to do its job as a unique identifier for the current resource, even in script-heavy applications that don&#8217;t ever perform a full page refresh.
+<p>A <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html><abbr>API</abbr> de histórico do <abbr>HTML5</abbr></a> é uma maneira padronizada de manipular o histórico do navegador via script. Uma parte dessa <abbr>API</abbr> &mdash; navegando pelo histórico &mdash; tem estado disponível em versões anteriores do <abbr>HTML</abbr>. A nova parte em <abbr>HTML5</abbr> é uma maneira de adicionar entradas no histórico do navegador, e obter uma resposta quando essas entradas são removidas da pilha quando o usuário pressionar o botão voltar do navegador. Isso quer dizer que a <abbr>URL</abbr> pode continuar a fazer o seu trabalho como identificador único para o recurso atual, mesmo em aplicações ricas em scripts que nunca realizam uma recarga total da página.
 
-<p>Checking for <abbr>HTML5</abbr> history <abbr>API</abbr> support uses <a href=#techniques>detection technique #1</a>. If your browser supports the <abbr>HTML5</abbr> history <abbr>API</abbr>, there will be a <code>pushState()</code> function on the global <code>history</code> object. If your browser doesn&#8217;t support the history <abbr>API</abbr>, the <code>pushState()</code> function will be undefined.
+<p>A verificação de suporte a <abbr>API</abbr> de histórico do <abbr>HTML5</abbr> utiliza a <a href=#techniques>técnica de detecção #1</a>. Se o seu navegador possui suporte a <abbr>API</abbr> de histórico do <abbr>HTML5</abbr>, haverá uma função <code>pushState()</code> no objeto global <code>history</code>. Se o seu navegador não possui suporte a <abbr>API</abbr> de histórico, a função <code>pushState()</code> será undefined.
 
 <pre><code>function supports_history_api() {
   return !!(window.history && history.pushState);
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.6 or later) to detect support for the <abbr>HTML5</abbr> history <abbr>API</abbr>.
+<p>Ao invés de escrever sua função, você pode utilizar o <a href=#modernizr>Modernizr</a> (1.6 ou superior) para detectar suporte a <abbr>API</abbr> de histórico do <abbr>HTML5</abbr>.
 
 <p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for history <abbr>API</abbr> support
 <pre><code>if (<mark>Modernizr.history</mark>) {
-  // history management works!
+  // o gerenciamento de histórico funciona!
 } else {
-  // no history support :(
-  // fall back to a scripted solution like <a href=https://github.com/balupton/History.js/>History.js</a>
+  // sem suporte ao histórico :(
+  // contornar com uma solução de script <a href=https://github.com/balupton/History.js/>History.js</a>
 }</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=further-reading>Further Reading</h2>
+<h2 id=further-reading>Leitura Adicional</h2>
 
-<p>Specifications and standards:
+<p>Especificações e padrões:
 
 <ul>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>the <code>&lt;canvas></code> element</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#video>the <code>&lt;video></code> element</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#states-of-the-type-attribute><code>&lt;input></code> types</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>the <code>&lt;input placeholder></code> attribute</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>the <code>&lt;input autofocus></code> attribute</a>
-<li><a href=http://dev.w3.org/html5/webstorage/><abbr>HTML5</abbr> storage</a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>o elemento <code>&lt;canvas></code> </a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#video>o elemento <code>&lt;video></code> </a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#states-of-the-type-attribute>tipos de <code>&lt;input></code></a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>o atributo <code>&lt;input placeholder></code> </a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>o atributo <code>&lt;input autofocus></code> </a>
+<li><a href=http://dev.w3.org/html5/webstorage/>o storage do <abbr>HTML5</abbr></a>
 <li><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline>Offline web applications</a>
-<li><a href=http://www.w3.org/TR/geolocation-API/>Geolocation <abbr>API</abbr></a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html>Session history and navigation</a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline>Aplicações Web Offline</a>
+<li><a href=http://www.w3.org/TR/geolocation-API/><abbr>API</abbr> de Geolocalização</a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html>Histórico e navegação</a>
 </ul>
 
-<p>JavaScript libraries:
+<p>Bibliotecas JavaScript:
 
 <ul>
-<li><a href=http://www.modernizr.com/>Modernizr</a>, an <abbr>HTML5</abbr> detection library
-<li><a href=http://code.google.com/p/geo-location-javascript/>geo.js</a>, a geolocation <abbr>API</abbr> wrapper
+<li><a href=http://www.modernizr.com/>Modernizr</a>, uma biblioteca de detecção para <abbr>HTML5</abbr> 
+<li><a href=http://code.google.com/p/geo-location-javascript/>geo.js</a>, uma <abbr>API</abbr> para geolocalização
 <li><a href=https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills><abbr>HTML5</abbr> Cross-browser Polyfills</a>
 </ul>
 
-<p>Other articles and tutorials:
+<p>Outros artigos e tutoriais:
 
 <ul>
 <li><a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a>
@@ -599,22 +599,22 @@ R: O suporte a geolocalização foi adicionado aos navegadores agora a pouco, ju
 <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
 <script>
 function supports(bool, suffix) {
-  var s = "Your browser ";
+  var s = "Seu navegador ";
   if (bool) {
-    s += "supports " + suffix + ".";
+    s += "possui suporte " + suffix + ".";
   } else {
-    s += "does not support " + suffix + ". :(";
+    s += "não possui suporte " + suffix + ". :(";
   }
   return s;
 }
 function I_CAN_HAS(result) {
   if (result == "probably") {
-    return "can play";
+    return "pode tocar";
   }
   if (result == "maybe") {
-    return "isn't sure if it can play";
+    return "não tem certeza se pode tocar";
   }
-  return "can't play";
+  return "não pode tocar";
 }
 function lookup_location() {
   geo_position_js.getCurrentPosition(show_map, show_map_error);
@@ -624,36 +624,36 @@ function show_map(loc) {
   var map = new google.maps.Map(document.getElementById("geo-wrapper"), {zoom: 14, mapTypeControl:true, zoomControl: true, mapTypeId: google.maps.MapTypeId.ROADMAP});
   var center = new google.maps.LatLng(loc.coords.latitude,loc.coords.longitude);
   map.setCenter(center);
-  var marker = new google.maps.Marker({map: map, position: center, draggable: false, title: "You are here (more or less)"});
+  var marker = new google.maps.Marker({map: map, position: center, draggable: false, title: "Você está (mais ou menos) aqui "});
 }
 function show_map_error() {
-  $("#live-geolocation").html('Unable to determine your location.');
+  $("#live-geolocation").html('Não foi possível determinar sua localização.');
 }
 $(function() {
-  $("#live-canvas").html(supports(Modernizr.canvas, "the canvas API"));
-  $("#live-canvas-text").html(supports(Modernizr.canvastext, "the canvas text API"));
-  $("#live-video").html(supports(Modernizr.video, "HTML5 video"));
+  $("#live-canvas").html(supports(Modernizr.canvas, "a API canvas"));
+  $("#live-canvas-text").html(supports(Modernizr.canvastext, "API de texto canvas"));
+  $("#live-video").html(supports(Modernizr.video, "video HTML5"));
   if (Modernizr.video) {
     var ogg = Modernizr.video.ogg;
     var h264 = Modernizr.video.h264;
     var webm = Modernizr.video.webm;
-    var vf = "Your browser ";
+    var vf = "Seu navegador ";
     if ((ogg == "probably") && (h264 == "probably")) {
-      vf += "can play both Ogg Theora and H.264";
+      vf += "pode tocar ambos Ogg Theora e H.264";
     } else if (((ogg == "") || (ogg == "no")) && (h264 == "probably")) {
-      vf += "can play H.264 video, but not Ogg Theora";
+      vf += "pode tocar video H.264, mas não Ogg Theora";
     } else if (((h264 == "") || (h264 == "no")) && (ogg == "probably")) {
-      vf += "can play Ogg Theora video, but not H.264";
+      vf += "pode tocar Ogg Theora video, mas não H.264";
     } else {
-      vf += I_CAN_HAS(ogg) + " Ogg Theora video. Your browser " + I_CAN_HAS(h264) + " H.264";
+      vf += I_CAN_HAS(ogg) + " video Ogg Theora. Seu navegador " + I_CAN_HAS(h264) + " H.264";
     }
     vf += " video.";
     if (webm) {
-      vf += " Hey, you can play WebM video, too!";
+      vf += " Hey, você pode tocar videos WebM video, também!";
     }
     $("#live-video-formats").html(vf);
   } else {
-    $("#live-video-formats").html(supports(Modernizr.video, "any video formats"));
+    $("#live-video-formats").html(supports(Modernizr.video, "quaisquer formatos de video"));
   }
   var localstorage = false;
   try {
@@ -661,9 +661,9 @@ $(function() {
   } catch(e) {}
   $("#live-storage").html(supports(localstorage, "HTML5 storage"));
   $("#live-web-workers").html(supports(Modernizr.webworkers, "web workers"));
-  $("#live-offline").html(supports(Modernizr.applicationcache, "offline web applications"));
+  $("#live-offline").html(supports(Modernizr.applicationcache, "aplicações web offline"));
   if (geo_position_js.init()) {
-    $("#live-geolocation").html(supports(true, "geolocation") + ' <a href="#" onclick="lookup_location();return false">Click to look up your location</a>.');
+    $("#live-geolocation").html(supports(true, "geolocation") + ' <a href="#" onclick="lookup_location();return false">Clique para pesquisar sua localização</a>.');
   } else {
     $("#live-geolocation").html(supports(false, "geolocation"));
   }
@@ -674,12 +674,12 @@ $(function() {
     }
   }
   if (!!supported_input_types) {
-    $("#live-input-types").html('Your browser supports the following HTML5 input types: ' + supported_input_types.replace(/, $/, ''));
+    $("#live-input-types").html('Seu navegador suporta os seguintes tipos de entrada do HTML5: ' + supported_input_types.replace(/, $/, ''));
   } else {
-    $("#live-input-types").html('Your browser does not support any HTML5 input types.');
+    $("#live-input-types").html('Seu navegador não suporta nenhum tipo de entrada do HTML5.');
   }
-  $("#live-input-autofocus").html(supports(!!("autofocus" in document.createElement("input")), "form autofocus"));
-  $("#live-microdata-api").html(supports(!!document.getItems, "the HTML5 microdata API"));
-  $("#live-history-api").html(supports(!!Modernizr.history, "the HTML5 history API"));
+  $("#live-input-autofocus").html(supports(!!("autofocus" in document.createElement("input")), "auto foco"));
+  $("#live-microdata-api").html(supports(!!document.getItems, "a API de micro dado do HTML5"));
+  $("#live-history-api").html(supports(!!Modernizr.history, "a API de histórico do HTML5"));
 });
 </script>
