@@ -469,103 +469,103 @@ R: O suporte a geolocalização foi adicionado aos navegadores agora há pouco, 
 
 <p class=a>&#x2767;
 
-<h2 id=input-autofocus>Form Autofocus</h2>
+<h2 id=input-autofocus>Auto foco de formulário</h2>
 
 <p class=ss style="width:188px"><img src=i/openclipart.org_johnny_automatic_angry_guy.png alt="angry guy with arms up" width=188 height=262><br><span id="live-input-autofocus"></span>
 
-<p>Web sites can use JavaScript to focus the first input field of a web form automatically. For example, the home page of <a href=http://www.google.com/>Google.com</a> will autofocus the input box so you can type your search keywords without having to position the cursor in the search box. While this is convenient for most people, it can be annoying for power users or people with special needs. If you press the space bar expecting to scroll the page, the page will not scroll because the focus is already in a form input field. (It types a space in the field instead of scrolling.) If you focus a different input field while the page is still loading, the site&#8217;s autofocus script may &#8220;helpfully&#8221; move the focus back to the original input field upon completion, disrupting your flow and causing you to type in the wrong place.
+<p>Os web sites podem usar JavaScript para dar foco ao primeiro campo de um formulário automaticamente. Por exemplo, a página principal do  <a href=http://www.google.com/>Google.com</a> dá auto foco no campo de busca para você poder iniciar sua busca sem ter que posicionar o cursor do mouse no campo de busca. Enquanto isso pode ser conveniente para a maioria das pessoas, pode vir a ser incômodo para usuários experientes ou pessoas com necessidades especiais. Se você tentar pressionar a barra de espaço esperando que a página seja rolada para baixo, não ocorrerá conforme o esperado, pois o foco já está em um campo. (Acaba digitando um espaço no campo ao invés de rolar a página.) Se você der foco a um campo diferente antes de a página terminar de carregar, o script de auto foco pode &#8220;gentilmente&#8221; mover o foco de volta ao campo original ao fim do carregamento da página, atrapalhando seu fluxo de trabalho fazendo com que você digite no lugar errado.
 
-<p>Because the autofocusing is done with JavaScript, it can be tricky to handle all of these edge cases, and there is little recourse for people who don&#8217;t want a web page to &#8220;steal&#8221; the focus.
+<p>Como o auto foco é feito através do Javascript, pode ser trabalhoso ter que lidar com todos esses delicados casos, e não há muito o que fazer para evitar a página web de &#8220;roubar&#8221; o foco.
 
-<p>To solve this problem, <abbr>HTML5</abbr> introduces <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>an <code>autofocus</code> attribute on all web form controls</a>. The <code>autofocus</code> attribute does exactly what it says on the tin: it moves the focus to a particular input field. But because it&#8217;s just markup instead of a script, the behavior will be consistent across all web sites. Also, browser vendors (or extension authors) can offer users a way to disable the autofocusing behavior.
+<p>Para resoler esse problema, a <abbr>HTML5</abbr> apresenta <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>um atributo de <code>autofocus</code> em todos os controles de formulário</a>. O atributo <code>autofocus</code> faz exatamente o que o seu nome diz: move o foco para um campo específico. Mas por ser apenas uma marcação ao invés de script, o comportamente será consistente entre todos os sites. Além disso, os desenvolvedores de navegadores podem oferecer formas de desabilitar o comportamente de auto foco.
 
-<p>Checking for autofocus support uses <a href=#techniques>detection technique #2</a>. If your browser supports autofocusing web form controls, the <abbr>DOM</abbr> object it creates to represent an <code>&lt;input></code> element will have an <code>autofocus</code> property (even if you don&#8217;t include the <code>autofocus</code> attribute in your <abbr>HTML</abbr>). If your browser doesn&#8217;t support autofocusing web form controls, the <abbr>DOM</abbr> object it creates for an <code>&lt;input></code> element will not have an <code>autofocus</code> property. You can detect autofocus support with this function:
+<p>A verificação de suporte ao auto foco utiliza a <a href=#techniques>técnica de detecção #2</a>. Se o seu navegador possui suporte ao auto foco, o objeto <abbr>DOM</abbr> criado para representar um elemento <code>&lt;input></code> terá uma propriedade <code>autofocus</code>  (mesmo que você não inclua o atributo <code>autofocus</code> em seu <abbr>HTML</abbr>). Se o seu navegador não possui suporte ao auto foco, o objeto <abbr>DOM</abbr> criado para um elemento <code>&lt;input></code> não terá uma propriedade <code>autofocus</code>. Você pode detectar suporte ao auto foco usando essa função:
 
 <pre><code>function supports_input_autofocus() {
   var i = document.createElement('input');
   return 'autofocus' in i;
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.1 or later) to detect support for autofocused form fields.
+<p>Ao invés de escrever essa função, você pode usar o <a href=#modernizr>Modernizr</a> (1.1 ou superior) para detectar o suporte a campos com auto foco.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for autofocus support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verificando suporte ao auto foco
 <pre><code>if (<mark>Modernizr.input.autofocus</mark>) {
-  // autofocus works!
+  // autofocus funciona!
 } else {
-  // no autofocus support :(
-  // fall back to a scripted solution
+  // sem suporte a autofocus :(
+  // contornar com uma solução com script
 }</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=microdata>Microdata</h2>
+<h2 id=microdata>Micro dados</h2>
 
 <p class=ss style="width:305px"><img src=i/openclipart.org_johnny_automatic_divider_cards.png alt="alphabetized folders" width=305 height=224><br><span id="live-microdata-api"></span>
 
-<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#microdata>Microdata</a> is a standardized way to provide additional semantics in your web pages. For example, you can use microdata to declare that a photograph is available under a specific Creative Commons license. As you&#8217;ll see in <a href=extensibility.html>the distributed extensibility chapter</a>, you can use microdata to mark up an &#8220;About Me&#8221; page. Browsers, browser extensions, and search engines can convert your <abbr>HTML5</abbr> microdata markup into a <a href=http://en.wikipedia.org/wiki/VCard>vCard</a>, a standard format for sharing contact information. You can also define your own microdata vocabularies.
+<p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#microdata>Microdata</a> é um jeito padronizado de informar semânticas adicionais em suas páginas. Por exemplo, você pode usar micro dados para declarar que uma foto está disponível sob a licença Creative Commons. Como você pode ver no <a href=extensibility.html>capítulo de extensibilidade distribuída</a>, você pode usar micro dados para demarcar uma página &#8220;Sobre mim&#8221;. Navegadores, extensões e motores de busca podem converter suas marcações de micro dados da <abbr>HTML5</abbr> em um <a href=http://en.wikipedia.org/wiki/VCard>vCard</a>, um formato padrão para compartilhamento de contatos. Você também pode definir seu próprio vocabulário de micro dados.
 
-<p>The <abbr>HTML5</abbr> microdata standard includes both <abbr>HTML</abbr> markup (primarily for search engines) and a set of <abbr>DOM</abbr> functions (primarily for browsers). There&#8217;s no harm in including microdata markup in your web pages. It&#8217;s nothing more than a few well-placed attributes, and search engines that don&#8217;t understand the microdata attributes will just ignore them. But if you need to access or manipulate microdata through the <abbr>DOM</abbr>, you&#8217;ll need to check whether the browser supports the microdata <abbr>DOM</abbr> <abbr>API</abbr>.
+<p>O padrão de micro dados da <abbr>HTML5</abbr> inclui ambos a marcação <abbr>HTML</abbr> (a princípio para os motores de busca) e uma coleção de funções <abbr>DOM</abbr> (a princípio para os navegadores). Não há problea algum em adicionar marcações de micro dados em suas páginas. Não é nada mais do que alguns poucos atributos bem dispostos, e os motores de busca que não compreendem os atributos de micro dados irão simplesmente ignorá-los. Porém se você precisar acessar ou manipular os micro dados através de <abbr>DOM</abbr>, você terá que checar se o navegador possui ou não suporte a <abbr>API</abbr> <abbr>DOM</abbr> de micro dados.
 
-<p>Checking for <abbr>HTML5</abbr> microdata <abbr>API</abbr> support uses <a href=#techniques>detection technique #1</a>. If your browser supports the <abbr>HTML5</abbr> microdata <abbr>API</abbr>, there will be a <code>getItems()</code> function on the global <code>document</code> object. If your browser doesn&#8217;t support microdata, the <code>getItems()</code> function will be undefined.
+<p>A verificação de suporte a micro dados da <abbr>HTML5</abbr> utiliza a <a href=#techniques>técnica de detecção #1</a>. Se o seu navegador possui suporte aos micro dados da <abbr>HTML5</abbr>, haverá uma função <code>getItems()</code> no objeto global <code>document</code>. Se o seu navegador não possuir suporte a micro dados, a função <code>getItems()</code> será undefined.
 
 <pre><code>function supports_microdata_api() {
   return !!document.getItems;
 }</code></pre>
 
-<p>Modernizr does not yet support checking for the microdata <abbr>API</abbr>, so you&#8217;ll need to use the function like the one listed above.
+<p>O Modernizr ainda não possui suporte aos micro dados, então você terá que usar uma função semelhante a exibida acima.
 
 <p class=a>&#x2767;
 
-<h2 id=history>History <abbr>API</abbr></h2>
+<h2 id=history><abbr>API</abbr> de Histórico</h2>
 
 <p class=ss style="float:left;margin:0 1.75em 1.75em 0;width:218px"><img src=i/openclipart.org_johnny_automatic_demon_reading_Stewart_Orr.png alt="demon reading book" width=218 height=231><br><span id=live-history-api></span>
 
-<p>The <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html><abbr>HTML5</abbr> history <abbr>API</abbr></a> is a standardized way to manipulate the browser history via script. Part of this <abbr>API</abbr> &mdash; navigating the history &mdash; has been available in previous versions of <abbr>HTML</abbr>. The new part in <abbr>HTML5</abbr> is a way to add entries to the browser history, and respond when those entries are removed from the stack by the user pressing the browser&#8217;s back button. This means that the <abbr>URL</abbr> can continue to do its job as a unique identifier for the current resource, even in script-heavy applications that don&#8217;t ever perform a full page refresh.
+<p>A <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html><abbr>API</abbr> de histórico da <abbr>HTML5</abbr></a> é uma maneira padronizada de manipular o histórico do navegador via script. Uma parte dessa <abbr>API</abbr> &mdash; navegando pelo histórico &mdash; tem estado disponível em versões anteriores do <abbr>HTML</abbr>. A nova parte em <abbr>HTML5</abbr> é uma maneira de adicionar entradas no histórico do navegador, e obter uma resposta quando essas entradas são removidas da pilha quando o usuário pressionar o botão voltar do navegador. Isso quer dizer que a <abbr>URL</abbr> pode continuar a fazer o seu trabalho como identificador único para o recurso atual, mesmo em aplicações ricas em scripts que nunca realizam uma recarga total da página.
 
-<p>Checking for <abbr>HTML5</abbr> history <abbr>API</abbr> support uses <a href=#techniques>detection technique #1</a>. If your browser supports the <abbr>HTML5</abbr> history <abbr>API</abbr>, there will be a <code>pushState()</code> function on the global <code>history</code> object. If your browser doesn&#8217;t support the history <abbr>API</abbr>, the <code>pushState()</code> function will be undefined.
+<p>A verificação de suporte a <abbr>API</abbr> de histórico da <abbr>HTML5</abbr> utiliza a <a href=#techniques>técnica de detecção #1</a>. Se o seu navegador possui suporte a <abbr>API</abbr> de histórico da <abbr>HTML5</abbr>, haverá uma função <code>pushState()</code> no objeto global <code>history</code>. Se o seu navegador não possui suporte a <abbr>API</abbr> de histórico, a função <code>pushState()</code> será undefined.
 
 <pre><code>function supports_history_api() {
   return !!(window.history && history.pushState);
 }</code></pre>
 
-<p>Instead of writing this function yourself, you can use <a href=#modernizr>Modernizr</a> (1.6 or later) to detect support for the <abbr>HTML5</abbr> history <abbr>API</abbr>.
+<p>Ao invés de escrever sua função, você pode utilizar o <a href=#modernizr>Modernizr</a> (1.6 ou superior) para detectar suporte a <abbr>API</abbr> de histórico da <abbr>HTML5</abbr>.
 
 <p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for history <abbr>API</abbr> support
 <pre><code>if (<mark>Modernizr.history</mark>) {
-  // history management works!
+  // o gerenciamento de histórico funciona!
 } else {
-  // no history support :(
-  // fall back to a scripted solution like <a href=https://github.com/balupton/History.js/>History.js</a>
+  // sem suporte ao histórico :(
+  // contornar com uma solução de script <a href=https://github.com/balupton/History.js/>History.js</a>
 }</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=further-reading>Further Reading</h2>
+<h2 id=further-reading>Leitura Adicional</h2>
 
-<p>Specifications and standards:
+<p>Especificações e padrões:
 
 <ul>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>the <code>&lt;canvas></code> element</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#video>the <code>&lt;video></code> element</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#states-of-the-type-attribute><code>&lt;input></code> types</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>the <code>&lt;input placeholder></code> attribute</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>the <code>&lt;input autofocus></code> attribute</a>
-<li><a href=http://dev.w3.org/html5/webstorage/><abbr>HTML5</abbr> storage</a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>o elemento <code>&lt;canvas></code> </a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#video>o elemento <code>&lt;video></code> </a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#states-of-the-type-attribute>tipos de <code>&lt;input></code></a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/common-input-element-attributes.html#the-placeholder-attribute>o atributo <code>&lt;input placeholder></code> </a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>o atributo <code>&lt;input autofocus></code> </a>
+<li><a href=http://dev.w3.org/html5/webstorage/>o storage do <abbr>HTML5</abbr></a>
 <li><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline>Offline web applications</a>
-<li><a href=http://www.w3.org/TR/geolocation-API/>Geolocation <abbr>API</abbr></a>
-<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html>Session history and navigation</a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline>Aplicações Web Offline</a>
+<li><a href=http://www.w3.org/TR/geolocation-API/><abbr>API</abbr> de Geolocalização</a>
+<li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html>Histórico e navegação</a>
 </ul>
 
-<p>JavaScript libraries:
+<p>Bibliotecas JavaScript:
 
 <ul>
-<li><a href=http://www.modernizr.com/>Modernizr</a>, an <abbr>HTML5</abbr> detection library
-<li><a href=http://code.google.com/p/geo-location-javascript/>geo.js</a>, a geolocation <abbr>API</abbr> wrapper
+<li><a href=http://www.modernizr.com/>Modernizr</a>, uma biblioteca de detecção para <abbr>HTML5</abbr> 
+<li><a href=http://code.google.com/p/geo-location-javascript/>geo.js</a>, uma <abbr>API</abbr> para geolocalização
 <li><a href=https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills><abbr>HTML5</abbr> Cross-browser Polyfills</a>
 </ul>
 
-<p>Other articles and tutorials:
+<p>Outros artigos e tutoriais:
 
 <ul>
 <li><a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a>
@@ -599,22 +599,22 @@ R: O suporte a geolocalização foi adicionado aos navegadores agora há pouco, 
 <script src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
 <script>
 function supports(bool, suffix) {
-  var s = "Your browser ";
+  var s = "Seu navegador ";
   if (bool) {
-    s += "supports " + suffix + ".";
+    s += "possui suporte " + suffix + ".";
   } else {
-    s += "does not support " + suffix + ". :(";
+    s += "não possui suporte " + suffix + ". :(";
   }
   return s;
 }
 function I_CAN_HAS(result) {
   if (result == "probably") {
-    return "can play";
+    return "pode tocar";
   }
   if (result == "maybe") {
-    return "isn't sure if it can play";
+    return "não tem certeza se pode tocar";
   }
-  return "can't play";
+  return "não pode tocar";
 }
 function lookup_location() {
   geo_position_js.getCurrentPosition(show_map, show_map_error);
@@ -624,36 +624,36 @@ function show_map(loc) {
   var map = new google.maps.Map(document.getElementById("geo-wrapper"), {zoom: 14, mapTypeControl:true, zoomControl: true, mapTypeId: google.maps.MapTypeId.ROADMAP});
   var center = new google.maps.LatLng(loc.coords.latitude,loc.coords.longitude);
   map.setCenter(center);
-  var marker = new google.maps.Marker({map: map, position: center, draggable: false, title: "You are here (more or less)"});
+  var marker = new google.maps.Marker({map: map, position: center, draggable: false, title: "Você está (mais ou menos) aqui "});
 }
 function show_map_error() {
-  $("#live-geolocation").html('Unable to determine your location.');
+  $("#live-geolocation").html('Não foi possível determinar sua localização.');
 }
 $(function() {
-  $("#live-canvas").html(supports(Modernizr.canvas, "the canvas API"));
-  $("#live-canvas-text").html(supports(Modernizr.canvastext, "the canvas text API"));
-  $("#live-video").html(supports(Modernizr.video, "HTML5 video"));
+  $("#live-canvas").html(supports(Modernizr.canvas, "a API canvas"));
+  $("#live-canvas-text").html(supports(Modernizr.canvastext, "API de texto canvas"));
+  $("#live-video").html(supports(Modernizr.video, "video HTML5"));
   if (Modernizr.video) {
     var ogg = Modernizr.video.ogg;
     var h264 = Modernizr.video.h264;
     var webm = Modernizr.video.webm;
-    var vf = "Your browser ";
+    var vf = "Seu navegador ";
     if ((ogg == "probably") && (h264 == "probably")) {
-      vf += "can play both Ogg Theora and H.264";
+      vf += "pode tocar ambos Ogg Theora e H.264";
     } else if (((ogg == "") || (ogg == "no")) && (h264 == "probably")) {
-      vf += "can play H.264 video, but not Ogg Theora";
+      vf += "pode tocar video H.264, mas não Ogg Theora";
     } else if (((h264 == "") || (h264 == "no")) && (ogg == "probably")) {
-      vf += "can play Ogg Theora video, but not H.264";
+      vf += "pode tocar Ogg Theora video, mas não H.264";
     } else {
-      vf += I_CAN_HAS(ogg) + " Ogg Theora video. Your browser " + I_CAN_HAS(h264) + " H.264";
+      vf += I_CAN_HAS(ogg) + " video Ogg Theora. Seu navegador " + I_CAN_HAS(h264) + " H.264";
     }
     vf += " video.";
     if (webm) {
-      vf += " Hey, you can play WebM video, too!";
+      vf += " Hey, você pode tocar videos WebM video, também!";
     }
     $("#live-video-formats").html(vf);
   } else {
-    $("#live-video-formats").html(supports(Modernizr.video, "any video formats"));
+    $("#live-video-formats").html(supports(Modernizr.video, "quaisquer formatos de video"));
   }
   var localstorage = false;
   try {
@@ -661,9 +661,9 @@ $(function() {
   } catch(e) {}
   $("#live-storage").html(supports(localstorage, "HTML5 storage"));
   $("#live-web-workers").html(supports(Modernizr.webworkers, "web workers"));
-  $("#live-offline").html(supports(Modernizr.applicationcache, "offline web applications"));
+  $("#live-offline").html(supports(Modernizr.applicationcache, "aplicações web offline"));
   if (geo_position_js.init()) {
-    $("#live-geolocation").html(supports(true, "geolocation") + ' <a href="#" onclick="lookup_location();return false">Click to look up your location</a>.');
+    $("#live-geolocation").html(supports(true, "geolocation") + ' <a href="#" onclick="lookup_location();return false">Clique para pesquisar sua localização</a>.');
   } else {
     $("#live-geolocation").html(supports(false, "geolocation"));
   }
@@ -674,12 +674,12 @@ $(function() {
     }
   }
   if (!!supported_input_types) {
-    $("#live-input-types").html('Your browser supports the following HTML5 input types: ' + supported_input_types.replace(/, $/, ''));
+    $("#live-input-types").html('Seu navegador suporta os seguintes tipos de entrada do HTML5: ' + supported_input_types.replace(/, $/, ''));
   } else {
-    $("#live-input-types").html('Your browser does not support any HTML5 input types.');
+    $("#live-input-types").html('Seu navegador não suporta nenhum tipo de entrada do HTML5.');
   }
-  $("#live-input-autofocus").html(supports(!!("autofocus" in document.createElement("input")), "form autofocus"));
-  $("#live-microdata-api").html(supports(!!document.getItems, "the HTML5 microdata API"));
-  $("#live-history-api").html(supports(!!Modernizr.history, "the HTML5 history API"));
+  $("#live-input-autofocus").html(supports(!!("autofocus" in document.createElement("input")), "auto foco"));
+  $("#live-microdata-api").html(supports(!!document.getItems, "a API de micro dado do HTML5"));
+  $("#live-history-api").html(supports(!!Modernizr.history, "a API de histórico do HTML5"));
 });
 </script>
