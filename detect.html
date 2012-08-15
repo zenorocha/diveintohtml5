@@ -15,13 +15,13 @@ body{counter-reset:h1 2}
 <p class=a>&#x2767;
 <h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-v.png alt=V width=109 height=105>ocê pode se perguntar: &#8220;Como eu posso começar a usar <abbr>HTML5</abbr> se os navegadores não o suportam?&#8221; Mas a questão por si só é enganosa. <abbr>HTML5</abbr> não é uma coisa grande e única; é uma coleção de funcionalidades individuais. Então você não pode detectar &#8220;suporte ao <abbr>HTML5</abbr>,&#8221; por que isso não faz sentido. Mas você <em>pode</em> verificar o suporte a funcionalidades individuais, como canvas, video, ou geolocalização.
+<p class=f><img src=i/aoc-v.png alt=V width=109 height=105>ocê pode se perguntar: &#8220;Como eu posso começar a usar <abbr>HTML5</abbr> se os navegadores não o suportam?&#8221; Mas a questão por si só é enganosa. <abbr>HTML5</abbr> não é uma coisa grande e única; é uma coleção de funcionalidades individuais. Então você não pode detectar &#8220;suporte ao <abbr>HTML5</abbr>,&#8221; por que isso não faz sentido. Mas você <em>pode</em> verificar o suporte a funcionalidades individuais, como canvas, vídeo, ou geolocalização.
 
 <p class=a>&#x2767;
 
 <h2 id=techniques>Técnicas de detecção</h2>
 
-<p>Quando seu navegador renderiza uma página web, ele constrói um Modelo Objeto Documento (<abbr><dfn>DOM</dfn></abbr>, Document Object Model em inglês), uma coleção de objetos que representam os elementos <abbr>HTML</abbr> na página. Cada elemento &mdash; todo <code>&lt;p></code>, todo <code>&lt;div></code>, todo <code>&lt;span></code> &mdash; é representado no <abbr>DOM</abbr> por um objeto diferente. (Também existem objetos globais, como <code>window</code> e <code>document</code>, que não estão vinculado a elementos específicos.)
+<p>Quando seu navegador renderiza uma página web, ele constrói um Modelo Objeto Documento (<abbr><dfn>DOM</dfn></abbr>, Document Object Model em inglês), uma coleção de objetos que representam os elementos <abbr>HTML</abbr> na página. Cada elemento &mdash; todo <code>&lt;p></code>, todo <code>&lt;div></code>, todo <code>&lt;span></code> &mdash; é representado no <abbr>DOM</abbr> por um objeto diferente. (Também existem objetos globais, como <code>window</code> e <code>document</code>, que não estão vinculados a elementos específicos.)
 
 <p class=ss style="width:257px"><img src=i/openclipart.org_johnny_automatic_peeking_out_the_window.png width=257 height=436 alt="girl peeking out the window">
 
@@ -48,7 +48,7 @@ body{counter-reset:h1 2}
 
 <h2 id=modernizr>Modernizr, uma biblioteca de detecção HTML5</h2>
 
-<p><a href=http://www.modernizr.com/>Modernizr</a> é um biblioteca Javascript de código aberto, sob licença <abbr>MIT</abbr>, que detecta suporte a várias funcionalidades de <abbr>HTML5</abbr> <i class=baa>&amp;</i> <abbr>CSS3</abbr>. Você deve usar sempre a última versão. Para usá-la, inclua o seguinte elemento <code>&lt;script></code> no topo da sua página.
+<p><a href=http://www.modernizr.com/>Modernizr</a> é um biblioteca JavaScript de código aberto, sob licença <abbr>MIT</abbr>, que detecta suporte a várias funcionalidades de <abbr>HTML5</abbr> <i class=baa>&amp;</i> <abbr>CSS3</abbr>. Você deve usar sempre a última versão. Para usá-la, inclua o seguinte elemento <code>&lt;script></code> no topo da sua página.
 
 <pre style="float:left"><code>&lt;!DOCTYPE html>
 &lt;html>
@@ -78,7 +78,7 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:300px"><img src=i/openclipart.org_johnny_automatic_fishing_boat.png width=300 height=203 alt="man fishing in a canoe"><br><span id=live-canvas></span>
 
-<p>A <abbr>HTML5</abbr> define <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>o elemento &lt;canvas> </a> como &#8220;uma tela bitmap de resolução dependente que pode ser usada para renderizar grafos, gráficos de jogos, ou outras imagens visuais em tempo real.&#8221; Um <dfn>canvas</dfn> é um retângulo na sua página onde você pode usar Javascript para desenhar qualquer coisa que você quiser. A <abbr>HTML5</abbr> define um conjunto de funções (&#8220;a <abbr>API</abbr> canvas&#8221;) para desenhar formas, definindo caminhos, criando gradientes e aplicando transformações.
+<p>A <abbr>HTML5</abbr> define <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html>o elemento &lt;canvas> </a> como &#8220;uma tela bitmap de resolução dependente que pode ser usada para renderizar grafos, gráficos de jogos, ou outras imagens visuais em tempo real.&#8221; Um <dfn>canvas</dfn> é um retângulo na sua página onde você pode usar JavaScript para desenhar qualquer coisa que você quiser. A <abbr>HTML5</abbr> define um conjunto de funções (&#8220;a <abbr>API</abbr> canvas&#8221;) para desenhar formas, definindo caminhos, criando gradientes e aplicando transformações.
 
 <p>A verificação da <abbr>API</abbr> do canvas usa a <a href=#techniques>técnica de detecção #2</a>. Se seu navegador suporta a <abbr>API</abbr> do canvas, o objeto <abbr>DOM</abbr> o cria para representar um elemento <code>&lt;canvas></code> que terá um <a href=canvas.html#shapes>método <code>getContext()</code></a>. Se seu navegador não suporta a <abbr>API</abbr> do canvas, o objeto <abbr>DOM</abbr> o cria  para um elemento <code>&lt;canvas></code> que terá apenas um conjunto comum de propriedades, mas nada específico do canvas.
 
@@ -87,11 +87,11 @@ body{counter-reset:h1 2}
 }
 </code></pre>
 
-<p>Essa função começa com a criação de elemento <code>&lt;canvas></code> de teste. Mas o elemento nunca é adicionado a sua página, então ninguém nunca o verá. Está apenas flutuando na memória, indo a lugar nenhum e fazendo nada, como uma canoa em um rio calmo.
+<p>Essa função começa com a criação do elemento <code>&lt;canvas></code> de teste. Mas o elemento nunca é adicionado a sua página, então ninguém nunca o verá. Está apenas flutuando na memória, indo a lugar nenhum e fazendo nada, como uma canoa em um rio calmo.
 
 <pre><code>return !!document.<mark>createElement('canvas')</mark>.getContext;</code></pre>
 
-<p>Asssim que você cria o elemento <code>&lt;canvas></code> de teste, você testa a existência de um método <code>getContext()</code>. Esse método só existirá se o seu navegador suportar a <abbr>API</abbr> do canvas.
+<p>Assim que você cria o elemento <code>&lt;canvas></code> de teste, você testa a existência de um método <code>getContext()</code>. Esse método só existirá se o seu navegador suportar a <abbr>API</abbr> do canvas.
 
 <pre><code>return !!document.createElement('canvas').<mark>getContext</mark>;</code></pre>
 
@@ -99,7 +99,7 @@ body{counter-reset:h1 2}
 
 <pre><code>return <mark>!!</mark>document.createElement('canvas').getContext;</code></pre>
 
-<p>Essa função irá detectar para grande parte da <abbr>API</abbr> do canvas, incluindo <a href=canvas.html#shapes>shapes</a>, <a href=canvas.html#paths>paths</a>, <a href=canvas.html#gradients>gradients <i class=baa>&amp;</i> patterns</a>. Ela não detectará a biblioteca de terceiros <a href=canvas.html#ie><code>explorercanvas</code></a> que implementa a <abbr>API</abbr> do canvas no Microsoft Internet Explorer.
+<p>Essa função irá detectar grande parte da <abbr>API</abbr> do canvas, incluindo <a href=canvas.html#shapes>shapes</a>, <a href=canvas.html#paths>paths</a>, <a href=canvas.html#gradients>gradients <i class=baa>&amp;</i> patterns</a>. Ela não detectará a biblioteca de terceiros <a href=canvas.html#ie><code>explorercanvas</code></a> que implementa a <abbr>API</abbr> do canvas no Microsoft Internet Explorer.
 
 <p>Ao invés de escrever essa função você mesmo, você pode usar a <a href=#modernizr>Modernizr</a> para detectar o suporte a <abbr>API</abbr> do canvas.
 
@@ -158,11 +158,11 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:224px"><img src=i/openclipart.org_johnny_automatic_at_the_theater.png alt="audience at the theater" width=224 height=334><br><span id=live-video></span>
 
-<p>O elemento <code>&lt;video></code> é projetado para funcionar sem a necessidade de scripts de detecção. Você pode especificar múltiplos arquivos de vídeo, e os navegadores que possuirem suporte ao <abbr>HTML5</abbr> vídeo escolherão um baseado nos formatos suportados por eles. (See &#8220;A gentle introduction to video encoding&#8221; <a href=http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats>part 1: container formats</a> and <a href=http://diveintomark.org/archives/2008/12/19/give-part-2-lossy-video-codecs>part 2: lossy video codecs</a> to learn about different video formats.)
+<p>O elemento <code>&lt;video></code> é projetado para funcionar sem a necessidade de scripts de detecção. Você pode especificar múltiplos arquivos de vídeo, e os navegadores que possuirem suporte ao <abbr>HTML5</abbr> vídeo escolherão um baseado nos formatos suportados por eles. (Veja &#8220;A gentle introduction to video encoding&#8221; <a href=http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats>part 1: container formats</a> e <a href=http://diveintomark.org/archives/2008/12/19/give-part-2-lossy-video-codecs>part 2: lossy video codecs</a> para aprender sobre os formatos de vídeo.)
 
-<p>Navegadores que não possuem suporte a <abbr>HTML5</abbr> vídeo irão ignorar o elemento <code>&lt;video></code> completamente, mas você pode usar isso a seu favor dizendo a eles para tocar o vídeo através de plugins. Kroc Camen desenvolveu uma solução chamada <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a> que faz uso da <abbr>HTML5</abbr> vídeo onde estiver disponivel, porém fazendo tratamento para uso de QuickTime ou Flash em navegadores antigos. Essa solução não usa Javascript, e funciona praticamente em qualquer navegador, inclusive em mobiles.
+<p>Navegadores que não possuem suporte a <abbr>HTML5</abbr> vídeo irão ignorar o elemento <code>&lt;video></code> completamente, mas você pode usar isso a seu favor dizendo a eles para tocar o vídeo através de plugins. Kroc Camen desenvolveu uma solução chamada <a href=http://camendesign.com/code/video_for_everybody>Video for Everybody!</a> que faz uso da <abbr>HTML5</abbr> vídeo onde estiver disponivel, porém fazendo tratamento para uso de QuickTime ou Flash em navegadores antigos. Essa solução não usa JavaScript, e funciona praticamente em qualquer navegador, inclusive em mobiles.
 
-<p>Se você quiser fazer mais com vídeo do que apenas colocá-lo em sua página e tocá-lo, terá que usar Javascript. Checar suporte a vídeo utiliza a <a href=#techniques>técnica e detecção #2</a>. Se seu navegador possui suporte para <abbr>HTML5</abbr> vídeo, o objeto <abbr>DOM</abbr> criado para representar o elemento <code>&lt;video></code> terá um método <code>canPlayType()</code>. Caso o navegador não tenha suporte para <abbr>HTML5</abbr> vídeo, o objeto <abbr>DOM</abbr> criado para o elemento <code>&lt;video></code> terá apenas uma coleção de proprieades comum à todos os elementos. Você pode verificar o suporte a vídeo usando essa função:
+<p>Se você quiser fazer mais com vídeo do que apenas colocá-lo em sua página e tocá-lo, terá que usar JavaScript. Checar suporte a vídeo utiliza a <a href=#techniques>técnica de detecção #2</a>. Se seu navegador possui suporte para <abbr>HTML5</abbr> vídeo, o objeto <abbr>DOM</abbr> criado para representar o elemento <code>&lt;video></code> terá um método <code>canPlayType()</code>. Caso o navegador não tenha suporte para <abbr>HTML5</abbr> vídeo, o objeto <abbr>DOM</abbr> criado para o elemento <code>&lt;video></code> terá apenas uma coleção de proprieades comum à todos os elementos. Você pode verificar o suporte a vídeo usando essa função:
 
 <pre><code>function supports_video() {
   return !!document.createElement('video').canPlayType;
@@ -202,7 +202,7 @@ body{counter-reset:h1 2}
   return v.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
 }</code></pre>
 
-<p>A função começa <a href=#video>verificando suporte a <abbr>HTML5</abbr> vídeo</a>, usando ao função <code>supports_video()</code> que você acabou de ver na seção anterior. Se o seu navegador não possui suporte a  <abbr>HTML5</abbr> vídeo, com certeza não terá suporte para formatos de vídeo!
+<p>A função começa <a href=#video>verificando suporte a <abbr>HTML5</abbr> vídeo</a>, usando a função <code>supports_video()</code> que você acabou de ver na seção anterior. Se o seu navegador não possui suporte a  <abbr>HTML5</abbr> vídeo, com certeza não terá suporte para formatos de vídeo!
 
 <pre><code>  if (<mark>!supports_video()</mark>) { return false; }</code></pre>
 
@@ -217,7 +217,7 @@ body{counter-reset:h1 2}
 <p>A função <code>canPlayType()</code> não retorna <code>true</code> ou <code>false</code>. Considerando a complexidade que os formatos de vídeo possuem, a função retorna uma string:
 
 <ul>
-<li><code>"probably"</code> se o navegador está pouco confiante de que possa tocar este formato
+<li><code>"probably"</code> se o navegador está confiante de que possa tocar este formato
 <li><code>"maybe"</code> se o navegador acha que tem condições de tocar este formato
 <li><code>""</code> (uma string vazia) se o navegador tem certeza de que não consegue tocar este formato
 </ul>
@@ -258,7 +258,7 @@ body{counter-reset:h1 2}
 
 <p class=ss style="width:135px"><img src=i/openclipart.org_johnny_automatic_half_stack_of_horizontal_sections.png alt="filing cabinet with drawers of different sizes" width=135 height=341><br><span id=live-storage></span>
 
-<p><a href=http://dev.w3.org/html5/webstorage/><abbr>HTML5</abbr> storage</a> fornece aos web sites uma forma de armazenar informações em seu computador e recuperá-lo mais tarde. O conceito é semelhante ao dos cookies, porém ele é projetado para armazenar quantidades de informação superiores. Cookies possuem tamanho bem limitado, e o seu navegador os envia de volta ao servidor web sempre que uma nova página é solicitada (o que leva um tempo extra e uma banda valiosa). O <abbr>HTML5</abbr> storage permanece em seu computador, e os web sites podem acessá-lo através de Javascript depois que a página é carregada.
+<p><a href=http://dev.w3.org/html5/webstorage/><abbr>HTML5</abbr> storage</a> fornece aos web sites uma forma de armazenar informações em seu computador e recuperá-lo mais tarde. O conceito é semelhante ao dos cookies, porém ele é projetado para armazenar quantidades de informação superiores. Cookies possuem tamanho bem limitado, e o seu navegador os envia de volta ao servidor web sempre que uma nova página é solicitada (o que leva um tempo extra e uma banda valiosa). O <abbr>HTML5</abbr> storage permanece em seu computador, e os web sites podem acessá-lo através de JavaScript depois que a página é carregada.
 
 <div class="pf clear">
 <h4>Pergunte ao Professor Marcação</h4>
@@ -290,7 +290,7 @@ R: A resposta curta é sim, armazenamento local é parte da <abbr>HTML5</abbr>. 
   // tente usar o Gears ou outra solução, talvez
 }</code></pre>
 
-<p>Note que o Javascript faz distinção entre letras maiúsculas e minúsculas. O atributo do Modernizr é chamado <code>localstorage</code> (todas as letras minúsculas), mas a propriedade <abbr>DOM</abbr> é chamada <code>window.localStorage</code> (letras maiúsculas e minúsculas misturadas).
+<p>Note que o JavaScript faz distinção entre letras maiúsculas e minúsculas. O atributo do Modernizr é chamado <code>localstorage</code> (todas as letras minúsculas), mas a propriedade <abbr>DOM</abbr> é chamada <code>window.localStorage</code> (letras maiúsculas e minúsculas misturadas).
 
 <div class="pf clear">
 <h4>Pergunte ao Professor Marcação</h4>
@@ -308,7 +308,7 @@ R: Qualquer um que possua acesso físico ao seu computador provavelmente poderá
 
 <p class=ss style="margin:1.75em"><span id=live-web-workers></span>
 
-<p><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a> fornecem uma maneira padrão aos navegadores de executarem Javascript ao fundo. Com web workers, você pode disparar múltiplas &#8220;threads&#8221; que irão todas ser executadas ao mesmo tempo, mais ou menos. (Pense em como o computador pode executar múltiplas aplicações ao mesmo tempo e você terá praticamente entendido tudo.) Essas &#8220;threads em background&#8221; podem realizar cálculos matemáticos complexos, fazer requisições HTTP ou acessar o <a href=#local-storage>local storage</a> enquanto a página principal atende aos comandos do usuário tais como rolando a página, cliques ou digitação.
+<p><a href=http://www.whatwg.org/specs/web-workers/current-work/>Web Workers</a> fornecem uma maneira padrão aos navegadores de executarem JavaScript ao fundo. Com web workers, você pode disparar múltiplas &#8220;threads&#8221; que irão todas ser executadas ao mesmo tempo, mais ou menos. (Pense em como o computador pode executar múltiplas aplicações ao mesmo tempo e você terá praticamente entendido tudo.) Essas &#8220;threads em background&#8221; podem realizar cálculos matemáticos complexos, fazer requisições HTTP ou acessar o <a href=#local-storage>local storage</a> enquanto a página principal atende aos comandos do usuário tais como rolando a página, cliques ou digitação.
 
 <p>Verificar o suporte às web workers utiliza a <a href=#techniques>técnica de detecção #1</a>. Se o seu navegador possui suporte à <abbr>API</abbr> do Web Worker, haverá uma propriedade <code>Worker</code> no objeto global <code>window</code>. Se o seu navegador não possui suporte à <abbr>API</abbr> do Web Worker, a propriedade <code>Worker</code> será undefined.
 
@@ -326,7 +326,7 @@ R: Qualquer um que possua acesso físico ao seu computador provavelmente poderá
   // tente o Gears ou outra solução
 }</code></pre>
 
-<p>Note que o Javascript faz distinção entre letras maiúsculas e minúsculas. O atributo do Modernizr é chamado <code>webworkers</code> (todas as letras minúsculas), mas a propriedade <abbr>DOM</abbr> é chamada <code>window.Worker</code> (letras maiúsculas e minúsculas misturadas).
+<p>Note que o JavaScript faz distinção entre letras maiúsculas e minúsculas. O atributo do Modernizr é chamado <code>webworkers</code> (todas as letras minúsculas), mas a propriedade <abbr>DOM</abbr> é chamada <code>window.Worker</code> (letras maiúsculas e minúsculas misturadas).
 
 <p class=a>&#x2767;
 
@@ -338,7 +338,7 @@ R: Qualquer um que possua acesso físico ao seu computador provavelmente poderá
 
 <p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#offline>Aplicações web offline</a> começam como aplicações web online. A primeira vez que você visita um site com conteúdo offline habilitado, o servidor web diz ao navegador quais arquivos ele precisa para trabalhar offline. Esses arquivos podem ser qualquer coisa &mdash; <abbr>HTML</abbr>, JavaScript, imagens, até mesmo <a href=#video>vídeos</a>. Uma vez que o navegador carregou todos os arquivos necessários, você pode revisitar o web site até mesmo se você não estiver conectado a Internet. Seu navegador perceberá que você está offline e usará os arquivos que ele já havia feito download. Quando você se reconectar, quaisquer alterações que você tenha feito podem ser enviadas ao servidor web.
 
-<p>Verificar o suporte conteúdo offline utiliza a <a href=#techniques>técnica de detecção #1</a>. Se o seu navegador possui suporte à aplicações web offline, haverá uma propriedade <code>applicationCache</code> no objeto global <code>window</code>. Se o seu navegador não possui suporte à aplicações web offline, a propriedade <code>applicationCache</code> será undefined. Você pode verificar a disponibilidade de aplicações web offline através da seguinte função:
+<p>Verificar o suporte a conteúdo offline utiliza a <a href=#techniques>técnica de detecção #1</a>. Se o seu navegador possui suporte à aplicações web offline, haverá uma propriedade <code>applicationCache</code> no objeto global <code>window</code>. Se o seu navegador não possui suporte à aplicações web offline, a propriedade <code>applicationCache</code> será undefined. Você pode verificar a disponibilidade de aplicações web offline através da seguinte função:
 
 <pre><code>function supports_offline() {
   return !!window.applicationCache;
@@ -354,7 +354,7 @@ R: Qualquer um que possua acesso físico ao seu computador provavelmente poderá
   // tente usar o Gears ou outra solução
 }</code></pre>
 
-<p>Note que o Javascript faz distinção entre letras maiúsculas e minúsculas. O atributo do Modernizr é chamado <code>applicationcache</code> (todas as letras minúsculas), mas a propriedade <abbr>DOM</abbr> é chamada <code>window.applicationCache</code> (letras maiúsculas e minúsculas misturadas).
+<p>Note que o JavaScript faz distinção entre letras maiúsculas e minúsculas. O atributo do Modernizr é chamado <code>applicationcache</code> (todas as letras minúsculas), mas a propriedade <abbr>DOM</abbr> é chamada <code>window.applicationCache</code> (letras maiúsculas e minúsculas misturadas).
 
 <p class=a>&#x2767;
 
@@ -380,13 +380,13 @@ R: O suporte a geolocalização foi adicionado aos navegadores agora há pouco, 
   return !!navigator.geolocation;
 }</code></pre>
 
-<p>Ao invés de escrever essa função, você pode utilizar o <a href=#modernizr>Modernizr</a> para detectar suporte a <abbr>API</abbr> da geolocalização.
+<p>Ao invés de escrever essa função, você pode utilizar o <a href=#modernizr>Modernizr</a> para detectar suporte a <abbr>API</abbr> de geolocalização.
 
 <p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verificando suporte a geolocalização
 <pre><code>if (<mark>Modernizr.geolocation</mark>) {
   // Vamos ver onde você está!
 } else {
-  // suporte nativo à geolocalizaçãono indisponível :(
+  // suporte nativo à geolocalização indisponível :(
   // tente o Gears ou outra solução
 }</code></pre>
 
@@ -422,7 +422,7 @@ R: O suporte a geolocalização foi adicionado aos navegadores agora há pouco, 
 <li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#local-date-and-time-state><code>&lt;input type="datetime-local"></code></a> para datas e horas locais
 </ol>
 
-<p>Verificando suporte ao tipos de entrada da <abbr>HTML5</abbr> utiliza a <a href=#techniques>técnica de detecção #4</a>. Primeiro, você cria um elemento <code>&lt;input></code> em memória. O tipo padrão para todos os elementos <code>&lt;input></code> é <code>"text"</code>. 
+<p>Verificando suporte aos tipos de entrada da <abbr>HTML5</abbr> utiliza a <a href=#techniques>técnica de detecção #4</a>. Primeiro, você cria um elemento <code>&lt;input></code> em memória. O tipo padrão para todos os elementos <code>&lt;input></code> é <code>"text"</code>. 
 
 <pre><code>  var i = document.createElement("input");</code></pre>
 
@@ -475,7 +475,7 @@ R: O suporte a geolocalização foi adicionado aos navegadores agora há pouco, 
 
 <p>Os web sites podem usar JavaScript para dar foco ao primeiro campo de um formulário automaticamente. Por exemplo, a página principal do  <a href=http://www.google.com/>Google.com</a> dá auto foco no campo de busca para você poder iniciar sua busca sem ter que posicionar o cursor do mouse no campo de busca. Enquanto isso pode ser conveniente para a maioria das pessoas, pode vir a ser incômodo para usuários experientes ou pessoas com necessidades especiais. Se você tentar pressionar a barra de espaço esperando que a página seja rolada para baixo, não ocorrerá conforme o esperado, pois o foco já está em um campo. (Acaba digitando um espaço no campo ao invés de rolar a página.) Se você der foco a um campo diferente antes de a página terminar de carregar, o script de auto foco pode &#8220;gentilmente&#8221; mover o foco de volta ao campo original ao fim do carregamento da página, atrapalhando seu fluxo de trabalho fazendo com que você digite no lugar errado.
 
-<p>Como o auto foco é feito através do Javascript, pode ser trabalhoso ter que lidar com todos esses delicados casos, e não há muito o que fazer para evitar a página web de &#8220;roubar&#8221; o foco.
+<p>Como o auto foco é feito através do JavaScript, pode ser trabalhoso ter que lidar com todos esses delicados casos, e não há muito o que fazer para evitar a página web de &#8220;roubar&#8221; o foco.
 
 <p>Para resoler esse problema, a <abbr>HTML5</abbr> apresenta <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control>um atributo de <code>autofocus</code> em todos os controles de formulário</a>. O atributo <code>autofocus</code> faz exatamente o que o seu nome diz: move o foco para um campo específico. Mas por ser apenas uma marcação ao invés de script, o comportamente será consistente entre todos os sites. Além disso, os desenvolvedores de navegadores podem oferecer formas de desabilitar o comportamente de auto foco.
 
@@ -504,7 +504,7 @@ R: O suporte a geolocalização foi adicionado aos navegadores agora há pouco, 
 
 <p><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#microdata>Microdata</a> é um jeito padronizado de informar semânticas adicionais em suas páginas. Por exemplo, você pode usar micro dados para declarar que uma foto está disponível sob a licença Creative Commons. Como você pode ver no <a href=extensibility.html>capítulo de extensibilidade distribuída</a>, você pode usar micro dados para demarcar uma página &#8220;Sobre mim&#8221;. Navegadores, extensões e motores de busca podem converter suas marcações de micro dados da <abbr>HTML5</abbr> em um <a href=http://en.wikipedia.org/wiki/VCard>vCard</a>, um formato padrão para compartilhamento de contatos. Você também pode definir seu próprio vocabulário de micro dados.
 
-<p>O padrão de micro dados da <abbr>HTML5</abbr> inclui ambos a marcação <abbr>HTML</abbr> (a princípio para os motores de busca) e uma coleção de funções <abbr>DOM</abbr> (a princípio para os navegadores). Não há problea algum em adicionar marcações de micro dados em suas páginas. Não é nada mais do que alguns poucos atributos bem dispostos, e os motores de busca que não compreendem os atributos de micro dados irão simplesmente ignorá-los. Porém se você precisar acessar ou manipular os micro dados através de <abbr>DOM</abbr>, você terá que checar se o navegador possui ou não suporte a <abbr>API</abbr> <abbr>DOM</abbr> de micro dados.
+<p>O padrão de micro dados da <abbr>HTML5</abbr> inclui ambos a marcação <abbr>HTML</abbr> (a princípio para os motores de busca) e uma coleção de funções <abbr>DOM</abbr> (a princípio para os navegadores). Não há problema algum em adicionar marcações de micro dados em suas páginas. Não é nada mais do que alguns poucos atributos bem dispostos, e os motores de busca que não compreendem os atributos de micro dados irão simplesmente ignorá-los. Porém se você precisar acessar ou manipular os micro dados através de <abbr>DOM</abbr>, você terá que checar se o navegador possui ou não suporte a <abbr>API</abbr> <abbr>DOM</abbr> de micro dados.
 
 <p>A verificação de suporte a micro dados da <abbr>HTML5</abbr> utiliza a <a href=#techniques>técnica de detecção #1</a>. Se o seu navegador possui suporte aos micro dados da <abbr>HTML5</abbr>, haverá uma função <code>getItems()</code> no objeto global <code>document</code>. Se o seu navegador não possuir suporte a micro dados, a função <code>getItems()</code> será undefined.
 
@@ -530,7 +530,7 @@ R: O suporte a geolocalização foi adicionado aos navegadores agora há pouco, 
 
 <p>Ao invés de escrever sua função, você pode utilizar o <a href=#modernizr>Modernizr</a> (1.6 ou superior) para detectar suporte a <abbr>API</abbr> de histórico da <abbr>HTML5</abbr>.
 
-<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> check for history <abbr>API</abbr> support
+<p class="legend top" style="padding-left:6em"><span class=arrow>&#x21b6;</span> verificando suporte a <abbr>API</abbr> de histórico
 <pre><code>if (<mark>Modernizr.history</mark>) {
   // o gerenciamento de histórico funciona!
 } else {
