@@ -36,50 +36,50 @@ body{counter-reset:h1 5}
 <p>Você pode pensar em arquivos de vídeo como &#8220;arquivos AVI&#8221; ou &#8220;arquivos MP4.&#8221; Na realidade, &#8220;AVI&#8221; e &#8220;MP4&#8243; são apenas os formatos das embalagens de vídeo. Assim como um arquivo ZIP pode conter qualquer tipo de arquivo dentro dele, os formatos das embalagens de vídeo definem apenas <em>como</em> armazenar as coisas dentro dele, e não <em>quais</em> tipos de dados são armazenados. (É um pouco mais complicado que isso, porque nem todos os fluxos de vídeo são compatíveis com todos os formatos de embalagens, mas esqueça isso por enquanto.)
 
 <p>Um arquivo de vídeo usualmente contém múltiplas <em>faixas</em> &#8212; uma faixa de vídeo (sem áudio), além de uma ou mais faixas de áudio (sem vídeo). As faixas usualmente se interlaçam. Uma faixa de áudio contém marcações dentro dela para ajudar na sincronização entre áudio e vídeo. Faixas individuais podem ter metadados, como relações de aspectos de uma faixa de vídeo, ou a linguagem de uma faixa de áudio. Essas embalagens também podem ter metadados, como o título do próprio vídeo, uma capa para o vídeo, números de episódios (para programas de televisão), e por aí vai.
- 
+
 <p>Existem <em>vários</em> formatos para embalagens de vídeo. Os mais populares incluem
- 
-<ul> 
-<li><a href=http://en.wikipedia.org/wiki/MPEG-4_Part_14>MPEG 4</a>, usualmente com a extensão <code>.mp4</code> ou <code>.m4v</code>. A embalagem MPEG 4 é <a href=http://www.chiariglione.org/mpeg/technologies/mp04-ff/index.htm>baseada na antiga embalagem QuickTime da Apple</a> (<code>.mov</code>). <a href=http://www.apple.com/trailers/>Trailers de filmes no site da Apple</a> ainda utilizam a antiga embalagem QuickTime, mas filmes que você aluga no iTunes são entregues na embalagem MPEG 4.</li> 
-<li><a href=http://en.wikipedia.org/wiki/Flash_Video>Flash</a>, usualmente com a extensão <code>.flv</code>. Vídeos em Flash são, sem surpresa, usados pelo Adobe Flash. Antes do Flash 9.0.60.184 (a.k.a. Flash Player 9 Update 3), esse era o único formato de embalagem que o Flash suportava. Versões mais recentes do Flash também suportam a embalagem MPEG 4.</li> 
-<li><a href=http://en.wikipedia.org/wiki/Ogg>Ogg</a>, usualmente com a extensão <code>.ogv</code>. Ogg é um padrão aberto, de código livre, e descoberto de quaisquer patentes conhecidas. Firefox 3.5, Chrome 4, e Opera 10.5 suportam &#8212; nativamente, sem qualquer plataforma específica de plugins &#8212; o formato de embalagem Ogg, Ogg vídeo (chamado &#8220;Theora&#8221;), e Ogg áudio (chamado &#8220;Vorbis&#8221;). No desktop, Ogg é suportado fora-da-caixa por todas as principais distribuições Linux, e você pode usá-lo no Mac e Windows ao instalar os <a href=http://www.xiph.org/quicktime/>componentes QuickTime</a> ou <a href=http://www.xiph.org/dshow/>filtros DirectShow</a>, respectivamente. É ainda executado pelo excelente <a href=http://www.videolan.org/vlc/>VLC</a> em todas as plataformas.</li> 
+
+<ul>
+<li><a href=http://en.wikipedia.org/wiki/MPEG-4_Part_14>MPEG 4</a>, usualmente com a extensão <code>.mp4</code> ou <code>.m4v</code>. A embalagem MPEG 4 é <a href=http://www.chiariglione.org/mpeg/technologies/mp04-ff/index.htm>baseada na antiga embalagem QuickTime da Apple</a> (<code>.mov</code>). <a href=http://www.apple.com/trailers/>Trailers de filmes no site da Apple</a> ainda utilizam a antiga embalagem QuickTime, mas filmes que você aluga no iTunes são entregues na embalagem MPEG 4.</li>
+<li><a href=http://en.wikipedia.org/wiki/Flash_Video>Flash</a>, usualmente com a extensão <code>.flv</code>. Vídeos em Flash são, sem surpresa, usados pelo Adobe Flash. Antes do Flash 9.0.60.184 (a.k.a. Flash Player 9 Update 3), esse era o único formato de embalagem que o Flash suportava. Versões mais recentes do Flash também suportam a embalagem MPEG 4.</li>
+<li><a href=http://en.wikipedia.org/wiki/Ogg>Ogg</a>, usualmente com a extensão <code>.ogv</code>. Ogg é um padrão aberto, de código livre, e descoberto de quaisquer patentes conhecidas. Firefox 3.5, Chrome 4, e Opera 10.5 suportam &#8212; nativamente, sem qualquer plataforma específica de plugins &#8212; o formato de embalagem Ogg, Ogg vídeo (chamado &#8220;Theora&#8221;), e Ogg áudio (chamado &#8220;Vorbis&#8221;). No desktop, Ogg é suportado fora-da-caixa por todas as principais distribuições Linux, e você pode usá-lo no Mac e Windows ao instalar os <a href=http://www.xiph.org/quicktime/>componentes QuickTime</a> ou <a href=http://www.xiph.org/dshow/>filtros DirectShow</a>, respectivamente. É ainda executado pelo excelente <a href=http://www.videolan.org/vlc/>VLC</a> em todas as plataformas.</li>
 <li><a href=http://www.webmproject.org/>WebM</a> é um novo formato de embalagem. É tecnicamente similar a outro formato, chamado <a href=http://en.wikipedia.org/wiki/Matroska>Matroska</a>. WebM foi anunciado em Maio de 2010. Foi projetado para ser usado exclusivamente com o codec de vídeo VP8 e pelo codec de áudio Vorbis. (Mais obre isso em um minuto.) É formato nativamente, sem qualquer plataforma específica de plugins, nas últimas versões do Chromium, Google Chrome, Mozilla Firefox, e Opera. Adobe também anunciou que uma futura versão do Flash irá suportar vídeos em WebM.</li>
-<li><a href=http://en.wikipedia.org/wiki/AVI>Audio Video Interleave</a>, usualmente com a extensão <code>.avi</code>. O formato de embalagem AVI foi inventado pela Microsoft em um tempo mais simples, quando o fato de que computadores podiam tocar vídeos já era considerado incrível. Oficialmente não suporta funcionalidades dos mais recentes formatos de embalagens como metadados incorporados. Oficialmente não suporta até mesmo os mais modernos codecs de áudio e vídeo utilizados hoje em dia. Com o tempo, companhias tentaram extendê-lo de forma incompatível para suportar isso ou aquilo, e ainda é o formato de embalagem padrão para encoders como <a href=http://www.mplayerhq.hu/DOCS/HTML/en/encoding-guide.html>MEncoder</a>.</li> 
-</ul> 
+<li><a href=http://en.wikipedia.org/wiki/AVI>Audio Video Interleave</a>, usualmente com a extensão <code>.avi</code>. O formato de embalagem AVI foi inventado pela Microsoft em um tempo mais simples, quando o fato de que computadores podiam tocar vídeos já era considerado incrível. Oficialmente não suporta funcionalidades dos mais recentes formatos de embalagens como metadados incorporados. Oficialmente não suporta até mesmo os mais modernos codecs de áudio e vídeo utilizados hoje em dia. Com o tempo, companhias tentaram extendê-lo de forma incompatível para suportar isso ou aquilo, e ainda é o formato de embalagem padrão para encoders como <a href=http://www.mplayerhq.hu/DOCS/HTML/en/encoding-guide.html>MEncoder</a>.</li>
+</ul>
 
 <p class=a>&#x2767;
 
 <h2 id=video-codecs>Codecs de Vídeo</h2>
 
 <p>Quando você fala sobre &#8220;assistir um vídeo,&#8221; você está provavelmente falando da combinação de um fluxo de vídeo e um fluxo de áudio. Mas você não tem dois arquivos diferentes; você tem apenas &#8220;um vídeo.&#8221 Talvez possa ser um arquivo AVI, ou um arquivo MP4. Esses são <a href=#video-containers>apenas formatos de embalagem</a>, como um arquivo ZIP que contém múltiplos tipos de arquivos dentro dele. O formato de embalagem define como serão armazenados os fluxos de vídeo e áudio em um único arquivo.
- 
-<p>Quando você &#8220;assiste um vídeo,&#8221; seu video player está fazendo pelo menos três coisas ao mesmo tempo: 
- 
-<ol> 
-<li>Interpretando o formato de embalagem para descobrir quais faixas de vídeo e áudio estão disponíveis, e como elas são armazenadas dentro do arquivo para que possa encontrar os dados que necessitam ser decodificados depois</li> 
-<li>Decodificando o fluxo de vídeo e exibindo uma série de imagens na tela</li> 
-<li>Decodificando o fluxo de áudio e enviando o som para as caixas de som</li> 
-</ol> 
- 
+
+<p>Quando você &#8220;assiste um vídeo,&#8221; seu video player está fazendo pelo menos três coisas ao mesmo tempo:
+
+<ol>
+<li>Interpretando o formato de embalagem para descobrir quais faixas de vídeo e áudio estão disponíveis, e como elas são armazenadas dentro do arquivo para que possa encontrar os dados que necessitam ser decodificados depois</li>
+<li>Decodificando o fluxo de vídeo e exibindo uma série de imagens na tela</li>
+<li>Decodificando o fluxo de áudio e enviando o som para as caixas de som</li>
+</ol>
+
 <p>Um <i>codec de vídeo</i> é um algoritmo que será encodificado em um fluxo de vídeo, i.e. ele especifica como fazer a seguir. (A palavra &#8220;codec&#8221; é um <a href=http://en.wikipedia.org/wiki/Portmanteau>portmanteau</a>, a combinação das palavras &#8220;codificar&#8221; e &#8220;decodificar.&#8221;) Seu video player <i>decodifica</i> o fluxo de vídeo de acordo com o <i>codec de vídeo</i>, depois exibe uma série de imagens, ou &#8220;frames,&#8221; na tela. A maioria dos codecs de vídeo modernos usam diversas formas para minimizar a quantidade de informação necessária para exibir um frame atrás do outro. Por exeplo, ao invés de armazenar cada frame individualmente (como um screenshot), eles irão armazenar apenas as diferenças entre os frames. A maioria dos vídeos na realidade não mudam completamente entre um frame e o outro, então isso permite alto grau de compressão, resultando em menores tamanhos de arquivo.
- 
+
 <p>Existem codecs de vídeo <i>com perdas</i> e <i>sem perdas</i>. Vídeos sem perdas são muito grandes para serem usados na web, então irei me concentrar em codecs com perdas. Um <i>codec com perdas</i> significa que informação será irremediavelmente perdida durante o processo de encodificação. Como a cópia do áudio de uma fita cassete, você está perdendo informação sobre a fonte do vídeo, e degradando a qualidade, cada vez que você codifica. Ao invés do &#8220;assobio&#8221; de uma fita cassete de áudio, uma re-re-re-encodificação de vídeo pode parecer bloqueada, especialmente durante cenas com muita ação. (Na verdade, isso pode acontecer até se você codificar direto da fonte original, se você escolher um codec de vídeo pobre ou passar para ele o conjunto errado de parâmetros.) O lado bom é que codecs de vídeo com perdas podem oferecer taxas de compressão incríveis através da suavização sem bloqueios durante a reprodução, para fazer a perda menos perceptível ao olho humano.
- 
+
 <p>Existe uma <a href=http://samples.mplayerhq.hu/V-codecs/><em>porção</em> de codecs de vídeo</a>. Os três codecs mais relevantes são <a href=#h264>H.264</a>, <a href=#theora>Theora</a>, e <a href=#vp8>VP8</a>.
- 
+
 <h3 id=h264>H.264</h3>
- 
+
 <p><a href=http://en.wikipedia.org/wiki/H.264>H.264</a> mais conhecido como &#8220;MPEG-4 part 10,&#8221; a.k.a. &#8220;MPEG-4 AVC,&#8221; a.k.a. &#8220;MPEG-4 Advanced Video Coding.&#8221;  H.264 foi desenvolvido pelo <a href=http://en.wikipedia.org/wiki/Moving_Picture_Experts_Group>MPEG group</a> e padronizado em 2003. Tem por objetivo oferecer um único codec para banda-larga pobre, CPU de dispositivos pobres (celulares); alta banda-larga, alta CPU de dispositivos (computadores modernos); e qualquer coisa no meio disso. Para realizar isso, o padrão H.264 é dividido em &#8220;<a href=http://en.wikipedia.org/wiki/H.264#Profiles>perfis</a>,&#8221; onde cada um define um conjunto de funcionalidades opcionais que negocia a complexidade pelo tamanho do arquivo. Altos perfis usam mais funcionalidades opcionais, oferecem melhor qualidade visual para tamanhos de arquivo menores, levam mais tempo para codificar, e requerem mais poder da CPU para codificar em tempo real.
 
-<p>Para lhe dar uma ideia da variedade dos perfis, o <a href=http://www.apple.com/iphone/specs.html>iPhone da Apple suporta o perfil Baseline</a>, a <a href=http://www.apple.com/appletv/specs.html>AppleTV suporta os perfis Baseline e Main</a>, e <a href=http://www.kaourantin.net/2007/08/what-just-happened-to-video-on-web_20.html>Adobe Flash em um PC suporta os perfis Baseline, Main, e High</a>. YouTube usa agora o H.264 para codificar <a href=http://blog.wired.com/business/2008/12/youtube-adds-hd.html>vídeos de alta definição</a>, tocados a partir do Adobe Flash; YouTube também provê vídeo codificado com H.264 para dispositivos móveis, incluindo iPhone e telefones rodando o <a href=http://code.google.com/android/>sistema operacional móvel Android</a>. Além do H.264 ser um dos codecs de vídeo mandatários pela especificação do Blu-Ray; discos Blu-Ray que usam ele geralmente utilizam no perfil High. 
+<p>Para lhe dar uma ideia da variedade dos perfis, o <a href=http://www.apple.com/iphone/specs.html>iPhone da Apple suporta o perfil Baseline</a>, a <a href=http://www.apple.com/appletv/specs.html>AppleTV suporta os perfis Baseline e Main</a>, e <a href=http://www.kaourantin.net/2007/08/what-just-happened-to-video-on-web_20.html>Adobe Flash em um PC suporta os perfis Baseline, Main, e High</a>. YouTube usa agora o H.264 para codificar <a href=http://blog.wired.com/business/2008/12/youtube-adds-hd.html>vídeos de alta definição</a>, tocados a partir do Adobe Flash; YouTube também provê vídeo codificado com H.264 para dispositivos móveis, incluindo iPhone e telefones rodando o <a href=http://code.google.com/android/>sistema operacional móvel Android</a>. Além do H.264 ser um dos codecs de vídeo mandatários pela especificação do Blu-Ray; discos Blu-Ray que usam ele geralmente utilizam no perfil High.
 
-<p>A maioria dos dispositivos, que não são PCs, tocam vídeo em H.264 (incluindo iPhones e reprodutores de Blu-Ray) 
+<p>A maioria dos dispositivos, que não são PCs, tocam vídeo em H.264 (incluindo iPhones e reprodutores de Blu-Ray)
 Most non-PC devices that play H.264 video (including iPhones and standalone Blu-Ray players) na verdade realizam a decodificação em um chip dedicado, uma vez que suas CPUs principais estão longe de ter poder o suficiente para decodificar em tempo real. Atualmente, até mesmo placas gráficas de baixo nível suportam decodificação H.264 no hardware. Existem <a href=http://compression.ru/video/codec_comparison/mpeg-4_avc_h264_2007_en.html>codificadores H.264 concorrentes</a>, incluindo o open source <a href=http://www.videolan.org/developers/x264.html>x264</a>. <b>O padrão H.264 está coberto por patentes</b>; licenciamento é intermediado pelo <a href=http://www.mpegla.com/>MPEG LA group</a>. Vídeo H.264 pode ser incorporado nos mais populares <a href=#video-containers>formatos de contêiner</a>, incluindo MP4 (usado primeiramente pela <a href=http://www.apple.com/itunes/whatson/movies.html> iTunes Store da Apple</a>) e MKV (usado primeiramente por entusiastas de vídeo não-comerciais).
- 
+
 <h3 id=theora>Theora</h3>
- 
-<p><a href=http://en.wikipedia.org/wiki/Theora>Theora</a> evoluiu do <a href=http://en.wikipedia.org/wiki/Theora#History>VP3 codec</a> e tem sido subseqüentemente desenvolvido pela <a href=http://xiph.org/>Xiph.org Foundation</a>. <b>Theora é um codec livre de royalties e não é onerado por qualquer patente conhecida</b> a não ser a patente original VP3, que foi licenciada livre de royalties. Embora o padrão tenha sido &#8220;congelado&#8221; desde 2004, o projeto Theora (que inclui um referente codificador e decodificador open source) <a href=http://lists.xiph.org/pipermail/theora-dev/2008-November/003736.html>apenas lançou a versão 1.0 em novembro de 2008</a> e a <a href=http://lists.xiph.org/pipermail/theora-dev/2009-September/003985.html>versão 1.1 em setembro de 2009</a>. 
-<p>Vídeos em Theora podem ser incorporados em qualquer formato contêiner, embora seja mais visto em Ogg. A maioria das distribuições Linux suportam Theora fora-da-caixa, e o Mozilla Firefox 3.5 <a href=https://developer.mozilla.org/En/Using_audio_and_video_in_Firefox>inclui suporte nativo a vídeos Theora</a> no contêiner Ogg. E por &#8220;nativo&#8221;, eu digo &#8220;disponível em qualquer plataforma sem plugins específicos daquela plataforma.&#8221;  Você pode também reproduzir vídeos Theora <a href=http://www.xiph.org/dshow/>no Windows</a> ou <a href=http://xiph.org/quicktime/>no Mac OS X</a> após instalar o software open source decodificador Xiph.org&#8217;. 
+
+<p><a href=http://en.wikipedia.org/wiki/Theora>Theora</a> evoluiu do <a href=http://en.wikipedia.org/wiki/Theora#History>VP3 codec</a> e tem sido subseqüentemente desenvolvido pela <a href=http://xiph.org/>Xiph.org Foundation</a>. <b>Theora é um codec livre de royalties e não é onerado por qualquer patente conhecida</b> a não ser a patente original VP3, que foi licenciada livre de royalties. Embora o padrão tenha sido &#8220;congelado&#8221; desde 2004, o projeto Theora (que inclui um referente codificador e decodificador open source) <a href=http://lists.xiph.org/pipermail/theora-dev/2008-November/003736.html>apenas lançou a versão 1.0 em novembro de 2008</a> e a <a href=http://lists.xiph.org/pipermail/theora-dev/2009-September/003985.html>versão 1.1 em setembro de 2009</a>.
+<p>Vídeos em Theora podem ser incorporados em qualquer formato contêiner, embora seja mais visto em Ogg. A maioria das distribuições Linux suportam Theora fora-da-caixa, e o Mozilla Firefox 3.5 <a href=https://developer.mozilla.org/En/Using_audio_and_video_in_Firefox>inclui suporte nativo a vídeos Theora</a> no contêiner Ogg. E por &#8220;nativo&#8221;, eu digo &#8220;disponível em qualquer plataforma sem plugins específicos daquela plataforma.&#8221;  Você pode também reproduzir vídeos Theora <a href=http://www.xiph.org/dshow/>no Windows</a> ou <a href=http://xiph.org/quicktime/>no Mac OS X</a> após instalar o software open source decodificador Xiph.org&#8217;.
 
 <h3 id=vp8>VP8</h3>
 
@@ -94,46 +94,46 @@ Most non-PC devices that play H.264 video (including iPhones and standalone Blu-
 <p>A não ser que você ainda esteja parado nos filmes feitos antes de <a href=http://www.filmsite.org/jazz.html>1927</a>, você irá querer uma trilha de som no seu vídeo. Como <a href=#video-codecs>codecs de vídeo</a>, <i>codecs de áudio</i> são algoritmos nos quais fluxos de áudio são codificados. Como codecs de vídeo, os codecs de áudio são <i>com perda</i> e <i>sem perda</i>. E como os codecs de vídeo sem perda, áudios sem perda são realmente muito grandes para colocar na web. Então irei me concentrar em codecs de áudio com perda.
 
 <p>Na verdade, é ainda mais estreito que isso, porque eles estão em diferentes categorias de codecs de áudio com perda. Áudio é usado em lugares onde o vídeo não é (telefonia, por exemplo) e existe toda uma categoria de <a href=http://www.voip-info.org/wiki-Codecs>codecs de áudio otimizados para codificar voz</a>. Você não iria utilizar um desses codecs para um CD de música, porque o resultado seria como uma criança de 4 anos de idade cantando em um viva-voz. Mas você <em>iria</em> usar eles em um <a href=http://www.asterisk.org/>Asterisk</a> PBX, porque a banda é preciosa, e esses codecs podem comprimir a voz humana em uma fração do tamanho que codecs gerais. Entretanto, graças a falta de suporte em ambos navegadores nativos ou plugins terceiros, codecs de áudio otimizados para voz nunca chegaram realmente na web. Então irei concentrar em <i>codecs de áudio com propósito geral</i>.
- 
-<p><a href=#video-codecs>Eu mencionei mais cedo</a>, quando você &#8220;assiste um vídeo,&#8221; seu computador está fazendo ao menos três coisas ao mesmo tempo: 
- 
-<ol> 
-<li>Interpretando o contêiner do formato</li> 
-<li>Decodificando o fluxo de vídeo</li> 
-<li>Decodificando o fluxo de áudio e enviando o som para os alto-faltantes</li> 
-</ol> 
- 
-<p>O <i>codec de áudio</i> especifica como #3 &#8212; decodificar o fluxo de áudio e torná-lo em ondas digitais que depois seus alto-falantes transformam em som. Assim como os codecs de vídeo, existem todos os tipos de truques para minimizar a quantidade de informação armazenada em um fluxo de áudio. E já que estamos falando sobre codecs de áudio <i>com perda</i>, a informação está sendo perdida durante a gravação <span class=u>&rarr;</span> codificação <span class=u>&rarr;</span> decodificação <span class=u>&rarr;</span> ciclo de vida da escuta. Diferentes codecs de áudio jogam fora diferentes coisas, mas eles tem o mesmo objetivo: enganar seus ouvidos para não notar as partes que estão faltando. 
- 
+
+<p><a href=#video-codecs>Eu mencionei mais cedo</a>, quando você &#8220;assiste um vídeo,&#8221; seu computador está fazendo ao menos três coisas ao mesmo tempo:
+
+<ol>
+<li>Interpretando o contêiner do formato</li>
+<li>Decodificando o fluxo de vídeo</li>
+<li>Decodificando o fluxo de áudio e enviando o som para os alto-faltantes</li>
+</ol>
+
+<p>O <i>codec de áudio</i> especifica como #3 &#8212; decodificar o fluxo de áudio e torná-lo em ondas digitais que depois seus alto-falantes transformam em som. Assim como os codecs de vídeo, existem todos os tipos de truques para minimizar a quantidade de informação armazenada em um fluxo de áudio. E já que estamos falando sobre codecs de áudio <i>com perda</i>, a informação está sendo perdida durante a gravação <span class=u>&rarr;</span> codificação <span class=u>&rarr;</span> decodificação <span class=u>&rarr;</span> ciclo de vida da escuta. Diferentes codecs de áudio jogam fora diferentes coisas, mas eles tem o mesmo objetivo: enganar seus ouvidos para não notar as partes que estão faltando.
+
 <p>Um conceito que o áudio tem que o vídeo não tem são os <i>canais</i>. Nós estamos enviando som para os alto-falantes, certo? Bom, quantos alto-falantes você tem? Se você está sentado em um computador, você deve ter apenas dois: um na esquerda e um na direita. Meu desktop tem três: esquerda, direita e mais um no chão. Chamado &#8220;<a href=http://en.wikipedia.org/wiki/Surround_sound>surround sound</a>&#8221; sistemas podem ter seis ou mais alto-falantes, estratégicamente colocados pelo lugar. Cada alto-falante alimenta um <i>canal</i> em particular da gravação original. A teoria é que você pode sentar no meio dos seis alto-falantes, literalmente cercado por seis diferentes canais do som, e seu cérebro sintetiza eles e parece que você está no meio da ação. Isso funciona? Uma indústria multi-bilionária parece acreditar que sim.
- 
+
 <p>Codecs de áudio com propósito geral podem lidar com dois canais de som. Durante a gravação, o som é dividido no canal da esquerda e da direita; durante a codificação, ambos canais armazenam o mesmo fluxo de áudio; durante a decodificação, ambos canais estão decodificados e cada um é enviado para o alto-falante apropriado. Alguns codecs de áudio podem lidar com mais de dois canais, e irão controlar qual canal é qual e então seu reprodutor de áudio pode enviar para o som da direita para o alto-falante da direita.
- 
+
 <p>Existem <em>muitos</em> codecs de áudio. Eu disse que haviam muitos codecs de vídeo? Esqueça isso. Existem <a href="http://wiki.multimedia.cx/index.php?title=Category:Audio_Codecs">dezenas e dezenas de codecs de áudio</a>, mas na web, existem apenas que você deveria conhecer mais sobre: <abbr>MP3</abbr>, <abbr>AAC</abbr>, e Vorbis.
- 
+
 <h3 id=mp3>MPEG-1 Audio Layer 3</h3>
- 
-<p><a href=http://en.wikipedia.org/wiki/MPEG-1_Audio_Layer_3>MPEG-1 Audio Layer 3</a> é coloquialmente conhecido como &#8220;MP3.&#8221; Se você nunca ouviu falar de MP3s, eu não sei o que fazer com você. <a href="http://www.walmart.com/catalog/catalog.gsp?cat=96469">Walmart vende reprodutores de música portáveis</a> e os chama de &#8220;MP3 players.&#8221; <em>Walmart.</em> Em todo caso&#8230; 
- 
-<p>MP3s podem conter <strong>até dois canais</strong> de som. Eles podem ser codificados em diferentes <i>taxas de bits</i>: 64 kbps, 128 kbps, 192 kbps, e uma varidade de outros de 32 à 320. Altas taxas de bits significam tamanhos de arquivos maiores e melhor qualidade no áudio, embora a relação da taxa da qualidade com a taxa de bits não seja linear. (128 kbps soa duas vezes melhor que 64 kbps, mas 256 kbps não soa o dobro melhor que 128 kbps.) Além disso, o formato MP3 permite <i>codificação variável na taxa de bits</i>, o que significa que algumas partes do fluxo de codificação são mais comprimidas que outras. Por exemplo, silêncio entre as notas podem ser codificadas em uma baixa taxa de bits, então a taxa de bits pode aumentar um momento mais tarde quando múltiplos instrumentos começam a tocar um acorde complexo. MP3s também podem ser codificados em uma taxa de bits constante, que, sem surpresas, é chamado de <i>codificação a taxas de bits constantes</i>. 
- 
-<p>O padrão MP3 não define exatamente como codificar MP3s (embora defina exatamente como devemos decodificá-los); diferentes codificadores usam diferentes modelos psicoacústicos que produzem resultados descontroladamente diferentes, mas são todos decodificados pelos mesmos players. O projeto open source <a href=http://lame.sourceforge.net/>LAME</a> é o melhor codificador gratuito, e sem dúvida o melhor codificador, ponto final, para todos menos para baixas taxas de bits. 
- 
-<p>O formato MP3 (padronizado em 1991) <strong>é coberto de patentes</strong>, que explicam porque Linux não pode&#821 tocar arquivos MP3 fora da caixa. Praticamente todos os players de música portáveis suportam arquivos MP3s, e os fluxos de áudio MP3 podem ser embutidos em qualquer <a href=http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats>container de vídeo</a>. Adobe Flash pode ambos, arquivos MP3 e fluxo de áudio MP3 com um container de vídeo MP4. 
- 
+
+<p><a href=http://en.wikipedia.org/wiki/MPEG-1_Audio_Layer_3>MPEG-1 Audio Layer 3</a> é coloquialmente conhecido como &#8220;MP3.&#8221; Se você nunca ouviu falar de MP3s, eu não sei o que fazer com você. <a href="http://www.walmart.com/catalog/catalog.gsp?cat=96469">Walmart vende reprodutores de música portáveis</a> e os chama de &#8220;MP3 players.&#8221; <em>Walmart.</em> Em todo caso&#8230;
+
+<p>MP3s podem conter <strong>até dois canais</strong> de som. Eles podem ser codificados em diferentes <i>taxas de bits</i>: 64 kbps, 128 kbps, 192 kbps, e uma varidade de outros de 32 à 320. Altas taxas de bits significam tamanhos de arquivos maiores e melhor qualidade no áudio, embora a relação da taxa da qualidade com a taxa de bits não seja linear. (128 kbps soa duas vezes melhor que 64 kbps, mas 256 kbps não soa o dobro melhor que 128 kbps.) Além disso, o formato MP3 permite <i>codificação variável na taxa de bits</i>, o que significa que algumas partes do fluxo de codificação são mais comprimidas que outras. Por exemplo, silêncio entre as notas podem ser codificadas em uma baixa taxa de bits, então a taxa de bits pode aumentar um momento mais tarde quando múltiplos instrumentos começam a tocar um acorde complexo. MP3s também podem ser codificados em uma taxa de bits constante, que, sem surpresas, é chamado de <i>codificação a taxas de bits constantes</i>.
+
+<p>O padrão MP3 não define exatamente como codificar MP3s (embora defina exatamente como devemos decodificá-los); diferentes codificadores usam diferentes modelos psicoacústicos que produzem resultados descontroladamente diferentes, mas são todos decodificados pelos mesmos players. O projeto open source <a href=http://lame.sourceforge.net/>LAME</a> é o melhor codificador gratuito, e sem dúvida o melhor codificador, ponto final, para todos menos para baixas taxas de bits.
+
+<p>O formato MP3 (padronizado em 1991) <strong>é coberto de patentes</strong>, que explicam porque Linux não pode&#821 tocar arquivos MP3 fora da caixa. Praticamente todos os players de música portáveis suportam arquivos MP3s, e os fluxos de áudio MP3 podem ser embutidos em qualquer <a href=http://diveintomark.org/archives/2008/12/18/give-part-1-container-formats>container de vídeo</a>. Adobe Flash pode ambos, arquivos MP3 e fluxo de áudio MP3 com um container de vídeo MP4.
+
 <h3 id=aac>Codificação de Áudio Avançada</h3>
- 
-<p><a href=http://en.wikipedia.org/wiki/Advanced_Audio_Coding>Codificação de Áudio Avançada</a> é efetivamente conhecida como "AAC" (Advanced Audio Coding). Padronizada em 1997, deu uma "levantada" proeminente quando a Apple escolheu o MP3 como formato padrão para a iTunes Store. Originalmente, todos os arquivos "AAC" &#8220comprados&#8221; pela loja do iTunes eram criptografados com um esquema DRM proprietário da Apple, chamado <a href=http://en.wikipedia.org/wiki/FairPlay>FairPlay</a>. Músicas selecionadas na loja iTunes agora estão disponíveis como arquivos desprotegidos AAC, que a Apple chama de &#8220;iTunes Plus&#8221; pois soa muito melhor do que chamar todo o resto de &#8220;iTunes Minus.&#8221;  <strong>O formato AAC é coberto de patentes</strong>; <a href=http://www.vialicensing.com/Licensing/AAC_fees.cfm> taxas de licença são disponibilizadas online</a>. 
- 
-<p>AAC foi desenvolvido para promover uma qualidade de som melhor que MP3 na mesma <i>taxa de bits</i>, e pode codificar áudio em qualquer taxa de bits. (MP3 é limitado a um número fixo de taxa de bits, com um limite superior de  320 kbps.)  AAC pode codificar <strong>até 48 canais de som</strong>, embora na prática ninguém faça isso. O formato AAC também difere do MP3 na definição de múltiplos <i>perfis</i>, na maioria das vezes como <a href=http://diveintomark.org/archives/2008/12/19/give-part-2-lossy-video-codecs#h264>H.264</a>, e pelas mesmas razões. O perfil de &#8220;baixa complexidade&#8221 é desenvolvido para ser reproduzido em tempo real em dispositivos com poder de CPU limitado, enquanto perfis altos oferecem melhor qualidade na mesma taxa de bits ao preço de lentidão na codificação ou decodificação. 
- 
+
+<p><a href=http://en.wikipedia.org/wiki/Advanced_Audio_Coding>Codificação de Áudio Avançada</a> é efetivamente conhecida como "AAC" (Advanced Audio Coding). Padronizada em 1997, deu uma "levantada" proeminente quando a Apple escolheu o MP3 como formato padrão para a iTunes Store. Originalmente, todos os arquivos "AAC" &#8220comprados&#8221; pela loja do iTunes eram criptografados com um esquema DRM proprietário da Apple, chamado <a href=http://en.wikipedia.org/wiki/FairPlay>FairPlay</a>. Músicas selecionadas na loja iTunes agora estão disponíveis como arquivos desprotegidos AAC, que a Apple chama de &#8220;iTunes Plus&#8221; pois soa muito melhor do que chamar todo o resto de &#8220;iTunes Minus.&#8221;  <strong>O formato AAC é coberto de patentes</strong>; <a href=http://www.vialicensing.com/Licensing/AAC_fees.cfm> taxas de licença são disponibilizadas online</a>.
+
+<p>AAC foi desenvolvido para promover uma qualidade de som melhor que MP3 na mesma <i>taxa de bits</i>, e pode codificar áudio em qualquer taxa de bits. (MP3 é limitado a um número fixo de taxa de bits, com um limite superior de  320 kbps.)  AAC pode codificar <strong>até 48 canais de som</strong>, embora na prática ninguém faça isso. O formato AAC também difere do MP3 na definição de múltiplos <i>perfis</i>, na maioria das vezes como <a href=http://diveintomark.org/archives/2008/12/19/give-part-2-lossy-video-codecs#h264>H.264</a>, e pelas mesmas razões. O perfil de &#8220;baixa complexidade&#8221 é desenvolvido para ser reproduzido em tempo real em dispositivos com poder de CPU limitado, enquanto perfis altos oferecem melhor qualidade na mesma taxa de bits ao preço de lentidão na codificação ou decodificação.
+
 <p>Todos os atuais produtos da Apple, incluindo iPods, AppleTV, e QuickTime suportam alguns perfis de AAC tanto em arquivos de áudio e em fluxos de áudio dentro um container de vídeo MP4. Adobe Flash suporta todos os perfis de AAC em MP4, como fazem os reprodutores de vídeo MPlayer e VLC. Para codificação, a biblioteca FAAC é a opção open source; o suporte é uma opção em tempo de compilação em mencoder e ffmpeg.
- 
+
 <h3 id=vorbis>Vorbis</h3>
- 
+
 <p><a href=http://en.wikipedia.org/wiki/Vorbis>Vorbis</a> também chamado de &#8220;Ogg Vorbis,&#8221; embora esteja técnicamente incorreto. (&#8220;Ogg&#8221; e apenas um<a href=#video-containers>formato de container </a>, e fluxos de áudio Vorbis podem ser embutido em outros containers.) <strong>Vorbis não é coberto por nenhuma patente conhecida</strong> e portanto é suportado fora da caixa pela maioria das distribuições Linux e dispositivos portáteis rodando o open source <a href=http://www.rockbox.org/>Rockbox</a> firmware. Mozilla Firefox 3.5 suporta arquivos de áudio Vorbis em um container Ogg, ou Ogg vídeos com uma faixa de áudio Vorbis. <a href=http://code.google.com/android/>Android</a> celulares também podem reproduzir arquivos de audio Vorbis. streams de  audio Vorbis geralmente sao embutidas em um Ogg ou em WebM contêiner, mas ele também podem ser<a href=http://samples.mplayerhq.hu/MPEG-4/vorbis-in-mp4/>embutidos em um MP4</a> ou <a href=http://en.wikipedia.org/wiki/Matroska>MKV</a> container (ou, com algum hacking, <a href=http://www.alexander-noe.com/video/amg/>em AVI</a>). Vorbis suporta <strong>um numero arbitrário de canais de som</strong>.
- 
-<p>Existem codificadores e decodificadores Vorbis open source, incluindo <a href=http://oggconvert.tristanb.net/>OggConvert</a> (codificador), <a href=http://www.ffmpeg.org/>ffmpeg</a> (decodificador), <a href=http://www.geocities.jp/aoyoume/aotuv/>aoTuV</a> (codificador), e <a href=http://downloads.xiph.org/releases/vorbis/>libvorbis</a> (decodificador). Também existem <a href=http://www.xiph.org/quicktime/>Componentes QuickTime para Mac OS X</a> e <a href=http://www.xiph.org/dshow/>Filtros DirectShow para Windows</a>. 
+
+<p>Existem codificadores e decodificadores Vorbis open source, incluindo <a href=http://oggconvert.tristanb.net/>OggConvert</a> (codificador), <a href=http://www.ffmpeg.org/>ffmpeg</a> (decodificador), <a href=http://www.geocities.jp/aoyoume/aotuv/>aoTuV</a> (codificador), e <a href=http://downloads.xiph.org/releases/vorbis/>libvorbis</a> (decodificador). Também existem <a href=http://www.xiph.org/quicktime/>Componentes QuickTime para Mac OS X</a> e <a href=http://www.xiph.org/dshow/>Filtros DirectShow para Windows</a>.
 
 <p class=a>&#x2767;
 
@@ -261,7 +261,7 @@ Most non-PC devices that play H.264 video (including iPhones and standalone Blu-
 
 <ol>
 <li><em>WebM (vp8)</em> é video WebM (<a href=#vp8>video VP8</a> e <a href=#vorbis>audio Vorbis </a> em um contêiner WebM).
-<li><em>Theora</em> é <a href=#theora>vídeo Theora</a> e <a href=#vorbis>audio Vorbis</a> em um contêiner Ogg. 
+<li><em>Theora</em> é <a href=#theora>vídeo Theora</a> e <a href=#vorbis>audio Vorbis</a> em um contêiner Ogg.
 <li><em>iPhone</em> é <a href=#h264>Perfil de Linha de base de video H.264</a> e <a href=#aac>AAC audio de baixa-complexidade</a> em um contêiner MP4.
 </ol>
 
@@ -538,7 +538,7 @@ R: Sim, sim mas devido as diferenças fundamentais em como o codificador funcion
 
 <pre><samp class=p>you@localhost$ </samp><kbd>ffmpeg -pass 1 -passlogfile pr6.dv -threads 16  -keyint_min 0 -g 250 -skip_threshold 0 -qmin 1 -qmax 51 -i pr6.dv <mark>-vcodec libvpx</mark> -b 614400 -s 320x240 -aspect 4:3 -an -y NUL</kbd></pre>
 
-<p>Most of the <code>ffmpeg</code> command line has nothing to do with VP8 or WebM. <code>libvpx</code> does support a number of VP8-specific options that you can pass to <code>ffmpeg</code>, but I don&#8217;t yet know how any of them work. Once I find a good explanation of them, I&#8217;ll link it here and incorporate them into the narrative if it&#8217;s worthwhile to do so. 
+<p>Most of the <code>ffmpeg</code> command line has nothing to do with VP8 or WebM. <code>libvpx</code> does support a number of VP8-specific options that you can pass to <code>ffmpeg</code>, but I don&#8217;t yet know how any of them work. Once I find a good explanation of them, I&#8217;ll link it here and incorporate them into the narrative if it&#8217;s worthwhile to do so.
 
 <p>For the second pass, <code>ffmpeg</code> will read the statistics it wrote during the first pass and actually do the encoding of the video and the audio. It will write out a <code>.webm</code> file.
 
@@ -733,11 +733,11 @@ AddType video/webm .webm</code></pre>
   &lt;source src="pr6.ogv" type='video/ogg; codecs="theora, vorbis"' />
   &lt;source src="pr6.mp4" />
   &lt;object width="320" height="240" type="application/x-shockwave-flash"
-    data="flowplayer-3.2.1.swf"> 
-    &lt;param name="movie" value="flowplayer-3.2.1.swf" /> 
-    &lt;param name="allowfullscreen" value="true" /> 
-    &lt;param name="flashvars" value='config={"clip": {"url": "http://wearehugh.com/dih5/pr6.mp4", "autoPlay":false, "autoBuffering":true}}' /> 
-    &lt;p>Download video as &lt;a href="pr6.mp4">MP4&lt;/a>, &lt;a href="pr6.webm">WebM&lt;/a>, or &lt;a href="pr6.ogv">Ogg&lt;/a>.&lt;/p> 
+    data="flowplayer-3.2.1.swf">
+    &lt;param name="movie" value="flowplayer-3.2.1.swf" />
+    &lt;param name="allowfullscreen" value="true" />
+    &lt;param name="flashvars" value='config={"clip": {"url": "http://wearehugh.com/dih5/pr6.mp4", "autoPlay":false, "autoBuffering":true}}' />
+    &lt;p>Download video as &lt;a href="pr6.mp4">MP4&lt;/a>, &lt;a href="pr6.webm">WebM&lt;/a>, or &lt;a href="pr6.ogv">Ogg&lt;/a>.&lt;/p>
   &lt;/object>
 &lt;/video>
 &lt;script>
@@ -754,18 +754,18 @@ AddType video/webm .webm</code></pre>
 
 <p>With the combination of <abbr>HTML5</abbr> and Flash, you should be able to watch this video in almost any browser and device:
 
-<video id="video" width="320" height="240" preload controls> 
+<video id="video" width="320" height="240" preload controls>
   <source src="i/pr6.webm" type='video/webm; codecs="vp8, vorbis"' />
   <source src="i/pr6.ogv" type='video/ogg; codecs="theora, vorbis"' />
   <source src="i/pr6.mp4" />
   <object width="320" height="240" type="application/x-shockwave-flash"
-    data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf"> 
-    <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" /> 
-    <param name="allowfullscreen" value="true" /> 
-    <param name="flashvars" value='config={"clip":{"url":"http://diveintohtml5.org/i/pr6.mp4","autoPlay":false,"autoBuffering":true}}' /> 
-    <p>Download video as <a href=i/pr6.mp4>MP4</a>, <a href=i/pr6.webm>WebM</a>, or <a href=i/pr6.ogv>Ogg</a>.</p> 
-  </object> 
-</video> 
+    data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
+    <param name="movie" value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" />
+    <param name="allowfullscreen" value="true" />
+    <param name="flashvars" value='config={"clip":{"url":"http://diveintohtml5.org/i/pr6.mp4","autoPlay":false,"autoBuffering":true}}' />
+    <p>Download video as <a href=i/pr6.mp4>MP4</a>, <a href=i/pr6.webm>WebM</a>, or <a href=i/pr6.ogv>Ogg</a>.</p>
+  </object>
+</video>
 
 <p class=a>&#x2767;
 
