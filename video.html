@@ -523,35 +523,35 @@ R: Sim, sim mas devido as diferenças fundamentais em como o codificador funcion
 
 <p class=a>&#x2767;
 
-<h2 id=webm-cli>Encoding WebM Video with ffmpeg</h2>
+<h2 id=webm-cli>Codificando vídeos WebM com ffmpeg</h2>
 
-<p>WebM is fully supported in <a href=http://www.ffmpeg.org/><code>ffmpeg</code> 0.6 and later</a>. On the command line, run <code>ffmpeg</code> with no parameters and verify that it was compiled with VP8 support:
+<p>WebM é completamente suportado por <a href=http://www.ffmpeg.org/><code>ffmpeg</code> 0.6+</a>. Na linha de comando, rode <code>ffmpeg</code> sem parâmetros e verifique que foi compilado com suporte VP8:
 
 <pre><samp class=p>you@localhost$ </samp><kbd>ffmpeg</kbd>
 <samp>FFmpeg version SVN-r23197, Copyright (c) 2000-2010 the FFmpeg developers
   built on May 19 2010 22:32:20 with gcc 4.4.3
   configuration: --enable-gpl --enable-version3 --enable-nonfree --enable-postproc --enable-pthreads --enable-libfaac --enable-libfaad --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libtheora --enable-libx264 --enable-libxvid --enable-x11grab <mark>--enable-libvorbis</mark> <mark>--enable-libvpx</mark></samp></pre>
 
-<p>If you don&#8217;t see the magic words &#8220;<code>--enable-libvorbis</code>&#8221; and &#8220;<code>--enable-libvpx</code>,&#8221; you don&#8217;t have the right version of <code>ffmpeg</code>. (If you compiled <code>ffmpeg</code> yourself, check to see if you have two versions installed. That&#8217;s fine, they won&#8217;t conflict with each other. You&#8217;ll just need to use the full path of the VP8-enabled version of <code>ffmpeg</code>.)
+<p>Se você não ver as palavras mágicas &#8220;<code>--enable-libvorbis</code>&#8221; e &#8220;<code>--enable-libvpx</code>,&#8221; você não tem a versão certa do <code>ffmpeg</code>. (Se você mesmo compilou <code>ffmpeg</code>, verifique se não há duas versões instaladas. Isso é tranquilo, eles não irão conflitar entre si. Você precisará apenas usar o caminho completo da versão VP8 do <code>ffmpeg</code>.)
 
-<p>I&#8217;m going to do <a href=#two-pass-encoding>a two-pass encode</a>. Pass 1 just scans through the input video file (<code>-i pr6.dv</code>) and writes out some statistics to a log file (which will be auto-named <code>pr6.dv-0.log</code>). I specify the video codec with the <code>-vcodec</code> parameter:
+<p>Eu vou fazer uma <a href=#two-pass-encoding>codificação de dois passos</a>. Passo 1 apenas para verificar o arquivo de vídeo inserido (<code>-i pr6.dv</code>) e escrever algumas estatísticas no arquivo de log (que será auto-nomeado de <code>pr6.dv-0.log</code>). Eu especifico o codec de vídeo com o parâmetro <code>-vcodec</code>:
 
 <pre><samp class=p>you@localhost$ </samp><kbd>ffmpeg -pass 1 -passlogfile pr6.dv -threads 16  -keyint_min 0 -g 250 -skip_threshold 0 -qmin 1 -qmax 51 -i pr6.dv <mark>-vcodec libvpx</mark> -b 614400 -s 320x240 -aspect 4:3 -an -y NUL</kbd></pre>
 
-<p>Most of the <code>ffmpeg</code> command line has nothing to do with VP8 or WebM. <code>libvpx</code> does support a number of VP8-specific options that you can pass to <code>ffmpeg</code>, but I don&#8217;t yet know how any of them work. Once I find a good explanation of them, I&#8217;ll link it here and incorporate them into the narrative if it&#8217;s worthwhile to do so.
+<p>A maioria da linha de comando do <code>ffmpeg</code> tem nada a ver com VP8 ou WebM. <code>libvpx</code> suporta um número específico de opções VP8 que você pode passar para o <code>ffmpeg</code>, mas eu não sei ainda como trabalhar com elas. Assim que encontrar uma boa explicação sobre elas, irei colocar o link aqui e incorporá-la na narrativa se valer a pena.
 
-<p>For the second pass, <code>ffmpeg</code> will read the statistics it wrote during the first pass and actually do the encoding of the video and the audio. It will write out a <code>.webm</code> file.
+<p>Para o segundo passo, <code>ffmpeg</code> irá ler as estatísticas que foram escritas durante o primeiro passoe realmente codificar o vídeo e áudio. Irá escrever um arquivo <code>.webm</code>.
 
 <pre><samp class=p>you@localhost$ </samp><kbd>ffmpeg -pass 2 -passlogfile pr6.dv -threads 16  -keyint_min 0 -g 250 -skip_threshold 0 -qmin 1 -qmax 51 -i pr6.dv -vcodec libvpx -b 614400 -s 320x240 -aspect 4:3 -acodec libvorbis -y pr6.webm</kbd></pre>
 
-<p>There are five important parameters here:
+<p>Existem cinco parâmetros importantes aqui:
 
 <ul>
-<li><code>-vcodec libvpx</code> specifies that we&#8217;re encoding with the VP8 video codec. WebM always uses VP8 video.
-<li><code>-b 614400</code> specifies the bitrate. Unlike other formats, <code>libvpx</code> expects the bitrate in actual bits, not kilobits. If you want a 600 kbps video, multiply 600 by 1024 to get 614400.
-<li><code>-s 320x240</code> specifies the target size, width by height.
-<li><code>-aspect 4:3</code> specifies the aspect ratio of the video. Standard definition video is usually 4:3, but most high-definition video is 16:9 or 16:10. In my testing, I found that I had to specify this explicitly on the command line, instead of relying on <code>ffmpeg</code> to autodetect it.
-<li><code>-acodec libvorbis</code> specifies that we&#8217;re encoding with the Vorbis audio codec. WebM always uses Vorbis audio.
+<li><code>-vcodec libvpx</code> especifica que nós estamos codificando com o codec de vídeo VP8. WebM sempre usa vídeo VP8.
+<li><code>-b 614400</code> especifica a taxa de bits. Diferente de outros formatos, <code>libvpx</code> espera que a taxa de bits seja mesmo em bits, e não kilobits. Se você quer um vídeo de 600 kbps, multiplique 600 por 1024 e tenha 614400.
+<li><code>-s 320x240</code> especifica o tamanho desejado, largura por altura.
+<li><code>-aspect 4:3</code> especifica a proporção do vídeo. A definição padrão de vídeo normalmente é 4:3, mas a maioria dos vídeos de alta definição são 16:9 ou 16:10. Nos meus testes, encontrei que preciso especificar de forma explícita isso na linha de comando, ao invés de recorrer ao <code>ffmpeg</code> para auto-detectar isso.
+<li><code>-acodec libvorbis</code> especifica que nós estamos codificando com codec de áudio Vorbis. WebM sempre usa áudio Vorbis.
 </ul>
 
 <p class=a>&#x2767;
