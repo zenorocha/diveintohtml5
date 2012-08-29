@@ -678,25 +678,25 @@ AddType video/webm .webm</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=ie>What About IE?</h2>
+<h2 id=ie>E quanto ao IE?</h2>
 
-<p>Internet Explorer 9 <a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML5_video_audio>supports the <abbr>HTML5</abbr> <code>&lt;video></code> element</a>, but <a href="http://blogs.msdn.com/ie/archive/2010/03/16/html5-hardware-accelerated-first-ie9-platform-preview-available-for-developers.aspx">Microsoft has publicly promised</a> that the final version of <abbr>IE</abbr> 9 will support H.264 video and AAC audio in an MPEG-4 container, just like Safari and the iPhone.
+<p>Internet Explorer 9 <a href=http://msdn.microsoft.com/en-us/ie/ff468705.aspx#_HTML5_video_audio>suporta o elemento <code>&lt;video></code> da <abbr>HTML5</abbr></a>, mas a <a href="http://blogs.msdn.com/ie/archive/2010/03/16/html5-hardware-accelerated-first-ie9-platform-preview-available-for-developers.aspx">Microsoft prometeu publicamente</a> que a versão final do <abbr>IE</abbr> 9 irá suportar vídeo H.264 video e áudio AACem um container MPEG-4, assim como Safari e iPhone.
 
-<p>But what about older versions of Internet Explorer? Like, you know, all shipping versions up to and including <abbr>IE</abbr> 8? Most people who use Internet Explorer also have the Adobe Flash plugin installed. Modern versions of Adobe Flash (starting with 9.0.60.184) support H.264 video and AAC audio in an MPEG-4 container, just like Safari and the iPhone. Once you&#8217;ve <a href=#handbrake-gui>encoded your H.264 video</a> for Safari, you can play it in a Flash-based video player if you detect that one of your visitors doesn&#8217;t have an <abbr>HTML5</abbr>-capable browser.
+<p>Mas e quanto as versões antigas do Internet Explorer? Tipo, você sabe, todas as versões antigas incluindo o <abbr>IE</abbr> 8? A maioria das pessoas que usam Internet Explorer também possuem um plugin Adobe Flash plugin instalado. Versões modernas do Adobe Flash (começando com 9.0.60.184) suportam vídeo H.264 e áudio AAC em um container MPEG-4, assim como Safari e iPhone. Uma vez <a href=#handbrake-gui>codificado com vídeo H.264</a> para Safari, você pode tocar isso em um video player baseado em Flash se você detectar que um dos seus visitantes não possuem navegadores com suporte ao <abbr>HTML5</abbr>.
 
-<p><a href=http://flowplayer.org/>FlowPlayer</a> is an open source, GPL-licensed, Flash-based video player. (<a href=http://flowplayer.org/download/>Commercial licenses are also available</a>.) FlowPlayer doesn&#8217;t know anything about the <code>&lt;video></code> element. It won&#8217;t magically transform a <code>&lt;video></code> tag into a Flash object. But <abbr>HTML5</abbr> is well-designed to handle this, because you can nest an <code>&lt;object></code> element within a <code>&lt;video></code> element. Browsers that don&#8217;t support <abbr>HTML5</abbr> video will ignore the <code>&lt;video></code> element and simply render the nested <code>&lt;object></code> instead, which will invoke the Flash plug-in and play the movie through FlowPlayer. Browsers that support <abbr>HTML5</abbr> video will find a video source they can play and play it, <em>and ignore the nested <code>&lt;object></code> element altogether</em>.
+<p><a href=http://flowplayer.org/>FlowPlayer</a> é de código livre, licenciado com GPL, com video player baseado em Flash. (<a href=http://flowplayer.org/download/>Licenças comerciais também estão disponíveis</a>.) FlowPlayer não sabe nada sobre seu elemento <code>&lt;video></code>. Não irá magicamente transformar uma tag <code>&lt;video></code> em um objeto Flash. Mas um <abbr>HTML5</abbr> bem feitoisabe como lidar com isso, porque você pode colocar um elemento <code>&lt;object></code> dentro do <code>&lt;video></code>. Navegadores que não suportam vídeo <abbr>HTML5</abbr> irão ignorar o elemento <code>&lt;video></code> e simplesmente renderizar o elemento <code>&lt;object></code>, no qual irá invocar o plugin Flash e tocar o vídeo usando FlowPlayer. Navegadores que suportam vídeo <abbr>HTML5</abbr> irão encontrar a origem do vídeo que eles pode tocar e tocá-los, <em>e ignorar o elemento <code>&lt;object></code> junto com isso</em>.
 
-<p>That last bit is the key to the whole puzzle: <abbr>HTML5</abbr> specifies that all elements (other than <code>&lt;source></code> elements) that are children of a <code>&lt;video></code> element must be ignored altogether. That allows you to use <abbr>HTML5</abbr> video in newer browsers and fall back to Flash gracefully in older browsers, without requiring any fancy JavaScript hacks. You can read more about this technique here: <a href=http://camendesign.com/code/video_for_everybody>Video For Everybody</a>.
+<p>Esse último pedaço é a chave para todo quebra-cabeça: <abbr>HTML5</abbr> especifica que todos os elementos (além dos elementos <code>&lt;source></code>) são filhos de um elemento <code>&lt;video></code> devem ser ignorados. Isso permite que você possa usar vídeos <abbr>HTML5</abbr> em navegadores mais novos e prover um fall back em Flash para navegadores mais antigos, sem precisar de qualquer hack JavaScript. Você pode ler mais sobre essa técnica em: <a href=http://camendesign.com/code/video_for_everybody>Vídeos Para Todos</a>.
 
 <p class=a>&#x2767;
 
-<h2 id=ios>Issues on iPhones and iPads</h2>
+<h2 id=ios>Problemas em iPhones e iPads</h2>
 
-<p>iOS is Apple&#8217;s operating system that powers iPhones, iPod Touches, and iPads. iOS 3.2 has a number of issues with <abbr>HTML5</abbr> video.
+<p>iOS é o sistema operacional da Apple&#8217;s que equipa iPhones, iPod Touches, e iPads. iOS 3.2 tem um número grande de problemas com vídeo <abbr>HTML5</abbr>.
 
 <ol>
-<li>iOS will not recognize the video if you include a <code>poster</code> attribute. The <code>poster</code> attribute of the <code>&lt;video></code> element allows you to display a custom image while the video is loading, or until the user presses &#8220;play.&#8221; This bug is fixed in iOS 4.0, but it will be some time before users upgrade.
-<li>If you have multiple <code>&lt;source></code> elements, iOS will not recognize anything but the first one. Since iOS devices only support H.264+AAC+MP4, this effectively means you must always list your MP4 first. This bug is also fixed in iOS 4.0.
+<li>iOS não irá reconhecer o vídeo se você incluir um atributo <code>poster</code>. O atributo <code>poster</code> do elemento <code>&lt;video></code> permite exibir uma imagem personalizada enquanto o vídeo é carregado, ou até que o usuário pressione o &#8220;play.&#8221; Esse bug é consertado no iOS 4.0, mas irá levar tempo para usuários atualizerem-se.
+<li>Se você tem múltiplos elementos <code>&lt;source></code>, iOS irá reconhecer qualquer coisa menos o primeiro. Já que dispositivos iOS suportam apenas H.264+AAC+MP4, isso é efetivamente significa que você precisa listar seu MP4 primeiro. Esse bug também é corrigido no iOS 4.0.
 </ol>
 
 <p class=a>&#x2767;
