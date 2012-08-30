@@ -712,9 +712,9 @@ AddType video/webm .webm</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=example>A Complete, Live Example</h2>
+<h2 id=example>Um Completo e Vivo Exemplo</h2>
 
-<p>Here is a live example of a video that uses these techniques. I extended the &#8220;Video For Everybody&#8221; code to include a WebM-formatted video. I encoded the same source video into three formats, with these commands:
+<p>Aqui está um exemplo vivo de um vídeo que usa essas técnicas. Eu extendi o código do &#8220;Vídeo para Todos&#8221; para inluir suporte a vídeo WebM. Codifiquei a mesma origem do vídeo em três formatos, com esses comandos:
 
 <pre>## Theora/Vorbis/Ogg
 <samp class=p>you@localhost$ </samp><kbd>ffmpeg2theora --videobitrate 200 --max_size 320x240 --output pr6.ogv pr6.dv</kbd>
@@ -726,7 +726,7 @@ AddType video/webm .webm</code></pre>
 <samp class=p>you@localhost$ </samp><kbd>ffmpeg -pass 1 -passlogfile pr6.dv -threads 16  -keyint_min 0 -g 250 -skip_threshold 0 -qmin 1 -qmax 51 -i pr6.dv -vcodec libvpx -b 204800 -s 320x240 -aspect 4:3 -an -f webm -y NUL</kbd>
 <samp class=p>you@localhost$ </samp><kbd>ffmpeg -pass 2 -passlogfile pr6.dv -threads 16  -keyint_min 0 -g 250 -skip_threshold 0 -qmin 1 -qmax 51 -i pr6.dv -vcodec libvpx -b 204800 -s 320x240 -aspect 4:3 -acodec libvorbis -ac 2 -y pr6.webm</kbd></pre>
 
-<p>The final markup uses a <code>&lt;video></code> element for <abbr>HTML5</abbr> video, a nested <code>&lt;object></code> element for Flash fallback, and a small bit of script for the benefit of Android devices:
+<p>A marcação final usa o elemento <code>&lt;video></code> para <abbr>HTML5</abbr>, um elemento <code>&lt;object></code> dentro para fallback em Flash, e um pequeno pedaço de script para beneficiar dispositivos Android:
 
 <pre><code>&lt;video id="movie" width="320" height="240" preload controls>
   &lt;source src="pr6.webm" type='video/webm; codecs="vp8, vorbis"' />
@@ -752,7 +752,7 @@ AddType video/webm .webm</code></pre>
 &lt;/script>
 </code></pre>
 
-<p>With the combination of <abbr>HTML5</abbr> and Flash, you should be able to watch this video in almost any browser and device:
+<p>Com essa combinação de <abbr>HTML5</abbr> e Flash, você deve conseguir assistir esse vídeo em quase todos os navegadores e dispositivos:
 
 <video id="video" width="320" height="240" preload controls>
   <source src="i/pr6.webm" type='video/webm; codecs="vp8, vorbis"' />
