@@ -701,13 +701,13 @@ AddType video/webm .webm</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=android>Issues on Android devices</h2>
+<h2 id=android>Problemas em dispositivos Android</h2>
 
-<p>Android is Google&#8217;s operating system that powers a number of different phones and handheld devices. Versions of Android before 2.3 had a number of issues with <abbr>HTML5</abbr> video.
+<p>Android é o sistema operacional da Google&#8217;s que equipa diferentes telefones e dispositivos de mão. Versões do Android antes da 2.3 tinham uma série de problemas com vídeo <abbr>HTML5</abbr>.
 
 <ol>
-<li>The <code>type</code> attribute on <code>&lt;source></code> elements confused Android greatly. The only way to get it to recognize a video source is, ironically, to omit the <code>type</code> attribute altogether and ensure that your H.264+AAC+MP4 video file&#8217;s name ends with an <code>.mp4</code> extension. You can still include the <code>type</code> attribute on your other video sources, since H.264 is the only video format that Android 2.2 supports. (This bug is fixed in Android 2.3.)
-<li>The <code>controls</code> attribute was not supported. There are no ill effects to including it, but Android will not display any user interface controls for a video. You will need to provide your own user interface controls. At a minimum, you should provide a script that starts playing the video when the user clicks the video. This bug is also fixed in Android 2.3.
+<li>O atributo <code>type</code> nos elementos <code>&lt;source></code> confundem muito o Android. A única forma para reconhecer uma origem de vídeo é, ironicamente, omitindo o atributo <code>type</code> e garantir que arquivos de vídeo H.264+AAC+MP4 terminem com o formato <code>.mp4</code>. Você pode ainda incluir o atributo <code>type</code> nas outras origens de vídeo, já que H.264 é o único formato de vídeo que Android 2.2 suportam. (Esse bug é corrigido no Android 2.3.)
+<li>O atributo <code>controls</code> não foi suportado. Não há efeitos problemáticos nisso, mas o Android não irá mostrar qualquer controle de interface para um vídeo. Você irá precisar do seu próprio controle na interface. No mínimo, você deveria prover um script que comece tocando o vídeo quando o usuário clicar no vídeo. Esse bug também é corrigido no Android 2.3.
 </ol>
 
 <p class=a>&#x2767;
