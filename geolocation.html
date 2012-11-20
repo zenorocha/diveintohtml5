@@ -110,12 +110,12 @@ R: Privacidade é uma preocupação óbvia quando se está falando sobre compart
 <tr class=zebra><th><code>coords.altitudeAccuracy</code><td>double ou <code>null</code><td>metros
 <tr><th><code>coords.heading</code><td>double ou <code>null</code><td>graus em sentido do <a href=http://en.wikipedia.org/wiki/True_north>norte verdadeiro</a>
 <tr class=zebra><th><code>coords.speed</code><td>double ou <code>null</code><td>metros/segundos
-<tr><th><code>timestamp</code><td>DOMTimeStamp<td>como um objeto de <code>Date()</code> 
+<tr><th><code>timestamp</code><td>DOMTimeStamp<td>como um objeto de <code>Date()</code>
 </table>
 
 <p class=ss style="margin-top:1.75em"><img src=i/openclipart.org_johnny_automatic_riding_a_bike.png width=196 height=239 alt="boy riding a bicycle">
 
-<p>Somente três de uma das propriedades são garantidas (<code>coords.latitude</code>, <code>coords.longitude</code>, e <code>coords.accuracy</code>). O restante pode voltar <code>null</code>, dependendo da capacidade do seu dispositivo e a distância que o servidor está de você. As propriedades <code>heading</code> e <code>speed</code> serão calculadas baseadas na posição anterior do usuário, se possível. 
+<p>Somente três de uma das propriedades são garantidas (<code>coords.latitude</code>, <code>coords.longitude</code>, e <code>coords.accuracy</code>). O restante pode voltar <code>null</code>, dependendo da capacidade do seu dispositivo e a distância que o servidor está de você. As propriedades <code>heading</code> e <code>speed</code> serão calculadas baseadas na posição anterior do usuário, se possível.
 
 <p class=a>&#x2767;
 
@@ -358,7 +358,7 @@ function lookup_location() {
 function show_map(loc) {
   $("#geo-wrapper").css({'width':'320px','height':'350px'});
   var map = new google.maps.Map(document.getElementById("geo-wrapper"), {zoom: 14, mapTypeControl:true, zoomControl: true, mapTypeId: google.maps.MapTypeId.ROADMAP});
-  var center = new google.maps.LatLng(loc.coords.latitude,loc.coords.longitude);  
+  var center = new google.maps.LatLng(loc.coords.latitude,loc.coords.longitude);
   map.setCenter(center);
   var marker = new google.maps.Marker({map: map, position: center, draggable: false, title: "Você está aqui (mais ou menos)"});
 }
@@ -372,4 +372,16 @@ $(function() {
     $("#live-geolocation").html(supports(false, "geolocation"));
   }
 });
+</script>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-4114546-27']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 </script>

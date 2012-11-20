@@ -17,7 +17,7 @@ body{counter-reset:h1 9}
 <h2 id=divingin>Mergulhando</h2>
 
 <p class=f><img src=i/aoc-t.png alt=t width=107 height=105>odo mundo conhece sobre formulários web, certo? Crie uma marcação <code>&lt;form></code>, alguns campos <code>&lt;input type="text"></code>, ou talvez  <code>&lt;input type="password"></code>, no final um botão <code>&lt;input type="submit"></code> , e pronto está feito.
-<p>Você não conhece nem a metade deles. A <abbr>HTML5</abbr> definiu mais de meia dúzia de novos tipos de campos que você pode usar em seus formulários. E quando digo "usar", é usar agora - sem nenhuma gambiarra, hack ou soluções alternativas. Só não se entusiasme tanto; Eu não disse que todos estes recursos são suportados por todos os navegadores da atualidade. Oh, meu Deus, eu também não disse em nenhum. Em navegadores modernos, seus formulários irão arrebentar. Nos mais antiquados eles irão apenas cumprir sua função. Ou seja, os recursos irão se adaptar e degradar para funcionar em todos os navegadores. Até no IE6. 
+<p>Você não conhece nem a metade deles. A <abbr>HTML5</abbr> definiu mais de meia dúzia de novos tipos de campos que você pode usar em seus formulários. E quando digo "usar", é usar agora - sem nenhuma gambiarra, hack ou soluções alternativas. Só não se entusiasme tanto; Eu não disse que todos estes recursos são suportados por todos os navegadores da atualidade. Oh, meu Deus, eu também não disse em nenhum. Em navegadores modernos, seus formulários irão arrebentar. Nos mais antiquados eles irão apenas cumprir sua função. Ou seja, os recursos irão se adaptar e degradar para funcionar em todos os navegadores. Até no IE6.
 
 <p class=a>&#x2767;
 
@@ -240,7 +240,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p>Meu ponto é, você geralmente não pede &#8220;apenas um número.&#8221; É mais provável que você queira um número em determinado intervalo. E você deseja apenas certo tipo de número neste intervalo - talvez todos os números, mas não frações ou decimais, ou algo mais esotérico como números divisíveis por 10. A <abbr>HTML5</abbr> lhe dá cobertura.
 
-<p class="legend top" style="margin-left:8em"><span class=arrow>&#x21b6;</span> Escolha um número, (quase) qualquer número 
+<p class="legend top" style="margin-left:8em"><span class=arrow>&#x21b6;</span> Escolha um número, (quase) qualquer número
 <pre><code>&lt;input <mark>type="number"</mark>
        min="0"
        max="10"
@@ -310,7 +310,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <h2 id=type-date>Selecionadores de data</h2>
 
-<p><abbr>HTML</abbr> não possui selecionadores de data. As bibliotecas JavaScript tiveram que resolver esta negligência (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>), mas é claro estas soluções exigem assumir o uso da biblioteca que o selecionador de data é construído. 
+<p><abbr>HTML</abbr> não possui selecionadores de data. As bibliotecas JavaScript tiveram que resolver esta negligência (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>), mas é claro estas soluções exigem assumir o uso da biblioteca que o selecionador de data é construído.
 
 <p><abbr>HTML5</abbr> finalmente definiu um modo para incluir selecionadores de data nativos. Sem uso de scripts personalizados. Na verdade, é definido seis: data, mês, semana, hora, data + hora, e data + hora - fuso horário.
 
@@ -394,7 +394,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p class=c><img src=i/input-type-search-safari.png alt="Renderização do Safari/Mac do campo type=search" width=191 height=121>
 
-<p>Você pode ver a diferença? O campo possui cantos redondos! Eu sei, Eu sei, você mal consegue conter a empolgação. Mas espere, tem mais! Quando você começa digitar na caixa <code>type="search"</code>, o Safari inseri um pequeno botão "x" no canto direito da caixa. Clicando no "x" o conteúdo do campo é limpo. (O Google Chrome, que divide muitas tecnologias com o Safari debaixo do capô, também possui este comportamento. ) Ambas dessas pequenas modificações são feitas para combinar com a aparência e comportamento das caixas de buscas nativas no iTunes e outras aplicações do Mac OS X. 
+<p>Você pode ver a diferença? O campo possui cantos redondos! Eu sei, Eu sei, você mal consegue conter a empolgação. Mas espere, tem mais! Quando você começa digitar na caixa <code>type="search"</code>, o Safari inseri um pequeno botão "x" no canto direito da caixa. Clicando no "x" o conteúdo do campo é limpo. (O Google Chrome, que divide muitas tecnologias com o Safari debaixo do capô, também possui este comportamento. ) Ambas dessas pequenas modificações são feitas para combinar com a aparência e comportamento das caixas de buscas nativas no iTunes e outras aplicações do Mac OS X.
 
 <p class=c><img src=i/input-type-search-safari-typing.png alt="Digitando no campo type=search no Safari" width=191 height=121>
 
@@ -539,3 +539,15 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 <script src=j/jquery.js></script>
 <script src=j/modernizr.js></script>
 <script src=j/dih5.js></script>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-4114546-27']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>

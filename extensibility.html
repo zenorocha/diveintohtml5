@@ -84,7 +84,7 @@ table.faketable{border-collapse:collapse}
   &lt;p>&lt;a href="http://diveintomark.org/">blog&lt;/a>&lt;/p>
 &lt;/section></code></pre>
 
-<p>O modelo microdata são pares de nome/valor. A propriedade microdata name (como <code>name</code> ou <code>photo</code> ou <code>url</code> neste exemplo) é sempre declarado no elemento <abbr>HTML</abbr>. A propriedade value correspondente é então retirada do elemento <abbr>DOM</abbr>. Para muitos dos elementos <abbr>HTML</abbr>, a propriedade value é simplesmente o conteúdo textual do elemento. Porém, há uma boa quantidade de exceções. 
+<p>O modelo microdata são pares de nome/valor. A propriedade microdata name (como <code>name</code> ou <code>photo</code> ou <code>url</code> neste exemplo) é sempre declarado no elemento <abbr>HTML</abbr>. A propriedade value correspondente é então retirada do elemento <abbr>DOM</abbr>. Para muitos dos elementos <abbr>HTML</abbr>, a propriedade value é simplesmente o conteúdo textual do elemento. Porém, há uma boa quantidade de exceções.
 
 <table id=property-values class=st>
 <caption>De Onde Vêm as Propriedades Value?</caption>
@@ -173,7 +173,7 @@ table.faketable{border-collapse:collapse}
 
     &lt;dt>Cargo&lt;/dt>
     &lt;dd>Developer Advocate na Google, Inc.&lt;/dd>
-  
+
     &lt;dt>Endereço Postal&lt;/dt>
     &lt;dd>
       100 Main Street&lt;br>
@@ -188,7 +188,7 @@ table.faketable{border-collapse:collapse}
     &lt;li>&lt;a href="http://www.reddit.com/user/MarkPilgrim">Reddit.com profile&lt;/a>&lt;/li>
     &lt;li>&lt;a href="http://www.twitter.com/diveintomark">Twitter&lt;/a>&lt;/li>
   &lt;/ul>
-&lt;/section>    
+&lt;/section>
 </code></pre>
 
 <p>A primeira coisa que você sempre precisa fazer é declarar o vocabulário que você está usando, e o escopo das propriedades que você quer adicionar. Você faz isso adicionando os atributos <code>itemtype</code> e <code>itemscope</code> no elemento exterior que contém os outros elementos que contêm os dados reais. Neste caso, ele é um elemento <code>&lt;section></code>.
@@ -375,17 +375,17 @@ Suite 415</mark>
 
 <pre><samp>Item
   <b>Type</b>: http://data-vocabulary.org/person
-  photo = http://diveintohtml5.org/examples/2000_05_mark.jpg 
-  name = Mark Pilgrim 
-  title = Defensor do Desenvolvedor 
-  affiliation = Google, Inc. 
-  address = Item( 1 ) 
-  url = http://diveintomark.org/ 
-  url = http://www.google.com/profiles/pilgrim 
-  url = http://www.reddit.com/user/MarkPilgrim 
-  url = http://www.twitter.com/diveintomark 
+  photo = http://diveintohtml5.org/examples/2000_05_mark.jpg
+  name = Mark Pilgrim
+  title = Defensor do Desenvolvedor
+  affiliation = Google, Inc.
+  address = Item( 1 )
+  url = http://diveintomark.org/
+  url = http://www.google.com/profiles/pilgrim
+  url = http://www.reddit.com/user/MarkPilgrim
+  url = http://www.twitter.com/diveintomark
 
-Item 1 
+Item 1
   <b>Type</b>: http://data-vocabulary.org/address
   street-address = 100 Main Street
   locality = Anytown
@@ -669,7 +669,7 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 
 <pre><code>    &lt;/span></code></pre>
 
-<p>Não existe mais propriedades da &#8220;Organization&#8221;, então fechamos o elemento <code>&lt;p></code> que começou o escopo Organization, e desempilhamos novamente. 
+<p>Não existe mais propriedades da &#8220;Organization&#8221;, então fechamos o elemento <code>&lt;p></code> que começou o escopo Organization, e desempilhamos novamente.
 
 <pre><code>  &lt;/p></code></pre>
 
@@ -701,34 +701,34 @@ R: &#8220;<a href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&
 
 <pre><samp>Item
     <b>Type:</b> http://data-vocabulary.org/Event
-    summary = Google Developer Day 2009 
-    eventType = conference 
-    photo = http://diveintohtml5.org/examples/gdd-2009-prague-pilgrim.jpg 
+    summary = Google Developer Day 2009
+    eventType = conference
+    photo = http://diveintohtml5.org/examples/gdd-2009-prague-pilgrim.jpg
     description = Google Developer Days é uma chance de aprender sobre o desenvolvimento dos produtos Google pelos engenheros que os constrói. Essa conferência de um dia inclui seminários e &#8220;horário de trabalho&#8221; em tecnologias web como Goo..
-    startDate = 2009-11-06T08:30+01:00 
-    endDate = 2009-11-06T20:30+01:00 
-    location = Item(__1) 
-    geo = Item(__3) 
-    url = http://code.google.com/intl/cs/events/developerday/2009/home.html 
+    startDate = 2009-11-06T08:30+01:00
+    endDate = 2009-11-06T20:30+01:00
+    location = Item(__1)
+    geo = Item(__3)
+    url = http://code.google.com/intl/cs/events/developerday/2009/home.html
 
 Item
     Id: __1
     <b>Type:</b> http://data-vocabulary.org/Organization
-    name = Congress Center 
-    address = Item(__2) 
+    name = Congress Center
+    address = Item(__2)
 
 Item
     Id: __2
     <b>Type:</b> http://data-vocabulary.org/Address
-    street-address = 5th května 65 
-    postal-code = 140 21 
-    locality = Praha 4 
-    country-name = Czech Republic 
+    street-address = 5th května 65
+    postal-code = 140 21
+    locality = Praha 4
+    country-name = Czech Republic
 
 Item
     Id: __3
     <b>Type:</b> http://data-vocabulary.org/Geo
-    latitude = 50.047893 
+    latitude = 50.047893
     longitude = 14.4491</samp></pre>
 
 <p>Como você pode ver, toda informação que adicionamos no microdata está lá. Propriedades que são itens separados de microdata recebem <abbr>IDs</abbr> internos (<code>Item(__1)</code>, <code>Item(__2)</code> e assim por diante). Isso não faz parte da especificação microdata. É apenas uma convenção que ferramentas de teste do Google usam para linearizar a saída de exemplo e mostrar-lhe o agrupamento de itens aninhados e suas propriedades.
@@ -764,7 +764,7 @@ Trecho da página aparecerá aqui.</span><br>
   &lt;p>Nova pizza no estilo Nova York logo alí no centro histórico Apex&lt;/p>
   &lt;p>
     A comida é de primeira linha. A atmosfera está alí para a &#8220;pizzaria do bairro.&#8221;
-    O restaurante em si é um pouco apertado; se você está acima do peso, 
+    O restaurante em si é um pouco apertado; se você está acima do peso,
     você pode ter dificuldade de entrar e sair de sua cadeira e caminhar entre outras mesas.
     Costumava dar gratuitamente &#8220;garlic knots&#8221; quando você sentava; agora eles lhe dão pão
     simples e você tem que pagar pelas coisas boas. No geral, é um vencedor.
@@ -792,7 +792,7 @@ Trecho da página aparecerá aqui.</span><br>
 <tr><td><code>rating</code><td>Uma classificação numérica para o item, em uma escala de 1 até 5. Pode ser também um vocabulário <code>http://data-vocabulary.org/Rating</code> aninhado para usar uma escala diferente do padrão.
 <tr class=zebra><td><code>reviewer</code><td>O nome do autor que escreveu a avaliação
 <tr><td><code>dtreviewed</code><td>A data que o item foi avaliado no <a href=http://www.iso.org/iso/date_and_time_format>formato de data ISO</a>
-<tr class=zebra><td><code>summary</code><td>Um pequeno resumo da avaliação 
+<tr class=zebra><td><code>summary</code><td>Um pequeno resumo da avaliação
 <tr><td><code>description</code><td>O corpo da avaliação
 </table>
 
@@ -808,7 +808,7 @@ Trecho da página aparecerá aqui.</span><br>
 <pre><code>  &lt;p <mark>itemprop="summary"</mark>>Nova pizza no estilo Nova York logo alí no centro histórico Apex&lt;/p>
   &lt;p <mark>itemprop="description"</mark>>
    A comida é de primeira linha. A atmosfera está alí para a &#8220;pizzaria do bairro.&#8221;
-    O restaurante em si é um pouco apertado; se você está acima do peso, 
+    O restaurante em si é um pouco apertado; se você está acima do peso,
     você pode ter dificuldade de entrar e sair de sua cadeira e caminhar entre outras mesas.
     Costumava dar gratuitamente &#8220;garlic knots&#8221; quando você sentava; agora eles lhe dão pão
     simples e você tem que pagar pelas coisas boas. No geral, é um vencedor.
@@ -862,28 +862,28 @@ Trecho da página aparecerá aqui.</span><br>
 
 <pre><samp>Item
   <b>Type:</b> http://data-vocabulary.org/Review
-  itemreviewed = Anna&#8217;s Pizzeria 
-  rating = 4 
+  itemreviewed = Anna&#8217;s Pizzeria
+  rating = 4
   summary = Nova pizza no estilo Nova York logo alí no centro histórico Apex
   description = A comida é de primeira linha. A atmosfera está alí ...
-  address = Item(__1) 
-  geo = Item(__2) 
-  reviewer = Mark Pilgrim 
-  dtreviewed = 2010-03-31 
+  address = Item(__1)
+  geo = Item(__2)
+  reviewer = Mark Pilgrim
+  dtreviewed = 2010-03-31
 
 Item
   Id: __1
   <b>Type:</b> http://data-vocabulary.org/Organization
-  street-address = 100 North Salem Street 
-  locality = Apex 
-  region = NC 
-  postal-code = 27502 
-  country-name = USA 
+  street-address = 100 North Salem Street
+  locality = Apex
+  region = NC
+  postal-code = 27502
+  country-name = USA
 
 Item
   Id: __2
   <b>Type:</b> http://data-vocabulary.org/Geo
-  latitude = 35.730796 
+  latitude = 35.730796
   longitude = -78.851426</samp></pre>
 <p>E aqui (módulo dos caprichos do Google, a fase da lua, e assim por diante e assim por diante) está como minha avaliação pode aparecer em uma listagem de resultado de busca:
 
@@ -940,3 +940,15 @@ Trecho da página aparecerá aqui..</span><br>
 <form action=http://www.google.com/cse><div><input type=hidden name=cx value=017884302975346027366:bgclqh8nvse><input type=hidden name=ie value=UTF-8><input type=search name=q size=25 placeholder="powered by Google&trade;">&nbsp;<input type=submit name=sa value=Search></div></form>
 <script src=j/jquery.js></script>
 <script src=j/dih5.js></script>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-4114546-27']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>

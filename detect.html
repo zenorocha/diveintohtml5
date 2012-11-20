@@ -422,7 +422,7 @@ R: O suporte a geolocalização foi adicionado aos navegadores agora há pouco, 
 <li><a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#local-date-and-time-state><code>&lt;input type="datetime-local"></code></a> para datas e horas locais
 </ol>
 
-<p>Verificando suporte aos tipos de entrada da <abbr>HTML5</abbr> utiliza a <a href=#techniques>técnica de detecção #4</a>. Primeiro, você cria um elemento <code>&lt;input></code> em memória. O tipo padrão para todos os elementos <code>&lt;input></code> é <code>"text"</code>. 
+<p>Verificando suporte aos tipos de entrada da <abbr>HTML5</abbr> utiliza a <a href=#techniques>técnica de detecção #4</a>. Primeiro, você cria um elemento <code>&lt;input></code> em memória. O tipo padrão para todos os elementos <code>&lt;input></code> é <code>"text"</code>.
 
 <pre><code>  var i = document.createElement("input");</code></pre>
 
@@ -560,7 +560,7 @@ R: O suporte a geolocalização foi adicionado aos navegadores agora há pouco, 
 <p>Bibliotecas JavaScript:
 
 <ul>
-<li><a href=http://www.modernizr.com/>Modernizr</a>, uma biblioteca de detecção para <abbr>HTML5</abbr> 
+<li><a href=http://www.modernizr.com/>Modernizr</a>, uma biblioteca de detecção para <abbr>HTML5</abbr>
 <li><a href=http://code.google.com/p/geo-location-javascript/>geo.js</a>, uma <abbr>API</abbr> para geolocalização
 <li><a href=https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills><abbr>HTML5</abbr> Cross-browser Polyfills</a>
 </ul>
@@ -682,4 +682,16 @@ $(function() {
   $("#live-microdata-api").html(supports(!!document.getItems, "a API de micro dado do HTML5"));
   $("#live-history-api").html(supports(!!Modernizr.history, "a API de histórico do HTML5"));
 });
+</script>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-4114546-27']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 </script>

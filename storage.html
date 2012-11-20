@@ -16,7 +16,7 @@ body{counter-reset:h1 7}
 <h2 id=divingin>Mergulhando</h2>
 
 <p class=f><img src=i/aoc-a.png alt=A width=110 height=106>Armazenamento local persistente é uma das áreas onde aplicações nativas de cliente têm mantido uma vantagem sobre aplicações web.
-Para aplicações nativas, o sistema operacional tipicamente provê uma camada de abstração para armazenar e recuperar 
+Para aplicações nativas, o sistema operacional tipicamente provê uma camada de abstração para armazenar e recuperar
 dados específicos do aplicativo como preferências ou estado de tempo de execução.
 Estes valores podem ser armazenados no registro, arquivos INI,
 arquivos XML ou algum outro lugar de acordo com a convenção plataforma.
@@ -27,7 +27,7 @@ você pode inserir o seu próprio banco de dados, inventar o seu próprio format
 <p>Historicamente, aplicações web não tiveram nenhum desses luxos. Cookies foram inventados no início da história da web e, de fato, eles podem ser usados para armazenamento local persistente de pequenas quantidades de dados. Mas eles têm três desvantagens potencialmente [potentially dealbreaking downsides]:
 
 <ul>
-<li>Cookies são incluídos em toda requisição <abbr>HTTP</abbr>, atrasando assim sua aplicação web por desnecessariamente transmitir os mesmos dados sempre e sempre 
+<li>Cookies são incluídos em toda requisição <abbr>HTTP</abbr>, atrasando assim sua aplicação web por desnecessariamente transmitir os mesmos dados sempre e sempre
 <li>Cookies são incluídos em toda requisição <abbr>HTTP</abbr>, enviando assim dados não criptografados através da internet (a menos que sua aplicação web inteira seja servida sobre <abbr> SSL </ abbr>)
 <li>Cookies são limitados a certa de 4KB de dados &mdash; suficiente para atrasar sua aplicação (ver acima), mas não o suficiente para ser muito útil
 </ul>
@@ -190,7 +190,7 @@ localStorage<mark>["bar"]</mark> = foo;</code></pre>
 
 <p>Vamos ver o Armazenamento da <abbr>HTML5</abbr> em ação. Recorde <a href=canvas.html#halma>o jogo Halma que ós costruímos no capítudo do canvas</a>. Existe um pequeno problema com o jogo: se você fechar o navegador no meio do jogo, você perderá seu progresso. Porém, com o armazenamento da <abbr>HTML5</abbr>, podemos salvar o progresso localmente, dentro do próprio navegador. Aqui está <a href=examples/localstorage-halma.html>uma demostração no ar</a>. Faça alguns movimentos, depois feche a aba do navegador, em seguida reabra ela. Se o seu navegador suporta Armazenamendo da <abbr>HTML5</abbr>, a página de demostração deve magicamente recordar a sua exata posição dentro do jogo, incluindo o número de movimentos que você fez, a posição de cada uma das peças do tabuleiro, e até mesmo se uma determinada peça está selecionada.
 
-<p>Como isto funciona? Cada momento que uma mudança acontece dentro do jogo, chamamos esta função: 
+<p>Como isto funciona? Cada momento que uma mudança acontece dentro do jogo, chamamos esta função:
 
 <pre><code>function saveGameState() {
     if (!supportsLocalStorage()) { return false; }
@@ -231,7 +231,7 @@ localStorage<mark>["bar"]</mark> = foo;</code></pre>
 
 <pre><code>localStorage["halma.game.in.progress"] = <mark>gGameInProgress</mark>;</code></pre>
 
-<p>Pórem, na função <code>resumeGame()</code>, precisamos tratar o valor que pegamos da área de armazenamento local como uma string e construir manualmente o valor booleano apropriado:  
+<p>Pórem, na função <code>resumeGame()</code>, precisamos tratar o valor que pegamos da área de armazenamento local como uma string e construir manualmente o valor booleano apropriado:
 
 <pre><code>gGameInProgress = (localStorage["halma.game.in.progress"] <mark>== "true"</mark>);</code></pre>
 
@@ -347,3 +347,15 @@ localStorage<mark>["bar"]</mark> = foo;</code></pre>
 <script src=j/jquery.js></script>
 <script src=j/modernizr.js></script>
 <script src=j/dih5.js></script>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-4114546-27']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
