@@ -1,14 +1,14 @@
 # Dive into HTML5
 
-Projeto que visa a tradução do projeto Dive into HTML5. [Saiba mais](http://blog.zenorocha.com/post/11610181684/era-uma-vez-uma-referencia-chamada-dive-into-html5).
+Projeto que visou a tradução do livro Dive into HTML5. [Saiba mais](http://blog.zenorocha.com/post/11610181684/era-uma-vez-uma-referencia-chamada-dive-into-html5).
 
-## Como participar da projeto?
+## Como participar do projeto?
 
-### Seja um tradutor
+### ~~Seja um tradutor~~
 
-Primeiro você precisa saber quem está traduzindo o quê. Para isso [confira essa página](https://github.com/zenorocha/diveintohtml5/wiki/Tradu%C3%A7%C3%A3o).
+~~Primeiro você precisa saber quem está traduzindo o quê. Para isso [confira essa página](https://github.com/zenorocha/diveintohtml5/wiki/Tradu%C3%A7%C3%A3o).~~
 
-Depois é só escolher uma página que ainda não está sendo traduzido e voilá!
+~~Depois é só escolher uma página que ainda não está sendo traduzido e voilá!~~
 
 ### Seja um revisor
 
@@ -18,4 +18,4 @@ Depois é só escolher algo que ainda não está sendo revisado e voilá!
 
 ### Reporte um erro
 
-Caso encontre algum erro de tradução, por favor nos avise através das [Issues](https://github.com/zenorocha/diveintohtml5/issues).
+Caso encontre algum erro de tradução, por favor nos avise através das [issues](https://github.com/zenorocha/diveintohtml5/issues).
