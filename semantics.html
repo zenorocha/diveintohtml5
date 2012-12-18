@@ -161,13 +161,13 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 <h4>Pergunte ao Professor Markup</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Eu nunca uso caracteres diferentes. Eu ainda preciso declarar meu character encoding?<br>
-<p>A: Sim! Você deve <em>sempre</em> especificar um character encoding em toda página <abbr>HTML</abbr> que escreve. Não especificar um encoding <a href=http://openmya.hacker.jp/hasegawa/security/utf7cs.html>pode levar a vulnerabilidades de segurança</a>.
+<p><span>&#x261E;</span>P: Eu nunca uso caracteres diferentes. Eu ainda preciso declarar meu character encoding?<br>
+<p>R: Sim! Você deve <em>sempre</em> especificar um character encoding em toda página <abbr>HTML</abbr> que escreve. Não especificar um encoding <a href=http://openmya.hacker.jp/hasegawa/security/utf7cs.html>pode levar a vulnerabilidades de segurança</a>.
 </blockquote>
 </div>
 </div>
 
-<p>Resumindo: character encoding é complicado, e ele não foi feito de uma maneira mais fácil devido a décadas de software mal escrito feito por copia-e-cola. Você deve <strong>sempre</strong> especificar um character encoding em <strong>todos</strong> os documentos <abbr>HTML</abbr>, ou <a href=http://openmya.hacker.jp/hasegawa/security/utf7cs.html>coisas ruins vão acontecer</a>. Você pode fazer isso com o HTTP <code>Content-Type</code> header, com a declaração <code>&lt;meta http-equiv></code>, ou com a declaração mais curta <code>&lt;meta charset></code>, mas por favor faça. A web agradeçe.
+<p>Resumindo: character encoding é complicado, e ele não foi feito de uma maneira mais fácil devido a décadas de software mal escrito feito por copia-e-cola. Você deve <strong>sempre</strong> especificar um character encoding em <strong>todos</strong> os documentos <abbr>HTML</abbr>, ou <a href=http://openmya.hacker.jp/hasegawa/security/utf7cs.html>coisas ruins vão acontecer</a>. Você pode fazer isso com o HTTP <code>Content-Type</code> header, com a declaração <code>&lt;meta http-equiv></code>, ou com a declaração mais curta <code>&lt;meta charset></code>, mas por favor faça. A web agradece.
 
 <p class=a>&#x2767;
 
@@ -198,8 +198,8 @@ dl.col dt,dl.col dd{padding-bottom:1.75em}
 <h4>Pergunte ao Professor Markup</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Posso criar meu próprio link relations?<br>
-<p>A: Parece haver um suprimento infinito de idéias para novos link relations. Em uma tentativa para evitar que as pessoas <a href=http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW4>façam besteira</a>, o WHATWG <a href=http://wiki.whatwg.org/wiki/RelExtensions>mantém um registro das propostas para valores <code>rel</code></a> e <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#other-link-types>define o processo para aceitá-las</a>.
+<p><span>&#x261E;</span>P: Posso criar meu próprio link relations?<br>
+<p>R: Parece haver um suprimento infinito de idéias para novos link relations. Em uma tentativa para evitar que as pessoas <a href=http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html#//apple_ref/doc/uid/TP40002051-CH3-SW4>façam besteira</a>, o WHATWG <a href=http://wiki.whatwg.org/wiki/RelExtensions>mantém um registro das propostas para valores <code>rel</code></a> e <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/links.html#other-link-types>define o processo para aceitá-las</a>.
 </blockquote>
 </div>
 </div>
@@ -722,8 +722,8 @@ p (irmão de h1)
 <h4>Pergunte ao Professor Markup</h4>
 <div class=inner>
 <blockquote class=note>
-<p><span>&#x261E;</span>Q: Há <a href=http://www.webaim.org/techniques/skipnav/>skip links</a> compatíveis com o elemento <code>&lt;nav></code>? Eu ainda preciso de skip links no <abbr>HTML5</abbr>?<br>
-<p>A: Skip links permitem os leitores pularem entre as seções de navegação. Eles são úteis para usuários com deficiência que usam software de terceiros para ler uma página da web e navegar nela sem mouse. (<a href=http://www.webaim.org/techniques/skipnav/>Aprenda como e porque fornecer os skip links</a>.)
+<p><span>&#x261E;</span>P: Há <a href=http://www.webaim.org/techniques/skipnav/>skip links</a> compatíveis com o elemento <code>&lt;nav></code>? Eu ainda preciso de skip links no <abbr>HTML5</abbr>?<br>
+<p>R: Skip links permitem os leitores pularem entre as seções de navegação. Eles são úteis para usuários com deficiência que usam software de terceiros para ler uma página da web e navegar nela sem mouse. (<a href=http://www.webaim.org/techniques/skipnav/>Aprenda como e porque fornecer os skip links</a>.)
 <p>Uma vez que os leitores de tela forem atualizados para reconhecer o elemento <code>&lt;nav></code>, os skip links ficarão obsoletos, desde que o software de leitor de tela esteja apto a automaticamente saltar sobre uma seção de navegação implementada com o elemento <code>&lt;nav></code>. Contudo, isso será um pouco antes de todos os usuários com deficiência da web atualizarem para o software de leitor de tela com <abbr>HTML5</abbr>, então você deve continuar fornecendo seus próprios skip links para saltarem sobre as seções <code>&lt;nav></code>.
 </blockquote>
 </div>
@@ -880,7 +880,7 @@ p (irmão de h1)
 
 <p class=c>Copyright MMIX&ndash;MMXI <a href=about.html>Mark Pilgrim</a>
 
-<form action=http://www.google.com/cse><div><input type=hidden name=cx value=017884302975346027366:bgclqh8nvse><input type=hidden name=ie value=UTF-8><input type=search name=q size=25 placeholder="powered by Google&trade;">&nbsp;<input type=submit name=sa value=Pesquisar></div></form>
+<form action=http://www.google.com/cse><div><input type=hidden name=cx value=014437924039265546826:2nmoshc8y3y><input type=hidden name=ie value=UTF-8><input type=search name=q size=25 placeholder="powered by Google&trade;">&nbsp;<input type=submit name=sa value=Pesquisar></div></form>
 <script src=j/jquery.js></script>
 <script src=j/dih5.js></script>
 
