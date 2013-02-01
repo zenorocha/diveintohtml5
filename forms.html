@@ -362,7 +362,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 <p><img src=i/input-type-time.png alt="Opera selecionador type=time" width=98 height=22>
 </blockquote>
 
-<p>É provável que os outros navegadores, eventualmente, venham a suportar os selecionadores de data. Mas como <a href=#type-email><code>type="email"</code></a> e os outros tipos campos, eles serão renderizado como uma caixa de texto, nos navegadores que não reconhecerem o <code>type="date"</code> e as outras variações. Se você preferir, pode simplesmente usar <code>&lt;input type="date"></code> e companhia, e fazer usuários do Opera felizes, e esperar o suporte dos outros navegadores. Mais realístico, você pode usar <code>&lt;input type="date"></code>, <a href=detect.html#input-types>detectar se o navegador possui suporte nativo para seletores de data</a>, e utilizar um fallback para um script utilizando a biblioteca a sua escolha (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>, ou outra solução).
+<p>É provável que os outros navegadores, eventualmente, venham a suportar os selecionadores de data. Mas como <a href=#type-email><code>type="email"</code></a> e os outros tipos campos, eles serão renderizados como uma caixa de texto, nos navegadores que não reconhecerem o <code>type="date"</code> e as outras variações. Se você preferir, pode simplesmente usar <code>&lt;input type="date"></code> e companhia, e fazer usuários do Opera felizes, e esperar o suporte dos outros navegadores. Mais realístico, você pode usar <code>&lt;input type="date"></code>, <a href=detect.html#input-types>detectar se o navegador possui suporte nativo para seletores de data</a>, e utilizar um fallback para um script utilizando a biblioteca a sua escolha (<a href=http://docs.dojocampus.org/dijit/form/DateTextBox>Dojo</a>, <a href=http://docs.jquery.com/UI/Datepicker>jQuery UI</a>, <a href=http://developer.yahoo.com/yui/calendar/>YUI</a>, <a href=http://closure-library.googlecode.com/svn/docs/class_goog_ui_DatePicker.html>Closure Library</a>, ou outra solução).
 
 <p class="legend top" style="margin-left:6em"><span class=arrow>&#x21b6;</span> Selecionador de data com fallback
 <pre><code>&lt;form>
@@ -418,7 +418,7 @@ R: O atributo <code>placeholder</code> só pode conter texto, nenhuma marcação
 
 <p class=a>&#x2767;
 
-<h2 id=type-color>Selecionadores de cor</h2>
+<h2 id="type-color">Selecionadores de cor</h2>
 
 <p><abbr>HTML5</abbr> também possui  <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/number-state.html#color-state><code>&lt;input type="color"></code></a>, que permite você selecionar uma cor e retornar sua representação hexadecimal. <del>Nenhum navegador suporta por enquanto, o que é uma vergonha, porque eu sempre adorei <a href=http://earthlingsoft.net/ssp/blog/2006/04/colour_me_picked>o selecionador de cor do Mac OS</a>. Talvez algum dia.</del> Boas notícias, pessoal! <a href=http://dev.opera.com/articles/view/new-form-features-in-html5/#input-color>Opera 11 agora suporta <code>type=color</code></a>. No Mac e no Windows, o campo é integrado com o selecionador de cor nativo da plataforma. No Linux, desce um seletor de cores básico. Em todas as outras plataformas, o campo possui um limite de seis caracteres hexademical de cor RGB, apropriado para utilizar onde aceitar uma cor CSS.
 

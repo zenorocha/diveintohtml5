@@ -30,9 +30,9 @@
   }
 &lt;/script></code></pre>
 
-  <p>Note: <code>window.onload</code> fires <em>after</em> all your images have loaded. If your page has a lot of images, the above script could potentially re-focus the "q" field after the user has started interacting with another part of your page. (This is why power users hate autofocus scripts.) If your site already uses a JavaScript library like jQuery, you can mitigate this delay by using <a href="http://docs.jquery.com/Tutorials:Introducing_$(document).ready()"><code>$(document).ready()</code></a> instead of <code>window.onload</code>.
+    <p>Nota: <code>window.onload</code> dispara <em>depois</em> de todas as imagens terem sido carregadas. Se a sua página possui muitas imagens, o script acima poderia potencialmente mudar o foco do campo "q" depois do usuário ter iniciado a interagir com outra parte da sua página (é por isso que usuários experientes odeiam scripts de autofoco). Se o seu site já utiliza uma biblioteca JavaScript como jQuery, você pode suaviar esse atraso usando <a href="http://docs.jquery.com/Tutorials:Introducing_$(document).ready()"><code>$(document).ready()</code></a> ao invés de <code>window.onload</code>.
 
-  <p><a href=../forms.html#autofocus>&larr; back to Dive Into HTML 5</a>
+  <p><a href=../forms.html#autofocus>&larr; voltar para Dive Into HTML 5</a>
 
   <script>
     window.onload = function() {
