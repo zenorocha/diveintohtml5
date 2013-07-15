@@ -99,7 +99,7 @@ body{counter-reset:h1 4}
 R: Ainda não. Fornecedores têm experimentado suas próprias <abbr>API</abbr>s para canvas tridimensionais, mas nenhuma se tornou padrão ainda. De acordo com a especificação da <abbr>HTML5</abbr>, &#8220;Uma futura versão dessa especificação irá provavelmente definir um contexto 3d.&#8221;
 </blockquote>
 
-<p>Então você tem elemento <code>&lt;canvas></code>, e tem seu contexto desenho. O contexto de desenho é onde todos métodos e propriedades do desenho são definidos. Há um bando de propriedades e métodos dedicados ao desenho de retângulos:
+<p>Então você tem o elemento <code>&lt;canvas></code> e seu contexto de desenho. O contexto de desenho é onde todos os métodos e propriedades do desenho são definidos. Há um bando de propriedades e métodos dedicados ao desenho de retângulos:
 
 <ul>
 <li>A propriedade <code>fillStyle</code> pode ser uma cor, padrão ou degradê do <abbr>CSS</abbr>. (Mais sobre degradês em breve.) O padrão para o <code>fillStyle</code> é preto sólido, mas você pode definir o que quiser. Cada contexto de desenho guarda suas próprias propriedades enquanto a página estiver aberta, a não ser que você faça alguma coisa para resetar isso.
@@ -388,7 +388,7 @@ var context = d_canvas.getContext("2d");</code></pre>
 
 <p>Por conta dos valores <code>y</code> (o 2<sup>º</sup> e 4<sup>º</sup> parâmetros) são ambos 0, esse degradê irá sombrear uniformemente da esquerda para direita.
 
-<p>Uma vez tendo o objeto degradê, nós podemos definir as cores do degradê. O degradê possui duas ou mais <dfn>paradas de cor</dfn>. Paradas de cor podem estar em qualquer lugar através do degradê. Para adicionar uma parada de cor, você precisa especificar sua posição através do degradê. Posições no degradê pode estar em qualquer lugar entre 0 e 1.
+<p>Uma vez tendo o objeto degradê, nós podemos definir as cores do degradê. O degradê possui duas ou mais <dfn>paradas de cor</dfn>. Paradas de cor podem estar em qualquer lugar através do degradê. Para adicionar uma parada de cor, você precisa especificar sua posição através do degradê. As posições no degradê podem estar em qualquer lugar entre 0 e 1.
 
 <p>Vamos definir um degradê que irá sombrear do preto ao branco.
 
@@ -566,7 +566,7 @@ context.fillRect(0, 0, 300, 225);</code></pre>
 
 <h2 id=halma>Um exemplo completo ao vivo</h2>
 
-<p>Halma é um jogo de tabuleiro com séculos de idade. Muitas variações existem. Nesse exemplo, criei uma versão solitária de Halma com 9 peças em um tabuleiro 9 &times; 9. No início do jogo, as peças formam quadrado 3 &times; 3 no canto interior esquerdo do tabuleiro. O objetivo do jogo é mover todas as peças até que formem um quadrado 3 &times; 3 no canto superior direito do tabuleiro, com o menor número de movimentos.
+<p>Halma é um jogo de tabuleiro com séculos de idade. Muitas variações existem. Nesse exemplo, criei uma versão solitária de Halma com 9 peças em um tabuleiro 9 &times; 9. No início do jogo, as peças formam um quadrado 3 &times; 3 no canto interior esquerdo do tabuleiro. O objetivo do jogo é mover todas as peças até que formem um quadrado 3 &times; 3 no canto superior direito do tabuleiro, com o menor número de movimentos.
 
 <p>Existem dois tipos de movimentos legais no Halma:
 
