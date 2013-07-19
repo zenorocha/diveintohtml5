@@ -18,7 +18,7 @@ body{counter-reset:h1 5}
 <p class=a>&#x2767;
 <h2 id=divingin>Mergulhando</h2>
 
-<p class=f><img src=i/aoc-q.png alt=Q width=105 height=105>ualquer um que tenha visitado o Youtube.com nos últimos quatro anos sabe que você pode incorporar um vídeo em uma página web. Mas antes do <abbr>HTML5</abbr>, não havia nenhuma maneira beaseada nos padrões para fazer isso. Virtualmente todos os vídeos já assistidos &#8220na web&#8221; eram afunilados por um plugin de terceiros &mdash; talvez QuickTime, talvez RealPlayer, talvez Flash. (YouTube usa Flash.) Esses plugins se integram com seu browser o suficiente que você nem é avisado quando está utilizando eles. Isso é, até o momento em que você tentar assistir um vídeo em uma plataforma que não suporta esse plugin.
+<p class=f><img src=i/aoc-q.png alt=Q width=105 height=105>ualquer um que tenha visitado o Youtube.com nos últimos quatro anos sabe que você pode incorporar um vídeo em uma página web. Mas antes do <abbr>HTML5</abbr>, não havia nenhuma maneira baseada nos padrões para fazer isso. Virtualmente todos os vídeos já assistidos &#8220na web&#8221; eram afunilados por um plugin de terceiros &mdash; talvez QuickTime, talvez RealPlayer, talvez Flash. (YouTube usa Flash.) Esses plugins se integram com seu browser o suficiente que você nem é avisado quando está utilizando eles. Isso é, até o momento em que você tentar assistir um vídeo em uma plataforma que não suporta esse plugin.
 
 <p><abbr>HTML5</abbr> define uma maneira padrão de incorporar vídeo em uma página web, usando o elemento <code>&lt;video></code>. O suporte para o elemento <code>&lt;video></code> ainda está evoluindo, o que é um modo educado de dizer que ainda não está funcionando. Pelo menos, ele não funciona em todos os lugares. Mas não se desespere! Existem alternativas, fallbacks e uma abundância de opções.
 
@@ -142,7 +142,7 @@ Most non-PC devices that play H.264 video (including iPhones and standalone Blu-
 
 <h2 id=what-works>O que funciona na Web</h2>
 
-<p>Se os seus olhos não estão vidrados ainda, você está melhor que a maioria. Como você pode dizer, vídeo (e áudio) é um assunto complicado e esta foi a versão abreviada! Eu tenho certeza que você está se perguntando como tudo isso se relaciona com <abbr>HTML5</abbr>. Bem, <abbr>HTML5</abbr> inclue um elemento <code>&lt;video></code> para embutir vídeos em uma página web. Não há restrição no codec do vídeo, codec do áudio. ou no formato de container que você pode usar para seu vídeo. Um elemento <code>&lt;video></code> pode ter um link para múltiplos arquivos de vídeos, e o navegador escolhe qual o primeiro vídeo que irá reproduzir. <strong>Cabe a você saber qual navegador suporta qual containers e codecs.</strong>
+<p>Se os seus olhos não estão vidrados ainda, você está melhor que a maioria. Como você pode dizer, vídeo (e áudio) é um assunto complicado e esta foi a versão abreviada! Eu tenho certeza que você está se perguntando como tudo isso se relaciona com <abbr>HTML5</abbr>. Bem, <abbr>HTML5</abbr> inclue um elemento <code>&lt;video></code> para embutir vídeos em uma página web. Não há restrição no codec do vídeo, codec do áudio ou no formato de container que você pode usar para seu vídeo. Um elemento <code>&lt;video></code> pode ter um link para múltiplos arquivos de vídeos, e o navegador escolhe qual o primeiro vídeo que irá reproduzir. <strong>Cabe a você saber qual navegador suporta qual containers e codecs.</strong>
 
 <p>Como está escrito, está é a paisagem do vídeo <abbr>HTML5</abbr>:
 
@@ -563,12 +563,12 @@ R: Sim, sim mas devido as diferenças fundamentais em como o codificador funcion
 
 <p>Eu tenho certeza que esse era pra ser um livro sobre <abbr>HTML</abbr>. Então cadê a marcação?
 
-<p><abbr>HTML5</abbr> lhe dá duas formas de incluir vídeos na sua página web. Ambas envolvem o elemento <code>&lt;video></code>. Se você tem apenas apenas um arquivo de vídeo, você pode simplesmente criar link para ele com o atributo <code>src</code>. Isso é muito similar a incluir um vídeo com uma tag <code>&lt;img src="..."></code>.
+<p><abbr>HTML5</abbr> lhe dá duas formas de incluir vídeos na sua página web. Ambas envolvem o elemento <code>&lt;video></code>. Se você tem apenas um arquivo de vídeo, você pode simplesmente criar link para ele com o atributo <code>src</code>. Isso é muito similar a incluir um vídeo com uma tag <code>&lt;img src="..."></code>.
 
 <p class="legend top" style="margin-left:2em">Um arquivo de vídeo <span class=arrow>&#x21b7;</span><br></p>
 <pre><code>&lt;video <mark>src="pr6.webm"</mark>>&lt;/video></code></pre>
 
-<p>Tecnicamente, isso é tudo que você precisa. Mas assim como uma tag <code>&lt;img></code>, você sempre pode incluir atributos <code>largura</code> and <code>altura</code> nas suas tags de <code>&lt;video></code>. Os atributos <code>largura</code> e <code>altura</code> podem ser os mesmos que os atributos de largura e altura máxima que você especificou durante o processo de codificação. Não se preocupe se uma dimensão do vídeo é um pouco menor que isso. Seu navegador irá centralizar o vídeo dentro da caixa definida pela tag <code>&lt;video></code>. Nunca será esticado ou achatado fora da proporção.
+<p>Tecnicamente, isso é tudo que você precisa. Mas assim como uma tag <code>&lt;img></code>, você sempre pode incluir atributos <code>width</code> e <code>height</code> nas suas tags de <code>&lt;video></code>. Os atributos <code>width</code> e <code>height</code> podem ser os mesmos que os atributos de largura e altura máxima que você especificou durante o processo de codificação. Não se preocupe se uma dimensão do vídeo é um pouco menor que isso. Seu navegador irá centralizar o vídeo dentro da caixa definida pela tag <code>&lt;video></code>. Nunca será esticado ou achatado fora da proporção.
 
 <pre><code>&lt;video src="pr6.webm" <mark>width="320" height="240"</mark>>&lt;/video></code></pre>
 
@@ -588,7 +588,7 @@ R: Sim, sim mas devido as diferenças fundamentais em como o codificador funcion
 
 <pre><code>&lt;video src="pr6.webm" width="320" height="240" <mark>preload="none"</mark>>&lt;/video></code></pre>
 
-<p>O atributo <code>autoplay</code> faz exatamente o que parece: diz ao navegador que você gostaria de começar o download do vídeo assim que a página carregar, <em>e</em> que você gostaria de começar a tocar o vídeo assim que possível. Algumas pessoas amam isso; outras odeiam. Mas deixe-me explicar por que é importante ter um atributo como esse na <abbr>HTML5</abbr>. Algumas pessoas irão querer que seus vídeos que toquem automaticamente, mesmo que isso irrite seus visitantes. Se a <abbr>HTML5</abbr> <em>não</em> definisse como padrão um modo de tocar automaticamente um vídeo, as pessoas iriam recorrer ao JavaScript com hacks para fazer isso de qualquer forma. (Por exemplo, chamando o método video&#8217;s <code>play()</code> durante o evento da janela de <code>load</code>.) Isso poderia ser muito difícil para os usuários contra-atacarem. Por outro lado, basta adicionar uma extensão no seu navegador (ou escrever uma, se necessário) para dizer &#8220;ignore o atributo <code>autoplay</code>, não quero nunca ver tocar vídeos automaticamente.&#8221;
+<p>O atributo <code>autoplay</code> faz exatamente o que parece: diz ao navegador que você gostaria de começar o download do vídeo assim que a página carregar, <em>e</em> que você gostaria de começar a tocar o vídeo assim que possível. Algumas pessoas amam isso; outras odeiam. Mas deixe-me explicar por que é importante ter um atributo como esse na <abbr>HTML5</abbr>. Algumas pessoas irão querer que seus vídeos toquem automaticamente, mesmo que isso irrite seus visitantes. Se a <abbr>HTML5</abbr> <em>não</em> definisse como padrão um modo de tocar automaticamente um vídeo, as pessoas iriam recorrer ao JavaScript com hacks para fazer isso de qualquer forma. (Por exemplo, chamando o método video&#8217;s <code>play()</code> durante o evento da janela de <code>load</code>.) Isso poderia ser muito difícil para os usuários contra-atacarem. Por outro lado, basta adicionar uma extensão no seu navegador (ou escrever uma, se necessário) para dizer &#8220;ignore o atributo <code>autoplay</code>, não quero nunca ver tocar vídeos automaticamente.&#8221;
 
 <p>Aqui está um exemplo de vídeo que irá começar o download e tocar assim que for possível, depois de carregar a página:
 
@@ -611,7 +611,7 @@ for (var i = arVideos.length - 1; i >= 0; i--) {
 
 <p>Mas espere um segundo&hellip; Você tem seguido por todo esse capítulo, você não tem apenas um arquivo de vídeo; você tem três. Um é um arquivo <code>.ogv</code> criado com <a href=#firefogg>Firefogg</a> ou <a href=#ffmpeg2theora>ffmpeg2theora</a>. O segundo é um arquivo <code>.mp4</code> criado com <a href=#handbrake-gui>HandBrake</a>. O terceiro é um arquivo <code>.webm</code> que você criou com <a href=#webm-cli>ffmpeg</a>. <abbr>HTML5</abbr> provê um modo de criar links para três deles: o elemento <code>&lt;source></code>. Cada elemento <code>&lt;video></code> pode conter mais que um elemento <code>&lt;source></code>. Seu navegador irá atrás de uma lista de vídeos, em ordem, e tocar apenas o primeiro que estiver habilitado para isso.
 
-<p>Isso levanta outra questão: como o navegador sabe qualquer vídeo tocar? Bom, no pior cenário, ele carrega cada um dos vídeos e tenta tocar eles. Porém, isso é uma tremenda perda de banda. Você irá economizar muito tráfico de rede se disser primeiro ao navegador sobre cada vídeo. Você diz isso com o atributo <code>type</code> no elemento <code>&lt;source></code>.
+<p>Isso levanta outra questão: como o navegador sabe qual vídeo tocar? Bom, no pior cenário, ele carrega cada um dos vídeos e tenta tocar eles. Porém, isso é uma tremenda perda de banda. Você irá economizar muito tráfico de rede se disser primeiro ao navegador sobre cada vídeo. Você diz isso com o atributo <code>type</code> no elemento <code>&lt;source></code>.
 
 <p>Aqui está a coisa toda:
 
@@ -622,9 +622,9 @@ for (var i = arVideos.length - 1; i >= 0; i--) {
   &lt;<mark>source src="pr6.ogv"</mark>  type='video/ogg; codecs="theora, vorbis"'>
 &lt;/video></code></pre>
 
-<p>Vamos quebrar isso. O elemento <code>&lt;video></code> especifica a largura e altura do vídeo, mas isso não linka para um arquivo de vídeo.  Dentro do elemento <code>&lt;video></code> existem três elementos <code>&lt;source></code>. Cada elemento <code>&lt;source></code> linka para um único arquivo de vídeo (com o atributo <code>src</code>), e ainda dá informações sobre o formato de vídeo (no atributo <code>type</code>).
+<p>Vamos quebrar isso. O elemento <code>&lt;video></code> especifica a largura e altura do vídeo, mas isso não linka para um arquivo de vídeo. Dentro do elemento <code>&lt;video></code> existem três elementos <code>&lt;source></code>. Cada elemento <code>&lt;source></code> linka para um único arquivo de vídeo (com o atributo <code>src</code>), e ainda dá informações sobre o formato de vídeo (no atributo <code>type</code>).
 
-<p>O atributo <code>type</code> parece complicado &mdash; droga, e <em>é</em> mesmo complicado. É uma combinação de três pedaços de informações: o <a href=#video-containers>formato de container</a>, o <a href=#video-codecs>codec de vídeo</a>, e o <a href=#audio-codecs>codec de áudio</a>. Vamos começar por baixo. Para o arquivo de vídeo <code>.ogv</code>, o formato de container format é Ogg, representado por <code>video/ogg</code>. (Tecnicamente falando, isso é o <abbr>MIME</abbr> type para arquivos de vídeo Ogg.) O codec de vídeo codec é Theora, e o codec de áudio codec é Vorbis. Isso é simples o suficiente, exceto pelo formato do valor do atributo parecer meio estranho. O valor por si sí precisa incluir marcações por aspas, que significa que você precisa usar um tipo diferente de marcação por aspas para todo valor.
+<p>O atributo <code>type</code> parece complicado &mdash; droga, e <em>é</em> mesmo complicado. É uma combinação de três pedaços de informações: o <a href=#video-containers>formato de container</a>, o <a href=#video-codecs>codec de vídeo</a>, e o <a href=#audio-codecs>codec de áudio</a>. Vamos começar por baixo. Para o arquivo de vídeo <code>.ogv</code>, o formato de container format é Ogg, representado por <code>video/ogg</code>. (Tecnicamente falando, isso é o <abbr>MIME</abbr> type para arquivos de vídeo Ogg.) O codec de vídeo é Theora, e o codec de áudio é Vorbis. Isso é simples o suficiente, exceto pelo formato do valor do atributo parecer meio estranho. O valor por si precisa incluir marcações por aspas, que significa que você precisa usar um tipo diferente de marcação por aspas para todo valor.
 
 <pre><code>  &lt;source src="pr6.ogv" <mark>type='video/ogg; codecs="theora, vorbis"'</mark>></code></pre>
 
@@ -632,11 +632,11 @@ for (var i = arVideos.length - 1; i >= 0; i--) {
 
 <pre><code>  &lt;source src="pr6.webm" <mark>type='video/webm; codecs="vp8, vorbis"'</mark>></code></pre>
 
-<p>O vídeo H.264 é ainda mais complicado. Lembra quando eu disse que ambos <a href=#h264>vídeo H.264</a> e <a href=#aac>áudio AAC</a> podem vir com diferentes &#8220;perfis&#8221;? Nós condificamos com o perfil &#8220;baseline&#8221; H.264 e com o perfil &#8220;low-complexity&#8221; AAC, quando envolvidos em um container MPEG-4. Toda sua informação está inclusa no atributo <code>type</code>.
+<p>O vídeo H.264 é ainda mais complicado. Lembra quando eu disse que ambos <a href=#h264>vídeo H.264</a> e <a href=#aac>áudio AAC</a> podem vir com diferentes &#8220;perfis&#8221;? Nós codificamos com o perfil &#8220;baseline&#8221; H.264 e com o perfil &#8220;low-complexity&#8221; AAC, quando envolvidos em um container MPEG-4. Toda sua informação está inclusa no atributo <code>type</code>.
 
 <pre><code>  &lt;source src="pr6.mp4" <mark>type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'</mark>></code></pre>
 
-<p>O benefício de passar por todos esses problemas é que o navegador irá chegar o atributo <code>type</code> primeiro para poder tocar um arquivo de vídeo em particular. Se um navegador decide que não pode tocar um vídeo em particular, <em>ele não irá realizar o download do arquivo</em>. Nem mesmo uma parte dele. Você irá economizar banda, e seus visitantes irão ver o vídeo que eles vieram pra ver, mais rápido.
+<p>O benefício de passar por todos esses problemas é que o navegador irá checar o atributo <code>type</code> primeiro para poder tocar um arquivo de vídeo em particular. Se um navegador decide que não pode tocar um vídeo em particular, <em>ele não irá realizar o download do arquivo</em>. Nem mesmo uma parte dele. Você irá economizar banda, e seus visitantes irão ver o vídeo que eles vieram pra ver, mais rápido.
 
 <p>Se você seguir as instruções nesse capítulo para codificar seus vídeos, você pode apenas copiar e colar os valores dos atributos <code>type</code> desse exemplo. Ou então, você terá que <a href=http://wiki.whatwg.org/wiki/Video_type_parameters>lidar com parâmetros <code>type</code> você mesmo</a>.
 
@@ -717,7 +717,7 @@ AddType video/webm .webm</code></pre>
 
 <h2 id=example>Um Completo e Vivo Exemplo</h2>
 
-<p>Aqui está um exemplo vivo de um vídeo que usa essas técnicas. Eu extendi o código do &#8220;Vídeo para Todos&#8221; para inluir suporte a vídeo WebM. Codifiquei a mesma origem do vídeo em três formatos, com esses comandos:
+<p>Aqui está um exemplo vivo de um vídeo que usa essas técnicas. Eu extendi o código do &#8220;Vídeo para Todos&#8221; para incluir suporte a vídeo WebM. Codifiquei a mesma origem do vídeo em três formatos, com esses comandos:
 
 <pre>## Theora/Vorbis/Ogg
 <samp class=p>you@localhost$ </samp><kbd>ffmpeg2theora --videobitrate 200 --max_size 320x240 --output pr6.ogv pr6.dv</kbd>
