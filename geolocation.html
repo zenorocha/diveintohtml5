@@ -36,7 +36,7 @@ R: Privacidade é uma preocupação óbvia quando se está falando sobre compart
 
 <p>A <a href=http://www.w3.org/TR/geolocation-API/><abbr>API</abbr> de geolocalização</a> permite que você compartilhe sua localização em sites confiáveis. A latitude e longitude são disponibilizadas na página via JavaScript, que por sua vez pode ser enviado a um servidor web e fazer coisas como encontrar locais ao seu redor ou mostrar sua posição em um mapa.
 
-<p>Como você pode ver na tabela a seguir, a <abbr>API</abbr> de geolocalização é suportada pela maioria dos navegadores desktop e disposítivos móveis. Além disso, vários navegadores e dispositivos antigos podem oferecer suporte via bibliotecas de terceiros, como veremos depois neste capítulo.
+<p>Como você pode ver na tabela a seguir, a <abbr>API</abbr> de geolocalização é suportada pela maioria dos navegadores desktop e dispositivos móveis. Além disso, vários navegadores e dispositivos antigos podem oferecer suporte via bibliotecas de terceiros, como veremos depois neste capítulo.
 
 <table class=bc>
 <caption>Suporte da <abbr>API</abbr> de geolocalização</caption>
@@ -158,7 +158,7 @@ R: Privacidade é uma preocupação óbvia quando se está falando sobre compart
 <div class=inner>
 <blockquote class=note>
 <p><span>&#x261E;</span>P: A <abbr>API</abbr> de geolocalização pega na Estação Espacial Internacional, na Lua, ou em outros planetas?<br>
-R: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Os estados específicos da geolocalização</a>, &#8220;O sistema de referência geográfica de coordenadas usado pelos atributos é referente ao World Geodetic System (2d) [WGS84]. Nenhum outro sistema de referência é suportado.&#8221; A Estação Espacial Internacional está em órbita na Terra, então os <a href=http://twitter.com/Astro_TJ>astronautas na estacão</a> podem dizer suas localizações por latitude, longitude e latitude. No entanto, o World Geodetic System é centralizado somente na Terra, por isso não podemos usar para saber localizações na Lua ou em outros planetas.
+R: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Os estados específicos da geolocalização</a>, &#8220;O sistema de referência geográfica de coordenadas usado pelos atributos é referente ao World Geodetic System (2d) [WGS84]. Nenhum outro sistema de referência é suportado.&#8221; A Estação Espacial Internacional está em órbita na Terra, então os <a href=http://twitter.com/Astro_TJ>astronautas na estacão</a> podem dizer suas localizações por latitude, longitude e altitude. No entanto, o World Geodetic System é centralizado somente na Terra, por isso não podemos usar para saber localizações na Lua ou em outros planetas.
 </blockquote>
 </div>
 </div>
@@ -210,7 +210,7 @@ R: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Os estado
 
 <p>Antes da versão 9 (tecnicamente 9.0RC1), o Internet Explorer não tem suporte para a <a href=#w3c><abbr>API</abbr> de geolocalização da <abbr>W3C</abbr></a>. Mas não se desespere! <a href=http://tools.google.com/gears/>Gears</a> é um plugin de código aberto da Google que funciona em Windows, Mac, Linux, Windows Mobile, e Android, que fornece recursos para os navegadores antigos. Um desses recursos que o Gears fornece é a <abbr>API</abbr> de geolocalização. Ele não é bem a <abbr>API</abbr> de geolocalização da <abbr>W3C</abbr>, mas tem o mesmo resultado.
 
-<p>Enquantos estamos em um assunto de plataformas legadas, gostaria de deixar bem claro que as plataformas antigas tem suas próprias <abbr>API</abbr>s de geoloalização. <a href="http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx">BlackBerry</a>, <a href="http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html">Nokia</a>, <a href="http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition">Palm</a>, e <a href=http://bondi.omtp.org/1.0/apis/geolocation.html><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI</a> todas fornecem suas próprias <abbr>API</abbr>s. É claro, todas elas trabalham de forma diferente do Gears, que por sua vez funciona de forma diferente da <abbr>API</abbr> de geolocalização da <abbr>W3C</abbr>. Wheeeeee!
+<p>Enquanto estamos em um assunto de plataformas legadas, gostaria de deixar bem claro que as plataformas antigas tem suas próprias <abbr>API</abbr>s de geoloalização. <a href="http://www.tonybunce.com/2008/05/08/Blackberry-Browser-Amp-GPS.aspx">BlackBerry</a>, <a href="http://www.forum.nokia.com/infocenter/index.jsp?topic=/Web_Developers_Library/GUID-4DDE31C7-EC0D-4EEC-BC3A-A0B0351154F8.html">Nokia</a>, <a href="http://developer.palm.com/index.php?option=com_content&amp;view=article&amp;id=1673#GPS-getCurrentPosition">Palm</a>, e <a href=http://bondi.omtp.org/1.0/apis/geolocation.html><abbr title="Open Mobile Terminal Platform">OMTP</abbr> BONDI</a> todas fornecem suas próprias <abbr>API</abbr>s. É claro, todas elas trabalham de forma diferente do Gears, que por sua vez funciona de forma diferente da <abbr>API</abbr> de geolocalização da <abbr>W3C</abbr>. Wheeeeee!
 
 <p class=a>&#x2767;
 
@@ -285,7 +285,7 @@ R: <a href=http://www.w3.org/TR/geolocation-API/#coordinates_interface>Os estado
 
 <p style="margin:0 auto;width:194px" id=geo-wrapper><img src=i/openclipart.org_johnny_automatic_globe_man.png alt="homem com um globo na cabeça" width=194 height=317><br><span id=live-geolocation></span>
 
-<p>Como isso funciona? Vamos dar uma olhada. No carregamento da página, está página chama <code>geo_position_js.init()</code> para determinar se a geolocalização está disponível em qualquer uma das interfaces que <code>geo.js</code> suporta. Se tiver suporte, ele cria um link que você pode clicar para ver sua localização. Clicando no link é chamado então o método <code>lookup_location()</code>, aqui está:
+<p>Como isso funciona? Vamos dar uma olhada. No carregamento da página, esta página chama <code>geo_position_js.init()</code> para determinar se a geolocalização está disponível em qualquer uma das interfaces que <code>geo.js</code> suporta. Se tiver suporte, ele cria um link que você pode clicar para ver sua localização. Clicando no link é chamado então o método <code>lookup_location()</code>, aqui está:
 
 <pre><code>function lookup_location() {
   geo_position_js.getCurrentPosition(show_map, show_map_error);
