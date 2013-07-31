@@ -22,7 +22,7 @@ body{counter-reset:h1 7}
 Para aplicações nativas, o sistema operacional tipicamente provê uma camada de abstração para armazenar e recuperar
 dados específicos do aplicativo como preferências ou estado de tempo de execução.
 Estes valores podem ser armazenados no registro, arquivos INI,
-arquivos XML ou algum outro lugar de acordo com a convenção plataforma.
+arquivos XML ou algum outro lugar de acordo com a convenção da plataforma.
 Se o seu aplicativo cliente nativo necessita de armazenamento local diferente dos pares chave/valor,
 você pode inserir o seu próprio banco de dados, inventar o seu próprio formato de arquivo ou qualquer número de outras soluções.
 
@@ -30,9 +30,9 @@ você pode inserir o seu próprio banco de dados, inventar o seu próprio format
 <p>Historicamente, aplicações web não tiveram nenhum desses luxos. Cookies foram inventados no início da história da web e, de fato, eles podem ser usados para armazenamento local persistente de pequenas quantidades de dados. Mas eles têm três desvantagens potencialmente [potentially dealbreaking downsides]:
 
 <ul>
-<li>Cookies são incluídos em toda requisição <abbr>HTTP</abbr>, atrasando assim sua aplicação web por desnecessariamente transmitir os mesmos dados sempre e sempre
-<li>Cookies são incluídos em toda requisição <abbr>HTTP</abbr>, enviando assim dados não criptografados através da internet (a menos que sua aplicação web inteira seja servida sobre <abbr> SSL </ abbr>)
-<li>Cookies são limitados a certa de 4KB de dados &mdash; suficiente para atrasar sua aplicação (ver acima), mas não o suficiente para ser muito útil
+<li>Cookies são incluídos em toda requisição <abbr>HTTP</abbr>, atrasando assim sua aplicação web por desnecessariamente sempre transmitir os mesmos dados;
+<li>Cookies são incluídos em toda requisição <abbr>HTTP</abbr>, enviando assim dados não criptografados através da internet (a menos que sua aplicação web inteira seja servida sobre <abbr>SSL</ abbr>);
+<li>Cookies são limitados a certa de 4KB de dados &mdash; suficiente para atrasar sua aplicação (ver acima), mas não o suficiente para ser muito útil;
 </ul>
 
 <p>O que nós realmente queremos é
@@ -69,7 +69,7 @@ você pode inserir o seu próprio banco de dados, inventar o seu próprio format
 
 <p>O que me refiro como &#8220;<abbr>HTML5</abbr> Storage&#8221; é a especificação nomeada de <a href="http://dev.w3.org/html5/webstorage/">Web Storage</a>, que estava na especificação da <abbr>HTML5</abbr> por um tempo, mas era tratado separadamente por desinteresse e razões políticas. Certos navegadores se referenciavam como &#8220;Local Storage&#8221; ou &#8220;<abbr>DOM</abbr> Storage.&#8221; A nomeação ficava ainda mais complicada em navegadores relacionados com padrões emergentes, que vou discutir mais adiante neste capítulo.
 
-<p>Então o que é <abbr>HTML5</abbr> Storage? Simplesmente armazenar, é a forma de páginas da web amazenarem pares de chave/valor localmente, dentro do navegador do cliente. Semelhante aos cookies, esses dados persistem mesmo depois de você sair do site, fechar a guia ou o navegador. Diferente dos cookies, esses dados nunca são transmitidos ao servidor (a menos que você queria envia-los manualmente). Diferente <a href=#history>de todas as tentativas anteriores</a> de fornecimento de armazenamento local persistente, este é implementado de forma nativa nos navegadores, para que esteja disponível mesmo quando os plugins de terceiros não estiverem.
+<p>Então o que é <abbr>HTML5</abbr> Storage? Simplesmente armazenar, é a forma de páginas da web amazenarem pares de chave/valor localmente, dentro do navegador do cliente. Semelhante aos cookies, esses dados persistem mesmo depois de você sair do site, fechar a guia ou o navegador. Diferente dos cookies, esses dados nunca são transmitidos ao servidor (a menos que você queria enviá-los manualmente). Diferente <a href=#history>de todas as tentativas anteriores</a> de fornecimento de armazenamento local persistente, este é implementado de forma nativa nos navegadores, para que esteja disponível mesmo quando os plugins de terceiros não estiverem.
 
 <p>Quais navegadores? Bom, as últimas versões de quase todos os navegadores suportam <abbr>HTML5</abbr> Storage&hellip; até o Internet Explorer!
 
@@ -174,24 +174,24 @@ localStorage<mark>["bar"]</mark> = foo;</code></pre>
 <tr class=zebra><th><code>newValue</code><td>qualquer<td>o novo valor, ou <code>null</code> se um item foi removido
 <tr><th><code>url</code><sup>*</sup><td>string<td>a página que chamou o método que realizou a mudança
 <tfoot>
-<tr><td colspan=3>* Nota: a propriedade <code>url</code> é originalmente chamada de <code>uri</code>. Alguns navegadores lançaram essa propriedade antes das mudanças na espicificação. Para uma compatibilidade máxima, você deve checar se a propriedade <code>url</code> existe, se não, checar se a propriedade <code>uri</code> existe.
+<tr><td colspan=3>* Nota: a propriedade <code>url</code> é originalmente chamada de <code>uri</code>. Alguns navegadores lançaram essa propriedade antes das mudanças na especificação. Para uma compatibilidade máxima, você deve checar se a propriedade <code>url</code> existe, se não, checar se a propriedade <code>uri</code> existe.
 </table>
 
 <p>O evento <code>storage</code> não é cancelável. Dentro da função callback <code>handle_storage</code>, não há maneira de parar essa mundaça. É uma simples forma do navegador dizer, &#8220;ei, isso já aconteceu. Não há nada que você possa fazer, eu só queria te avisar sobre isso.&#8221;
 
 <h3 id=limitations>Limitações nos navegadores atuais</h3>
 
-<p>Ao falar sobre <a href=#history>a história dos hacks no armazenamento local</a> usando plugins de terceiros, fiz questão de mencionar a limitação de cada  técnica, tal como limite de armazenamento. Apenas percebi que não tinha mencionado nada sobre as limitações do agora padronizado armazenamento da <abbr>HTML5</abbr>. Vou dar a vocês as respostas primeiro, em seguida explicarei elas. As respostas, em ordem de importância,são &#8220;5 megabytes,&#8221; &#8220;<code>QUOTA_EXCEEDED_ERR</code>,&#8221; e &#8220;Não.&#8221;
+<p>Ao falar sobre <a href=#history>a história dos hacks no armazenamento local</a> usando plugins de terceiros, fiz questão de mencionar a limitação de cada  técnica, tal como limite de armazenamento. Apenas percebi que não tinha mencionado nada sobre as limitações do agora padronizado armazenamento da <abbr>HTML5</abbr>. Vou dar a vocês as respostas primeiro, em seguida explicarei elas. As respostas, em ordem de importância, são &#8220;5 megabytes,&#8221; &#8220;<code>QUOTA_EXCEEDED_ERR</code>,&#8221; e &#8220;Não.&#8221;
 
 <p>&#8220;5 megabytes&#8221 é a quantidade em espaço que cada <a href=http://www.whatwg.org/specs/web-apps/current-work/multipage/origin-0.html#origin-0>origem</a> tem por padrão. Isto é surpreendentemente consistente em todos os navegadores, embora seja formulada como não mais do que uma sugestão na especificação do Armazenamento local da <abbr>HTML5</abbr>. Um aspecto a ter em mente é que você está armazenando strings, não as informações no seu formato original. Se você está armazenando muitos inteiros ou floats, a diferença de representação pode realmente aumentar. Cada dígito naquele float está sendo armazenado como um caractere, não na representação usual de um ponto de número flutuante.
 
-<p>&#8220;<code>QUOTA_EXCEEDED_ERR</code>&#8221; é a exceção que será lançada se você exceder sua cota de armazenamento de 5 megabytes. &#8220;Não&#8221; é a resposta para a próxima questão óbvia, &#8220;Eu posso pedir permissão do usuário para usar mais espaço de armazenamento?&#8221; No momento em que escrevo (fevereiro 2011), não há navegador que suporte qualquer mecanismo para desenvolvedores web requisitarem mais espaço de armazenamento. Alguns navegadores (<a href=http://dev.opera.com/articles/view/web-storage/>como Opera</a>) permitem que o usuário controle a cota de armazenamento de cada site, mas isto é uma ação puramente  iniciada pelo usuário, não algo que você como desenvolvedor pode costruir na sua aplicação web.
+<p>&#8220;<code>QUOTA_EXCEEDED_ERR</code>&#8221; é a exceção que será lançada se você exceder sua cota de armazenamento de 5 megabytes. &#8220;Não&#8221; é a resposta para a próxima questão óbvia, &#8220;Eu posso pedir permissão do usuário para usar mais espaço de armazenamento?&#8221; No momento em que escrevo (fevereiro 2011), não há navegador que suporte qualquer mecanismo para desenvolvedores web requisitarem mais espaço de armazenamento. Alguns navegadores (<a href=http://dev.opera.com/articles/view/web-storage/>como Opera</a>) permitem que o usuário controle a cota de armazenamento de cada site, mas isto é uma ação puramente  iniciada pelo usuário, não algo que você como desenvolvedor pode construir na sua aplicação web.
 
 <p class=a>&#x2767;
 
 <h2 id=halma>Armazenamento HTML5 em Ação</h2>
 
-<p>Vamos ver o Armazenamento da <abbr>HTML5</abbr> em ação. Recorde <a href=canvas.html#halma>o jogo Halma que ós costruímos no capítudo do canvas</a>. Existe um pequeno problema com o jogo: se você fechar o navegador no meio do jogo, você perderá seu progresso. Porém, com o armazenamento da <abbr>HTML5</abbr>, podemos salvar o progresso localmente, dentro do próprio navegador. Aqui está <a href=examples/localstorage-halma.html>uma demostração no ar</a>. Faça alguns movimentos, depois feche a aba do navegador, em seguida reabra ela. Se o seu navegador suporta Armazenamendo da <abbr>HTML5</abbr>, a página de demostração deve magicamente recordar a sua exata posição dentro do jogo, incluindo o número de movimentos que você fez, a posição de cada uma das peças do tabuleiro, e até mesmo se uma determinada peça está selecionada.
+<p>Vamos ver o Armazenamento da <abbr>HTML5</abbr> em ação. Recorde <a href=canvas.html#halma>o jogo Halma que nós construímos no capítulo do canvas</a>. Existe um pequeno problema com o jogo: se você fechar o navegador no meio do jogo, você perderá seu progresso. Porém, com o armazenamento da <abbr>HTML5</abbr>, podemos salvar o progresso localmente, dentro do próprio navegador. Aqui está <a href=examples/localstorage-halma.html>uma demonstração no ar</a>. Faça alguns movimentos, depois feche a aba do navegador, em seguida reabra ela. Se o seu navegador suporta Armazenamendo da <abbr>HTML5</abbr>, a página de demonstração deve magicamente recordar a sua exata posição dentro do jogo, incluindo o número de movimentos que você fez, a posição de cada uma das peças do tabuleiro, e até mesmo se uma determinada peça está selecionada.
 
 <p>Como isto funciona? Cada momento que uma mudança acontece dentro do jogo, chamamos esta função:
 
@@ -248,9 +248,9 @@ localStorage<mark>["bar"]</mark> = foo;</code></pre>
 
 <p class=a>&#x2767;
 
-<h2 id=future>Além de Pares de Chaves-Valores Nomedos: Visões conflitantes</h2>
+<h2 id=future>Além de Pares de Chaves-Valores Nomeados: Visões conflitantes</h2>
 
-<p>Enquanto <a href=#history>o passado é cheio de truques e soluções alternativas</a>, a condição presente do Armazenamendo da <abbr>HTML5</abbr> é surpreendentemente otimista. Uma nova <abbr>API</abbr> vem sendo padronizada e implementada em todos os principais navegadores, plataformas e dispositivos. Como um desenvolvedor web, isto não é algo que você ver todo dia, não é verdade? Porém, há mais vida além dos &#8220;5 megabytes de pares de chaves/valores nomeados&#8221; e o futuro do armazenamento local persistente é&hellip;como poderei colocá-lo&hellip; bom, existem visões conflitantes.
+<p>Enquanto <a href=#history>o passado é cheio de truques e soluções alternativas</a>, a condição presente do Armazenamendo da <abbr>HTML5</abbr> é surpreendentemente otimista. Uma nova <abbr>API</abbr> vem sendo padronizada e implementada em todos os principais navegadores, plataformas e dispositivos. Como um desenvolvedor web, isto não é algo que você vê todo dia, não é verdade? Porém, há mais vida além dos &#8220;5 megabytes de pares de chaves/valores nomeados&#8221; e o futuro do armazenamento local persistente é&hellip;como poderei colocá-lo&hellip; bom, existem visões conflitantes.
 
 <p>Uma visão é uma sigla que você provavelmente já sabe: <abbr>SQL</abbr>. Em 2007, a Google lançou <a href=http://gears.google.com/>Gears</a>, um plugin de código aberto que incluía um banco de dados incorporado com base de dados no <a href=http://www.sqlite.org/>SQLite</a>. Esse protótipo inicial influenciou a criação da especificação do <a href=http://dev.w3.org/html5/webdatabase/>Web SQL Database</a>. Web SQL Database (formalmente conhecida como &#8220;WebDB&#8221;) fornece uma fina camada em torno de uma base de dados <abbr>SQL</abbr>, permitindo você fazer coisas como essa pelo JavaScript:
 
@@ -273,7 +273,7 @@ localStorage<mark>["bar"]</mark> = foo;</code></pre>
 <tr><td>&middot;<td>&middot;<td>4.0+<td>4.0+<td>10.5+<td>3.0+<td>2.0+
 </table>
 
-<p>Claro, se você já usou mais de um produto de banco de dados em sua vida, você está ciente que &#8220;<abbr>SQL</abbr>&#8221; é mais um termo de marketing do que um rígido e rápido padrão. (Alguns podem dizer o mesmo da &#8220;HTML5,&#8221; mas não se importe.) Claro, existe uma especificação atual do <abbr>SQL</abbr> (ela é chamada de <a href="http://www.contrib.andrew.cmu.edu/~shadow/sql/sql1992.txt">SQL-92</a>), mas não há nenhuma base de dados do servidor no mundo que está em conformidade com esta e apenas esta a especificação. Existe o <abbr>SQL</abbr> da Oracle, <abbr>SQL</abbr> da Microsoft, <abbr>SQL</abbr> do MySQL, <abbr>SQL</abbr> do PostgreSQL e <abbr>SQL</abbr> do SQLite. De fato, cada um desses produtos adiciona novas funcionalidades ao <abbr>SQL</abbr> no passar do tempo, então mesmo dizendo &#8220;<abbr>SQL</abbr> do SQLite&#8221; não é suficiente para determinar exatamente o que você está falando. Você precisa dizer a versão do <abbr>SQL</abbr> que acompanha o SQLite versão X.Y.Z.&#8221;
+<p>Claro, se você já usou mais de um produto de banco de dados em sua vida, você está ciente que &#8220;<abbr>SQL</abbr>&#8221; é mais um termo de marketing do que um rígido e rápido padrão. (Alguns podem dizer o mesmo da &#8220;HTML5,&#8221; mas não se importe.) Claro, existe uma especificação atual do <abbr>SQL</abbr> (ela é chamada de <a href="http://www.contrib.andrew.cmu.edu/~shadow/sql/sql1992.txt">SQL-92</a>), mas não há nenhuma base de dados do servidor no mundo que está em conformidade com esta e apenas esta especificação. Existe o <abbr>SQL</abbr> da Oracle, <abbr>SQL</abbr> da Microsoft, <abbr>SQL</abbr> do MySQL, <abbr>SQL</abbr> do PostgreSQL e <abbr>SQL</abbr> do SQLite. De fato, cada um desses produtos adiciona novas funcionalidades ao <abbr>SQL</abbr> no passar do tempo, então mesmo dizendo &#8220;<abbr>SQL</abbr> do SQLite&#8221; não é suficiente para determinar exatamente o que você está falando. Você precisa dizer a versão do <abbr>SQL</abbr> que acompanha o SQLite versão X.Y.Z.&#8221;
 
 <p>Tudo o que nos leva ao seguinte aviso, atualmente residindo no topo da especificação da Base de Dados SQL Web:
 
@@ -289,7 +289,7 @@ localStorage<mark>["bar"]</mark> = foo;</code></pre>
 
 <p>No momento que escrevo, IndexedDB está implementado apenas na <a href=https://developer.mozilla.org/en/Firefox_4_for_developers>versão beta do Firefox 4</a>. (Em contraste, a Mozilla afirmou que <a href="http://hacks.mozilla.org/2010/06/beyond-html5-database-apis-and-the-road-to-indexeddb/">eles nunca irão implementar Base de Dados SQL Web</a>.) Google afirmou que <a href="http://www.chromium.org/developers/design-documents/indexeddb">estão considerando o suporte ao IndexedDB</a> para o Chromium e o Google Chrome. E até mesmo a Microsoft disse que o IndexedDB &#8220;<a href="http://blogs.msdn.com/b/ie/archive/2010/03/09/working-with-the-html5-community.aspx">é uma ótima solução para a web</a>.&#8221;
 
-<p>Então o que você, como desenvolvedor web, pode fazer com IndexedDB? Neste momento, praticamente nada além de algumas demostrações técnicas. Um ano a frente? Talvez algo mais. Para inicar, confira os links na seção &#8220;Leitura complementar&#8221; com alguns bons tutoriais.
+<p>Então o que você, como desenvolvedor web, pode fazer com IndexedDB? Neste momento, praticamente nada além de algumas demonstrações técnicas. Um ano a frente? Talvez algo mais. Para iniciar, confira os links na seção &#8220;Leitura complementar&#8221; com alguns bons tutoriais.
 
 <p class=a>&#x2767;
 
@@ -308,7 +308,7 @@ localStorage<mark>["bar"]</mark> = foo;</code></pre>
 <p>Trabalho prévio de Brad Neuberg <i>et. al.</i> (pré-<abbr>HTML5</abbr>):
 
 <ul>
-<li><a href="http://codinginparadise.org/weblog/2005/08/ajax-internet-explorer-has-native.html">Internet Explorer possuii suporte natio para persistência?!?!</a> (sobre o objeto <code>userData</code> do IE)
+<li><a href="http://codinginparadise.org/weblog/2005/08/ajax-internet-explorer-has-native.html">Internet Explorer possui suporte nativo para persistência?!?!</a> (sobre o objeto <code>userData</code> do IE)
 <li><a href="http://docs.google.com/View?docid=dhkhksk4_8gdp9gr#dojo_storage">Dojo Storage</a>, parte de um tutorial maior sobre a (agora não continuada) biblioteca Dojo Offline
 <li><a href="http://api.dojotoolkit.org/jsdoc/HEAD/dojox.storage.manager"><code>dojox.storage.manager</code> referência da <abbr>API</abbr></a>
 <li><a href="http://svn.dojotoolkit.org/src/dojox/trunk/storage/">dojox.storage</a> repositório Subversion
