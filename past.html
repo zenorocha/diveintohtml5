@@ -82,7 +82,7 @@ body{counter-reset:h1 1}
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0183.html">
 <p>Eu tenho algo bastante similar no Midas 2.0 (em uso aqui no SLAC, e haverá um release público a qualquer semana), exceto que todos os nomes são diferentes, e tem um argumento extra <code>NAME="name"</code>. Tem quase exatamente a mesma funcionalidade que você propôs na tag <code>IMG</code>, como por exemplo:
 <p><code>&lt;ICON name="NoEntry" href="http://note/foo/bar/NoEntry.xbm"></code>
-<p>A ideia do parâmetro name é de permitir ao navegador o uso de imagens internas. Se o nome for o mesmo que uma imagem interna, ele usará ela ao invés de buscar a imagem. O nome pode atuar também como uma dica para quando o navegador rodarem no terminal como um tipo de símbolo para substituir a imagem.
+<p>A ideia do parâmetro name é de permitir ao navegador o uso de imagens internas. Se o nome for o mesmo que uma imagem interna, ele usará ela ao invés de buscar a imagem. O nome pode atuar também como uma dica para quando o navegador rodar no terminal como um tipo de símbolo para substituir a imagem.
 <p>Eu não ligo muito sobre os nomes dos parâmetros ou das tags, mas eles devem ser sensíveis se forem utilizados para mais de uma coisa. Eu não ligo muito para abreviações, ou seja porque não <code>IMAGE=</code> e <code>SOURCE=</code>. Eu prefiro <code>ICON</code> uma vez que é menos que <code>IMAGE</code>, mas talvez <code>ICON</code> seja uma palavra sobrecarregada, não?
 </blockquote>
 
@@ -97,7 +97,7 @@ body{counter-reset:h1 1}
 <p>A intenção aqui é de poder colocar um segundo documento dentro do primeiro documento no ponto que a tag aparece. A princípio o documento referenciado pode ser qualquer coisa, mas o objetivo principal é de permitir imagens (nesse caso de tamanho arbitrário) para ser incluída dentro de documentos. Novamente a intenção é de que quando o HTTP2 surgir, o formato do documento incluído possa ser negociado separadamente.
 </blockquote>
 
-<p>&#8220;HTTP2&#8221;é uma referência ao <a href="http://www.w3.org/Protocols/HTTP/HTTP2.html">HTTP básico definido em 1992</a>. Neste ponto, no início de 1993, ele ainda não estava largamente implementado. O rascunho conhecido HTTP2 foi eventualmente padronizado e implementado como "HTTP 1.0" ( <a href="http://www.w3.org/Protocols/HTTP/1.0/spec.html"> embora não por mais três anos </a>). HTTP 1.0 não incluía a <a href="http://www.w3.org/Protocols/HTTP/HTRQ_Headers.html#z3"> requisição de cabeçalhos para negociação de conteúdo</a>, a.k.a. &#8220;MIME, um dia, quem sabe.&#8221;
+<p>&#8220;HTTP2&#8221; é uma referência ao <a href="http://www.w3.org/Protocols/HTTP/HTTP2.html">HTTP básico definido em 1992</a>. Neste ponto, no início de 1993, ele ainda não estava largamente implementado. O rascunho conhecido HTTP2 foi eventualmente padronizado e implementado como "HTTP 1.0" ( <a href="http://www.w3.org/Protocols/HTTP/1.0/spec.html"> embora não por mais três anos </a>). HTTP 1.0 não incluía a <a href="http://www.w3.org/Protocols/HTTP/HTRQ_Headers.html#z3"> requisição de cabeçalhos para negociação de conteúdo</a>, a.k.a. &#8220;MIME, um dia, quem sabe.&#8221;
 
 <p>Tony continuou:
 
@@ -107,7 +107,7 @@ body{counter-reset:h1 1}
 <p>Eu não gosto muito de colocar mais funcionalidade na tag <code>&lt;A></code>, mas a idéia aqui é de manter a compatibilidade entre os navegadores que não podem honrar com o parâmetro <code>INCLUDE</code>. A intenção é que os navegadores que entendam <code>INCLUDE</code>, alterem o texto do link (nesse caso "See photo") com o documento incluído (foto), enquanto os navegadores antigos ou burros ignorem completamente a tag <code>INCLUDE</code>.
 </blockquote>
 
-<p>Esta proposta nunca foi implementada, no entanto a ideia de colocar um texto quando a imagem não é encontrada, é uma <a href="http://diveintoaccessibility.org/day_23_providing_text_equivalents_for_images.html">importante técnica de acessibilidade</a> esquecida pela proposta inicial da tag <code>&lt;IMG</code> de Marc. anos depois esse atributo foi incluído como <a href="http://www.w3.org/TR/html4/struct/objects.html#h-13.8">a tag <code>&lt;img alt></code></a>, que o Netscape mostrava erroneamente  <a href="http://www.cs.tut.fi/~jkorpela/html/alt.html#tooltip"> o nome quando se colocava o mouse em cima da imagem</a>.
+<p>Esta proposta nunca foi implementada, no entanto a ideia de colocar um texto quando a imagem não é encontrada, é uma <a href="http://diveintoaccessibility.org/day_23_providing_text_equivalents_for_images.html">importante técnica de acessibilidade</a> esquecida pela proposta inicial da tag <code>&lt;IMG</code> de Marc. Anos depois esse atributo foi incluído como <a href="http://www.w3.org/TR/html4/struct/objects.html#h-13.8">a tag <code>&lt;img alt></code></a>, que o Netscape mostrava erroneamente  <a href="http://www.cs.tut.fi/~jkorpela/html/alt.html#tooltip"> o nome quando se colocava o mouse em cima da imagem</a>.
 
 <p>Algumas horas depois que Tony enviou aquela mensagem, <a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0186.html"><cite>Tim Berners-Lee</cite> respondeu</a>:
 
@@ -165,7 +165,7 @@ PRESENT	 Mostre isso sempre que o documento fonte for apresentado</pre>
 
 <p>Dave mais tarde escreveu a <a href="http://www.w3.org/MarkUp/html3/CoverPage.html">HTML 3.0</a>,  baseado no rascunho feito por eles do HTML+. Fora isso existia a referência da W3C do <a href="http://www.w3.org/Arena/">Arena</a>, HTML 3.0  nunca foi implementado, e foi substituído pelo <a href="http://www.w3.org/MarkUp/Wilbur/">HTML 3.2</a>, outra "retrospectiva":&#8220;<a href="http://www.w3.org/TR/REC-html32.html#intro">HTML 3.2 incluiu largamente outras funcionalidades</a> como tabelas, applets e textos ao redor de imagens, enquanto mantinha a retro-compatibilidade com o padrão existente: HTML 2.0.&#8221;
 
-<p>Dave mais tarde foi co-autor do desenvolvimento da <a href="http://www.w3.org/TR/html4">HTML 4.0</a>, desenvolveu a <a href="http://tidy.sourceforge.net/">HTML Tidy</a>, e ajudou com a especificações do XHTML, XForms, MathML, e outras especificações modernas da W3C.
+<p>Dave mais tarde foi co-autor do desenvolvimento da <a href="http://www.w3.org/TR/html4">HTML 4.0</a>, desenvolveu a <a href="http://tidy.sourceforge.net/">HTML Tidy</a>, e ajudou com as especificações do XHTML, XForms, MathML, e outras especificações modernas da W3C.
 
 <p>Voltando para 1993, <a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0209.html">Marc respondeu a Dave</a>:
 
@@ -180,7 +180,7 @@ PRESENT	 Mostre isso sempre que o documento fonte for apresentado</pre>
 <p><a href="http://1997.webhistory.org/www.lists/www-talk.1993q1/0217.html"><cite>Bill Janssen</cite> respondeu</a>:
 
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0217.html">
-<p>Outros sistemas para olharmos que tem alguma noção disso (bastante válida) são Andrew e Slate. Andrew foi feito com _insets_, e cada um deles tem um tipo interessante, como texto, bitmap, desenhos, animações, mensagens, planilhas, etc. A noção de inclusão arbitrária e recursiva está presente, então se um inset de qualquer tipo pode ser incluído em qualquer lugar que suporte inclusa. Por exemplo, um inset pode ser incluído em qualquer ponto do texto de um widget de texto, ou em qualquer área retangular de um widget de desenho ou em qualquer célula de uma planilha.
+<p>Outros sistemas para olharmos que tem alguma noção disso (bastante válida) são Andrew e Slate. Andrew foi feito com _insets_, e cada um deles tem um tipo interessante, como texto, bitmap, desenhos, animações, mensagens, planilhas, etc. A noção de inclusão arbitrária e recursiva está presente, então um inset de qualquer tipo pode ser incluído em qualquer lugar que suporte incorporação. Por exemplo, um inset pode ser incluído em qualquer ponto do texto de um widget de texto, ou em qualquer área retangular de um widget de desenho ou em qualquer célula de uma planilha.
 </blockquote>
 
 <p>&#8220;Andrew&#8221; é uma referência a <a href="http://www-2.cs.cmu.edu/~AUIS/">Andrew User Interface System</a> (nessa época era conhecida apenas como <a href="http://en.wikipedia.org/wiki/Andrew_Project">Andrew Project</a>).
@@ -192,7 +192,7 @@ PRESENT	 Mostre isso sempre que o documento fonte for apresentado</pre>
 <p>Mas isto ainda não é clicável, você diz? Sim você está certo. Eu suspeito que já tenha uma resposta para isso ser exibido utilizando display postscript. Mesmo que incluir isto ao padrão postscript seja trivial. Definir um comando de âncora que especifica a URL e o uso do caminho atual como uma região próxima ao botão. Desde que o postscript lide bem com os caminhos, isto faz com que formatos de botões aleatórios sejam triviais.
 </blockquote>
 
-<p><a href="http://en.wikipedia.org/wiki/Display_PostScript">Display Postscript</a> era uma tecnologia de renderizamento na tela co-desenvolvida pela Adobe e NeXT.
+<p><a href="http://en.wikipedia.org/wiki/Display_PostScript">Display Postscript</a> era uma tecnologia de renderização na tela co-desenvolvida pela Adobe e NeXT.
 
 <p>Esta proposta nunca foi implementada, mas a idéia de um jeito melhor de consertar HTML e substituí-lo por algo completamente diferente <a href="http://dbaron.org/log/20090707-ex-html">aparece de tempos em tempos</a>.
 
@@ -213,7 +213,7 @@ PRESENT	 Mostre isso sempre que o documento fonte for apresentado</pre>
 
 <blockquote cite="http://1997.webhistory.org/www.lists/www-talk.1993q1/0257.html">
 <p>Voltando a thread sobre inclusão de imagens &#8212; eu estou chegando perto de lançar o Mosaic v0.10, que irá suportar a inclusão de GIF e imagens/bitmaps XBM, como eu disse anteriormente. ...
-<p>Nós não estamos preparados para suportar as tags <code>INCLUDE</code>/<code>EMBED</code> nesse momento. ... Então nós provavelmente iremos usar as tags <code>&lt;IMG SRC="url"></code> (não a tag <code>ICON</code>, dado que nem todas as imagens podem ser propriamente chamadas de ícones). Por enquanto as imagens incluídas não deverão possuir um contet-type específico; futuramente, nós planejamos dar suporte a isto (junto com a adaptação do MIME). Na verdade, a rotina de leitura de imagens que nós estamos utilizando lida com o formato da imagem no momento de renderizar, então a extensão do arquivo não é tão relevante.
+<p>Nós não estamos preparados para suportar as tags <code>INCLUDE</code>/<code>EMBED</code> nesse momento. ... Então nós provavelmente iremos usar as tags <code>&lt;IMG SRC="url"></code> (não a tag <code>ICON</code>, dado que nem todas as imagens podem ser propriamente chamadas de ícones). Por enquanto as imagens incluídas não deverão possuir um content-type específico; futuramente, nós planejamos dar suporte a isto (junto com a adaptação do MIME). Na verdade, a rotina de leitura de imagens que nós estamos utilizando lida com o formato da imagem no momento de renderizar, então a extensão do arquivo não é tão relevante.
 </blockquote>
 
 <p class=a>&#x2767;
@@ -284,7 +284,7 @@ PRESENT	 Mostre isso sempre que o documento fonte for apresentado</pre>
 
 <h2 id=webapps-cdf>Uma visão Concorrente</h2>
 
-<p>Em junho de 2004, o W3C realizou o <a href=http://www.w3.org/2004/04/webapps-cdf-ws/><span lang="en">Workshop</span> sobre Aplicações Web e Documentos Combinados</a>. Estavam presentes nesse <span lang="en">workshop</span> representantes de 3 fabricantes de <span lang="en">browsers</span>, companhias de desenvolvimento web e outros membros do W3C. Um grupo de partes interessadas, incluindo a Fundação <span lang="en">Mozilla</span> e a <span lang="en">Opera Software</span>, fizeram uma apresentação sobre sua visão concorrente do futuro da web: <a href=http://www.w3.org/2004/04/webapps-cdf-ws/papers/opera.html>uma evolução do existentes padrão <abbr>HTML</abbr> 4 para incluir novos recursos para desenvolvedores de aplicativos web modernos</a>.
+<p>Em junho de 2004, o W3C realizou o <a href=http://www.w3.org/2004/04/webapps-cdf-ws/><span lang="en">Workshop</span> sobre Aplicações Web e Documentos Combinados</a>. Estavam presentes nesse <span lang="en">workshop</span> representantes de 3 fabricantes de <span lang="en">browsers</span>, companhias de desenvolvimento web e outros membros do W3C. Um grupo de partes interessadas, incluindo a Fundação <span lang="en">Mozilla</span> e a <span lang="en">Opera Software</span>, fizeram uma apresentação sobre sua visão concorrente do futuro da web: <a href=http://www.w3.org/2004/04/webapps-cdf-ws/papers/opera.html>uma evolução do existente padrão <abbr>HTML</abbr> 4 para incluir novos recursos para desenvolvedores de aplicativos web modernos</a>.
 
 <blockquote cite=http://www.w3.org/2004/04/webapps-cdf-ws/papers/opera.html>
 <p>Os 7 princípios a seguir representam o que acreditamos serem os requisitos mais importantes para este trabalho.
