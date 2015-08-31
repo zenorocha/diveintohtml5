@@ -54,4 +54,4 @@ with open(output_file, 'w', encoding="utf-8") as _out, open(input_file, encoding
         else:
             _out.write(g)
         if g.lower() == '<!doctype html>':
-            _out.write('\n<!-- readable source @ https://github.com/diveintomark/diveintohtml5/blob/master/{0} -->\n'.format(os.path.basename(input_file)))
+            _out.write('\n<!-- readable source @ https://github.com/zenorocha/diveintohtml5/blob/master/{0} -->\n'.format(os.path.basename(input_file)))
