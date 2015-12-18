@@ -115,12 +115,12 @@ body{counter-reset:h1 11}
 <pre><code>function swapPhoto(href) {
   var req = new XMLHttpRequest();
   req.open("GET",
-           "http://diveintohtml5.com.br/examples/history/gallery/" +
+           "https://diveintohtml5.com.br/examples/history/gallery/" +
              href.split("/").pop(),
            false);
   req.send(null);</code></pre>
 
-<p>Aqui temos um exemplo de marcação retornado por <code><a href=http://diveintohtml5.com.br/examples/history/gallery/casey.html>http://diveintohtml5.com.br/examples/history/gallery/casey.html</a></code>. (Você pode verificar isso no seu navegador visitando a <abbr>URL</abbr> diretamente.)
+<p>Aqui temos um exemplo de marcação retornado por <code><a href=https://diveintohtml5.com.br/examples/history/gallery/casey.html>https://diveintohtml5.com.br/examples/history/gallery/casey.html</a></code>. (Você pode verificar isso no seu navegador visitando a <abbr>URL</abbr> diretamente.)
 
 <pre><code>&lt;p class="photonav">
   &lt;a id="photonext" href="brandy.html">Next &amp;gt;&lt;/a>
@@ -175,16 +175,16 @@ body{counter-reset:h1 11}
 <p>Para ajudar a visualizar isso, vamos percorrer a ilusão inteira desde do começo ao fim:
 
 <ul>
-<li>Usuário carrega <code><a href=http://diveintohtml5.com.br/examples/history/fer.html>http://diveintohtml5.com.br/examples/history/fer.html</a></code>, vê a história e a foto de Fer.
-<li>Usuário clica no link &#8220;Próximo,&#8221; um elemento <code>&lt;a></code> que tem uma propriedade <code>href</code> para <code><a href=http://diveintohtml5.com.br/examples/history/casey.html>http://diveintohtml5.com.br/examples/history/casey.html</a></code>.
-<li>Ao invés de navegar para <code><a href=http://diveintohtml5.com.br/examples/history/casey.html>http://diveintohtml5.com.br/examples/history/casey.html</a></code> com uma atualização completa na página, o evento <code>click</code> manipulado dentro do elemento <code>&lt;a></code> executa seu próprio código.
-<li>Nosso evento <code>click</code> manipulado chama a função <code>swapPhoto()</code>, que cria um objeto <code>XMLHttpRequest</code> para baixar o fragmento de código <abbr>HTML</abbr> localizado em <code><a href=http://diveintohtml5.com.br/examples/history/gallery/casey.html>http://diveintohtml5.com.br/examples/history/<strong>gallery</strong>/casey.html</a></code>.
+<li>Usuário carrega <code><a href=https://diveintohtml5.com.br/examples/history/fer.html>https://diveintohtml5.com.br/examples/history/fer.html</a></code>, vê a história e a foto de Fer.
+<li>Usuário clica no link &#8220;Próximo,&#8221; um elemento <code>&lt;a></code> que tem uma propriedade <code>href</code> para <code><a href=https://diveintohtml5.com.br/examples/history/casey.html>https://diveintohtml5.com.br/examples/history/casey.html</a></code>.
+<li>Ao invés de navegar para <code><a href=https://diveintohtml5.com.br/examples/history/casey.html>https://diveintohtml5.com.br/examples/history/casey.html</a></code> com uma atualização completa na página, o evento <code>click</code> manipulado dentro do elemento <code>&lt;a></code> executa seu próprio código.
+<li>Nosso evento <code>click</code> manipulado chama a função <code>swapPhoto()</code>, que cria um objeto <code>XMLHttpRequest</code> para baixar o fragmento de código <abbr>HTML</abbr> localizado em <code><a href=https://diveintohtml5.com.br/examples/history/gallery/casey.html>https://diveintohtml5.com.br/examples/history/<strong>gallery</strong>/casey.html</a></code>.
 <li>A função <code>swapPhoto()</code> atribui a propriedade <code>innerHTML</code> para o que envolve a galeria de foto (um elemento <code>&lt;aside></code>), substituindo assim a foto e a legenda de Fer pela foto e legenda de Casey.
-<li>Finalmente, nosso <code>click</code> manipulado chama a função <code>history.pushState()</code> para manualmente alterar a <abbr>URL</abbr> na barra de endereços do navegador para <code><a href=http://diveintohtml5.com.br/examples/history/casey.html>http://diveintohtml5.com.br/examples/history/casey.html</a></code>.
+<li>Finalmente, nosso <code>click</code> manipulado chama a função <code>history.pushState()</code> para manualmente alterar a <abbr>URL</abbr> na barra de endereços do navegador para <code><a href=https://diveintohtml5.com.br/examples/history/casey.html>https://diveintohtml5.com.br/examples/history/casey.html</a></code>.
 <li>Usuário clica no botão voltar do navegador.
-<li>O navegador percebe que uma <abbr>URL</abbr> foi manualmente adicionada na pilha de histórico (pela função <code>history.pushState()</code>). Ao invés de navegar para a <abbr>URL</abbr> anterior e redesenhar a página toda, o navegador simplesmente atualiza a barra de endereço para a <abbr>URL</abbr> antiga (<code><a href=http://diveintohtml5.com.br/examples/history/fer.html>http://diveintohtml5.com.br/examples/history/fer.html</a></code>) e executa um evento <code>popstate</code>.
+<li>O navegador percebe que uma <abbr>URL</abbr> foi manualmente adicionada na pilha de histórico (pela função <code>history.pushState()</code>). Ao invés de navegar para a <abbr>URL</abbr> anterior e redesenhar a página toda, o navegador simplesmente atualiza a barra de endereço para a <abbr>URL</abbr> antiga (<code><a href=https://diveintohtml5.com.br/examples/history/fer.html>https://diveintohtml5.com.br/examples/history/fer.html</a></code>) e executa um evento <code>popstate</code>.
 <li>Nosso <code>popstate</code> customizado manipula chamadas para a função <code>swapPhoto()</code> novamente, desta vez com a <abbr>URL</abbr> antiga que agora já esta visível na barra de endereços do navegador.
-<li>Novamente utilizando <code>XMLHttpRequest</code>, a função <code>swapPhoto()</code> baixa o fragmento de <abbr>HTML</abbr> localizado em <code><a href=http://diveintohtml5.com.br/examples/history/gallery/fer.html>http://diveintohtml5.com.br/examples/history/<strong>gallery</strong>/fer.html</a></code> e atribui a propriedade <code>innerHTML</code> do elemento <code>&lt;aside></code>, substituindo assim a foto e a legenda de Casey com uma foto e legenda de Fer.
+<li>Novamente utilizando <code>XMLHttpRequest</code>, a função <code>swapPhoto()</code> baixa o fragmento de <abbr>HTML</abbr> localizado em <code><a href=https://diveintohtml5.com.br/examples/history/gallery/fer.html>https://diveintohtml5.com.br/examples/history/<strong>gallery</strong>/fer.html</a></code> e atribui a propriedade <code>innerHTML</code> do elemento <code>&lt;aside></code>, substituindo assim a foto e a legenda de Casey com uma foto e legenda de Fer.
 </ul>
 
 <p>A ilusão está completa. Todas as evidências visíveis (o conteúdo da página e a <abbr>URL</abbr> na barra de endereços) sugerem ao usuário que ele navegou uma página a frente e uma para trás. Mas nenhuma página foi completamente atualizada - isto foi tudo uma ilusão meticulosamente executada.
@@ -216,7 +216,7 @@ body{counter-reset:h1 11}
 
 <p class=c>Copyright MMIX&ndash;MMXI <a href=about.html>Mark Pilgrim</a>
 
-<form action=http://www.google.com/cse><div><input type=hidden name=cx value=014437924039265546826:2nmoshc8y3y><input type=hidden name=ie value=UTF-8><input type=search name=q size=25 placeholder="powered by Google&trade;">&nbsp;<input type=submit name=sa value=Search></div></form>
+<form action=https://www.google.com/cse><div><input type=hidden name=cx value=014437924039265546826:2nmoshc8y3y><input type=hidden name=ie value=UTF-8><input type=search name=q size=25 placeholder="powered by Google&trade;">&nbsp;<input type=submit name=sa value=Search></div></form>
 <script src=j/jquery.js></script>
 <script src=j/modernizr.js></script>
 <script src=j/dih5.js></script>

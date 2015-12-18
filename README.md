@@ -1,4 +1,4 @@
-# [Dive into HTML5](http://diveintohtml5.com.br/)
+# [Dive into HTML5](https://diveintohtml5.com.br/)
 
 Projeto que visou a tradução do livro Dive into HTML5.
 
